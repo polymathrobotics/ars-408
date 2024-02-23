@@ -15,7 +15,6 @@ stages:
 build_ars408_humble:
   variables:
     DOCKER_IMAGE_NAME: /ars-408
-    DOCKER_ARGS: "-f containers/Containerfile"
     DOCKER_TAG: humble
     DOCKER_PUSH: --push
     DOCKERFILE_DIR: ars-408
