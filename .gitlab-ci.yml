@@ -1,0 +1,24 @@
+variables:
+  VCS_ARGS: --recursive
+
+include:
+- project: 'polymathrobotics/ci/ci_templates'
+  ref: main
+  file: '/ros/ros1_container/containerize.impl.yml'
+- project: 'polymathrobotics/ci/ci_templates'
+  ref: main
+  file: '/ros/ros2_container/containerize.impl.yml'
+
+stages:
+  - build
+
+build_ars408_humble:
+  variables:
+    DOCKER_IMAGE_NAME: /ars-408
+    DOCKER_TAG: humble
+    DOCKER_PUSH: --push
+    DOCKERFILE_DIR: ars-408
+  stage: build
+  extends: .ros2_containerize
+  only:
+    - main
