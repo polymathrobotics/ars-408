@@ -8,6 +8,18 @@ include:
 - project: 'polymathrobotics/ci/ci_templates'
   ref: main
   file: '/ros/ros2_container/containerize.impl.yml'
+- project: 'polymathrobotics/ci/ci_templates'
+  ref: main
+  file: '/docker-bake/bake_and_push_arm64.yml'
+- project: 'polymathrobotics/ci/ci_templates'
+  ref: main
+  file: '/docker-bake/bake_with_vcs_import_arm64.impl.yml'
+- project: 'polymathrobotics/ci/ci_templates'
+  ref: main
+  file: '/common/rules.yml'
+- project: 'polymathrobotics/ci/ci_templates'
+  ref: main
+  file: '/common/stages.yml'
 
 stages:
   - build
@@ -20,5 +32,14 @@ build_ars408_humble:
     DOCKERFILE_DIR: ars-408
   stage: build
   extends: .ros2_containerize
+  only:
+    - main
+
+bake_bringup_arm64:
+  variables:
+    BAKE_PUSH: --push
+    BAKE_TARGET: arm64
+    BAKEFILE_DIR: containers
+  extends: .import_bake_and_push_arm64
   only:
     - main
