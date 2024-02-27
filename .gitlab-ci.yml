@@ -39,7 +39,6 @@ bake_bringup_arm64:
   variables:
     BAKE_PUSH: --push
     BAKE_TARGET: arm64
-    BAKEFILE_DIR: containers
   extends: .import_bake_and_push_arm64
   only:
     - main
