@@ -33,6 +33,7 @@ target "local" {
 target "arm64" {
   inherits = ["_common"]
   platforms = ["linux/arm64/v8"]
+  tags = ["${CONTAINER_REGISTRY}/${IMAGE_NAME}/arm64:humble"]
 }
 
 target "default" {
