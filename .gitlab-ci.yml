@@ -13,9 +13,6 @@ include:
   file: '/docker-bake/bake_and_push_arm64.yml'
 - project: 'polymathrobotics/ci/ci_templates'
   ref: main
-  file: '/docker-bake/bake_with_vcs_import_arm64.impl.yml'
-- project: 'polymathrobotics/ci/ci_templates'
-  ref: main
   file: '/common/rules.yml'
 - project: 'polymathrobotics/ci/ci_templates'
   ref: main
@@ -35,10 +32,10 @@ build_ars408_humble:
   only:
     - main
 
-bake_bringup_arm64:
+bake_ars408_arm64:
   variables:
     BAKE_PUSH: --push
     BAKE_TARGET: arm64
-  extends: .import_bake_and_push_arm64
+  extends: .bake_and_push_arm64
   only:
     - main
