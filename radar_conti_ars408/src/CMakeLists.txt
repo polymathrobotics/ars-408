@@ -16,8 +16,6 @@ IF(NOT CMAKE_BUILD_TYPE)
     SET(CMAKE_BUILD_TYPE Release)
 ENDIF(NOT CMAKE_BUILD_TYPE)
 
-
-
 ##########################################################
 #######             INCLUDES AND LIBS            #########
 ##########################################################
@@ -40,6 +38,7 @@ find_package(visualization_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(ros2socketcan_bridge REQUIRED)
 find_package(ament_index_cpp REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
 ##########################################################
 
 
@@ -60,7 +59,6 @@ include_directories(
   ${ros2socketcan_bridge_INCLUDE_DIRS}
 )
 ##########################################################
-
 
 ##########################################################
 #######         Component and Executable         #########
@@ -152,6 +150,7 @@ install(DIRECTORY
   launch
   DESTINATION share/${PROJECT_NAME}
 )
+
 ##########################################################
 
 
