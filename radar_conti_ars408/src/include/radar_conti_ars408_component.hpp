@@ -33,8 +33,7 @@
 #include <radar_conti_ars408_msgs/msg/cluster_list.hpp>
 #include <radar_conti_ars408_msgs/msg/radar_state.hpp>
 #include <radar_conti_ars408_msgs/msg/cluster_status.hpp>
-
-
+#include <radar_conti_ars408_msgs/srv/set_filter.hpp>
 #include <tf2_ros/transform_broadcaster.h>
 #include <tf2_ros/static_transform_broadcaster.h>
 #include <tf2/LinearMath/Quaternion.h>
@@ -153,12 +152,9 @@ public:
         rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn on_cleanup(
             const rclcpp_lifecycle::State&);
 
-
-
-
-
-
-
+        void setFilter(
+            const std::shared_ptr<radar_conti_ars408_msgs::srv::SetFilter::Request> request,
+            std::shared_ptr<radar_conti_ars408_msgs::srv::SetFilter::Response> response);
 
 private:
 
@@ -176,6 +172,9 @@ ros2socketcan canChannel0;
     rclcpp_lifecycle::LifecyclePublisher<radar_conti_ars408_msgs::msg::ObjectList>::SharedPtr object_list_publisher_;
     rclcpp_lifecycle::LifecyclePublisher<tf2_msgs::msg::TFMessage>::SharedPtr tf_publisher_;
     rclcpp_lifecycle::LifecyclePublisher<visualization_msgs::msg::MarkerArray>::SharedPtr marker_array_publisher_;
+
+    rclcpp::Service<radar_conti_ars408_msgs::srv::SetFilter>::SharedPtr set_filter_service_;
+
 //create can_receive_callback
     void can_receive_callback(const can_msgs::msg::Frame);
 //create handle_object_list
@@ -190,6 +189,8 @@ ros2socketcan canChannel0;
 
 //additional variables
     int operation_mode_;
+
+    int object_count;
 
 // ##################################
 

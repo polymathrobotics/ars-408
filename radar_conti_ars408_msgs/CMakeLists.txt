@@ -38,6 +38,7 @@ rosidl_generate_interfaces(radar_conti_ars408_msgs
   "msg/FilterStateCfg.msg"
   "msg/FilterCfg.msg"
   "msg/FilterStateHeader.msg"
+  "srv/SetFilter.srv"
   DEPENDENCIES builtin_interfaces std_msgs
 )
 

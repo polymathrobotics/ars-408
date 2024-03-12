@@ -88,7 +88,9 @@ public:
 
     void CanSend(const can_msgs::msg::Frame msg)
     {
+        
         if((use_tx_whitelist && std::find(can_tx_whitelist.begin(), can_tx_whitelist.end(), (unsigned int) msg.id) != can_tx_whitelist.end()) || !use_tx_whitelist) {
+
             struct can_frame frame1;
 
             frame1.can_id = msg.id;
@@ -114,15 +116,10 @@ public:
                 frame1.data[i] = msg.data[i];
             }
 
-
-
-
-            stream.async_write_some(boost::asio::buffer(&frame1, sizeof(frame1)),
-                                    std::bind(&ros2socketcan::CanSendConfirm, this));
+            stream.async_write_some(boost::asio::buffer(&frame1, sizeof(frame1)), std::bind(&ros2socketcan::CanSendConfirm, this));
         }
+
     }
-
-
 
 private:
 
@@ -134,34 +131,30 @@ private:
 
     void CanSendConfirm()
     {
-        //std::cout << "Message sent" << std::endl;
+        std::cout << "Message sent" << std::endl;
     }
 
     void CanListener(struct can_frame& rec_frame, boost::asio::posix::basic_stream_descriptor<>& stream)
     {
+	    //std::cout << "rec_frame id: " << rec_frame.can_id << std::endl;
         if((use_rx_whitelist && std::find(can_rx_whitelist.begin(), can_rx_whitelist.end(), (unsigned int) rec_frame.can_id) != can_rx_whitelist.end()) || !use_rx_whitelist) {
             can_msgs::msg::Frame frame;
 
             std::stringstream s;
 
             frame.id = rec_frame.can_id;
+	    //std::cout << "Frame id: " << frame.id << std::endl;
             frame.dlc = int(rec_frame.can_dlc);
 
-            //printf("R | %x | ", rec_frame.can_id);
             for (int i = 0; i < rec_frame.can_dlc; i++) {
                 frame.data[i] = rec_frame.data[i];
                 s << rec_frame.data[i];
             }
             current_frame = frame;
             this->canCallback(current_frame);
-
-            //std::cout << s.str() << " | ";
-
-            //for (int j = 0; j < (int) rec_frame.can_dlc; j++) {
-             //   printf("%i ", rec_frame.data[j]);
-            //}
-            //printf("\n");
-        }
+        }else{
+	    std::cout << "Did not pass" << std::endl;
+	}
         stream.async_read_some(boost::asio::buffer(&rec_frame, sizeof(rec_frame)),std::bind(&ros2socketcan::CanListener,this, std::ref(rec_frame),std::ref(stream)));
 
     }
@@ -207,7 +200,6 @@ private:
             }
         }
     }
-
 
     struct sockaddr_can addr;
     struct can_frame frame;
