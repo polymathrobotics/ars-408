@@ -39,6 +39,7 @@ find_package(tf2_ros REQUIRED)
 find_package(ros2socketcan_bridge REQUIRED)
 find_package(ament_index_cpp REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
+find_package(radar_msgs REQUIRED)
 ##########################################################
 
 
@@ -79,6 +80,7 @@ ament_target_dependencies(
   radar_conti_ars408_component
   radar_conti_ars408_msgs
   can_msgs
+  radar_msgs
   visualization_msgs
   tf2_ros
   ros2socketcan_bridge

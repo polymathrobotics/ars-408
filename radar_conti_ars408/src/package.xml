@@ -3,8 +3,8 @@
 <package format="3">
   <name>radar_conti_ars408</name>
   <version>0.0.1</version>
-  <description>Part of autonomous driving platform (adp) package of the University of Applied Science Aachen.</description>
-  <maintainer email="peter@fh-aachen.de">Daniel Peter</maintainer>
+  <description>ROS2 driver for Continental ARS 408 Radar</description>
+  <maintainer email="alex@polymathrobotics.com">Alexander Yuen</maintainer>
   <license>Apache License 2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
@@ -21,7 +21,7 @@
   <build_depend>tf2_ros</build_depend>
   <build_depend>radar_conti_ars408_msgs</build_depend>
   <build_depend>can_msgs</build_depend>
-
+  <build_depend>radar_msgs</build_depend>
 
   <exec_depend>boost</exec_depend>	  
   <exec_depend>example_interfaces</exec_depend>
@@ -35,10 +35,10 @@
   <exec_depend>tf2_ros</exec_depend>
   <exec_depend>radar_conti_ars408_msgs</exec_depend>
   <exec_depend>can_msgs</exec_depend>
+  <exec_depend>radar_msgs</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
-
 
   <export>
     <build_type>ament_cmake</build_type>

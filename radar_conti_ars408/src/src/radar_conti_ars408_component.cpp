@@ -23,7 +23,7 @@
 
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/string.hpp"
-#include "sensor_msgs/msg/nav_sat_fix.hpp"
+
 #include <ament_index_cpp/get_package_share_directory.hpp>
 
 using std::placeholders::_1;
@@ -41,10 +41,12 @@ radar_conti_ars408::radar_conti_ars408(const rclcpp::NodeOptions & options)
 rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn radar_conti_ars408::on_configure(
     const rclcpp_lifecycle::State&)
 {
-  auto marker_qos = rclcpp::QoS(rclcpp::KeepLast(1), rmw_qos_profile_sensor_data);
-  object_list_publisher_ = this->create_publisher<radar_conti_ars408_msgs::msg::ObjectList>(pub_object_list_topic_name, marker_qos);
+
+  object_list_publisher_ = this->create_publisher<radar_conti_ars408_msgs::msg::ObjectList>(pub_object_list_topic_name, qos);
   tf_publisher_ = this->create_publisher<tf2_msgs::msg::TFMessage>(pub_tf_topic_name, qos);
-  marker_array_publisher_ = this->create_publisher<visualization_msgs::msg::MarkerArray>(pub_marker_array_topic_name, marker_qos);
+  marker_array_publisher_ = this->create_publisher<visualization_msgs::msg::MarkerArray>(pub_marker_array_topic_name, qos);
+  auto radar_tracks_qos = rclcpp::QoS(rclcpp::KeepLast(5), rmw_qos_profile_sensor_data);
+  radar_tracks_publisher_ = this->create_publisher<radar_msgs::msg::RadarTracks>(pub_radar_track_topic_name, radar_tracks_qos);
   
   canChannel0.Init("can0", std::bind(&radar_conti_ars408::can_receive_callback, this, _1));
   object_count = 0.0;
@@ -75,6 +77,7 @@ rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn radar_
   object_list_publisher_->on_activate();
   tf_publisher_->on_activate();
   marker_array_publisher_->on_activate();
+  radar_tracks_publisher_->on_activate();
 
   RCUTILS_LOG_INFO_NAMED(get_name(), "on_activate() is called.");
   return rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::SUCCESS;
@@ -118,8 +121,8 @@ void radar_conti_ars408::handle_object_list(const can_msgs::msg::Frame msg) {
   if(object_count == object_list_.object_count.data){
     publish_object_map();
   }else{
-          //RCLCPP_INFO(this->get_logger(), "Error");
-      }
+    RCLCPP_INFO(this->get_logger(), "Error");
+  }
 
   object_count = 0;
   object_list_.header.stamp = rclcpp_lifecycle::LifecycleNode::now();
@@ -219,43 +222,12 @@ void radar_conti_ars408::handle_object_list(const can_msgs::msg::Frame msg) {
 
 void radar_conti_ars408::publish_object_map() {
 
-  tf2_msgs::msg::TFMessage transforms;
-
-  std::map<int, radar_conti_ars408_msgs::msg::Object>::iterator itr;
-
-  for (itr = object_map_.begin(); itr != object_map_.end(); ++itr) {
-
-      std::string tf_name = "object_" + std::to_string(itr->first);
-
-      geometry_msgs::msg::TransformStamped tf;
-
-      tf.header.stamp = rclcpp_lifecycle::LifecycleNode::now();
-      tf.header.frame_id = frame_id_;
-
-      tf.child_frame_id = tf_name;
-
-      tf.transform.translation.x = itr->second.object_general.obj_distlong.data;
-      tf.transform.translation.y = itr->second.object_general.obj_distlat.data;
-      tf.transform.translation.z = 1.0;
-
-      tf.transform.rotation.w = 1.0;
-      tf.transform.rotation.x = 0.0;
-      tf.transform.rotation.y = 0.0;
-      tf.transform.rotation.y = 0.0;
-
-      transforms.transforms.push_back(tf);
-
-
-      object_list_.objects.push_back(itr->second); 
-
-  }
-
-
-  object_list_publisher_->publish(object_list_);
-  tf_publisher_->publish(transforms);
-
-
   visualization_msgs::msg::MarkerArray marker_array;
+  radar_msgs::msg::RadarTracks radar_tracks;
+
+  radar_tracks.header.stamp = rclcpp_lifecycle::LifecycleNode::now();
+  radar_tracks.header.frame_id = frame_id_;
+
   marker_array.markers.clear();
 
   //delete old marker
@@ -275,9 +247,7 @@ void radar_conti_ars408::publish_object_map() {
 
   //if you want to use a cube comment out the next 2 lines
   mEgoCar.type = visualization_msgs::msg::Marker::MESH_RESOURCE;
-  mEgoCar.mesh_resource = "file://"+ament_index_cpp::get_package_share_directory("radar_conti_ars408")+"/resources/low_poly_911.dae";
-  // mEgoCar.type = 1; // cube
-  mEgoCar.action = 0; // add/modify
+  mEgoCar.type = 1; // cube
   mEgoCar.pose.position.x = -2.0;
   mEgoCar.pose.position.y = 0.0;
   mEgoCar.pose.position.z = 1.0;
@@ -301,9 +271,11 @@ void radar_conti_ars408::publish_object_map() {
 
   marker_array.markers.push_back(mEgoCar);
 
+  std::map<int, radar_conti_ars408_msgs::msg::Object>::iterator itr;
+  
   for (itr = object_map_.begin(); itr != object_map_.end(); ++itr) {
+
       visualization_msgs::msg::Marker mobject;
-      visualization_msgs::msg::Marker mtext;
 
       mobject.header.stamp = rclcpp_lifecycle::LifecycleNode::now();
       mobject.header.frame_id = frame_id_;
@@ -333,10 +305,32 @@ void radar_conti_ars408::publish_object_map() {
       mobject.lifetime = rclcpp::Duration::from_seconds(0.2);
       mobject.frame_locked = false;
 
-      marker_array.markers.push_back(mobject);
+
+      radar_msgs::msg::RadarTrack radar_track;
+      radar_track.position.x = itr->second.object_general.obj_distlong.data;
+      radar_track.position.y = itr->second.object_general.obj_distlat.data; 
+      radar_track.position.z = 1.0;
+
+      radar_track.velocity.x = 0.0;
+      radar_track.velocity.y = 0.0;
+      radar_track.velocity.z = 0.0;
+
+      radar_track.acceleration.x = 0.0;
+      radar_track.acceleration.y = 0.0;
+      radar_track.acceleration.z = 0.0;
+
+      radar_track.size.x = itr->second.object_extended.obj_length.data;
+      radar_track.size.y = itr->second.object_extended.obj_width.data;
+      radar_track.size.z = 0.0;
+
+
+      marker_array.markers.push_back(mobject); 
+      radar_tracks.tracks.push_back(radar_track);
 
   }
+
   marker_array_publisher_->publish(marker_array);
+  radar_tracks_publisher_->publish(radar_tracks);
             
 }
 
