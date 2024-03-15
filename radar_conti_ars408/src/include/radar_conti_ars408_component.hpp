@@ -56,6 +56,9 @@
 #include <rclcpp/strategies/message_pool_memory_strategy.hpp>
 #include <rclcpp/strategies/allocator_memory_strategy.hpp>
 
+#include "radar_msgs/msg/radar_track.hpp"
+#include "radar_msgs/msg/radar_tracks.hpp"
+
 #include "ros2socketcan_bridge/ros2socketcan.h"
 #include <ars_408_can_defines.h>
 
@@ -166,12 +169,14 @@ ros2socketcan canChannel0;
     rclcpp::QoS qos{10};
     std::string pub_marker_array_topic_name = "/ars408/marker_array";
     std::string pub_object_list_topic_name = "/ars408/objectlist";
+    std::string pub_radar_track_topic_name = "/ars408/radar_tracks";
     std::string pub_tf_topic_name = "/tf";
-    std::string frame_id_ = "/radar_link";
+    std::string frame_id_ = "radar_link";
 
     rclcpp_lifecycle::LifecyclePublisher<radar_conti_ars408_msgs::msg::ObjectList>::SharedPtr object_list_publisher_;
     rclcpp_lifecycle::LifecyclePublisher<tf2_msgs::msg::TFMessage>::SharedPtr tf_publisher_;
     rclcpp_lifecycle::LifecyclePublisher<visualization_msgs::msg::MarkerArray>::SharedPtr marker_array_publisher_;
+    rclcpp_lifecycle::LifecyclePublisher<radar_msgs::msg::RadarTracks>::SharedPtr radar_tracks_publisher_;
 
     rclcpp::Service<radar_conti_ars408_msgs::srv::SetFilter>::SharedPtr set_filter_service_;
 
