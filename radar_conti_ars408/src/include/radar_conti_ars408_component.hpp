@@ -62,6 +62,8 @@
 #include "ros2socketcan_bridge/ros2socketcan.h"
 #include <ars_408_can_defines.h>
 
+#include "bondcpp/bond.hpp"
+
 constexpr char DEFAULT_NODE_NAME[] = "RADAR_CONTI_ARS408";
 
 
@@ -196,6 +198,10 @@ ros2socketcan canChannel0;
     int operation_mode_;
 
     int object_count;
+
+    std::string can_channel_;
+
+    std::unique_ptr<bond::Bond> bond_{nullptr};
 
 // ##################################
 

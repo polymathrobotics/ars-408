@@ -34,14 +34,17 @@ namespace FHAC
 radar_conti_ars408::radar_conti_ars408(const rclcpp::NodeOptions & options)
 : rclcpp_lifecycle::LifecycleNode("radar_conti_ars408", options)
 {
-
-
-}
+    
+} 
 
 rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn radar_conti_ars408::on_configure(
     const rclcpp_lifecycle::State&)
 {
-
+  RCUTILS_LOG_INFO_NAMED(get_name(), "on_configure() is called.");
+  auto node = shared_from_this();
+  node->declare_parameter("can_channel", rclcpp::ParameterValue("can0"));
+  node->get_parameter("can_channel", can_channel_);
+	
   object_list_publisher_ = this->create_publisher<radar_conti_ars408_msgs::msg::ObjectList>(pub_object_list_topic_name, qos);
   tf_publisher_ = this->create_publisher<tf2_msgs::msg::TFMessage>(pub_tf_topic_name, qos);
   marker_array_publisher_ = this->create_publisher<visualization_msgs::msg::MarkerArray>(pub_marker_array_topic_name, qos);
@@ -54,8 +57,6 @@ rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn radar_
 
   return rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::SUCCESS; 
 }
-
-
 
 rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn radar_conti_ars408::on_shutdown(
   const rclcpp_lifecycle::State& previous_state)
@@ -79,6 +80,11 @@ rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn radar_
   marker_array_publisher_->on_activate();
   radar_tracks_publisher_->on_activate();
 
+  bond_ = std::make_unique<bond::Bond>(std::string("bond"), this->get_name(), shared_from_this());
+  bond_->setHeartbeatPeriod(0.10);
+  bond_->setHeartbeatTimeout(4.0);
+  bond_->start();
+
   RCUTILS_LOG_INFO_NAMED(get_name(), "on_activate() is called.");
   return rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::SUCCESS;
 }
@@ -94,6 +100,9 @@ rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn radar_
     const rclcpp_lifecycle::State&)
 {
   RCUTILS_LOG_INFO_NAMED(get_name(), "on cleanup is called.");
+  if (bond_) {
+    bond_.reset();
+  }
   return rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::SUCCESS;
 }
 
