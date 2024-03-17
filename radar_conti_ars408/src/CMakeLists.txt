@@ -40,6 +40,8 @@ find_package(ros2socketcan_bridge REQUIRED)
 find_package(ament_index_cpp REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 find_package(radar_msgs REQUIRED)
+find_package(bondcpp REQUIRED)
+find_package(bond REQUIRED)
 ##########################################################
 
 
@@ -84,6 +86,8 @@ ament_target_dependencies(
   visualization_msgs
   tf2_ros
   ros2socketcan_bridge
+  bondcpp
+  bond
   "rclcpp_lifecycle"
   "rclcpp"
   "std_msgs"

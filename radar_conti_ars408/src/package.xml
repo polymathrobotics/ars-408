@@ -37,6 +37,9 @@
   <exec_depend>can_msgs</exec_depend>
   <exec_depend>radar_msgs</exec_depend>
 
+  <depend>bondcpp</depend>
+  <depend>bond</depend>
+
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
 
