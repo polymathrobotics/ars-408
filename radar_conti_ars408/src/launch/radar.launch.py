@@ -17,9 +17,6 @@ def generate_launch_description():
         'autostart', default_value='true',
         description='Automatically startup the nav2 stack')
 
-    config_dir = LaunchConfiguration('config_dir')
-    config_dir_arg = DeclareLaunchArgument('config_dir', default_value=str(config_default_path))
-
     use_sim_time = LaunchConfiguration('use_sim_time')
     use_sim_time_arg = DeclareLaunchArgument('use_sim_time',
                                               default_value="False",
@@ -30,12 +27,6 @@ def generate_launch_description():
         'namespace',
         default_value='',
         description='Top-level namespace')
-
-    radar_params = RewrittenYaml(
-        source_file=PathJoinSubstitution([config_dir, 'radar.yaml']),
-        root_key=namespace,
-        param_rewrites='',
-        convert_types=True)
 
     # Nodes launching commands
     start_lifecycle_manager_cmd = Node(
@@ -59,7 +50,6 @@ def generate_launch_description():
 
     ld = LaunchDescription()
 
-    ld.add_action(config_dir_arg)
     ld.add_action(autostart_arg)
     ld.add_action(use_sim_time_arg)
     ld.add_action(namespace_arg)
