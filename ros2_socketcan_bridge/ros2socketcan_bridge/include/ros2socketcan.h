@@ -51,7 +51,7 @@ public:
     {
         signals = std::make_shared<boost::asio::signal_set>(ios, SIGINT, SIGTERM);
         this->canCallback = callback;
-        //printf("Using can socket %s\n", can_socket);
+	std::cout << "Using can socket " << can_socket << std::endl;
 
         //generate can-whitelist from config_file:
         parseWhiteListFile(whitelist_path);
