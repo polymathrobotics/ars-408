@@ -169,11 +169,11 @@ private:
 ros2socketcan canChannel0;
 //create Publisher
     rclcpp::QoS qos{10};
-    std::string pub_marker_array_topic_name = "/ars408/marker_array";
-    std::string pub_object_list_topic_name = "/ars408/objectlist";
-    std::string pub_radar_track_topic_name = "/ars408/radar_tracks";
+    std::string object_list_topic_name_;
+    std::string marker_array_topic_name_;
+    std::string radar_tracks_topic_name_;    
     std::string pub_tf_topic_name = "/tf";
-    std::string frame_id_ = "radar_link";
+    std::string radar_link_;
 
     rclcpp_lifecycle::LifecyclePublisher<radar_conti_ars408_msgs::msg::ObjectList>::SharedPtr object_list_publisher_;
     rclcpp_lifecycle::LifecyclePublisher<tf2_msgs::msg::TFMessage>::SharedPtr tf_publisher_;

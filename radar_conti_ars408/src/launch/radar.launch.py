@@ -5,12 +5,14 @@ from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from pathlib import Path
+from nav2_common.launch import RewrittenYaml
 
 def generate_launch_description():
+    #TODO: MAKE THIS CONFIG PATH PARAMETERIZED
     config_default_path = Path(get_package_share_directory('vayurobotics_config')) / 'config'
     print(config_default_path)
     
-    lifecycle_nodes = ['conti_ars408_node']
+    lifecycle_nodes = ['radar_node']
 
     autostart = LaunchConfiguration('autostart')
     autostart_arg = DeclareLaunchArgument(
@@ -31,11 +33,17 @@ def generate_launch_description():
         default_value='',
         description='Top-level namespace')
 
+    radar_params = RewrittenYaml(
+        source_file=PathJoinSubstitution([config_dir, 'radar.yaml']),
+        root_key=namespace,
+        param_rewrites='',
+        convert_types=True)
+
     # Nodes launching commands
     start_lifecycle_manager_cmd = Node(
             package='nav2_lifecycle_manager',
             executable='lifecycle_manager',
-            name='conti_408_lifecycle_manager',
+            name='radar_lifecycle_manager',
             namespace=namespace,
             output='screen',
             emulate_tty=True,
@@ -43,13 +51,13 @@ def generate_launch_description():
                         {'autostart': autostart},
                         {'node_names': lifecycle_nodes}])
 
-    conti_ars408_node = Node(
+    radar_node = Node(
             package='radar_conti_ars408',
             executable='radar_conti_ars408_composition',
-            name='conti_ars408_node',
+            name='radar_node',
             namespace=namespace,
             output='screen',
-            parameters=[{'can_channel': 'can0'}])
+            parameters=[radar_params])
 
     ld = LaunchDescription()
 
@@ -59,6 +67,6 @@ def generate_launch_description():
     ld.add_action(namespace_arg)
 
     ld.add_action(start_lifecycle_manager_cmd)
-    ld.add_action(conti_ars408_node)
+    ld.add_action(radar_node)
 
     return ld

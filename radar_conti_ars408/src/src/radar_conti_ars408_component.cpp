@@ -43,15 +43,25 @@ rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn radar_
   RCUTILS_LOG_INFO_NAMED(get_name(), "on_configure() is called.");
   auto node = shared_from_this();
   node->declare_parameter("can_channel", rclcpp::ParameterValue("can0"));
-  node->get_parameter("can_channel", can_channel_);
-	
-  object_list_publisher_ = this->create_publisher<radar_conti_ars408_msgs::msg::ObjectList>(pub_object_list_topic_name, qos);
-  tf_publisher_ = this->create_publisher<tf2_msgs::msg::TFMessage>(pub_tf_topic_name, qos);
-  marker_array_publisher_ = this->create_publisher<visualization_msgs::msg::MarkerArray>(pub_marker_array_topic_name, qos);
-  auto radar_tracks_qos = rclcpp::QoS(rclcpp::KeepLast(5), rmw_qos_profile_sensor_data);
-  radar_tracks_publisher_ = this->create_publisher<radar_msgs::msg::RadarTracks>(pub_radar_track_topic_name, radar_tracks_qos);
+  node->declare_parameter("object_list_topic_name", rclcpp::ParameterValue("/ars408/objectlist"));
+  node->declare_parameter("marker_array_topic_name", rclcpp::ParameterValue("/ars408/marker_array"));
+  node->declare_parameter("radar_tracks_topic_name", rclcpp::ParameterValue("/ars408/radar_tracks"));
+  node->declare_parameter("radar_link", rclcpp::ParameterValue("radar_link"));
   
-  canChannel0.Init("can0", std::bind(&radar_conti_ars408::can_receive_callback, this, _1));
+  node->get_parameter("can_channel", can_channel_);
+  node->get_parameter("object_list_topic_name", object_list_topic_name_);
+  node->get_parameter("marker_array_topic_name", marker_array_topic_name_);
+  node->get_parameter("radar_tracks_topic_name", radar_tracks_topic_name_);
+  node->get_parameter("radar_link", radar_link_);	
+
+  auto radar_tracks_qos = rclcpp::QoS(rclcpp::KeepLast(5), rmw_qos_profile_sensor_data);
+
+  object_list_publisher_ = this->create_publisher<radar_conti_ars408_msgs::msg::ObjectList>(object_list_topic_name_, qos);
+  tf_publisher_ = this->create_publisher<tf2_msgs::msg::TFMessage>(pub_tf_topic_name, qos);
+  marker_array_publisher_ = this->create_publisher<visualization_msgs::msg::MarkerArray>(marker_array_topic_name_, qos);
+  radar_tracks_publisher_ = this->create_publisher<radar_msgs::msg::RadarTracks>(radar_tracks_topic_name_, radar_tracks_qos);
+  
+  canChannel0.Init(can_channel_.c_str(), std::bind(&radar_conti_ars408::can_receive_callback, this, _1));
   object_count = 0.0;
   set_filter_service_ = create_service<radar_conti_ars408_msgs::srv::SetFilter>("/set_filter", std::bind(&radar_conti_ars408::setFilter, this, std::placeholders::_1, std::placeholders::_2));
 
@@ -235,7 +245,7 @@ void radar_conti_ars408::publish_object_map() {
   radar_msgs::msg::RadarTracks radar_tracks;
 
   radar_tracks.header.stamp = rclcpp_lifecycle::LifecycleNode::now();
-  radar_tracks.header.frame_id = frame_id_;
+  radar_tracks.header.frame_id = radar_link_;
 
   marker_array.markers.clear();
 
@@ -250,7 +260,7 @@ void radar_conti_ars408::publish_object_map() {
   visualization_msgs::msg::Marker mEgoCar;
 
   mEgoCar.header.stamp = rclcpp_lifecycle::LifecycleNode::now();
-  mEgoCar.header.frame_id = frame_id_;
+  mEgoCar.header.frame_id = radar_link_;
   mEgoCar.ns = "";
   mEgoCar.id = 999;
 
@@ -287,7 +297,7 @@ void radar_conti_ars408::publish_object_map() {
       visualization_msgs::msg::Marker mobject;
 
       mobject.header.stamp = rclcpp_lifecycle::LifecycleNode::now();
-      mobject.header.frame_id = frame_id_;
+      mobject.header.frame_id = radar_link_;
       mobject.ns = "";
       mobject.id = itr->first;
       mobject.type = 1; //Cube
