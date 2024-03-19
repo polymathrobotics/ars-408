@@ -8,10 +8,8 @@ from pathlib import Path
 from nav2_common.launch import RewrittenYaml
 
 def generate_launch_description():
-    #TODO: MAKE THIS CONFIG PATH PARAMETERIZED
-    config_default_path = Path(get_package_share_directory('vayurobotics_config')) / 'config'
-    print(config_default_path)
-    
+    params_file = LaunchConfiguration('params_file')
+
     lifecycle_nodes = ['radar_node']
 
     autostart = LaunchConfiguration('autostart')
@@ -57,7 +55,7 @@ def generate_launch_description():
             name='radar_node',
             namespace=namespace,
             output='screen',
-            parameters=[radar_params])
+            parameters=[params_file])
 
     ld = LaunchDescription()
 
