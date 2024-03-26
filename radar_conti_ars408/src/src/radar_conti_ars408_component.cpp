@@ -52,14 +52,37 @@ rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn radar_
   node->get_parameter("object_list_topic_name", object_list_topic_name_);
   node->get_parameter("marker_array_topic_name", marker_array_topic_name_);
   node->get_parameter("radar_tracks_topic_name", radar_tracks_topic_name_);
-  node->get_parameter("radar_link", radar_link_);	
+  node->get_parameter("radar_link", radar_link_);
 
   auto radar_tracks_qos = rclcpp::QoS(rclcpp::KeepLast(5), rmw_qos_profile_sensor_data);
+  size_t topic_ind = 0;
+  bool more_params = false;
+  do {
+    // Build the string in the form of "radar_link_X", where X is the sensor ID of
+    // the rader on the CANBUS, then check if we have any parameters with that value. Users need
+    // to make sure they don't have gaps in their configs (e.g.,footprint0 and then
+    // footprint2)
+    std::stringstream ss;
+    ss << "radar_link_" << topic_ind++;
+    std::string radar_link_name = ss.str();
+    node->declare_parameter(radar_link_name, rclcpp::PARAMETER_STRING);
 
-  object_list_publisher_ = this->create_publisher<radar_conti_ars408_msgs::msg::ObjectList>(object_list_topic_name_, qos);
-  tf_publisher_ = this->create_publisher<tf2_msgs::msg::TFMessage>(pub_tf_topic_name, qos);
-  marker_array_publisher_ = this->create_publisher<visualization_msgs::msg::MarkerArray>(marker_array_topic_name_, qos);
-  radar_tracks_publisher_ = this->create_publisher<radar_msgs::msg::RadarTracks>(radar_tracks_topic_name_, radar_tracks_qos);
+    rclcpp::Parameter parameter;
+    if (node->get_parameter(radar_link_name, parameter)) {
+      more_params = true;
+      radar_link_names.push_back(parameter.as_string());
+      object_list_publishers_.push_back(this->create_publisher<radar_conti_ars408_msgs::msg::ObjectList>(parameter.as_string() + "/" + object_list_topic_name_, qos));
+      tf_publishers_.push_back(this->create_publisher<tf2_msgs::msg::TFMessage>(parameter.as_string() + "/" + pub_tf_topic_name, qos));
+      marker_array_publishers_.push_back(this->create_publisher<visualization_msgs::msg::MarkerArray>(parameter.as_string() + "/" + marker_array_topic_name_, qos));
+      radar_tracks_publishers_.push_back(this->create_publisher<radar_msgs::msg::RadarTracks>(parameter.as_string() + "/" + radar_tracks_topic_name_, radar_tracks_qos));
+      object_map_list_.push_back(std::map<int, radar_conti_ars408_msgs::msg::Object>());
+      object_list_list_.push_back(radar_conti_ars408_msgs::msg::ObjectList());
+
+      RCLCPP_WARN(this->get_logger(), "link_name is: %s", parameter.as_string().c_str());
+    } else {
+      more_params = false;
+    }
+  } while (more_params);
   
   canChannel0.Init(can_channel_.c_str(), std::bind(&radar_conti_ars408::can_receive_callback, this, _1));
   object_count = 0.0;
@@ -85,10 +108,12 @@ rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn radar_
 rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn radar_conti_ars408::on_activate(
     const rclcpp_lifecycle::State&) 
 {   
-  object_list_publisher_->on_activate();
-  tf_publisher_->on_activate();
-  marker_array_publisher_->on_activate();
-  radar_tracks_publisher_->on_activate();
+  for(size_t i = 0; i < object_list_publishers_.size(); i++){
+    object_list_publishers_[i]->on_activate();
+    tf_publishers_[i]->on_activate();
+    marker_array_publishers_[i]->on_activate();
+    radar_tracks_publishers_[i]->on_activate();
+  }
 
   bond_ = std::make_unique<bond::Bond>(std::string("bond"), this->get_name(), shared_from_this());
   bond_->setHeartbeatPeriod(0.10);
@@ -118,7 +143,8 @@ rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn radar_
 
 void radar_conti_ars408::can_receive_callback(const can_msgs::msg::Frame msg)
 {    
-  if (msg.id == ID_RadarState) {
+  
+  if (Get_MsgID0_From_MsgID(msg.id) == ID_RadarState) {
       operation_mode_ =CALC_RadarState_RadarState_OutputTypeCfg(GET_RadarState_RadarState_OutputTypeCfg(msg.data),1.0);
   }
 
@@ -135,32 +161,28 @@ void radar_conti_ars408::can_receive_callback(const can_msgs::msg::Frame msg)
 
 void radar_conti_ars408::handle_object_list(const can_msgs::msg::Frame msg) {
 
-  if (msg.id == ID_Obj_0_Status) {
-      
-  if(object_count == object_list_.object_count.data){
-    publish_object_map();
-  }else{
-    RCLCPP_INFO(this->get_logger(), "Error");
-  }
-
-  object_count = 0;
-  object_list_.header.stamp = rclcpp_lifecycle::LifecycleNode::now();
-  object_list_.object_count.data = GET_Obj_0_Status_Obj_NofObjects(msg.data);
-
-  object_map_.clear();
-
+  int sensor_id = Get_SensorID_From_MsgID(msg.id); 
+  
+  if (Get_MsgID0_From_MsgID(msg.id) == ID_Obj_0_Status) {
+    publish_object_map(sensor_id);
+    //TODO: Initialize _lists?
+    object_list_list_[sensor_id].header.stamp = rclcpp_lifecycle::LifecycleNode::now();
+    object_list_list_[sensor_id].object_count.data = GET_Obj_0_Status_Obj_NofObjects(msg.data);
+    object_map_list_[sensor_id].clear();
 
   }
 
   //Object General Information
   //for each Obj_1_General message a new object has to be created in the map
-  if (msg.id == ID_Obj_1_General) {
+  if (Get_MsgID0_From_MsgID(msg.id) == ID_Obj_1_General) {
 
       radar_conti_ars408_msgs::msg::Object o;
 
       //object ID
       int id = GET_Obj_1_General_Obj_ID(msg.data);
       o.obj_id.data = GET_Obj_1_General_Obj_ID(msg.data);
+
+      o.sensor_id.data = Get_SensorID_From_MsgID(msg.id);
 
       //longitudinal distance
       o.object_general.obj_distlong.data =
@@ -183,55 +205,55 @@ void radar_conti_ars408::handle_object_list(const can_msgs::msg::Frame msg) {
 
       o.object_general.obj_rcs.data = 
               CALC_Obj_1_General_Obj_RCS(GET_Obj_1_General_Obj_RCS(msg.data), 1.0);
-
+      
       //insert object into map
-      object_map_.insert(std::pair<int, radar_conti_ars408_msgs::msg::Object>(id, o));
+      object_map_list_[sensor_id].insert(std::pair<int, radar_conti_ars408_msgs::msg::Object>(id, o));
   }
 
   //Object Quality Information
   //for each Obj_2_Quality message the existing object in the map has to be updated
-  if (msg.id == ID_Obj_2_Quality) {
+  if (Get_MsgID0_From_MsgID(msg.id) == ID_Obj_2_Quality) {
 
       // //RCLCPP_INFO(this->get_logger(), "Received Object_2_Quality msg (0x60c)");
 
       int id = GET_Obj_2_Quality_Obj_ID(msg.data);
 
-      object_map_[id].object_quality.obj_distlong_rms.data =
+      object_map_list_[sensor_id][id].object_quality.obj_distlong_rms.data =
               CALC_Obj_2_Quality_Obj_DistLong_rms(GET_Obj_2_Quality_Obj_DistLong_rms(msg.data), 1.0);
 
-      object_map_[id].object_quality.obj_distlat_rms.data =
+      object_map_list_[sensor_id][id].object_quality.obj_distlat_rms.data =
               CALC_Obj_2_Quality_Obj_DistLat_rms(GET_Obj_2_Quality_Obj_DistLat_rms(msg.data), 1.0);
 
-      object_map_[id].object_quality.obj_vrellong_rms.data =
+      object_map_list_[sensor_id][id].object_quality.obj_vrellong_rms.data =
               CALC_Obj_2_Quality_Obj_VrelLong_rms(GET_Obj_2_Quality_Obj_VrelLong_rms(msg.data), 1.0);
 
-      object_map_[id].object_quality.obj_vrellat_rms.data =
+      object_map_list_[sensor_id][id].object_quality.obj_vrellat_rms.data =
               CALC_Obj_2_Quality_Obj_VrelLat_rms(GET_Obj_2_Quality_Obj_VrelLat_rms(msg.data), 1.0);
 
   }
 
   //Object Extended Information
   //for each Obj_3_ExtInfo message the existing object in the map has to be updated
-  if (msg.id == ID_Obj_3_Extended) {
+  if (Get_MsgID0_From_MsgID(msg.id) == ID_Obj_3_Extended) {
 
       int id = GET_Obj_3_Extended_Obj_ID(msg.data);
 
-      object_map_[id].object_extended.obj_arellong.data =
+      object_map_list_[sensor_id][id].object_extended.obj_arellong.data =
               CALC_Obj_3_Extended_Obj_ArelLong(GET_Obj_3_Extended_Obj_ArelLong(msg.data), 1.0);
 
-      object_map_[id].object_extended.obj_arellat.data =
+      object_map_list_[sensor_id][id].object_extended.obj_arellat.data =
               CALC_Obj_3_Extended_Obj_ArelLat(GET_Obj_3_Extended_Obj_ArelLat(msg.data), 1.0);
 
-      object_map_[id].object_extended.obj_class.data =
+      object_map_list_[sensor_id][id].object_extended.obj_class.data =
               CALC_Obj_3_Extended_Obj_Class(GET_Obj_3_Extended_Obj_Class(msg.data), 1.0);
 
-      object_map_[id].object_extended.obj_orientationangle.data =
+      object_map_list_[sensor_id][id].object_extended.obj_orientationangle.data =
               CALC_Obj_3_Extended_Obj_OrientationAngle(GET_Obj_3_Extended_Obj_OrientationAngle(msg.data), 1.0);
 
-      object_map_[id].object_extended.obj_length.data =
+      object_map_list_[sensor_id][id].object_extended.obj_length.data =
               CALC_Obj_3_Extended_Obj_Length(GET_Obj_3_Extended_Obj_Length(msg.data), 1.0);
 
-      object_map_[id].object_extended.obj_width.data =
+      object_map_list_[sensor_id][id].object_extended.obj_width.data =
               CALC_Obj_3_Extended_Obj_Width(GET_Obj_3_Extended_Obj_Width(msg.data), 1.0);
 
       object_count = object_count + 1;
@@ -239,13 +261,13 @@ void radar_conti_ars408::handle_object_list(const can_msgs::msg::Frame msg) {
   };
 }
 
-void radar_conti_ars408::publish_object_map() {
+void radar_conti_ars408::publish_object_map(int sensor_id) {
 
   visualization_msgs::msg::MarkerArray marker_array;
   radar_msgs::msg::RadarTracks radar_tracks;
 
   radar_tracks.header.stamp = rclcpp_lifecycle::LifecycleNode::now();
-  radar_tracks.header.frame_id = radar_link_;
+  radar_tracks.header.frame_id = radar_link_names[sensor_id];
 
   marker_array.markers.clear();
 
@@ -253,14 +275,14 @@ void radar_conti_ars408::publish_object_map() {
   visualization_msgs::msg::Marker ma;
   ma.action=3;
   marker_array.markers.push_back(ma);
-  marker_array_publisher_->publish(marker_array);
+  marker_array_publishers_[sensor_id]->publish(marker_array);
   marker_array.markers.clear();
 
   //marker for ego car
   visualization_msgs::msg::Marker mEgoCar;
 
   mEgoCar.header.stamp = rclcpp_lifecycle::LifecycleNode::now();
-  mEgoCar.header.frame_id = radar_link_;
+  mEgoCar.header.frame_id = radar_link_names[sensor_id];
   mEgoCar.ns = "";
   mEgoCar.id = 999;
 
@@ -291,13 +313,13 @@ void radar_conti_ars408::publish_object_map() {
   marker_array.markers.push_back(mEgoCar);
 
   std::map<int, radar_conti_ars408_msgs::msg::Object>::iterator itr;
-  
-  for (itr = object_map_.begin(); itr != object_map_.end(); ++itr) {
+
+  for (itr = object_map_list_[sensor_id].begin(); itr != object_map_list_[sensor_id].end(); ++itr) {
 
       visualization_msgs::msg::Marker mobject;
 
       mobject.header.stamp = rclcpp_lifecycle::LifecycleNode::now();
-      mobject.header.frame_id = radar_link_;
+      mobject.header.frame_id = radar_link_names[sensor_id];
       mobject.ns = "";
       mobject.id = itr->first;
       mobject.type = 1; //Cube
@@ -348,9 +370,9 @@ void radar_conti_ars408::publish_object_map() {
 
   }
 
-  marker_array_publisher_->publish(marker_array);
-  radar_tracks_publisher_->publish(radar_tracks);
-            
+  marker_array_publishers_[sensor_id]->publish(marker_array);
+  radar_tracks_publishers_[sensor_id]->publish(radar_tracks);
+          
 }
 
 void radar_conti_ars408::setFilter(
@@ -358,9 +380,13 @@ void radar_conti_ars408::setFilter(
     std::shared_ptr<radar_conti_ars408_msgs::srv::SetFilter::Response> response)
 {
 
+  //TODO: TEST FILTER SETTING WITH SENSOR ID (ALEX)
+  
   can_msgs::msg::Frame msg;
 
   msg.id = ID_FilterCfg;
+  Set_SensorID_In_MsgID(msg.id, request->sensor_id);
+  RCLCPP_INFO(this->get_logger(), "msg.id: %i", msg.id);
   msg.dlc = 5;
   SET_FilterCfg_FilterCfg_Active(msg.data, 1);
   SET_FilterCfg_FilterCfg_Valid(msg.data, 1);

@@ -172,13 +172,18 @@ ros2socketcan canChannel0;
     std::string object_list_topic_name_;
     std::string marker_array_topic_name_;
     std::string radar_tracks_topic_name_;    
-    std::string pub_tf_topic_name = "/tf";
+    std::string pub_tf_topic_name = "tf";
     std::string radar_link_;
 
     rclcpp_lifecycle::LifecyclePublisher<radar_conti_ars408_msgs::msg::ObjectList>::SharedPtr object_list_publisher_;
     rclcpp_lifecycle::LifecyclePublisher<tf2_msgs::msg::TFMessage>::SharedPtr tf_publisher_;
     rclcpp_lifecycle::LifecyclePublisher<visualization_msgs::msg::MarkerArray>::SharedPtr marker_array_publisher_;
     rclcpp_lifecycle::LifecyclePublisher<radar_msgs::msg::RadarTracks>::SharedPtr radar_tracks_publisher_;
+
+    std::vector<rclcpp_lifecycle::LifecyclePublisher<radar_conti_ars408_msgs::msg::ObjectList>::SharedPtr> object_list_publishers_;
+    std::vector<rclcpp_lifecycle::LifecyclePublisher<tf2_msgs::msg::TFMessage>::SharedPtr> tf_publishers_;
+    std::vector<rclcpp_lifecycle::LifecyclePublisher<visualization_msgs::msg::MarkerArray>::SharedPtr> marker_array_publishers_;
+    std::vector<rclcpp_lifecycle::LifecyclePublisher<radar_msgs::msg::RadarTracks>::SharedPtr> radar_tracks_publishers_;
 
     rclcpp::Service<radar_conti_ars408_msgs::srv::SetFilter>::SharedPtr set_filter_service_;
 
@@ -187,12 +192,14 @@ ros2socketcan canChannel0;
 //create handle_object_list
     void handle_object_list(const can_msgs::msg::Frame);
 //create publish_object_map
-    void publish_object_map();
+    void publish_object_map(int sensor_id);
 //create map container for object list
     std::map<int,radar_conti_ars408_msgs::msg::Object> object_map_;
+    std::vector<std::map<int,radar_conti_ars408_msgs::msg::Object>> object_map_list_;
 
 //create data structures for radar object list
     radar_conti_ars408_msgs::msg::ObjectList object_list_;
+    std::vector<radar_conti_ars408_msgs::msg::ObjectList> object_list_list_;
 
 //additional variables
     int operation_mode_;
@@ -202,6 +209,8 @@ ros2socketcan canChannel0;
     std::string can_channel_;
 
     std::unique_ptr<bond::Bond> bond_{nullptr};
+
+    std::vector<std::string> radar_link_names;
 
 // ##################################
 
