@@ -26878,5 +26878,28 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_AmbigState
  */
-#define Cluster_2_Quality_Cluster_AmbigState_Invalid             0
+#define Cluster_2_Quality_Cluster_AmbigState_Invalid             0\
 
+#define Get_MsgID0_From_MsgID(id) (0 \
+    | (((id) >> 8) & 0xF) << 8 /* Extract 3rd digit and position it */ \
+    | (((id) >> 0) & 0xF) << 0 /* Extract 1st digit and position it */ \
+)
+
+#define Get_SensorID_From_MsgID(id) (0 \
+    | (((id) >> 4) & 0xF) /* Extract 2nd (middle) digit */ \
+)
+
+#define Set_SensorID_In_MsgID(buf, id) { \
+	buf &= (0xF0F); \
+	buf |= (id & 0xF) << 4;\ 
+}
+//     // | (((buf) >> 8) & 0xF) << 8 /* Keep the most significant digit */ \
+//     // | ((id) & 0xF) << 4 /* Insert the new middle digit */ \
+//     // | ((buf) & 0xF) /* Keep the least significant digit */ \
+// )
+// #define SET_FilterCfg_FilterCfg_Max_NofObj(buf, val) { \
+// 	buf[3] &= ~(0x0f << 0); \
+// 	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+// 	buf[4] &= ~(0xff << 0); \
+// 	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
+// }

@@ -1,4 +1,5 @@
 std_msgs/Int32 obj_id
+std_msgs/Int32 sensor_id
 ObjectGeneral object_general
 ObjectExtended object_extended
 ObjectQuality object_quality
