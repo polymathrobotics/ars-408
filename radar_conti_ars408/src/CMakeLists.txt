@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.5)
 project(radar_conti_ars408)
 
 # Default to C++14
-if(NOT CMAKE_CXX_STANDARD)
+if(NOT "${CMAKE_CXX_STANDARD}")
   set(CMAKE_CXX_STANDARD 14)
 endif()
 
@@ -40,6 +40,7 @@ find_package(ros2socketcan_bridge REQUIRED)
 find_package(ament_index_cpp REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 find_package(radar_msgs REQUIRED)
+find_package(nav2_dynamic_msgs REQUIRED)
 find_package(bondcpp REQUIRED)
 find_package(bond REQUIRED)
 ##########################################################
@@ -83,6 +84,7 @@ ament_target_dependencies(
   radar_conti_ars408_msgs
   can_msgs
   radar_msgs
+  nav2_dynamic_msgs
   visualization_msgs
   tf2_ros
   ros2socketcan_bridge

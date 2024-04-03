@@ -43,18 +43,23 @@ rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn radar_
   RCUTILS_LOG_INFO_NAMED(get_name(), "on_configure() is called.");
   auto node = shared_from_this();
   node->declare_parameter("can_channel", rclcpp::ParameterValue("can0"));
-  node->declare_parameter("object_list_topic_name", rclcpp::ParameterValue("/ars408/objectlist"));
-  node->declare_parameter("marker_array_topic_name", rclcpp::ParameterValue("/ars408/marker_array"));
-  node->declare_parameter("radar_tracks_topic_name", rclcpp::ParameterValue("/ars408/radar_tracks"));
+  node->declare_parameter("object_list_topic_name", rclcpp::ParameterValue("ars408/objectlist"));
+  node->declare_parameter("marker_array_topic_name", rclcpp::ParameterValue("ars408/marker_array"));
+  node->declare_parameter("radar_tracks_topic_name", rclcpp::ParameterValue("ars408/radar_tracks"));
+  node->declare_parameter("obstacle_array_topic_name", rclcpp::ParameterValue("ars408/obstacle_array"));
   node->declare_parameter("radar_link", rclcpp::ParameterValue("radar_link"));
   
   node->get_parameter("can_channel", can_channel_);
   node->get_parameter("object_list_topic_name", object_list_topic_name_);
   node->get_parameter("marker_array_topic_name", marker_array_topic_name_);
   node->get_parameter("radar_tracks_topic_name", radar_tracks_topic_name_);
+  node->get_parameter("obstacle_array_topic_name", obstacle_array_topic_name_);
   node->get_parameter("radar_link", radar_link_);
 
-  auto radar_tracks_qos = rclcpp::QoS(rclcpp::KeepLast(5), rmw_qos_profile_sensor_data);
+  // auto radar_tracks_qos = rclcpp::QoS(rclcpp::KeepLast(5), rmw_qos_profile_sensor_data);
+
+  auto radar_tracks_qos = rclcpp::QoS(rclcpp::KeepLast(5)).reliability(rclcpp::ReliabilityPolicy::Reliable).durability(rclcpp::DurabilityPolicy::Volatile);
+
   size_t topic_ind = 0;
   bool more_params = false;
   do {
@@ -75,6 +80,7 @@ rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn radar_
       tf_publishers_.push_back(this->create_publisher<tf2_msgs::msg::TFMessage>(parameter.as_string() + "/" + pub_tf_topic_name, qos));
       marker_array_publishers_.push_back(this->create_publisher<visualization_msgs::msg::MarkerArray>(parameter.as_string() + "/" + marker_array_topic_name_, qos));
       radar_tracks_publishers_.push_back(this->create_publisher<radar_msgs::msg::RadarTracks>(parameter.as_string() + "/" + radar_tracks_topic_name_, radar_tracks_qos));
+      obstacle_array_publishers_.push_back(this->create_publisher<nav2_dynamic_msgs::msg::ObstacleArray>(parameter.as_string() + "/" + obstacle_array_topic_name_, radar_tracks_qos));
       object_map_list_.push_back(std::map<int, radar_conti_ars408_msgs::msg::Object>());
       object_list_list_.push_back(radar_conti_ars408_msgs::msg::ObjectList());
 
@@ -88,6 +94,8 @@ rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn radar_
   object_count = 0.0;
   set_filter_service_ = create_service<radar_conti_ars408_msgs::srv::SetFilter>("/set_filter", std::bind(&radar_conti_ars408::setFilter, this, std::placeholders::_1, std::placeholders::_2));
 
+  generateUUIDTable();
+  
   return rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::SUCCESS; 
 }
 
@@ -113,6 +121,7 @@ rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn radar_
     tf_publishers_[i]->on_activate();
     marker_array_publishers_[i]->on_activate();
     radar_tracks_publishers_[i]->on_activate();
+    obstacle_array_publishers_[i]->on_activate();
   }
 
   bond_ = std::make_unique<bond::Bond>(std::string("bond"), this->get_name(), shared_from_this());
@@ -141,6 +150,22 @@ rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn radar_
   return rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::SUCCESS;
 }
 
+unique_identifier_msgs::msg::UUID radar_conti_ars408::generateRandomUUID()
+{
+  unique_identifier_msgs::msg::UUID uuid;
+  std::mt19937 gen(std::random_device{}());
+  std::independent_bits_engine<std::mt19937, 8, uint8_t> bit_eng(gen);
+  std::generate(uuid.uuid.begin(), uuid.uuid.end(), bit_eng);
+  return uuid;
+}
+
+void radar_conti_ars408::generateUUIDTable()
+{
+  for (size_t i = 0; i <= max_radar_id; i++) {
+    UUID_table_.emplace_back(radar_conti_ars408::generateRandomUUID());
+  }
+}
+
 void radar_conti_ars408::can_receive_callback(const can_msgs::msg::Frame msg)
 {    
   
@@ -162,6 +187,10 @@ void radar_conti_ars408::can_receive_callback(const can_msgs::msg::Frame msg)
 void radar_conti_ars408::handle_object_list(const can_msgs::msg::Frame msg) {
 
   int sensor_id = Get_SensorID_From_MsgID(msg.id); 
+
+  //TODO: GET UUID FROM MSGID
+  //TODO: GET PROBABILTY OF EXISTENCE
+  //TODO: GET VELOCITY (I kind of do already)
   
   if (Get_MsgID0_From_MsgID(msg.id) == ID_Obj_0_Status) {
     publish_object_map(sensor_id);
@@ -230,6 +259,9 @@ void radar_conti_ars408::handle_object_list(const can_msgs::msg::Frame msg) {
       object_map_list_[sensor_id][id].object_quality.obj_vrellat_rms.data =
               CALC_Obj_2_Quality_Obj_VrelLat_rms(GET_Obj_2_Quality_Obj_VrelLat_rms(msg.data), 1.0);
 
+      object_map_list_[sensor_id][id].object_quality.obj_probofexist.data =
+              CALC_Obj_2_Quality_Obj_ProbOfExist(GET_Obj_2_Quality_Obj_ProbOfExist(msg.data), 1.0);
+
   }
 
   //Object Extended Information
@@ -265,9 +297,12 @@ void radar_conti_ars408::publish_object_map(int sensor_id) {
 
   visualization_msgs::msg::MarkerArray marker_array;
   radar_msgs::msg::RadarTracks radar_tracks;
+  nav2_dynamic_msgs::msg::ObstacleArray obstacle_array;
 
   radar_tracks.header.stamp = rclcpp_lifecycle::LifecycleNode::now();
   radar_tracks.header.frame_id = radar_link_names[sensor_id];
+
+  obstacle_array.header = radar_tracks.header;
 
   marker_array.markers.clear();
 
@@ -348,12 +383,13 @@ void radar_conti_ars408::publish_object_map(int sensor_id) {
 
 
       radar_msgs::msg::RadarTrack radar_track;
+      radar_track.uuid = UUID_table_[itr->first];
       radar_track.position.x = itr->second.object_general.obj_distlong.data;
       radar_track.position.y = itr->second.object_general.obj_distlat.data; 
       radar_track.position.z = 1.0;
 
-      radar_track.velocity.x = 0.0;
-      radar_track.velocity.y = 0.0;
+      radar_track.velocity.x = itr->second.object_general.obj_vrellong.data;
+      radar_track.velocity.y = itr->second.object_general.obj_vrellat.data;;
       radar_track.velocity.z = 0.0;
 
       radar_track.acceleration.x = 0.0;
@@ -364,14 +400,21 @@ void radar_conti_ars408::publish_object_map(int sensor_id) {
       radar_track.size.y = itr->second.object_extended.obj_width.data;
       radar_track.size.z = 0.0;
 
+      nav2_dynamic_msgs::msg::Obstacle obstacle;
+      obstacle.score = itr->second.object_quality.obj_probofexist.data;
+      obstacle.uuid = radar_track.uuid;
+      obstacle.position = radar_track.position;
+      obstacle.velocity = radar_track.velocity;
+      obstacle.size = radar_track.size;
 
       marker_array.markers.push_back(mobject); 
       radar_tracks.tracks.push_back(radar_track);
-
+      obstacle_array.obstacles.push_back(obstacle);
   }
 
   marker_array_publishers_[sensor_id]->publish(marker_array);
   radar_tracks_publishers_[sensor_id]->publish(radar_tracks);
+  obstacle_array_publishers_[sensor_id]->publish(obstacle_array);
           
 }
 
