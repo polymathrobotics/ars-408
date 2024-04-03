@@ -59,10 +59,18 @@
 #include "radar_msgs/msg/radar_track.hpp"
 #include "radar_msgs/msg/radar_tracks.hpp"
 
+#include "nav2_dynamic_msgs/msg/obstacle.hpp"
+#include "nav2_dynamic_msgs/msg/obstacle_array.hpp"
+
 #include "ros2socketcan_bridge/ros2socketcan.h"
 #include <ars_408_can_defines.h>
 
 #include "bondcpp/bond.hpp"
+
+#include "unique_identifier_msgs/msg/uuid.hpp"
+
+#include <unordered_map>
+#include <random>
 
 constexpr char DEFAULT_NODE_NAME[] = "RADAR_CONTI_ARS408";
 
@@ -161,6 +169,9 @@ public:
             const std::shared_ptr<radar_conti_ars408_msgs::srv::SetFilter::Request> request,
             std::shared_ptr<radar_conti_ars408_msgs::srv::SetFilter::Response> response);
 
+        unique_identifier_msgs::msg::UUID generateRandomUUID();
+        void generateUUIDTable();
+
 private:
 
 
@@ -171,9 +182,13 @@ ros2socketcan canChannel0;
     rclcpp::QoS qos{10};
     std::string object_list_topic_name_;
     std::string marker_array_topic_name_;
-    std::string radar_tracks_topic_name_;    
+    std::string radar_tracks_topic_name_;  
+    std::string obstacle_array_topic_name_;  
     std::string pub_tf_topic_name = "tf";
     std::string radar_link_;
+
+    uint16_t max_radar_id = 512;
+    std::vector<unique_identifier_msgs::msg::UUID> UUID_table_;
 
     rclcpp_lifecycle::LifecyclePublisher<radar_conti_ars408_msgs::msg::ObjectList>::SharedPtr object_list_publisher_;
     rclcpp_lifecycle::LifecyclePublisher<tf2_msgs::msg::TFMessage>::SharedPtr tf_publisher_;
@@ -184,6 +199,7 @@ ros2socketcan canChannel0;
     std::vector<rclcpp_lifecycle::LifecyclePublisher<tf2_msgs::msg::TFMessage>::SharedPtr> tf_publishers_;
     std::vector<rclcpp_lifecycle::LifecyclePublisher<visualization_msgs::msg::MarkerArray>::SharedPtr> marker_array_publishers_;
     std::vector<rclcpp_lifecycle::LifecyclePublisher<radar_msgs::msg::RadarTracks>::SharedPtr> radar_tracks_publishers_;
+    std::vector<rclcpp_lifecycle::LifecyclePublisher<nav2_dynamic_msgs::msg::ObstacleArray>::SharedPtr> obstacle_array_publishers_;
 
     rclcpp::Service<radar_conti_ars408_msgs::srv::SetFilter>::SharedPtr set_filter_service_;
 

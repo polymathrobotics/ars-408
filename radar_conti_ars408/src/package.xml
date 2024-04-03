@@ -22,6 +22,8 @@
   <build_depend>radar_conti_ars408_msgs</build_depend>
   <build_depend>can_msgs</build_depend>
   <build_depend>radar_msgs</build_depend>
+  <build_depend>nav2_dynamic_msgs</build_depend>
+  <build_depend>unique_identifier_msgs</build_depend>
 
   <exec_depend>boost</exec_depend>	  
   <exec_depend>example_interfaces</exec_depend>
@@ -36,7 +38,9 @@
   <exec_depend>radar_conti_ars408_msgs</exec_depend>
   <exec_depend>can_msgs</exec_depend>
   <exec_depend>radar_msgs</exec_depend>
-
+  <exec_depend>nav2_dynamic_msgs</exec_depend>
+  <exec_depend>unique_identifier_msgs</exec_depend>
+  
   <depend>bondcpp</depend>
   <depend>bond</depend>
 
