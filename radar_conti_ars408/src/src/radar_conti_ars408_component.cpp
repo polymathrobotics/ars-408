@@ -169,6 +169,13 @@ void radar_conti_ars408::generateUUIDTable()
 void radar_conti_ars408::can_receive_callback(const can_msgs::msg::Frame msg)
 {    
   
+  int sensor_id = Get_SensorID_From_MsgID(msg.id);
+  
+  //If the sensor_id is greater than the size of the number of object lists breka
+  if(sensor_id > object_list_list_.size()-1){
+      return;
+  }
+  
   if (Get_MsgID0_From_MsgID(msg.id) == ID_RadarState) {
       operation_mode_ =CALC_RadarState_RadarState_OutputTypeCfg(GET_RadarState_RadarState_OutputTypeCfg(msg.data),1.0);
   }
@@ -187,14 +194,9 @@ void radar_conti_ars408::can_receive_callback(const can_msgs::msg::Frame msg)
 void radar_conti_ars408::handle_object_list(const can_msgs::msg::Frame msg) {
 
   int sensor_id = Get_SensorID_From_MsgID(msg.id); 
-
-  //TODO: GET UUID FROM MSGID
-  //TODO: GET PROBABILTY OF EXISTENCE
-  //TODO: GET VELOCITY (I kind of do already)
   
   if (Get_MsgID0_From_MsgID(msg.id) == ID_Obj_0_Status) {
     publish_object_map(sensor_id);
-    //TODO: Initialize _lists?
     object_list_list_[sensor_id].header.stamp = rclcpp_lifecycle::LifecycleNode::now();
     object_list_list_[sensor_id].object_count.data = GET_Obj_0_Status_Obj_NofObjects(msg.data);
     object_map_list_[sensor_id].clear();
@@ -313,39 +315,7 @@ void radar_conti_ars408::publish_object_map(int sensor_id) {
   marker_array_publishers_[sensor_id]->publish(marker_array);
   marker_array.markers.clear();
 
-  //marker for ego car
-  visualization_msgs::msg::Marker mEgoCar;
-
-  mEgoCar.header.stamp = rclcpp_lifecycle::LifecycleNode::now();
-  mEgoCar.header.frame_id = radar_link_names[sensor_id];
-  mEgoCar.ns = "";
-  mEgoCar.id = 999;
-
-  //if you want to use a cube comment out the next 2 lines
-  mEgoCar.type = visualization_msgs::msg::Marker::MESH_RESOURCE;
-  mEgoCar.type = 1; // cube
-  mEgoCar.pose.position.x = -2.0;
-  mEgoCar.pose.position.y = 0.0;
-  mEgoCar.pose.position.z = 1.0;
-
   tf2::Quaternion myQuaternion;
-  myQuaternion.setRPY(0, 0, M_PI/2);
-
-  mEgoCar.pose.orientation.w = myQuaternion.getW();
-  mEgoCar.pose.orientation.x = myQuaternion.getX();
-  mEgoCar.pose.orientation.y = myQuaternion.getY();
-  mEgoCar.pose.orientation.z = myQuaternion.getZ();
-  mEgoCar.scale.x = 1.0;
-  mEgoCar.scale.y = 1.0;
-  mEgoCar.scale.z = 1.0;
-  mEgoCar.color.r = 0.0;
-  mEgoCar.color.g = 0.0;
-  mEgoCar.color.b = 1.0;
-  mEgoCar.color.a = 1.0;
-  mEgoCar.lifetime = rclcpp::Duration::from_seconds(0.2);
-  mEgoCar.frame_locked = false;
-
-  marker_array.markers.push_back(mEgoCar);
 
   std::map<int, radar_conti_ars408_msgs::msg::Object>::iterator itr;
 
@@ -361,7 +331,6 @@ void radar_conti_ars408::publish_object_map(int sensor_id) {
       mobject.action = 0; // add/modify
       mobject.pose.position.x = itr->second.object_general.obj_distlong.data;
       mobject.pose.position.y = itr->second.object_general.obj_distlat.data;
-      mobject.pose.position.z = 1.0;
 
       double yaw = itr->second.object_extended.obj_orientationangle.data*3.1416/180.0;
 
@@ -371,9 +340,6 @@ void radar_conti_ars408::publish_object_map(int sensor_id) {
       mobject.pose.orientation.x = myQuaternion.getX();
       mobject.pose.orientation.y = myQuaternion.getY();
       mobject.pose.orientation.z = myQuaternion.getZ();
-      mobject.scale.x = itr->second.object_extended.obj_length.data;
-      mobject.scale.y = itr->second.object_extended.obj_width.data;
-      mobject.scale.z = 1.0;
       mobject.color.r = 0.0;
       mobject.color.g = 1.0;
       mobject.color.b = 0.0;
@@ -386,8 +352,8 @@ void radar_conti_ars408::publish_object_map(int sensor_id) {
       radar_track.uuid = UUID_table_[itr->first];
       radar_track.position.x = itr->second.object_general.obj_distlong.data;
       radar_track.position.y = itr->second.object_general.obj_distlat.data; 
-      radar_track.position.z = 1.0;
-
+      radar_track.position.z = 0.0;
+      
       radar_track.velocity.x = itr->second.object_general.obj_vrellong.data;
       radar_track.velocity.y = itr->second.object_general.obj_vrellat.data;;
       radar_track.velocity.z = 0.0;
@@ -398,7 +364,9 @@ void radar_conti_ars408::publish_object_map(int sensor_id) {
 
       radar_track.size.x = itr->second.object_extended.obj_length.data;
       radar_track.size.y = itr->second.object_extended.obj_width.data;
-      radar_track.size.z = 0.0;
+      radar_track.size.z = 1.0;
+
+      
 
       nav2_dynamic_msgs::msg::Obstacle obstacle;
       obstacle.score = itr->second.object_quality.obj_probofexist.data;
@@ -406,6 +374,10 @@ void radar_conti_ars408::publish_object_map(int sensor_id) {
       obstacle.position = radar_track.position;
       obstacle.velocity = radar_track.velocity;
       obstacle.size = radar_track.size;
+
+      mobject.pose.position = radar_track.position;
+      mobject.scale = radar_track.size;
+      
 
       marker_array.markers.push_back(mobject); 
       radar_tracks.tracks.push_back(radar_track);
