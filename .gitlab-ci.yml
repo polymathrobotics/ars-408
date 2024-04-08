@@ -1,10 +1,10 @@
 variables:
-  VCS_ARGS: --recursive
+  REPOS_FILE: repos.yaml
 
 include:
 - project: 'polymathrobotics/ci/ci_templates'
   ref: main
-  file: '/ros/ros1_container/containerize.impl.yml'
+  file: '/ros/ros2_package.impl.yml'
 - project: 'polymathrobotics/ci/ci_templates'
   ref: main
   file: '/ros/ros2_container/containerize.impl.yml'
@@ -18,8 +18,27 @@ include:
   ref: main
   file: '/common/stages.yml'
 
-stages:
-  - build
+build_and_test_conti_driver:
+  variables:
+    PACKAGE_NAME: radar_conti_ars408
+  extends: .ros2_build_and_test
+
+eval_conti_driver:
+  extends: .ros2_evaluate
+  needs:
+    - job: build_and_test_conti_driver
+      artifacts: true
+
+build_and_test_conti_msgs:
+  variables:
+    PACKAGE_NAME: radar_conti_ars408_msgs
+  extends: .ros2_build_and_test
+
+eval_conti_msgs:
+  extends: .ros2_evaluate
+  needs:
+    - job: build_and_test_conti_msgs
+      artifacts: true
 
 build_ars408_humble:
   variables:
@@ -27,7 +46,6 @@ build_ars408_humble:
     DOCKER_TAG: humble
     DOCKER_PUSH: --push
     DOCKERFILE_DIR: ars-408
-  stage: build
   extends: .ros2_containerize
   only:
     - main
