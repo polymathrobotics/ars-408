@@ -1,7 +1,9 @@
 # syntax=docker/dockerfile:1
 ARG BASE_IMAGE=docker.io/polymathrobotics/ros_base:humble
-FROM $BASE_IMAGE
 
+FROM ${BASE_IMAGE}
+
+ARG SRC_DIR=/src
 ARG COLCON_WS=/colcon_ws
 ARG COLCON_EXTEND=/opt/ros/${ROS_DISTRO}
 ARG DEBIAN_FRONTEND=noninteractive
@@ -11,16 +13,12 @@ ARG COLCON_SRC=${COLCON_WS}/src
 ARG POLYMATH_INSTALL=/opt/polymathrobotics/
 ARG COLCON_BUILD_ARGS=
 
-# TODO: make this included with git/vcs
-COPY CAN_Recording ${COLCON_SRC}/Can_Recording
-COPY radar_conti_ars408 ${COLCON_SRC}/radar_conti_ars408
-COPY radar_conti_ars408_msgs ${COLCON_SRC}/radar_conti_ars408_msgs
-COPY ros2_socketcan_bridge ${COLCON_SRC}/ros2_socketcan_bridge
+COPY ${SRC_DIR} ${COLCON_SRC}
 
 # Install dependencies
 RUN apt-get update \
   && rosdep update --rosdistro "${ROS_DISTRO}" \
-  && rosdep install -i -y --from-paths ${COLCON_SRC} \
+  && rosdep install -i -y --from-paths ${COLCON_SRC} --skip-keys="rviz2 gazebo_ros gazebo_ros_pkgs gazebo_ros2_control gazebo_plugins gazebo" \
   && rm -rf /var/lib/apt/lists/*
 
 WORKDIR ${COLCON_WS}
@@ -33,8 +31,9 @@ RUN rm -rf src/* build/* log/*
 
 WORKDIR /
 # setup entrypoint
-COPY ./entrypoint.sh /
+COPY entrypoint.sh /
+
+RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["/bin/bash"]
-
