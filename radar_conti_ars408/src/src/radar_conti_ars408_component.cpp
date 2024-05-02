@@ -1,16 +1,3 @@
-// Copyright [2020] [Daniel Peter, peter@fh-aachen.de, Fachhochschule Aachen]
-//
-//Licensed under the Apache License, Version 2.0 (the "License");
-//you may not use this file except in compliance with the License.
-//You may obtain a copy of the License at
-//
-//  http://www.apache.org/licenses/LICENSE-2.0
-//Unless required by applicable law or agreed to in writing, software
-//distributed under the License is distributed on an "AS IS" BASIS,
-//WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//See the License for the specific language governing permissions and
-//limitations under the License.
-
 #include "../include/radar_conti_ars408_component.hpp"
 
 #include <chrono>
@@ -406,10 +393,15 @@ void radar_conti_ars408::publish_object_map(int sensor_id) {
       obstacle.position = radar_track.position;
       obstacle.velocity = radar_track.velocity;
       obstacle.size = radar_track.size;
+      obstacle.position_covariance.x = covariance[static_cast<int>(itr->second.object_quality.obj_distlong_rms.data)];
+      obstacle.position_covariance.y = covariance[static_cast<int>(itr->second.object_quality.obj_distlat_rms.data)];
+      obstacle.position_covariance.z = 0.0;
+      obstacle.velocity_covariance.x = covariance[static_cast<int>(itr->second.object_quality.obj_vrellong_rms.data)];
+      obstacle.velocity_covariance.y = covariance[static_cast<int>(itr->second.object_quality.obj_vrellat_rms.data)];
+      obstacle.velocity_covariance.z = 0.0;
 
       mobject.pose.position = radar_track.position;
       mobject.scale = radar_track.size;
-      
 
       marker_array.markers.push_back(mobject); 
       radar_tracks.tracks.push_back(radar_track);
