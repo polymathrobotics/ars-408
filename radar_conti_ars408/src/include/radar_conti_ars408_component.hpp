@@ -33,6 +33,7 @@
 #include <radar_conti_ars408_msgs/msg/cluster_list.hpp>
 #include <radar_conti_ars408_msgs/msg/radar_state.hpp>
 #include <radar_conti_ars408_msgs/msg/cluster_status.hpp>
+#include "radar_conti_ars408_msgs/msg/filter_state_cfg.hpp"
 #include <radar_conti_ars408_msgs/srv/set_filter.hpp>
 #include <tf2_ros/transform_broadcaster.h>
 #include <tf2_ros/static_transform_broadcaster.h>
@@ -165,7 +166,7 @@ public:
         rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn on_cleanup(
             const rclcpp_lifecycle::State&);
 
-        void setFilter(
+        void setFilterService(
             const std::shared_ptr<radar_conti_ars408_msgs::srv::SetFilter::Request> request,
             std::shared_ptr<radar_conti_ars408_msgs::srv::SetFilter::Response> response);
 
@@ -184,22 +185,19 @@ ros2socketcan canChannel0;
     std::string marker_array_topic_name_;
     std::string radar_tracks_topic_name_;  
     std::string obstacle_array_topic_name_;  
+    std::string filter_config_topic_name_;
     std::string pub_tf_topic_name = "tf";
     std::string radar_link_;
 
     uint16_t max_radar_id = 512;
     std::vector<unique_identifier_msgs::msg::UUID> UUID_table_;
 
-    rclcpp_lifecycle::LifecyclePublisher<radar_conti_ars408_msgs::msg::ObjectList>::SharedPtr object_list_publisher_;
-    rclcpp_lifecycle::LifecyclePublisher<tf2_msgs::msg::TFMessage>::SharedPtr tf_publisher_;
-    rclcpp_lifecycle::LifecyclePublisher<visualization_msgs::msg::MarkerArray>::SharedPtr marker_array_publisher_;
-    rclcpp_lifecycle::LifecyclePublisher<radar_msgs::msg::RadarTracks>::SharedPtr radar_tracks_publisher_;
-
     std::vector<rclcpp_lifecycle::LifecyclePublisher<radar_conti_ars408_msgs::msg::ObjectList>::SharedPtr> object_list_publishers_;
     std::vector<rclcpp_lifecycle::LifecyclePublisher<tf2_msgs::msg::TFMessage>::SharedPtr> tf_publishers_;
     std::vector<rclcpp_lifecycle::LifecyclePublisher<visualization_msgs::msg::MarkerArray>::SharedPtr> marker_array_publishers_;
     std::vector<rclcpp_lifecycle::LifecyclePublisher<radar_msgs::msg::RadarTracks>::SharedPtr> radar_tracks_publishers_;
     std::vector<rclcpp_lifecycle::LifecyclePublisher<nav2_dynamic_msgs::msg::ObstacleArray>::SharedPtr> obstacle_array_publishers_;
+    std::vector<rclcpp_lifecycle::LifecyclePublisher<radar_conti_ars408_msgs::msg::FilterStateCfg>::SharedPtr> filter_config_publishers_;
 
     rclcpp::Service<radar_conti_ars408_msgs::srv::SetFilter>::SharedPtr set_filter_service_;
 
@@ -209,6 +207,10 @@ ros2socketcan canChannel0;
     void handle_object_list(const can_msgs::msg::Frame);
 //create publish_object_map
     void publish_object_map(int sensor_id);
+//update filter
+    bool setFilter(const int & sensor_id, const int & active, const int & valid, const int & type, const int & index, const int & min_value, const int & max_value);
+    void updateFilterConfig(const can_msgs::msg::Frame& can_frame, const int & sensor_id);
+    void initializeFilterConfigs();
 //create map container for object list
     std::map<int,radar_conti_ars408_msgs::msg::Object> object_map_;
     std::vector<std::map<int,radar_conti_ars408_msgs::msg::Object>> object_map_list_;
@@ -217,24 +219,20 @@ ros2socketcan canChannel0;
     radar_conti_ars408_msgs::msg::ObjectList object_list_;
     std::vector<radar_conti_ars408_msgs::msg::ObjectList> object_list_list_;
 
+//create data structures for radar filter config
+    std::vector<radar_conti_ars408_msgs::msg::FilterStateCfg> radar_filter_configs_;
+
 //additional variables
     int operation_mode_;
-
     int object_count;
-
     std::string can_channel_;
 
     std::unique_ptr<bond::Bond> bond_{nullptr};
 
-    std::vector<std::string> radar_link_names;
+    std::vector<std::string> radar_link_names_;
+    std::vector<bool> filter_config_initialized_list_;
 
 // ##################################
-
-
-
-
-
-
 
 };
 
