@@ -50,6 +50,7 @@ rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn radar_
 
   size_t topic_ind = 0;
   bool more_params = false;
+  number_of_radars_ = 0;
   do {
     // Build the string in the form of "radar_link_X", where X is the sensor ID of
     // the rader on the CANBUS, then check if we have any parameters with that value. Users need
@@ -75,6 +76,7 @@ rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn radar_
       radar_filter_configs_.push_back(radar_conti_ars408_msgs::msg::FilterStateCfg());
       filter_config_initialized_list_.push_back(false);
       RCLCPP_WARN(this->get_logger(), "link_name is: %s", parameter.as_string().c_str());
+      number_of_radars_++;
     } else {
       more_params = false;
     }
@@ -154,7 +156,7 @@ unique_identifier_msgs::msg::UUID radar_conti_ars408::generateRandomUUID()
 
 void radar_conti_ars408::generateUUIDTable()
 {
-  for (size_t i = 0; i <= max_radar_id; i++) {
+  for (size_t i = 0; i <= (max_radar_id*number_of_radars_); i++) {
     UUID_table_.emplace_back(radar_conti_ars408::generateRandomUUID());
   }
 }
@@ -370,7 +372,7 @@ void radar_conti_ars408::publish_object_map(int sensor_id) {
       mobject.frame_locked = false;
 
       radar_msgs::msg::RadarTrack radar_track;
-      radar_track.uuid = UUID_table_[itr->first];
+      radar_track.uuid = UUID_table_[itr->first + max_radar_id * sensor_id];
       radar_track.position.x = itr->second.object_general.obj_distlong.data;
       radar_track.position.y = itr->second.object_general.obj_distlat.data; 
       radar_track.position.z = 0.0;
