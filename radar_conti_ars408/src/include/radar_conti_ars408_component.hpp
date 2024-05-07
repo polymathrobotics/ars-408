@@ -247,6 +247,7 @@ ros2socketcan canChannel0;
 //additional variables
     int operation_mode_;
     int object_count;
+    int number_of_radars_;
     std::string can_channel_;
 
     std::unique_ptr<bond::Bond> bond_{nullptr};
