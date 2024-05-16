@@ -10,3 +10,7 @@ index: <index>
 min_value: <min_value>
 max_value: <max_value>"
 ```
+
+Where `type` can be specified as follows:
+- Cluster Type = 0
+- Object Type = 1
