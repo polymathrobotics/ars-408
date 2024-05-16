@@ -38,3 +38,16 @@ The `sensor_id` parameter specifies the index of the sensor on the CAN bus
 The `min_value` and `max_value` parameter specifies the minimum and maximum values of the radar respectively.
 
 Further information about the filter configurations can be found in the ARS408 technical documentation
+
+# Configuring Sensor ID
+Ideally the sensors should be already configured prior to the use of the driver. With `can-utils`, one can configure the sensor with the following `cansend` command:
+
+```
+cansend can0 2<index of sensor to be changed>0#820000000<desired index>800000
+```
+
+If sensor 0 is to be changed to sensor 1, command would be as follows:
+
+```
+cansend can0 200#8200000001800000
+```
