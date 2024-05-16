@@ -11,6 +11,12 @@ min_value: <min_value>
 max_value: <max_value>"
 ```
 
-Where `type` can be specified as follows:
-- Cluster Type = 0
-- Object Type = 1
+The `type` parameter should be set based upon the setting of the ARS408:
+- 0: Cluster Mode
+- 1: Object Mode
+
+The `index` parameter specifies the property of the filter to be changed:
+- Number of Objects = 0
+- Distance = 1
+- Azimuth = 2
+- Relative oncoming velocity = 3
