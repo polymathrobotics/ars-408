@@ -82,6 +82,7 @@ rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn radar_
     }
   } while (more_params);
   
+  RCLCPP_WARN(this->get_logger(), "can_channel_ is: %s", can_channel_.c_str());
   canChannel0.Init(can_channel_.c_str(), std::bind(&radar_conti_ars408::can_receive_callback, this, _1));
   object_count = 0.0;
   set_filter_service_ = create_service<radar_conti_ars408_msgs::srv::SetFilter>("/set_filter", std::bind(&radar_conti_ars408::setFilterService, this, std::placeholders::_1, std::placeholders::_2));
