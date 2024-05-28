@@ -10,6 +10,7 @@
 #include "visibility_control.h"
 #include "rclcpp/rclcpp.hpp"
 
+#include "can_msgs/msg/frame.hpp"
 #include "std_msgs/msg/string.hpp"
 #include <geometry_msgs/msg/transform_stamped.hpp>
 #include <tf2_msgs/msg/tf_message.hpp>
@@ -48,6 +49,7 @@
 #include "nav2_dynamic_msgs/msg/obstacle.hpp"
 #include "nav2_dynamic_msgs/msg/obstacle_array.hpp"
 
+#include "ros2socketcan_bridge/ros2socketcan.h"
 #include <ars_408_can_defines.h>
 
 #include "bondcpp/bond.hpp"
@@ -191,6 +193,8 @@ namespace FHAC
 
     private:
         // ##############Task2################
+        // create CAN channel object
+        ros2socketcan canChannel0;
         // create Publisher
         rclcpp::QoS qos{10};
         std::string object_list_topic_name_;
@@ -240,6 +244,7 @@ namespace FHAC
         int number_of_radars_;
         std::string can_channel_;
 
+        std::unique_ptr<polymath::socketcan::SocketcanAdapter> socketcan_adapter_;
         std::unique_ptr<bond::Bond> bond_{nullptr};
 
         std::vector<std::string> radar_link_names_;
