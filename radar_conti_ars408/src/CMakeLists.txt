@@ -43,6 +43,7 @@ find_package(radar_msgs REQUIRED)
 find_package(nav2_dynamic_msgs REQUIRED)
 find_package(bondcpp REQUIRED)
 find_package(bond REQUIRED)
+find_package(socketcan_adapter REQUIRED)
 ##########################################################
 
 

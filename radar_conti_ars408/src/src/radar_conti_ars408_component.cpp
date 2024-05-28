@@ -12,6 +12,7 @@
 #include "std_msgs/msg/string.hpp"
 
 #include <ament_index_cpp/get_package_share_directory.hpp>
+#include "socketcan_adapter/socketcan_adapter.hpp"
 
 using std::placeholders::_1;
 using namespace std::chrono_literals;
