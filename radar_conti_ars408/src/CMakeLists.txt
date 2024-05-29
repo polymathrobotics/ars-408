@@ -61,7 +61,7 @@ include_directories(
   ${rmw_implementation_INCLUDE_DIRS}
   ${std_msgs_INCLUDE_DIRS}
   ${geometry_msgs_INCLUDE_DIRS}
-  ${ros2socketcan_bridge_INCLUDE_DIRS}
+  ${socketcan_adapter_INCLUDE_DIRS}
 )
 ##########################################################
 
@@ -88,7 +88,7 @@ ament_target_dependencies(
   nav2_dynamic_msgs
   visualization_msgs
   tf2_ros
-  ros2socketcan_bridge
+  socketcan_adapter
   bondcpp
   bond
   "rclcpp_lifecycle"

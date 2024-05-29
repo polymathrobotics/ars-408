@@ -48,8 +48,8 @@
 
 #include "nav2_dynamic_msgs/msg/obstacle.hpp"
 #include "nav2_dynamic_msgs/msg/obstacle_array.hpp"
+#include "socketcan_adapter/socketcan_adapter.hpp"
 
-#include "ros2socketcan_bridge/ros2socketcan.h"
 #include <ars_408_can_defines.h>
 
 #include "bondcpp/bond.hpp"
@@ -193,8 +193,7 @@ namespace FHAC
 
     private:
         // ##############Task2################
-        // create CAN channel object
-        ros2socketcan canChannel0;
+        std::unique_ptr<polymath::socketcan::SocketcanAdapter> socketcan_adapter_;
         // create Publisher
         rclcpp::QoS qos{10};
         std::string object_list_topic_name_;
@@ -218,14 +217,14 @@ namespace FHAC
         rclcpp::Service<radar_conti_ars408_msgs::srv::SetFilter>::SharedPtr set_filter_service_;
 
         // create can_receive_callback
-        void can_receive_callback(const can_msgs::msg::Frame);
+        void can_receive_callback(std::shared_ptr<const polymath::socketcan::CanFrame> frame);
         // create handle_object_list
-        void handle_object_list(const can_msgs::msg::Frame);
+        void handle_object_list(std::shared_ptr<const polymath::socketcan::CanFrame> frame);
         // create publish_object_map
         void publish_object_map(int sensor_id);
         // update filter
         bool setFilter(const int &sensor_id, const int &active, const int &valid, const int &type, const int &index, const int &min_value, const int &max_value);
-        void updateFilterConfig(const can_msgs::msg::Frame &can_frame, const int &sensor_id);
+        void updateFilterConfig(std::shared_ptr<const polymath::socketcan::CanFrame> frame, const int &sensor_id);
         void initializeFilterConfigs();
         // create map container for object list
         std::map<int, radar_conti_ars408_msgs::msg::Object> object_map_;
@@ -244,7 +243,6 @@ namespace FHAC
         int number_of_radars_;
         std::string can_channel_;
 
-        std::unique_ptr<polymath::socketcan::SocketcanAdapter> socketcan_adapter_;
         std::unique_ptr<bond::Bond> bond_{nullptr};
 
         std::vector<std::string> radar_link_names_;

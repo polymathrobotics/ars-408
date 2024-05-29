@@ -37,7 +37,7 @@ def generate_launch_description():
     can_channel_arg = DeclareLaunchArgument(
         'can_channel',
         default_value='',
-        description='Declare the CAN channel '
+        description='Declare the CAN channel'
     )
 
     lifecycle_nodes = ['radar_node']
