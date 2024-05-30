@@ -165,7 +165,7 @@ namespace FHAC
         radar_state_filter,
         radar_obj_status_filter,
         radar_obj_quality_filter,
-
+        radar_obj_extended,
     });
 
     auto cb = [this](std::unique_ptr<const polymath::socketcan::CanFrame> frame)
