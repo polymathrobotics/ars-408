@@ -625,10 +625,9 @@ namespace FHAC
     if (err.has_value())
     {
       RCLCPP_ERROR(this->get_logger(), "Error sending frame: %s", err.value().c_str());
+      return false;
     }
 
-    // canChannel0.CanSend(msg);
-    // socketcan_adapter_
     return true;
   }
 
