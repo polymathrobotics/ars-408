@@ -53,11 +53,11 @@ def generate_launch_description():
         parameters=[LaunchConfiguration('params_file')])
 
     ld = LaunchDescription()
-    ld.add_action(radar_node)
     ld.add_action(params_file_arg)
     ld.add_action(autostart_arg)
     ld.add_action(use_sim_time_arg)
     ld.add_action(namespace_arg)
+    ld.add_action(radar_node)
 
     ld.add_action(start_lifecycle_manager_cmd)
 
