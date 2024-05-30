@@ -268,8 +268,6 @@ namespace FHAC
 
     int sensor_id = Get_SensorID_From_MsgID(frame->get_id());
 
-    RCLCPP_INFO(this->get_logger(), "Sensor id: %i", sensor_id);
-
     // If the sensor_id is greater than the size of the number of object lists, break
     if (sensor_id > object_list_list_.size() - 1)
     {
@@ -541,81 +539,79 @@ namespace FHAC
     SET_FilterCfg_FilterCfg_Type(data, type);
     SET_FilterCfg_FilterCfg_Index(data, index);
 
-    RCLCPP_INFO(this->get_logger(), "msg_id %i", msg_id);
-
     switch (index)
     {
     case (0):
-      RCLCPP_INFO(this->get_logger(), "Setting Number Of Objects Filter");
+      RCLCPP_DEBUG(this->get_logger(), "Setting Number Of Objects Filter");
       SET_FilterCfg_FilterCfg_Max_NofObj(data, max_value);
       SET_FilterCfg_FilterCfg_Min_NofObj(data, min_value);
       break;
     case (1):
-      RCLCPP_INFO(this->get_logger(), "Setting Distance Filter");
+      RCLCPP_DEBUG(this->get_logger(), "Setting Distance Filter");
       SET_FilterCfg_FilterCfg_Max_Distance(data, max_value / 0.1);
       SET_FilterCfg_FilterCfg_Min_Distance(data, min_value / 0.1);
       break;
     case (2):
-      RCLCPP_INFO(this->get_logger(), "Setting Azimuth Filter");
+      RCLCPP_DEBUG(this->get_logger(), "Setting Azimuth Filter");
       SET_FilterCfg_FilterCfg_Max_Azimuth(data, max_value / 0.025);
       SET_FilterCfg_FilterCfg_Min_Azimuth(data, min_value / 0.025);
       break;
     case (3):
-      RCLCPP_INFO(this->get_logger(), "Setting Oncoming Velocity Filter");
+      RCLCPP_DEBUG(this->get_logger(), "Setting Oncoming Velocity Filter");
       SET_FilterCfg_FilterCfg_Max_VrelOncome(data, max_value / 0.0315);
       SET_FilterCfg_FilterCfg_Min_VrelOncome(data, min_value / 0.0315);
       break;
     case (4):
-      RCLCPP_INFO(this->get_logger(), "Setting Departing Velocity Filter");
+      RCLCPP_DEBUG(this->get_logger(), "Setting Departing Velocity Filter");
       SET_FilterCfg_FilterCfg_Max_VrelDepart(data, max_value / 0.0315);
       SET_FilterCfg_FilterCfg_Min_VrelDepart(data, min_value / 0.0315);
       break;
     case (5):
-      RCLCPP_INFO(this->get_logger(), "Setting RCS Filter");
+      RCLCPP_DEBUG(this->get_logger(), "Setting RCS Filter");
       SET_FilterCfg_FilterCfg_Max_RCS(data, max_value / 0.025);
       SET_FilterCfg_FilterCfg_Min_RCS(data, min_value / 0.025);
       break;
     case (6):
-      RCLCPP_INFO(this->get_logger(), "Setting Lifetime Filter");
+      RCLCPP_DEBUG(this->get_logger(), "Setting Lifetime Filter");
       SET_FilterCfg_FilterCfg_Max_Lifetime(data, max_value / 0.1);
       SET_FilterCfg_FilterCfg_Min_Lifetime(data, min_value / 0.1);
       break;
     case (7):
-      RCLCPP_INFO(this->get_logger(), "Setting Size Filter");
+      RCLCPP_DEBUG(this->get_logger(), "Setting Size Filter");
       SET_FilterCfg_FilterCfg_Max_Size(data, max_value / 0.025);
       SET_FilterCfg_FilterCfg_Min_Size(data, min_value / 0.025);
       break;
     case (8):
-      RCLCPP_INFO(this->get_logger(), "Setting Probability of Existence Filter");
+      RCLCPP_DEBUG(this->get_logger(), "Setting Probability of Existence Filter");
       SET_FilterCfg_FilterCfg_Max_ProbExists(data, max_value);
       SET_FilterCfg_FilterCfg_Min_ProbExists(data, min_value);
       break;
     case (9):
-      RCLCPP_INFO(this->get_logger(), "Setting Y Filter");
+      RCLCPP_DEBUG(this->get_logger(), "Setting Y Filter");
       SET_FilterCfg_FilterCfg_Max_Y(data, max_value / 0.2);
       SET_FilterCfg_FilterCfg_Min_Y(data, min_value / 0.2);
       break;
     case (10):
       // TODO: MAKE THIS 13BIT
-      RCLCPP_INFO(this->get_logger(), "X Filter currently not implemented");
+      RCLCPP_DEBUG(this->get_logger(), "X Filter currently not implemented");
       return false;
     case (11):
-      RCLCPP_INFO(this->get_logger(), "Setting Right Left Filter");
+      RCLCPP_DEBUG(this->get_logger(), "Setting Right Left Filter");
       SET_FilterCfg_FilterCfg_Max_VYRightLeft(data, max_value / 0.0315);
       SET_FilterCfg_FilterCfg_Min_VYRightLeft(data, min_value / 0.0315);
       break;
     case (12):
-      RCLCPP_INFO(this->get_logger(), "Setting X Oncoming Filter");
+      RCLCPP_DEBUG(this->get_logger(), "Setting X Oncoming Filter");
       SET_FilterCfg_FilterCfg_Max_VXOncome(data, max_value / 0.0315);
       SET_FilterCfg_FilterCfg_Min_VXOncome(data, min_value / 0.0315);
       break;
     case (13):
-      RCLCPP_INFO(this->get_logger(), "Setting Left Right Filter");
+      RCLCPP_DEBUG(this->get_logger(), "Setting Left Right Filter");
       SET_FilterCfg_FilterCfg_Max_VYLeftRight(data, max_value / 0.0315);
       SET_FilterCfg_FilterCfg_Min_VYLeftRight(data, min_value / 0.0315);
       break;
     case (14):
-      RCLCPP_INFO(this->get_logger(), "Setting X Departing Filter");
+      RCLCPP_DEBUG(this->get_logger(), "Setting X Departing Filter");
       SET_FilterCfg_FilterCfg_Max_VXDepart(data, max_value / 0.0315);
       SET_FilterCfg_FilterCfg_Min_VXDepart(data, min_value / 0.0315);
       break;
