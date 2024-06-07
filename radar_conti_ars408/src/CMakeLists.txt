@@ -36,13 +36,13 @@ find_package(can_msgs REQUIRED)
 find_package(radar_conti_ars408_msgs REQUIRED)
 find_package(visualization_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
-find_package(ros2socketcan_bridge REQUIRED)
 find_package(ament_index_cpp REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 find_package(radar_msgs REQUIRED)
 find_package(nav2_dynamic_msgs REQUIRED)
 find_package(bondcpp REQUIRED)
 find_package(bond REQUIRED)
+find_package(socketcan_adapter REQUIRED)
 ##########################################################
 
 
@@ -60,7 +60,7 @@ include_directories(
   ${rmw_implementation_INCLUDE_DIRS}
   ${std_msgs_INCLUDE_DIRS}
   ${geometry_msgs_INCLUDE_DIRS}
-  ${ros2socketcan_bridge_INCLUDE_DIRS}
+  ${socketcan_adapter_INCLUDE_DIRS}
 )
 ##########################################################
 
@@ -87,7 +87,7 @@ ament_target_dependencies(
   nav2_dynamic_msgs
   visualization_msgs
   tf2_ros
-  ros2socketcan_bridge
+  socketcan_adapter
   bondcpp
   bond
   "rclcpp_lifecycle"
