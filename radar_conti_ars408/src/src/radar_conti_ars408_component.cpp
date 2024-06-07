@@ -322,12 +322,6 @@ namespace FHAC
 
       // object ID
       int id = GET_Obj_1_General_Obj_ID(frame->get_data());
-
-      if (id == 0)
-      {
-        return;
-      }
-
       o.obj_id.data = GET_Obj_1_General_Obj_ID(frame->get_data());
 
       o.sensor_id.data = Get_SensorID_From_MsgID(frame->get_id());
@@ -367,11 +361,6 @@ namespace FHAC
 
       int id = GET_Obj_2_Quality_Obj_ID(frame->get_data());
 
-      if (id == 0)
-      {
-        return;
-      }
-
       object_map_list_[sensor_id][id].object_quality.obj_distlong_rms.data =
           CALC_Obj_2_Quality_Obj_DistLong_rms(GET_Obj_2_Quality_Obj_DistLong_rms(frame->get_data()), 1.0);
 
@@ -394,11 +383,6 @@ namespace FHAC
     {
 
       int id = GET_Obj_3_Extended_Obj_ID(frame->get_data());
-
-      if (id == 0)
-      {
-        return;
-      }
 
       object_map_list_[sensor_id][id].object_extended.obj_arellong.data =
           CALC_Obj_3_Extended_Obj_ArelLong(GET_Obj_3_Extended_Obj_ArelLong(frame->get_data()), 1.0);
