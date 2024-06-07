@@ -485,12 +485,26 @@ namespace FHAC
       obstacle.position = radar_track.position;
       obstacle.velocity = radar_track.velocity;
       obstacle.size = radar_track.size;
-      obstacle.position_covariance.x = covariance[static_cast<int>(itr->second.object_quality.obj_distlong_rms.data)];
-      obstacle.position_covariance.y = covariance[static_cast<int>(itr->second.object_quality.obj_distlat_rms.data)];
-      obstacle.position_covariance.z = 0.0;
-      obstacle.velocity_covariance.x = covariance[static_cast<int>(itr->second.object_quality.obj_vrellong_rms.data)];
-      obstacle.velocity_covariance.y = covariance[static_cast<int>(itr->second.object_quality.obj_vrellat_rms.data)];
-      obstacle.velocity_covariance.z = 0.0;
+      
+      obstacle.position_covariance[0] = covariance[static_cast<int>(itr->second.object_quality.obj_distlong_rms.data)];
+      obstacle.position_covariance[1] = 0.0;
+      obstacle.position_covariance[2] = 0.0;
+      obstacle.position_covariance[3] = 0.0;
+      obstacle.position_covariance[4] = covariance[static_cast<int>(itr->second.object_quality.obj_distlat_rms.data)];
+      obstacle.position_covariance[5] = 0.0;
+      obstacle.position_covariance[6] = 0.0;
+      obstacle.position_covariance[7] = 0.0;
+      obstacle.position_covariance[8] = 0.0;
+      
+      obstacle.velocity_covariance[0] = covariance[static_cast<int>(itr->second.object_quality.obj_vrellong_rms.data)];
+      obstacle.velocity_covariance[1] = 0.0;
+      obstacle.velocity_covariance[2] = 0.0;
+      obstacle.velocity_covariance[3] = 0.0;
+      obstacle.velocity_covariance[4] = covariance[static_cast<int>(itr->second.object_quality.obj_vrellat_rms.data)];
+      obstacle.velocity_covariance[5] = 0.0;
+      obstacle.velocity_covariance[6] = 0.0;
+      obstacle.velocity_covariance[7] = 0.0;
+      obstacle.velocity_covariance[8] = 0.0;
 
       mobject.pose.position = radar_track.position;
       mobject.scale = radar_track.size;
