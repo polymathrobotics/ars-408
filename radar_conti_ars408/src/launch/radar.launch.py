@@ -8,38 +8,12 @@ from pathlib import Path
 from nav2_common.launch import RewrittenYaml
 
 
-def launch_radar_node(context):
-    can_channel = LaunchConfiguration('can_channel').perform(
-        context)  # Here you'll get the runtime config value
-
-    # Conditionally set can_channel in radar_node_param_overrides if it has a non-empty value
-    radar_node_param_overrides = {}
-    if can_channel:
-        radar_node_param_overrides['can_channel'] = can_channel
-
-    radar_node = Node(
-        package='radar_conti_ars408',
-        executable='radar_conti_ars408_composition',
-        name='radar_node',
-        namespace=LaunchConfiguration('namespace'),
-        output='screen',
-        parameters=[LaunchConfiguration('params_file'), radar_node_param_overrides])
-
-    return [radar_node]
-
-
 def generate_launch_description():
     params_file_arg = DeclareLaunchArgument(
         'params_file',
         default_value='',
         description='Full path to the ROS2 parameters file to use for the radar node'
     )
-    can_channel_arg = DeclareLaunchArgument(
-        'can_channel',
-        default_value='',
-        description='Declare the CAN channel'
-    )
-
     lifecycle_nodes = ['radar_node']
 
     autostart = LaunchConfiguration('autostart')
@@ -70,16 +44,21 @@ def generate_launch_description():
                     {'autostart': autostart},
                     {'node_names': lifecycle_nodes}])
 
-    get_radar_node = OpaqueFunction(function=launch_radar_node)
+    radar_node = Node(
+        package='radar_conti_ars408',
+        executable='radar_conti_ars408_composition',
+        name='radar_node',
+        namespace=LaunchConfiguration('namespace'),
+        output='screen',
+        parameters=[LaunchConfiguration('params_file')])
 
     ld = LaunchDescription()
     ld.add_action(params_file_arg)
     ld.add_action(autostart_arg)
     ld.add_action(use_sim_time_arg)
     ld.add_action(namespace_arg)
-    ld.add_action(can_channel_arg)
+    ld.add_action(radar_node)
 
     ld.add_action(start_lifecycle_manager_cmd)
-    ld.add_action(get_radar_node)
 
     return ld
