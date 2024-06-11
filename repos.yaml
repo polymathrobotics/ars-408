@@ -2,7 +2,7 @@ repositories:
   navigation2_dynamic:
     type: git
     url: git@gitlab.com:polymathrobotics/third_party/navigation2_dynamic.git
-    version: bc7a81c52376a2c95ae46832c8ca25439ed59e94
+    version: master
   ars-408:
     type: git
     url: git@gitlab.com:polymathrobotics/sensors/ars-408.git
