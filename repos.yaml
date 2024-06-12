@@ -11,4 +11,7 @@ repositories:
     type: git
     url: git@gitlab.com:polymathrobotics/polymath_core.git
     version: main
- 
+  prometheus-cpp-ros:
+    type: git
+    url: git@gitlab.com:polymathrobotics/third_party/prometheus-cpp-ros.git
+    version: main

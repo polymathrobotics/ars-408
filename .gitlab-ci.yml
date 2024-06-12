@@ -1,5 +1,6 @@
 variables:
   REPOS_FILE: repos.yaml
+  VCS_ARGS: --recursive
 
 include:
 - project: 'polymathrobotics/ci/ci_templates'

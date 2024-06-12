@@ -35,7 +35,7 @@ The `index` parameter specifies the property of the filter to be changed:
 
 The `sensor_id` parameter specifies the index of the sensor on the CAN bus
 
-The `min_value` and `max_value` parameter specifies the minimum and maximum values of the radar respectively.
+The `min_value` and `max_value` parameter specifies the minimum and maximum values of the radar respectively in integer. All parameters except for longitudinal distance are 12-bit so max value would be 4095.The scaling of 12-bit number to actual SI units can be found in the ARS408 technical documentation
 
 Further information about the filter configurations can be found in the ARS408 technical documentation
 

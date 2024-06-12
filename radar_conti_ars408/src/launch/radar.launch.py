@@ -50,6 +50,7 @@ def generate_launch_description():
         name='radar_node',
         namespace=LaunchConfiguration('namespace'),
         output='screen',
+        arguments=['--ros-args', '--log-level', 'info'],
         parameters=[LaunchConfiguration('params_file')])
 
     ld = LaunchDescription()
