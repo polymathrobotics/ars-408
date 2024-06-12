@@ -42,6 +42,7 @@
 
 #include <rclcpp/strategies/message_pool_memory_strategy.hpp>
 #include <rclcpp/strategies/allocator_memory_strategy.hpp>
+#include <rclcpp_lifecycle/lifecycle_node.hpp>
 
 #include "radar_msgs/msg/radar_track.hpp"
 #include "radar_msgs/msg/radar_tracks.hpp"
@@ -58,6 +59,27 @@
 
 #include <unordered_map>
 #include <random>
+
+// Enum class definition
+enum class FilterType {
+    NOFOBJ,
+    DISTANCE,
+    AZIMUTH,
+    VRELONCOME,
+    VRELDEPART,
+    RCS,
+    LIFETIME,
+    SIZE,
+    PROBEXISTS,
+    Y,
+    X,
+    VYRIGHTLEFT,
+    VXONCOME,
+    VYLEFTRIGHT,
+    VXDEPART,
+    UNKNOWN // Add this to handle default case
+};
+
 
 constexpr char DEFAULT_NODE_NAME[] = "RADAR_CONTI_ARS408";
 
@@ -154,6 +176,49 @@ namespace FHAC
             const std::shared_ptr<radar_conti_ars408_msgs::srv::SetFilter::Request> request,
             std::shared_ptr<radar_conti_ars408_msgs::srv::SetFilter::Response> response);
 
+        template <typename T>
+        void declare_parameter_with_type(rclcpp_lifecycle::LifecycleNode::SharedPtr node, const std::string &param_name, T value) {
+            if constexpr (std::is_same_v<T, int>) {
+                node->declare_parameter(param_name, rclcpp::ParameterValue(static_cast<int>(value)));
+            } else if constexpr (std::is_same_v<T, double>) {
+                node->declare_parameter(param_name, rclcpp::ParameterValue(static_cast<double>(value)));
+            } else if constexpr (std::is_same_v<T, float>) {
+                node->declare_parameter(param_name, rclcpp::ParameterValue(static_cast<float>(value)));
+            } else if constexpr (std::is_same_v<T, uint32_t>) {
+                node->declare_parameter(param_name, rclcpp::ParameterValue(static_cast<int>(value)));
+            } else if constexpr (std::is_same_v<T, uint8_t>) {
+                node->declare_parameter(param_name, rclcpp::ParameterValue(static_cast<int>(value)));
+            } else {
+                static_assert(!std::is_same_v<T, T>, "Unsupported type for declare_parameter_with_type");
+            }
+        }
+
+        // Function to handle the retrieval of parameters based on type T
+       template <typename T>
+       void get_parameter_with_type(rclcpp_lifecycle::LifecycleNode::SharedPtr node, const std::string &param_name, T &value) {
+           if constexpr (std::is_same_v<T, int>) {
+               node->get_parameter(param_name, value);
+           } else if constexpr (std::is_same_v<T, double>) {
+               node->get_parameter(param_name, value);
+           } else if constexpr (std::is_same_v<T, float>) {
+               node->get_parameter(param_name, value);
+           } else if constexpr (std::is_same_v<T, uint32_t>) {
+               int temp_value;
+               node->get_parameter(param_name, temp_value);
+               value = static_cast<uint32_t>(temp_value);
+           } else if constexpr (std::is_same_v<T, uint8_t>) {
+               int temp_value;
+               node->get_parameter(param_name, temp_value);
+               value = static_cast<uint8_t>(temp_value);
+           } else {
+               static_assert(!std::is_same_v<T, T>, "Unsupported type for get_parameter_with_type");
+           }
+       }
+
+        template <typename T>
+        void initializeFilterConfig(std::string radar_name, std::string config_name, T value, T &config);
+
+
         unique_identifier_msgs::msg::UUID generateRandomUUID();
         void generateUUIDTable();
 
@@ -236,12 +301,17 @@ namespace FHAC
 
         // create data structures for radar filter config
         std::vector<radar_conti_ars408_msgs::msg::FilterStateCfg> radar_filter_configs_;
+        std::vector<std::vector<bool>> radar_filter_active_;
+        std::vector<std::vector<bool>> radar_filter_valid_;
 
         // additional variables
         int operation_mode_;
         int object_count;
         int number_of_radars_;
         std::string can_channel_;
+
+        /// @brief whether to overwrite radar configurations on startup
+        bool overwrite_configs_;
 
         std::unique_ptr<bond::Bond> bond_{nullptr};
 
