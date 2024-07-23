@@ -51,3 +51,32 @@ If sensor 0 is to be changed to sensor 1, command would be as follows:
 ```
 cansend can0 200#8200000001800000
 ```
+
+# Configuring Sensor Power
+The radar power may need to be changed depending on the application. For applications where the sensor needs to be in close proximity to obstacles the power should be lower. With `can-utils`, one can configure the sensor in the following way
+
+For standard gain:
+```
+cansend can0 2<index of sensor to be changed>0#8400000000800000
+```  
+
+For -3dB gain
+```
+cansend can0 2<index of sensor to be changed>0#8400000020800000
+```
+
+For -6dB gain
+```
+cansend can0 2<index of sensor to be changed>0#8400000040800000
+```
+
+For -9dB gain
+```
+cansend can0 2<index of sensor to be changed>0#8400000060800000
+```
+
+If sensor 0 is to be changed to -6dB gain, command would be as follows:
+
+```
+cansend can0 200#8200000040800000
+```
