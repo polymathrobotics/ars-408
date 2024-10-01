@@ -21,7 +21,10 @@
 #include <radar_conti_ars408_msgs/msg/radar_state.hpp>
 #include <radar_conti_ars408_msgs/msg/cluster_status.hpp>
 #include "radar_conti_ars408_msgs/msg/filter_state_cfg.hpp"
+#include "radar_conti_ars408_msgs/msg/radar_configuration.hpp"
+#include "radar_conti_ars408_msgs/msg/radar_state.hpp"
 #include <radar_conti_ars408_msgs/srv/set_filter.hpp>
+#include <radar_conti_ars408_msgs/srv/trigger_set_cfg.hpp>
 #include <tf2_ros/transform_broadcaster.h>
 #include <tf2_ros/static_transform_broadcaster.h>
 #include <tf2/LinearMath/Quaternion.h>
@@ -61,7 +64,8 @@
 #include <random>
 
 // Enum class definition
-enum class FilterType {
+enum class FilterType
+{
     NOFOBJ,
     DISTANCE,
     AZIMUTH,
@@ -79,7 +83,6 @@ enum class FilterType {
     VXDEPART,
     UNKNOWN // Add this to handle default case
 };
-
 
 constexpr char DEFAULT_NODE_NAME[] = "RADAR_CONTI_ARS408";
 
@@ -176,48 +179,75 @@ namespace FHAC
             const std::shared_ptr<radar_conti_ars408_msgs::srv::SetFilter::Request> request,
             std::shared_ptr<radar_conti_ars408_msgs::srv::SetFilter::Response> response);
 
+        void setRadarConfigurationService(
+            const std::shared_ptr<radar_conti_ars408_msgs::srv::TriggerSetCfg::Request> request,
+            std::shared_ptr<radar_conti_ars408_msgs::srv::TriggerSetCfg::Response> response);
+
         template <typename T>
-        void declare_parameter_with_type(rclcpp_lifecycle::LifecycleNode::SharedPtr node, const std::string &param_name, T value) {
-            if constexpr (std::is_same_v<T, int>) {
+        void declare_parameter_with_type(rclcpp_lifecycle::LifecycleNode::SharedPtr node, const std::string &param_name, T value)
+        {
+            if constexpr (std::is_same_v<T, int>)
+            {
                 node->declare_parameter(param_name, rclcpp::ParameterValue(static_cast<int>(value)));
-            } else if constexpr (std::is_same_v<T, double>) {
+            }
+            else if constexpr (std::is_same_v<T, double>)
+            {
                 node->declare_parameter(param_name, rclcpp::ParameterValue(static_cast<double>(value)));
-            } else if constexpr (std::is_same_v<T, float>) {
+            }
+            else if constexpr (std::is_same_v<T, float>)
+            {
                 node->declare_parameter(param_name, rclcpp::ParameterValue(static_cast<float>(value)));
-            } else if constexpr (std::is_same_v<T, uint32_t>) {
+            }
+            else if constexpr (std::is_same_v<T, uint32_t>)
+            {
                 node->declare_parameter(param_name, rclcpp::ParameterValue(static_cast<int>(value)));
-            } else if constexpr (std::is_same_v<T, uint8_t>) {
+            }
+            else if constexpr (std::is_same_v<T, uint8_t>)
+            {
                 node->declare_parameter(param_name, rclcpp::ParameterValue(static_cast<int>(value)));
-            } else {
+            }
+            else
+            {
                 static_assert(!std::is_same_v<T, T>, "Unsupported type for declare_parameter_with_type");
             }
         }
 
         // Function to handle the retrieval of parameters based on type T
-       template <typename T>
-       void get_parameter_with_type(rclcpp_lifecycle::LifecycleNode::SharedPtr node, const std::string &param_name, T &value) {
-           if constexpr (std::is_same_v<T, int>) {
-               node->get_parameter(param_name, value);
-           } else if constexpr (std::is_same_v<T, double>) {
-               node->get_parameter(param_name, value);
-           } else if constexpr (std::is_same_v<T, float>) {
-               node->get_parameter(param_name, value);
-           } else if constexpr (std::is_same_v<T, uint32_t>) {
-               int temp_value;
-               node->get_parameter(param_name, temp_value);
-               value = static_cast<uint32_t>(temp_value);
-           } else if constexpr (std::is_same_v<T, uint8_t>) {
-               int temp_value;
-               node->get_parameter(param_name, temp_value);
-               value = static_cast<uint8_t>(temp_value);
-           } else {
-               static_assert(!std::is_same_v<T, T>, "Unsupported type for get_parameter_with_type");
-           }
-       }
+        template <typename T>
+        void get_parameter_with_type(rclcpp_lifecycle::LifecycleNode::SharedPtr node, const std::string &param_name, T &value)
+        {
+            if constexpr (std::is_same_v<T, int>)
+            {
+                node->get_parameter(param_name, value);
+            }
+            else if constexpr (std::is_same_v<T, double>)
+            {
+                node->get_parameter(param_name, value);
+            }
+            else if constexpr (std::is_same_v<T, float>)
+            {
+                node->get_parameter(param_name, value);
+            }
+            else if constexpr (std::is_same_v<T, uint32_t>)
+            {
+                int temp_value;
+                node->get_parameter(param_name, temp_value);
+                value = static_cast<uint32_t>(temp_value);
+            }
+            else if constexpr (std::is_same_v<T, uint8_t>)
+            {
+                int temp_value;
+                node->get_parameter(param_name, temp_value);
+                value = static_cast<uint8_t>(temp_value);
+            }
+            else
+            {
+                static_assert(!std::is_same_v<T, T>, "Unsupported type for get_parameter_with_type");
+            }
+        }
 
         template <typename T>
-        void initializeFilterConfig(std::string radar_name, std::string config_name, T value, T &config);
-
+        void initializeConfig(std::string radar_name, std::string config_name, T value, T &config);
 
         unique_identifier_msgs::msg::UUID generateRandomUUID();
         void generateUUIDTable();
@@ -266,20 +296,25 @@ namespace FHAC
         std::string radar_tracks_topic_name_;
         std::string obstacle_array_topic_name_;
         std::string filter_config_topic_name_;
+        std::string radar_state_topic_name_;
         std::string pub_tf_topic_name = "tf";
         std::string radar_link_;
 
         uint16_t max_radar_id = 512;
         std::vector<unique_identifier_msgs::msg::UUID> UUID_table_;
 
+        // Publishers
         std::vector<rclcpp_lifecycle::LifecyclePublisher<radar_conti_ars408_msgs::msg::ObjectList>::SharedPtr> object_list_publishers_;
         std::vector<rclcpp_lifecycle::LifecyclePublisher<tf2_msgs::msg::TFMessage>::SharedPtr> tf_publishers_;
         std::vector<rclcpp_lifecycle::LifecyclePublisher<visualization_msgs::msg::MarkerArray>::SharedPtr> marker_array_publishers_;
         std::vector<rclcpp_lifecycle::LifecyclePublisher<radar_msgs::msg::RadarTracks>::SharedPtr> radar_tracks_publishers_;
         std::vector<rclcpp_lifecycle::LifecyclePublisher<nav2_dynamic_msgs::msg::ObstacleArray>::SharedPtr> obstacle_array_publishers_;
         std::vector<rclcpp_lifecycle::LifecyclePublisher<radar_conti_ars408_msgs::msg::FilterStateCfg>::SharedPtr> filter_config_publishers_;
+        std::vector<rclcpp_lifecycle::LifecyclePublisher<radar_conti_ars408_msgs::msg::RadarState>::SharedPtr> radar_state_publishers_;
 
+        // Services
         rclcpp::Service<radar_conti_ars408_msgs::srv::SetFilter>::SharedPtr set_filter_service_;
+        rclcpp::Service<radar_conti_ars408_msgs::srv::TriggerSetCfg>::SharedPtr radar_config_service_;
 
         // create can_receive_callback
         void can_receive_callback(std::shared_ptr<const polymath::socketcan::CanFrame> frame);
@@ -289,8 +324,13 @@ namespace FHAC
         void publish_object_map(int sensor_id);
         // update filter
         bool setFilter(const int &sensor_id, const int &active, const int &valid, const int &type, const int &index, const int &min_value, const int &max_value);
+        // update config
+        bool setRadarConfiguration(const int &sensor_id, std::shared_ptr<radar_conti_ars408_msgs::srv::TriggerSetCfg::Response> &response);
+
+        void publishRadarState(std::shared_ptr<const polymath::socketcan::CanFrame> frame, const int &sensor_id);
         void updateFilterConfig(std::shared_ptr<const polymath::socketcan::CanFrame> frame, const int &sensor_id);
         void initializeFilterConfigs();
+
         // create map container for object list
         std::map<int, radar_conti_ars408_msgs::msg::Object> object_map_;
         std::vector<std::map<int, radar_conti_ars408_msgs::msg::Object>> object_map_list_;
@@ -301,6 +341,7 @@ namespace FHAC
 
         // create data structures for radar filter config
         std::vector<radar_conti_ars408_msgs::msg::FilterStateCfg> radar_filter_configs_;
+        std::unordered_map<size_t, radar_conti_ars408_msgs::msg::RadarConfiguration> radar_configuration_configs_;
         std::vector<std::vector<bool>> radar_filter_active_;
         std::vector<std::vector<bool>> radar_filter_valid_;
 

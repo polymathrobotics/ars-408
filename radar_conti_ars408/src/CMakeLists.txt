@@ -43,6 +43,26 @@ find_package(nav2_dynamic_msgs REQUIRED)
 find_package(bondcpp REQUIRED)
 find_package(bond REQUIRED)
 find_package(socketcan_adapter REQUIRED)
+
+
+set(dependencies
+  radar_conti_ars408_msgs
+  can_msgs
+  radar_msgs
+  nav2_dynamic_msgs
+  visualization_msgs
+  tf2_ros
+  socketcan_adapter
+  bondcpp
+  bond
+  "rclcpp_lifecycle"
+  "rclcpp"
+  "std_msgs"
+  "class_loader"
+  "rclcpp_components"
+  "geometry_msgs"
+  ament_index_cpp
+)
 ##########################################################
 
 
@@ -71,33 +91,15 @@ include_directories(
 set(node_plugins "")
 
 
-
-add_library(radar_conti_ars408_component SHARED ${CMAKE_CURRENT_SOURCE_DIR}/src/radar_conti_ars408_component.cpp)
-target_compile_definitions(radar_conti_ars408_component PRIVATE "RADAR_CONTI_ARS408_BUILDING_DLL")
-target_link_libraries(radar_conti_ars408_component dl -lboost_system
+set(library_name radar_conti_ars408_component)
+add_library(${library_name} SHARED ${CMAKE_CURRENT_SOURCE_DIR}/src/radar_conti_ars408_component.cpp)
+target_compile_definitions(${library_name} PRIVATE "RADAR_CONTI_ARS408_BUILDING_DLL")
+target_link_libraries(${library_name} dl -lboost_system
     ${rclcpp_lifecycle_LIBRARIES}
     ${ament_index_cpp_LIBRARIES}
 )
 
-ament_target_dependencies(
-  radar_conti_ars408_component
-  radar_conti_ars408_msgs
-  can_msgs
-  radar_msgs
-  nav2_dynamic_msgs
-  visualization_msgs
-  tf2_ros
-  socketcan_adapter
-  bondcpp
-  bond
-  "rclcpp_lifecycle"
-  "rclcpp"
-  "std_msgs"
-  "class_loader"
-  "rclcpp_components"
-  "geometry_msgs"
-  ament_index_cpp
-)
+ament_target_dependencies(${library_name} ${dependencies})
 
 rclcpp_components_register_nodes(radar_conti_ars408_component "FHAC::radar_conti_ars408")
 set(node_plugins "${node_plugins}FHAC::radar_conti_ars408;$<TARGET_FILE:radar_conti_ars408_component>\n")
@@ -158,6 +160,25 @@ install(DIRECTORY
   launch
   DESTINATION share/${PROJECT_NAME}
 )
+
+
+if(BUILD_TESTING)
+  # Until CI has VCAN support, don't run this test
+  if(NOT DEFINED ENV{CI})
+    find_package(Catch2 2 REQUIRED)
+    set(test_dependencies
+      Catch2 
+    )
+    add_executable(catch_tests test/test_radar_conti_ars408_component.cpp)
+    target_link_libraries(catch_tests Catch2::Catch2 ${library_name})
+    ament_target_dependencies(catch_tests
+      ${test_dependencies}
+      ${dependencies}
+    )
+    add_test(NAME catch_tests COMMAND catch_tests)
+  endif()
+endif()
+
 
 ##########################################################
 

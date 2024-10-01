@@ -5,6 +5,7 @@
 #include <memory>
 #include <utility>
 #include <math.h>
+#include <fmt/core.h>
 
 #define _USE_MATH_DEFINES
 
@@ -15,6 +16,11 @@
 
 using std::placeholders::_1;
 using namespace std::chrono_literals;
+
+/**
+ * TODO(troy):
+ * - Figure out if we publish the radar_config
+ */
 
 namespace FHAC
 {
@@ -54,6 +60,7 @@ namespace FHAC
     node->declare_parameter("radar_tracks_topic_name", rclcpp::ParameterValue("ars408/radar_tracks"));
     node->declare_parameter("obstacle_array_topic_name", rclcpp::ParameterValue("ars408/obstacle_array"));
     node->declare_parameter("filter_config_topic_name", rclcpp::ParameterValue("ars408/filter_config"));
+    node->declare_parameter("radar_state_topic_name", rclcpp::ParameterValue("ars408/radar_state"));
 
     node->get_parameter("can_channel", can_channel_);
     node->get_parameter("object_list_topic_name", object_list_topic_name_);
@@ -61,6 +68,7 @@ namespace FHAC
     node->get_parameter("radar_tracks_topic_name", radar_tracks_topic_name_);
     node->get_parameter("obstacle_array_topic_name", obstacle_array_topic_name_);
     node->get_parameter("filter_config_topic_name", filter_config_topic_name_);
+    node->get_parameter("radar_state_topic_name", radar_state_topic_name_);
 
     if (can_channel_.empty())
     {
@@ -98,9 +106,11 @@ namespace FHAC
         radar_tracks_publishers_.push_back(this->create_publisher<radar_msgs::msg::RadarTracks>(parameter.as_string() + "/" + radar_tracks_topic_name_, radar_tracks_qos));
         obstacle_array_publishers_.push_back(this->create_publisher<nav2_dynamic_msgs::msg::ObstacleArray>(parameter.as_string() + "/" + obstacle_array_topic_name_, radar_tracks_qos));
         filter_config_publishers_.push_back(this->create_publisher<radar_conti_ars408_msgs::msg::FilterStateCfg>(parameter.as_string() + "/" + filter_config_topic_name_, transient_local_qos));
+        radar_state_publishers_.push_back(this->create_publisher<radar_conti_ars408_msgs::msg::RadarState>(parameter.as_string() + "/" + radar_state_topic_name_, transient_local_qos));
         object_map_list_.push_back(std::map<int, radar_conti_ars408_msgs::msg::Object>());
         object_list_list_.push_back(radar_conti_ars408_msgs::msg::ObjectList());
         radar_filter_configs_.push_back(radar_conti_ars408_msgs::msg::FilterStateCfg());
+        radar_configuration_configs_.emplace(topic_ind, radar_conti_ars408_msgs::msg::RadarConfiguration());
         radar_filter_active_.push_back(std::vector<bool>());
         radar_filter_valid_.push_back(std::vector<bool>());
 
@@ -115,65 +125,100 @@ namespace FHAC
 
         RCLCPP_DEBUG(node->get_logger(), "radar frame is: %s", parameter.as_string().c_str());
 
+        // RADAR CONFIGS
+
+        // NVM Storage
+        initializeConfig<uint8_t>(radar_name, std::string("radarcfg_store_in_nvm"), 0, radar_configuration_configs_[topic_ind].radarcfg_storeinnvm.data);
+        initializeConfig<uint8_t>(radar_name, std::string("radarcfg_store_in_nvm_valid"), 0, radar_configuration_configs_[topic_ind].radarcfg_storeinnvm_valid.data);
+
+        // Ext Info
+        initializeConfig<uint8_t>(radar_name, std::string("radarcfg_send_ext_info"), 0, radar_configuration_configs_[topic_ind].radarcfg_sendextinfo.data);
+        initializeConfig<uint8_t>(radar_name, std::string("radarcfg_send_ext_info_valid"), 0, radar_configuration_configs_[topic_ind].radarcfg_sendextinfo_valid.data);
+
+        // Ctrl Relay
+        initializeConfig<uint8_t>(radar_name, std::string("radarcfg_ctrl_relay"), 0, radar_configuration_configs_[topic_ind].radarcfg_ctrlrelay.data);
+        initializeConfig<uint8_t>(radar_name, std::string("radarcfg_ctrl_relay_valid"), 0, radar_configuration_configs_[topic_ind].radarcfg_ctrlrelay_valid.data);
+
+        // Radar Power
+        initializeConfig<uint8_t>(radar_name, std::string("radarcfg_radar_power"), START_RadarConfiguration_RadarCfg_RadarPower, radar_configuration_configs_[topic_ind].radarcfg_radarpower.data);
+        initializeConfig<uint8_t>(radar_name, std::string("radarcfg_radar_power_valid"), 0, radar_configuration_configs_[topic_ind].radarcfg_radarpower_valid.data);
+
+        // Send Quality
+        initializeConfig<uint8_t>(radar_name, std::string("radarcfg_send_quality"), 0, radar_configuration_configs_[topic_ind].radarcfg_sendquality.data);
+        initializeConfig<uint8_t>(radar_name, std::string("radarcfg_send_quality_valid"), 0, radar_configuration_configs_[topic_ind].radarcfg_sendquality_valid.data);
+
+        // Max Distance
+        initializeConfig<uint8_t>(radar_name, std::string("radarcfg_max_distance"), 0, radar_configuration_configs_[topic_ind].radarcfg_maxdistance.data);
+        initializeConfig<uint8_t>(radar_name, std::string("radarcfg_max_distance_valid"), 0, radar_configuration_configs_[topic_ind].radarcfg_maxdistance_valid.data);
+
+        // Output Type
+        initializeConfig<uint8_t>(radar_name, std::string("radarcfg_output_type"), 0, radar_configuration_configs_[topic_ind].radarcfg_outputtype.data);
+        initializeConfig<uint8_t>(radar_name, std::string("radarcfg_output_type_valid"), 0, radar_configuration_configs_[topic_ind].radarcfg_outputtype_valid.data);
+
+        // Sensor ID
+        initializeConfig<uint8_t>(radar_name, std::string("radarcfg_sensor_id"), 0, radar_configuration_configs_[topic_ind].radarcfg_sensorid.data);
+        initializeConfig<uint8_t>(radar_name, std::string("radarcfg_sensor_id_valid"), 0, radar_configuration_configs_[topic_ind].radarcfg_sensorid_valid.data);
+
+        // FILTER CONFIGS
         // Initialize Number of Objects Filters
-        initializeFilterConfig<uint32_t>(radar_name, std::string("filtercfg_min_nofobj"), 0, radar_filter_configs_[topic_ind].filtercfg_min_nofobj.data);
-        initializeFilterConfig<uint32_t>(radar_name, std::string("filtercfg_max_nofobj"), 20, radar_filter_configs_[topic_ind].filtercfg_max_nofobj.data);
+        initializeConfig<uint32_t>(radar_name, std::string("filtercfg_min_nofobj"), 0, radar_filter_configs_[topic_ind].filtercfg_min_nofobj.data);
+        initializeConfig<uint32_t>(radar_name, std::string("filtercfg_max_nofobj"), 20, radar_filter_configs_[topic_ind].filtercfg_max_nofobj.data);
 
         // Initialize Distance Filters
-        initializeFilterConfig<float>(radar_name, std::string("filtercfg_min_distance"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_distance.data);
-        initializeFilterConfig<float>(radar_name, std::string("filtercfg_max_distance"), 409.0, radar_filter_configs_[topic_ind].filtercfg_max_distance.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_min_distance"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_distance.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_max_distance"), 409.0, radar_filter_configs_[topic_ind].filtercfg_max_distance.data);
 
         // Initialize Azimuth Filters
-        initializeFilterConfig<float>(radar_name, std::string("filtercfg_min_azimuth"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_azimuth.data);
-        initializeFilterConfig<float>(radar_name, std::string("filtercfg_max_azimuth"), 100.0, radar_filter_configs_[topic_ind].filtercfg_max_azimuth.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_min_azimuth"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_azimuth.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_max_azimuth"), 100.0, radar_filter_configs_[topic_ind].filtercfg_max_azimuth.data);
 
         // Initialize Oncoming Velocity Filters
-        initializeFilterConfig<float>(radar_name, std::string("filtercfg_min_vreloncome"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_vreloncome.data);
-        initializeFilterConfig<float>(radar_name, std::string("filtercfg_max_vreloncome"), 128.0, radar_filter_configs_[topic_ind].filtercfg_max_vreloncome.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_min_vreloncome"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_vreloncome.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_max_vreloncome"), 128.0, radar_filter_configs_[topic_ind].filtercfg_max_vreloncome.data);
 
         // Initialize Departing Velocity Filters
-        initializeFilterConfig<float>(radar_name, std::string("filtercfg_min_vreldepart"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_vreldepart.data);
-        initializeFilterConfig<float>(radar_name, std::string("filtercfg_max_vreldepart"), 128.0, radar_filter_configs_[topic_ind].filtercfg_max_vreldepart.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_min_vreldepart"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_vreldepart.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_max_vreldepart"), 128.0, radar_filter_configs_[topic_ind].filtercfg_max_vreldepart.data);
 
         // Initialize Radar Cross Section Filters
-        initializeFilterConfig<float>(radar_name, std::string("filtercfg_min_rcs"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_rcs.data);
-        initializeFilterConfig<float>(radar_name, std::string("filtercfg_max_rcs"), 100.0, radar_filter_configs_[topic_ind].filtercfg_max_rcs.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_min_rcs"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_rcs.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_max_rcs"), 100.0, radar_filter_configs_[topic_ind].filtercfg_max_rcs.data);
 
         // Initialize Lifetime Filters
-        initializeFilterConfig<float>(radar_name, std::string("filtercfg_min_lifetime"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_lifetime.data);
-        initializeFilterConfig<float>(radar_name, std::string("filtercfg_max_lifetime"), 409.0, radar_filter_configs_[topic_ind].filtercfg_max_lifetime.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_min_lifetime"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_lifetime.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_max_lifetime"), 409.0, radar_filter_configs_[topic_ind].filtercfg_max_lifetime.data);
 
         // Initialize Size Filters
-        initializeFilterConfig<float>(radar_name, std::string("filtercfg_min_size"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_size.data);
-        initializeFilterConfig<float>(radar_name, std::string("filtercfg_max_size"), 102.0, radar_filter_configs_[topic_ind].filtercfg_max_size.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_min_size"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_size.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_max_size"), 102.0, radar_filter_configs_[topic_ind].filtercfg_max_size.data);
 
         // Initialize Probability of Existence Filters
-        initializeFilterConfig<uint8_t>(radar_name, std::string("filtercfg_min_probexists"), 0, radar_filter_configs_[topic_ind].filtercfg_min_probexists.data);
-        initializeFilterConfig<uint8_t>(radar_name, std::string("filtercfg_max_probexists"), 7, radar_filter_configs_[topic_ind].filtercfg_max_probexists.data);
+        initializeConfig<uint8_t>(radar_name, std::string("filtercfg_min_probexists"), 0, radar_filter_configs_[topic_ind].filtercfg_min_probexists.data);
+        initializeConfig<uint8_t>(radar_name, std::string("filtercfg_max_probexists"), 7, radar_filter_configs_[topic_ind].filtercfg_max_probexists.data);
 
         // Initialize Y Filters
-        initializeFilterConfig<float>(radar_name, std::string("filtercfg_min_y"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_y.data);
-        initializeFilterConfig<float>(radar_name, std::string("filtercfg_max_y"), 818.0, radar_filter_configs_[topic_ind].filtercfg_max_y.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_min_y"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_y.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_max_y"), 818.0, radar_filter_configs_[topic_ind].filtercfg_max_y.data);
 
         // Initialize X Filters
-        initializeFilterConfig<float>(radar_name, std::string("filtercfg_min_x"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_x.data);
-        initializeFilterConfig<float>(radar_name, std::string("filtercfg_max_x"), 0.0, radar_filter_configs_[topic_ind].filtercfg_max_x.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_min_x"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_x.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_max_x"), 0.0, radar_filter_configs_[topic_ind].filtercfg_max_x.data);
 
         // Initialize Y Velocity going left to right Filters
-        initializeFilterConfig<float>(radar_name, std::string("filtercfg_min_vyrightleft"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_vyrightleft.data);
-        initializeFilterConfig<float>(radar_name, std::string("filtercfg_max_vyrightleft"), 128.0, radar_filter_configs_[topic_ind].filtercfg_max_vyrightleft.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_min_vyrightleft"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_vyrightleft.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_max_vyrightleft"), 128.0, radar_filter_configs_[topic_ind].filtercfg_max_vyrightleft.data);
 
         // Initialize X Velocity oncoming Filters
-        initializeFilterConfig<float>(radar_name, std::string("filtercfg_min_vxoncome"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_vxoncome.data);
-        initializeFilterConfig<float>(radar_name, std::string("filtercfg_max_vxoncome"), 128.0, radar_filter_configs_[topic_ind].filtercfg_max_vxoncome.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_min_vxoncome"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_vxoncome.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_max_vxoncome"), 128.0, radar_filter_configs_[topic_ind].filtercfg_max_vxoncome.data);
 
         // Initialize Y Velocity going right to left Filters
-        initializeFilterConfig<float>(radar_name, std::string("filtercfg_min_vyleftright"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_vyleftright.data);
-        initializeFilterConfig<float>(radar_name, std::string("filtercfg_max_vyleftright"), 128.0, radar_filter_configs_[topic_ind].filtercfg_max_vyleftright.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_min_vyleftright"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_vyleftright.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_max_vyleftright"), 128.0, radar_filter_configs_[topic_ind].filtercfg_max_vyleftright.data);
 
         // Initialize X Velocity Departing Filters
-        initializeFilterConfig<float>(radar_name, std::string("filtercfg_min_vxdepart"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_vxdepart.data);
-        initializeFilterConfig<float>(radar_name, std::string("filtercfg_max_vxdepart"), 128.0, radar_filter_configs_[topic_ind].filtercfg_max_vxdepart.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_min_vxdepart"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_vxdepart.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_max_vxdepart"), 128.0, radar_filter_configs_[topic_ind].filtercfg_max_vxdepart.data);
 
         filter_config_initialized_list_.push_back(false);
         RCLCPP_WARN(this->get_logger(), "link_name is: %s", parameter.as_string().c_str());
@@ -190,7 +235,8 @@ namespace FHAC
     constexpr std::chrono::duration<float> recv_timeout{10};
     socketcan_adapter_ = std::make_unique<polymath::socketcan::SocketcanAdapter>(can_channel_, recv_timeout);
     object_count = 0.0;
-    set_filter_service_ = create_service<radar_conti_ars408_msgs::srv::SetFilter>("/set_filter", std::bind(&radar_conti_ars408::setFilterService, this, std::placeholders::_1, std::placeholders::_2));
+    set_filter_service_ = create_service<radar_conti_ars408_msgs::srv::SetFilter>("/radar_conti_ars408/set_filter", std::bind(&radar_conti_ars408::setFilterService, this, std::placeholders::_1, std::placeholders::_2));
+    radar_config_service_ = create_service<radar_conti_ars408_msgs::srv::TriggerSetCfg>("/radar_conti_ars408/set_radar_configuration", std::bind(&radar_conti_ars408::setRadarConfigurationService, this, std::placeholders::_1, std::placeholders::_2));
 
     generateUUIDTable();
 
@@ -198,11 +244,11 @@ namespace FHAC
   }
 
   template <typename T>
-  void radar_conti_ars408::initializeFilterConfig(std::string radar_name, std::string config_name, T value, T &config)
+  void radar_conti_ars408::initializeConfig(std::string radar_name, std::string config_name, T default_value, T &config)
   {
     auto node = shared_from_this();
     T config_value;
-    declare_parameter_with_type(node, radar_name + "." + config_name, value);
+    declare_parameter_with_type(node, radar_name + "." + config_name, default_value);
     get_parameter_with_type(node, radar_name + "." + config_name, config_value);
     config = config_value;
   }
@@ -291,6 +337,7 @@ namespace FHAC
       radar_tracks_publishers_[i]->on_activate();
       obstacle_array_publishers_[i]->on_activate();
       filter_config_publishers_[i]->on_activate();
+      radar_state_publishers_[i]->on_activate();
     }
 
     initializeFilterConfigs();
@@ -432,6 +479,36 @@ namespace FHAC
     }
   }
 
+  void radar_conti_ars408::publishRadarState(std::shared_ptr<const polymath::socketcan::CanFrame> frame, const int &sensor_id)
+  {
+    radar_conti_ars408_msgs::msg::RadarState radar_state_msg;
+    radar_state_msg.header.stamp = rclcpp_lifecycle::LifecycleNode::now();
+    radar_state_msg.header.frame_id = radar_link_names_[sensor_id];
+
+    radar_state_msg.nvmwritestatus = CALC_RadarState_RadarState_NVMwriteStatus(GET_RadarState_RadarState_NVMwriteStatus(frame->get_data()), 1.0);
+    radar_state_msg.nvmreadstatus = CALC_RadarState_RadarState_NVMReadStatus(GET_RadarState_RadarState_NVMReadStatus(frame->get_data()), 1.0);
+    radar_state_msg.maxdistancecfg = CALC_RadarState_RadarState_MaxDistanceCfg(GET_RadarState_RadarState_MaxDistanceCfg(frame->get_data()), 1.0);
+    radar_state_msg.persistent_error = CALC_RadarState_RadarState_Persistent_Error(GET_RadarState_RadarState_Persistent_Error(frame->get_data()), 1.0);
+    radar_state_msg.interference = CALC_RadarState_RadarState_Interference(GET_RadarState_RadarState_Interference(frame->get_data()), 1.0);
+    radar_state_msg.temperature_error = CALC_RadarState_RadarState_Temperature_Error(GET_RadarState_RadarState_Temperature_Error(frame->get_data()), 1.0);
+    radar_state_msg.temporary_error = CALC_RadarState_RadarState_Temporary_Error(GET_RadarState_RadarState_Temporary_Error(frame->get_data()), 1.0);
+    radar_state_msg.voltage_error = CALC_RadarState_RadarState_Voltage_Error(GET_RadarState_RadarState_Voltage_Error(frame->get_data()), 1.0);
+    radar_state_msg.radarpowercfg = CALC_RadarState_RadarState_RadarPowerCfg(GET_RadarState_RadarState_RadarPowerCfg(frame->get_data()), 1.0);
+    radar_state_msg.sortindex = CALC_RadarState_RadarState_SortIndex(GET_RadarState_RadarState_SortIndex(frame->get_data()), 1.0);
+    radar_state_msg.sensorid = CALC_RadarState_RadarState_SensorID(GET_RadarState_RadarState_SensorID(frame->get_data()), 1.0);
+    radar_state_msg.motionrxstate = CALC_RadarState_RadarState_MotionRxState(GET_RadarState_RadarState_MotionRxState(frame->get_data()), 1.0);
+    radar_state_msg.sendextinfocfg = CALC_RadarState_RadarState_SendExtInfoCfg(GET_RadarState_RadarState_SendExtInfoCfg(frame->get_data()), 1.0);
+    radar_state_msg.sendqualitycfg = CALC_RadarState_RadarState_SendQualityCfg(GET_RadarState_RadarState_SendQualityCfg(frame->get_data()), 1.0);
+    radar_state_msg.outputtypecfg = CALC_RadarState_RadarState_OutputTypeCfg(GET_RadarState_RadarState_OutputTypeCfg(frame->get_data()), 1.0);
+    radar_state_msg.ctrlrelaycfg = CALC_RadarState_RadarState_CtrlRelayCfg(GET_RadarState_RadarState_CtrlRelayCfg(frame->get_data()), 1.0);
+    radar_state_msg.rcs_threshold = CALC_RadarState_RadarState_RCS_Threshold(GET_RadarState_RadarState_RCS_Threshold(frame->get_data()), 1.0);
+
+    if (radar_state_publishers_[sensor_id])
+    {
+      radar_state_publishers_[sensor_id]->publish(radar_state_msg);
+    }
+  }
+
   void radar_conti_ars408::can_receive_callback(std::shared_ptr<const polymath::socketcan::CanFrame> frame)
   {
 
@@ -454,6 +531,7 @@ namespace FHAC
     if (Get_MsgID0_From_MsgID(frame->get_id()) == ID_RadarState)
     {
       operation_mode_ = CALC_RadarState_RadarState_OutputTypeCfg(GET_RadarState_RadarState_OutputTypeCfg(frame->get_data()), 1.0);
+      publishRadarState(frame, sensor_id);
     }
 
     // no output
@@ -577,7 +655,6 @@ namespace FHAC
 
   void radar_conti_ars408::publish_object_map(int sensor_id)
   {
-
     visualization_msgs::msg::MarkerArray marker_array;
     radar_msgs::msg::RadarTracks radar_tracks;
     nav2_dynamic_msgs::msg::ObstacleArray obstacle_array;
@@ -709,13 +786,13 @@ namespace FHAC
   bool radar_conti_ars408::setFilter(const int &sensor_id, const int &active, const int &valid, const int &type, const int &index, const int &min_value, const int &max_value)
   {
     polymath::socketcan::CanFrame frame;
-    frame.set_len(DLC_FilterCfg);
+    frame.set_len(CAN_MAX_DLC);
 
     uint32_t msg_id = ID_FilterCfg;
     Set_SensorID_In_MsgID(msg_id, sensor_id);
     frame.set_can_id(msg_id);
 
-    std::array<unsigned char, CAN_MAX_DLC> data;
+    std::array<unsigned char, CAN_MAX_DLC> data{0};
     SET_FilterCfg_FilterCfg_Active(data, active);
     SET_FilterCfg_FilterCfg_Valid(data, valid);
     SET_FilterCfg_FilterCfg_Type(data, type);
@@ -812,6 +889,96 @@ namespace FHAC
     if (err.has_value())
     {
       RCLCPP_ERROR(this->get_logger(), "Error sending frame: %s", err.value().c_str());
+      return false;
+    }
+
+    return true;
+  }
+
+  void radar_conti_ars408::setRadarConfigurationService(
+      const std::shared_ptr<radar_conti_ars408_msgs::srv::TriggerSetCfg::Request> request,
+      std::shared_ptr<radar_conti_ars408_msgs::srv::TriggerSetCfg::Response> response)
+  {
+    auto req = *request;
+    if (!setRadarConfiguration(req.sensor_id, response))
+    {
+      response->success = false;
+      return;
+    }
+    response->success = true;
+  }
+
+  bool radar_conti_ars408::setRadarConfiguration(const int &sensor_id, std::shared_ptr<radar_conti_ars408_msgs::srv::TriggerSetCfg::Response> &response)
+  {
+    RCLCPP_INFO(this->get_logger(), "Setting radar configuration for sensor_id: %i", sensor_id);
+    polymath::socketcan::CanFrame frame;
+    frame.set_len(DLC_RadarConfiguration);
+
+    uint32_t msg_id = ID_RadarConfiguration;
+    Set_SensorID_In_MsgID(msg_id, sensor_id);
+    frame.set_can_id(msg_id);
+
+    std::array<unsigned char, DLC_RadarConfiguration> data{0};
+
+    auto it = radar_configuration_configs_.find(sensor_id);
+    if (it == radar_configuration_configs_.end())
+    {
+      auto msg = fmt::format("Sensor ID '{}' not found in radar configurations.", sensor_id);
+      response->message = msg;
+      RCLCPP_ERROR(this->get_logger(), msg.c_str());
+      return false;
+    }
+    auto current_radar_config = it->second;
+
+    // RADAR POWER CFG
+    if (current_radar_config.radarcfg_radarpower.data < MIN_RadarConfiguration_RadarCfg_RadarPower || current_radar_config.radarcfg_radarpower.data > MAX_RadarConfiguration_RadarCfg_RadarPower)
+    {
+      std::string msg = fmt::format("Radar Power '{}' outside of range", current_radar_config.radarcfg_radarpower.data);
+      response->message = msg;
+      RCLCPP_ERROR(this->get_logger(), msg.c_str());
+      return false;
+    }
+
+    // Radar Power
+    SET_RadarConfiguration_RadarCfg_RadarPower_valid(data, current_radar_config.radarcfg_radarpower_valid.data);
+    SET_RadarConfiguration_RadarCfg_RadarPower(data, current_radar_config.radarcfg_radarpower.data);
+
+    // NVM Storage
+    SET_RadarConfiguration_RadarCfg_StoreInNVM(data, current_radar_config.radarcfg_storeinnvm.data);
+    SET_RadarConfiguration_RadarCfg_StoreInNVM_valid(data, current_radar_config.radarcfg_storeinnvm_valid.data);
+
+    // Send Ext Info
+    SET_RadarConfiguration_RadarCfg_SendExtInfo(data, current_radar_config.radarcfg_sendextinfo.data);
+    SET_RadarConfiguration_RadarCfg_SendExtInfo_valid(data, current_radar_config.radarcfg_sendextinfo_valid.data);
+
+    // Ctrl Relay
+    SET_RadarConfiguration_RadarCfg_CtrlRelay(data, current_radar_config.radarcfg_ctrlrelay.data);
+    SET_RadarConfiguration_RadarCfg_CtrlRelay_valid(data, current_radar_config.radarcfg_ctrlrelay_valid.data);
+
+    // Send Quality
+    SET_RadarConfiguration_RadarCfg_SendQuality(data, current_radar_config.radarcfg_sendquality.data);
+    SET_RadarConfiguration_RadarCfg_SendQuality_valid(data, current_radar_config.radarcfg_sendquality_valid.data);
+
+    // Max Distance - Resolution of 2m
+    SET_RadarConfiguration_RadarCfg_MaxDistance(data, current_radar_config.radarcfg_maxdistance.data / 2);
+    SET_RadarConfiguration_RadarCfg_MaxDistance_valid(data, current_radar_config.radarcfg_maxdistance_valid.data);
+
+    // Output Type
+    SET_RadarConfiguration_RadarCfg_OutputType(data, current_radar_config.radarcfg_outputtype.data);
+    SET_RadarConfiguration_RadarCfg_OutputType_valid(data, current_radar_config.radarcfg_outputtype_valid.data);
+
+    // Sensor ID
+    SET_RadarConfiguration_RadarCfg_SensorID(data, current_radar_config.radarcfg_sensorid.data);
+    SET_RadarConfiguration_RadarCfg_SensorID_valid(data, current_radar_config.radarcfg_sensorid_valid.data);
+
+    frame.set_data(data);
+    auto err = socketcan_adapter_->send(frame);
+    if (err.has_value())
+    {
+      auto msg = fmt::format("Error sending frame: %s", err.value().c_str());
+      response->message = msg;
+      RCLCPP_ERROR(this->get_logger(), msg.c_str());
+
       return false;
     }
 
