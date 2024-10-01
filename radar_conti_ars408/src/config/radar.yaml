@@ -1,18 +1,33 @@
 radar_node:
   ros__parameters:
     can_channel: "can0"
-    #topic name of list of objects detected
     object_list_topic_name: "object_list"
-    #topic name of array of markers used to visualize objects detected
     marker_array_topic_name: "marker_array"
-    #topic name of array of radar tracks detected
     radar_tracks_topic_name: "radar_tracks"
-    #topic name of array of obstacle detected, corresponds with radar tracks
     obstacle_array_topic_name: "obstacle_array"
+    filter_config_topic_name: "filter_config"
+    radar_state_topic_name: "radar_state"
 
     radar_0:
         #link of radar, should be relative to base_link      
         link_name: "front_radar_link"
+        radarcfg_sensor_id: 0
+        radarcfg_sensor_id_valid: 1
+        radarcfg_storeinnvm: 1
+        radarcfg_storeinnvm_valid: 1
+        radarcfg_radar_power: 1
+        radarcfg_radar_power_valid: 1
+        radarcfg_send_ext_info: 1
+        radarcfg_send_ext_info_valid: 1
+        radarcfg_ctrl_relay: 0
+        radarcfg_ctrl_relay_valid: 1
+        radarcfg_send_quality: 1
+        radarcfg_send_quality_valid: 1
+        radarcfg_max_distance: 196
+        radarcfg_max_distance_valid: 1
+        radarcfg_output_type: 1
+        radarcfg_output_type_valid: 1
+
         #set filter active flag on filter config index
         active: [true, false, false, false, false, true, false, false, true, false, false, false, false, false, false]
         #set filter valid flag on filter config index
