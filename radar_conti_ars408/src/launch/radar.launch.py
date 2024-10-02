@@ -32,6 +32,11 @@ def generate_launch_description():
         default_value='',
         description='Top-level namespace')
 
+    log_level = LaunchConfiguration('log_level')
+    log_level_arg = DeclareLaunchArgument(
+        'log_level', default_value='info',
+        description='log level')
+
     # Nodes launching commands
     start_lifecycle_manager_cmd = Node(
         package='nav2_lifecycle_manager',
@@ -50,10 +55,11 @@ def generate_launch_description():
         name='radar_node',
         namespace=LaunchConfiguration('namespace'),
         output='screen',
-        arguments=['--ros-args', '--log-level', 'info'],
+        arguments=['--ros-args', '--log-level', log_level],
         parameters=[LaunchConfiguration('params_file')])
 
     ld = LaunchDescription()
+    ld.add_action(log_level_arg)
     ld.add_action(params_file_arg)
     ld.add_action(autostart_arg)
     ld.add_action(use_sim_time_arg)
