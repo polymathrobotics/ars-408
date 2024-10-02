@@ -17,11 +17,6 @@
 using std::placeholders::_1;
 using namespace std::chrono_literals;
 
-/**
- * TODO(troy):
- * - Figure out if we publish the radar_config
- */
-
 namespace FHAC
 {
 
