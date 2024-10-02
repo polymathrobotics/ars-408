@@ -92,12 +92,18 @@ set(node_plugins "")
 
 
 set(library_name radar_conti_ars408_component)
-add_library(${library_name} SHARED ${CMAKE_CURRENT_SOURCE_DIR}/src/radar_conti_ars408_component.cpp)
+add_library(${library_name} SHARED
+  ${CMAKE_CURRENT_SOURCE_DIR}/src/radar_conti_ars408_component.cpp
+  include/dbc/ars408.c
+)
 target_compile_definitions(${library_name} PRIVATE "RADAR_CONTI_ARS408_BUILDING_DLL")
 target_link_libraries(${library_name} dl -lboost_system
     ${rclcpp_lifecycle_LIBRARIES}
     ${ament_index_cpp_LIBRARIES}
 )
+
+# Consume DBC-generated C
+# set_source_files_properties(src/  .c PROPERTIES COMPILE_FLAGS "-Wno-type-limits")
 
 ament_target_dependencies(${library_name} ${dependencies})
 

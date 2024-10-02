@@ -274,7 +274,7 @@ namespace FHAC
     // The middle byte is used by ARS408 as the sensor id, so we just clear it out here.
     canid_t id_mask = 0xF0F;
     can_filter radar_obj_filter{
-        ID_Obj_1_General,
+        ARS408_OBJ_1_GENERAL_FRAME_ID,
         id_mask,
     };
 

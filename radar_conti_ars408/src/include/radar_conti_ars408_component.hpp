@@ -7,6 +7,11 @@
 #include <string>
 #include <map>
 
+extern "C"
+{
+#include "dbc/ars408.h"
+}
+
 #include "visibility_control.h"
 #include "rclcpp/rclcpp.hpp"
 
@@ -91,6 +96,9 @@ typedef unsigned short int uword;
 
 using rclcpp::memory_strategies::allocator_memory_strategy::AllocatorMemoryStrategy;
 using rclcpp::strategies::message_pool_memory_strategy::MessagePoolMemoryStrategy;
+
+// Macros
+#define MAX_FilterState_Cfg_FilterState_Index 15
 
 namespace FHAC
 {
