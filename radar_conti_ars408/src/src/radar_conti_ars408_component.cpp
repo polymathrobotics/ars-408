@@ -17,11 +17,6 @@
 using std::placeholders::_1;
 using namespace std::chrono_literals;
 
-/**
- * TODO(troy):
- * - Figure out if we publish the radar_config
- */
-
 namespace FHAC
 {
 
@@ -161,64 +156,64 @@ namespace FHAC
 
         // FILTER CONFIGS
         // Initialize Number of Objects Filters
-        initializeConfig<uint32_t>(radar_name, std::string("filtercfg_min_nofobj"), 0, radar_filter_configs_[topic_ind].filtercfg_min_nofobj.data);
-        initializeConfig<uint32_t>(radar_name, std::string("filtercfg_max_nofobj"), 20, radar_filter_configs_[topic_ind].filtercfg_max_nofobj.data);
+        initializeConfig<uint32_t>(radar_name, std::string("filtercfg_min_nofobj"), 0, radar_filter_configs_[topic_ind].min_nofobj);
+        initializeConfig<uint32_t>(radar_name, std::string("filtercfg_max_nofobj"), 20, radar_filter_configs_[topic_ind].max_nofobj);
 
         // Initialize Distance Filters
-        initializeConfig<float>(radar_name, std::string("filtercfg_min_distance"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_distance.data);
-        initializeConfig<float>(radar_name, std::string("filtercfg_max_distance"), 409.0, radar_filter_configs_[topic_ind].filtercfg_max_distance.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_min_distance"), 0.0, radar_filter_configs_[topic_ind].min_distance);
+        initializeConfig<float>(radar_name, std::string("filtercfg_max_distance"), 409.0, radar_filter_configs_[topic_ind].max_distance);
 
         // Initialize Azimuth Filters
-        initializeConfig<float>(radar_name, std::string("filtercfg_min_azimuth"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_azimuth.data);
-        initializeConfig<float>(radar_name, std::string("filtercfg_max_azimuth"), 100.0, radar_filter_configs_[topic_ind].filtercfg_max_azimuth.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_min_azimuth"), 0.0, radar_filter_configs_[topic_ind].min_azimuth);
+        initializeConfig<float>(radar_name, std::string("filtercfg_max_azimuth"), 100.0, radar_filter_configs_[topic_ind].max_azimuth);
 
         // Initialize Oncoming Velocity Filters
-        initializeConfig<float>(radar_name, std::string("filtercfg_min_vreloncome"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_vreloncome.data);
-        initializeConfig<float>(radar_name, std::string("filtercfg_max_vreloncome"), 128.0, radar_filter_configs_[topic_ind].filtercfg_max_vreloncome.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_min_vreloncome"), 0.0, radar_filter_configs_[topic_ind].min_vreloncome);
+        initializeConfig<float>(radar_name, std::string("filtercfg_max_vreloncome"), 128.0, radar_filter_configs_[topic_ind].max_vreloncome);
 
         // Initialize Departing Velocity Filters
-        initializeConfig<float>(radar_name, std::string("filtercfg_min_vreldepart"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_vreldepart.data);
-        initializeConfig<float>(radar_name, std::string("filtercfg_max_vreldepart"), 128.0, radar_filter_configs_[topic_ind].filtercfg_max_vreldepart.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_min_vreldepart"), 0.0, radar_filter_configs_[topic_ind].min_vreldepart);
+        initializeConfig<float>(radar_name, std::string("filtercfg_max_vreldepart"), 128.0, radar_filter_configs_[topic_ind].max_vreldepart);
 
         // Initialize Radar Cross Section Filters
-        initializeConfig<float>(radar_name, std::string("filtercfg_min_rcs"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_rcs.data);
-        initializeConfig<float>(radar_name, std::string("filtercfg_max_rcs"), 100.0, radar_filter_configs_[topic_ind].filtercfg_max_rcs.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_min_rcs"), 0.0, radar_filter_configs_[topic_ind].min_rcs);
+        initializeConfig<float>(radar_name, std::string("filtercfg_max_rcs"), 100.0, radar_filter_configs_[topic_ind].max_rcs);
 
         // Initialize Lifetime Filters
-        initializeConfig<float>(radar_name, std::string("filtercfg_min_lifetime"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_lifetime.data);
-        initializeConfig<float>(radar_name, std::string("filtercfg_max_lifetime"), 409.0, radar_filter_configs_[topic_ind].filtercfg_max_lifetime.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_min_lifetime"), 0.0, radar_filter_configs_[topic_ind].min_lifetime);
+        initializeConfig<float>(radar_name, std::string("filtercfg_max_lifetime"), 409.0, radar_filter_configs_[topic_ind].max_lifetime);
 
         // Initialize Size Filters
-        initializeConfig<float>(radar_name, std::string("filtercfg_min_size"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_size.data);
-        initializeConfig<float>(radar_name, std::string("filtercfg_max_size"), 102.0, radar_filter_configs_[topic_ind].filtercfg_max_size.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_min_size"), 0.0, radar_filter_configs_[topic_ind].min_size);
+        initializeConfig<float>(radar_name, std::string("filtercfg_max_size"), 102.0, radar_filter_configs_[topic_ind].max_size);
 
         // Initialize Probability of Existence Filters
-        initializeConfig<uint8_t>(radar_name, std::string("filtercfg_min_probexists"), 0, radar_filter_configs_[topic_ind].filtercfg_min_probexists.data);
-        initializeConfig<uint8_t>(radar_name, std::string("filtercfg_max_probexists"), 7, radar_filter_configs_[topic_ind].filtercfg_max_probexists.data);
+        initializeConfig<uint8_t>(radar_name, std::string("filtercfg_min_probexists"), 0, radar_filter_configs_[topic_ind].min_probexists);
+        initializeConfig<uint8_t>(radar_name, std::string("filtercfg_max_probexists"), 7, radar_filter_configs_[topic_ind].max_probexists);
 
         // Initialize Y Filters
-        initializeConfig<float>(radar_name, std::string("filtercfg_min_y"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_y.data);
-        initializeConfig<float>(radar_name, std::string("filtercfg_max_y"), 818.0, radar_filter_configs_[topic_ind].filtercfg_max_y.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_min_y"), 0.0, radar_filter_configs_[topic_ind].min_y);
+        initializeConfig<float>(radar_name, std::string("filtercfg_max_y"), 818.0, radar_filter_configs_[topic_ind].max_y);
 
         // Initialize X Filters
-        initializeConfig<float>(radar_name, std::string("filtercfg_min_x"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_x.data);
-        initializeConfig<float>(radar_name, std::string("filtercfg_max_x"), 0.0, radar_filter_configs_[topic_ind].filtercfg_max_x.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_min_x"), 0.0, radar_filter_configs_[topic_ind].min_x);
+        initializeConfig<float>(radar_name, std::string("filtercfg_max_x"), 0.0, radar_filter_configs_[topic_ind].max_x);
 
         // Initialize Y Velocity going left to right Filters
-        initializeConfig<float>(radar_name, std::string("filtercfg_min_vyrightleft"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_vyrightleft.data);
-        initializeConfig<float>(radar_name, std::string("filtercfg_max_vyrightleft"), 128.0, radar_filter_configs_[topic_ind].filtercfg_max_vyrightleft.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_min_vyrightleft"), 0.0, radar_filter_configs_[topic_ind].min_vyrightleft);
+        initializeConfig<float>(radar_name, std::string("filtercfg_max_vyrightleft"), 128.0, radar_filter_configs_[topic_ind].max_vyrightleft);
 
         // Initialize X Velocity oncoming Filters
-        initializeConfig<float>(radar_name, std::string("filtercfg_min_vxoncome"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_vxoncome.data);
-        initializeConfig<float>(radar_name, std::string("filtercfg_max_vxoncome"), 128.0, radar_filter_configs_[topic_ind].filtercfg_max_vxoncome.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_min_vxoncome"), 0.0, radar_filter_configs_[topic_ind].min_vxoncome);
+        initializeConfig<float>(radar_name, std::string("filtercfg_max_vxoncome"), 128.0, radar_filter_configs_[topic_ind].max_vxoncome);
 
         // Initialize Y Velocity going right to left Filters
-        initializeConfig<float>(radar_name, std::string("filtercfg_min_vyleftright"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_vyleftright.data);
-        initializeConfig<float>(radar_name, std::string("filtercfg_max_vyleftright"), 128.0, radar_filter_configs_[topic_ind].filtercfg_max_vyleftright.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_min_vyleftright"), 0.0, radar_filter_configs_[topic_ind].min_vyleftright);
+        initializeConfig<float>(radar_name, std::string("filtercfg_max_vyleftright"), 128.0, radar_filter_configs_[topic_ind].max_vyleftright);
 
         // Initialize X Velocity Departing Filters
-        initializeConfig<float>(radar_name, std::string("filtercfg_min_vxdepart"), 0.0, radar_filter_configs_[topic_ind].filtercfg_min_vxdepart.data);
-        initializeConfig<float>(radar_name, std::string("filtercfg_max_vxdepart"), 128.0, radar_filter_configs_[topic_ind].filtercfg_max_vxdepart.data);
+        initializeConfig<float>(radar_name, std::string("filtercfg_min_vxdepart"), 0.0, radar_filter_configs_[topic_ind].min_vxdepart);
+        initializeConfig<float>(radar_name, std::string("filtercfg_max_vxdepart"), 128.0, radar_filter_configs_[topic_ind].max_vxdepart);
 
         filter_config_initialized_list_.push_back(false);
         RCLCPP_WARN(this->get_logger(), "link_name is: %s", parameter.as_string().c_str());
@@ -407,64 +402,64 @@ namespace FHAC
         switch (filterTypes[filter_index])
         {
         case FilterType::NOFOBJ:
-          min_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_min_nofobj.data);
-          max_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_max_nofobj.data);
+          min_value = static_cast<int>(radar_filter_configs_[radar_index].min_nofobj);
+          max_value = static_cast<int>(radar_filter_configs_[radar_index].max_nofobj);
           break;
         case FilterType::DISTANCE:
-          min_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_min_distance.data / 0.1);
-          max_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_max_distance.data / 0.1);
+          min_value = static_cast<int>(radar_filter_configs_[radar_index].min_distance);
+          max_value = static_cast<int>(radar_filter_configs_[radar_index].max_distance);
           break;
         case FilterType::AZIMUTH:
-          min_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_min_azimuth.data / 0.025);
-          max_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_max_azimuth.data / 0.025);
+          min_value = static_cast<int>(radar_filter_configs_[radar_index].min_azimuth);
+          max_value = static_cast<int>(radar_filter_configs_[radar_index].max_azimuth);
           break;
         case FilterType::VRELONCOME:
-          min_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_min_vreloncome.data / 0.0315);
-          max_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_max_vreloncome.data / 0.0315);
+          min_value = static_cast<int>(radar_filter_configs_[radar_index].min_vreloncome);
+          max_value = static_cast<int>(radar_filter_configs_[radar_index].max_vreloncome);
           break;
         case FilterType::VRELDEPART:
-          min_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_min_vreldepart.data / 0.0315);
-          max_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_max_vreldepart.data / 0.0315);
+          min_value = static_cast<int>(radar_filter_configs_[radar_index].min_vreldepart);
+          max_value = static_cast<int>(radar_filter_configs_[radar_index].max_vreldepart);
           break;
         case FilterType::RCS:
-          min_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_min_rcs.data / 0.025);
-          max_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_max_rcs.data / 0.025);
+          min_value = static_cast<int>(radar_filter_configs_[radar_index].min_rcs);
+          max_value = static_cast<int>(radar_filter_configs_[radar_index].max_rcs);
           break;
         case FilterType::LIFETIME:
-          min_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_min_lifetime.data / 0.1);
-          max_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_max_lifetime.data / 0.1);
+          min_value = static_cast<int>(radar_filter_configs_[radar_index].min_lifetime);
+          max_value = static_cast<int>(radar_filter_configs_[radar_index].max_lifetime);
           break;
         case FilterType::SIZE:
-          min_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_min_size.data / 0.025);
-          max_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_max_size.data / 0.025);
+          min_value = static_cast<int>(radar_filter_configs_[radar_index].min_size);
+          max_value = static_cast<int>(radar_filter_configs_[radar_index].max_size);
           break;
         case FilterType::PROBEXISTS:
-          min_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_min_probexists.data);
-          max_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_max_probexists.data);
+          min_value = static_cast<int>(radar_filter_configs_[radar_index].min_probexists);
+          max_value = static_cast<int>(radar_filter_configs_[radar_index].max_probexists);
           break;
         case FilterType::Y:
-          min_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_min_y.data / 0.2);
-          max_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_max_y.data / 0.2);
+          min_value = static_cast<int>(radar_filter_configs_[radar_index].min_y);
+          max_value = static_cast<int>(radar_filter_configs_[radar_index].max_y);
           break;
         case FilterType::X:
-          min_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_min_x.data);
-          max_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_max_x.data);
+          min_value = static_cast<int>(radar_filter_configs_[radar_index].min_x);
+          max_value = static_cast<int>(radar_filter_configs_[radar_index].max_x);
           break;
         case FilterType::VYRIGHTLEFT:
-          min_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_min_vyrightleft.data / 0.0315);
-          max_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_max_vyrightleft.data / 0.0315);
+          min_value = static_cast<int>(radar_filter_configs_[radar_index].min_vyrightleft);
+          max_value = static_cast<int>(radar_filter_configs_[radar_index].max_vyrightleft);
           break;
         case FilterType::VXONCOME:
-          min_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_min_vxoncome.data / 0.0315);
-          max_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_max_vxoncome.data / 0.0315);
+          min_value = static_cast<int>(radar_filter_configs_[radar_index].min_vxoncome);
+          max_value = static_cast<int>(radar_filter_configs_[radar_index].max_vxoncome);
           break;
         case FilterType::VYLEFTRIGHT:
-          min_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_min_vyleftright.data / 0.0315);
-          max_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_max_vyleftright.data / 0.0315);
+          min_value = static_cast<int>(radar_filter_configs_[radar_index].min_vyleftright);
+          max_value = static_cast<int>(radar_filter_configs_[radar_index].max_vyleftright);
           break;
         case FilterType::VXDEPART:
-          min_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_min_vxdepart.data / 0.0315);
-          max_value = static_cast<int>(radar_filter_configs_[radar_index].filtercfg_max_vxdepart.data / 0.0315);
+          min_value = static_cast<int>(radar_filter_configs_[radar_index].min_vxdepart);
+          max_value = static_cast<int>(radar_filter_configs_[radar_index].max_vxdepart);
           break;
         default:
           break;
@@ -628,7 +623,6 @@ namespace FHAC
     // for each Obj_3_ExtInfo message the existing object in the map has to be updated
     if (Get_MsgID0_From_MsgID(frame->get_id()) == ID_Obj_3_Extended)
     {
-
       int id = GET_Obj_3_Extended_Obj_ID(frame->get_data());
 
       object_map_list_[sensor_id][id].object_extended.obj_arellong.data =
@@ -807,38 +801,38 @@ namespace FHAC
       break;
     case FilterType::DISTANCE:
       RCLCPP_DEBUG(this->get_logger(), "Setting Distance Filter");
-      SET_FilterCfg_FilterCfg_Max_Distance(data, max_value);
-      SET_FilterCfg_FilterCfg_Min_Distance(data, min_value);
+      SET_FilterCfg_FilterCfg_Max_Distance(data, max_value / 0.1);
+      SET_FilterCfg_FilterCfg_Min_Distance(data, min_value / 0.1);
       break;
     case FilterType::AZIMUTH:
       RCLCPP_DEBUG(this->get_logger(), "Setting Azimuth Filter");
-      SET_FilterCfg_FilterCfg_Max_Azimuth(data, max_value);
-      SET_FilterCfg_FilterCfg_Min_Azimuth(data, min_value);
+      SET_FilterCfg_FilterCfg_Max_Azimuth(data, max_value / 0.025);
+      SET_FilterCfg_FilterCfg_Min_Azimuth(data, min_value / 0.025);
       break;
     case FilterType::VRELONCOME:
       RCLCPP_DEBUG(this->get_logger(), "Setting Oncoming Velocity Filter");
-      SET_FilterCfg_FilterCfg_Max_VrelOncome(data, max_value);
-      SET_FilterCfg_FilterCfg_Min_VrelOncome(data, min_value);
+      SET_FilterCfg_FilterCfg_Max_VrelOncome(data, max_value / 0.0315);
+      SET_FilterCfg_FilterCfg_Min_VrelOncome(data, min_value / 0.0315);
       break;
     case FilterType::VRELDEPART:
       RCLCPP_DEBUG(this->get_logger(), "Setting Departing Velocity Filter");
-      SET_FilterCfg_FilterCfg_Max_VrelDepart(data, max_value);
-      SET_FilterCfg_FilterCfg_Min_VrelDepart(data, min_value);
+      SET_FilterCfg_FilterCfg_Max_VrelDepart(data, max_value / 0.0315);
+      SET_FilterCfg_FilterCfg_Min_VrelDepart(data, min_value / 0.0315);
       break;
     case FilterType::RCS:
       RCLCPP_DEBUG(this->get_logger(), "Setting RCS Filter");
-      SET_FilterCfg_FilterCfg_Max_RCS(data, max_value);
-      SET_FilterCfg_FilterCfg_Min_RCS(data, min_value);
+      SET_FilterCfg_FilterCfg_Max_RCS(data, max_value / 0.025);
+      SET_FilterCfg_FilterCfg_Min_RCS(data, min_value / 0.025);
       break;
     case FilterType::LIFETIME:
       RCLCPP_DEBUG(this->get_logger(), "Setting Lifetime Filter");
-      SET_FilterCfg_FilterCfg_Max_Lifetime(data, max_value);
-      SET_FilterCfg_FilterCfg_Min_Lifetime(data, min_value);
+      SET_FilterCfg_FilterCfg_Max_Lifetime(data, max_value / 0.1);
+      SET_FilterCfg_FilterCfg_Min_Lifetime(data, min_value / 0.1);
       break;
     case FilterType::SIZE:
       RCLCPP_DEBUG(this->get_logger(), "Setting Size Filter");
-      SET_FilterCfg_FilterCfg_Max_Size(data, max_value);
-      SET_FilterCfg_FilterCfg_Min_Size(data, min_value);
+      SET_FilterCfg_FilterCfg_Max_Size(data, max_value / 0.025);
+      SET_FilterCfg_FilterCfg_Min_Size(data, min_value / 0.025);
       break;
     case FilterType::PROBEXISTS:
       RCLCPP_DEBUG(this->get_logger(), "Setting Probability of Existence Filter");
@@ -847,8 +841,8 @@ namespace FHAC
       break;
     case FilterType::Y:
       RCLCPP_DEBUG(this->get_logger(), "Setting Y Filter");
-      SET_FilterCfg_FilterCfg_Max_Y(data, max_value);
-      SET_FilterCfg_FilterCfg_Min_Y(data, min_value);
+      SET_FilterCfg_FilterCfg_Max_Y(data, max_value / 0.2);
+      SET_FilterCfg_FilterCfg_Min_Y(data, min_value / 0.2);
       break;
     case FilterType::X:
       // TODO: MAKE THIS 13BIT
@@ -856,23 +850,23 @@ namespace FHAC
       return false;
     case FilterType::VYRIGHTLEFT:
       RCLCPP_DEBUG(this->get_logger(), "Setting Right Left Filter");
-      SET_FilterCfg_FilterCfg_Max_VYRightLeft(data, max_value);
-      SET_FilterCfg_FilterCfg_Min_VYRightLeft(data, min_value);
+      SET_FilterCfg_FilterCfg_Max_VYRightLeft(data, max_value / 0.0315);
+      SET_FilterCfg_FilterCfg_Min_VYRightLeft(data, min_value / 0.0315);
       break;
     case FilterType::VXONCOME:
       RCLCPP_DEBUG(this->get_logger(), "Setting X Oncoming Filter");
-      SET_FilterCfg_FilterCfg_Max_VXOncome(data, max_value);
-      SET_FilterCfg_FilterCfg_Min_VXOncome(data, min_value);
+      SET_FilterCfg_FilterCfg_Max_VXOncome(data, max_value / 0.0315);
+      SET_FilterCfg_FilterCfg_Min_VXOncome(data, min_value / 0.0315);
       break;
     case FilterType::VYLEFTRIGHT:
       RCLCPP_DEBUG(this->get_logger(), "Setting Left Right Filter");
-      SET_FilterCfg_FilterCfg_Max_VYLeftRight(data, max_value);
-      SET_FilterCfg_FilterCfg_Min_VYLeftRight(data, min_value);
+      SET_FilterCfg_FilterCfg_Max_VYLeftRight(data, max_value / 0.0315);
+      SET_FilterCfg_FilterCfg_Min_VYLeftRight(data, min_value / 0.0315);
       break;
     case FilterType::VXDEPART:
       RCLCPP_DEBUG(this->get_logger(), "Setting X Departing Filter");
-      SET_FilterCfg_FilterCfg_Max_VXDepart(data, max_value);
-      SET_FilterCfg_FilterCfg_Min_VXDepart(data, min_value);
+      SET_FilterCfg_FilterCfg_Max_VXDepart(data, max_value / 0.0315);
+      SET_FilterCfg_FilterCfg_Min_VXDepart(data, min_value / 0.0315);
       break;
     default:
       RCLCPP_ERROR(this->get_logger(), "Unknown Filter Index");
@@ -990,99 +984,99 @@ namespace FHAC
     radar_filter_configs_[sensor_id].header.stamp = rclcpp_lifecycle::LifecycleNode::now();
     radar_filter_configs_[sensor_id].header.frame_id = radar_link_names_[sensor_id];
 
-    radar_filter_configs_[sensor_id].filtercfg_type.data = CALC_FilterState_Cfg_FilterState_Type(GET_FilterState_Cfg_FilterState_Type(frame->get_data()), 1.0);
+    radar_filter_configs_[sensor_id].type = CALC_FilterState_Cfg_FilterState_Type(GET_FilterState_Cfg_FilterState_Type(frame->get_data()), 1.0);
     int index = CALC_FilterState_Cfg_FilterState_Index(GET_FilterState_Cfg_FilterState_Index(frame->get_data()), 1.0);
 
     switch (filterTypes[index])
     {
     case FilterType::NOFOBJ:
-      radar_filter_configs_[sensor_id].filtercfg_min_nofobj.data = CALC_FilterState_Cfg_FilterState_Min_NofObj(
+      radar_filter_configs_[sensor_id].min_nofobj = CALC_FilterState_Cfg_FilterState_Min_NofObj(
           GET_FilterState_Cfg_FilterState_Min_NofObj(frame->get_data()), 1.0);
-      radar_filter_configs_[sensor_id].filtercfg_max_nofobj.data = CALC_FilterState_Cfg_FilterState_Max_NofObj(
+      radar_filter_configs_[sensor_id].max_nofobj = CALC_FilterState_Cfg_FilterState_Max_NofObj(
           GET_FilterState_Cfg_FilterState_Max_NofObj(frame->get_data()), 1.0);
       break;
     case FilterType::DISTANCE:
-      radar_filter_configs_[sensor_id].filtercfg_min_distance.data = CALC_FilterState_Cfg_FilterState_Min_Distance(
+      radar_filter_configs_[sensor_id].min_distance = CALC_FilterState_Cfg_FilterState_Min_Distance(
           GET_FilterState_Cfg_FilterState_Min_Distance(frame->get_data()), 1.0);
-      radar_filter_configs_[sensor_id].filtercfg_max_distance.data = CALC_FilterState_Cfg_FilterState_Max_Distance(
+      radar_filter_configs_[sensor_id].max_distance = CALC_FilterState_Cfg_FilterState_Max_Distance(
           GET_FilterState_Cfg_FilterState_Max_Distance(frame->get_data()), 1.0);
       break;
     case FilterType::AZIMUTH:
-      radar_filter_configs_[sensor_id].filtercfg_min_azimuth.data = CALC_FilterState_Cfg_FilterState_Min_Azimuth(
+      radar_filter_configs_[sensor_id].min_azimuth = CALC_FilterState_Cfg_FilterState_Min_Azimuth(
           GET_FilterState_Cfg_FilterState_Min_Azimuth(frame->get_data()), 1.0);
-      radar_filter_configs_[sensor_id].filtercfg_max_azimuth.data = CALC_FilterState_Cfg_FilterState_Max_Azimuth(
+      radar_filter_configs_[sensor_id].max_azimuth = CALC_FilterState_Cfg_FilterState_Max_Azimuth(
           GET_FilterState_Cfg_FilterState_Max_Azimuth(frame->get_data()), 1.0);
       break;
     case FilterType::VRELONCOME:
-      radar_filter_configs_[sensor_id].filtercfg_min_vreloncome.data = CALC_FilterState_Cfg_FilterState_Min_VrelOncome(
+      radar_filter_configs_[sensor_id].min_vreloncome = CALC_FilterState_Cfg_FilterState_Min_VrelOncome(
           GET_FilterState_Cfg_FilterState_Min_VrelOncome(frame->get_data()), 1.0);
-      radar_filter_configs_[sensor_id].filtercfg_max_vreloncome.data = CALC_FilterState_Cfg_FilterState_Max_VrelOncome(
+      radar_filter_configs_[sensor_id].max_vreloncome = CALC_FilterState_Cfg_FilterState_Max_VrelOncome(
           GET_FilterState_Cfg_FilterState_Max_VrelOncome(frame->get_data()), 1.0);
       break;
     case FilterType::VRELDEPART:
-      radar_filter_configs_[sensor_id].filtercfg_min_vreldepart.data = CALC_FilterState_Cfg_FilterState_Min_VrelDepart(
+      radar_filter_configs_[sensor_id].min_vreldepart = CALC_FilterState_Cfg_FilterState_Min_VrelDepart(
           GET_FilterState_Cfg_FilterState_Min_VrelDepart(frame->get_data()), 1.0);
-      radar_filter_configs_[sensor_id].filtercfg_max_vreldepart.data = CALC_FilterState_Cfg_FilterState_Max_VrelDepart(
+      radar_filter_configs_[sensor_id].max_vreldepart = CALC_FilterState_Cfg_FilterState_Max_VrelDepart(
           GET_FilterState_Cfg_FilterState_Max_VrelDepart(frame->get_data()), 1.0);
       break;
     case FilterType::RCS:
-      radar_filter_configs_[sensor_id].filtercfg_min_rcs.data = CALC_FilterState_Cfg_FilterState_Min_RCS(
+      radar_filter_configs_[sensor_id].min_rcs = CALC_FilterState_Cfg_FilterState_Min_RCS(
           GET_FilterState_Cfg_FilterState_Min_RCS(frame->get_data()), 1.0);
-      radar_filter_configs_[sensor_id].filtercfg_max_rcs.data = CALC_FilterState_Cfg_FilterState_Max_RCS(
+      radar_filter_configs_[sensor_id].max_rcs = CALC_FilterState_Cfg_FilterState_Max_RCS(
           GET_FilterState_Cfg_FilterState_Max_RCS(frame->get_data()), 1.0);
       break;
     case FilterType::LIFETIME:
-      radar_filter_configs_[sensor_id].filtercfg_min_lifetime.data = CALC_FilterState_Cfg_FilterState_Min_Lifetime(
+      radar_filter_configs_[sensor_id].min_lifetime = CALC_FilterState_Cfg_FilterState_Min_Lifetime(
           GET_FilterState_Cfg_FilterState_Min_Lifetime(frame->get_data()), 1.0);
-      radar_filter_configs_[sensor_id].filtercfg_max_lifetime.data = CALC_FilterState_Cfg_FilterState_Max_Lifetime(
+      radar_filter_configs_[sensor_id].max_lifetime = CALC_FilterState_Cfg_FilterState_Max_Lifetime(
           GET_FilterState_Cfg_FilterState_Max_Lifetime(frame->get_data()), 1.0);
       break;
     case FilterType::SIZE:
-      radar_filter_configs_[sensor_id].filtercfg_min_size.data = CALC_FilterState_Cfg_FilterState_Min_Size(
+      radar_filter_configs_[sensor_id].min_size = CALC_FilterState_Cfg_FilterState_Min_Size(
           GET_FilterState_Cfg_FilterState_Min_Size(frame->get_data()), 1.0);
-      radar_filter_configs_[sensor_id].filtercfg_max_size.data = CALC_FilterState_Cfg_FilterState_Max_Size(
+      radar_filter_configs_[sensor_id].max_size = CALC_FilterState_Cfg_FilterState_Max_Size(
           GET_FilterState_Cfg_FilterState_Max_Size(frame->get_data()), 1.0);
       break;
     case FilterType::PROBEXISTS:
-      radar_filter_configs_[sensor_id].filtercfg_min_probexists.data = CALC_FilterState_Cfg_FilterState_Min_ProbExists(
+      radar_filter_configs_[sensor_id].min_probexists = CALC_FilterState_Cfg_FilterState_Min_ProbExists(
           GET_FilterState_Cfg_FilterState_Min_ProbExists(frame->get_data()), 1.0);
-      radar_filter_configs_[sensor_id].filtercfg_max_probexists.data = CALC_FilterState_Cfg_FilterState_Max_ProbExists(
+      radar_filter_configs_[sensor_id].max_probexists = CALC_FilterState_Cfg_FilterState_Max_ProbExists(
           GET_FilterState_Cfg_FilterState_Max_ProbExists(frame->get_data()), 1.0);
       break;
     case FilterType::Y:
-      radar_filter_configs_[sensor_id].filtercfg_min_y.data = CALC_FilterState_Cfg_FilterState_Min_Y(
+      radar_filter_configs_[sensor_id].min_y = CALC_FilterState_Cfg_FilterState_Min_Y(
           GET_FilterState_Cfg_FilterState_Min_Y(frame->get_data()), 1.0);
-      radar_filter_configs_[sensor_id].filtercfg_max_y.data = CALC_FilterState_Cfg_FilterState_Max_Y(
+      radar_filter_configs_[sensor_id].max_y = CALC_FilterState_Cfg_FilterState_Max_Y(
           GET_FilterState_Cfg_FilterState_Max_Y(frame->get_data()), 1.0);
       break;
     case FilterType::X:
-      radar_filter_configs_[sensor_id].filtercfg_min_x.data = CALC_FilterState_Cfg_FilterState_Min_X(
+      radar_filter_configs_[sensor_id].min_x = CALC_FilterState_Cfg_FilterState_Min_X(
           GET_FilterState_Cfg_FilterState_Min_X(frame->get_data()), 1.0);
-      radar_filter_configs_[sensor_id].filtercfg_max_x.data = CALC_FilterState_Cfg_FilterState_Max_X(
+      radar_filter_configs_[sensor_id].max_x = CALC_FilterState_Cfg_FilterState_Max_X(
           GET_FilterState_Cfg_FilterState_Max_X(frame->get_data()), 1.0);
       break;
     case FilterType::VYRIGHTLEFT:
-      radar_filter_configs_[sensor_id].filtercfg_min_vyrightleft.data = CALC_FilterState_Cfg_FilterState_Min_VYRightLeft(
+      radar_filter_configs_[sensor_id].min_vyrightleft = CALC_FilterState_Cfg_FilterState_Min_VYRightLeft(
           GET_FilterState_Cfg_FilterState_Min_VYRightLeft(frame->get_data()), 1.0);
-      radar_filter_configs_[sensor_id].filtercfg_max_vyrightleft.data = CALC_FilterState_Cfg_FilterState_Max_VYRightLeft(
+      radar_filter_configs_[sensor_id].max_vyrightleft = CALC_FilterState_Cfg_FilterState_Max_VYRightLeft(
           GET_FilterState_Cfg_FilterState_Max_VYRightLeft(frame->get_data()), 1.0);
       break;
     case FilterType::VXONCOME:
-      radar_filter_configs_[sensor_id].filtercfg_min_vxoncome.data = CALC_FilterState_Cfg_FilterState_Min_VXOncome(
+      radar_filter_configs_[sensor_id].min_vxoncome = CALC_FilterState_Cfg_FilterState_Min_VXOncome(
           GET_FilterState_Cfg_FilterState_Min_VXOncome(frame->get_data()), 1.0);
-      radar_filter_configs_[sensor_id].filtercfg_max_vxoncome.data = CALC_FilterState_Cfg_FilterState_Max_VXOncome(
+      radar_filter_configs_[sensor_id].max_vxoncome = CALC_FilterState_Cfg_FilterState_Max_VXOncome(
           GET_FilterState_Cfg_FilterState_Max_VXOncome(frame->get_data()), 1.0);
       break;
     case FilterType::VYLEFTRIGHT:
-      radar_filter_configs_[sensor_id].filtercfg_min_vyleftright.data = CALC_FilterState_Cfg_FilterState_Min_VYLeftRight(
+      radar_filter_configs_[sensor_id].min_vyleftright = CALC_FilterState_Cfg_FilterState_Min_VYLeftRight(
           GET_FilterState_Cfg_FilterState_Min_VYLeftRight(frame->get_data()), 1.0);
-      radar_filter_configs_[sensor_id].filtercfg_max_vyleftright.data = CALC_FilterState_Cfg_FilterState_Max_VYLeftRight(
+      radar_filter_configs_[sensor_id].max_vyleftright = CALC_FilterState_Cfg_FilterState_Max_VYLeftRight(
           GET_FilterState_Cfg_FilterState_Max_VYLeftRight(frame->get_data()), 1.0);
       break;
     case FilterType::VXDEPART:
-      radar_filter_configs_[sensor_id].filtercfg_min_vxdepart.data = CALC_FilterState_Cfg_FilterState_Min_VXDepart(
+      radar_filter_configs_[sensor_id].min_vxdepart = CALC_FilterState_Cfg_FilterState_Min_VXDepart(
           GET_FilterState_Cfg_FilterState_Min_VXDepart(frame->get_data()), 1.0);
-      radar_filter_configs_[sensor_id].filtercfg_max_vxdepart.data = CALC_FilterState_Cfg_FilterState_Max_VXDepart(
+      radar_filter_configs_[sensor_id].max_vxdepart = CALC_FilterState_Cfg_FilterState_Max_VXDepart(
           GET_FilterState_Cfg_FilterState_Max_VXDepart(frame->get_data()), 1.0);
       break;
     default:
