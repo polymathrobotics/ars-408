@@ -227,7 +227,7 @@ namespace FHAC
     } while (more_params);
 
     // TODO(troy): Make a user configurable recv_timeout
-    constexpr std::chrono::duration<float> recv_timeout{10};
+    constexpr std::chrono::duration<float> recv_timeout{0.1};
     socketcan_adapter_ = std::make_unique<polymath::socketcan::SocketcanAdapter>(can_channel_, recv_timeout);
     object_count = 0.0;
     set_filter_service_ = create_service<radar_conti_ars408_msgs::srv::SetFilter>("/radar_conti_ars408/set_filter", std::bind(&radar_conti_ars408::setFilterService, this, std::placeholders::_1, std::placeholders::_2));

@@ -40,7 +40,7 @@ public:
 
     executor.add_node(node->get_node_base_interface());
 
-    const std::chrono::duration<float> recv_timeout{10};
+    const std::chrono::duration<float> recv_timeout{0.1};
     socketcan_adapter_ = std::make_unique<polymath::socketcan::SocketcanAdapter>("vcan0", recv_timeout);
     auto cb = [this](std::unique_ptr<const polymath::socketcan::CanFrame> frame)
     {
@@ -83,7 +83,7 @@ public:
     {
       spin_thread.join();
     }
-
+    socketcan_adapter_->joinReceptionThread();
     socketcan_adapter_->closeSocket();
   }
 };
