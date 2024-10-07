@@ -9,6 +9,7 @@
 
 #include "visibility_control.h"
 #include "rclcpp/rclcpp.hpp"
+#include "nav_msgs/msg/odometry.hpp"
 
 #include "can_msgs/msg/frame.hpp"
 #include "std_msgs/msg/string.hpp"
@@ -312,6 +313,9 @@ namespace FHAC
         std::vector<rclcpp_lifecycle::LifecyclePublisher<radar_conti_ars408_msgs::msg::FilterStateCfg>::SharedPtr> filter_config_publishers_;
         std::vector<rclcpp_lifecycle::LifecyclePublisher<radar_conti_ars408_msgs::msg::RadarState>::SharedPtr> radar_state_publishers_;
 
+        // Subscribers
+        rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr odometry_subscriber_;
+
         // Services
         rclcpp::Service<radar_conti_ars408_msgs::srv::SetFilter>::SharedPtr set_filter_service_;
         rclcpp::Service<radar_conti_ars408_msgs::srv::TriggerSetCfg>::SharedPtr radar_config_service_;
@@ -331,6 +335,9 @@ namespace FHAC
         void updateFilterConfig(std::shared_ptr<const polymath::socketcan::CanFrame> frame, const int &sensor_id);
         void initializeFilterConfigs();
 
+        void odomCallback(const nav_msgs::msg::Odometry::SharedPtr msg);
+        void sendMotionInputSignals(const size_t &sensor_id, uint8_t direction, double speed, double yaw_rate);
+
         // create map container for object list
         std::map<int, radar_conti_ars408_msgs::msg::Object> object_map_;
         std::vector<std::map<int, radar_conti_ars408_msgs::msg::Object>> object_map_list_;
@@ -342,6 +349,7 @@ namespace FHAC
         // create data structures for radar filter config
         std::vector<radar_conti_ars408_msgs::msg::FilterStateCfg> radar_filter_configs_;
         std::unordered_map<size_t, radar_conti_ars408_msgs::msg::RadarConfiguration> radar_configuration_configs_;
+        std::unordered_map<size_t, bool> motion_configs_;
         std::vector<std::vector<bool>> radar_filter_active_;
         std::vector<std::vector<bool>> radar_filter_valid_;
 
@@ -350,6 +358,7 @@ namespace FHAC
         int object_count;
         int number_of_radars_;
         std::string can_channel_;
+        std::string odom_topic_name_;
 
         /// @brief whether to overwrite radar configurations on startup
         bool overwrite_configs_;

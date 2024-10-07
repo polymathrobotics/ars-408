@@ -267,32 +267,32 @@
 /**
  * Message Obj_2_Quality configuration tuple.
  */
-#define MSG_Obj_2_Quality                           0x60c, 0, 7
+#define MSG_Obj_2_Quality 0x60c, 0, 7
 
 /**
  * Message Obj_2_Quality id.
  */
-#define ID_Obj_2_Quality                            0x60c
+#define ID_Obj_2_Quality 0x60c
 
 /**
  * Message Obj_2_Quality extended id bit.
  */
-#define EXT_Obj_2_Quality                           0
+#define EXT_Obj_2_Quality 0
 
 /**
  * Message Obj_2_Quality Data Length Count.
  */
-#define DLC_Obj_2_Quality                           7
+#define DLC_Obj_2_Quality 7
 
 /**
  * Message Obj_2_Quality cycle time.
  */
-#define CYCLE_Obj_2_Quality                         0
+#define CYCLE_Obj_2_Quality 0
 
 /**
  * Message Obj_2_Quality fast cycle time.
  */
-#define FAST_Obj_2_Quality                          0
+#define FAST_Obj_2_Quality 0
 
 /**
  * Initialise message Obj_2_Quality buffer.
@@ -300,18 +300,19 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INIT_Obj_2_Quality(buf) { \
-	INITSIG_Obj_2_Quality_Obj_ProbOfExist(buf); \
-	INITSIG_Obj_2_Quality_Obj_MeasState(buf); \
-	INITSIG_Obj_2_Quality_Obj_ArelLong_rms(buf); \
-	INITSIG_Obj_2_Quality_Obj_ArelLat_rms(buf); \
-	INITSIG_Obj_2_Quality_Obj_VrelLong_rms(buf); \
-	INITSIG_Obj_2_Quality_Obj_VrelLat_rms(buf); \
-	INITSIG_Obj_2_Quality_Obj_Orientation_rms(buf); \
-	INITSIG_Obj_2_Quality_Obj_DistLong_rms(buf); \
-	INITSIG_Obj_2_Quality_Obj_DistLat_rms(buf); \
-	INITSIG_Obj_2_Quality_Obj_ID(buf); \
-}
+#define INIT_Obj_2_Quality(buf)                     \
+	{                                                 \
+		INITSIG_Obj_2_Quality_Obj_ProbOfExist(buf);     \
+		INITSIG_Obj_2_Quality_Obj_MeasState(buf);       \
+		INITSIG_Obj_2_Quality_Obj_ArelLong_rms(buf);    \
+		INITSIG_Obj_2_Quality_Obj_ArelLat_rms(buf);     \
+		INITSIG_Obj_2_Quality_Obj_VrelLong_rms(buf);    \
+		INITSIG_Obj_2_Quality_Obj_VrelLat_rms(buf);     \
+		INITSIG_Obj_2_Quality_Obj_Orientation_rms(buf); \
+		INITSIG_Obj_2_Quality_Obj_DistLong_rms(buf);    \
+		INITSIG_Obj_2_Quality_Obj_DistLat_rms(buf);     \
+		INITSIG_Obj_2_Quality_Obj_ID(buf);              \
+	}
 
 /**
  * @}
@@ -342,32 +343,32 @@
 /**
  * Message Obj_3_Extended configuration tuple.
  */
-#define MSG_Obj_3_Extended                          0x60d, 0, 8
+#define MSG_Obj_3_Extended 0x60d, 0, 8
 
 /**
  * Message Obj_3_Extended id.
  */
-#define ID_Obj_3_Extended                           0x60d
+#define ID_Obj_3_Extended 0x60d
 
 /**
  * Message Obj_3_Extended extended id bit.
  */
-#define EXT_Obj_3_Extended                          0
+#define EXT_Obj_3_Extended 0
 
 /**
  * Message Obj_3_Extended Data Length Count.
  */
-#define DLC_Obj_3_Extended                          8
+#define DLC_Obj_3_Extended 8
 
 /**
  * Message Obj_3_Extended cycle time.
  */
-#define CYCLE_Obj_3_Extended                        0
+#define CYCLE_Obj_3_Extended 0
 
 /**
  * Message Obj_3_Extended fast cycle time.
  */
-#define FAST_Obj_3_Extended                         0
+#define FAST_Obj_3_Extended 0
 
 /**
  * Initialise message Obj_3_Extended buffer.
@@ -375,15 +376,16 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INIT_Obj_3_Extended(buf) { \
-	INITSIG_Obj_3_Extended_Obj_Class(buf); \
-	INITSIG_Obj_3_Extended_Obj_ArelLat(buf); \
-	INITSIG_Obj_3_Extended_Obj_ID(buf); \
-	INITSIG_Obj_3_Extended_Obj_OrientationAngle(buf); \
-	INITSIG_Obj_3_Extended_Obj_Width(buf); \
-	INITSIG_Obj_3_Extended_Obj_Length(buf); \
-	INITSIG_Obj_3_Extended_Obj_ArelLong(buf); \
-}
+#define INIT_Obj_3_Extended(buf)                      \
+	{                                                   \
+		INITSIG_Obj_3_Extended_Obj_Class(buf);            \
+		INITSIG_Obj_3_Extended_Obj_ArelLat(buf);          \
+		INITSIG_Obj_3_Extended_Obj_ID(buf);               \
+		INITSIG_Obj_3_Extended_Obj_OrientationAngle(buf); \
+		INITSIG_Obj_3_Extended_Obj_Width(buf);            \
+		INITSIG_Obj_3_Extended_Obj_Length(buf);           \
+		INITSIG_Obj_3_Extended_Obj_ArelLong(buf);         \
+	}
 
 /**
  * @}
@@ -414,32 +416,32 @@
 /**
  * Message CollDetRegionState configuration tuple.
  */
-#define MSG_CollDetRegionState                      0x402, 0, 8
+#define MSG_CollDetRegionState 0x402, 0, 8
 
 /**
  * Message CollDetRegionState id.
  */
-#define ID_CollDetRegionState                       0x402
+#define ID_CollDetRegionState 0x402
 
 /**
  * Message CollDetRegionState extended id bit.
  */
-#define EXT_CollDetRegionState                      0
+#define EXT_CollDetRegionState 0
 
 /**
  * Message CollDetRegionState Data Length Count.
  */
-#define DLC_CollDetRegionState                      8
+#define DLC_CollDetRegionState 8
 
 /**
  * Message CollDetRegionState cycle time.
  */
-#define CYCLE_CollDetRegionState                    0
+#define CYCLE_CollDetRegionState 0
 
 /**
  * Message CollDetRegionState fast cycle time.
  */
-#define FAST_CollDetRegionState                     0
+#define FAST_CollDetRegionState 0
 
 /**
  * Initialise message CollDetRegionState buffer.
@@ -447,15 +449,16 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INIT_CollDetRegionState(buf) { \
-	INITSIG_CollDetRegionState_CollDetRegState_WarningLevel(buf); \
-	INITSIG_CollDetRegionState_CollDetRegState_NofObjects(buf); \
-	INITSIG_CollDetRegionState_CollDetRegState_RegionID(buf); \
-	INITSIG_CollDetRegionState_CollDetRegState_Point2Y(buf); \
-	INITSIG_CollDetRegionState_CollDetRegState_Point2X(buf); \
-	INITSIG_CollDetRegionState_CollDetRegState_Point1Y(buf); \
-	INITSIG_CollDetRegionState_CollDetRegState_Point1X(buf); \
-}
+#define INIT_CollDetRegionState(buf)                              \
+	{                                                               \
+		INITSIG_CollDetRegionState_CollDetRegState_WarningLevel(buf); \
+		INITSIG_CollDetRegionState_CollDetRegState_NofObjects(buf);   \
+		INITSIG_CollDetRegionState_CollDetRegState_RegionID(buf);     \
+		INITSIG_CollDetRegionState_CollDetRegState_Point2Y(buf);      \
+		INITSIG_CollDetRegionState_CollDetRegState_Point2X(buf);      \
+		INITSIG_CollDetRegionState_CollDetRegState_Point1Y(buf);      \
+		INITSIG_CollDetRegionState_CollDetRegState_Point1X(buf);      \
+	}
 
 /**
  * @}
@@ -481,32 +484,32 @@
 /**
  * Message Obj_4_Warning configuration tuple.
  */
-#define MSG_Obj_4_Warning                           0x60e, 0, 4
+#define MSG_Obj_4_Warning 0x60e, 0, 4
 
 /**
  * Message Obj_4_Warning id.
  */
-#define ID_Obj_4_Warning                            0x60e
+#define ID_Obj_4_Warning 0x60e
 
 /**
  * Message Obj_4_Warning extended id bit.
  */
-#define EXT_Obj_4_Warning                           0
+#define EXT_Obj_4_Warning 0
 
 /**
  * Message Obj_4_Warning Data Length Count.
  */
-#define DLC_Obj_4_Warning                           4
+#define DLC_Obj_4_Warning 4
 
 /**
  * Message Obj_4_Warning cycle time.
  */
-#define CYCLE_Obj_4_Warning                         0
+#define CYCLE_Obj_4_Warning 0
 
 /**
  * Message Obj_4_Warning fast cycle time.
  */
-#define FAST_Obj_4_Warning                          0
+#define FAST_Obj_4_Warning 0
 
 /**
  * Initialise message Obj_4_Warning buffer.
@@ -514,10 +517,11 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INIT_Obj_4_Warning(buf) { \
-	INITSIG_Obj_4_Warning_Obj_CollDetRegionBitfield(buf); \
-	INITSIG_Obj_4_Warning_Obj_ID(buf); \
-}
+#define INIT_Obj_4_Warning(buf)                           \
+	{                                                       \
+		INITSIG_Obj_4_Warning_Obj_CollDetRegionBitfield(buf); \
+		INITSIG_Obj_4_Warning_Obj_ID(buf);                    \
+	}
 
 /**
  * @}
@@ -542,32 +546,32 @@
 /**
  * Message CollDetRelayCtrl configuration tuple.
  */
-#define MSG_CollDetRelayCtrl                        0x8, 0, 1
+#define MSG_CollDetRelayCtrl 0x8, 0, 1
 
 /**
  * Message CollDetRelayCtrl id.
  */
-#define ID_CollDetRelayCtrl                         0x8
+#define ID_CollDetRelayCtrl 0x8
 
 /**
  * Message CollDetRelayCtrl extended id bit.
  */
-#define EXT_CollDetRelayCtrl                        0
+#define EXT_CollDetRelayCtrl 0
 
 /**
  * Message CollDetRelayCtrl Data Length Count.
  */
-#define DLC_CollDetRelayCtrl                        1
+#define DLC_CollDetRelayCtrl 1
 
 /**
  * Message CollDetRelayCtrl cycle time.
  */
-#define CYCLE_CollDetRelayCtrl                      0
+#define CYCLE_CollDetRelayCtrl 0
 
 /**
  * Message CollDetRelayCtrl fast cycle time.
  */
-#define FAST_CollDetRelayCtrl                       0
+#define FAST_CollDetRelayCtrl 0
 
 /**
  * Initialise message CollDetRelayCtrl buffer.
@@ -575,9 +579,10 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INIT_CollDetRelayCtrl(buf) { \
-	INITSIG_CollDetRelayCtrl_CollDetRelayCtrl_Param(buf); \
-}
+#define INIT_CollDetRelayCtrl(buf)                        \
+	{                                                       \
+		INITSIG_CollDetRelayCtrl_CollDetRelayCtrl_Param(buf); \
+	}
 
 /**
  * @}
@@ -636,32 +641,32 @@
 /**
  * Message FilterState_Cfg configuration tuple.
  */
-#define MSG_FilterState_Cfg                         0x204, 0, 5
+#define MSG_FilterState_Cfg 0x204, 0, 5
 
 /**
  * Message FilterState_Cfg id.
  */
-#define ID_FilterState_Cfg                          0x204
+#define ID_FilterState_Cfg 0x204
 
 /**
  * Message FilterState_Cfg extended id bit.
  */
-#define EXT_FilterState_Cfg                         0
+#define EXT_FilterState_Cfg 0
 
 /**
  * Message FilterState_Cfg Data Length Count.
  */
-#define DLC_FilterState_Cfg                         5
+#define DLC_FilterState_Cfg 5
 
 /**
  * Message FilterState_Cfg cycle time.
  */
-#define CYCLE_FilterState_Cfg                       0
+#define CYCLE_FilterState_Cfg 0
 
 /**
  * Message FilterState_Cfg fast cycle time.
  */
-#define FAST_FilterState_Cfg                        0
+#define FAST_FilterState_Cfg 0
 
 /**
  * Initialise message FilterState_Cfg buffer.
@@ -669,43 +674,44 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INIT_FilterState_Cfg(buf) { \
-	INITSIG_FilterState_Cfg_FilterState_Max_Class(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Min_Class(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Min_Y(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Min_X(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Min_VYRightLeft(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Min_VYLeftRight(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Min_VXOncome(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Min_VXDepart(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Max_Y(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Max_X(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Max_VYRightLeft(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Max_VYLeftRight(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Max_VXOncome(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Max_VXDepart(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Type(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Min_VrelOncome(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Min_VrelDepart(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Min_Size(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Min_RCS(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Min_ProbExists(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Min_NofObj(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Min_Lifetime(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Min_Distance(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Min_Azimuth(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Max_VrelOncome(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Max_VrelDepart(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Max_Size(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Max_RCS(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Max_ProbExists(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Max_NofObj(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Max_Lifetime(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Max_Distance(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Max_Azimuth(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Index(buf); \
-	INITSIG_FilterState_Cfg_FilterState_Active(buf); \
-}
+#define INIT_FilterState_Cfg(buf)                             \
+	{                                                           \
+		INITSIG_FilterState_Cfg_FilterState_Max_Class(buf);       \
+		INITSIG_FilterState_Cfg_FilterState_Min_Class(buf);       \
+		INITSIG_FilterState_Cfg_FilterState_Min_Y(buf);           \
+		INITSIG_FilterState_Cfg_FilterState_Min_X(buf);           \
+		INITSIG_FilterState_Cfg_FilterState_Min_VYRightLeft(buf); \
+		INITSIG_FilterState_Cfg_FilterState_Min_VYLeftRight(buf); \
+		INITSIG_FilterState_Cfg_FilterState_Min_VXOncome(buf);    \
+		INITSIG_FilterState_Cfg_FilterState_Min_VXDepart(buf);    \
+		INITSIG_FilterState_Cfg_FilterState_Max_Y(buf);           \
+		INITSIG_FilterState_Cfg_FilterState_Max_X(buf);           \
+		INITSIG_FilterState_Cfg_FilterState_Max_VYRightLeft(buf); \
+		INITSIG_FilterState_Cfg_FilterState_Max_VYLeftRight(buf); \
+		INITSIG_FilterState_Cfg_FilterState_Max_VXOncome(buf);    \
+		INITSIG_FilterState_Cfg_FilterState_Max_VXDepart(buf);    \
+		INITSIG_FilterState_Cfg_FilterState_Type(buf);            \
+		INITSIG_FilterState_Cfg_FilterState_Min_VrelOncome(buf);  \
+		INITSIG_FilterState_Cfg_FilterState_Min_VrelDepart(buf);  \
+		INITSIG_FilterState_Cfg_FilterState_Min_Size(buf);        \
+		INITSIG_FilterState_Cfg_FilterState_Min_RCS(buf);         \
+		INITSIG_FilterState_Cfg_FilterState_Min_ProbExists(buf);  \
+		INITSIG_FilterState_Cfg_FilterState_Min_NofObj(buf);      \
+		INITSIG_FilterState_Cfg_FilterState_Min_Lifetime(buf);    \
+		INITSIG_FilterState_Cfg_FilterState_Min_Distance(buf);    \
+		INITSIG_FilterState_Cfg_FilterState_Min_Azimuth(buf);     \
+		INITSIG_FilterState_Cfg_FilterState_Max_VrelOncome(buf);  \
+		INITSIG_FilterState_Cfg_FilterState_Max_VrelDepart(buf);  \
+		INITSIG_FilterState_Cfg_FilterState_Max_Size(buf);        \
+		INITSIG_FilterState_Cfg_FilterState_Max_RCS(buf);         \
+		INITSIG_FilterState_Cfg_FilterState_Max_ProbExists(buf);  \
+		INITSIG_FilterState_Cfg_FilterState_Max_NofObj(buf);      \
+		INITSIG_FilterState_Cfg_FilterState_Max_Lifetime(buf);    \
+		INITSIG_FilterState_Cfg_FilterState_Max_Distance(buf);    \
+		INITSIG_FilterState_Cfg_FilterState_Max_Azimuth(buf);     \
+		INITSIG_FilterState_Cfg_FilterState_Index(buf);           \
+		INITSIG_FilterState_Cfg_FilterState_Active(buf);          \
+	}
 
 /**
  * @}
@@ -731,32 +737,32 @@
 /**
  * Message FilterState_Header configuration tuple.
  */
-#define MSG_FilterState_Header                      0x203, 0, 2
+#define MSG_FilterState_Header 0x203, 0, 2
 
 /**
  * Message FilterState_Header id.
  */
-#define ID_FilterState_Header                       0x203
+#define ID_FilterState_Header 0x203
 
 /**
  * Message FilterState_Header extended id bit.
  */
-#define EXT_FilterState_Header                      0
+#define EXT_FilterState_Header 0
 
 /**
  * Message FilterState_Header Data Length Count.
  */
-#define DLC_FilterState_Header                      2
+#define DLC_FilterState_Header 2
 
 /**
  * Message FilterState_Header cycle time.
  */
-#define CYCLE_FilterState_Header                    0
+#define CYCLE_FilterState_Header 0
 
 /**
  * Message FilterState_Header fast cycle time.
  */
-#define FAST_FilterState_Header                     0
+#define FAST_FilterState_Header 0
 
 /**
  * Initialise message FilterState_Header buffer.
@@ -764,10 +770,11 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INIT_FilterState_Header(buf) { \
-	INITSIG_FilterState_Header_FilterState_NofObjectFilterCfg(buf); \
-	INITSIG_FilterState_Header_FilterState_NofClusterFilterCfg(buf); \
-}
+#define INIT_FilterState_Header(buf)                                 \
+	{                                                                  \
+		INITSIG_FilterState_Header_FilterState_NofObjectFilterCfg(buf);  \
+		INITSIG_FilterState_Header_FilterState_NofClusterFilterCfg(buf); \
+	}
 
 /**
  * @}
@@ -827,32 +834,32 @@
 /**
  * Message FilterCfg configuration tuple.
  */
-#define MSG_FilterCfg                               0x202, 0, 5
+#define MSG_FilterCfg 0x202, 0, 5
 
 /**
  * Message FilterCfg id.
  */
-#define ID_FilterCfg                                0x202
+#define ID_FilterCfg 0x202
 
 /**
  * Message FilterCfg extended id bit.
  */
-#define EXT_FilterCfg                               0
+#define EXT_FilterCfg 0
 
 /**
  * Message FilterCfg Data Length Count.
  */
-#define DLC_FilterCfg                               5
+#define DLC_FilterCfg 5
 
 /**
  * Message FilterCfg cycle time.
  */
-#define CYCLE_FilterCfg                             0
+#define CYCLE_FilterCfg 0
 
 /**
  * Message FilterCfg fast cycle time.
  */
-#define FAST_FilterCfg                              0
+#define FAST_FilterCfg 0
 
 /**
  * Initialise message FilterCfg buffer.
@@ -860,44 +867,45 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INIT_FilterCfg(buf) { \
-	INITSIG_FilterCfg_FilterCfg_Min_Class(buf); \
-	INITSIG_FilterCfg_FilterCfg_Max_Class(buf); \
-	INITSIG_FilterCfg_FilterCfg_Min_Y(buf); \
-	INITSIG_FilterCfg_FilterCfg_Min_X(buf); \
-	INITSIG_FilterCfg_FilterCfg_Min_VYRightLeft(buf); \
-	INITSIG_FilterCfg_FilterCfg_Min_VYLeftRight(buf); \
-	INITSIG_FilterCfg_FilterCfg_Min_VXOncome(buf); \
-	INITSIG_FilterCfg_FilterCfg_Min_VXDepart(buf); \
-	INITSIG_FilterCfg_FilterCfg_Max_Y(buf); \
-	INITSIG_FilterCfg_FilterCfg_Max_X(buf); \
-	INITSIG_FilterCfg_FilterCfg_Max_VYRightLeft(buf); \
-	INITSIG_FilterCfg_FilterCfg_Max_VXOncome(buf); \
-	INITSIG_FilterCfg_FilterCfg_Max_VYLeftRight(buf); \
-	INITSIG_FilterCfg_FilterCfg_Max_VXDepart(buf); \
-	INITSIG_FilterCfg_FilterCfg_Valid(buf); \
-	INITSIG_FilterCfg_FilterCfg_Active(buf); \
-	INITSIG_FilterCfg_FilterCfg_Max_VrelOncome(buf); \
-	INITSIG_FilterCfg_FilterCfg_Max_VrelDepart(buf); \
-	INITSIG_FilterCfg_FilterCfg_Max_Size(buf); \
-	INITSIG_FilterCfg_FilterCfg_Max_RCS(buf); \
-	INITSIG_FilterCfg_FilterCfg_Max_ProbExists(buf); \
-	INITSIG_FilterCfg_FilterCfg_Max_NofObj(buf); \
-	INITSIG_FilterCfg_FilterCfg_Max_Lifetime(buf); \
-	INITSIG_FilterCfg_FilterCfg_Max_Distance(buf); \
-	INITSIG_FilterCfg_FilterCfg_Max_Azimuth(buf); \
-	INITSIG_FilterCfg_FilterCfg_Min_VrelOncome(buf); \
-	INITSIG_FilterCfg_FilterCfg_Min_VrelDepart(buf); \
-	INITSIG_FilterCfg_FilterCfg_Min_Size(buf); \
-	INITSIG_FilterCfg_FilterCfg_Min_RCS(buf); \
-	INITSIG_FilterCfg_FilterCfg_Min_ProbExists(buf); \
-	INITSIG_FilterCfg_FilterCfg_Min_Lifetime(buf); \
-	INITSIG_FilterCfg_FilterCfg_Min_Azimuth(buf); \
-	INITSIG_FilterCfg_FilterCfg_Min_NofObj(buf); \
-	INITSIG_FilterCfg_FilterCfg_Min_Distance(buf); \
-	INITSIG_FilterCfg_FilterCfg_Index(buf); \
-	INITSIG_FilterCfg_FilterCfg_Type(buf); \
-}
+#define INIT_FilterCfg(buf)                           \
+	{                                                   \
+		INITSIG_FilterCfg_FilterCfg_Min_Class(buf);       \
+		INITSIG_FilterCfg_FilterCfg_Max_Class(buf);       \
+		INITSIG_FilterCfg_FilterCfg_Min_Y(buf);           \
+		INITSIG_FilterCfg_FilterCfg_Min_X(buf);           \
+		INITSIG_FilterCfg_FilterCfg_Min_VYRightLeft(buf); \
+		INITSIG_FilterCfg_FilterCfg_Min_VYLeftRight(buf); \
+		INITSIG_FilterCfg_FilterCfg_Min_VXOncome(buf);    \
+		INITSIG_FilterCfg_FilterCfg_Min_VXDepart(buf);    \
+		INITSIG_FilterCfg_FilterCfg_Max_Y(buf);           \
+		INITSIG_FilterCfg_FilterCfg_Max_X(buf);           \
+		INITSIG_FilterCfg_FilterCfg_Max_VYRightLeft(buf); \
+		INITSIG_FilterCfg_FilterCfg_Max_VXOncome(buf);    \
+		INITSIG_FilterCfg_FilterCfg_Max_VYLeftRight(buf); \
+		INITSIG_FilterCfg_FilterCfg_Max_VXDepart(buf);    \
+		INITSIG_FilterCfg_FilterCfg_Valid(buf);           \
+		INITSIG_FilterCfg_FilterCfg_Active(buf);          \
+		INITSIG_FilterCfg_FilterCfg_Max_VrelOncome(buf);  \
+		INITSIG_FilterCfg_FilterCfg_Max_VrelDepart(buf);  \
+		INITSIG_FilterCfg_FilterCfg_Max_Size(buf);        \
+		INITSIG_FilterCfg_FilterCfg_Max_RCS(buf);         \
+		INITSIG_FilterCfg_FilterCfg_Max_ProbExists(buf);  \
+		INITSIG_FilterCfg_FilterCfg_Max_NofObj(buf);      \
+		INITSIG_FilterCfg_FilterCfg_Max_Lifetime(buf);    \
+		INITSIG_FilterCfg_FilterCfg_Max_Distance(buf);    \
+		INITSIG_FilterCfg_FilterCfg_Max_Azimuth(buf);     \
+		INITSIG_FilterCfg_FilterCfg_Min_VrelOncome(buf);  \
+		INITSIG_FilterCfg_FilterCfg_Min_VrelDepart(buf);  \
+		INITSIG_FilterCfg_FilterCfg_Min_Size(buf);        \
+		INITSIG_FilterCfg_FilterCfg_Min_RCS(buf);         \
+		INITSIG_FilterCfg_FilterCfg_Min_ProbExists(buf);  \
+		INITSIG_FilterCfg_FilterCfg_Min_Lifetime(buf);    \
+		INITSIG_FilterCfg_FilterCfg_Min_Azimuth(buf);     \
+		INITSIG_FilterCfg_FilterCfg_Min_NofObj(buf);      \
+		INITSIG_FilterCfg_FilterCfg_Min_Distance(buf);    \
+		INITSIG_FilterCfg_FilterCfg_Index(buf);           \
+		INITSIG_FilterCfg_FilterCfg_Type(buf);            \
+	}
 
 /**
  * @}
@@ -941,32 +949,32 @@
 /**
  * Message RadarConfiguration configuration tuple.
  */
-#define MSG_RadarConfiguration                      0x200, 0, 8
+#define MSG_RadarConfiguration 0x200, 0, 8
 
 /**
  * Message RadarConfiguration id.
  */
-#define ID_RadarConfiguration                       0x200
+#define ID_RadarConfiguration 0x200
 
 /**
  * Message RadarConfiguration extended id bit.
  */
-#define EXT_RadarConfiguration                      0
+#define EXT_RadarConfiguration 0
 
 /**
  * Message RadarConfiguration Data Length Count.
  */
-#define DLC_RadarConfiguration                      8
+#define DLC_RadarConfiguration 8
 
 /**
  * Message RadarConfiguration cycle time.
  */
-#define CYCLE_RadarConfiguration                    0
+#define CYCLE_RadarConfiguration 0
 
 /**
  * Message RadarConfiguration fast cycle time.
  */
-#define FAST_RadarConfiguration                     0
+#define FAST_RadarConfiguration 0
 
 /**
  * Initialise message RadarConfiguration buffer.
@@ -974,28 +982,29 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INIT_RadarConfiguration(buf) { \
-	INITSIG_RadarConfiguration_RadarCfg_RCS_Threshold_Valid(buf); \
-	INITSIG_RadarConfiguration_RadarCfg_RCS_Threshold(buf); \
-	INITSIG_RadarConfiguration_RadarCfg_StoreInNVM_valid(buf); \
-	INITSIG_RadarConfiguration_RadarCfg_SortIndex_valid(buf); \
-	INITSIG_RadarConfiguration_RadarCfg_SortIndex(buf); \
-	INITSIG_RadarConfiguration_RadarCfg_StoreInNVM(buf); \
-	INITSIG_RadarConfiguration_RadarCfg_SendExtInfo_valid(buf); \
-	INITSIG_RadarConfiguration_RadarCfg_SendExtInfo(buf); \
-	INITSIG_RadarConfiguration_RadarCfg_CtrlRelay_valid(buf); \
-	INITSIG_RadarConfiguration_RadarCfg_CtrlRelay(buf); \
-	INITSIG_RadarConfiguration_RadarCfg_SendQuality_valid(buf); \
-	INITSIG_RadarConfiguration_RadarCfg_SendQuality(buf); \
-	INITSIG_RadarConfiguration_RadarCfg_MaxDistance_valid(buf); \
-	INITSIG_RadarConfiguration_RadarCfg_RadarPower_valid(buf); \
-	INITSIG_RadarConfiguration_RadarCfg_OutputType_valid(buf); \
-	INITSIG_RadarConfiguration_RadarCfg_SensorID_valid(buf); \
-	INITSIG_RadarConfiguration_RadarCfg_MaxDistance(buf); \
-	INITSIG_RadarConfiguration_RadarCfg_RadarPower(buf); \
-	INITSIG_RadarConfiguration_RadarCfg_OutputType(buf); \
-	INITSIG_RadarConfiguration_RadarCfg_SensorID(buf); \
-}
+#define INIT_RadarConfiguration(buf)                              \
+	{                                                               \
+		INITSIG_RadarConfiguration_RadarCfg_RCS_Threshold_Valid(buf); \
+		INITSIG_RadarConfiguration_RadarCfg_RCS_Threshold(buf);       \
+		INITSIG_RadarConfiguration_RadarCfg_StoreInNVM_valid(buf);    \
+		INITSIG_RadarConfiguration_RadarCfg_SortIndex_valid(buf);     \
+		INITSIG_RadarConfiguration_RadarCfg_SortIndex(buf);           \
+		INITSIG_RadarConfiguration_RadarCfg_StoreInNVM(buf);          \
+		INITSIG_RadarConfiguration_RadarCfg_SendExtInfo_valid(buf);   \
+		INITSIG_RadarConfiguration_RadarCfg_SendExtInfo(buf);         \
+		INITSIG_RadarConfiguration_RadarCfg_CtrlRelay_valid(buf);     \
+		INITSIG_RadarConfiguration_RadarCfg_CtrlRelay(buf);           \
+		INITSIG_RadarConfiguration_RadarCfg_SendQuality_valid(buf);   \
+		INITSIG_RadarConfiguration_RadarCfg_SendQuality(buf);         \
+		INITSIG_RadarConfiguration_RadarCfg_MaxDistance_valid(buf);   \
+		INITSIG_RadarConfiguration_RadarCfg_RadarPower_valid(buf);    \
+		INITSIG_RadarConfiguration_RadarCfg_OutputType_valid(buf);    \
+		INITSIG_RadarConfiguration_RadarCfg_SensorID_valid(buf);      \
+		INITSIG_RadarConfiguration_RadarCfg_MaxDistance(buf);         \
+		INITSIG_RadarConfiguration_RadarCfg_RadarPower(buf);          \
+		INITSIG_RadarConfiguration_RadarCfg_OutputType(buf);          \
+		INITSIG_RadarConfiguration_RadarCfg_SensorID(buf);            \
+	}
 
 /**
  * @}
@@ -1036,32 +1045,32 @@
 /**
  * Message RadarState configuration tuple.
  */
-#define MSG_RadarState                              0x201, 0, 8
+#define MSG_RadarState 0x201, 0, 8
 
 /**
  * Message RadarState id.
  */
-#define ID_RadarState                               0x201
+#define ID_RadarState 0x201
 
 /**
  * Message RadarState extended id bit.
  */
-#define EXT_RadarState                              0
+#define EXT_RadarState 0
 
 /**
  * Message RadarState Data Length Count.
  */
-#define DLC_RadarState                              8
+#define DLC_RadarState 8
 
 /**
  * Message RadarState cycle time.
  */
-#define CYCLE_RadarState                            50
+#define CYCLE_RadarState 50
 
 /**
  * Message RadarState fast cycle time.
  */
-#define FAST_RadarState                             0
+#define FAST_RadarState 0
 
 /**
  * Initialise message RadarState buffer.
@@ -1069,25 +1078,26 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INIT_RadarState(buf) { \
-	INITSIG_RadarState_RadarState_Voltage_Error(buf); \
-	INITSIG_RadarState_RadarState_Temporary_Error(buf); \
-	INITSIG_RadarState_RadarState_Temperature_Error(buf); \
-	INITSIG_RadarState_RadarState_Interference(buf); \
-	INITSIG_RadarState_RadarState_Persistent_Error(buf); \
-	INITSIG_RadarState_RadarState_SortIndex(buf); \
-	INITSIG_RadarState_RadarState_RCS_Threshold(buf); \
-	INITSIG_RadarState_RadarState_CtrlRelayCfg(buf); \
-	INITSIG_RadarState_RadarState_SendQualityCfg(buf); \
-	INITSIG_RadarState_RadarState_SendExtInfoCfg(buf); \
-	INITSIG_RadarState_RadarState_MotionRxState(buf); \
-	INITSIG_RadarState_RadarState_SensorID(buf); \
-	INITSIG_RadarState_RadarState_OutputTypeCfg(buf); \
-	INITSIG_RadarState_RadarState_RadarPowerCfg(buf); \
-	INITSIG_RadarState_RadarState_NVMReadStatus(buf); \
-	INITSIG_RadarState_RadarState_NVMwriteStatus(buf); \
-	INITSIG_RadarState_RadarState_MaxDistanceCfg(buf); \
-}
+#define INIT_RadarState(buf)                              \
+	{                                                       \
+		INITSIG_RadarState_RadarState_Voltage_Error(buf);     \
+		INITSIG_RadarState_RadarState_Temporary_Error(buf);   \
+		INITSIG_RadarState_RadarState_Temperature_Error(buf); \
+		INITSIG_RadarState_RadarState_Interference(buf);      \
+		INITSIG_RadarState_RadarState_Persistent_Error(buf);  \
+		INITSIG_RadarState_RadarState_SortIndex(buf);         \
+		INITSIG_RadarState_RadarState_RCS_Threshold(buf);     \
+		INITSIG_RadarState_RadarState_CtrlRelayCfg(buf);      \
+		INITSIG_RadarState_RadarState_SendQualityCfg(buf);    \
+		INITSIG_RadarState_RadarState_SendExtInfoCfg(buf);    \
+		INITSIG_RadarState_RadarState_MotionRxState(buf);     \
+		INITSIG_RadarState_RadarState_SensorID(buf);          \
+		INITSIG_RadarState_RadarState_OutputTypeCfg(buf);     \
+		INITSIG_RadarState_RadarState_RadarPowerCfg(buf);     \
+		INITSIG_RadarState_RadarState_NVMReadStatus(buf);     \
+		INITSIG_RadarState_RadarState_NVMwriteStatus(buf);    \
+		INITSIG_RadarState_RadarState_MaxDistanceCfg(buf);    \
+	}
 
 /**
  * @}
@@ -1113,32 +1123,32 @@
 /**
  * Message SpeedInformation configuration tuple.
  */
-#define MSG_SpeedInformation                        0x300, 0, 2
+#define MSG_SpeedInformation 0x300, 0, 2
 
 /**
  * Message SpeedInformation id.
  */
-#define ID_SpeedInformation                         0x300
+#define ID_SpeedInformation 0x300
 
 /**
  * Message SpeedInformation extended id bit.
  */
-#define EXT_SpeedInformation                        0
+#define EXT_SpeedInformation 0
 
 /**
  * Message SpeedInformation Data Length Count.
  */
-#define DLC_SpeedInformation                        2
+#define DLC_SpeedInformation 2
 
 /**
  * Message SpeedInformation cycle time.
  */
-#define CYCLE_SpeedInformation                      0
+#define CYCLE_SpeedInformation 0
 
 /**
  * Message SpeedInformation fast cycle time.
  */
-#define FAST_SpeedInformation                       0
+#define FAST_SpeedInformation 0
 
 /**
  * Initialise message SpeedInformation buffer.
@@ -1146,10 +1156,11 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INIT_SpeedInformation(buf) { \
-	INITSIG_SpeedInformation_RadarDevice_Speed(buf); \
-	INITSIG_SpeedInformation_RadarDevice_SpeedDirection(buf); \
-}
+#define INIT_SpeedInformation(buf)                            \
+	{                                                           \
+		INITSIG_SpeedInformation_RadarDevice_Speed(buf);          \
+		INITSIG_SpeedInformation_RadarDevice_SpeedDirection(buf); \
+	}
 
 /**
  * @}
@@ -1174,32 +1185,32 @@
 /**
  * Message YawRateInformation configuration tuple.
  */
-#define MSG_YawRateInformation                      0x301, 0, 2
+#define MSG_YawRateInformation 0x301, 0, 2
 
 /**
  * Message YawRateInformation id.
  */
-#define ID_YawRateInformation                       0x301
+#define ID_YawRateInformation 0x301
 
 /**
  * Message YawRateInformation extended id bit.
  */
-#define EXT_YawRateInformation                      0
+#define EXT_YawRateInformation 0
 
 /**
  * Message YawRateInformation Data Length Count.
  */
-#define DLC_YawRateInformation                      2
+#define DLC_YawRateInformation 2
 
 /**
  * Message YawRateInformation cycle time.
  */
-#define CYCLE_YawRateInformation                    0
+#define CYCLE_YawRateInformation 0
 
 /**
  * Message YawRateInformation fast cycle time.
  */
-#define FAST_YawRateInformation                     0
+#define FAST_YawRateInformation 0
 
 /**
  * Initialise message YawRateInformation buffer.
@@ -1207,9 +1218,10 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INIT_YawRateInformation(buf) { \
-	INITSIG_YawRateInformation_RadarDevice_YawRate(buf); \
-}
+#define INIT_YawRateInformation(buf)                     \
+	{                                                      \
+		INITSIG_YawRateInformation_RadarDevice_YawRate(buf); \
+	}
 
 /**
  * @}
@@ -1238,32 +1250,32 @@
 /**
  * Message CollDetCfg configuration tuple.
  */
-#define MSG_CollDetCfg                              0x400, 0, 2
+#define MSG_CollDetCfg 0x400, 0, 2
 
 /**
  * Message CollDetCfg id.
  */
-#define ID_CollDetCfg                               0x400
+#define ID_CollDetCfg 0x400
 
 /**
  * Message CollDetCfg extended id bit.
  */
-#define EXT_CollDetCfg                              0
+#define EXT_CollDetCfg 0
 
 /**
  * Message CollDetCfg Data Length Count.
  */
-#define DLC_CollDetCfg                              2
+#define DLC_CollDetCfg 2
 
 /**
  * Message CollDetCfg cycle time.
  */
-#define CYCLE_CollDetCfg                            0
+#define CYCLE_CollDetCfg 0
 
 /**
  * Message CollDetCfg fast cycle time.
  */
-#define FAST_CollDetCfg                             0
+#define FAST_CollDetCfg 0
 
 /**
  * Initialise message CollDetCfg buffer.
@@ -1271,13 +1283,14 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INIT_CollDetCfg(buf) { \
-	INITSIG_CollDetCfg_CollDetCfg_ClearRegions(buf); \
-	INITSIG_CollDetCfg_CollDetCfg_WarningReset(buf); \
-	INITSIG_CollDetCfg_CollDetCfg_Activate(buf); \
-	INITSIG_CollDetCfg_CollDetCfg_MinTime_valid(buf); \
-	INITSIG_CollDetCfg_CollDetCfg_MinDetectTime(buf); \
-}
+#define INIT_CollDetCfg(buf)                          \
+	{                                                   \
+		INITSIG_CollDetCfg_CollDetCfg_ClearRegions(buf);  \
+		INITSIG_CollDetCfg_CollDetCfg_WarningReset(buf);  \
+		INITSIG_CollDetCfg_CollDetCfg_Activate(buf);      \
+		INITSIG_CollDetCfg_CollDetCfg_MinTime_valid(buf); \
+		INITSIG_CollDetCfg_CollDetCfg_MinDetectTime(buf); \
+	}
 
 /**
  * @}
@@ -1308,32 +1321,32 @@
 /**
  * Message CollDetRegionCfg configuration tuple.
  */
-#define MSG_CollDetRegionCfg                        0x401, 0, 8
+#define MSG_CollDetRegionCfg 0x401, 0, 8
 
 /**
  * Message CollDetRegionCfg id.
  */
-#define ID_CollDetRegionCfg                         0x401
+#define ID_CollDetRegionCfg 0x401
 
 /**
  * Message CollDetRegionCfg extended id bit.
  */
-#define EXT_CollDetRegionCfg                        0
+#define EXT_CollDetRegionCfg 0
 
 /**
  * Message CollDetRegionCfg Data Length Count.
  */
-#define DLC_CollDetRegionCfg                        8
+#define DLC_CollDetRegionCfg 8
 
 /**
  * Message CollDetRegionCfg cycle time.
  */
-#define CYCLE_CollDetRegionCfg                      0
+#define CYCLE_CollDetRegionCfg 0
 
 /**
  * Message CollDetRegionCfg fast cycle time.
  */
-#define FAST_CollDetRegionCfg                       0
+#define FAST_CollDetRegionCfg 0
 
 /**
  * Initialise message CollDetRegionCfg buffer.
@@ -1341,15 +1354,16 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INIT_CollDetRegionCfg(buf) { \
-	INITSIG_CollDetRegionCfg_CollDetRegCfg_Activate(buf); \
-	INITSIG_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid(buf); \
-	INITSIG_CollDetRegionCfg_CollDetRegCfg_RegionID(buf); \
-	INITSIG_CollDetRegionCfg_CollDetRegCfg_Point1X(buf); \
-	INITSIG_CollDetRegionCfg_CollDetRegCfg_Point1Y(buf); \
-	INITSIG_CollDetRegionCfg_CollDetRegCfg_Point2X(buf); \
-	INITSIG_CollDetRegionCfg_CollDetRegCfg_Point2Y(buf); \
-}
+#define INIT_CollDetRegionCfg(buf)                                 \
+	{                                                                \
+		INITSIG_CollDetRegionCfg_CollDetRegCfg_Activate(buf);          \
+		INITSIG_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid(buf); \
+		INITSIG_CollDetRegionCfg_CollDetRegCfg_RegionID(buf);          \
+		INITSIG_CollDetRegionCfg_CollDetRegCfg_Point1X(buf);           \
+		INITSIG_CollDetRegionCfg_CollDetRegCfg_Point1Y(buf);           \
+		INITSIG_CollDetRegionCfg_CollDetRegCfg_Point2X(buf);           \
+		INITSIG_CollDetRegionCfg_CollDetRegCfg_Point2Y(buf);           \
+	}
 
 /**
  * @}
@@ -1377,32 +1391,32 @@
 /**
  * Message CollDetState configuration tuple.
  */
-#define MSG_CollDetState                            0x408, 0, 4
+#define MSG_CollDetState 0x408, 0, 4
 
 /**
  * Message CollDetState id.
  */
-#define ID_CollDetState                             0x408
+#define ID_CollDetState 0x408
 
 /**
  * Message CollDetState extended id bit.
  */
-#define EXT_CollDetState                            0
+#define EXT_CollDetState 0
 
 /**
  * Message CollDetState Data Length Count.
  */
-#define DLC_CollDetState                            4
+#define DLC_CollDetState 4
 
 /**
  * Message CollDetState cycle time.
  */
-#define CYCLE_CollDetState                          0
+#define CYCLE_CollDetState 0
 
 /**
  * Message CollDetState fast cycle time.
  */
-#define FAST_CollDetState                           0
+#define FAST_CollDetState 0
 
 /**
  * Initialise message CollDetState buffer.
@@ -1410,12 +1424,13 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INIT_CollDetState(buf) { \
-	INITSIG_CollDetState_CollDetState_MeasCounter(buf); \
-	INITSIG_CollDetState_CollDetState_Active(buf); \
-	INITSIG_CollDetState_CollDetState_NofRegions(buf); \
-	INITSIG_CollDetState_CollDetState_MinDetectTime(buf); \
-}
+#define INIT_CollDetState(buf)                            \
+	{                                                       \
+		INITSIG_CollDetState_CollDetState_MeasCounter(buf);   \
+		INITSIG_CollDetState_CollDetState_Active(buf);        \
+		INITSIG_CollDetState_CollDetState_NofRegions(buf);    \
+		INITSIG_CollDetState_CollDetState_MinDetectTime(buf); \
+	}
 
 /**
  * @}
@@ -1443,32 +1458,32 @@
 /**
  * Message Cluster_0_Status configuration tuple.
  */
-#define MSG_Cluster_0_Status                        0x600, 0, 5
+#define MSG_Cluster_0_Status 0x600, 0, 5
 
 /**
  * Message Cluster_0_Status id.
  */
-#define ID_Cluster_0_Status                         0x600
+#define ID_Cluster_0_Status 0x600
 
 /**
  * Message Cluster_0_Status extended id bit.
  */
-#define EXT_Cluster_0_Status                        0
+#define EXT_Cluster_0_Status 0
 
 /**
  * Message Cluster_0_Status Data Length Count.
  */
-#define DLC_Cluster_0_Status                        5
+#define DLC_Cluster_0_Status 5
 
 /**
  * Message Cluster_0_Status cycle time.
  */
-#define CYCLE_Cluster_0_Status                      0
+#define CYCLE_Cluster_0_Status 0
 
 /**
  * Message Cluster_0_Status fast cycle time.
  */
-#define FAST_Cluster_0_Status                       0
+#define FAST_Cluster_0_Status 0
 
 /**
  * Initialise message Cluster_0_Status buffer.
@@ -1476,12 +1491,13 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INIT_Cluster_0_Status(buf) { \
-	INITSIG_Cluster_0_Status_Cluster_MeasCounter(buf); \
-	INITSIG_Cluster_0_Status_Cluster_NofClustersNear(buf); \
-	INITSIG_Cluster_0_Status_Cluster_NofClustersFar(buf); \
-	INITSIG_Cluster_0_Status_Cluster_InterfaceVersion(buf); \
-}
+#define INIT_Cluster_0_Status(buf)                          \
+	{                                                         \
+		INITSIG_Cluster_0_Status_Cluster_MeasCounter(buf);      \
+		INITSIG_Cluster_0_Status_Cluster_NofClustersNear(buf);  \
+		INITSIG_Cluster_0_Status_Cluster_NofClustersFar(buf);   \
+		INITSIG_Cluster_0_Status_Cluster_InterfaceVersion(buf); \
+	}
 
 /**
  * @}
@@ -1508,32 +1524,32 @@
 /**
  * Message Obj_0_Status configuration tuple.
  */
-#define MSG_Obj_0_Status                            0x60a, 0, 4
+#define MSG_Obj_0_Status 0x60a, 0, 4
 
 /**
  * Message Obj_0_Status id.
  */
-#define ID_Obj_0_Status                             0x60a
+#define ID_Obj_0_Status 0x60a
 
 /**
  * Message Obj_0_Status extended id bit.
  */
-#define EXT_Obj_0_Status                            0
+#define EXT_Obj_0_Status 0
 
 /**
  * Message Obj_0_Status Data Length Count.
  */
-#define DLC_Obj_0_Status                            4
+#define DLC_Obj_0_Status 4
 
 /**
  * Message Obj_0_Status cycle time.
  */
-#define CYCLE_Obj_0_Status                          0
+#define CYCLE_Obj_0_Status 0
 
 /**
  * Message Obj_0_Status fast cycle time.
  */
-#define FAST_Obj_0_Status                           0
+#define FAST_Obj_0_Status 0
 
 /**
  * Initialise message Obj_0_Status buffer.
@@ -1541,11 +1557,12 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INIT_Obj_0_Status(buf) { \
-	INITSIG_Obj_0_Status_Obj_NofObjects(buf); \
-	INITSIG_Obj_0_Status_Obj_MeasCounter(buf); \
-	INITSIG_Obj_0_Status_Obj_InterfaceVersion(buf); \
-}
+#define INIT_Obj_0_Status(buf)                      \
+	{                                                 \
+		INITSIG_Obj_0_Status_Obj_NofObjects(buf);       \
+		INITSIG_Obj_0_Status_Obj_MeasCounter(buf);      \
+		INITSIG_Obj_0_Status_Obj_InterfaceVersion(buf); \
+	}
 
 /**
  * @}
@@ -1576,32 +1593,32 @@
 /**
  * Message Obj_1_General configuration tuple.
  */
-#define MSG_Obj_1_General                           0x60b, 0, 8
+#define MSG_Obj_1_General 0x60b, 0, 8
 
 /**
  * Message Obj_1_General id.
  */
-#define ID_Obj_1_General                            0x60b
+#define ID_Obj_1_General 0x60b
 
 /**
  * Message Obj_1_General extended id bit.
  */
-#define EXT_Obj_1_General                           0
+#define EXT_Obj_1_General 0
 
 /**
  * Message Obj_1_General Data Length Count.
  */
-#define DLC_Obj_1_General                           8
+#define DLC_Obj_1_General 8
 
 /**
  * Message Obj_1_General cycle time.
  */
-#define CYCLE_Obj_1_General                         0
+#define CYCLE_Obj_1_General 0
 
 /**
  * Message Obj_1_General fast cycle time.
  */
-#define FAST_Obj_1_General                          0
+#define FAST_Obj_1_General 0
 
 /**
  * Initialise message Obj_1_General buffer.
@@ -1609,15 +1626,16 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INIT_Obj_1_General(buf) { \
-	INITSIG_Obj_1_General_Obj_DynProp(buf); \
-	INITSIG_Obj_1_General_Obj_RCS(buf); \
-	INITSIG_Obj_1_General_Obj_VrelLat(buf); \
-	INITSIG_Obj_1_General_Obj_ID(buf); \
-	INITSIG_Obj_1_General_Obj_DistLong(buf); \
-	INITSIG_Obj_1_General_Obj_VrelLong(buf); \
-	INITSIG_Obj_1_General_Obj_DistLat(buf); \
-}
+#define INIT_Obj_1_General(buf)              \
+	{                                          \
+		INITSIG_Obj_1_General_Obj_DynProp(buf);  \
+		INITSIG_Obj_1_General_Obj_RCS(buf);      \
+		INITSIG_Obj_1_General_Obj_VrelLat(buf);  \
+		INITSIG_Obj_1_General_Obj_ID(buf);       \
+		INITSIG_Obj_1_General_Obj_DistLong(buf); \
+		INITSIG_Obj_1_General_Obj_VrelLong(buf); \
+		INITSIG_Obj_1_General_Obj_DistLat(buf);  \
+	}
 
 /**
  * @}
@@ -1646,32 +1664,32 @@
 /**
  * Message VersionID configuration tuple.
  */
-#define MSG_VersionID                               0x700, 0, 4
+#define MSG_VersionID 0x700, 0, 4
 
 /**
  * Message VersionID id.
  */
-#define ID_VersionID                                0x700
+#define ID_VersionID 0x700
 
 /**
  * Message VersionID extended id bit.
  */
-#define EXT_VersionID                               0
+#define EXT_VersionID 0
 
 /**
  * Message VersionID Data Length Count.
  */
-#define DLC_VersionID                               4
+#define DLC_VersionID 4
 
 /**
  * Message VersionID cycle time.
  */
-#define CYCLE_VersionID                             0
+#define CYCLE_VersionID 0
 
 /**
  * Message VersionID fast cycle time.
  */
-#define FAST_VersionID                              0
+#define FAST_VersionID 0
 
 /**
  * Initialise message VersionID buffer.
@@ -1679,13 +1697,14 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INIT_VersionID(buf) { \
-	INITSIG_VersionID_Version_ExtendedRange(buf); \
-	INITSIG_VersionID_Version_CountryCode(buf); \
-	INITSIG_VersionID_Version_MajorRelease(buf); \
-	INITSIG_VersionID_Version_MinorRelease(buf); \
-	INITSIG_VersionID_Version_PatchLevel(buf); \
-}
+#define INIT_VersionID(buf)                       \
+	{                                               \
+		INITSIG_VersionID_Version_ExtendedRange(buf); \
+		INITSIG_VersionID_Version_CountryCode(buf);   \
+		INITSIG_VersionID_Version_MajorRelease(buf);  \
+		INITSIG_VersionID_Version_MinorRelease(buf);  \
+		INITSIG_VersionID_Version_PatchLevel(buf);    \
+	}
 
 /**
  * @}
@@ -1716,32 +1735,32 @@
 /**
  * Message Cluster_1_General configuration tuple.
  */
-#define MSG_Cluster_1_General                       0x701, 0, 8
+#define MSG_Cluster_1_General 0x701, 0, 8
 
 /**
  * Message Cluster_1_General id.
  */
-#define ID_Cluster_1_General                        0x701
+#define ID_Cluster_1_General 0x701
 
 /**
  * Message Cluster_1_General extended id bit.
  */
-#define EXT_Cluster_1_General                       0
+#define EXT_Cluster_1_General 0
 
 /**
  * Message Cluster_1_General Data Length Count.
  */
-#define DLC_Cluster_1_General                       8
+#define DLC_Cluster_1_General 8
 
 /**
  * Message Cluster_1_General cycle time.
  */
-#define CYCLE_Cluster_1_General                     0
+#define CYCLE_Cluster_1_General 0
 
 /**
  * Message Cluster_1_General fast cycle time.
  */
-#define FAST_Cluster_1_General                      0
+#define FAST_Cluster_1_General 0
 
 /**
  * Initialise message Cluster_1_General buffer.
@@ -1749,15 +1768,16 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INIT_Cluster_1_General(buf) { \
-	INITSIG_Cluster_1_General_Cluster_DynProp(buf); \
-	INITSIG_Cluster_1_General_Cluster_VrelLat(buf); \
-	INITSIG_Cluster_1_General_Cluster_RCS(buf); \
-	INITSIG_Cluster_1_General_Cluster_DistLong(buf); \
-	INITSIG_Cluster_1_General_Cluster_ID(buf); \
-	INITSIG_Cluster_1_General_Cluster_VrelLong(buf); \
-	INITSIG_Cluster_1_General_Cluster_DistLat(buf); \
-}
+#define INIT_Cluster_1_General(buf)                  \
+	{                                                  \
+		INITSIG_Cluster_1_General_Cluster_DynProp(buf);  \
+		INITSIG_Cluster_1_General_Cluster_VrelLat(buf);  \
+		INITSIG_Cluster_1_General_Cluster_RCS(buf);      \
+		INITSIG_Cluster_1_General_Cluster_DistLong(buf); \
+		INITSIG_Cluster_1_General_Cluster_ID(buf);       \
+		INITSIG_Cluster_1_General_Cluster_VrelLong(buf); \
+		INITSIG_Cluster_1_General_Cluster_DistLat(buf);  \
+	}
 
 /**
  * @}
@@ -1789,32 +1809,32 @@
 /**
  * Message Cluster_2_Quality configuration tuple.
  */
-#define MSG_Cluster_2_Quality                       0x702, 0, 5
+#define MSG_Cluster_2_Quality 0x702, 0, 5
 
 /**
  * Message Cluster_2_Quality id.
  */
-#define ID_Cluster_2_Quality                        0x702
+#define ID_Cluster_2_Quality 0x702
 
 /**
  * Message Cluster_2_Quality extended id bit.
  */
-#define EXT_Cluster_2_Quality                       0
+#define EXT_Cluster_2_Quality 0
 
 /**
  * Message Cluster_2_Quality Data Length Count.
  */
-#define DLC_Cluster_2_Quality                       5
+#define DLC_Cluster_2_Quality 5
 
 /**
  * Message Cluster_2_Quality cycle time.
  */
-#define CYCLE_Cluster_2_Quality                     0
+#define CYCLE_Cluster_2_Quality 0
 
 /**
  * Message Cluster_2_Quality fast cycle time.
  */
-#define FAST_Cluster_2_Quality                      0
+#define FAST_Cluster_2_Quality 0
 
 /**
  * Initialise message Cluster_2_Quality buffer.
@@ -1822,16 +1842,17 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INIT_Cluster_2_Quality(buf) { \
-	INITSIG_Cluster_2_Quality_Cluster_ID(buf); \
-	INITSIG_Cluster_2_Quality_Cluster_VrelLat_rms(buf); \
-	INITSIG_Cluster_2_Quality_Cluster_InvalidState(buf); \
-	INITSIG_Cluster_2_Quality_Cluster_DistLat_rms(buf); \
-	INITSIG_Cluster_2_Quality_Cluster_DistLong_rms(buf); \
-	INITSIG_Cluster_2_Quality_Cluster_VrelLong_rms(buf); \
-	INITSIG_Cluster_2_Quality_Cluster_PdH0(buf); \
-	INITSIG_Cluster_2_Quality_Cluster_AmbigState(buf); \
-}
+#define INIT_Cluster_2_Quality(buf)                      \
+	{                                                      \
+		INITSIG_Cluster_2_Quality_Cluster_ID(buf);           \
+		INITSIG_Cluster_2_Quality_Cluster_VrelLat_rms(buf);  \
+		INITSIG_Cluster_2_Quality_Cluster_InvalidState(buf); \
+		INITSIG_Cluster_2_Quality_Cluster_DistLat_rms(buf);  \
+		INITSIG_Cluster_2_Quality_Cluster_DistLong_rms(buf); \
+		INITSIG_Cluster_2_Quality_Cluster_VrelLong_rms(buf); \
+		INITSIG_Cluster_2_Quality_Cluster_PdH0(buf);         \
+		INITSIG_Cluster_2_Quality_Cluster_AmbigState(buf);   \
+	}
 
 /**
  * @}
@@ -1857,7 +1878,7 @@
  * @deprecated
  *	Use \ref SET_Obj_2_Quality_Obj_ProbOfExist and \ref GET_Obj_2_Quality_Obj_ProbOfExist instead.
  */
-#define SIG_Obj_2_Quality_Obj_ProbOfExist           1, 0, 55, 3
+#define SIG_Obj_2_Quality_Obj_ProbOfExist 1, 0, 55, 3
 
 /**
  * Signal Obj_ProbOfExist setup tuple.
@@ -1865,7 +1886,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_2_Quality_Obj_ProbOfExist or \ref INIT_Obj_2_Quality instead.
  */
-#define SETUP_Obj_2_Quality_Obj_ProbOfExist         1, 0, 55, 3, 0
+#define SETUP_Obj_2_Quality_Obj_ProbOfExist 1, 0, 55, 3, 0
 
 /**
  * Get signal Obj_ProbOfExist from buffer.
@@ -1875,9 +1896,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_2_Quality_Obj_ProbOfExist(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[6] >> 5) & 0x07) << 0) \
-)
+#define GET_Obj_2_Quality_Obj_ProbOfExist(buf) (0 | (ubyte)(+(ubyte)((buf[6] >> 5) & 0x07) << 0))
 
 /**
  * Set signal Obj_ProbOfExist in buffer.
@@ -1887,10 +1906,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_2_Quality_Obj_ProbOfExist(buf, val) { \
-	buf[6] &= ~(0x07 << 5); \
-	buf[6] |= (((ubyte)(val) >> 0) & 0x07) << 5; \
-}
+#define SET_Obj_2_Quality_Obj_ProbOfExist(buf, val) \
+	{                                                 \
+		buf[6] &= ~(0x07 << 5);                         \
+		buf[6] |= (((ubyte)(val) >> 0) & 0x07) << 5;    \
+	}
 
 /**
  * Set signal Obj_ProbOfExist in buffer to its initial value.
@@ -1918,22 +1938,22 @@
 /**
  * Signal Obj_ProbOfExist raw initial value.
  */
-#define START_Obj_2_Quality_Obj_ProbOfExist         0
+#define START_Obj_2_Quality_Obj_ProbOfExist 0
 
 /**
  * Signal Obj_ProbOfExist raw minimum value.
  */
-#define MIN_Obj_2_Quality_Obj_ProbOfExist           0
+#define MIN_Obj_2_Quality_Obj_ProbOfExist 0
 
 /**
  * Signal Obj_ProbOfExist raw maximum value.
  */
-#define MAX_Obj_2_Quality_Obj_ProbOfExist           7
+#define MAX_Obj_2_Quality_Obj_ProbOfExist 7
 
 /**
  * Signal Obj_ProbOfExist raw offset value.
  */
-#define OFF_Obj_2_Quality_Obj_ProbOfExist           0
+#define OFF_Obj_2_Quality_Obj_ProbOfExist 0
 
 /**
  * @}
@@ -1954,7 +1974,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ProbOfExist
  */
-#define Obj_2_Quality_Obj_ProbOfExist___100_              7
+#define Obj_2_Quality_Obj_ProbOfExist___100_ 7
 
 /**
  * Value table Obj_2_Quality_Obj_ProbOfExist entry _99_9_.
@@ -1963,7 +1983,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ProbOfExist
  */
-#define Obj_2_Quality_Obj_ProbOfExist__99_9_              6
+#define Obj_2_Quality_Obj_ProbOfExist__99_9_ 6
 
 /**
  * Value table Obj_2_Quality_Obj_ProbOfExist entry _99_.
@@ -1972,7 +1992,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ProbOfExist
  */
-#define Obj_2_Quality_Obj_ProbOfExist__99_                5
+#define Obj_2_Quality_Obj_ProbOfExist__99_ 5
 
 /**
  * Value table Obj_2_Quality_Obj_ProbOfExist entry _90_.
@@ -1981,7 +2001,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ProbOfExist
  */
-#define Obj_2_Quality_Obj_ProbOfExist__90_                4
+#define Obj_2_Quality_Obj_ProbOfExist__90_ 4
 
 /**
  * Value table Obj_2_Quality_Obj_ProbOfExist entry _75_.
@@ -1990,7 +2010,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ProbOfExist
  */
-#define Obj_2_Quality_Obj_ProbOfExist__75_                3
+#define Obj_2_Quality_Obj_ProbOfExist__75_ 3
 
 /**
  * Value table Obj_2_Quality_Obj_ProbOfExist entry _50_.
@@ -1999,7 +2019,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ProbOfExist
  */
-#define Obj_2_Quality_Obj_ProbOfExist__50_                2
+#define Obj_2_Quality_Obj_ProbOfExist__50_ 2
 
 /**
  * Value table Obj_2_Quality_Obj_ProbOfExist entry _25_.
@@ -2008,14 +2028,14 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ProbOfExist
  */
-#define Obj_2_Quality_Obj_ProbOfExist__25_                1
+#define Obj_2_Quality_Obj_ProbOfExist__25_ 1
 
 /**
  * Value table Obj_2_Quality_Obj_ProbOfExist entry invalid.
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ProbOfExist
  */
-#define Obj_2_Quality_Obj_ProbOfExist_invalid             0
+#define Obj_2_Quality_Obj_ProbOfExist_invalid 0
 
 /**
  * @defgroup SIG_Obj_2_Quality_Obj_MeasState Signal Obj_MeasState of Message Obj_2_Quality (0x60c)
@@ -2037,7 +2057,7 @@
  * @deprecated
  *	Use \ref SET_Obj_2_Quality_Obj_MeasState and \ref GET_Obj_2_Quality_Obj_MeasState instead.
  */
-#define SIG_Obj_2_Quality_Obj_MeasState             1, 0, 52, 3
+#define SIG_Obj_2_Quality_Obj_MeasState 1, 0, 52, 3
 
 /**
  * Signal Obj_MeasState setup tuple.
@@ -2045,7 +2065,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_2_Quality_Obj_MeasState or \ref INIT_Obj_2_Quality instead.
  */
-#define SETUP_Obj_2_Quality_Obj_MeasState           1, 0, 52, 3, 0
+#define SETUP_Obj_2_Quality_Obj_MeasState 1, 0, 52, 3, 0
 
 /**
  * Get signal Obj_MeasState from buffer.
@@ -2055,9 +2075,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_2_Quality_Obj_MeasState(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[6] >> 2) & 0x07) << 0) \
-)
+#define GET_Obj_2_Quality_Obj_MeasState(buf) (0 | (ubyte)(+(ubyte)((buf[6] >> 2) & 0x07) << 0))
 
 /**
  * Set signal Obj_MeasState in buffer.
@@ -2067,10 +2085,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_2_Quality_Obj_MeasState(buf, val) { \
-	buf[6] &= ~(0x07 << 2); \
-	buf[6] |= (((ubyte)(val) >> 0) & 0x07) << 2; \
-}
+#define SET_Obj_2_Quality_Obj_MeasState(buf, val) \
+	{                                               \
+		buf[6] &= ~(0x07 << 2);                       \
+		buf[6] |= (((ubyte)(val) >> 0) & 0x07) << 2;  \
+	}
 
 /**
  * Set signal Obj_MeasState in buffer to its initial value.
@@ -2098,22 +2117,22 @@
 /**
  * Signal Obj_MeasState raw initial value.
  */
-#define START_Obj_2_Quality_Obj_MeasState           0
+#define START_Obj_2_Quality_Obj_MeasState 0
 
 /**
  * Signal Obj_MeasState raw minimum value.
  */
-#define MIN_Obj_2_Quality_Obj_MeasState             0
+#define MIN_Obj_2_Quality_Obj_MeasState 0
 
 /**
  * Signal Obj_MeasState raw maximum value.
  */
-#define MAX_Obj_2_Quality_Obj_MeasState             7
+#define MAX_Obj_2_Quality_Obj_MeasState 7
 
 /**
  * Signal Obj_MeasState raw offset value.
  */
-#define OFF_Obj_2_Quality_Obj_MeasState             0
+#define OFF_Obj_2_Quality_Obj_MeasState 0
 
 /**
  * @}
@@ -2134,7 +2153,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_MeasState
  */
-#define Obj_2_Quality_Obj_MeasState_New                 5
+#define Obj_2_Quality_Obj_MeasState_New 5
 
 /**
  * Value table Obj_2_Quality_Obj_MeasState entry Deleted.
@@ -2143,35 +2162,35 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_MeasState
  */
-#define Obj_2_Quality_Obj_MeasState_Deleted             4
+#define Obj_2_Quality_Obj_MeasState_Deleted 4
 
 /**
  * Value table Obj_2_Quality_Obj_MeasState entry Predicted.
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_MeasState
  */
-#define Obj_2_Quality_Obj_MeasState_Predicted           3
+#define Obj_2_Quality_Obj_MeasState_Predicted 3
 
 /**
  * Value table Obj_2_Quality_Obj_MeasState entry Measured.
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_MeasState
  */
-#define Obj_2_Quality_Obj_MeasState_Measured            2
+#define Obj_2_Quality_Obj_MeasState_Measured 2
 
 /**
  * Value table Obj_2_Quality_Obj_MeasState entry New_1.
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_MeasState
  */
-#define Obj_2_Quality_Obj_MeasState_New_1               1
+#define Obj_2_Quality_Obj_MeasState_New_1 1
 
 /**
  * Value table Obj_2_Quality_Obj_MeasState entry Deleted_0.
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_MeasState
  */
-#define Obj_2_Quality_Obj_MeasState_Deleted_0           0
+#define Obj_2_Quality_Obj_MeasState_Deleted_0 0
 
 /**
  * @defgroup SIG_Obj_2_Quality_Obj_ArelLong_rms Signal Obj_ArelLong_rms of Message Obj_2_Quality (0x60c)
@@ -2193,7 +2212,7 @@
  * @deprecated
  *	Use \ref SET_Obj_2_Quality_Obj_ArelLong_rms and \ref GET_Obj_2_Quality_Obj_ArelLong_rms instead.
  */
-#define SIG_Obj_2_Quality_Obj_ArelLong_rms          1, 0, 27, 5
+#define SIG_Obj_2_Quality_Obj_ArelLong_rms 1, 0, 27, 5
 
 /**
  * Signal Obj_ArelLong_rms setup tuple.
@@ -2201,7 +2220,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_2_Quality_Obj_ArelLong_rms or \ref INIT_Obj_2_Quality instead.
  */
-#define SETUP_Obj_2_Quality_Obj_ArelLong_rms        1, 0, 27, 5, 0
+#define SETUP_Obj_2_Quality_Obj_ArelLong_rms 1, 0, 27, 5, 0
 
 /**
  * Get signal Obj_ArelLong_rms from buffer.
@@ -2211,10 +2230,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_2_Quality_Obj_ArelLong_rms(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[3] >> 0) & 0x0f) << 1) \
-	| (ubyte)(+(ubyte)((buf[4] >> 7) & 0x01) << 0) \
-)
+#define GET_Obj_2_Quality_Obj_ArelLong_rms(buf) (0 | (ubyte)(+(ubyte)((buf[3] >> 0) & 0x0f) << 1) | (ubyte)(+(ubyte)((buf[4] >> 7) & 0x01) << 0))
 
 /**
  * Set signal Obj_ArelLong_rms in buffer.
@@ -2224,12 +2240,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_2_Quality_Obj_ArelLong_rms(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= (((ubyte)(val) >> 1) & 0x0f) << 0; \
-	buf[4] &= ~(0x01 << 7); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0x01) << 7; \
-}
+#define SET_Obj_2_Quality_Obj_ArelLong_rms(buf, val) \
+	{                                                  \
+		buf[3] &= ~(0x0f << 0);                          \
+		buf[3] |= (((ubyte)(val) >> 1) & 0x0f) << 0;     \
+		buf[4] &= ~(0x01 << 7);                          \
+		buf[4] |= (((ubyte)(val) >> 0) & 0x01) << 7;     \
+	}
 
 /**
  * Set signal Obj_ArelLong_rms in buffer to its initial value.
@@ -2257,22 +2274,22 @@
 /**
  * Signal Obj_ArelLong_rms raw initial value.
  */
-#define START_Obj_2_Quality_Obj_ArelLong_rms        0
+#define START_Obj_2_Quality_Obj_ArelLong_rms 0
 
 /**
  * Signal Obj_ArelLong_rms raw minimum value.
  */
-#define MIN_Obj_2_Quality_Obj_ArelLong_rms          0
+#define MIN_Obj_2_Quality_Obj_ArelLong_rms 0
 
 /**
  * Signal Obj_ArelLong_rms raw maximum value.
  */
-#define MAX_Obj_2_Quality_Obj_ArelLong_rms          31
+#define MAX_Obj_2_Quality_Obj_ArelLong_rms 31
 
 /**
  * Signal Obj_ArelLong_rms raw offset value.
  */
-#define OFF_Obj_2_Quality_Obj_ArelLong_rms          0
+#define OFF_Obj_2_Quality_Obj_ArelLong_rms 0
 
 /**
  * @}
@@ -2291,7 +2308,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms_Invalid             31
+#define Obj_2_Quality_Obj_ArelLong_rms_Invalid 31
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _10_000.
@@ -2300,7 +2317,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__10_000             30
+#define Obj_2_Quality_Obj_ArelLong_rms__10_000 30
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _7_762.
@@ -2309,7 +2326,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__7_762              29
+#define Obj_2_Quality_Obj_ArelLong_rms__7_762 29
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _6_025.
@@ -2318,7 +2335,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__6_025              28
+#define Obj_2_Quality_Obj_ArelLong_rms__6_025 28
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _4_676.
@@ -2327,7 +2344,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__4_676              27
+#define Obj_2_Quality_Obj_ArelLong_rms__4_676 27
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _3_630.
@@ -2336,7 +2353,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__3_630              26
+#define Obj_2_Quality_Obj_ArelLong_rms__3_630 26
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _2_817.
@@ -2345,7 +2362,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__2_817              25
+#define Obj_2_Quality_Obj_ArelLong_rms__2_817 25
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _2_187.
@@ -2354,7 +2371,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__2_187              24
+#define Obj_2_Quality_Obj_ArelLong_rms__2_187 24
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _1_697.
@@ -2363,7 +2380,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__1_697              23
+#define Obj_2_Quality_Obj_ArelLong_rms__1_697 23
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _1_317.
@@ -2372,7 +2389,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__1_317              22
+#define Obj_2_Quality_Obj_ArelLong_rms__1_317 22
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _1_023.
@@ -2381,7 +2398,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__1_023              21
+#define Obj_2_Quality_Obj_ArelLong_rms__1_023 21
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _0_794.
@@ -2390,7 +2407,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__0_794              20
+#define Obj_2_Quality_Obj_ArelLong_rms__0_794 20
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _0_616.
@@ -2399,7 +2416,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__0_616              19
+#define Obj_2_Quality_Obj_ArelLong_rms__0_616 19
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _0_478.
@@ -2408,7 +2425,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__0_478              18
+#define Obj_2_Quality_Obj_ArelLong_rms__0_478 18
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _0_371.
@@ -2417,7 +2434,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__0_371              17
+#define Obj_2_Quality_Obj_ArelLong_rms__0_371 17
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _0_288.
@@ -2426,7 +2443,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__0_288              16
+#define Obj_2_Quality_Obj_ArelLong_rms__0_288 16
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _0_224.
@@ -2435,7 +2452,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__0_224              15
+#define Obj_2_Quality_Obj_ArelLong_rms__0_224 15
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _0_174.
@@ -2444,7 +2461,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__0_174              14
+#define Obj_2_Quality_Obj_ArelLong_rms__0_174 14
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _0_135.
@@ -2453,7 +2470,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__0_135              13
+#define Obj_2_Quality_Obj_ArelLong_rms__0_135 13
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _0_105.
@@ -2462,7 +2479,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__0_105              12
+#define Obj_2_Quality_Obj_ArelLong_rms__0_105 12
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _0_081.
@@ -2471,7 +2488,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__0_081              11
+#define Obj_2_Quality_Obj_ArelLong_rms__0_081 11
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _0_063.
@@ -2480,7 +2497,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__0_063              10
+#define Obj_2_Quality_Obj_ArelLong_rms__0_063 10
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _0_049.
@@ -2489,7 +2506,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__0_049              9
+#define Obj_2_Quality_Obj_ArelLong_rms__0_049 9
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _0_038.
@@ -2498,7 +2515,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__0_038              8
+#define Obj_2_Quality_Obj_ArelLong_rms__0_038 8
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _0_029.
@@ -2507,7 +2524,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__0_029              7
+#define Obj_2_Quality_Obj_ArelLong_rms__0_029 7
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _0_023.
@@ -2516,7 +2533,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__0_023              6
+#define Obj_2_Quality_Obj_ArelLong_rms__0_023 6
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _0_018.
@@ -2525,7 +2542,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__0_018              5
+#define Obj_2_Quality_Obj_ArelLong_rms__0_018 5
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _0_014.
@@ -2534,7 +2551,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__0_014              4
+#define Obj_2_Quality_Obj_ArelLong_rms__0_014 4
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _0_011.
@@ -2543,7 +2560,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__0_011              3
+#define Obj_2_Quality_Obj_ArelLong_rms__0_011 3
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _0_008.
@@ -2552,7 +2569,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__0_008              2
+#define Obj_2_Quality_Obj_ArelLong_rms__0_008 2
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _0_006.
@@ -2561,7 +2578,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__0_006              1
+#define Obj_2_Quality_Obj_ArelLong_rms__0_006 1
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLong_rms entry _0_005.
@@ -2570,7 +2587,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLong_rms
  */
-#define Obj_2_Quality_Obj_ArelLong_rms__0_005              0
+#define Obj_2_Quality_Obj_ArelLong_rms__0_005 0
 
 /**
  * @defgroup SIG_Obj_2_Quality_Obj_ArelLat_rms Signal Obj_ArelLat_rms of Message Obj_2_Quality (0x60c)
@@ -2592,7 +2609,7 @@
  * @deprecated
  *	Use \ref SET_Obj_2_Quality_Obj_ArelLat_rms and \ref GET_Obj_2_Quality_Obj_ArelLat_rms instead.
  */
-#define SIG_Obj_2_Quality_Obj_ArelLat_rms           1, 0, 38, 5
+#define SIG_Obj_2_Quality_Obj_ArelLat_rms 1, 0, 38, 5
 
 /**
  * Signal Obj_ArelLat_rms setup tuple.
@@ -2600,7 +2617,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_2_Quality_Obj_ArelLat_rms or \ref INIT_Obj_2_Quality instead.
  */
-#define SETUP_Obj_2_Quality_Obj_ArelLat_rms         1, 0, 38, 5, 0
+#define SETUP_Obj_2_Quality_Obj_ArelLat_rms 1, 0, 38, 5, 0
 
 /**
  * Get signal Obj_ArelLat_rms from buffer.
@@ -2610,9 +2627,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_2_Quality_Obj_ArelLat_rms(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[4] >> 2) & 0x1f) << 0) \
-)
+#define GET_Obj_2_Quality_Obj_ArelLat_rms(buf) (0 | (ubyte)(+(ubyte)((buf[4] >> 2) & 0x1f) << 0))
 
 /**
  * Set signal Obj_ArelLat_rms in buffer.
@@ -2622,10 +2637,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_2_Quality_Obj_ArelLat_rms(buf, val) { \
-	buf[4] &= ~(0x1f << 2); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0x1f) << 2; \
-}
+#define SET_Obj_2_Quality_Obj_ArelLat_rms(buf, val) \
+	{                                                 \
+		buf[4] &= ~(0x1f << 2);                         \
+		buf[4] |= (((ubyte)(val) >> 0) & 0x1f) << 2;    \
+	}
 
 /**
  * Set signal Obj_ArelLat_rms in buffer to its initial value.
@@ -2653,22 +2669,22 @@
 /**
  * Signal Obj_ArelLat_rms raw initial value.
  */
-#define START_Obj_2_Quality_Obj_ArelLat_rms         0
+#define START_Obj_2_Quality_Obj_ArelLat_rms 0
 
 /**
  * Signal Obj_ArelLat_rms raw minimum value.
  */
-#define MIN_Obj_2_Quality_Obj_ArelLat_rms           0
+#define MIN_Obj_2_Quality_Obj_ArelLat_rms 0
 
 /**
  * Signal Obj_ArelLat_rms raw maximum value.
  */
-#define MAX_Obj_2_Quality_Obj_ArelLat_rms           31
+#define MAX_Obj_2_Quality_Obj_ArelLat_rms 31
 
 /**
  * Signal Obj_ArelLat_rms raw offset value.
  */
-#define OFF_Obj_2_Quality_Obj_ArelLat_rms           0
+#define OFF_Obj_2_Quality_Obj_ArelLat_rms 0
 
 /**
  * @}
@@ -2687,7 +2703,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms_Invalid             31
+#define Obj_2_Quality_Obj_ArelLat_rms_Invalid 31
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _10_000.
@@ -2696,7 +2712,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__10_000             30
+#define Obj_2_Quality_Obj_ArelLat_rms__10_000 30
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _7_762.
@@ -2705,7 +2721,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__7_762              29
+#define Obj_2_Quality_Obj_ArelLat_rms__7_762 29
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _6_025.
@@ -2714,7 +2730,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__6_025              28
+#define Obj_2_Quality_Obj_ArelLat_rms__6_025 28
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _4_676.
@@ -2723,7 +2739,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__4_676              27
+#define Obj_2_Quality_Obj_ArelLat_rms__4_676 27
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _3_630.
@@ -2732,7 +2748,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__3_630              26
+#define Obj_2_Quality_Obj_ArelLat_rms__3_630 26
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _2_817.
@@ -2741,7 +2757,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__2_817              25
+#define Obj_2_Quality_Obj_ArelLat_rms__2_817 25
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _2_187.
@@ -2750,7 +2766,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__2_187              24
+#define Obj_2_Quality_Obj_ArelLat_rms__2_187 24
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _1_697.
@@ -2759,7 +2775,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__1_697              23
+#define Obj_2_Quality_Obj_ArelLat_rms__1_697 23
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _1_317.
@@ -2768,7 +2784,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__1_317              22
+#define Obj_2_Quality_Obj_ArelLat_rms__1_317 22
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _1_023.
@@ -2777,7 +2793,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__1_023              21
+#define Obj_2_Quality_Obj_ArelLat_rms__1_023 21
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _0_794.
@@ -2786,7 +2802,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__0_794              20
+#define Obj_2_Quality_Obj_ArelLat_rms__0_794 20
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _0_616.
@@ -2795,7 +2811,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__0_616              19
+#define Obj_2_Quality_Obj_ArelLat_rms__0_616 19
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _0_478.
@@ -2804,7 +2820,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__0_478              18
+#define Obj_2_Quality_Obj_ArelLat_rms__0_478 18
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _0_371.
@@ -2813,7 +2829,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__0_371              17
+#define Obj_2_Quality_Obj_ArelLat_rms__0_371 17
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _0_288.
@@ -2822,7 +2838,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__0_288              16
+#define Obj_2_Quality_Obj_ArelLat_rms__0_288 16
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _0_224.
@@ -2831,7 +2847,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__0_224              15
+#define Obj_2_Quality_Obj_ArelLat_rms__0_224 15
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _0_174.
@@ -2840,7 +2856,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__0_174              14
+#define Obj_2_Quality_Obj_ArelLat_rms__0_174 14
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _0_135.
@@ -2849,7 +2865,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__0_135              13
+#define Obj_2_Quality_Obj_ArelLat_rms__0_135 13
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _0_105.
@@ -2858,7 +2874,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__0_105              12
+#define Obj_2_Quality_Obj_ArelLat_rms__0_105 12
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _0_081.
@@ -2867,7 +2883,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__0_081              11
+#define Obj_2_Quality_Obj_ArelLat_rms__0_081 11
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _0_063.
@@ -2876,7 +2892,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__0_063              10
+#define Obj_2_Quality_Obj_ArelLat_rms__0_063 10
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _0_049.
@@ -2885,7 +2901,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__0_049              9
+#define Obj_2_Quality_Obj_ArelLat_rms__0_049 9
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _0_038.
@@ -2894,7 +2910,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__0_038              8
+#define Obj_2_Quality_Obj_ArelLat_rms__0_038 8
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _0_029.
@@ -2903,7 +2919,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__0_029              7
+#define Obj_2_Quality_Obj_ArelLat_rms__0_029 7
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _0_023.
@@ -2912,7 +2928,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__0_023              6
+#define Obj_2_Quality_Obj_ArelLat_rms__0_023 6
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _0_018.
@@ -2921,7 +2937,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__0_018              5
+#define Obj_2_Quality_Obj_ArelLat_rms__0_018 5
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _0_014.
@@ -2930,7 +2946,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__0_014              4
+#define Obj_2_Quality_Obj_ArelLat_rms__0_014 4
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _0_011.
@@ -2939,7 +2955,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__0_011              3
+#define Obj_2_Quality_Obj_ArelLat_rms__0_011 3
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _0_008.
@@ -2948,7 +2964,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__0_008              2
+#define Obj_2_Quality_Obj_ArelLat_rms__0_008 2
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _0_006.
@@ -2957,7 +2973,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__0_006              1
+#define Obj_2_Quality_Obj_ArelLat_rms__0_006 1
 
 /**
  * Value table Obj_2_Quality_Obj_ArelLat_rms entry _0_005.
@@ -2966,7 +2982,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_ArelLat_rms
  */
-#define Obj_2_Quality_Obj_ArelLat_rms__0_005              0
+#define Obj_2_Quality_Obj_ArelLat_rms__0_005 0
 
 /**
  * @defgroup SIG_Obj_2_Quality_Obj_VrelLong_rms Signal Obj_VrelLong_rms of Message Obj_2_Quality (0x60c)
@@ -2988,7 +3004,7 @@
  * @deprecated
  *	Use \ref SET_Obj_2_Quality_Obj_VrelLong_rms and \ref GET_Obj_2_Quality_Obj_VrelLong_rms instead.
  */
-#define SIG_Obj_2_Quality_Obj_VrelLong_rms          1, 0, 21, 5
+#define SIG_Obj_2_Quality_Obj_VrelLong_rms 1, 0, 21, 5
 
 /**
  * Signal Obj_VrelLong_rms setup tuple.
@@ -2996,7 +3012,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_2_Quality_Obj_VrelLong_rms or \ref INIT_Obj_2_Quality instead.
  */
-#define SETUP_Obj_2_Quality_Obj_VrelLong_rms        1, 0, 21, 5, 0
+#define SETUP_Obj_2_Quality_Obj_VrelLong_rms 1, 0, 21, 5, 0
 
 /**
  * Get signal Obj_VrelLong_rms from buffer.
@@ -3006,9 +3022,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_2_Quality_Obj_VrelLong_rms(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[2] >> 1) & 0x1f) << 0) \
-)
+#define GET_Obj_2_Quality_Obj_VrelLong_rms(buf) (0 | (ubyte)(+(ubyte)((buf[2] >> 1) & 0x1f) << 0))
 
 /**
  * Set signal Obj_VrelLong_rms in buffer.
@@ -3018,10 +3032,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_2_Quality_Obj_VrelLong_rms(buf, val) { \
-	buf[2] &= ~(0x1f << 1); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0x1f) << 1; \
-}
+#define SET_Obj_2_Quality_Obj_VrelLong_rms(buf, val) \
+	{                                                  \
+		buf[2] &= ~(0x1f << 1);                          \
+		buf[2] |= (((ubyte)(val) >> 0) & 0x1f) << 1;     \
+	}
 
 /**
  * Set signal Obj_VrelLong_rms in buffer to its initial value.
@@ -3049,22 +3064,22 @@
 /**
  * Signal Obj_VrelLong_rms raw initial value.
  */
-#define START_Obj_2_Quality_Obj_VrelLong_rms        0
+#define START_Obj_2_Quality_Obj_VrelLong_rms 0
 
 /**
  * Signal Obj_VrelLong_rms raw minimum value.
  */
-#define MIN_Obj_2_Quality_Obj_VrelLong_rms          0
+#define MIN_Obj_2_Quality_Obj_VrelLong_rms 0
 
 /**
  * Signal Obj_VrelLong_rms raw maximum value.
  */
-#define MAX_Obj_2_Quality_Obj_VrelLong_rms          31
+#define MAX_Obj_2_Quality_Obj_VrelLong_rms 31
 
 /**
  * Signal Obj_VrelLong_rms raw offset value.
  */
-#define OFF_Obj_2_Quality_Obj_VrelLong_rms          0
+#define OFF_Obj_2_Quality_Obj_VrelLong_rms 0
 
 /**
  * @}
@@ -3083,7 +3098,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms_Invalid             31
+#define Obj_2_Quality_Obj_VrelLong_rms_Invalid 31
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _10_000.
@@ -3092,7 +3107,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__10_000             30
+#define Obj_2_Quality_Obj_VrelLong_rms__10_000 30
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _7_762.
@@ -3101,7 +3116,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__7_762              29
+#define Obj_2_Quality_Obj_VrelLong_rms__7_762 29
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _6_025.
@@ -3110,7 +3125,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__6_025              28
+#define Obj_2_Quality_Obj_VrelLong_rms__6_025 28
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _4_676.
@@ -3119,7 +3134,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__4_676              27
+#define Obj_2_Quality_Obj_VrelLong_rms__4_676 27
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _3_630.
@@ -3128,7 +3143,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__3_630              26
+#define Obj_2_Quality_Obj_VrelLong_rms__3_630 26
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _2_817.
@@ -3137,7 +3152,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__2_817              25
+#define Obj_2_Quality_Obj_VrelLong_rms__2_817 25
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _2_187.
@@ -3146,7 +3161,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__2_187              24
+#define Obj_2_Quality_Obj_VrelLong_rms__2_187 24
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _1_697.
@@ -3155,7 +3170,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__1_697              23
+#define Obj_2_Quality_Obj_VrelLong_rms__1_697 23
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _1_317.
@@ -3164,7 +3179,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__1_317              22
+#define Obj_2_Quality_Obj_VrelLong_rms__1_317 22
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _1_023.
@@ -3173,7 +3188,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__1_023              21
+#define Obj_2_Quality_Obj_VrelLong_rms__1_023 21
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _0_794.
@@ -3182,7 +3197,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__0_794              20
+#define Obj_2_Quality_Obj_VrelLong_rms__0_794 20
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _0_616.
@@ -3191,7 +3206,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__0_616              19
+#define Obj_2_Quality_Obj_VrelLong_rms__0_616 19
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _0_478.
@@ -3200,7 +3215,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__0_478              18
+#define Obj_2_Quality_Obj_VrelLong_rms__0_478 18
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _0_371.
@@ -3209,7 +3224,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__0_371              17
+#define Obj_2_Quality_Obj_VrelLong_rms__0_371 17
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _0_288.
@@ -3218,7 +3233,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__0_288              16
+#define Obj_2_Quality_Obj_VrelLong_rms__0_288 16
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _0_224.
@@ -3227,7 +3242,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__0_224              15
+#define Obj_2_Quality_Obj_VrelLong_rms__0_224 15
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _0_174.
@@ -3236,7 +3251,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__0_174              14
+#define Obj_2_Quality_Obj_VrelLong_rms__0_174 14
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _0_135.
@@ -3245,7 +3260,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__0_135              13
+#define Obj_2_Quality_Obj_VrelLong_rms__0_135 13
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _0_105.
@@ -3254,7 +3269,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__0_105              12
+#define Obj_2_Quality_Obj_VrelLong_rms__0_105 12
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _0_081.
@@ -3263,7 +3278,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__0_081              11
+#define Obj_2_Quality_Obj_VrelLong_rms__0_081 11
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _0_063.
@@ -3272,7 +3287,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__0_063              10
+#define Obj_2_Quality_Obj_VrelLong_rms__0_063 10
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _0_049.
@@ -3281,7 +3296,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__0_049              9
+#define Obj_2_Quality_Obj_VrelLong_rms__0_049 9
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _0_038.
@@ -3290,7 +3305,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__0_038              8
+#define Obj_2_Quality_Obj_VrelLong_rms__0_038 8
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _0_029.
@@ -3299,7 +3314,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__0_029              7
+#define Obj_2_Quality_Obj_VrelLong_rms__0_029 7
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _0_023.
@@ -3308,7 +3323,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__0_023              6
+#define Obj_2_Quality_Obj_VrelLong_rms__0_023 6
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _0_018.
@@ -3317,7 +3332,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__0_018              5
+#define Obj_2_Quality_Obj_VrelLong_rms__0_018 5
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _0_014.
@@ -3326,7 +3341,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__0_014              4
+#define Obj_2_Quality_Obj_VrelLong_rms__0_014 4
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _0_011.
@@ -3335,7 +3350,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__0_011              3
+#define Obj_2_Quality_Obj_VrelLong_rms__0_011 3
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _0_008.
@@ -3344,7 +3359,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__0_008              2
+#define Obj_2_Quality_Obj_VrelLong_rms__0_008 2
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _0_006.
@@ -3353,7 +3368,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__0_006              1
+#define Obj_2_Quality_Obj_VrelLong_rms__0_006 1
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLong_rms entry _0_005.
@@ -3362,7 +3377,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLong_rms
  */
-#define Obj_2_Quality_Obj_VrelLong_rms__0_005              0
+#define Obj_2_Quality_Obj_VrelLong_rms__0_005 0
 
 /**
  * @defgroup SIG_Obj_2_Quality_Obj_VrelLat_rms Signal Obj_VrelLat_rms of Message Obj_2_Quality (0x60c)
@@ -3384,7 +3399,7 @@
  * @deprecated
  *	Use \ref SET_Obj_2_Quality_Obj_VrelLat_rms and \ref GET_Obj_2_Quality_Obj_VrelLat_rms instead.
  */
-#define SIG_Obj_2_Quality_Obj_VrelLat_rms           1, 0, 16, 5
+#define SIG_Obj_2_Quality_Obj_VrelLat_rms 1, 0, 16, 5
 
 /**
  * Signal Obj_VrelLat_rms setup tuple.
@@ -3392,7 +3407,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_2_Quality_Obj_VrelLat_rms or \ref INIT_Obj_2_Quality instead.
  */
-#define SETUP_Obj_2_Quality_Obj_VrelLat_rms         1, 0, 16, 5, 0
+#define SETUP_Obj_2_Quality_Obj_VrelLat_rms 1, 0, 16, 5, 0
 
 /**
  * Get signal Obj_VrelLat_rms from buffer.
@@ -3402,10 +3417,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_2_Quality_Obj_VrelLat_rms(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0x01) << 4) \
-	| (ubyte)(+(ubyte)((buf[3] >> 4) & 0x0f) << 0) \
-)
+#define GET_Obj_2_Quality_Obj_VrelLat_rms(buf) (0 | (ubyte)(+(ubyte)((buf[2] >> 0) & 0x01) << 4) | (ubyte)(+(ubyte)((buf[3] >> 4) & 0x0f) << 0))
 
 /**
  * Set signal Obj_VrelLat_rms in buffer.
@@ -3415,12 +3427,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_2_Quality_Obj_VrelLat_rms(buf, val) { \
-	buf[2] &= ~(0x01 << 0); \
-	buf[2] |= (((ubyte)(val) >> 4) & 0x01) << 0; \
-	buf[3] &= ~(0x0f << 4); \
-	buf[3] |= (((ubyte)(val) >> 0) & 0x0f) << 4; \
-}
+#define SET_Obj_2_Quality_Obj_VrelLat_rms(buf, val) \
+	{                                                 \
+		buf[2] &= ~(0x01 << 0);                         \
+		buf[2] |= (((ubyte)(val) >> 4) & 0x01) << 0;    \
+		buf[3] &= ~(0x0f << 4);                         \
+		buf[3] |= (((ubyte)(val) >> 0) & 0x0f) << 4;    \
+	}
 
 /**
  * Set signal Obj_VrelLat_rms in buffer to its initial value.
@@ -3448,22 +3461,22 @@
 /**
  * Signal Obj_VrelLat_rms raw initial value.
  */
-#define START_Obj_2_Quality_Obj_VrelLat_rms         0
+#define START_Obj_2_Quality_Obj_VrelLat_rms 0
 
 /**
  * Signal Obj_VrelLat_rms raw minimum value.
  */
-#define MIN_Obj_2_Quality_Obj_VrelLat_rms           0
+#define MIN_Obj_2_Quality_Obj_VrelLat_rms 0
 
 /**
  * Signal Obj_VrelLat_rms raw maximum value.
  */
-#define MAX_Obj_2_Quality_Obj_VrelLat_rms           31
+#define MAX_Obj_2_Quality_Obj_VrelLat_rms 31
 
 /**
  * Signal Obj_VrelLat_rms raw offset value.
  */
-#define OFF_Obj_2_Quality_Obj_VrelLat_rms           0
+#define OFF_Obj_2_Quality_Obj_VrelLat_rms 0
 
 /**
  * @}
@@ -3482,7 +3495,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms_Invalid             31
+#define Obj_2_Quality_Obj_VrelLat_rms_Invalid 31
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _10_000.
@@ -3491,7 +3504,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__10_000             30
+#define Obj_2_Quality_Obj_VrelLat_rms__10_000 30
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _7_762.
@@ -3500,7 +3513,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__7_762              29
+#define Obj_2_Quality_Obj_VrelLat_rms__7_762 29
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _6_025.
@@ -3509,7 +3522,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__6_025              28
+#define Obj_2_Quality_Obj_VrelLat_rms__6_025 28
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _4_676.
@@ -3518,7 +3531,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__4_676              27
+#define Obj_2_Quality_Obj_VrelLat_rms__4_676 27
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _3_630.
@@ -3527,7 +3540,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__3_630              26
+#define Obj_2_Quality_Obj_VrelLat_rms__3_630 26
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _2_817.
@@ -3536,7 +3549,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__2_817              25
+#define Obj_2_Quality_Obj_VrelLat_rms__2_817 25
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _2_187.
@@ -3545,7 +3558,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__2_187              24
+#define Obj_2_Quality_Obj_VrelLat_rms__2_187 24
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _1_697.
@@ -3554,7 +3567,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__1_697              23
+#define Obj_2_Quality_Obj_VrelLat_rms__1_697 23
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _1_317.
@@ -3563,7 +3576,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__1_317              22
+#define Obj_2_Quality_Obj_VrelLat_rms__1_317 22
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _1_023.
@@ -3572,7 +3585,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__1_023              21
+#define Obj_2_Quality_Obj_VrelLat_rms__1_023 21
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _0_794.
@@ -3581,7 +3594,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__0_794              20
+#define Obj_2_Quality_Obj_VrelLat_rms__0_794 20
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _0_616.
@@ -3590,7 +3603,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__0_616              19
+#define Obj_2_Quality_Obj_VrelLat_rms__0_616 19
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _0_478.
@@ -3599,7 +3612,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__0_478              18
+#define Obj_2_Quality_Obj_VrelLat_rms__0_478 18
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _0_371.
@@ -3608,7 +3621,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__0_371              17
+#define Obj_2_Quality_Obj_VrelLat_rms__0_371 17
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _0_288.
@@ -3617,7 +3630,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__0_288              16
+#define Obj_2_Quality_Obj_VrelLat_rms__0_288 16
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _0_224.
@@ -3626,7 +3639,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__0_224              15
+#define Obj_2_Quality_Obj_VrelLat_rms__0_224 15
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _0_174.
@@ -3635,7 +3648,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__0_174              14
+#define Obj_2_Quality_Obj_VrelLat_rms__0_174 14
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _0_135.
@@ -3644,7 +3657,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__0_135              13
+#define Obj_2_Quality_Obj_VrelLat_rms__0_135 13
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _0_105.
@@ -3653,7 +3666,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__0_105              12
+#define Obj_2_Quality_Obj_VrelLat_rms__0_105 12
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _0_081.
@@ -3662,7 +3675,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__0_081              11
+#define Obj_2_Quality_Obj_VrelLat_rms__0_081 11
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _0_063.
@@ -3671,7 +3684,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__0_063              10
+#define Obj_2_Quality_Obj_VrelLat_rms__0_063 10
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _0_049.
@@ -3680,7 +3693,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__0_049              9
+#define Obj_2_Quality_Obj_VrelLat_rms__0_049 9
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _0_038.
@@ -3689,7 +3702,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__0_038              8
+#define Obj_2_Quality_Obj_VrelLat_rms__0_038 8
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _0_029.
@@ -3698,7 +3711,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__0_029              7
+#define Obj_2_Quality_Obj_VrelLat_rms__0_029 7
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _0_023.
@@ -3707,7 +3720,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__0_023              6
+#define Obj_2_Quality_Obj_VrelLat_rms__0_023 6
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _0_018.
@@ -3716,7 +3729,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__0_018              5
+#define Obj_2_Quality_Obj_VrelLat_rms__0_018 5
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _0_014.
@@ -3725,7 +3738,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__0_014              4
+#define Obj_2_Quality_Obj_VrelLat_rms__0_014 4
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _0_011.
@@ -3734,7 +3747,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__0_011              3
+#define Obj_2_Quality_Obj_VrelLat_rms__0_011 3
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _0_008.
@@ -3743,7 +3756,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__0_008              2
+#define Obj_2_Quality_Obj_VrelLat_rms__0_008 2
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _0_006.
@@ -3752,7 +3765,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__0_006              1
+#define Obj_2_Quality_Obj_VrelLat_rms__0_006 1
 
 /**
  * Value table Obj_2_Quality_Obj_VrelLat_rms entry _0_005.
@@ -3761,7 +3774,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_VrelLat_rms
  */
-#define Obj_2_Quality_Obj_VrelLat_rms__0_005              0
+#define Obj_2_Quality_Obj_VrelLat_rms__0_005 0
 
 /**
  * @defgroup SIG_Obj_2_Quality_Obj_Orientation_rms Signal Obj_Orientation_rms of Message Obj_2_Quality (0x60c)
@@ -3783,7 +3796,7 @@
  * @deprecated
  *	Use \ref SET_Obj_2_Quality_Obj_Orientation_rms and \ref GET_Obj_2_Quality_Obj_Orientation_rms instead.
  */
-#define SIG_Obj_2_Quality_Obj_Orientation_rms        1, 0, 33, 5
+#define SIG_Obj_2_Quality_Obj_Orientation_rms 1, 0, 33, 5
 
 /**
  * Signal Obj_Orientation_rms setup tuple.
@@ -3791,7 +3804,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_2_Quality_Obj_Orientation_rms or \ref INIT_Obj_2_Quality instead.
  */
-#define SETUP_Obj_2_Quality_Obj_Orientation_rms      1, 0, 33, 5, 0
+#define SETUP_Obj_2_Quality_Obj_Orientation_rms 1, 0, 33, 5, 0
 
 /**
  * Get signal Obj_Orientation_rms from buffer.
@@ -3801,10 +3814,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_2_Quality_Obj_Orientation_rms(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0x03) << 3) \
-	| (ubyte)(+(ubyte)((buf[5] >> 5) & 0x07) << 0) \
-)
+#define GET_Obj_2_Quality_Obj_Orientation_rms(buf) (0 | (ubyte)(+(ubyte)((buf[4] >> 0) & 0x03) << 3) | (ubyte)(+(ubyte)((buf[5] >> 5) & 0x07) << 0))
 
 /**
  * Set signal Obj_Orientation_rms in buffer.
@@ -3814,12 +3824,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_2_Quality_Obj_Orientation_rms(buf, val) { \
-	buf[4] &= ~(0x03 << 0); \
-	buf[4] |= (((ubyte)(val) >> 3) & 0x03) << 0; \
-	buf[5] &= ~(0x07 << 5); \
-	buf[5] |= (((ubyte)(val) >> 0) & 0x07) << 5; \
-}
+#define SET_Obj_2_Quality_Obj_Orientation_rms(buf, val) \
+	{                                                     \
+		buf[4] &= ~(0x03 << 0);                             \
+		buf[4] |= (((ubyte)(val) >> 3) & 0x03) << 0;        \
+		buf[5] &= ~(0x07 << 5);                             \
+		buf[5] |= (((ubyte)(val) >> 0) & 0x07) << 5;        \
+	}
 
 /**
  * Set signal Obj_Orientation_rms in buffer to its initial value.
@@ -3847,22 +3858,22 @@
 /**
  * Signal Obj_Orientation_rms raw initial value.
  */
-#define START_Obj_2_Quality_Obj_Orientation_rms      0
+#define START_Obj_2_Quality_Obj_Orientation_rms 0
 
 /**
  * Signal Obj_Orientation_rms raw minimum value.
  */
-#define MIN_Obj_2_Quality_Obj_Orientation_rms        0
+#define MIN_Obj_2_Quality_Obj_Orientation_rms 0
 
 /**
  * Signal Obj_Orientation_rms raw maximum value.
  */
-#define MAX_Obj_2_Quality_Obj_Orientation_rms        31
+#define MAX_Obj_2_Quality_Obj_Orientation_rms 31
 
 /**
  * Signal Obj_Orientation_rms raw offset value.
  */
-#define OFF_Obj_2_Quality_Obj_Orientation_rms        0
+#define OFF_Obj_2_Quality_Obj_Orientation_rms 0
 
 /**
  * @}
@@ -3881,7 +3892,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms_Invalid             31
+#define Obj_2_Quality_Obj_Orientation_rms_Invalid 31
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _180_000.
@@ -3890,7 +3901,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__180_000            30
+#define Obj_2_Quality_Obj_Orientation_rms__180_000 30
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _126_881.
@@ -3899,7 +3910,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__126_881            29
+#define Obj_2_Quality_Obj_Orientation_rms__126_881 29
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _89_437.
@@ -3908,7 +3919,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__89_437             28
+#define Obj_2_Quality_Obj_Orientation_rms__89_437 28
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _63_044.
@@ -3917,7 +3928,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__63_044             27
+#define Obj_2_Quality_Obj_Orientation_rms__63_044 27
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _44_439.
@@ -3926,7 +3937,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__44_439             26
+#define Obj_2_Quality_Obj_Orientation_rms__44_439 26
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _31_325.
@@ -3935,7 +3946,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__31_325             25
+#define Obj_2_Quality_Obj_Orientation_rms__31_325 25
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _22_081.
@@ -3944,7 +3955,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__22_081             24
+#define Obj_2_Quality_Obj_Orientation_rms__22_081 24
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _15_565.
@@ -3953,7 +3964,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__15_565             23
+#define Obj_2_Quality_Obj_Orientation_rms__15_565 23
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _10_971.
@@ -3962,7 +3973,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__10_971             22
+#define Obj_2_Quality_Obj_Orientation_rms__10_971 22
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _7_734.
@@ -3971,7 +3982,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__7_734              21
+#define Obj_2_Quality_Obj_Orientation_rms__7_734 21
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _5_451.
@@ -3980,7 +3991,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__5_451              20
+#define Obj_2_Quality_Obj_Orientation_rms__5_451 20
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _3_843.
@@ -3989,7 +4000,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__3_843              19
+#define Obj_2_Quality_Obj_Orientation_rms__3_843 19
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _2_709.
@@ -3998,7 +4009,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__2_709              18
+#define Obj_2_Quality_Obj_Orientation_rms__2_709 18
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _1_909.
@@ -4007,7 +4018,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__1_909              17
+#define Obj_2_Quality_Obj_Orientation_rms__1_909 17
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _1_346.
@@ -4016,7 +4027,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__1_346              16
+#define Obj_2_Quality_Obj_Orientation_rms__1_346 16
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _0_949.
@@ -4025,7 +4036,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__0_949              15
+#define Obj_2_Quality_Obj_Orientation_rms__0_949 15
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _0_669.
@@ -4034,7 +4045,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__0_669              14
+#define Obj_2_Quality_Obj_Orientation_rms__0_669 14
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _0_471.
@@ -4043,7 +4054,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__0_471              13
+#define Obj_2_Quality_Obj_Orientation_rms__0_471 13
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _0_332.
@@ -4052,7 +4063,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__0_332              12
+#define Obj_2_Quality_Obj_Orientation_rms__0_332 12
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _0_234.
@@ -4061,7 +4072,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__0_234              11
+#define Obj_2_Quality_Obj_Orientation_rms__0_234 11
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _0_165.
@@ -4070,7 +4081,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__0_165              10
+#define Obj_2_Quality_Obj_Orientation_rms__0_165 10
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _0_116.
@@ -4079,7 +4090,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__0_116              9
+#define Obj_2_Quality_Obj_Orientation_rms__0_116 9
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _0_082.
@@ -4088,7 +4099,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__0_082              8
+#define Obj_2_Quality_Obj_Orientation_rms__0_082 8
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _0_058.
@@ -4097,7 +4108,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__0_058              7
+#define Obj_2_Quality_Obj_Orientation_rms__0_058 7
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _0_041.
@@ -4106,7 +4117,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__0_041              6
+#define Obj_2_Quality_Obj_Orientation_rms__0_041 6
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _0_029.
@@ -4115,7 +4126,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__0_029              5
+#define Obj_2_Quality_Obj_Orientation_rms__0_029 5
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _0_020.
@@ -4124,7 +4135,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__0_020              4
+#define Obj_2_Quality_Obj_Orientation_rms__0_020 4
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _0_014.
@@ -4133,7 +4144,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__0_014              3
+#define Obj_2_Quality_Obj_Orientation_rms__0_014 3
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _0_010.
@@ -4142,7 +4153,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__0_010              2
+#define Obj_2_Quality_Obj_Orientation_rms__0_010 2
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _0_007.
@@ -4151,7 +4162,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__0_007              1
+#define Obj_2_Quality_Obj_Orientation_rms__0_007 1
 
 /**
  * Value table Obj_2_Quality_Obj_Orientation_rms entry _0_005.
@@ -4160,7 +4171,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_Orientation_rms
  */
-#define Obj_2_Quality_Obj_Orientation_rms__0_005              0
+#define Obj_2_Quality_Obj_Orientation_rms__0_005 0
 
 /**
  * @defgroup SIG_Obj_2_Quality_Obj_DistLong_rms Signal Obj_DistLong_rms of Message Obj_2_Quality (0x60c)
@@ -4182,7 +4193,7 @@
  * @deprecated
  *	Use \ref SET_Obj_2_Quality_Obj_DistLong_rms and \ref GET_Obj_2_Quality_Obj_DistLong_rms instead.
  */
-#define SIG_Obj_2_Quality_Obj_DistLong_rms          1, 0, 15, 5
+#define SIG_Obj_2_Quality_Obj_DistLong_rms 1, 0, 15, 5
 
 /**
  * Signal Obj_DistLong_rms setup tuple.
@@ -4190,7 +4201,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_2_Quality_Obj_DistLong_rms or \ref INIT_Obj_2_Quality instead.
  */
-#define SETUP_Obj_2_Quality_Obj_DistLong_rms        1, 0, 15, 5, 0
+#define SETUP_Obj_2_Quality_Obj_DistLong_rms 1, 0, 15, 5, 0
 
 /**
  * Get signal Obj_DistLong_rms from buffer.
@@ -4200,9 +4211,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_2_Quality_Obj_DistLong_rms(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[1] >> 3) & 0x1f) << 0) \
-)
+#define GET_Obj_2_Quality_Obj_DistLong_rms(buf) (0 | (ubyte)(+(ubyte)((buf[1] >> 3) & 0x1f) << 0))
 
 /**
  * Set signal Obj_DistLong_rms in buffer.
@@ -4212,10 +4221,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_2_Quality_Obj_DistLong_rms(buf, val) { \
-	buf[1] &= ~(0x1f << 3); \
-	buf[1] |= (((ubyte)(val) >> 0) & 0x1f) << 3; \
-}
+#define SET_Obj_2_Quality_Obj_DistLong_rms(buf, val) \
+	{                                                  \
+		buf[1] &= ~(0x1f << 3);                          \
+		buf[1] |= (((ubyte)(val) >> 0) & 0x1f) << 3;     \
+	}
 
 /**
  * Set signal Obj_DistLong_rms in buffer to its initial value.
@@ -4243,22 +4253,22 @@
 /**
  * Signal Obj_DistLong_rms raw initial value.
  */
-#define START_Obj_2_Quality_Obj_DistLong_rms        0
+#define START_Obj_2_Quality_Obj_DistLong_rms 0
 
 /**
  * Signal Obj_DistLong_rms raw minimum value.
  */
-#define MIN_Obj_2_Quality_Obj_DistLong_rms          0
+#define MIN_Obj_2_Quality_Obj_DistLong_rms 0
 
 /**
  * Signal Obj_DistLong_rms raw maximum value.
  */
-#define MAX_Obj_2_Quality_Obj_DistLong_rms          31
+#define MAX_Obj_2_Quality_Obj_DistLong_rms 31
 
 /**
  * Signal Obj_DistLong_rms raw offset value.
  */
-#define OFF_Obj_2_Quality_Obj_DistLong_rms          0
+#define OFF_Obj_2_Quality_Obj_DistLong_rms 0
 
 /**
  * @}
@@ -4277,7 +4287,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms_Invalid             31
+#define Obj_2_Quality_Obj_DistLong_rms_Invalid 31
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _10_000.
@@ -4286,7 +4296,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__10_000             30
+#define Obj_2_Quality_Obj_DistLong_rms__10_000 30
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _7_762.
@@ -4295,7 +4305,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__7_762              29
+#define Obj_2_Quality_Obj_DistLong_rms__7_762 29
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _6_025.
@@ -4304,7 +4314,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__6_025              28
+#define Obj_2_Quality_Obj_DistLong_rms__6_025 28
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _4_676.
@@ -4313,7 +4323,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__4_676              27
+#define Obj_2_Quality_Obj_DistLong_rms__4_676 27
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _3_630.
@@ -4322,7 +4332,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__3_630              26
+#define Obj_2_Quality_Obj_DistLong_rms__3_630 26
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _2_817.
@@ -4331,7 +4341,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__2_817              25
+#define Obj_2_Quality_Obj_DistLong_rms__2_817 25
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _2_187.
@@ -4340,7 +4350,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__2_187              24
+#define Obj_2_Quality_Obj_DistLong_rms__2_187 24
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _1_697.
@@ -4349,7 +4359,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__1_697              23
+#define Obj_2_Quality_Obj_DistLong_rms__1_697 23
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _1_317.
@@ -4358,7 +4368,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__1_317              22
+#define Obj_2_Quality_Obj_DistLong_rms__1_317 22
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _1_023.
@@ -4367,7 +4377,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__1_023              21
+#define Obj_2_Quality_Obj_DistLong_rms__1_023 21
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _0_794.
@@ -4376,7 +4386,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__0_794              20
+#define Obj_2_Quality_Obj_DistLong_rms__0_794 20
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _0_616.
@@ -4385,7 +4395,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__0_616              19
+#define Obj_2_Quality_Obj_DistLong_rms__0_616 19
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _0_478.
@@ -4394,7 +4404,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__0_478              18
+#define Obj_2_Quality_Obj_DistLong_rms__0_478 18
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _0_371.
@@ -4403,7 +4413,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__0_371              17
+#define Obj_2_Quality_Obj_DistLong_rms__0_371 17
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _0_288.
@@ -4412,7 +4422,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__0_288              16
+#define Obj_2_Quality_Obj_DistLong_rms__0_288 16
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _0_224.
@@ -4421,7 +4431,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__0_224              15
+#define Obj_2_Quality_Obj_DistLong_rms__0_224 15
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _0_174.
@@ -4430,7 +4440,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__0_174              14
+#define Obj_2_Quality_Obj_DistLong_rms__0_174 14
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _0_135.
@@ -4439,7 +4449,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__0_135              13
+#define Obj_2_Quality_Obj_DistLong_rms__0_135 13
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _0_105.
@@ -4448,7 +4458,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__0_105              12
+#define Obj_2_Quality_Obj_DistLong_rms__0_105 12
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _0_081.
@@ -4457,7 +4467,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__0_081              11
+#define Obj_2_Quality_Obj_DistLong_rms__0_081 11
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _0_063.
@@ -4466,7 +4476,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__0_063              10
+#define Obj_2_Quality_Obj_DistLong_rms__0_063 10
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _0_049.
@@ -4475,7 +4485,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__0_049              9
+#define Obj_2_Quality_Obj_DistLong_rms__0_049 9
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _0_038.
@@ -4484,7 +4494,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__0_038              8
+#define Obj_2_Quality_Obj_DistLong_rms__0_038 8
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _0_029.
@@ -4493,7 +4503,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__0_029              7
+#define Obj_2_Quality_Obj_DistLong_rms__0_029 7
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _0_023.
@@ -4502,7 +4512,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__0_023              6
+#define Obj_2_Quality_Obj_DistLong_rms__0_023 6
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _0_018.
@@ -4511,7 +4521,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__0_018              5
+#define Obj_2_Quality_Obj_DistLong_rms__0_018 5
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _0_014.
@@ -4520,7 +4530,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__0_014              4
+#define Obj_2_Quality_Obj_DistLong_rms__0_014 4
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _0_011.
@@ -4529,7 +4539,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__0_011              3
+#define Obj_2_Quality_Obj_DistLong_rms__0_011 3
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _0_008.
@@ -4538,7 +4548,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__0_008              2
+#define Obj_2_Quality_Obj_DistLong_rms__0_008 2
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _0_006.
@@ -4547,7 +4557,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__0_006              1
+#define Obj_2_Quality_Obj_DistLong_rms__0_006 1
 
 /**
  * Value table Obj_2_Quality_Obj_DistLong_rms entry _0_005.
@@ -4556,7 +4566,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLong_rms
  */
-#define Obj_2_Quality_Obj_DistLong_rms__0_005              0
+#define Obj_2_Quality_Obj_DistLong_rms__0_005 0
 
 /**
  * @defgroup SIG_Obj_2_Quality_Obj_DistLat_rms Signal Obj_DistLat_rms of Message Obj_2_Quality (0x60c)
@@ -4578,7 +4588,7 @@
  * @deprecated
  *	Use \ref SET_Obj_2_Quality_Obj_DistLat_rms and \ref GET_Obj_2_Quality_Obj_DistLat_rms instead.
  */
-#define SIG_Obj_2_Quality_Obj_DistLat_rms           1, 0, 10, 5
+#define SIG_Obj_2_Quality_Obj_DistLat_rms 1, 0, 10, 5
 
 /**
  * Signal Obj_DistLat_rms setup tuple.
@@ -4586,7 +4596,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_2_Quality_Obj_DistLat_rms or \ref INIT_Obj_2_Quality instead.
  */
-#define SETUP_Obj_2_Quality_Obj_DistLat_rms         1, 0, 10, 5, 0
+#define SETUP_Obj_2_Quality_Obj_DistLat_rms 1, 0, 10, 5, 0
 
 /**
  * Get signal Obj_DistLat_rms from buffer.
@@ -4596,10 +4606,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_2_Quality_Obj_DistLat_rms(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[1] >> 0) & 0x07) << 2) \
-	| (ubyte)(+(ubyte)((buf[2] >> 6) & 0x03) << 0) \
-)
+#define GET_Obj_2_Quality_Obj_DistLat_rms(buf) (0 | (ubyte)(+(ubyte)((buf[1] >> 0) & 0x07) << 2) | (ubyte)(+(ubyte)((buf[2] >> 6) & 0x03) << 0))
 
 /**
  * Set signal Obj_DistLat_rms in buffer.
@@ -4609,12 +4616,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_2_Quality_Obj_DistLat_rms(buf, val) { \
-	buf[1] &= ~(0x07 << 0); \
-	buf[1] |= (((ubyte)(val) >> 2) & 0x07) << 0; \
-	buf[2] &= ~(0x03 << 6); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0x03) << 6; \
-}
+#define SET_Obj_2_Quality_Obj_DistLat_rms(buf, val) \
+	{                                                 \
+		buf[1] &= ~(0x07 << 0);                         \
+		buf[1] |= (((ubyte)(val) >> 2) & 0x07) << 0;    \
+		buf[2] &= ~(0x03 << 6);                         \
+		buf[2] |= (((ubyte)(val) >> 0) & 0x03) << 6;    \
+	}
 
 /**
  * Set signal Obj_DistLat_rms in buffer to its initial value.
@@ -4642,22 +4650,22 @@
 /**
  * Signal Obj_DistLat_rms raw initial value.
  */
-#define START_Obj_2_Quality_Obj_DistLat_rms         0
+#define START_Obj_2_Quality_Obj_DistLat_rms 0
 
 /**
  * Signal Obj_DistLat_rms raw minimum value.
  */
-#define MIN_Obj_2_Quality_Obj_DistLat_rms           0
+#define MIN_Obj_2_Quality_Obj_DistLat_rms 0
 
 /**
  * Signal Obj_DistLat_rms raw maximum value.
  */
-#define MAX_Obj_2_Quality_Obj_DistLat_rms           31
+#define MAX_Obj_2_Quality_Obj_DistLat_rms 31
 
 /**
  * Signal Obj_DistLat_rms raw offset value.
  */
-#define OFF_Obj_2_Quality_Obj_DistLat_rms           0
+#define OFF_Obj_2_Quality_Obj_DistLat_rms 0
 
 /**
  * @}
@@ -4676,7 +4684,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms_Invalid             31
+#define Obj_2_Quality_Obj_DistLat_rms_Invalid 31
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _10_000.
@@ -4685,7 +4693,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__10_000             30
+#define Obj_2_Quality_Obj_DistLat_rms__10_000 30
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _7_762.
@@ -4694,7 +4702,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__7_762              29
+#define Obj_2_Quality_Obj_DistLat_rms__7_762 29
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _6_025.
@@ -4703,7 +4711,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__6_025              28
+#define Obj_2_Quality_Obj_DistLat_rms__6_025 28
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _4_676.
@@ -4712,7 +4720,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__4_676              27
+#define Obj_2_Quality_Obj_DistLat_rms__4_676 27
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _3_630.
@@ -4721,7 +4729,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__3_630              26
+#define Obj_2_Quality_Obj_DistLat_rms__3_630 26
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _2_817.
@@ -4730,7 +4738,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__2_817              25
+#define Obj_2_Quality_Obj_DistLat_rms__2_817 25
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _2_187.
@@ -4739,7 +4747,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__2_187              24
+#define Obj_2_Quality_Obj_DistLat_rms__2_187 24
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _1_697.
@@ -4748,7 +4756,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__1_697              23
+#define Obj_2_Quality_Obj_DistLat_rms__1_697 23
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _1_317.
@@ -4757,7 +4765,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__1_317              22
+#define Obj_2_Quality_Obj_DistLat_rms__1_317 22
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _1_023.
@@ -4766,7 +4774,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__1_023              21
+#define Obj_2_Quality_Obj_DistLat_rms__1_023 21
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _0_794.
@@ -4775,7 +4783,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__0_794              20
+#define Obj_2_Quality_Obj_DistLat_rms__0_794 20
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _0_616.
@@ -4784,7 +4792,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__0_616              19
+#define Obj_2_Quality_Obj_DistLat_rms__0_616 19
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _0_478.
@@ -4793,7 +4801,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__0_478              18
+#define Obj_2_Quality_Obj_DistLat_rms__0_478 18
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _0_371.
@@ -4802,7 +4810,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__0_371              17
+#define Obj_2_Quality_Obj_DistLat_rms__0_371 17
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _0_288.
@@ -4811,7 +4819,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__0_288              16
+#define Obj_2_Quality_Obj_DistLat_rms__0_288 16
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _0_224.
@@ -4820,7 +4828,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__0_224              15
+#define Obj_2_Quality_Obj_DistLat_rms__0_224 15
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _0_174.
@@ -4829,7 +4837,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__0_174              14
+#define Obj_2_Quality_Obj_DistLat_rms__0_174 14
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _0_135.
@@ -4838,7 +4846,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__0_135              13
+#define Obj_2_Quality_Obj_DistLat_rms__0_135 13
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _0_105.
@@ -4847,7 +4855,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__0_105              12
+#define Obj_2_Quality_Obj_DistLat_rms__0_105 12
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _0_081.
@@ -4856,7 +4864,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__0_081              11
+#define Obj_2_Quality_Obj_DistLat_rms__0_081 11
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _0_063.
@@ -4865,7 +4873,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__0_063              10
+#define Obj_2_Quality_Obj_DistLat_rms__0_063 10
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _0_049.
@@ -4874,7 +4882,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__0_049              9
+#define Obj_2_Quality_Obj_DistLat_rms__0_049 9
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _0_038.
@@ -4883,7 +4891,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__0_038              8
+#define Obj_2_Quality_Obj_DistLat_rms__0_038 8
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _0_029.
@@ -4892,7 +4900,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__0_029              7
+#define Obj_2_Quality_Obj_DistLat_rms__0_029 7
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _0_023.
@@ -4901,7 +4909,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__0_023              6
+#define Obj_2_Quality_Obj_DistLat_rms__0_023 6
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _0_018.
@@ -4910,7 +4918,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__0_018              5
+#define Obj_2_Quality_Obj_DistLat_rms__0_018 5
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _0_014.
@@ -4919,7 +4927,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__0_014              4
+#define Obj_2_Quality_Obj_DistLat_rms__0_014 4
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _0_011.
@@ -4928,7 +4936,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__0_011              3
+#define Obj_2_Quality_Obj_DistLat_rms__0_011 3
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _0_008.
@@ -4937,7 +4945,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__0_008              2
+#define Obj_2_Quality_Obj_DistLat_rms__0_008 2
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _0_006.
@@ -4946,7 +4954,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__0_006              1
+#define Obj_2_Quality_Obj_DistLat_rms__0_006 1
 
 /**
  * Value table Obj_2_Quality_Obj_DistLat_rms entry _0_005.
@@ -4955,7 +4963,7 @@
  *
  * @ingroup ENUM_Obj_2_Quality_Obj_DistLat_rms
  */
-#define Obj_2_Quality_Obj_DistLat_rms__0_005              0
+#define Obj_2_Quality_Obj_DistLat_rms__0_005 0
 
 /**
  * @defgroup SIG_Obj_2_Quality_Obj_ID Signal Obj_ID of Message Obj_2_Quality (0x60c)
@@ -4975,7 +4983,7 @@
  * @deprecated
  *	Use \ref SET_Obj_2_Quality_Obj_ID and \ref GET_Obj_2_Quality_Obj_ID instead.
  */
-#define SIG_Obj_2_Quality_Obj_ID                    1, 0, 7, 8
+#define SIG_Obj_2_Quality_Obj_ID 1, 0, 7, 8
 
 /**
  * Signal Obj_ID setup tuple.
@@ -4983,7 +4991,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_2_Quality_Obj_ID or \ref INIT_Obj_2_Quality instead.
  */
-#define SETUP_Obj_2_Quality_Obj_ID                  1, 0, 7, 8, 0
+#define SETUP_Obj_2_Quality_Obj_ID 1, 0, 7, 8, 0
 
 /**
  * Get signal Obj_ID from buffer.
@@ -4993,9 +5001,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_2_Quality_Obj_ID(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 0) & 0xff) << 0) \
-)
+#define GET_Obj_2_Quality_Obj_ID(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 0) & 0xff) << 0))
 
 /**
  * Set signal Obj_ID in buffer.
@@ -5005,10 +5011,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_2_Quality_Obj_ID(buf, val) { \
-	buf[0] &= ~(0xff << 0); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_Obj_2_Quality_Obj_ID(buf, val)       \
+	{                                              \
+		buf[0] &= ~(0xff << 0);                      \
+		buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
+	}
 
 /**
  * Set signal Obj_ID in buffer to its initial value.
@@ -5036,22 +5043,22 @@
 /**
  * Signal Obj_ID raw initial value.
  */
-#define START_Obj_2_Quality_Obj_ID                  0
+#define START_Obj_2_Quality_Obj_ID 0
 
 /**
  * Signal Obj_ID raw minimum value.
  */
-#define MIN_Obj_2_Quality_Obj_ID                    0
+#define MIN_Obj_2_Quality_Obj_ID 0
 
 /**
  * Signal Obj_ID raw maximum value.
  */
-#define MAX_Obj_2_Quality_Obj_ID                    255
+#define MAX_Obj_2_Quality_Obj_ID 255
 
 /**
  * Signal Obj_ID raw offset value.
  */
-#define OFF_Obj_2_Quality_Obj_ID                    0
+#define OFF_Obj_2_Quality_Obj_ID 0
 
 /**
  * @}
@@ -5077,7 +5084,7 @@
  * @deprecated
  *	Use \ref SET_Obj_3_Extended_Obj_Class and \ref GET_Obj_3_Extended_Obj_Class instead.
  */
-#define SIG_Obj_3_Extended_Obj_Class                1, 0, 26, 3
+#define SIG_Obj_3_Extended_Obj_Class 1, 0, 26, 3
 
 /**
  * Signal Obj_Class setup tuple.
@@ -5085,7 +5092,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_3_Extended_Obj_Class or \ref INIT_Obj_3_Extended instead.
  */
-#define SETUP_Obj_3_Extended_Obj_Class              1, 0, 26, 3, 0
+#define SETUP_Obj_3_Extended_Obj_Class 1, 0, 26, 3, 0
 
 /**
  * Get signal Obj_Class from buffer.
@@ -5095,9 +5102,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_3_Extended_Obj_Class(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[3] >> 0) & 0x07) << 0) \
-)
+#define GET_Obj_3_Extended_Obj_Class(buf) (0 | (ubyte)(+(ubyte)((buf[3] >> 0) & 0x07) << 0))
 
 /**
  * Set signal Obj_Class in buffer.
@@ -5107,10 +5112,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_3_Extended_Obj_Class(buf, val) { \
-	buf[3] &= ~(0x07 << 0); \
-	buf[3] |= (((ubyte)(val) >> 0) & 0x07) << 0; \
-}
+#define SET_Obj_3_Extended_Obj_Class(buf, val)   \
+	{                                              \
+		buf[3] &= ~(0x07 << 0);                      \
+		buf[3] |= (((ubyte)(val) >> 0) & 0x07) << 0; \
+	}
 
 /**
  * Set signal Obj_Class in buffer to its initial value.
@@ -5138,22 +5144,22 @@
 /**
  * Signal Obj_Class raw initial value.
  */
-#define START_Obj_3_Extended_Obj_Class              0
+#define START_Obj_3_Extended_Obj_Class 0
 
 /**
  * Signal Obj_Class raw minimum value.
  */
-#define MIN_Obj_3_Extended_Obj_Class                0
+#define MIN_Obj_3_Extended_Obj_Class 0
 
 /**
  * Signal Obj_Class raw maximum value.
  */
-#define MAX_Obj_3_Extended_Obj_Class                7
+#define MAX_Obj_3_Extended_Obj_Class 7
 
 /**
  * Signal Obj_Class raw offset value.
  */
-#define OFF_Obj_3_Extended_Obj_Class                0
+#define OFF_Obj_3_Extended_Obj_Class 0
 
 /**
  * @}
@@ -5174,56 +5180,56 @@
  *
  * @ingroup ENUM_Obj_3_Extended_Obj_Class
  */
-#define Obj_3_Extended_Obj_Class_Description         7
+#define Obj_3_Extended_Obj_Class_Description 7
 
 /**
  * Value table Obj_3_Extended_Obj_Class entry Wide.
  *
  * @ingroup ENUM_Obj_3_Extended_Obj_Class
  */
-#define Obj_3_Extended_Obj_Class_Wide                6
+#define Obj_3_Extended_Obj_Class_Wide 6
 
 /**
  * Value table Obj_3_Extended_Obj_Class entry Bicycle.
  *
  * @ingroup ENUM_Obj_3_Extended_Obj_Class
  */
-#define Obj_3_Extended_Obj_Class_Bicycle             5
+#define Obj_3_Extended_Obj_Class_Bicycle 5
 
 /**
  * Value table Obj_3_Extended_Obj_Class entry Motorcycle.
  *
  * @ingroup ENUM_Obj_3_Extended_Obj_Class
  */
-#define Obj_3_Extended_Obj_Class_Motorcycle          4
+#define Obj_3_Extended_Obj_Class_Motorcycle 4
 
 /**
  * Value table Obj_3_Extended_Obj_Class entry Pedestrian.
  *
  * @ingroup ENUM_Obj_3_Extended_Obj_Class
  */
-#define Obj_3_Extended_Obj_Class_Pedestrian          3
+#define Obj_3_Extended_Obj_Class_Pedestrian 3
 
 /**
  * Value table Obj_3_Extended_Obj_Class entry Truck.
  *
  * @ingroup ENUM_Obj_3_Extended_Obj_Class
  */
-#define Obj_3_Extended_Obj_Class_Truck               2
+#define Obj_3_Extended_Obj_Class_Truck 2
 
 /**
  * Value table Obj_3_Extended_Obj_Class entry Car.
  *
  * @ingroup ENUM_Obj_3_Extended_Obj_Class
  */
-#define Obj_3_Extended_Obj_Class_Car                 1
+#define Obj_3_Extended_Obj_Class_Car 1
 
 /**
  * Value table Obj_3_Extended_Obj_Class entry Point.
  *
  * @ingroup ENUM_Obj_3_Extended_Obj_Class
  */
-#define Obj_3_Extended_Obj_Class_Point               0
+#define Obj_3_Extended_Obj_Class_Point 0
 
 /**
  * @defgroup SIG_Obj_3_Extended_Obj_ArelLat Signal Obj_ArelLat of Message Obj_3_Extended (0x60d)
@@ -5243,7 +5249,7 @@
  * @deprecated
  *	Use \ref SET_Obj_3_Extended_Obj_ArelLat and \ref GET_Obj_3_Extended_Obj_ArelLat instead.
  */
-#define SIG_Obj_3_Extended_Obj_ArelLat              1, 0, 20, 9
+#define SIG_Obj_3_Extended_Obj_ArelLat 1, 0, 20, 9
 
 /**
  * Signal Obj_ArelLat setup tuple.
@@ -5251,7 +5257,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_3_Extended_Obj_ArelLat or \ref INIT_Obj_3_Extended instead.
  */
-#define SETUP_Obj_3_Extended_Obj_ArelLat            1, 0, 20, 9, 250
+#define SETUP_Obj_3_Extended_Obj_ArelLat 1, 0, 20, 9, 250
 
 /**
  * Get signal Obj_ArelLat from buffer.
@@ -5261,10 +5267,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_3_Extended_Obj_ArelLat(buf) (0 \
-	| (uword)(+(uword)((buf[2] >> 0) & 0x1f) << 4) \
-	| (ubyte)(+(ubyte)((buf[3] >> 4) & 0x0f) << 0) \
-)
+#define GET_Obj_3_Extended_Obj_ArelLat(buf) (0 | (uword)(+(uword)((buf[2] >> 0) & 0x1f) << 4) | (ubyte)(+(ubyte)((buf[3] >> 4) & 0x0f) << 0))
 
 /**
  * Set signal Obj_ArelLat in buffer.
@@ -5274,12 +5277,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_3_Extended_Obj_ArelLat(buf, val) { \
-	buf[2] &= ~(0x1f << 0); \
-	buf[2] |= ((ubyte)((uword)(val) >> 4) & 0x1f) << 0; \
-	buf[3] &= ~(0x0f << 4); \
-	buf[3] |= (((ubyte)(val) >> 0) & 0x0f) << 4; \
-}
+#define SET_Obj_3_Extended_Obj_ArelLat(buf, val)        \
+	{                                                     \
+		buf[2] &= ~(0x1f << 0);                             \
+		buf[2] |= ((ubyte)((uword)(val) >> 4) & 0x1f) << 0; \
+		buf[3] &= ~(0x0f << 4);                             \
+		buf[3] |= (((ubyte)(val) >> 0) & 0x0f) << 4;        \
+	}
 
 /**
  * Set signal Obj_ArelLat in buffer to its initial value.
@@ -5307,22 +5311,22 @@
 /**
  * Signal Obj_ArelLat raw initial value.
  */
-#define START_Obj_3_Extended_Obj_ArelLat            250
+#define START_Obj_3_Extended_Obj_ArelLat 250
 
 /**
  * Signal Obj_ArelLat raw minimum value.
  */
-#define MIN_Obj_3_Extended_Obj_ArelLat              0
+#define MIN_Obj_3_Extended_Obj_ArelLat 0
 
 /**
  * Signal Obj_ArelLat raw maximum value.
  */
-#define MAX_Obj_3_Extended_Obj_ArelLat              511
+#define MAX_Obj_3_Extended_Obj_ArelLat 511
 
 /**
  * Signal Obj_ArelLat raw offset value.
  */
-#define OFF_Obj_3_Extended_Obj_ArelLat              -250
+#define OFF_Obj_3_Extended_Obj_ArelLat -250
 
 /**
  * @}
@@ -5346,7 +5350,7 @@
  * @deprecated
  *	Use \ref SET_Obj_3_Extended_Obj_ID and \ref GET_Obj_3_Extended_Obj_ID instead.
  */
-#define SIG_Obj_3_Extended_Obj_ID                   1, 0, 7, 8
+#define SIG_Obj_3_Extended_Obj_ID 1, 0, 7, 8
 
 /**
  * Signal Obj_ID setup tuple.
@@ -5354,7 +5358,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_3_Extended_Obj_ID or \ref INIT_Obj_3_Extended instead.
  */
-#define SETUP_Obj_3_Extended_Obj_ID                 1, 0, 7, 8, 0
+#define SETUP_Obj_3_Extended_Obj_ID 1, 0, 7, 8, 0
 
 /**
  * Get signal Obj_ID from buffer.
@@ -5364,9 +5368,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_3_Extended_Obj_ID(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 0) & 0xff) << 0) \
-)
+#define GET_Obj_3_Extended_Obj_ID(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 0) & 0xff) << 0))
 
 /**
  * Set signal Obj_ID in buffer.
@@ -5376,10 +5378,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_3_Extended_Obj_ID(buf, val) { \
-	buf[0] &= ~(0xff << 0); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_Obj_3_Extended_Obj_ID(buf, val)      \
+	{                                              \
+		buf[0] &= ~(0xff << 0);                      \
+		buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
+	}
 
 /**
  * Set signal Obj_ID in buffer to its initial value.
@@ -5407,22 +5410,22 @@
 /**
  * Signal Obj_ID raw initial value.
  */
-#define START_Obj_3_Extended_Obj_ID                 0
+#define START_Obj_3_Extended_Obj_ID 0
 
 /**
  * Signal Obj_ID raw minimum value.
  */
-#define MIN_Obj_3_Extended_Obj_ID                   0
+#define MIN_Obj_3_Extended_Obj_ID 0
 
 /**
  * Signal Obj_ID raw maximum value.
  */
-#define MAX_Obj_3_Extended_Obj_ID                   255
+#define MAX_Obj_3_Extended_Obj_ID 255
 
 /**
  * Signal Obj_ID raw offset value.
  */
-#define OFF_Obj_3_Extended_Obj_ID                   0
+#define OFF_Obj_3_Extended_Obj_ID 0
 
 /**
  * @}
@@ -5446,7 +5449,7 @@
  * @deprecated
  *	Use \ref SET_Obj_3_Extended_Obj_OrientationAngle and \ref GET_Obj_3_Extended_Obj_OrientationAngle instead.
  */
-#define SIG_Obj_3_Extended_Obj_OrientationAngle        1, 0, 39, 10
+#define SIG_Obj_3_Extended_Obj_OrientationAngle 1, 0, 39, 10
 
 /**
  * Signal Obj_OrientationAngle setup tuple.
@@ -5454,7 +5457,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_3_Extended_Obj_OrientationAngle or \ref INIT_Obj_3_Extended instead.
  */
-#define SETUP_Obj_3_Extended_Obj_OrientationAngle      1, 0, 39, 10, 450
+#define SETUP_Obj_3_Extended_Obj_OrientationAngle 1, 0, 39, 10, 450
 
 /**
  * Get signal Obj_OrientationAngle from buffer.
@@ -5464,10 +5467,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_3_Extended_Obj_OrientationAngle(buf) (0 \
-	| (uword)(+(uword)((buf[4] >> 0) & 0xff) << 2) \
-	| (ubyte)(+(ubyte)((buf[5] >> 6) & 0x03) << 0) \
-)
+#define GET_Obj_3_Extended_Obj_OrientationAngle(buf) (0 | (uword)(+(uword)((buf[4] >> 0) & 0xff) << 2) | (ubyte)(+(ubyte)((buf[5] >> 6) & 0x03) << 0))
 
 /**
  * Set signal Obj_OrientationAngle in buffer.
@@ -5477,12 +5477,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_3_Extended_Obj_OrientationAngle(buf, val) { \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= ((ubyte)((uword)(val) >> 2) & 0xff) << 0; \
-	buf[5] &= ~(0x03 << 6); \
-	buf[5] |= (((ubyte)(val) >> 0) & 0x03) << 6; \
-}
+#define SET_Obj_3_Extended_Obj_OrientationAngle(buf, val) \
+	{                                                       \
+		buf[4] &= ~(0xff << 0);                               \
+		buf[4] |= ((ubyte)((uword)(val) >> 2) & 0xff) << 0;   \
+		buf[5] &= ~(0x03 << 6);                               \
+		buf[5] |= (((ubyte)(val) >> 0) & 0x03) << 6;          \
+	}
 
 /**
  * Set signal Obj_OrientationAngle in buffer to its initial value.
@@ -5510,22 +5511,22 @@
 /**
  * Signal Obj_OrientationAngle raw initial value.
  */
-#define START_Obj_3_Extended_Obj_OrientationAngle      450
+#define START_Obj_3_Extended_Obj_OrientationAngle 450
 
 /**
  * Signal Obj_OrientationAngle raw minimum value.
  */
-#define MIN_Obj_3_Extended_Obj_OrientationAngle        0
+#define MIN_Obj_3_Extended_Obj_OrientationAngle 0
 
 /**
  * Signal Obj_OrientationAngle raw maximum value.
  */
-#define MAX_Obj_3_Extended_Obj_OrientationAngle        1023
+#define MAX_Obj_3_Extended_Obj_OrientationAngle 1023
 
 /**
  * Signal Obj_OrientationAngle raw offset value.
  */
-#define OFF_Obj_3_Extended_Obj_OrientationAngle        -450
+#define OFF_Obj_3_Extended_Obj_OrientationAngle -450
 
 /**
  * @}
@@ -5549,7 +5550,7 @@
  * @deprecated
  *	Use \ref SET_Obj_3_Extended_Obj_Width and \ref GET_Obj_3_Extended_Obj_Width instead.
  */
-#define SIG_Obj_3_Extended_Obj_Width                1, 0, 63, 8
+#define SIG_Obj_3_Extended_Obj_Width 1, 0, 63, 8
 
 /**
  * Signal Obj_Width setup tuple.
@@ -5557,7 +5558,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_3_Extended_Obj_Width or \ref INIT_Obj_3_Extended instead.
  */
-#define SETUP_Obj_3_Extended_Obj_Width              1, 0, 63, 8, 0
+#define SETUP_Obj_3_Extended_Obj_Width 1, 0, 63, 8, 0
 
 /**
  * Get signal Obj_Width from buffer.
@@ -5567,9 +5568,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_3_Extended_Obj_Width(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[7] >> 0) & 0xff) << 0) \
-)
+#define GET_Obj_3_Extended_Obj_Width(buf) (0 | (ubyte)(+(ubyte)((buf[7] >> 0) & 0xff) << 0))
 
 /**
  * Set signal Obj_Width in buffer.
@@ -5579,10 +5578,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_3_Extended_Obj_Width(buf, val) { \
-	buf[7] &= ~(0xff << 0); \
-	buf[7] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_Obj_3_Extended_Obj_Width(buf, val)   \
+	{                                              \
+		buf[7] &= ~(0xff << 0);                      \
+		buf[7] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
+	}
 
 /**
  * Set signal Obj_Width in buffer to its initial value.
@@ -5610,22 +5610,22 @@
 /**
  * Signal Obj_Width raw initial value.
  */
-#define START_Obj_3_Extended_Obj_Width              0
+#define START_Obj_3_Extended_Obj_Width 0
 
 /**
  * Signal Obj_Width raw minimum value.
  */
-#define MIN_Obj_3_Extended_Obj_Width                0
+#define MIN_Obj_3_Extended_Obj_Width 0
 
 /**
  * Signal Obj_Width raw maximum value.
  */
-#define MAX_Obj_3_Extended_Obj_Width                255
+#define MAX_Obj_3_Extended_Obj_Width 255
 
 /**
  * Signal Obj_Width raw offset value.
  */
-#define OFF_Obj_3_Extended_Obj_Width                0
+#define OFF_Obj_3_Extended_Obj_Width 0
 
 /**
  * @}
@@ -5649,7 +5649,7 @@
  * @deprecated
  *	Use \ref SET_Obj_3_Extended_Obj_Length and \ref GET_Obj_3_Extended_Obj_Length instead.
  */
-#define SIG_Obj_3_Extended_Obj_Length               1, 0, 55, 8
+#define SIG_Obj_3_Extended_Obj_Length 1, 0, 55, 8
 
 /**
  * Signal Obj_Length setup tuple.
@@ -5657,7 +5657,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_3_Extended_Obj_Length or \ref INIT_Obj_3_Extended instead.
  */
-#define SETUP_Obj_3_Extended_Obj_Length             1, 0, 55, 8, 0
+#define SETUP_Obj_3_Extended_Obj_Length 1, 0, 55, 8, 0
 
 /**
  * Get signal Obj_Length from buffer.
@@ -5667,9 +5667,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_3_Extended_Obj_Length(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[6] >> 0) & 0xff) << 0) \
-)
+#define GET_Obj_3_Extended_Obj_Length(buf) (0 | (ubyte)(+(ubyte)((buf[6] >> 0) & 0xff) << 0))
 
 /**
  * Set signal Obj_Length in buffer.
@@ -5679,10 +5677,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_3_Extended_Obj_Length(buf, val) { \
-	buf[6] &= ~(0xff << 0); \
-	buf[6] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_Obj_3_Extended_Obj_Length(buf, val)  \
+	{                                              \
+		buf[6] &= ~(0xff << 0);                      \
+		buf[6] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
+	}
 
 /**
  * Set signal Obj_Length in buffer to its initial value.
@@ -5710,22 +5709,22 @@
 /**
  * Signal Obj_Length raw initial value.
  */
-#define START_Obj_3_Extended_Obj_Length             0
+#define START_Obj_3_Extended_Obj_Length 0
 
 /**
  * Signal Obj_Length raw minimum value.
  */
-#define MIN_Obj_3_Extended_Obj_Length               0
+#define MIN_Obj_3_Extended_Obj_Length 0
 
 /**
  * Signal Obj_Length raw maximum value.
  */
-#define MAX_Obj_3_Extended_Obj_Length               255
+#define MAX_Obj_3_Extended_Obj_Length 255
 
 /**
  * Signal Obj_Length raw offset value.
  */
-#define OFF_Obj_3_Extended_Obj_Length               0
+#define OFF_Obj_3_Extended_Obj_Length 0
 
 /**
  * @}
@@ -5749,7 +5748,7 @@
  * @deprecated
  *	Use \ref SET_Obj_3_Extended_Obj_ArelLong and \ref GET_Obj_3_Extended_Obj_ArelLong instead.
  */
-#define SIG_Obj_3_Extended_Obj_ArelLong             1, 0, 15, 11
+#define SIG_Obj_3_Extended_Obj_ArelLong 1, 0, 15, 11
 
 /**
  * Signal Obj_ArelLong setup tuple.
@@ -5757,7 +5756,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_3_Extended_Obj_ArelLong or \ref INIT_Obj_3_Extended instead.
  */
-#define SETUP_Obj_3_Extended_Obj_ArelLong           1, 0, 15, 11, 1000
+#define SETUP_Obj_3_Extended_Obj_ArelLong 1, 0, 15, 11, 1000
 
 /**
  * Get signal Obj_ArelLong from buffer.
@@ -5767,10 +5766,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_3_Extended_Obj_ArelLong(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0xff) << 3) \
-	| (ubyte)(+(ubyte)((buf[2] >> 5) & 0x07) << 0) \
-)
+#define GET_Obj_3_Extended_Obj_ArelLong(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0xff) << 3) | (ubyte)(+(ubyte)((buf[2] >> 5) & 0x07) << 0))
 
 /**
  * Set signal Obj_ArelLong in buffer.
@@ -5780,12 +5776,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_3_Extended_Obj_ArelLong(buf, val) { \
-	buf[1] &= ~(0xff << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 3) & 0xff) << 0; \
-	buf[2] &= ~(0x07 << 5); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0x07) << 5; \
-}
+#define SET_Obj_3_Extended_Obj_ArelLong(buf, val)       \
+	{                                                     \
+		buf[1] &= ~(0xff << 0);                             \
+		buf[1] |= ((ubyte)((uword)(val) >> 3) & 0xff) << 0; \
+		buf[2] &= ~(0x07 << 5);                             \
+		buf[2] |= (((ubyte)(val) >> 0) & 0x07) << 5;        \
+	}
 
 /**
  * Set signal Obj_ArelLong in buffer to its initial value.
@@ -5813,22 +5810,22 @@
 /**
  * Signal Obj_ArelLong raw initial value.
  */
-#define START_Obj_3_Extended_Obj_ArelLong           1000
+#define START_Obj_3_Extended_Obj_ArelLong 1000
 
 /**
  * Signal Obj_ArelLong raw minimum value.
  */
-#define MIN_Obj_3_Extended_Obj_ArelLong             0
+#define MIN_Obj_3_Extended_Obj_ArelLong 0
 
 /**
  * Signal Obj_ArelLong raw maximum value.
  */
-#define MAX_Obj_3_Extended_Obj_ArelLong             2047
+#define MAX_Obj_3_Extended_Obj_ArelLong 2047
 
 /**
  * Signal Obj_ArelLong raw offset value.
  */
-#define OFF_Obj_3_Extended_Obj_ArelLong             -1000
+#define OFF_Obj_3_Extended_Obj_ArelLong -1000
 
 /**
  * @}
@@ -5852,7 +5849,7 @@
  * @deprecated
  *	Use \ref SET_CollDetRegionState_CollDetRegState_WarningLevel and \ref GET_CollDetRegionState_CollDetRegState_WarningLevel instead.
  */
-#define SIG_CollDetRegionState_CollDetRegState_WarningLevel        1, 0, 4, 2
+#define SIG_CollDetRegionState_CollDetRegState_WarningLevel 1, 0, 4, 2
 
 /**
  * Signal CollDetRegState_WarningLevel setup tuple.
@@ -5860,7 +5857,7 @@
  * @deprecated
  *	Use \ref INITSIG_CollDetRegionState_CollDetRegState_WarningLevel or \ref INIT_CollDetRegionState instead.
  */
-#define SETUP_CollDetRegionState_CollDetRegState_WarningLevel      1, 0, 4, 2, 0
+#define SETUP_CollDetRegionState_CollDetRegState_WarningLevel 1, 0, 4, 2, 0
 
 /**
  * Get signal CollDetRegState_WarningLevel from buffer.
@@ -5870,9 +5867,7 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetRegionState_CollDetRegState_WarningLevel(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 3) & 0x03) << 0) \
-)
+#define GET_CollDetRegionState_CollDetRegState_WarningLevel(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 3) & 0x03) << 0))
 
 /**
  * Set signal CollDetRegState_WarningLevel in buffer.
@@ -5882,10 +5877,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_CollDetRegionState_CollDetRegState_WarningLevel(buf, val) { \
-	buf[0] &= ~(0x03 << 3); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x03) << 3; \
-}
+#define SET_CollDetRegionState_CollDetRegState_WarningLevel(buf, val) \
+	{                                                                   \
+		buf[0] &= ~(0x03 << 3);                                           \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x03) << 3;                      \
+	}
 
 /**
  * Set signal CollDetRegState_WarningLevel in buffer to its initial value.
@@ -5913,22 +5909,22 @@
 /**
  * Signal CollDetRegState_WarningLevel raw initial value.
  */
-#define START_CollDetRegionState_CollDetRegState_WarningLevel      0
+#define START_CollDetRegionState_CollDetRegState_WarningLevel 0
 
 /**
  * Signal CollDetRegState_WarningLevel raw minimum value.
  */
-#define MIN_CollDetRegionState_CollDetRegState_WarningLevel        0
+#define MIN_CollDetRegionState_CollDetRegState_WarningLevel 0
 
 /**
  * Signal CollDetRegState_WarningLevel raw maximum value.
  */
-#define MAX_CollDetRegionState_CollDetRegState_WarningLevel        3
+#define MAX_CollDetRegionState_CollDetRegState_WarningLevel 3
 
 /**
  * Signal CollDetRegState_WarningLevel raw offset value.
  */
-#define OFF_CollDetRegionState_CollDetRegState_WarningLevel        0
+#define OFF_CollDetRegionState_CollDetRegState_WarningLevel 0
 
 /**
  * @}
@@ -5949,7 +5945,7 @@
  *
  * @ingroup ENUM_CollDetRegionState_CollDetRegState_WarningLevel
  */
-#define CollDetRegionState_CollDetRegState_WarningLevel_Warning             3
+#define CollDetRegionState_CollDetRegState_WarningLevel_Warning 3
 
 /**
  * Value table CollDetRegionState_CollDetRegState_WarningLevel entry Preliminary.
@@ -5958,7 +5954,7 @@
  *
  * @ingroup ENUM_CollDetRegionState_CollDetRegState_WarningLevel
  */
-#define CollDetRegionState_CollDetRegState_WarningLevel_Preliminary         2
+#define CollDetRegionState_CollDetRegState_WarningLevel_Preliminary 2
 
 /**
  * Value table CollDetRegionState_CollDetRegState_WarningLevel entry Object.
@@ -5967,7 +5963,7 @@
  *
  * @ingroup ENUM_CollDetRegionState_CollDetRegState_WarningLevel
  */
-#define CollDetRegionState_CollDetRegState_WarningLevel_Object              1
+#define CollDetRegionState_CollDetRegState_WarningLevel_Object 1
 
 /**
  * Value table CollDetRegionState_CollDetRegState_WarningLevel entry No.
@@ -5976,7 +5972,7 @@
  *
  * @ingroup ENUM_CollDetRegionState_CollDetRegState_WarningLevel
  */
-#define CollDetRegionState_CollDetRegState_WarningLevel_No                  0
+#define CollDetRegionState_CollDetRegState_WarningLevel_No 0
 
 /**
  * @defgroup SIG_CollDetRegionState_CollDetRegState_NofObjects Signal CollDetRegState_NofObjects of Message CollDetRegionState (0x402)
@@ -5994,7 +5990,7 @@
  * @deprecated
  *	Use \ref SET_CollDetRegionState_CollDetRegState_NofObjects and \ref GET_CollDetRegionState_CollDetRegState_NofObjects instead.
  */
-#define SIG_CollDetRegionState_CollDetRegState_NofObjects        1, 0, 63, 8
+#define SIG_CollDetRegionState_CollDetRegState_NofObjects 1, 0, 63, 8
 
 /**
  * Signal CollDetRegState_NofObjects setup tuple.
@@ -6002,7 +5998,7 @@
  * @deprecated
  *	Use \ref INITSIG_CollDetRegionState_CollDetRegState_NofObjects or \ref INIT_CollDetRegionState instead.
  */
-#define SETUP_CollDetRegionState_CollDetRegState_NofObjects      1, 0, 63, 8, 0
+#define SETUP_CollDetRegionState_CollDetRegState_NofObjects 1, 0, 63, 8, 0
 
 /**
  * Get signal CollDetRegState_NofObjects from buffer.
@@ -6012,9 +6008,7 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetRegionState_CollDetRegState_NofObjects(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[7] >> 0) & 0xff) << 0) \
-)
+#define GET_CollDetRegionState_CollDetRegState_NofObjects(buf) (0 | (ubyte)(+(ubyte)((buf[7] >> 0) & 0xff) << 0))
 
 /**
  * Set signal CollDetRegState_NofObjects in buffer.
@@ -6024,10 +6018,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_CollDetRegionState_CollDetRegState_NofObjects(buf, val) { \
-	buf[7] &= ~(0xff << 0); \
-	buf[7] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_CollDetRegionState_CollDetRegState_NofObjects(buf, val) \
+	{                                                                 \
+		buf[7] &= ~(0xff << 0);                                         \
+		buf[7] |= (((ubyte)(val) >> 0) & 0xff) << 0;                    \
+	}
 
 /**
  * Set signal CollDetRegState_NofObjects in buffer to its initial value.
@@ -6055,22 +6050,22 @@
 /**
  * Signal CollDetRegState_NofObjects raw initial value.
  */
-#define START_CollDetRegionState_CollDetRegState_NofObjects      0
+#define START_CollDetRegionState_CollDetRegState_NofObjects 0
 
 /**
  * Signal CollDetRegState_NofObjects raw minimum value.
  */
-#define MIN_CollDetRegionState_CollDetRegState_NofObjects        0
+#define MIN_CollDetRegionState_CollDetRegState_NofObjects 0
 
 /**
  * Signal CollDetRegState_NofObjects raw maximum value.
  */
-#define MAX_CollDetRegionState_CollDetRegState_NofObjects        255
+#define MAX_CollDetRegionState_CollDetRegState_NofObjects 255
 
 /**
  * Signal CollDetRegState_NofObjects raw offset value.
  */
-#define OFF_CollDetRegionState_CollDetRegState_NofObjects        0
+#define OFF_CollDetRegionState_CollDetRegState_NofObjects 0
 
 /**
  * @}
@@ -6092,7 +6087,7 @@
  * @deprecated
  *	Use \ref SET_CollDetRegionState_CollDetRegState_RegionID and \ref GET_CollDetRegionState_CollDetRegState_RegionID instead.
  */
-#define SIG_CollDetRegionState_CollDetRegState_RegionID        1, 0, 7, 3
+#define SIG_CollDetRegionState_CollDetRegState_RegionID 1, 0, 7, 3
 
 /**
  * Signal CollDetRegState_RegionID setup tuple.
@@ -6100,7 +6095,7 @@
  * @deprecated
  *	Use \ref INITSIG_CollDetRegionState_CollDetRegState_RegionID or \ref INIT_CollDetRegionState instead.
  */
-#define SETUP_CollDetRegionState_CollDetRegState_RegionID      1, 0, 7, 3, 0
+#define SETUP_CollDetRegionState_CollDetRegState_RegionID 1, 0, 7, 3, 0
 
 /**
  * Get signal CollDetRegState_RegionID from buffer.
@@ -6110,9 +6105,7 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetRegionState_CollDetRegState_RegionID(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 5) & 0x07) << 0) \
-)
+#define GET_CollDetRegionState_CollDetRegState_RegionID(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 5) & 0x07) << 0))
 
 /**
  * Set signal CollDetRegState_RegionID in buffer.
@@ -6122,10 +6115,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_CollDetRegionState_CollDetRegState_RegionID(buf, val) { \
-	buf[0] &= ~(0x07 << 5); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x07) << 5; \
-}
+#define SET_CollDetRegionState_CollDetRegState_RegionID(buf, val) \
+	{                                                               \
+		buf[0] &= ~(0x07 << 5);                                       \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x07) << 5;                  \
+	}
 
 /**
  * Set signal CollDetRegState_RegionID in buffer to its initial value.
@@ -6153,22 +6147,22 @@
 /**
  * Signal CollDetRegState_RegionID raw initial value.
  */
-#define START_CollDetRegionState_CollDetRegState_RegionID      0
+#define START_CollDetRegionState_CollDetRegState_RegionID 0
 
 /**
  * Signal CollDetRegState_RegionID raw minimum value.
  */
-#define MIN_CollDetRegionState_CollDetRegState_RegionID        0
+#define MIN_CollDetRegionState_CollDetRegState_RegionID 0
 
 /**
  * Signal CollDetRegState_RegionID raw maximum value.
  */
-#define MAX_CollDetRegionState_CollDetRegState_RegionID        7
+#define MAX_CollDetRegionState_CollDetRegState_RegionID 7
 
 /**
  * Signal CollDetRegState_RegionID raw offset value.
  */
-#define OFF_CollDetRegionState_CollDetRegState_RegionID        0
+#define OFF_CollDetRegionState_CollDetRegState_RegionID 0
 
 /**
  * @}
@@ -6190,7 +6184,7 @@
  * @deprecated
  *	Use \ref SET_CollDetRegionState_CollDetRegState_Point2Y and \ref GET_CollDetRegionState_CollDetRegState_Point2Y instead.
  */
-#define SIG_CollDetRegionState_CollDetRegState_Point2Y        1, 0, 42, 11
+#define SIG_CollDetRegionState_CollDetRegState_Point2Y 1, 0, 42, 11
 
 /**
  * Signal CollDetRegState_Point2Y setup tuple.
@@ -6198,7 +6192,7 @@
  * @deprecated
  *	Use \ref INITSIG_CollDetRegionState_CollDetRegState_Point2Y or \ref INIT_CollDetRegionState instead.
  */
-#define SETUP_CollDetRegionState_CollDetRegState_Point2Y      1, 0, 42, 11, 1023
+#define SETUP_CollDetRegionState_CollDetRegState_Point2Y 1, 0, 42, 11, 1023
 
 /**
  * Get signal CollDetRegState_Point2Y from buffer.
@@ -6208,10 +6202,7 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetRegionState_CollDetRegState_Point2Y(buf) (0 \
-	| (uword)(+(uword)((buf[5] >> 0) & 0x07) << 8) \
-	| (ubyte)(+(ubyte)((buf[6] >> 0) & 0xff) << 0) \
-)
+#define GET_CollDetRegionState_CollDetRegState_Point2Y(buf) (0 | (uword)(+(uword)((buf[5] >> 0) & 0x07) << 8) | (ubyte)(+(ubyte)((buf[6] >> 0) & 0xff) << 0))
 
 /**
  * Set signal CollDetRegState_Point2Y in buffer.
@@ -6221,12 +6212,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_CollDetRegionState_CollDetRegState_Point2Y(buf, val) { \
-	buf[5] &= ~(0x07 << 0); \
-	buf[5] |= ((ubyte)((uword)(val) >> 8) & 0x07) << 0; \
-	buf[6] &= ~(0xff << 0); \
-	buf[6] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_CollDetRegionState_CollDetRegState_Point2Y(buf, val) \
+	{                                                              \
+		buf[5] &= ~(0x07 << 0);                                      \
+		buf[5] |= ((ubyte)((uword)(val) >> 8) & 0x07) << 0;          \
+		buf[6] &= ~(0xff << 0);                                      \
+		buf[6] |= (((ubyte)(val) >> 0) & 0xff) << 0;                 \
+	}
 
 /**
  * Set signal CollDetRegState_Point2Y in buffer to its initial value.
@@ -6254,22 +6246,22 @@
 /**
  * Signal CollDetRegState_Point2Y raw initial value.
  */
-#define START_CollDetRegionState_CollDetRegState_Point2Y      1023
+#define START_CollDetRegionState_CollDetRegState_Point2Y 1023
 
 /**
  * Signal CollDetRegState_Point2Y raw minimum value.
  */
-#define MIN_CollDetRegionState_CollDetRegState_Point2Y        0
+#define MIN_CollDetRegionState_CollDetRegState_Point2Y 0
 
 /**
  * Signal CollDetRegState_Point2Y raw maximum value.
  */
-#define MAX_CollDetRegionState_CollDetRegState_Point2Y        2047
+#define MAX_CollDetRegionState_CollDetRegState_Point2Y 2047
 
 /**
  * Signal CollDetRegState_Point2Y raw offset value.
  */
-#define OFF_CollDetRegionState_CollDetRegState_Point2Y        -1023
+#define OFF_CollDetRegionState_CollDetRegState_Point2Y -1023
 
 /**
  * @}
@@ -6291,7 +6283,7 @@
  * @deprecated
  *	Use \ref SET_CollDetRegionState_CollDetRegState_Point2X and \ref GET_CollDetRegionState_CollDetRegState_Point2X instead.
  */
-#define SIG_CollDetRegionState_CollDetRegState_Point2X        1, 0, 39, 13
+#define SIG_CollDetRegionState_CollDetRegState_Point2X 1, 0, 39, 13
 
 /**
  * Signal CollDetRegState_Point2X setup tuple.
@@ -6299,7 +6291,7 @@
  * @deprecated
  *	Use \ref INITSIG_CollDetRegionState_CollDetRegState_Point2X or \ref INIT_CollDetRegionState instead.
  */
-#define SETUP_CollDetRegionState_CollDetRegState_Point2X      1, 0, 39, 13, 2500
+#define SETUP_CollDetRegionState_CollDetRegState_Point2X 1, 0, 39, 13, 2500
 
 /**
  * Get signal CollDetRegState_Point2X from buffer.
@@ -6309,10 +6301,7 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetRegionState_CollDetRegState_Point2X(buf) (0 \
-	| (uword)(+(uword)((buf[4] >> 0) & 0xff) << 5) \
-	| (ubyte)(+(ubyte)((buf[5] >> 3) & 0x1f) << 0) \
-)
+#define GET_CollDetRegionState_CollDetRegState_Point2X(buf) (0 | (uword)(+(uword)((buf[4] >> 0) & 0xff) << 5) | (ubyte)(+(ubyte)((buf[5] >> 3) & 0x1f) << 0))
 
 /**
  * Set signal CollDetRegState_Point2X in buffer.
@@ -6322,12 +6311,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_CollDetRegionState_CollDetRegState_Point2X(buf, val) { \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= ((ubyte)((uword)(val) >> 5) & 0xff) << 0; \
-	buf[5] &= ~(0x1f << 3); \
-	buf[5] |= (((ubyte)(val) >> 0) & 0x1f) << 3; \
-}
+#define SET_CollDetRegionState_CollDetRegState_Point2X(buf, val) \
+	{                                                              \
+		buf[4] &= ~(0xff << 0);                                      \
+		buf[4] |= ((ubyte)((uword)(val) >> 5) & 0xff) << 0;          \
+		buf[5] &= ~(0x1f << 3);                                      \
+		buf[5] |= (((ubyte)(val) >> 0) & 0x1f) << 3;                 \
+	}
 
 /**
  * Set signal CollDetRegState_Point2X in buffer to its initial value.
@@ -6355,22 +6345,22 @@
 /**
  * Signal CollDetRegState_Point2X raw initial value.
  */
-#define START_CollDetRegionState_CollDetRegState_Point2X      2500
+#define START_CollDetRegionState_CollDetRegState_Point2X 2500
 
 /**
  * Signal CollDetRegState_Point2X raw minimum value.
  */
-#define MIN_CollDetRegionState_CollDetRegState_Point2X        0
+#define MIN_CollDetRegionState_CollDetRegState_Point2X 0
 
 /**
  * Signal CollDetRegState_Point2X raw maximum value.
  */
-#define MAX_CollDetRegionState_CollDetRegState_Point2X        8191
+#define MAX_CollDetRegionState_CollDetRegState_Point2X 8191
 
 /**
  * Signal CollDetRegState_Point2X raw offset value.
  */
-#define OFF_CollDetRegionState_CollDetRegState_Point2X        -2500
+#define OFF_CollDetRegionState_CollDetRegState_Point2X -2500
 
 /**
  * @}
@@ -6392,7 +6382,7 @@
  * @deprecated
  *	Use \ref SET_CollDetRegionState_CollDetRegState_Point1Y and \ref GET_CollDetRegionState_CollDetRegState_Point1Y instead.
  */
-#define SIG_CollDetRegionState_CollDetRegState_Point1Y        1, 0, 18, 11
+#define SIG_CollDetRegionState_CollDetRegState_Point1Y 1, 0, 18, 11
 
 /**
  * Signal CollDetRegState_Point1Y setup tuple.
@@ -6400,7 +6390,7 @@
  * @deprecated
  *	Use \ref INITSIG_CollDetRegionState_CollDetRegState_Point1Y or \ref INIT_CollDetRegionState instead.
  */
-#define SETUP_CollDetRegionState_CollDetRegState_Point1Y      1, 0, 18, 11, 1023
+#define SETUP_CollDetRegionState_CollDetRegState_Point1Y 1, 0, 18, 11, 1023
 
 /**
  * Get signal CollDetRegState_Point1Y from buffer.
@@ -6410,10 +6400,7 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetRegionState_CollDetRegState_Point1Y(buf) (0 \
-	| (uword)(+(uword)((buf[2] >> 0) & 0x07) << 8) \
-	| (ubyte)(+(ubyte)((buf[3] >> 0) & 0xff) << 0) \
-)
+#define GET_CollDetRegionState_CollDetRegState_Point1Y(buf) (0 | (uword)(+(uword)((buf[2] >> 0) & 0x07) << 8) | (ubyte)(+(ubyte)((buf[3] >> 0) & 0xff) << 0))
 
 /**
  * Set signal CollDetRegState_Point1Y in buffer.
@@ -6423,12 +6410,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_CollDetRegionState_CollDetRegState_Point1Y(buf, val) { \
-	buf[2] &= ~(0x07 << 0); \
-	buf[2] |= ((ubyte)((uword)(val) >> 8) & 0x07) << 0; \
-	buf[3] &= ~(0xff << 0); \
-	buf[3] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_CollDetRegionState_CollDetRegState_Point1Y(buf, val) \
+	{                                                              \
+		buf[2] &= ~(0x07 << 0);                                      \
+		buf[2] |= ((ubyte)((uword)(val) >> 8) & 0x07) << 0;          \
+		buf[3] &= ~(0xff << 0);                                      \
+		buf[3] |= (((ubyte)(val) >> 0) & 0xff) << 0;                 \
+	}
 
 /**
  * Set signal CollDetRegState_Point1Y in buffer to its initial value.
@@ -6456,22 +6444,22 @@
 /**
  * Signal CollDetRegState_Point1Y raw initial value.
  */
-#define START_CollDetRegionState_CollDetRegState_Point1Y      1023
+#define START_CollDetRegionState_CollDetRegState_Point1Y 1023
 
 /**
  * Signal CollDetRegState_Point1Y raw minimum value.
  */
-#define MIN_CollDetRegionState_CollDetRegState_Point1Y        0
+#define MIN_CollDetRegionState_CollDetRegState_Point1Y 0
 
 /**
  * Signal CollDetRegState_Point1Y raw maximum value.
  */
-#define MAX_CollDetRegionState_CollDetRegState_Point1Y        2047
+#define MAX_CollDetRegionState_CollDetRegState_Point1Y 2047
 
 /**
  * Signal CollDetRegState_Point1Y raw offset value.
  */
-#define OFF_CollDetRegionState_CollDetRegState_Point1Y        -1023
+#define OFF_CollDetRegionState_CollDetRegState_Point1Y -1023
 
 /**
  * @}
@@ -6493,7 +6481,7 @@
  * @deprecated
  *	Use \ref SET_CollDetRegionState_CollDetRegState_Point1X and \ref GET_CollDetRegionState_CollDetRegState_Point1X instead.
  */
-#define SIG_CollDetRegionState_CollDetRegState_Point1X        1, 0, 15, 13
+#define SIG_CollDetRegionState_CollDetRegState_Point1X 1, 0, 15, 13
 
 /**
  * Signal CollDetRegState_Point1X setup tuple.
@@ -6501,7 +6489,7 @@
  * @deprecated
  *	Use \ref INITSIG_CollDetRegionState_CollDetRegState_Point1X or \ref INIT_CollDetRegionState instead.
  */
-#define SETUP_CollDetRegionState_CollDetRegState_Point1X      1, 0, 15, 13, 2500
+#define SETUP_CollDetRegionState_CollDetRegState_Point1X 1, 0, 15, 13, 2500
 
 /**
  * Get signal CollDetRegState_Point1X from buffer.
@@ -6511,10 +6499,7 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetRegionState_CollDetRegState_Point1X(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0xff) << 5) \
-	| (ubyte)(+(ubyte)((buf[2] >> 3) & 0x1f) << 0) \
-)
+#define GET_CollDetRegionState_CollDetRegState_Point1X(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0xff) << 5) | (ubyte)(+(ubyte)((buf[2] >> 3) & 0x1f) << 0))
 
 /**
  * Set signal CollDetRegState_Point1X in buffer.
@@ -6524,12 +6509,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_CollDetRegionState_CollDetRegState_Point1X(buf, val) { \
-	buf[1] &= ~(0xff << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 5) & 0xff) << 0; \
-	buf[2] &= ~(0x1f << 3); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0x1f) << 3; \
-}
+#define SET_CollDetRegionState_CollDetRegState_Point1X(buf, val) \
+	{                                                              \
+		buf[1] &= ~(0xff << 0);                                      \
+		buf[1] |= ((ubyte)((uword)(val) >> 5) & 0xff) << 0;          \
+		buf[2] &= ~(0x1f << 3);                                      \
+		buf[2] |= (((ubyte)(val) >> 0) & 0x1f) << 3;                 \
+	}
 
 /**
  * Set signal CollDetRegState_Point1X in buffer to its initial value.
@@ -6557,22 +6543,22 @@
 /**
  * Signal CollDetRegState_Point1X raw initial value.
  */
-#define START_CollDetRegionState_CollDetRegState_Point1X      2500
+#define START_CollDetRegionState_CollDetRegState_Point1X 2500
 
 /**
  * Signal CollDetRegState_Point1X raw minimum value.
  */
-#define MIN_CollDetRegionState_CollDetRegState_Point1X        0
+#define MIN_CollDetRegionState_CollDetRegState_Point1X 0
 
 /**
  * Signal CollDetRegState_Point1X raw maximum value.
  */
-#define MAX_CollDetRegionState_CollDetRegState_Point1X        8191
+#define MAX_CollDetRegionState_CollDetRegState_Point1X 8191
 
 /**
  * Signal CollDetRegState_Point1X raw offset value.
  */
-#define OFF_CollDetRegionState_CollDetRegState_Point1X        -2500
+#define OFF_CollDetRegionState_CollDetRegState_Point1X -2500
 
 /**
  * @}
@@ -6596,7 +6582,7 @@
  * @deprecated
  *	Use \ref SET_Obj_4_Warning_Obj_CollDetRegionBitfield and \ref GET_Obj_4_Warning_Obj_CollDetRegionBitfield instead.
  */
-#define SIG_Obj_4_Warning_Obj_CollDetRegionBitfield        1, 0, 15, 8
+#define SIG_Obj_4_Warning_Obj_CollDetRegionBitfield 1, 0, 15, 8
 
 /**
  * Signal Obj_CollDetRegionBitfield setup tuple.
@@ -6604,7 +6590,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_4_Warning_Obj_CollDetRegionBitfield or \ref INIT_Obj_4_Warning instead.
  */
-#define SETUP_Obj_4_Warning_Obj_CollDetRegionBitfield      1, 0, 15, 8, 0
+#define SETUP_Obj_4_Warning_Obj_CollDetRegionBitfield 1, 0, 15, 8, 0
 
 /**
  * Get signal Obj_CollDetRegionBitfield from buffer.
@@ -6614,9 +6600,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_4_Warning_Obj_CollDetRegionBitfield(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[1] >> 0) & 0xff) << 0) \
-)
+#define GET_Obj_4_Warning_Obj_CollDetRegionBitfield(buf) (0 | (ubyte)(+(ubyte)((buf[1] >> 0) & 0xff) << 0))
 
 /**
  * Set signal Obj_CollDetRegionBitfield in buffer.
@@ -6626,10 +6610,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_4_Warning_Obj_CollDetRegionBitfield(buf, val) { \
-	buf[1] &= ~(0xff << 0); \
-	buf[1] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_Obj_4_Warning_Obj_CollDetRegionBitfield(buf, val) \
+	{                                                           \
+		buf[1] &= ~(0xff << 0);                                   \
+		buf[1] |= (((ubyte)(val) >> 0) & 0xff) << 0;              \
+	}
 
 /**
  * Set signal Obj_CollDetRegionBitfield in buffer to its initial value.
@@ -6657,22 +6642,22 @@
 /**
  * Signal Obj_CollDetRegionBitfield raw initial value.
  */
-#define START_Obj_4_Warning_Obj_CollDetRegionBitfield      0
+#define START_Obj_4_Warning_Obj_CollDetRegionBitfield 0
 
 /**
  * Signal Obj_CollDetRegionBitfield raw minimum value.
  */
-#define MIN_Obj_4_Warning_Obj_CollDetRegionBitfield        0
+#define MIN_Obj_4_Warning_Obj_CollDetRegionBitfield 0
 
 /**
  * Signal Obj_CollDetRegionBitfield raw maximum value.
  */
-#define MAX_Obj_4_Warning_Obj_CollDetRegionBitfield        255
+#define MAX_Obj_4_Warning_Obj_CollDetRegionBitfield 255
 
 /**
  * Signal Obj_CollDetRegionBitfield raw offset value.
  */
-#define OFF_Obj_4_Warning_Obj_CollDetRegionBitfield        0
+#define OFF_Obj_4_Warning_Obj_CollDetRegionBitfield 0
 
 /**
  * @}
@@ -6696,7 +6681,7 @@
  * @deprecated
  *	Use \ref SET_Obj_4_Warning_Obj_ID and \ref GET_Obj_4_Warning_Obj_ID instead.
  */
-#define SIG_Obj_4_Warning_Obj_ID                    1, 0, 7, 8
+#define SIG_Obj_4_Warning_Obj_ID 1, 0, 7, 8
 
 /**
  * Signal Obj_ID setup tuple.
@@ -6704,7 +6689,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_4_Warning_Obj_ID or \ref INIT_Obj_4_Warning instead.
  */
-#define SETUP_Obj_4_Warning_Obj_ID                  1, 0, 7, 8, 0
+#define SETUP_Obj_4_Warning_Obj_ID 1, 0, 7, 8, 0
 
 /**
  * Get signal Obj_ID from buffer.
@@ -6714,9 +6699,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_4_Warning_Obj_ID(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 0) & 0xff) << 0) \
-)
+#define GET_Obj_4_Warning_Obj_ID(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 0) & 0xff) << 0))
 
 /**
  * Set signal Obj_ID in buffer.
@@ -6726,10 +6709,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_4_Warning_Obj_ID(buf, val) { \
-	buf[0] &= ~(0xff << 0); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_Obj_4_Warning_Obj_ID(buf, val)       \
+	{                                              \
+		buf[0] &= ~(0xff << 0);                      \
+		buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
+	}
 
 /**
  * Set signal Obj_ID in buffer to its initial value.
@@ -6757,22 +6741,22 @@
 /**
  * Signal Obj_ID raw initial value.
  */
-#define START_Obj_4_Warning_Obj_ID                  0
+#define START_Obj_4_Warning_Obj_ID 0
 
 /**
  * Signal Obj_ID raw minimum value.
  */
-#define MIN_Obj_4_Warning_Obj_ID                    0
+#define MIN_Obj_4_Warning_Obj_ID 0
 
 /**
  * Signal Obj_ID raw maximum value.
  */
-#define MAX_Obj_4_Warning_Obj_ID                    255
+#define MAX_Obj_4_Warning_Obj_ID 255
 
 /**
  * Signal Obj_ID raw offset value.
  */
-#define OFF_Obj_4_Warning_Obj_ID                    0
+#define OFF_Obj_4_Warning_Obj_ID 0
 
 /**
  * @}
@@ -6796,7 +6780,7 @@
  * @deprecated
  *	Use \ref SET_CollDetRelayCtrl_CollDetRelayCtrl_Param and \ref GET_CollDetRelayCtrl_CollDetRelayCtrl_Param instead.
  */
-#define SIG_CollDetRelayCtrl_CollDetRelayCtrl_Param        1, 0, 7, 8
+#define SIG_CollDetRelayCtrl_CollDetRelayCtrl_Param 1, 0, 7, 8
 
 /**
  * Signal CollDetRelayCtrl_Param setup tuple.
@@ -6804,7 +6788,7 @@
  * @deprecated
  *	Use \ref INITSIG_CollDetRelayCtrl_CollDetRelayCtrl_Param or \ref INIT_CollDetRelayCtrl instead.
  */
-#define SETUP_CollDetRelayCtrl_CollDetRelayCtrl_Param      1, 0, 7, 8, 0
+#define SETUP_CollDetRelayCtrl_CollDetRelayCtrl_Param 1, 0, 7, 8, 0
 
 /**
  * Get signal CollDetRelayCtrl_Param from buffer.
@@ -6814,9 +6798,7 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetRelayCtrl_CollDetRelayCtrl_Param(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 0) & 0xff) << 0) \
-)
+#define GET_CollDetRelayCtrl_CollDetRelayCtrl_Param(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 0) & 0xff) << 0))
 
 /**
  * Set signal CollDetRelayCtrl_Param in buffer.
@@ -6826,10 +6808,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_CollDetRelayCtrl_CollDetRelayCtrl_Param(buf, val) { \
-	buf[0] &= ~(0xff << 0); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_CollDetRelayCtrl_CollDetRelayCtrl_Param(buf, val) \
+	{                                                           \
+		buf[0] &= ~(0xff << 0);                                   \
+		buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0;              \
+	}
 
 /**
  * Set signal CollDetRelayCtrl_Param in buffer to its initial value.
@@ -6857,22 +6840,22 @@
 /**
  * Signal CollDetRelayCtrl_Param raw initial value.
  */
-#define START_CollDetRelayCtrl_CollDetRelayCtrl_Param      0
+#define START_CollDetRelayCtrl_CollDetRelayCtrl_Param 0
 
 /**
  * Signal CollDetRelayCtrl_Param raw minimum value.
  */
-#define MIN_CollDetRelayCtrl_CollDetRelayCtrl_Param        0
+#define MIN_CollDetRelayCtrl_CollDetRelayCtrl_Param 0
 
 /**
  * Signal CollDetRelayCtrl_Param raw maximum value.
  */
-#define MAX_CollDetRelayCtrl_CollDetRelayCtrl_Param        255
+#define MAX_CollDetRelayCtrl_CollDetRelayCtrl_Param 255
 
 /**
  * Signal CollDetRelayCtrl_Param raw offset value.
  */
-#define OFF_CollDetRelayCtrl_CollDetRelayCtrl_Param        0
+#define OFF_CollDetRelayCtrl_CollDetRelayCtrl_Param 0
 
 /**
  * @}
@@ -6894,7 +6877,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Max_Class and \ref GET_FilterState_Cfg_FilterState_Max_Class instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Max_Class        1, 0, 39, 8
+#define SIG_FilterState_Cfg_FilterState_Max_Class 1, 0, 39, 8
 
 /**
  * Signal FilterState_Max_Class setup tuple.
@@ -6902,7 +6885,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Max_Class or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Max_Class      1, 0, 39, 8, 0
+#define SETUP_FilterState_Cfg_FilterState_Max_Class 1, 0, 39, 8, 0
 
 /**
  * Get signal FilterState_Max_Class from buffer.
@@ -6912,9 +6895,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_Class(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Max_Class(buf) (0 | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_Class in buffer.
@@ -6924,10 +6905,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Max_Class(buf, val) { \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Max_Class(buf, val) \
+	{                                                         \
+		buf[4] &= ~(0xff << 0);                                 \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;            \
+	}
 
 /**
  * Set signal FilterState_Max_Class in buffer to its initial value.
@@ -6955,22 +6937,22 @@
 /**
  * Signal FilterState_Max_Class raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Max_Class      0
+#define START_FilterState_Cfg_FilterState_Max_Class 0
 
 /**
  * Signal FilterState_Max_Class raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Max_Class        0
+#define MIN_FilterState_Cfg_FilterState_Max_Class 0
 
 /**
  * Signal FilterState_Max_Class raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Max_Class        255
+#define MAX_FilterState_Cfg_FilterState_Max_Class 255
 
 /**
  * Signal FilterState_Max_Class raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Max_Class        0
+#define OFF_FilterState_Cfg_FilterState_Max_Class 0
 
 /**
  * @}
@@ -6992,7 +6974,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Min_Class and \ref GET_FilterState_Cfg_FilterState_Min_Class instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Min_Class        1, 0, 23, 8
+#define SIG_FilterState_Cfg_FilterState_Min_Class 1, 0, 23, 8
 
 /**
  * Signal FilterState_Min_Class setup tuple.
@@ -7000,7 +6982,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Min_Class or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Min_Class      1, 0, 23, 8, 0
+#define SETUP_FilterState_Cfg_FilterState_Min_Class 1, 0, 23, 8, 0
 
 /**
  * Get signal FilterState_Min_Class from buffer.
@@ -7010,9 +6992,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_Class(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Min_Class(buf) (0 | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_Class in buffer.
@@ -7022,10 +7002,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Min_Class(buf, val) { \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Min_Class(buf, val) \
+	{                                                         \
+		buf[2] &= ~(0xff << 0);                                 \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;            \
+	}
 
 /**
  * Set signal FilterState_Min_Class in buffer to its initial value.
@@ -7053,22 +7034,22 @@
 /**
  * Signal FilterState_Min_Class raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Min_Class      0
+#define START_FilterState_Cfg_FilterState_Min_Class 0
 
 /**
  * Signal FilterState_Min_Class raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Min_Class        0
+#define MIN_FilterState_Cfg_FilterState_Min_Class 0
 
 /**
  * Signal FilterState_Min_Class raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Min_Class        255
+#define MAX_FilterState_Cfg_FilterState_Min_Class 255
 
 /**
  * Signal FilterState_Min_Class raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Min_Class        0
+#define OFF_FilterState_Cfg_FilterState_Min_Class 0
 
 /**
  * @}
@@ -7090,7 +7071,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Min_Y and \ref GET_FilterState_Cfg_FilterState_Min_Y instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Min_Y        1, 0, 11, 12
+#define SIG_FilterState_Cfg_FilterState_Min_Y 1, 0, 11, 12
 
 /**
  * Signal FilterState_Min_Y setup tuple.
@@ -7098,7 +7079,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Min_Y or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Min_Y      1, 0, 11, 12, 2047.5
+#define SETUP_FilterState_Cfg_FilterState_Min_Y 1, 0, 11, 12, 2047.5
 
 /**
  * Get signal FilterState_Min_Y from buffer.
@@ -7108,10 +7089,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_Y(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Min_Y(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_Y in buffer.
@@ -7121,12 +7099,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Min_Y(buf, val) { \
-	buf[1] &= ~(0x0f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Min_Y(buf, val) \
+	{                                                     \
+		buf[1] &= ~(0x0f << 0);                             \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+		buf[2] &= ~(0xff << 0);                             \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+	}
 
 /**
  * Set signal FilterState_Min_Y in buffer to its initial value.
@@ -7154,22 +7133,22 @@
 /**
  * Signal FilterState_Min_Y raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Min_Y      2047.5
+#define START_FilterState_Cfg_FilterState_Min_Y 2047.5
 
 /**
  * Signal FilterState_Min_Y raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Min_Y        0
+#define MIN_FilterState_Cfg_FilterState_Min_Y 0
 
 /**
  * Signal FilterState_Min_Y raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Min_Y        4095
+#define MAX_FilterState_Cfg_FilterState_Min_Y 4095
 
 /**
  * Signal FilterState_Min_Y raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Min_Y        -2048
+#define OFF_FilterState_Cfg_FilterState_Min_Y -2048
 
 /**
  * @}
@@ -7191,7 +7170,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Min_X and \ref GET_FilterState_Cfg_FilterState_Min_X instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Min_X        1, 0, 12, 13
+#define SIG_FilterState_Cfg_FilterState_Min_X 1, 0, 12, 13
 
 /**
  * Signal FilterState_Min_X setup tuple.
@@ -7199,7 +7178,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Min_X or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Min_X      1, 0, 12, 13, 2047.5
+#define SETUP_FilterState_Cfg_FilterState_Min_X 1, 0, 12, 13, 2047.5
 
 /**
  * Get signal FilterState_Min_X from buffer.
@@ -7209,10 +7188,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_X(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x1f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Min_X(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x1f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_X in buffer.
@@ -7222,12 +7198,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Min_X(buf, val) { \
-	buf[1] &= ~(0x1f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x1f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Min_X(buf, val) \
+	{                                                     \
+		buf[1] &= ~(0x1f << 0);                             \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x1f) << 0; \
+		buf[2] &= ~(0xff << 0);                             \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+	}
 
 /**
  * Set signal FilterState_Min_X in buffer to its initial value.
@@ -7255,22 +7232,22 @@
 /**
  * Signal FilterState_Min_X raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Min_X      2047.5
+#define START_FilterState_Cfg_FilterState_Min_X 2047.5
 
 /**
  * Signal FilterState_Min_X raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Min_X        0
+#define MIN_FilterState_Cfg_FilterState_Min_X 0
 
 /**
  * Signal FilterState_Min_X raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Min_X        8191
+#define MAX_FilterState_Cfg_FilterState_Min_X 8191
 
 /**
  * Signal FilterState_Min_X raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Min_X        -2500
+#define OFF_FilterState_Cfg_FilterState_Min_X -2500
 
 /**
  * @}
@@ -7292,7 +7269,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Min_VYRightLeft and \ref GET_FilterState_Cfg_FilterState_Min_VYRightLeft instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Min_VYRightLeft        1, 0, 11, 12
+#define SIG_FilterState_Cfg_FilterState_Min_VYRightLeft 1, 0, 11, 12
 
 /**
  * Signal FilterState_Min_VYRightLeft setup tuple.
@@ -7300,7 +7277,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Min_VYRightLeft or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Min_VYRightLeft      1, 0, 11, 12, 0
+#define SETUP_FilterState_Cfg_FilterState_Min_VYRightLeft 1, 0, 11, 12, 0
 
 /**
  * Get signal FilterState_Min_VYRightLeft from buffer.
@@ -7310,10 +7287,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_VYRightLeft(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Min_VYRightLeft(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_VYRightLeft in buffer.
@@ -7323,12 +7297,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Min_VYRightLeft(buf, val) { \
-	buf[1] &= ~(0x0f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Min_VYRightLeft(buf, val) \
+	{                                                               \
+		buf[1] &= ~(0x0f << 0);                                       \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;           \
+		buf[2] &= ~(0xff << 0);                                       \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;                  \
+	}
 
 /**
  * Set signal FilterState_Min_VYRightLeft in buffer to its initial value.
@@ -7356,22 +7331,22 @@
 /**
  * Signal FilterState_Min_VYRightLeft raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Min_VYRightLeft      0
+#define START_FilterState_Cfg_FilterState_Min_VYRightLeft 0
 
 /**
  * Signal FilterState_Min_VYRightLeft raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Min_VYRightLeft        0
+#define MIN_FilterState_Cfg_FilterState_Min_VYRightLeft 0
 
 /**
  * Signal FilterState_Min_VYRightLeft raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Min_VYRightLeft        4095
+#define MAX_FilterState_Cfg_FilterState_Min_VYRightLeft 4095
 
 /**
  * Signal FilterState_Min_VYRightLeft raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Min_VYRightLeft        0
+#define OFF_FilterState_Cfg_FilterState_Min_VYRightLeft 0
 
 /**
  * @}
@@ -7393,7 +7368,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Min_VYLeftRight and \ref GET_FilterState_Cfg_FilterState_Min_VYLeftRight instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Min_VYLeftRight        1, 0, 11, 12
+#define SIG_FilterState_Cfg_FilterState_Min_VYLeftRight 1, 0, 11, 12
 
 /**
  * Signal FilterState_Min_VYLeftRight setup tuple.
@@ -7401,7 +7376,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Min_VYLeftRight or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Min_VYLeftRight      1, 0, 11, 12, 0
+#define SETUP_FilterState_Cfg_FilterState_Min_VYLeftRight 1, 0, 11, 12, 0
 
 /**
  * Get signal FilterState_Min_VYLeftRight from buffer.
@@ -7411,10 +7386,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_VYLeftRight(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Min_VYLeftRight(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_VYLeftRight in buffer.
@@ -7424,12 +7396,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Min_VYLeftRight(buf, val) { \
-	buf[1] &= ~(0x0f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Min_VYLeftRight(buf, val) \
+	{                                                               \
+		buf[1] &= ~(0x0f << 0);                                       \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;           \
+		buf[2] &= ~(0xff << 0);                                       \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;                  \
+	}
 
 /**
  * Set signal FilterState_Min_VYLeftRight in buffer to its initial value.
@@ -7457,22 +7430,22 @@
 /**
  * Signal FilterState_Min_VYLeftRight raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Min_VYLeftRight      0
+#define START_FilterState_Cfg_FilterState_Min_VYLeftRight 0
 
 /**
  * Signal FilterState_Min_VYLeftRight raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Min_VYLeftRight        0
+#define MIN_FilterState_Cfg_FilterState_Min_VYLeftRight 0
 
 /**
  * Signal FilterState_Min_VYLeftRight raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Min_VYLeftRight        4095
+#define MAX_FilterState_Cfg_FilterState_Min_VYLeftRight 4095
 
 /**
  * Signal FilterState_Min_VYLeftRight raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Min_VYLeftRight        0
+#define OFF_FilterState_Cfg_FilterState_Min_VYLeftRight 0
 
 /**
  * @}
@@ -7494,7 +7467,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Min_VXOncome and \ref GET_FilterState_Cfg_FilterState_Min_VXOncome instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Min_VXOncome        1, 0, 11, 12
+#define SIG_FilterState_Cfg_FilterState_Min_VXOncome 1, 0, 11, 12
 
 /**
  * Signal FilterState_Min_VXOncome setup tuple.
@@ -7502,7 +7475,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Min_VXOncome or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Min_VXOncome      1, 0, 11, 12, 0
+#define SETUP_FilterState_Cfg_FilterState_Min_VXOncome 1, 0, 11, 12, 0
 
 /**
  * Get signal FilterState_Min_VXOncome from buffer.
@@ -7512,10 +7485,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_VXOncome(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Min_VXOncome(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_VXOncome in buffer.
@@ -7525,12 +7495,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Min_VXOncome(buf, val) { \
-	buf[1] &= ~(0x0f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Min_VXOncome(buf, val) \
+	{                                                            \
+		buf[1] &= ~(0x0f << 0);                                    \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;        \
+		buf[2] &= ~(0xff << 0);                                    \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;               \
+	}
 
 /**
  * Set signal FilterState_Min_VXOncome in buffer to its initial value.
@@ -7558,22 +7529,22 @@
 /**
  * Signal FilterState_Min_VXOncome raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Min_VXOncome      0
+#define START_FilterState_Cfg_FilterState_Min_VXOncome 0
 
 /**
  * Signal FilterState_Min_VXOncome raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Min_VXOncome        0
+#define MIN_FilterState_Cfg_FilterState_Min_VXOncome 0
 
 /**
  * Signal FilterState_Min_VXOncome raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Min_VXOncome        4095
+#define MAX_FilterState_Cfg_FilterState_Min_VXOncome 4095
 
 /**
  * Signal FilterState_Min_VXOncome raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Min_VXOncome        0
+#define OFF_FilterState_Cfg_FilterState_Min_VXOncome 0
 
 /**
  * @}
@@ -7595,7 +7566,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Min_VXDepart and \ref GET_FilterState_Cfg_FilterState_Min_VXDepart instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Min_VXDepart        1, 0, 11, 12
+#define SIG_FilterState_Cfg_FilterState_Min_VXDepart 1, 0, 11, 12
 
 /**
  * Signal FilterState_Min_VXDepart setup tuple.
@@ -7603,7 +7574,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Min_VXDepart or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Min_VXDepart      1, 0, 11, 12, 0
+#define SETUP_FilterState_Cfg_FilterState_Min_VXDepart 1, 0, 11, 12, 0
 
 /**
  * Get signal FilterState_Min_VXDepart from buffer.
@@ -7613,10 +7584,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_VXDepart(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Min_VXDepart(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_VXDepart in buffer.
@@ -7626,12 +7594,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Min_VXDepart(buf, val) { \
-	buf[1] &= ~(0x0f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Min_VXDepart(buf, val) \
+	{                                                            \
+		buf[1] &= ~(0x0f << 0);                                    \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;        \
+		buf[2] &= ~(0xff << 0);                                    \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;               \
+	}
 
 /**
  * Set signal FilterState_Min_VXDepart in buffer to its initial value.
@@ -7659,22 +7628,22 @@
 /**
  * Signal FilterState_Min_VXDepart raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Min_VXDepart      0
+#define START_FilterState_Cfg_FilterState_Min_VXDepart 0
 
 /**
  * Signal FilterState_Min_VXDepart raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Min_VXDepart        0
+#define MIN_FilterState_Cfg_FilterState_Min_VXDepart 0
 
 /**
  * Signal FilterState_Min_VXDepart raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Min_VXDepart        4095
+#define MAX_FilterState_Cfg_FilterState_Min_VXDepart 4095
 
 /**
  * Signal FilterState_Min_VXDepart raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Min_VXDepart        0
+#define OFF_FilterState_Cfg_FilterState_Min_VXDepart 0
 
 /**
  * @}
@@ -7696,7 +7665,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Max_Y and \ref GET_FilterState_Cfg_FilterState_Max_Y instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Max_Y        1, 0, 27, 12
+#define SIG_FilterState_Cfg_FilterState_Max_Y 1, 0, 27, 12
 
 /**
  * Signal FilterState_Max_Y setup tuple.
@@ -7704,7 +7673,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Max_Y or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Max_Y      1, 0, 27, 12, 2047.5
+#define SETUP_FilterState_Cfg_FilterState_Max_Y 1, 0, 27, 12, 2047.5
 
 /**
  * Get signal FilterState_Max_Y from buffer.
@@ -7714,10 +7683,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_Y(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Max_Y(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_Y in buffer.
@@ -7727,12 +7693,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Max_Y(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Max_Y(buf, val) \
+	{                                                     \
+		buf[3] &= ~(0x0f << 0);                             \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+		buf[4] &= ~(0xff << 0);                             \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+	}
 
 /**
  * Set signal FilterState_Max_Y in buffer to its initial value.
@@ -7760,22 +7727,22 @@
 /**
  * Signal FilterState_Max_Y raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Max_Y      2047.5
+#define START_FilterState_Cfg_FilterState_Max_Y 2047.5
 
 /**
  * Signal FilterState_Max_Y raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Max_Y        0
+#define MIN_FilterState_Cfg_FilterState_Max_Y 0
 
 /**
  * Signal FilterState_Max_Y raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Max_Y        4095
+#define MAX_FilterState_Cfg_FilterState_Max_Y 4095
 
 /**
  * Signal FilterState_Max_Y raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Max_Y        -2048
+#define OFF_FilterState_Cfg_FilterState_Max_Y -2048
 
 /**
  * @}
@@ -7797,7 +7764,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Max_X and \ref GET_FilterState_Cfg_FilterState_Max_X instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Max_X        1, 0, 28, 13
+#define SIG_FilterState_Cfg_FilterState_Max_X 1, 0, 28, 13
 
 /**
  * Signal FilterState_Max_X setup tuple.
@@ -7805,7 +7772,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Max_X or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Max_X      1, 0, 28, 13, 2047.5
+#define SETUP_FilterState_Cfg_FilterState_Max_X 1, 0, 28, 13, 2047.5
 
 /**
  * Get signal FilterState_Max_X from buffer.
@@ -7815,10 +7782,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_X(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x1f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Max_X(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x1f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_X in buffer.
@@ -7828,12 +7792,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Max_X(buf, val) { \
-	buf[3] &= ~(0x1f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x1f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Max_X(buf, val) \
+	{                                                     \
+		buf[3] &= ~(0x1f << 0);                             \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x1f) << 0; \
+		buf[4] &= ~(0xff << 0);                             \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+	}
 
 /**
  * Set signal FilterState_Max_X in buffer to its initial value.
@@ -7861,22 +7826,22 @@
 /**
  * Signal FilterState_Max_X raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Max_X      2047.5
+#define START_FilterState_Cfg_FilterState_Max_X 2047.5
 
 /**
  * Signal FilterState_Max_X raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Max_X        0
+#define MIN_FilterState_Cfg_FilterState_Max_X 0
 
 /**
  * Signal FilterState_Max_X raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Max_X        8191
+#define MAX_FilterState_Cfg_FilterState_Max_X 8191
 
 /**
  * Signal FilterState_Max_X raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Max_X        -2500
+#define OFF_FilterState_Cfg_FilterState_Max_X -2500
 
 /**
  * @}
@@ -7898,7 +7863,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Max_VYRightLeft and \ref GET_FilterState_Cfg_FilterState_Max_VYRightLeft instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Max_VYRightLeft        1, 0, 27, 12
+#define SIG_FilterState_Cfg_FilterState_Max_VYRightLeft 1, 0, 27, 12
 
 /**
  * Signal FilterState_Max_VYRightLeft setup tuple.
@@ -7906,7 +7871,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Max_VYRightLeft or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Max_VYRightLeft      1, 0, 27, 12, 0
+#define SETUP_FilterState_Cfg_FilterState_Max_VYRightLeft 1, 0, 27, 12, 0
 
 /**
  * Get signal FilterState_Max_VYRightLeft from buffer.
@@ -7916,10 +7881,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_VYRightLeft(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Max_VYRightLeft(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_VYRightLeft in buffer.
@@ -7929,12 +7891,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Max_VYRightLeft(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Max_VYRightLeft(buf, val) \
+	{                                                               \
+		buf[3] &= ~(0x0f << 0);                                       \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;           \
+		buf[4] &= ~(0xff << 0);                                       \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;                  \
+	}
 
 /**
  * Set signal FilterState_Max_VYRightLeft in buffer to its initial value.
@@ -7962,22 +7925,22 @@
 /**
  * Signal FilterState_Max_VYRightLeft raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Max_VYRightLeft      0
+#define START_FilterState_Cfg_FilterState_Max_VYRightLeft 0
 
 /**
  * Signal FilterState_Max_VYRightLeft raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Max_VYRightLeft        0
+#define MIN_FilterState_Cfg_FilterState_Max_VYRightLeft 0
 
 /**
  * Signal FilterState_Max_VYRightLeft raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Max_VYRightLeft        4095
+#define MAX_FilterState_Cfg_FilterState_Max_VYRightLeft 4095
 
 /**
  * Signal FilterState_Max_VYRightLeft raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Max_VYRightLeft        0
+#define OFF_FilterState_Cfg_FilterState_Max_VYRightLeft 0
 
 /**
  * @}
@@ -7999,7 +7962,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Max_VYLeftRight and \ref GET_FilterState_Cfg_FilterState_Max_VYLeftRight instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Max_VYLeftRight        1, 0, 27, 12
+#define SIG_FilterState_Cfg_FilterState_Max_VYLeftRight 1, 0, 27, 12
 
 /**
  * Signal FilterState_Max_VYLeftRight setup tuple.
@@ -8007,7 +7970,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Max_VYLeftRight or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Max_VYLeftRight      1, 0, 27, 12, 0
+#define SETUP_FilterState_Cfg_FilterState_Max_VYLeftRight 1, 0, 27, 12, 0
 
 /**
  * Get signal FilterState_Max_VYLeftRight from buffer.
@@ -8017,10 +7980,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_VYLeftRight(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Max_VYLeftRight(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_VYLeftRight in buffer.
@@ -8030,12 +7990,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Max_VYLeftRight(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Max_VYLeftRight(buf, val) \
+	{                                                               \
+		buf[3] &= ~(0x0f << 0);                                       \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;           \
+		buf[4] &= ~(0xff << 0);                                       \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;                  \
+	}
 
 /**
  * Set signal FilterState_Max_VYLeftRight in buffer to its initial value.
@@ -8063,22 +8024,22 @@
 /**
  * Signal FilterState_Max_VYLeftRight raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Max_VYLeftRight      0
+#define START_FilterState_Cfg_FilterState_Max_VYLeftRight 0
 
 /**
  * Signal FilterState_Max_VYLeftRight raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Max_VYLeftRight        0
+#define MIN_FilterState_Cfg_FilterState_Max_VYLeftRight 0
 
 /**
  * Signal FilterState_Max_VYLeftRight raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Max_VYLeftRight        4095
+#define MAX_FilterState_Cfg_FilterState_Max_VYLeftRight 4095
 
 /**
  * Signal FilterState_Max_VYLeftRight raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Max_VYLeftRight        0
+#define OFF_FilterState_Cfg_FilterState_Max_VYLeftRight 0
 
 /**
  * @}
@@ -8100,7 +8061,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Max_VXOncome and \ref GET_FilterState_Cfg_FilterState_Max_VXOncome instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Max_VXOncome        1, 0, 27, 12
+#define SIG_FilterState_Cfg_FilterState_Max_VXOncome 1, 0, 27, 12
 
 /**
  * Signal FilterState_Max_VXOncome setup tuple.
@@ -8108,7 +8069,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Max_VXOncome or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Max_VXOncome      1, 0, 27, 12, 0
+#define SETUP_FilterState_Cfg_FilterState_Max_VXOncome 1, 0, 27, 12, 0
 
 /**
  * Get signal FilterState_Max_VXOncome from buffer.
@@ -8118,10 +8079,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_VXOncome(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Max_VXOncome(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_VXOncome in buffer.
@@ -8131,12 +8089,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Max_VXOncome(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Max_VXOncome(buf, val) \
+	{                                                            \
+		buf[3] &= ~(0x0f << 0);                                    \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;        \
+		buf[4] &= ~(0xff << 0);                                    \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;               \
+	}
 
 /**
  * Set signal FilterState_Max_VXOncome in buffer to its initial value.
@@ -8164,22 +8123,22 @@
 /**
  * Signal FilterState_Max_VXOncome raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Max_VXOncome      0
+#define START_FilterState_Cfg_FilterState_Max_VXOncome 0
 
 /**
  * Signal FilterState_Max_VXOncome raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Max_VXOncome        0
+#define MIN_FilterState_Cfg_FilterState_Max_VXOncome 0
 
 /**
  * Signal FilterState_Max_VXOncome raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Max_VXOncome        4095
+#define MAX_FilterState_Cfg_FilterState_Max_VXOncome 4095
 
 /**
  * Signal FilterState_Max_VXOncome raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Max_VXOncome        0
+#define OFF_FilterState_Cfg_FilterState_Max_VXOncome 0
 
 /**
  * @}
@@ -8201,7 +8160,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Max_VXDepart and \ref GET_FilterState_Cfg_FilterState_Max_VXDepart instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Max_VXDepart        1, 0, 27, 12
+#define SIG_FilterState_Cfg_FilterState_Max_VXDepart 1, 0, 27, 12
 
 /**
  * Signal FilterState_Max_VXDepart setup tuple.
@@ -8209,7 +8168,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Max_VXDepart or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Max_VXDepart      1, 0, 27, 12, 0
+#define SETUP_FilterState_Cfg_FilterState_Max_VXDepart 1, 0, 27, 12, 0
 
 /**
  * Get signal FilterState_Max_VXDepart from buffer.
@@ -8219,10 +8178,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_VXDepart(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Max_VXDepart(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_VXDepart in buffer.
@@ -8232,12 +8188,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Max_VXDepart(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Max_VXDepart(buf, val) \
+	{                                                            \
+		buf[3] &= ~(0x0f << 0);                                    \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;        \
+		buf[4] &= ~(0xff << 0);                                    \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;               \
+	}
 
 /**
  * Set signal FilterState_Max_VXDepart in buffer to its initial value.
@@ -8265,22 +8222,22 @@
 /**
  * Signal FilterState_Max_VXDepart raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Max_VXDepart      0
+#define START_FilterState_Cfg_FilterState_Max_VXDepart 0
 
 /**
  * Signal FilterState_Max_VXDepart raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Max_VXDepart        0
+#define MIN_FilterState_Cfg_FilterState_Max_VXDepart 0
 
 /**
  * Signal FilterState_Max_VXDepart raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Max_VXDepart        4095
+#define MAX_FilterState_Cfg_FilterState_Max_VXDepart 4095
 
 /**
  * Signal FilterState_Max_VXDepart raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Max_VXDepart        0
+#define OFF_FilterState_Cfg_FilterState_Max_VXDepart 0
 
 /**
  * @}
@@ -8304,7 +8261,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Type and \ref GET_FilterState_Cfg_FilterState_Type instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Type        1, 0, 7, 1
+#define SIG_FilterState_Cfg_FilterState_Type 1, 0, 7, 1
 
 /**
  * Signal FilterState_Type setup tuple.
@@ -8312,7 +8269,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Type or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Type      1, 0, 7, 1, 0
+#define SETUP_FilterState_Cfg_FilterState_Type 1, 0, 7, 1, 0
 
 /**
  * Get signal FilterState_Type from buffer.
@@ -8322,9 +8279,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Type(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 7) & 0x01) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Type(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 7) & 0x01) << 0))
 
 /**
  * Set signal FilterState_Type in buffer.
@@ -8334,10 +8289,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Type(buf, val) { \
-	buf[0] &= ~(0x01 << 7); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 7; \
-}
+#define SET_FilterState_Cfg_FilterState_Type(buf, val) \
+	{                                                    \
+		buf[0] &= ~(0x01 << 7);                            \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 7;       \
+	}
 
 /**
  * Set signal FilterState_Type in buffer to its initial value.
@@ -8365,22 +8321,22 @@
 /**
  * Signal FilterState_Type raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Type      0
+#define START_FilterState_Cfg_FilterState_Type 0
 
 /**
  * Signal FilterState_Type raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Type        0
+#define MIN_FilterState_Cfg_FilterState_Type 0
 
 /**
  * Signal FilterState_Type raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Type        1
+#define MAX_FilterState_Cfg_FilterState_Type 1
 
 /**
  * Signal FilterState_Type raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Type        0
+#define OFF_FilterState_Cfg_FilterState_Type 0
 
 /**
  * @}
@@ -8401,7 +8357,7 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Type
  */
-#define FilterState_Cfg_FilterState_Type_Object              1
+#define FilterState_Cfg_FilterState_Type_Object 1
 
 /**
  * Value table FilterState_Cfg_FilterState_Type entry Cluster.
@@ -8410,7 +8366,7 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Type
  */
-#define FilterState_Cfg_FilterState_Type_Cluster             0
+#define FilterState_Cfg_FilterState_Type_Cluster 0
 
 /**
  * @defgroup SIG_FilterState_Cfg_FilterState_Min_VrelOncome Signal FilterState_Min_VrelOncome of Message FilterState_Cfg (0x204)
@@ -8428,7 +8384,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Min_VrelOncome and \ref GET_FilterState_Cfg_FilterState_Min_VrelOncome instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Min_VrelOncome        1, 0, 11, 12
+#define SIG_FilterState_Cfg_FilterState_Min_VrelOncome 1, 0, 11, 12
 
 /**
  * Signal FilterState_Min_VrelOncome setup tuple.
@@ -8436,7 +8392,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Min_VrelOncome or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Min_VrelOncome      1, 0, 11, 12, 0
+#define SETUP_FilterState_Cfg_FilterState_Min_VrelOncome 1, 0, 11, 12, 0
 
 /**
  * Get signal FilterState_Min_VrelOncome from buffer.
@@ -8446,10 +8402,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_VrelOncome(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Min_VrelOncome(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_VrelOncome in buffer.
@@ -8459,12 +8412,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Min_VrelOncome(buf, val) { \
-	buf[1] &= ~(0x0f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Min_VrelOncome(buf, val) \
+	{                                                              \
+		buf[1] &= ~(0x0f << 0);                                      \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;          \
+		buf[2] &= ~(0xff << 0);                                      \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;                 \
+	}
 
 /**
  * Set signal FilterState_Min_VrelOncome in buffer to its initial value.
@@ -8492,22 +8446,22 @@
 /**
  * Signal FilterState_Min_VrelOncome raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Min_VrelOncome      0
+#define START_FilterState_Cfg_FilterState_Min_VrelOncome 0
 
 /**
  * Signal FilterState_Min_VrelOncome raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Min_VrelOncome        0
+#define MIN_FilterState_Cfg_FilterState_Min_VrelOncome 0
 
 /**
  * Signal FilterState_Min_VrelOncome raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Min_VrelOncome        4095
+#define MAX_FilterState_Cfg_FilterState_Min_VrelOncome 4095
 
 /**
  * Signal FilterState_Min_VrelOncome raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Min_VrelOncome        0
+#define OFF_FilterState_Cfg_FilterState_Min_VrelOncome 0
 
 /**
  * @}
@@ -8529,7 +8483,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Min_VrelDepart and \ref GET_FilterState_Cfg_FilterState_Min_VrelDepart instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Min_VrelDepart        1, 0, 11, 12
+#define SIG_FilterState_Cfg_FilterState_Min_VrelDepart 1, 0, 11, 12
 
 /**
  * Signal FilterState_Min_VrelDepart setup tuple.
@@ -8537,7 +8491,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Min_VrelDepart or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Min_VrelDepart      1, 0, 11, 12, 0
+#define SETUP_FilterState_Cfg_FilterState_Min_VrelDepart 1, 0, 11, 12, 0
 
 /**
  * Get signal FilterState_Min_VrelDepart from buffer.
@@ -8547,10 +8501,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_VrelDepart(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Min_VrelDepart(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_VrelDepart in buffer.
@@ -8560,12 +8511,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Min_VrelDepart(buf, val) { \
-	buf[1] &= ~(0x0f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Min_VrelDepart(buf, val) \
+	{                                                              \
+		buf[1] &= ~(0x0f << 0);                                      \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;          \
+		buf[2] &= ~(0xff << 0);                                      \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;                 \
+	}
 
 /**
  * Set signal FilterState_Min_VrelDepart in buffer to its initial value.
@@ -8593,22 +8545,22 @@
 /**
  * Signal FilterState_Min_VrelDepart raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Min_VrelDepart      0
+#define START_FilterState_Cfg_FilterState_Min_VrelDepart 0
 
 /**
  * Signal FilterState_Min_VrelDepart raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Min_VrelDepart        0
+#define MIN_FilterState_Cfg_FilterState_Min_VrelDepart 0
 
 /**
  * Signal FilterState_Min_VrelDepart raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Min_VrelDepart        4095
+#define MAX_FilterState_Cfg_FilterState_Min_VrelDepart 4095
 
 /**
  * Signal FilterState_Min_VrelDepart raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Min_VrelDepart        0
+#define OFF_FilterState_Cfg_FilterState_Min_VrelDepart 0
 
 /**
  * @}
@@ -8630,7 +8582,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Min_Size and \ref GET_FilterState_Cfg_FilterState_Min_Size instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Min_Size        1, 0, 11, 12
+#define SIG_FilterState_Cfg_FilterState_Min_Size 1, 0, 11, 12
 
 /**
  * Signal FilterState_Min_Size setup tuple.
@@ -8638,7 +8590,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Min_Size or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Min_Size      1, 0, 11, 12, 0
+#define SETUP_FilterState_Cfg_FilterState_Min_Size 1, 0, 11, 12, 0
 
 /**
  * Get signal FilterState_Min_Size from buffer.
@@ -8648,10 +8600,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_Size(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Min_Size(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_Size in buffer.
@@ -8661,12 +8610,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Min_Size(buf, val) { \
-	buf[1] &= ~(0x0f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Min_Size(buf, val) \
+	{                                                        \
+		buf[1] &= ~(0x0f << 0);                                \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;    \
+		buf[2] &= ~(0xff << 0);                                \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;           \
+	}
 
 /**
  * Set signal FilterState_Min_Size in buffer to its initial value.
@@ -8694,22 +8644,22 @@
 /**
  * Signal FilterState_Min_Size raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Min_Size      0
+#define START_FilterState_Cfg_FilterState_Min_Size 0
 
 /**
  * Signal FilterState_Min_Size raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Min_Size        0
+#define MIN_FilterState_Cfg_FilterState_Min_Size 0
 
 /**
  * Signal FilterState_Min_Size raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Min_Size        4095
+#define MAX_FilterState_Cfg_FilterState_Min_Size 4095
 
 /**
  * Signal FilterState_Min_Size raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Min_Size        0
+#define OFF_FilterState_Cfg_FilterState_Min_Size 0
 
 /**
  * @}
@@ -8731,7 +8681,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Min_RCS and \ref GET_FilterState_Cfg_FilterState_Min_RCS instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Min_RCS        1, 0, 11, 12
+#define SIG_FilterState_Cfg_FilterState_Min_RCS 1, 0, 11, 12
 
 /**
  * Signal FilterState_Min_RCS setup tuple.
@@ -8739,7 +8689,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Min_RCS or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Min_RCS      1, 0, 11, 12, 2000
+#define SETUP_FilterState_Cfg_FilterState_Min_RCS 1, 0, 11, 12, 2000
 
 /**
  * Get signal FilterState_Min_RCS from buffer.
@@ -8749,10 +8699,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_RCS(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Min_RCS(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_RCS in buffer.
@@ -8762,12 +8709,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Min_RCS(buf, val) { \
-	buf[1] &= ~(0x0f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Min_RCS(buf, val) \
+	{                                                       \
+		buf[1] &= ~(0x0f << 0);                               \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;   \
+		buf[2] &= ~(0xff << 0);                               \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;          \
+	}
 
 /**
  * Set signal FilterState_Min_RCS in buffer to its initial value.
@@ -8795,22 +8743,22 @@
 /**
  * Signal FilterState_Min_RCS raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Min_RCS      2000
+#define START_FilterState_Cfg_FilterState_Min_RCS 2000
 
 /**
  * Signal FilterState_Min_RCS raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Min_RCS        0
+#define MIN_FilterState_Cfg_FilterState_Min_RCS 0
 
 /**
  * Signal FilterState_Min_RCS raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Min_RCS        4095
+#define MAX_FilterState_Cfg_FilterState_Min_RCS 4095
 
 /**
  * Signal FilterState_Min_RCS raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Min_RCS        -2000
+#define OFF_FilterState_Cfg_FilterState_Min_RCS -2000
 
 /**
  * @}
@@ -8834,7 +8782,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Min_ProbExists and \ref GET_FilterState_Cfg_FilterState_Min_ProbExists instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Min_ProbExists        1, 0, 11, 12
+#define SIG_FilterState_Cfg_FilterState_Min_ProbExists 1, 0, 11, 12
 
 /**
  * Signal FilterState_Min_ProbExists setup tuple.
@@ -8842,7 +8790,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Min_ProbExists or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Min_ProbExists      1, 0, 11, 12, 0
+#define SETUP_FilterState_Cfg_FilterState_Min_ProbExists 1, 0, 11, 12, 0
 
 /**
  * Get signal FilterState_Min_ProbExists from buffer.
@@ -8852,10 +8800,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_ProbExists(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Min_ProbExists(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_ProbExists in buffer.
@@ -8865,12 +8810,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Min_ProbExists(buf, val) { \
-	buf[1] &= ~(0x0f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Min_ProbExists(buf, val) \
+	{                                                              \
+		buf[1] &= ~(0x0f << 0);                                      \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;          \
+		buf[2] &= ~(0xff << 0);                                      \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;                 \
+	}
 
 /**
  * Set signal FilterState_Min_ProbExists in buffer to its initial value.
@@ -8898,22 +8844,22 @@
 /**
  * Signal FilterState_Min_ProbExists raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Min_ProbExists      0
+#define START_FilterState_Cfg_FilterState_Min_ProbExists 0
 
 /**
  * Signal FilterState_Min_ProbExists raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Min_ProbExists        0
+#define MIN_FilterState_Cfg_FilterState_Min_ProbExists 0
 
 /**
  * Signal FilterState_Min_ProbExists raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Min_ProbExists        7
+#define MAX_FilterState_Cfg_FilterState_Min_ProbExists 7
 
 /**
  * Signal FilterState_Min_ProbExists raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Min_ProbExists        0
+#define OFF_FilterState_Cfg_FilterState_Min_ProbExists 0
 
 /**
  * @}
@@ -8934,7 +8880,7 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Min_ProbExists
  */
-#define FilterState_Cfg_FilterState_Min_ProbExists_100_                7
+#define FilterState_Cfg_FilterState_Min_ProbExists_100_ 7
 
 /**
  * Value table FilterState_Cfg_FilterState_Min_ProbExists entry __99_9_.
@@ -8943,7 +8889,7 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Min_ProbExists
  */
-#define FilterState_Cfg_FilterState_Min_ProbExists___99_9_             6
+#define FilterState_Cfg_FilterState_Min_ProbExists___99_9_ 6
 
 /**
  * Value table FilterState_Cfg_FilterState_Min_ProbExists entry __99_.
@@ -8952,7 +8898,7 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Min_ProbExists
  */
-#define FilterState_Cfg_FilterState_Min_ProbExists___99_               5
+#define FilterState_Cfg_FilterState_Min_ProbExists___99_ 5
 
 /**
  * Value table FilterState_Cfg_FilterState_Min_ProbExists entry __90_.
@@ -8961,7 +8907,7 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Min_ProbExists
  */
-#define FilterState_Cfg_FilterState_Min_ProbExists___90_               4
+#define FilterState_Cfg_FilterState_Min_ProbExists___90_ 4
 
 /**
  * Value table FilterState_Cfg_FilterState_Min_ProbExists entry __75_.
@@ -8970,7 +8916,7 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Min_ProbExists
  */
-#define FilterState_Cfg_FilterState_Min_ProbExists___75_               3
+#define FilterState_Cfg_FilterState_Min_ProbExists___75_ 3
 
 /**
  * Value table FilterState_Cfg_FilterState_Min_ProbExists entry __50_.
@@ -8979,7 +8925,7 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Min_ProbExists
  */
-#define FilterState_Cfg_FilterState_Min_ProbExists___50_               2
+#define FilterState_Cfg_FilterState_Min_ProbExists___50_ 2
 
 /**
  * Value table FilterState_Cfg_FilterState_Min_ProbExists entry __25_.
@@ -8988,14 +8934,14 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Min_ProbExists
  */
-#define FilterState_Cfg_FilterState_Min_ProbExists___25_               1
+#define FilterState_Cfg_FilterState_Min_ProbExists___25_ 1
 
 /**
  * Value table FilterState_Cfg_FilterState_Min_ProbExists entry invalid.
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Min_ProbExists
  */
-#define FilterState_Cfg_FilterState_Min_ProbExists_invalid             0
+#define FilterState_Cfg_FilterState_Min_ProbExists_invalid 0
 
 /**
  * @defgroup SIG_FilterState_Cfg_FilterState_Min_NofObj Signal FilterState_Min_NofObj of Message FilterState_Cfg (0x204)
@@ -9013,7 +8959,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Min_NofObj and \ref GET_FilterState_Cfg_FilterState_Min_NofObj instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Min_NofObj        1, 0, 11, 12
+#define SIG_FilterState_Cfg_FilterState_Min_NofObj 1, 0, 11, 12
 
 /**
  * Signal FilterState_Min_NofObj setup tuple.
@@ -9021,7 +8967,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Min_NofObj or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Min_NofObj      1, 0, 11, 12, 0
+#define SETUP_FilterState_Cfg_FilterState_Min_NofObj 1, 0, 11, 12, 0
 
 /**
  * Get signal FilterState_Min_NofObj from buffer.
@@ -9031,10 +8977,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_NofObj(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Min_NofObj(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_NofObj in buffer.
@@ -9044,12 +8987,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Min_NofObj(buf, val) { \
-	buf[1] &= ~(0x0f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Min_NofObj(buf, val) \
+	{                                                          \
+		buf[1] &= ~(0x0f << 0);                                  \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;      \
+		buf[2] &= ~(0xff << 0);                                  \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;             \
+	}
 
 /**
  * Set signal FilterState_Min_NofObj in buffer to its initial value.
@@ -9077,22 +9021,22 @@
 /**
  * Signal FilterState_Min_NofObj raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Min_NofObj      0
+#define START_FilterState_Cfg_FilterState_Min_NofObj 0
 
 /**
  * Signal FilterState_Min_NofObj raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Min_NofObj        0
+#define MIN_FilterState_Cfg_FilterState_Min_NofObj 0
 
 /**
  * Signal FilterState_Min_NofObj raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Min_NofObj        4095
+#define MAX_FilterState_Cfg_FilterState_Min_NofObj 4095
 
 /**
  * Signal FilterState_Min_NofObj raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Min_NofObj        0
+#define OFF_FilterState_Cfg_FilterState_Min_NofObj 0
 
 /**
  * @}
@@ -9114,7 +9058,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Min_Lifetime and \ref GET_FilterState_Cfg_FilterState_Min_Lifetime instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Min_Lifetime        1, 0, 11, 12
+#define SIG_FilterState_Cfg_FilterState_Min_Lifetime 1, 0, 11, 12
 
 /**
  * Signal FilterState_Min_Lifetime setup tuple.
@@ -9122,7 +9066,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Min_Lifetime or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Min_Lifetime      1, 0, 11, 12, 0
+#define SETUP_FilterState_Cfg_FilterState_Min_Lifetime 1, 0, 11, 12, 0
 
 /**
  * Get signal FilterState_Min_Lifetime from buffer.
@@ -9132,10 +9076,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_Lifetime(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Min_Lifetime(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_Lifetime in buffer.
@@ -9145,12 +9086,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Min_Lifetime(buf, val) { \
-	buf[1] &= ~(0x0f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Min_Lifetime(buf, val) \
+	{                                                            \
+		buf[1] &= ~(0x0f << 0);                                    \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;        \
+		buf[2] &= ~(0xff << 0);                                    \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;               \
+	}
 
 /**
  * Set signal FilterState_Min_Lifetime in buffer to its initial value.
@@ -9178,22 +9120,22 @@
 /**
  * Signal FilterState_Min_Lifetime raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Min_Lifetime      0
+#define START_FilterState_Cfg_FilterState_Min_Lifetime 0
 
 /**
  * Signal FilterState_Min_Lifetime raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Min_Lifetime        0
+#define MIN_FilterState_Cfg_FilterState_Min_Lifetime 0
 
 /**
  * Signal FilterState_Min_Lifetime raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Min_Lifetime        4095
+#define MAX_FilterState_Cfg_FilterState_Min_Lifetime 4095
 
 /**
  * Signal FilterState_Min_Lifetime raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Min_Lifetime        0
+#define OFF_FilterState_Cfg_FilterState_Min_Lifetime 0
 
 /**
  * @}
@@ -9215,7 +9157,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Min_Distance and \ref GET_FilterState_Cfg_FilterState_Min_Distance instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Min_Distance        1, 0, 11, 12
+#define SIG_FilterState_Cfg_FilterState_Min_Distance 1, 0, 11, 12
 
 /**
  * Signal FilterState_Min_Distance setup tuple.
@@ -9223,7 +9165,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Min_Distance or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Min_Distance      1, 0, 11, 12, 0
+#define SETUP_FilterState_Cfg_FilterState_Min_Distance 1, 0, 11, 12, 0
 
 /**
  * Get signal FilterState_Min_Distance from buffer.
@@ -9233,10 +9175,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_Distance(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Min_Distance(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_Distance in buffer.
@@ -9246,12 +9185,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Min_Distance(buf, val) { \
-	buf[1] &= ~(0x0f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Min_Distance(buf, val) \
+	{                                                            \
+		buf[1] &= ~(0x0f << 0);                                    \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;        \
+		buf[2] &= ~(0xff << 0);                                    \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;               \
+	}
 
 /**
  * Set signal FilterState_Min_Distance in buffer to its initial value.
@@ -9279,22 +9219,22 @@
 /**
  * Signal FilterState_Min_Distance raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Min_Distance      0
+#define START_FilterState_Cfg_FilterState_Min_Distance 0
 
 /**
  * Signal FilterState_Min_Distance raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Min_Distance        0
+#define MIN_FilterState_Cfg_FilterState_Min_Distance 0
 
 /**
  * Signal FilterState_Min_Distance raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Min_Distance        4095
+#define MAX_FilterState_Cfg_FilterState_Min_Distance 4095
 
 /**
  * Signal FilterState_Min_Distance raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Min_Distance        0
+#define OFF_FilterState_Cfg_FilterState_Min_Distance 0
 
 /**
  * @}
@@ -9316,7 +9256,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Min_Azimuth and \ref GET_FilterState_Cfg_FilterState_Min_Azimuth instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Min_Azimuth        1, 0, 11, 12
+#define SIG_FilterState_Cfg_FilterState_Min_Azimuth 1, 0, 11, 12
 
 /**
  * Signal FilterState_Min_Azimuth setup tuple.
@@ -9324,7 +9264,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Min_Azimuth or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Min_Azimuth      1, 0, 11, 12, 2000
+#define SETUP_FilterState_Cfg_FilterState_Min_Azimuth 1, 0, 11, 12, 2000
 
 /**
  * Get signal FilterState_Min_Azimuth from buffer.
@@ -9334,10 +9274,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_Azimuth(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Min_Azimuth(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_Azimuth in buffer.
@@ -9347,12 +9284,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Min_Azimuth(buf, val) { \
-	buf[1] &= ~(0x0f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Min_Azimuth(buf, val) \
+	{                                                           \
+		buf[1] &= ~(0x0f << 0);                                   \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;       \
+		buf[2] &= ~(0xff << 0);                                   \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;              \
+	}
 
 /**
  * Set signal FilterState_Min_Azimuth in buffer to its initial value.
@@ -9380,22 +9318,22 @@
 /**
  * Signal FilterState_Min_Azimuth raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Min_Azimuth      2000
+#define START_FilterState_Cfg_FilterState_Min_Azimuth 2000
 
 /**
  * Signal FilterState_Min_Azimuth raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Min_Azimuth        0
+#define MIN_FilterState_Cfg_FilterState_Min_Azimuth 0
 
 /**
  * Signal FilterState_Min_Azimuth raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Min_Azimuth        4095
+#define MAX_FilterState_Cfg_FilterState_Min_Azimuth 4095
 
 /**
  * Signal FilterState_Min_Azimuth raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Min_Azimuth        -2000
+#define OFF_FilterState_Cfg_FilterState_Min_Azimuth -2000
 
 /**
  * @}
@@ -9417,7 +9355,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Max_VrelOncome and \ref GET_FilterState_Cfg_FilterState_Max_VrelOncome instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Max_VrelOncome        1, 0, 27, 12
+#define SIG_FilterState_Cfg_FilterState_Max_VrelOncome 1, 0, 27, 12
 
 /**
  * Signal FilterState_Max_VrelOncome setup tuple.
@@ -9425,7 +9363,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Max_VrelOncome or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Max_VrelOncome      1, 0, 27, 12, 0
+#define SETUP_FilterState_Cfg_FilterState_Max_VrelOncome 1, 0, 27, 12, 0
 
 /**
  * Get signal FilterState_Max_VrelOncome from buffer.
@@ -9435,10 +9373,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_VrelOncome(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Max_VrelOncome(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_VrelOncome in buffer.
@@ -9448,12 +9383,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Max_VrelOncome(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Max_VrelOncome(buf, val) \
+	{                                                              \
+		buf[3] &= ~(0x0f << 0);                                      \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;          \
+		buf[4] &= ~(0xff << 0);                                      \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;                 \
+	}
 
 /**
  * Set signal FilterState_Max_VrelOncome in buffer to its initial value.
@@ -9481,22 +9417,22 @@
 /**
  * Signal FilterState_Max_VrelOncome raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Max_VrelOncome      0
+#define START_FilterState_Cfg_FilterState_Max_VrelOncome 0
 
 /**
  * Signal FilterState_Max_VrelOncome raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Max_VrelOncome        0
+#define MIN_FilterState_Cfg_FilterState_Max_VrelOncome 0
 
 /**
  * Signal FilterState_Max_VrelOncome raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Max_VrelOncome        4095
+#define MAX_FilterState_Cfg_FilterState_Max_VrelOncome 4095
 
 /**
  * Signal FilterState_Max_VrelOncome raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Max_VrelOncome        0
+#define OFF_FilterState_Cfg_FilterState_Max_VrelOncome 0
 
 /**
  * @}
@@ -9518,7 +9454,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Max_VrelDepart and \ref GET_FilterState_Cfg_FilterState_Max_VrelDepart instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Max_VrelDepart        1, 0, 27, 12
+#define SIG_FilterState_Cfg_FilterState_Max_VrelDepart 1, 0, 27, 12
 
 /**
  * Signal FilterState_Max_VrelDepart setup tuple.
@@ -9526,7 +9462,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Max_VrelDepart or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Max_VrelDepart      1, 0, 27, 12, 0
+#define SETUP_FilterState_Cfg_FilterState_Max_VrelDepart 1, 0, 27, 12, 0
 
 /**
  * Get signal FilterState_Max_VrelDepart from buffer.
@@ -9536,10 +9472,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_VrelDepart(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Max_VrelDepart(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_VrelDepart in buffer.
@@ -9549,12 +9482,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Max_VrelDepart(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Max_VrelDepart(buf, val) \
+	{                                                              \
+		buf[3] &= ~(0x0f << 0);                                      \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;          \
+		buf[4] &= ~(0xff << 0);                                      \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;                 \
+	}
 
 /**
  * Set signal FilterState_Max_VrelDepart in buffer to its initial value.
@@ -9582,22 +9516,22 @@
 /**
  * Signal FilterState_Max_VrelDepart raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Max_VrelDepart      0
+#define START_FilterState_Cfg_FilterState_Max_VrelDepart 0
 
 /**
  * Signal FilterState_Max_VrelDepart raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Max_VrelDepart        0
+#define MIN_FilterState_Cfg_FilterState_Max_VrelDepart 0
 
 /**
  * Signal FilterState_Max_VrelDepart raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Max_VrelDepart        4095
+#define MAX_FilterState_Cfg_FilterState_Max_VrelDepart 4095
 
 /**
  * Signal FilterState_Max_VrelDepart raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Max_VrelDepart        0
+#define OFF_FilterState_Cfg_FilterState_Max_VrelDepart 0
 
 /**
  * @}
@@ -9619,7 +9553,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Max_Size and \ref GET_FilterState_Cfg_FilterState_Max_Size instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Max_Size        1, 0, 27, 12
+#define SIG_FilterState_Cfg_FilterState_Max_Size 1, 0, 27, 12
 
 /**
  * Signal FilterState_Max_Size setup tuple.
@@ -9627,7 +9561,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Max_Size or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Max_Size      1, 0, 27, 12, 0
+#define SETUP_FilterState_Cfg_FilterState_Max_Size 1, 0, 27, 12, 0
 
 /**
  * Get signal FilterState_Max_Size from buffer.
@@ -9637,10 +9571,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_Size(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Max_Size(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_Size in buffer.
@@ -9650,12 +9581,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Max_Size(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Max_Size(buf, val) \
+	{                                                        \
+		buf[3] &= ~(0x0f << 0);                                \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;    \
+		buf[4] &= ~(0xff << 0);                                \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;           \
+	}
 
 /**
  * Set signal FilterState_Max_Size in buffer to its initial value.
@@ -9683,22 +9615,22 @@
 /**
  * Signal FilterState_Max_Size raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Max_Size      0
+#define START_FilterState_Cfg_FilterState_Max_Size 0
 
 /**
  * Signal FilterState_Max_Size raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Max_Size        0
+#define MIN_FilterState_Cfg_FilterState_Max_Size 0
 
 /**
  * Signal FilterState_Max_Size raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Max_Size        4095
+#define MAX_FilterState_Cfg_FilterState_Max_Size 4095
 
 /**
  * Signal FilterState_Max_Size raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Max_Size        0
+#define OFF_FilterState_Cfg_FilterState_Max_Size 0
 
 /**
  * @}
@@ -9720,7 +9652,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Max_RCS and \ref GET_FilterState_Cfg_FilterState_Max_RCS instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Max_RCS        1, 0, 27, 12
+#define SIG_FilterState_Cfg_FilterState_Max_RCS 1, 0, 27, 12
 
 /**
  * Signal FilterState_Max_RCS setup tuple.
@@ -9728,7 +9660,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Max_RCS or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Max_RCS      1, 0, 27, 12, 2000
+#define SETUP_FilterState_Cfg_FilterState_Max_RCS 1, 0, 27, 12, 2000
 
 /**
  * Get signal FilterState_Max_RCS from buffer.
@@ -9738,10 +9670,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_RCS(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Max_RCS(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_RCS in buffer.
@@ -9751,12 +9680,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Max_RCS(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Max_RCS(buf, val) \
+	{                                                       \
+		buf[3] &= ~(0x0f << 0);                               \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;   \
+		buf[4] &= ~(0xff << 0);                               \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;          \
+	}
 
 /**
  * Set signal FilterState_Max_RCS in buffer to its initial value.
@@ -9784,22 +9714,22 @@
 /**
  * Signal FilterState_Max_RCS raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Max_RCS      2000
+#define START_FilterState_Cfg_FilterState_Max_RCS 2000
 
 /**
  * Signal FilterState_Max_RCS raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Max_RCS        0
+#define MIN_FilterState_Cfg_FilterState_Max_RCS 0
 
 /**
  * Signal FilterState_Max_RCS raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Max_RCS        4095
+#define MAX_FilterState_Cfg_FilterState_Max_RCS 4095
 
 /**
  * Signal FilterState_Max_RCS raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Max_RCS        -2000
+#define OFF_FilterState_Cfg_FilterState_Max_RCS -2000
 
 /**
  * @}
@@ -9823,7 +9753,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Max_ProbExists and \ref GET_FilterState_Cfg_FilterState_Max_ProbExists instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Max_ProbExists        1, 0, 27, 12
+#define SIG_FilterState_Cfg_FilterState_Max_ProbExists 1, 0, 27, 12
 
 /**
  * Signal FilterState_Max_ProbExists setup tuple.
@@ -9831,7 +9761,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Max_ProbExists or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Max_ProbExists      1, 0, 27, 12, 0
+#define SETUP_FilterState_Cfg_FilterState_Max_ProbExists 1, 0, 27, 12, 0
 
 /**
  * Get signal FilterState_Max_ProbExists from buffer.
@@ -9841,10 +9771,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_ProbExists(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Max_ProbExists(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_ProbExists in buffer.
@@ -9854,12 +9781,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Max_ProbExists(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Max_ProbExists(buf, val) \
+	{                                                              \
+		buf[3] &= ~(0x0f << 0);                                      \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;          \
+		buf[4] &= ~(0xff << 0);                                      \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;                 \
+	}
 
 /**
  * Set signal FilterState_Max_ProbExists in buffer to its initial value.
@@ -9887,22 +9815,22 @@
 /**
  * Signal FilterState_Max_ProbExists raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Max_ProbExists      0
+#define START_FilterState_Cfg_FilterState_Max_ProbExists 0
 
 /**
  * Signal FilterState_Max_ProbExists raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Max_ProbExists        0
+#define MIN_FilterState_Cfg_FilterState_Max_ProbExists 0
 
 /**
  * Signal FilterState_Max_ProbExists raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Max_ProbExists        4095
+#define MAX_FilterState_Cfg_FilterState_Max_ProbExists 4095
 
 /**
  * Signal FilterState_Max_ProbExists raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Max_ProbExists        0
+#define OFF_FilterState_Cfg_FilterState_Max_ProbExists 0
 
 /**
  * @}
@@ -9923,7 +9851,7 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Max_ProbExists
  */
-#define FilterState_Cfg_FilterState_Max_ProbExists___100_              7
+#define FilterState_Cfg_FilterState_Max_ProbExists___100_ 7
 
 /**
  * Value table FilterState_Cfg_FilterState_Max_ProbExists entry _99_9_.
@@ -9932,7 +9860,7 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Max_ProbExists
  */
-#define FilterState_Cfg_FilterState_Max_ProbExists__99_9_              6
+#define FilterState_Cfg_FilterState_Max_ProbExists__99_9_ 6
 
 /**
  * Value table FilterState_Cfg_FilterState_Max_ProbExists entry _99_.
@@ -9941,7 +9869,7 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Max_ProbExists
  */
-#define FilterState_Cfg_FilterState_Max_ProbExists__99_                5
+#define FilterState_Cfg_FilterState_Max_ProbExists__99_ 5
 
 /**
  * Value table FilterState_Cfg_FilterState_Max_ProbExists entry _90_.
@@ -9950,7 +9878,7 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Max_ProbExists
  */
-#define FilterState_Cfg_FilterState_Max_ProbExists__90_                4
+#define FilterState_Cfg_FilterState_Max_ProbExists__90_ 4
 
 /**
  * Value table FilterState_Cfg_FilterState_Max_ProbExists entry _75_.
@@ -9959,7 +9887,7 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Max_ProbExists
  */
-#define FilterState_Cfg_FilterState_Max_ProbExists__75_                3
+#define FilterState_Cfg_FilterState_Max_ProbExists__75_ 3
 
 /**
  * Value table FilterState_Cfg_FilterState_Max_ProbExists entry _50_.
@@ -9968,7 +9896,7 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Max_ProbExists
  */
-#define FilterState_Cfg_FilterState_Max_ProbExists__50_                2
+#define FilterState_Cfg_FilterState_Max_ProbExists__50_ 2
 
 /**
  * Value table FilterState_Cfg_FilterState_Max_ProbExists entry _25_.
@@ -9977,14 +9905,14 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Max_ProbExists
  */
-#define FilterState_Cfg_FilterState_Max_ProbExists__25_                1
+#define FilterState_Cfg_FilterState_Max_ProbExists__25_ 1
 
 /**
  * Value table FilterState_Cfg_FilterState_Max_ProbExists entry invalid.
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Max_ProbExists
  */
-#define FilterState_Cfg_FilterState_Max_ProbExists_invalid             0
+#define FilterState_Cfg_FilterState_Max_ProbExists_invalid 0
 
 /**
  * @defgroup SIG_FilterState_Cfg_FilterState_Max_NofObj Signal FilterState_Max_NofObj of Message FilterState_Cfg (0x204)
@@ -10002,7 +9930,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Max_NofObj and \ref GET_FilterState_Cfg_FilterState_Max_NofObj instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Max_NofObj        1, 0, 27, 12
+#define SIG_FilterState_Cfg_FilterState_Max_NofObj 1, 0, 27, 12
 
 /**
  * Signal FilterState_Max_NofObj setup tuple.
@@ -10010,7 +9938,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Max_NofObj or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Max_NofObj      1, 0, 27, 12, 0
+#define SETUP_FilterState_Cfg_FilterState_Max_NofObj 1, 0, 27, 12, 0
 
 /**
  * Get signal FilterState_Max_NofObj from buffer.
@@ -10020,10 +9948,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_NofObj(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Max_NofObj(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_NofObj in buffer.
@@ -10033,12 +9958,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Max_NofObj(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Max_NofObj(buf, val) \
+	{                                                          \
+		buf[3] &= ~(0x0f << 0);                                  \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;      \
+		buf[4] &= ~(0xff << 0);                                  \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;             \
+	}
 
 /**
  * Set signal FilterState_Max_NofObj in buffer to its initial value.
@@ -10066,22 +9992,22 @@
 /**
  * Signal FilterState_Max_NofObj raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Max_NofObj      0
+#define START_FilterState_Cfg_FilterState_Max_NofObj 0
 
 /**
  * Signal FilterState_Max_NofObj raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Max_NofObj        0
+#define MIN_FilterState_Cfg_FilterState_Max_NofObj 0
 
 /**
  * Signal FilterState_Max_NofObj raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Max_NofObj        4095
+#define MAX_FilterState_Cfg_FilterState_Max_NofObj 4095
 
 /**
  * Signal FilterState_Max_NofObj raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Max_NofObj        0
+#define OFF_FilterState_Cfg_FilterState_Max_NofObj 0
 
 /**
  * @}
@@ -10103,7 +10029,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Max_Lifetime and \ref GET_FilterState_Cfg_FilterState_Max_Lifetime instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Max_Lifetime        1, 0, 27, 12
+#define SIG_FilterState_Cfg_FilterState_Max_Lifetime 1, 0, 27, 12
 
 /**
  * Signal FilterState_Max_Lifetime setup tuple.
@@ -10111,7 +10037,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Max_Lifetime or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Max_Lifetime      1, 0, 27, 12, 0
+#define SETUP_FilterState_Cfg_FilterState_Max_Lifetime 1, 0, 27, 12, 0
 
 /**
  * Get signal FilterState_Max_Lifetime from buffer.
@@ -10121,10 +10047,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_Lifetime(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Max_Lifetime(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_Lifetime in buffer.
@@ -10134,12 +10057,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Max_Lifetime(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Max_Lifetime(buf, val) \
+	{                                                            \
+		buf[3] &= ~(0x0f << 0);                                    \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;        \
+		buf[4] &= ~(0xff << 0);                                    \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;               \
+	}
 
 /**
  * Set signal FilterState_Max_Lifetime in buffer to its initial value.
@@ -10167,22 +10091,22 @@
 /**
  * Signal FilterState_Max_Lifetime raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Max_Lifetime      0
+#define START_FilterState_Cfg_FilterState_Max_Lifetime 0
 
 /**
  * Signal FilterState_Max_Lifetime raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Max_Lifetime        0
+#define MIN_FilterState_Cfg_FilterState_Max_Lifetime 0
 
 /**
  * Signal FilterState_Max_Lifetime raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Max_Lifetime        4095
+#define MAX_FilterState_Cfg_FilterState_Max_Lifetime 4095
 
 /**
  * Signal FilterState_Max_Lifetime raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Max_Lifetime        0
+#define OFF_FilterState_Cfg_FilterState_Max_Lifetime 0
 
 /**
  * @}
@@ -10204,7 +10128,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Max_Distance and \ref GET_FilterState_Cfg_FilterState_Max_Distance instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Max_Distance        1, 0, 27, 12
+#define SIG_FilterState_Cfg_FilterState_Max_Distance 1, 0, 27, 12
 
 /**
  * Signal FilterState_Max_Distance setup tuple.
@@ -10212,7 +10136,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Max_Distance or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Max_Distance      1, 0, 27, 12, 0
+#define SETUP_FilterState_Cfg_FilterState_Max_Distance 1, 0, 27, 12, 0
 
 /**
  * Get signal FilterState_Max_Distance from buffer.
@@ -10222,10 +10146,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_Distance(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Max_Distance(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_Distance in buffer.
@@ -10235,12 +10156,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Max_Distance(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Max_Distance(buf, val) \
+	{                                                            \
+		buf[3] &= ~(0x0f << 0);                                    \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;        \
+		buf[4] &= ~(0xff << 0);                                    \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;               \
+	}
 
 /**
  * Set signal FilterState_Max_Distance in buffer to its initial value.
@@ -10268,22 +10190,22 @@
 /**
  * Signal FilterState_Max_Distance raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Max_Distance      0
+#define START_FilterState_Cfg_FilterState_Max_Distance 0
 
 /**
  * Signal FilterState_Max_Distance raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Max_Distance        0
+#define MIN_FilterState_Cfg_FilterState_Max_Distance 0
 
 /**
  * Signal FilterState_Max_Distance raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Max_Distance        4095
+#define MAX_FilterState_Cfg_FilterState_Max_Distance 4095
 
 /**
  * Signal FilterState_Max_Distance raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Max_Distance        0
+#define OFF_FilterState_Cfg_FilterState_Max_Distance 0
 
 /**
  * @}
@@ -10305,7 +10227,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Max_Azimuth and \ref GET_FilterState_Cfg_FilterState_Max_Azimuth instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Max_Azimuth        1, 0, 27, 12
+#define SIG_FilterState_Cfg_FilterState_Max_Azimuth 1, 0, 27, 12
 
 /**
  * Signal FilterState_Max_Azimuth setup tuple.
@@ -10313,7 +10235,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Max_Azimuth or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Max_Azimuth      1, 0, 27, 12, 2000
+#define SETUP_FilterState_Cfg_FilterState_Max_Azimuth 1, 0, 27, 12, 2000
 
 /**
  * Get signal FilterState_Max_Azimuth from buffer.
@@ -10323,10 +10245,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_Azimuth(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Max_Azimuth(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_Azimuth in buffer.
@@ -10336,12 +10255,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Max_Azimuth(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterState_Cfg_FilterState_Max_Azimuth(buf, val) \
+	{                                                           \
+		buf[3] &= ~(0x0f << 0);                                   \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;       \
+		buf[4] &= ~(0xff << 0);                                   \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;              \
+	}
 
 /**
  * Set signal FilterState_Max_Azimuth in buffer to its initial value.
@@ -10369,22 +10289,22 @@
 /**
  * Signal FilterState_Max_Azimuth raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Max_Azimuth      2000
+#define START_FilterState_Cfg_FilterState_Max_Azimuth 2000
 
 /**
  * Signal FilterState_Max_Azimuth raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Max_Azimuth        0
+#define MIN_FilterState_Cfg_FilterState_Max_Azimuth 0
 
 /**
  * Signal FilterState_Max_Azimuth raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Max_Azimuth        4095
+#define MAX_FilterState_Cfg_FilterState_Max_Azimuth 4095
 
 /**
  * Signal FilterState_Max_Azimuth raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Max_Azimuth        -2000
+#define OFF_FilterState_Cfg_FilterState_Max_Azimuth -2000
 
 /**
  * @}
@@ -10408,7 +10328,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Index and \ref GET_FilterState_Cfg_FilterState_Index instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Index        1, 0, 6, 4
+#define SIG_FilterState_Cfg_FilterState_Index 1, 0, 6, 4
 
 /**
  * Signal FilterState_Index setup tuple.
@@ -10416,7 +10336,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Index or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Index      1, 0, 6, 4, 0
+#define SETUP_FilterState_Cfg_FilterState_Index 1, 0, 6, 4, 0
 
 /**
  * Get signal FilterState_Index from buffer.
@@ -10426,9 +10346,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Index(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 3) & 0x0f) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Index(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 3) & 0x0f) << 0))
 
 /**
  * Set signal FilterState_Index in buffer.
@@ -10438,10 +10356,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Index(buf, val) { \
-	buf[0] &= ~(0x0f << 3); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x0f) << 3; \
-}
+#define SET_FilterState_Cfg_FilterState_Index(buf, val) \
+	{                                                     \
+		buf[0] &= ~(0x0f << 3);                             \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x0f) << 3;        \
+	}
 
 /**
  * Set signal FilterState_Index in buffer to its initial value.
@@ -10469,22 +10388,22 @@
 /**
  * Signal FilterState_Index raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Index      0
+#define START_FilterState_Cfg_FilterState_Index 0
 
 /**
  * Signal FilterState_Index raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Index        0
+#define MIN_FilterState_Cfg_FilterState_Index 0
 
 /**
  * Signal FilterState_Index raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Index        15
+#define MAX_FilterState_Cfg_FilterState_Index 15
 
 /**
  * Signal FilterState_Index raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Index        0
+#define OFF_FilterState_Cfg_FilterState_Index 0
 
 /**
  * @}
@@ -10503,7 +10422,7 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Index
  */
-#define FilterState_Cfg_FilterState_Index_Class               15
+#define FilterState_Cfg_FilterState_Index_Class 15
 
 /**
  * Value table FilterState_Cfg_FilterState_Index entry Longitud_.
@@ -10512,7 +10431,7 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Index
  */
-#define FilterState_Cfg_FilterState_Index_Longitud_           14
+#define FilterState_Cfg_FilterState_Index_Longitud_ 14
 
 /**
  * Value table FilterState_Cfg_FilterState_Index entry Lateral.
@@ -10521,7 +10440,7 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Index
  */
-#define FilterState_Cfg_FilterState_Index_Lateral             13
+#define FilterState_Cfg_FilterState_Index_Lateral 13
 
 /**
  * Value table FilterState_Cfg_FilterState_Index entry Longitud__C.
@@ -10530,7 +10449,7 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Index
  */
-#define FilterState_Cfg_FilterState_Index_Longitud__C         12
+#define FilterState_Cfg_FilterState_Index_Longitud__C 12
 
 /**
  * Value table FilterState_Cfg_FilterState_Index entry Lateral_B.
@@ -10539,7 +10458,7 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Index
  */
-#define FilterState_Cfg_FilterState_Index_Lateral_B           11
+#define FilterState_Cfg_FilterState_Index_Lateral_B 11
 
 /**
  * Value table FilterState_Cfg_FilterState_Index entry Longitudinal.
@@ -10548,7 +10467,7 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Index
  */
-#define FilterState_Cfg_FilterState_Index_Longitudinal        10
+#define FilterState_Cfg_FilterState_Index_Longitudinal 10
 
 /**
  * Value table FilterState_Cfg_FilterState_Index entry Lateral_9.
@@ -10557,7 +10476,7 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Index
  */
-#define FilterState_Cfg_FilterState_Index_Lateral_9           9
+#define FilterState_Cfg_FilterState_Index_Lateral_9 9
 
 /**
  * Value table FilterState_Cfg_FilterState_Index entry Probability.
@@ -10566,28 +10485,28 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Index
  */
-#define FilterState_Cfg_FilterState_Index_Probability         8
+#define FilterState_Cfg_FilterState_Index_Probability 8
 
 /**
  * Value table FilterState_Cfg_FilterState_Index entry Size.
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Index
  */
-#define FilterState_Cfg_FilterState_Index_Size                7
+#define FilterState_Cfg_FilterState_Index_Size 7
 
 /**
  * Value table FilterState_Cfg_FilterState_Index entry Lifetime.
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Index
  */
-#define FilterState_Cfg_FilterState_Index_Lifetime            6
+#define FilterState_Cfg_FilterState_Index_Lifetime 6
 
 /**
  * Value table FilterState_Cfg_FilterState_Index entry RCS.
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Index
  */
-#define FilterState_Cfg_FilterState_Index_RCS                 5
+#define FilterState_Cfg_FilterState_Index_RCS 5
 
 /**
  * Value table FilterState_Cfg_FilterState_Index entry Radial.
@@ -10596,7 +10515,7 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Index
  */
-#define FilterState_Cfg_FilterState_Index_Radial              4
+#define FilterState_Cfg_FilterState_Index_Radial 4
 
 /**
  * Value table FilterState_Cfg_FilterState_Index entry Radial_3.
@@ -10605,14 +10524,14 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Index
  */
-#define FilterState_Cfg_FilterState_Index_Radial_3            3
+#define FilterState_Cfg_FilterState_Index_Radial_3 3
 
 /**
  * Value table FilterState_Cfg_FilterState_Index entry Azimuth.
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Index
  */
-#define FilterState_Cfg_FilterState_Index_Azimuth             2
+#define FilterState_Cfg_FilterState_Index_Azimuth 2
 
 /**
  * Value table FilterState_Cfg_FilterState_Index entry Radial_1.
@@ -10621,7 +10540,7 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Index
  */
-#define FilterState_Cfg_FilterState_Index_Radial_1            1
+#define FilterState_Cfg_FilterState_Index_Radial_1 1
 
 /**
  * Value table FilterState_Cfg_FilterState_Index entry Number.
@@ -10630,7 +10549,7 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Index
  */
-#define FilterState_Cfg_FilterState_Index_Number              0
+#define FilterState_Cfg_FilterState_Index_Number 0
 
 /**
  * @defgroup SIG_FilterState_Cfg_FilterState_Active Signal FilterState_Active of Message FilterState_Cfg (0x204)
@@ -10650,7 +10569,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Cfg_FilterState_Active and \ref GET_FilterState_Cfg_FilterState_Active instead.
  */
-#define SIG_FilterState_Cfg_FilterState_Active        1, 0, 2, 1
+#define SIG_FilterState_Cfg_FilterState_Active 1, 0, 2, 1
 
 /**
  * Signal FilterState_Active setup tuple.
@@ -10658,7 +10577,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Cfg_FilterState_Active or \ref INIT_FilterState_Cfg instead.
  */
-#define SETUP_FilterState_Cfg_FilterState_Active      1, 0, 2, 1, 0
+#define SETUP_FilterState_Cfg_FilterState_Active 1, 0, 2, 1, 0
 
 /**
  * Get signal FilterState_Active from buffer.
@@ -10668,9 +10587,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Active(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 2) & 0x01) << 0) \
-)
+#define GET_FilterState_Cfg_FilterState_Active(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 2) & 0x01) << 0))
 
 /**
  * Set signal FilterState_Active in buffer.
@@ -10680,10 +10597,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Cfg_FilterState_Active(buf, val) { \
-	buf[0] &= ~(0x01 << 2); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 2; \
-}
+#define SET_FilterState_Cfg_FilterState_Active(buf, val) \
+	{                                                      \
+		buf[0] &= ~(0x01 << 2);                              \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 2;         \
+	}
 
 /**
  * Set signal FilterState_Active in buffer to its initial value.
@@ -10711,22 +10629,22 @@
 /**
  * Signal FilterState_Active raw initial value.
  */
-#define START_FilterState_Cfg_FilterState_Active      0
+#define START_FilterState_Cfg_FilterState_Active 0
 
 /**
  * Signal FilterState_Active raw minimum value.
  */
-#define MIN_FilterState_Cfg_FilterState_Active        0
+#define MIN_FilterState_Cfg_FilterState_Active 0
 
 /**
  * Signal FilterState_Active raw maximum value.
  */
-#define MAX_FilterState_Cfg_FilterState_Active        1
+#define MAX_FilterState_Cfg_FilterState_Active 1
 
 /**
  * Signal FilterState_Active raw offset value.
  */
-#define OFF_FilterState_Cfg_FilterState_Active        0
+#define OFF_FilterState_Cfg_FilterState_Active 0
 
 /**
  * @}
@@ -10745,14 +10663,14 @@
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Active
  */
-#define FilterState_Cfg_FilterState_Active_active              1
+#define FilterState_Cfg_FilterState_Active_active 1
 
 /**
  * Value table FilterState_Cfg_FilterState_Active entry inactive.
  *
  * @ingroup ENUM_FilterState_Cfg_FilterState_Active
  */
-#define FilterState_Cfg_FilterState_Active_inactive            0
+#define FilterState_Cfg_FilterState_Active_inactive 0
 
 /**
  * @defgroup SIG_FilterState_Header_FilterState_NofObjectFilterCfg Signal FilterState_NofObjectFilterCfg of Message FilterState_Header (0x203)
@@ -10770,7 +10688,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Header_FilterState_NofObjectFilterCfg and \ref GET_FilterState_Header_FilterState_NofObjectFilterCfg instead.
  */
-#define SIG_FilterState_Header_FilterState_NofObjectFilterCfg        1, 0, 15, 5
+#define SIG_FilterState_Header_FilterState_NofObjectFilterCfg 1, 0, 15, 5
 
 /**
  * Signal FilterState_NofObjectFilterCfg setup tuple.
@@ -10778,7 +10696,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Header_FilterState_NofObjectFilterCfg or \ref INIT_FilterState_Header instead.
  */
-#define SETUP_FilterState_Header_FilterState_NofObjectFilterCfg      1, 0, 15, 5, 0
+#define SETUP_FilterState_Header_FilterState_NofObjectFilterCfg 1, 0, 15, 5, 0
 
 /**
  * Get signal FilterState_NofObjectFilterCfg from buffer.
@@ -10788,9 +10706,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Header_FilterState_NofObjectFilterCfg(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[1] >> 3) & 0x1f) << 0) \
-)
+#define GET_FilterState_Header_FilterState_NofObjectFilterCfg(buf) (0 | (ubyte)(+(ubyte)((buf[1] >> 3) & 0x1f) << 0))
 
 /**
  * Set signal FilterState_NofObjectFilterCfg in buffer.
@@ -10800,10 +10716,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Header_FilterState_NofObjectFilterCfg(buf, val) { \
-	buf[1] &= ~(0x1f << 3); \
-	buf[1] |= (((ubyte)(val) >> 0) & 0x1f) << 3; \
-}
+#define SET_FilterState_Header_FilterState_NofObjectFilterCfg(buf, val) \
+	{                                                                     \
+		buf[1] &= ~(0x1f << 3);                                             \
+		buf[1] |= (((ubyte)(val) >> 0) & 0x1f) << 3;                        \
+	}
 
 /**
  * Set signal FilterState_NofObjectFilterCfg in buffer to its initial value.
@@ -10831,22 +10748,22 @@
 /**
  * Signal FilterState_NofObjectFilterCfg raw initial value.
  */
-#define START_FilterState_Header_FilterState_NofObjectFilterCfg      0
+#define START_FilterState_Header_FilterState_NofObjectFilterCfg 0
 
 /**
  * Signal FilterState_NofObjectFilterCfg raw minimum value.
  */
-#define MIN_FilterState_Header_FilterState_NofObjectFilterCfg        0
+#define MIN_FilterState_Header_FilterState_NofObjectFilterCfg 0
 
 /**
  * Signal FilterState_NofObjectFilterCfg raw maximum value.
  */
-#define MAX_FilterState_Header_FilterState_NofObjectFilterCfg        31
+#define MAX_FilterState_Header_FilterState_NofObjectFilterCfg 31
 
 /**
  * Signal FilterState_NofObjectFilterCfg raw offset value.
  */
-#define OFF_FilterState_Header_FilterState_NofObjectFilterCfg        0
+#define OFF_FilterState_Header_FilterState_NofObjectFilterCfg 0
 
 /**
  * @}
@@ -10868,7 +10785,7 @@
  * @deprecated
  *	Use \ref SET_FilterState_Header_FilterState_NofClusterFilterCfg and \ref GET_FilterState_Header_FilterState_NofClusterFilterCfg instead.
  */
-#define SIG_FilterState_Header_FilterState_NofClusterFilterCfg        1, 0, 7, 5
+#define SIG_FilterState_Header_FilterState_NofClusterFilterCfg 1, 0, 7, 5
 
 /**
  * Signal FilterState_NofClusterFilterCfg setup tuple.
@@ -10876,7 +10793,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterState_Header_FilterState_NofClusterFilterCfg or \ref INIT_FilterState_Header instead.
  */
-#define SETUP_FilterState_Header_FilterState_NofClusterFilterCfg      1, 0, 7, 5, 0
+#define SETUP_FilterState_Header_FilterState_NofClusterFilterCfg 1, 0, 7, 5, 0
 
 /**
  * Get signal FilterState_NofClusterFilterCfg from buffer.
@@ -10886,9 +10803,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Header_FilterState_NofClusterFilterCfg(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 3) & 0x1f) << 0) \
-)
+#define GET_FilterState_Header_FilterState_NofClusterFilterCfg(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 3) & 0x1f) << 0))
 
 /**
  * Set signal FilterState_NofClusterFilterCfg in buffer.
@@ -10898,10 +10813,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterState_Header_FilterState_NofClusterFilterCfg(buf, val) { \
-	buf[0] &= ~(0x1f << 3); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x1f) << 3; \
-}
+#define SET_FilterState_Header_FilterState_NofClusterFilterCfg(buf, val) \
+	{                                                                      \
+		buf[0] &= ~(0x1f << 3);                                              \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x1f) << 3;                         \
+	}
 
 /**
  * Set signal FilterState_NofClusterFilterCfg in buffer to its initial value.
@@ -10929,22 +10845,22 @@
 /**
  * Signal FilterState_NofClusterFilterCfg raw initial value.
  */
-#define START_FilterState_Header_FilterState_NofClusterFilterCfg      0
+#define START_FilterState_Header_FilterState_NofClusterFilterCfg 0
 
 /**
  * Signal FilterState_NofClusterFilterCfg raw minimum value.
  */
-#define MIN_FilterState_Header_FilterState_NofClusterFilterCfg        0
+#define MIN_FilterState_Header_FilterState_NofClusterFilterCfg 0
 
 /**
  * Signal FilterState_NofClusterFilterCfg raw maximum value.
  */
-#define MAX_FilterState_Header_FilterState_NofClusterFilterCfg        31
+#define MAX_FilterState_Header_FilterState_NofClusterFilterCfg 31
 
 /**
  * Signal FilterState_NofClusterFilterCfg raw offset value.
  */
-#define OFF_FilterState_Header_FilterState_NofClusterFilterCfg        0
+#define OFF_FilterState_Header_FilterState_NofClusterFilterCfg 0
 
 /**
  * @}
@@ -10966,7 +10882,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Min_Class and \ref GET_FilterCfg_FilterCfg_Min_Class instead.
  */
-#define SIG_FilterCfg_FilterCfg_Min_Class           1, 0, 23, 8
+#define SIG_FilterCfg_FilterCfg_Min_Class 1, 0, 23, 8
 
 /**
  * Signal FilterCfg_Min_Class setup tuple.
@@ -10974,7 +10890,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Min_Class or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Min_Class         1, 0, 23, 8, 0
+#define SETUP_FilterCfg_FilterCfg_Min_Class 1, 0, 23, 8, 0
 
 /**
  * Get signal FilterCfg_Min_Class from buffer.
@@ -10984,9 +10900,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_Class(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Min_Class(buf) (0 | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_Class in buffer.
@@ -10996,10 +10910,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Min_Class(buf, val) { \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Min_Class(buf, val) \
+	{                                                 \
+		buf[2] &= ~(0xff << 0);                         \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;    \
+	}
 
 /**
  * Set signal FilterCfg_Min_Class in buffer to its initial value.
@@ -11027,22 +10942,22 @@
 /**
  * Signal FilterCfg_Min_Class raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Min_Class         0
+#define START_FilterCfg_FilterCfg_Min_Class 0
 
 /**
  * Signal FilterCfg_Min_Class raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Min_Class           0
+#define MIN_FilterCfg_FilterCfg_Min_Class 0
 
 /**
  * Signal FilterCfg_Min_Class raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Min_Class           255
+#define MAX_FilterCfg_FilterCfg_Min_Class 255
 
 /**
  * Signal FilterCfg_Min_Class raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Min_Class           0
+#define OFF_FilterCfg_FilterCfg_Min_Class 0
 
 /**
  * @}
@@ -11064,7 +10979,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Max_Class and \ref GET_FilterCfg_FilterCfg_Max_Class instead.
  */
-#define SIG_FilterCfg_FilterCfg_Max_Class           1, 0, 39, 8
+#define SIG_FilterCfg_FilterCfg_Max_Class 1, 0, 39, 8
 
 /**
  * Signal FilterCfg_Max_Class setup tuple.
@@ -11072,7 +10987,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Max_Class or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Max_Class         1, 0, 39, 8, 0
+#define SETUP_FilterCfg_FilterCfg_Max_Class 1, 0, 39, 8, 0
 
 /**
  * Get signal FilterCfg_Max_Class from buffer.
@@ -11082,9 +10997,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_Class(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Max_Class(buf) (0 | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_Class in buffer.
@@ -11094,10 +11007,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Max_Class(buf, val) { \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Max_Class(buf, val) \
+	{                                                 \
+		buf[4] &= ~(0xff << 0);                         \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;    \
+	}
 
 /**
  * Set signal FilterCfg_Max_Class in buffer to its initial value.
@@ -11125,22 +11039,22 @@
 /**
  * Signal FilterCfg_Max_Class raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Max_Class         0
+#define START_FilterCfg_FilterCfg_Max_Class 0
 
 /**
  * Signal FilterCfg_Max_Class raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Max_Class           0
+#define MIN_FilterCfg_FilterCfg_Max_Class 0
 
 /**
  * Signal FilterCfg_Max_Class raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Max_Class           255
+#define MAX_FilterCfg_FilterCfg_Max_Class 255
 
 /**
  * Signal FilterCfg_Max_Class raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Max_Class           0
+#define OFF_FilterCfg_FilterCfg_Max_Class 0
 
 /**
  * @}
@@ -11162,7 +11076,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Min_Y and \ref GET_FilterCfg_FilterCfg_Min_Y instead.
  */
-#define SIG_FilterCfg_FilterCfg_Min_Y               1, 0, 11, 12
+#define SIG_FilterCfg_FilterCfg_Min_Y 1, 0, 11, 12
 
 /**
  * Signal FilterCfg_Min_Y setup tuple.
@@ -11170,7 +11084,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Min_Y or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Min_Y             1, 0, 11, 12, 2047.5
+#define SETUP_FilterCfg_FilterCfg_Min_Y 1, 0, 11, 12, 2047.5
 
 /**
  * Get signal FilterCfg_Min_Y from buffer.
@@ -11180,10 +11094,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_Y(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Min_Y(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_Y in buffer.
@@ -11193,12 +11104,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Min_Y(buf, val) { \
-	buf[1] &= ~(0x0f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Min_Y(buf, val)         \
+	{                                                     \
+		buf[1] &= ~(0x0f << 0);                             \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+		buf[2] &= ~(0xff << 0);                             \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+	}
 
 /**
  * Set signal FilterCfg_Min_Y in buffer to its initial value.
@@ -11226,22 +11138,22 @@
 /**
  * Signal FilterCfg_Min_Y raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Min_Y             2047.5
+#define START_FilterCfg_FilterCfg_Min_Y 2047.5
 
 /**
  * Signal FilterCfg_Min_Y raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Min_Y               0
+#define MIN_FilterCfg_FilterCfg_Min_Y 0
 
 /**
  * Signal FilterCfg_Min_Y raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Min_Y               4095
+#define MAX_FilterCfg_FilterCfg_Min_Y 4095
 
 /**
  * Signal FilterCfg_Min_Y raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Min_Y               -2048
+#define OFF_FilterCfg_FilterCfg_Min_Y -2048
 
 /**
  * @}
@@ -11263,7 +11175,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Min_X and \ref GET_FilterCfg_FilterCfg_Min_X instead.
  */
-#define SIG_FilterCfg_FilterCfg_Min_X               1, 0, 12, 13
+#define SIG_FilterCfg_FilterCfg_Min_X 1, 0, 12, 13
 
 /**
  * Signal FilterCfg_Min_X setup tuple.
@@ -11271,7 +11183,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Min_X or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Min_X             1, 0, 12, 13, 2500
+#define SETUP_FilterCfg_FilterCfg_Min_X 1, 0, 12, 13, 2500
 
 /**
  * Get signal FilterCfg_Min_X from buffer.
@@ -11281,10 +11193,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_X(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x1f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Min_X(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x1f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_X in buffer.
@@ -11294,12 +11203,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Min_X(buf, val) { \
-	buf[1] &= ~(0x1f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x1f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Min_X(buf, val)         \
+	{                                                     \
+		buf[1] &= ~(0x1f << 0);                             \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x1f) << 0; \
+		buf[2] &= ~(0xff << 0);                             \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+	}
 
 /**
  * Set signal FilterCfg_Min_X in buffer to its initial value.
@@ -11327,22 +11237,22 @@
 /**
  * Signal FilterCfg_Min_X raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Min_X             2500
+#define START_FilterCfg_FilterCfg_Min_X 2500
 
 /**
  * Signal FilterCfg_Min_X raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Min_X               0
+#define MIN_FilterCfg_FilterCfg_Min_X 0
 
 /**
  * Signal FilterCfg_Min_X raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Min_X               8191
+#define MAX_FilterCfg_FilterCfg_Min_X 8191
 
 /**
  * Signal FilterCfg_Min_X raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Min_X               -2500
+#define OFF_FilterCfg_FilterCfg_Min_X -2500
 
 /**
  * @}
@@ -11364,7 +11274,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Min_VYRightLeft and \ref GET_FilterCfg_FilterCfg_Min_VYRightLeft instead.
  */
-#define SIG_FilterCfg_FilterCfg_Min_VYRightLeft        1, 0, 11, 12
+#define SIG_FilterCfg_FilterCfg_Min_VYRightLeft 1, 0, 11, 12
 
 /**
  * Signal FilterCfg_Min_VYRightLeft setup tuple.
@@ -11372,7 +11282,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Min_VYRightLeft or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Min_VYRightLeft      1, 0, 11, 12, 0
+#define SETUP_FilterCfg_FilterCfg_Min_VYRightLeft 1, 0, 11, 12, 0
 
 /**
  * Get signal FilterCfg_Min_VYRightLeft from buffer.
@@ -11382,10 +11292,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_VYRightLeft(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Min_VYRightLeft(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_VYRightLeft in buffer.
@@ -11395,12 +11302,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Min_VYRightLeft(buf, val) { \
-	buf[1] &= ~(0x0f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Min_VYRightLeft(buf, val) \
+	{                                                       \
+		buf[1] &= ~(0x0f << 0);                               \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;   \
+		buf[2] &= ~(0xff << 0);                               \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;          \
+	}
 
 /**
  * Set signal FilterCfg_Min_VYRightLeft in buffer to its initial value.
@@ -11428,22 +11336,22 @@
 /**
  * Signal FilterCfg_Min_VYRightLeft raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Min_VYRightLeft      0
+#define START_FilterCfg_FilterCfg_Min_VYRightLeft 0
 
 /**
  * Signal FilterCfg_Min_VYRightLeft raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Min_VYRightLeft        0
+#define MIN_FilterCfg_FilterCfg_Min_VYRightLeft 0
 
 /**
  * Signal FilterCfg_Min_VYRightLeft raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Min_VYRightLeft        4095
+#define MAX_FilterCfg_FilterCfg_Min_VYRightLeft 4095
 
 /**
  * Signal FilterCfg_Min_VYRightLeft raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Min_VYRightLeft        0
+#define OFF_FilterCfg_FilterCfg_Min_VYRightLeft 0
 
 /**
  * @}
@@ -11465,7 +11373,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Min_VYLeftRight and \ref GET_FilterCfg_FilterCfg_Min_VYLeftRight instead.
  */
-#define SIG_FilterCfg_FilterCfg_Min_VYLeftRight        1, 0, 11, 12
+#define SIG_FilterCfg_FilterCfg_Min_VYLeftRight 1, 0, 11, 12
 
 /**
  * Signal FilterCfg_Min_VYLeftRight setup tuple.
@@ -11473,7 +11381,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Min_VYLeftRight or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Min_VYLeftRight      1, 0, 11, 12, 0
+#define SETUP_FilterCfg_FilterCfg_Min_VYLeftRight 1, 0, 11, 12, 0
 
 /**
  * Get signal FilterCfg_Min_VYLeftRight from buffer.
@@ -11483,10 +11391,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_VYLeftRight(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Min_VYLeftRight(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_VYLeftRight in buffer.
@@ -11496,12 +11401,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Min_VYLeftRight(buf, val) { \
-	buf[1] &= ~(0x0f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Min_VYLeftRight(buf, val) \
+	{                                                       \
+		buf[1] &= ~(0x0f << 0);                               \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;   \
+		buf[2] &= ~(0xff << 0);                               \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;          \
+	}
 
 /**
  * Set signal FilterCfg_Min_VYLeftRight in buffer to its initial value.
@@ -11529,22 +11435,22 @@
 /**
  * Signal FilterCfg_Min_VYLeftRight raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Min_VYLeftRight      0
+#define START_FilterCfg_FilterCfg_Min_VYLeftRight 0
 
 /**
  * Signal FilterCfg_Min_VYLeftRight raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Min_VYLeftRight        0
+#define MIN_FilterCfg_FilterCfg_Min_VYLeftRight 0
 
 /**
  * Signal FilterCfg_Min_VYLeftRight raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Min_VYLeftRight        4095
+#define MAX_FilterCfg_FilterCfg_Min_VYLeftRight 4095
 
 /**
  * Signal FilterCfg_Min_VYLeftRight raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Min_VYLeftRight        0
+#define OFF_FilterCfg_FilterCfg_Min_VYLeftRight 0
 
 /**
  * @}
@@ -11566,7 +11472,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Min_VXOncome and \ref GET_FilterCfg_FilterCfg_Min_VXOncome instead.
  */
-#define SIG_FilterCfg_FilterCfg_Min_VXOncome        1, 0, 11, 12
+#define SIG_FilterCfg_FilterCfg_Min_VXOncome 1, 0, 11, 12
 
 /**
  * Signal FilterCfg_Min_VXOncome setup tuple.
@@ -11574,7 +11480,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Min_VXOncome or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Min_VXOncome      1, 0, 11, 12, 0
+#define SETUP_FilterCfg_FilterCfg_Min_VXOncome 1, 0, 11, 12, 0
 
 /**
  * Get signal FilterCfg_Min_VXOncome from buffer.
@@ -11584,10 +11490,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_VXOncome(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Min_VXOncome(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_VXOncome in buffer.
@@ -11597,12 +11500,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Min_VXOncome(buf, val) { \
-	buf[1] &= ~(0x0f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Min_VXOncome(buf, val)  \
+	{                                                     \
+		buf[1] &= ~(0x0f << 0);                             \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+		buf[2] &= ~(0xff << 0);                             \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+	}
 
 /**
  * Set signal FilterCfg_Min_VXOncome in buffer to its initial value.
@@ -11630,22 +11534,22 @@
 /**
  * Signal FilterCfg_Min_VXOncome raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Min_VXOncome      0
+#define START_FilterCfg_FilterCfg_Min_VXOncome 0
 
 /**
  * Signal FilterCfg_Min_VXOncome raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Min_VXOncome        0
+#define MIN_FilterCfg_FilterCfg_Min_VXOncome 0
 
 /**
  * Signal FilterCfg_Min_VXOncome raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Min_VXOncome        4095
+#define MAX_FilterCfg_FilterCfg_Min_VXOncome 4095
 
 /**
  * Signal FilterCfg_Min_VXOncome raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Min_VXOncome        0
+#define OFF_FilterCfg_FilterCfg_Min_VXOncome 0
 
 /**
  * @}
@@ -11667,7 +11571,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Min_VXDepart and \ref GET_FilterCfg_FilterCfg_Min_VXDepart instead.
  */
-#define SIG_FilterCfg_FilterCfg_Min_VXDepart        1, 0, 11, 12
+#define SIG_FilterCfg_FilterCfg_Min_VXDepart 1, 0, 11, 12
 
 /**
  * Signal FilterCfg_Min_VXDepart setup tuple.
@@ -11675,7 +11579,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Min_VXDepart or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Min_VXDepart      1, 0, 11, 12, 0
+#define SETUP_FilterCfg_FilterCfg_Min_VXDepart 1, 0, 11, 12, 0
 
 /**
  * Get signal FilterCfg_Min_VXDepart from buffer.
@@ -11685,10 +11589,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_VXDepart(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Min_VXDepart(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_VXDepart in buffer.
@@ -11698,12 +11599,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Min_VXDepart(buf, val) { \
-	buf[1] &= ~(0x0f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Min_VXDepart(buf, val)  \
+	{                                                     \
+		buf[1] &= ~(0x0f << 0);                             \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+		buf[2] &= ~(0xff << 0);                             \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+	}
 
 /**
  * Set signal FilterCfg_Min_VXDepart in buffer to its initial value.
@@ -11731,22 +11633,22 @@
 /**
  * Signal FilterCfg_Min_VXDepart raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Min_VXDepart      0
+#define START_FilterCfg_FilterCfg_Min_VXDepart 0
 
 /**
  * Signal FilterCfg_Min_VXDepart raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Min_VXDepart        0
+#define MIN_FilterCfg_FilterCfg_Min_VXDepart 0
 
 /**
  * Signal FilterCfg_Min_VXDepart raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Min_VXDepart        4095
+#define MAX_FilterCfg_FilterCfg_Min_VXDepart 4095
 
 /**
  * Signal FilterCfg_Min_VXDepart raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Min_VXDepart        0
+#define OFF_FilterCfg_FilterCfg_Min_VXDepart 0
 
 /**
  * @}
@@ -11768,7 +11670,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Max_Y and \ref GET_FilterCfg_FilterCfg_Max_Y instead.
  */
-#define SIG_FilterCfg_FilterCfg_Max_Y               1, 0, 27, 12
+#define SIG_FilterCfg_FilterCfg_Max_Y 1, 0, 27, 12
 
 /**
  * Signal FilterCfg_Max_Y setup tuple.
@@ -11776,7 +11678,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Max_Y or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Max_Y             1, 0, 27, 12, 2047.5
+#define SETUP_FilterCfg_FilterCfg_Max_Y 1, 0, 27, 12, 2047.5
 
 /**
  * Get signal FilterCfg_Max_Y from buffer.
@@ -11786,10 +11688,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_Y(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Max_Y(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_Y in buffer.
@@ -11799,12 +11698,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Max_Y(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Max_Y(buf, val)         \
+	{                                                     \
+		buf[3] &= ~(0x0f << 0);                             \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+		buf[4] &= ~(0xff << 0);                             \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+	}
 
 /**
  * Set signal FilterCfg_Max_Y in buffer to its initial value.
@@ -11832,22 +11732,22 @@
 /**
  * Signal FilterCfg_Max_Y raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Max_Y             2047.5
+#define START_FilterCfg_FilterCfg_Max_Y 2047.5
 
 /**
  * Signal FilterCfg_Max_Y raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Max_Y               0
+#define MIN_FilterCfg_FilterCfg_Max_Y 0
 
 /**
  * Signal FilterCfg_Max_Y raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Max_Y               4095
+#define MAX_FilterCfg_FilterCfg_Max_Y 4095
 
 /**
  * Signal FilterCfg_Max_Y raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Max_Y               -2048
+#define OFF_FilterCfg_FilterCfg_Max_Y -2048
 
 /**
  * @}
@@ -11869,7 +11769,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Max_X and \ref GET_FilterCfg_FilterCfg_Max_X instead.
  */
-#define SIG_FilterCfg_FilterCfg_Max_X               1, 0, 28, 13
+#define SIG_FilterCfg_FilterCfg_Max_X 1, 0, 28, 13
 
 /**
  * Signal FilterCfg_Max_X setup tuple.
@@ -11877,7 +11777,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Max_X or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Max_X             1, 0, 28, 13, 2500
+#define SETUP_FilterCfg_FilterCfg_Max_X 1, 0, 28, 13, 2500
 
 /**
  * Get signal FilterCfg_Max_X from buffer.
@@ -11887,10 +11787,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_X(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x1f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Max_X(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x1f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_X in buffer.
@@ -11900,12 +11797,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Max_X(buf, val) { \
-	buf[3] &= ~(0x1f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x1f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Max_X(buf, val)         \
+	{                                                     \
+		buf[3] &= ~(0x1f << 0);                             \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x1f) << 0; \
+		buf[4] &= ~(0xff << 0);                             \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+	}
 
 /**
  * Set signal FilterCfg_Max_X in buffer to its initial value.
@@ -11933,22 +11831,22 @@
 /**
  * Signal FilterCfg_Max_X raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Max_X             2500
+#define START_FilterCfg_FilterCfg_Max_X 2500
 
 /**
  * Signal FilterCfg_Max_X raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Max_X               0
+#define MIN_FilterCfg_FilterCfg_Max_X 0
 
 /**
  * Signal FilterCfg_Max_X raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Max_X               8191
+#define MAX_FilterCfg_FilterCfg_Max_X 8191
 
 /**
  * Signal FilterCfg_Max_X raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Max_X               -2500
+#define OFF_FilterCfg_FilterCfg_Max_X -2500
 
 /**
  * @}
@@ -11970,7 +11868,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Max_VYRightLeft and \ref GET_FilterCfg_FilterCfg_Max_VYRightLeft instead.
  */
-#define SIG_FilterCfg_FilterCfg_Max_VYRightLeft        1, 0, 27, 12
+#define SIG_FilterCfg_FilterCfg_Max_VYRightLeft 1, 0, 27, 12
 
 /**
  * Signal FilterCfg_Max_VYRightLeft setup tuple.
@@ -11978,7 +11876,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Max_VYRightLeft or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Max_VYRightLeft      1, 0, 27, 12, 0
+#define SETUP_FilterCfg_FilterCfg_Max_VYRightLeft 1, 0, 27, 12, 0
 
 /**
  * Get signal FilterCfg_Max_VYRightLeft from buffer.
@@ -11988,10 +11886,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_VYRightLeft(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Max_VYRightLeft(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_VYRightLeft in buffer.
@@ -12001,12 +11896,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Max_VYRightLeft(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Max_VYRightLeft(buf, val) \
+	{                                                       \
+		buf[3] &= ~(0x0f << 0);                               \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;   \
+		buf[4] &= ~(0xff << 0);                               \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;          \
+	}
 
 /**
  * Set signal FilterCfg_Max_VYRightLeft in buffer to its initial value.
@@ -12034,22 +11930,22 @@
 /**
  * Signal FilterCfg_Max_VYRightLeft raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Max_VYRightLeft      0
+#define START_FilterCfg_FilterCfg_Max_VYRightLeft 0
 
 /**
  * Signal FilterCfg_Max_VYRightLeft raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Max_VYRightLeft        0
+#define MIN_FilterCfg_FilterCfg_Max_VYRightLeft 0
 
 /**
  * Signal FilterCfg_Max_VYRightLeft raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Max_VYRightLeft        4095
+#define MAX_FilterCfg_FilterCfg_Max_VYRightLeft 4095
 
 /**
  * Signal FilterCfg_Max_VYRightLeft raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Max_VYRightLeft        0
+#define OFF_FilterCfg_FilterCfg_Max_VYRightLeft 0
 
 /**
  * @}
@@ -12071,7 +11967,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Max_VXOncome and \ref GET_FilterCfg_FilterCfg_Max_VXOncome instead.
  */
-#define SIG_FilterCfg_FilterCfg_Max_VXOncome        1, 0, 27, 12
+#define SIG_FilterCfg_FilterCfg_Max_VXOncome 1, 0, 27, 12
 
 /**
  * Signal FilterCfg_Max_VXOncome setup tuple.
@@ -12079,7 +11975,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Max_VXOncome or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Max_VXOncome      1, 0, 27, 12, 0
+#define SETUP_FilterCfg_FilterCfg_Max_VXOncome 1, 0, 27, 12, 0
 
 /**
  * Get signal FilterCfg_Max_VXOncome from buffer.
@@ -12089,10 +11985,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_VXOncome(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Max_VXOncome(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_VXOncome in buffer.
@@ -12102,12 +11995,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Max_VXOncome(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Max_VXOncome(buf, val)  \
+	{                                                     \
+		buf[3] &= ~(0x0f << 0);                             \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+		buf[4] &= ~(0xff << 0);                             \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+	}
 
 /**
  * Set signal FilterCfg_Max_VXOncome in buffer to its initial value.
@@ -12135,22 +12029,22 @@
 /**
  * Signal FilterCfg_Max_VXOncome raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Max_VXOncome      0
+#define START_FilterCfg_FilterCfg_Max_VXOncome 0
 
 /**
  * Signal FilterCfg_Max_VXOncome raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Max_VXOncome        0
+#define MIN_FilterCfg_FilterCfg_Max_VXOncome 0
 
 /**
  * Signal FilterCfg_Max_VXOncome raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Max_VXOncome        4095
+#define MAX_FilterCfg_FilterCfg_Max_VXOncome 4095
 
 /**
  * Signal FilterCfg_Max_VXOncome raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Max_VXOncome        0
+#define OFF_FilterCfg_FilterCfg_Max_VXOncome 0
 
 /**
  * @}
@@ -12172,7 +12066,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Max_VYLeftRight and \ref GET_FilterCfg_FilterCfg_Max_VYLeftRight instead.
  */
-#define SIG_FilterCfg_FilterCfg_Max_VYLeftRight        1, 0, 27, 12
+#define SIG_FilterCfg_FilterCfg_Max_VYLeftRight 1, 0, 27, 12
 
 /**
  * Signal FilterCfg_Max_VYLeftRight setup tuple.
@@ -12180,7 +12074,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Max_VYLeftRight or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Max_VYLeftRight      1, 0, 27, 12, 0
+#define SETUP_FilterCfg_FilterCfg_Max_VYLeftRight 1, 0, 27, 12, 0
 
 /**
  * Get signal FilterCfg_Max_VYLeftRight from buffer.
@@ -12190,10 +12084,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_VYLeftRight(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Max_VYLeftRight(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_VYLeftRight in buffer.
@@ -12203,12 +12094,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Max_VYLeftRight(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Max_VYLeftRight(buf, val) \
+	{                                                       \
+		buf[3] &= ~(0x0f << 0);                               \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;   \
+		buf[4] &= ~(0xff << 0);                               \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;          \
+	}
 
 /**
  * Set signal FilterCfg_Max_VYLeftRight in buffer to its initial value.
@@ -12236,22 +12128,22 @@
 /**
  * Signal FilterCfg_Max_VYLeftRight raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Max_VYLeftRight      0
+#define START_FilterCfg_FilterCfg_Max_VYLeftRight 0
 
 /**
  * Signal FilterCfg_Max_VYLeftRight raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Max_VYLeftRight        0
+#define MIN_FilterCfg_FilterCfg_Max_VYLeftRight 0
 
 /**
  * Signal FilterCfg_Max_VYLeftRight raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Max_VYLeftRight        4095
+#define MAX_FilterCfg_FilterCfg_Max_VYLeftRight 4095
 
 /**
  * Signal FilterCfg_Max_VYLeftRight raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Max_VYLeftRight        0
+#define OFF_FilterCfg_FilterCfg_Max_VYLeftRight 0
 
 /**
  * @}
@@ -12273,7 +12165,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Max_VXDepart and \ref GET_FilterCfg_FilterCfg_Max_VXDepart instead.
  */
-#define SIG_FilterCfg_FilterCfg_Max_VXDepart        1, 0, 27, 12
+#define SIG_FilterCfg_FilterCfg_Max_VXDepart 1, 0, 27, 12
 
 /**
  * Signal FilterCfg_Max_VXDepart setup tuple.
@@ -12281,7 +12173,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Max_VXDepart or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Max_VXDepart      1, 0, 27, 12, 0
+#define SETUP_FilterCfg_FilterCfg_Max_VXDepart 1, 0, 27, 12, 0
 
 /**
  * Get signal FilterCfg_Max_VXDepart from buffer.
@@ -12291,10 +12183,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_VXDepart(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Max_VXDepart(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_VXDepart in buffer.
@@ -12304,12 +12193,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Max_VXDepart(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Max_VXDepart(buf, val)  \
+	{                                                     \
+		buf[3] &= ~(0x0f << 0);                             \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+		buf[4] &= ~(0xff << 0);                             \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+	}
 
 /**
  * Set signal FilterCfg_Max_VXDepart in buffer to its initial value.
@@ -12337,22 +12227,22 @@
 /**
  * Signal FilterCfg_Max_VXDepart raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Max_VXDepart      0
+#define START_FilterCfg_FilterCfg_Max_VXDepart 0
 
 /**
  * Signal FilterCfg_Max_VXDepart raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Max_VXDepart        0
+#define MIN_FilterCfg_FilterCfg_Max_VXDepart 0
 
 /**
  * Signal FilterCfg_Max_VXDepart raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Max_VXDepart        4095
+#define MAX_FilterCfg_FilterCfg_Max_VXDepart 4095
 
 /**
  * Signal FilterCfg_Max_VXDepart raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Max_VXDepart        0
+#define OFF_FilterCfg_FilterCfg_Max_VXDepart 0
 
 /**
  * @}
@@ -12376,7 +12266,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Valid and \ref GET_FilterCfg_FilterCfg_Valid instead.
  */
-#define SIG_FilterCfg_FilterCfg_Valid               1, 0, 1, 1
+#define SIG_FilterCfg_FilterCfg_Valid 1, 0, 1, 1
 
 /**
  * Signal FilterCfg_Valid setup tuple.
@@ -12384,7 +12274,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Valid or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Valid             1, 0, 1, 1, 0
+#define SETUP_FilterCfg_FilterCfg_Valid 1, 0, 1, 1, 0
 
 /**
  * Get signal FilterCfg_Valid from buffer.
@@ -12394,9 +12284,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Valid(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 1) & 0x01) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Valid(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 1) & 0x01) << 0))
 
 /**
  * Set signal FilterCfg_Valid in buffer.
@@ -12406,10 +12294,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Valid(buf, val) { \
-	buf[0] &= ~(0x01 << 1); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 1; \
-}
+#define SET_FilterCfg_FilterCfg_Valid(buf, val)  \
+	{                                              \
+		buf[0] &= ~(0x01 << 1);                      \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 1; \
+	}
 
 /**
  * Set signal FilterCfg_Valid in buffer to its initial value.
@@ -12437,22 +12326,22 @@
 /**
  * Signal FilterCfg_Valid raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Valid             0
+#define START_FilterCfg_FilterCfg_Valid 0
 
 /**
  * Signal FilterCfg_Valid raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Valid               0
+#define MIN_FilterCfg_FilterCfg_Valid 0
 
 /**
  * Signal FilterCfg_Valid raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Valid               1
+#define MAX_FilterCfg_FilterCfg_Valid 1
 
 /**
  * Signal FilterCfg_Valid raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Valid               0
+#define OFF_FilterCfg_FilterCfg_Valid 0
 
 /**
  * @}
@@ -12471,14 +12360,14 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Valid
  */
-#define FilterCfg_FilterCfg_Valid_valid               1
+#define FilterCfg_FilterCfg_Valid_valid 1
 
 /**
  * Value table FilterCfg_FilterCfg_Valid entry invalid.
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Valid
  */
-#define FilterCfg_FilterCfg_Valid_invalid             0
+#define FilterCfg_FilterCfg_Valid_invalid 0
 
 /**
  * @defgroup SIG_FilterCfg_FilterCfg_Active Signal FilterCfg_Active of Message FilterCfg (0x202)
@@ -12498,7 +12387,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Active and \ref GET_FilterCfg_FilterCfg_Active instead.
  */
-#define SIG_FilterCfg_FilterCfg_Active              1, 0, 2, 1
+#define SIG_FilterCfg_FilterCfg_Active 1, 0, 2, 1
 
 /**
  * Signal FilterCfg_Active setup tuple.
@@ -12506,7 +12395,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Active or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Active            1, 0, 2, 1, 0
+#define SETUP_FilterCfg_FilterCfg_Active 1, 0, 2, 1, 0
 
 /**
  * Get signal FilterCfg_Active from buffer.
@@ -12516,9 +12405,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Active(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 2) & 0x01) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Active(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 2) & 0x01) << 0))
 
 /**
  * Set signal FilterCfg_Active in buffer.
@@ -12528,10 +12415,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Active(buf, val) { \
-	buf[0] &= ~(0x01 << 2); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 2; \
-}
+#define SET_FilterCfg_FilterCfg_Active(buf, val) \
+	{                                              \
+		buf[0] &= ~(0x01 << 2);                      \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 2; \
+	}
 
 /**
  * Set signal FilterCfg_Active in buffer to its initial value.
@@ -12559,22 +12447,22 @@
 /**
  * Signal FilterCfg_Active raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Active            0
+#define START_FilterCfg_FilterCfg_Active 0
 
 /**
  * Signal FilterCfg_Active raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Active              0
+#define MIN_FilterCfg_FilterCfg_Active 0
 
 /**
  * Signal FilterCfg_Active raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Active              1
+#define MAX_FilterCfg_FilterCfg_Active 1
 
 /**
  * Signal FilterCfg_Active raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Active              0
+#define OFF_FilterCfg_FilterCfg_Active 0
 
 /**
  * @}
@@ -12593,14 +12481,14 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Active
  */
-#define FilterCfg_FilterCfg_Active_active              1
+#define FilterCfg_FilterCfg_Active_active 1
 
 /**
  * Value table FilterCfg_FilterCfg_Active entry inactive.
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Active
  */
-#define FilterCfg_FilterCfg_Active_inactive            0
+#define FilterCfg_FilterCfg_Active_inactive 0
 
 /**
  * @defgroup SIG_FilterCfg_FilterCfg_Max_VrelOncome Signal FilterCfg_Max_VrelOncome of Message FilterCfg (0x202)
@@ -12618,7 +12506,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Max_VrelOncome and \ref GET_FilterCfg_FilterCfg_Max_VrelOncome instead.
  */
-#define SIG_FilterCfg_FilterCfg_Max_VrelOncome        1, 0, 27, 12
+#define SIG_FilterCfg_FilterCfg_Max_VrelOncome 1, 0, 27, 12
 
 /**
  * Signal FilterCfg_Max_VrelOncome setup tuple.
@@ -12626,7 +12514,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Max_VrelOncome or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Max_VrelOncome      1, 0, 27, 12, 0
+#define SETUP_FilterCfg_FilterCfg_Max_VrelOncome 1, 0, 27, 12, 0
 
 /**
  * Get signal FilterCfg_Max_VrelOncome from buffer.
@@ -12636,10 +12524,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_VrelOncome(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Max_VrelOncome(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_VrelOncome in buffer.
@@ -12649,12 +12534,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Max_VrelOncome(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Max_VrelOncome(buf, val) \
+	{                                                      \
+		buf[3] &= ~(0x0f << 0);                              \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;  \
+		buf[4] &= ~(0xff << 0);                              \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;         \
+	}
 
 /**
  * Set signal FilterCfg_Max_VrelOncome in buffer to its initial value.
@@ -12682,22 +12568,22 @@
 /**
  * Signal FilterCfg_Max_VrelOncome raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Max_VrelOncome      0
+#define START_FilterCfg_FilterCfg_Max_VrelOncome 0
 
 /**
  * Signal FilterCfg_Max_VrelOncome raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Max_VrelOncome        0
+#define MIN_FilterCfg_FilterCfg_Max_VrelOncome 0
 
 /**
  * Signal FilterCfg_Max_VrelOncome raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Max_VrelOncome        4095
+#define MAX_FilterCfg_FilterCfg_Max_VrelOncome 4095
 
 /**
  * Signal FilterCfg_Max_VrelOncome raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Max_VrelOncome        0
+#define OFF_FilterCfg_FilterCfg_Max_VrelOncome 0
 
 /**
  * @}
@@ -12719,7 +12605,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Max_VrelDepart and \ref GET_FilterCfg_FilterCfg_Max_VrelDepart instead.
  */
-#define SIG_FilterCfg_FilterCfg_Max_VrelDepart        1, 0, 27, 12
+#define SIG_FilterCfg_FilterCfg_Max_VrelDepart 1, 0, 27, 12
 
 /**
  * Signal FilterCfg_Max_VrelDepart setup tuple.
@@ -12727,7 +12613,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Max_VrelDepart or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Max_VrelDepart      1, 0, 27, 12, 0
+#define SETUP_FilterCfg_FilterCfg_Max_VrelDepart 1, 0, 27, 12, 0
 
 /**
  * Get signal FilterCfg_Max_VrelDepart from buffer.
@@ -12737,10 +12623,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_VrelDepart(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Max_VrelDepart(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_VrelDepart in buffer.
@@ -12750,12 +12633,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Max_VrelDepart(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Max_VrelDepart(buf, val) \
+	{                                                      \
+		buf[3] &= ~(0x0f << 0);                              \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;  \
+		buf[4] &= ~(0xff << 0);                              \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;         \
+	}
 
 /**
  * Set signal FilterCfg_Max_VrelDepart in buffer to its initial value.
@@ -12783,22 +12667,22 @@
 /**
  * Signal FilterCfg_Max_VrelDepart raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Max_VrelDepart      0
+#define START_FilterCfg_FilterCfg_Max_VrelDepart 0
 
 /**
  * Signal FilterCfg_Max_VrelDepart raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Max_VrelDepart        0
+#define MIN_FilterCfg_FilterCfg_Max_VrelDepart 0
 
 /**
  * Signal FilterCfg_Max_VrelDepart raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Max_VrelDepart        4095
+#define MAX_FilterCfg_FilterCfg_Max_VrelDepart 4095
 
 /**
  * Signal FilterCfg_Max_VrelDepart raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Max_VrelDepart        0
+#define OFF_FilterCfg_FilterCfg_Max_VrelDepart 0
 
 /**
  * @}
@@ -12820,7 +12704,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Max_Size and \ref GET_FilterCfg_FilterCfg_Max_Size instead.
  */
-#define SIG_FilterCfg_FilterCfg_Max_Size            1, 0, 27, 12
+#define SIG_FilterCfg_FilterCfg_Max_Size 1, 0, 27, 12
 
 /**
  * Signal FilterCfg_Max_Size setup tuple.
@@ -12828,7 +12712,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Max_Size or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Max_Size          1, 0, 27, 12, 0
+#define SETUP_FilterCfg_FilterCfg_Max_Size 1, 0, 27, 12, 0
 
 /**
  * Get signal FilterCfg_Max_Size from buffer.
@@ -12838,10 +12722,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_Size(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Max_Size(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_Size in buffer.
@@ -12851,12 +12732,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Max_Size(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Max_Size(buf, val)      \
+	{                                                     \
+		buf[3] &= ~(0x0f << 0);                             \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+		buf[4] &= ~(0xff << 0);                             \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+	}
 
 /**
  * Set signal FilterCfg_Max_Size in buffer to its initial value.
@@ -12884,22 +12766,22 @@
 /**
  * Signal FilterCfg_Max_Size raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Max_Size          0
+#define START_FilterCfg_FilterCfg_Max_Size 0
 
 /**
  * Signal FilterCfg_Max_Size raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Max_Size            0
+#define MIN_FilterCfg_FilterCfg_Max_Size 0
 
 /**
  * Signal FilterCfg_Max_Size raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Max_Size            4095
+#define MAX_FilterCfg_FilterCfg_Max_Size 4095
 
 /**
  * Signal FilterCfg_Max_Size raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Max_Size            0
+#define OFF_FilterCfg_FilterCfg_Max_Size 0
 
 /**
  * @}
@@ -12921,7 +12803,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Max_RCS and \ref GET_FilterCfg_FilterCfg_Max_RCS instead.
  */
-#define SIG_FilterCfg_FilterCfg_Max_RCS             1, 0, 27, 12
+#define SIG_FilterCfg_FilterCfg_Max_RCS 1, 0, 27, 12
 
 /**
  * Signal FilterCfg_Max_RCS setup tuple.
@@ -12929,7 +12811,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Max_RCS or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Max_RCS           1, 0, 27, 12, 2000
+#define SETUP_FilterCfg_FilterCfg_Max_RCS 1, 0, 27, 12, 2000
 
 /**
  * Get signal FilterCfg_Max_RCS from buffer.
@@ -12939,10 +12821,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_RCS(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Max_RCS(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_RCS in buffer.
@@ -12952,12 +12831,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Max_RCS(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Max_RCS(buf, val)       \
+	{                                                     \
+		buf[3] &= ~(0x0f << 0);                             \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+		buf[4] &= ~(0xff << 0);                             \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+	}
 
 /**
  * Set signal FilterCfg_Max_RCS in buffer to its initial value.
@@ -12985,22 +12865,22 @@
 /**
  * Signal FilterCfg_Max_RCS raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Max_RCS           2000
+#define START_FilterCfg_FilterCfg_Max_RCS 2000
 
 /**
  * Signal FilterCfg_Max_RCS raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Max_RCS             0
+#define MIN_FilterCfg_FilterCfg_Max_RCS 0
 
 /**
  * Signal FilterCfg_Max_RCS raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Max_RCS             4095
+#define MAX_FilterCfg_FilterCfg_Max_RCS 4095
 
 /**
  * Signal FilterCfg_Max_RCS raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Max_RCS             -2000
+#define OFF_FilterCfg_FilterCfg_Max_RCS -2000
 
 /**
  * @}
@@ -13024,7 +12904,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Max_ProbExists and \ref GET_FilterCfg_FilterCfg_Max_ProbExists instead.
  */
-#define SIG_FilterCfg_FilterCfg_Max_ProbExists        1, 0, 27, 12
+#define SIG_FilterCfg_FilterCfg_Max_ProbExists 1, 0, 27, 12
 
 /**
  * Signal FilterCfg_Max_ProbExists setup tuple.
@@ -13032,7 +12912,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Max_ProbExists or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Max_ProbExists      1, 0, 27, 12, 0
+#define SETUP_FilterCfg_FilterCfg_Max_ProbExists 1, 0, 27, 12, 0
 
 /**
  * Get signal FilterCfg_Max_ProbExists from buffer.
@@ -13042,10 +12922,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_ProbExists(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Max_ProbExists(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_ProbExists in buffer.
@@ -13055,12 +12932,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Max_ProbExists(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Max_ProbExists(buf, val) \
+	{                                                      \
+		buf[3] &= ~(0x0f << 0);                              \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;  \
+		buf[4] &= ~(0xff << 0);                              \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;         \
+	}
 
 /**
  * Set signal FilterCfg_Max_ProbExists in buffer to its initial value.
@@ -13088,22 +12966,22 @@
 /**
  * Signal FilterCfg_Max_ProbExists raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Max_ProbExists      0
+#define START_FilterCfg_FilterCfg_Max_ProbExists 0
 
 /**
  * Signal FilterCfg_Max_ProbExists raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Max_ProbExists        0
+#define MIN_FilterCfg_FilterCfg_Max_ProbExists 0
 
 /**
  * Signal FilterCfg_Max_ProbExists raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Max_ProbExists        7
+#define MAX_FilterCfg_FilterCfg_Max_ProbExists 7
 
 /**
  * Signal FilterCfg_Max_ProbExists raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Max_ProbExists        0
+#define OFF_FilterCfg_FilterCfg_Max_ProbExists 0
 
 /**
  * @}
@@ -13124,7 +13002,7 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Max_ProbExists
  */
-#define FilterCfg_FilterCfg_Max_ProbExists___100_              7
+#define FilterCfg_FilterCfg_Max_ProbExists___100_ 7
 
 /**
  * Value table FilterCfg_FilterCfg_Max_ProbExists entry _99_9_.
@@ -13133,7 +13011,7 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Max_ProbExists
  */
-#define FilterCfg_FilterCfg_Max_ProbExists__99_9_              6
+#define FilterCfg_FilterCfg_Max_ProbExists__99_9_ 6
 
 /**
  * Value table FilterCfg_FilterCfg_Max_ProbExists entry _99_.
@@ -13142,7 +13020,7 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Max_ProbExists
  */
-#define FilterCfg_FilterCfg_Max_ProbExists__99_                5
+#define FilterCfg_FilterCfg_Max_ProbExists__99_ 5
 
 /**
  * Value table FilterCfg_FilterCfg_Max_ProbExists entry _90_.
@@ -13151,7 +13029,7 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Max_ProbExists
  */
-#define FilterCfg_FilterCfg_Max_ProbExists__90_                4
+#define FilterCfg_FilterCfg_Max_ProbExists__90_ 4
 
 /**
  * Value table FilterCfg_FilterCfg_Max_ProbExists entry _75_.
@@ -13160,7 +13038,7 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Max_ProbExists
  */
-#define FilterCfg_FilterCfg_Max_ProbExists__75_                3
+#define FilterCfg_FilterCfg_Max_ProbExists__75_ 3
 
 /**
  * Value table FilterCfg_FilterCfg_Max_ProbExists entry _50_.
@@ -13169,7 +13047,7 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Max_ProbExists
  */
-#define FilterCfg_FilterCfg_Max_ProbExists__50_                2
+#define FilterCfg_FilterCfg_Max_ProbExists__50_ 2
 
 /**
  * Value table FilterCfg_FilterCfg_Max_ProbExists entry _25_.
@@ -13178,14 +13056,14 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Max_ProbExists
  */
-#define FilterCfg_FilterCfg_Max_ProbExists__25_                1
+#define FilterCfg_FilterCfg_Max_ProbExists__25_ 1
 
 /**
  * Value table FilterCfg_FilterCfg_Max_ProbExists entry invalid.
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Max_ProbExists
  */
-#define FilterCfg_FilterCfg_Max_ProbExists_invalid             0
+#define FilterCfg_FilterCfg_Max_ProbExists_invalid 0
 
 /**
  * @defgroup SIG_FilterCfg_FilterCfg_Max_NofObj Signal FilterCfg_Max_NofObj of Message FilterCfg (0x202)
@@ -13203,7 +13081,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Max_NofObj and \ref GET_FilterCfg_FilterCfg_Max_NofObj instead.
  */
-#define SIG_FilterCfg_FilterCfg_Max_NofObj          1, 0, 27, 12
+#define SIG_FilterCfg_FilterCfg_Max_NofObj 1, 0, 27, 12
 
 /**
  * Signal FilterCfg_Max_NofObj setup tuple.
@@ -13211,7 +13089,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Max_NofObj or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Max_NofObj        1, 0, 27, 12, 0
+#define SETUP_FilterCfg_FilterCfg_Max_NofObj 1, 0, 27, 12, 0
 
 /**
  * Get signal FilterCfg_Max_NofObj from buffer.
@@ -13221,10 +13099,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_NofObj(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Max_NofObj(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_NofObj in buffer.
@@ -13234,12 +13109,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Max_NofObj(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Max_NofObj(buf, val)    \
+	{                                                     \
+		buf[3] &= ~(0x0f << 0);                             \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+		buf[4] &= ~(0xff << 0);                             \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+	}
 
 /**
  * Set signal FilterCfg_Max_NofObj in buffer to its initial value.
@@ -13267,22 +13143,22 @@
 /**
  * Signal FilterCfg_Max_NofObj raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Max_NofObj        0
+#define START_FilterCfg_FilterCfg_Max_NofObj 0
 
 /**
  * Signal FilterCfg_Max_NofObj raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Max_NofObj          0
+#define MIN_FilterCfg_FilterCfg_Max_NofObj 0
 
 /**
  * Signal FilterCfg_Max_NofObj raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Max_NofObj          4095
+#define MAX_FilterCfg_FilterCfg_Max_NofObj 4095
 
 /**
  * Signal FilterCfg_Max_NofObj raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Max_NofObj          0
+#define OFF_FilterCfg_FilterCfg_Max_NofObj 0
 
 /**
  * @}
@@ -13304,7 +13180,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Max_Lifetime and \ref GET_FilterCfg_FilterCfg_Max_Lifetime instead.
  */
-#define SIG_FilterCfg_FilterCfg_Max_Lifetime        1, 0, 27, 12
+#define SIG_FilterCfg_FilterCfg_Max_Lifetime 1, 0, 27, 12
 
 /**
  * Signal FilterCfg_Max_Lifetime setup tuple.
@@ -13312,7 +13188,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Max_Lifetime or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Max_Lifetime      1, 0, 27, 12, 0
+#define SETUP_FilterCfg_FilterCfg_Max_Lifetime 1, 0, 27, 12, 0
 
 /**
  * Get signal FilterCfg_Max_Lifetime from buffer.
@@ -13322,10 +13198,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_Lifetime(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Max_Lifetime(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_Lifetime in buffer.
@@ -13335,12 +13208,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Max_Lifetime(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Max_Lifetime(buf, val)  \
+	{                                                     \
+		buf[3] &= ~(0x0f << 0);                             \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+		buf[4] &= ~(0xff << 0);                             \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+	}
 
 /**
  * Set signal FilterCfg_Max_Lifetime in buffer to its initial value.
@@ -13368,22 +13242,22 @@
 /**
  * Signal FilterCfg_Max_Lifetime raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Max_Lifetime      0
+#define START_FilterCfg_FilterCfg_Max_Lifetime 0
 
 /**
  * Signal FilterCfg_Max_Lifetime raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Max_Lifetime        0
+#define MIN_FilterCfg_FilterCfg_Max_Lifetime 0
 
 /**
  * Signal FilterCfg_Max_Lifetime raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Max_Lifetime        4095
+#define MAX_FilterCfg_FilterCfg_Max_Lifetime 4095
 
 /**
  * Signal FilterCfg_Max_Lifetime raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Max_Lifetime        0
+#define OFF_FilterCfg_FilterCfg_Max_Lifetime 0
 
 /**
  * @}
@@ -13405,7 +13279,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Max_Distance and \ref GET_FilterCfg_FilterCfg_Max_Distance instead.
  */
-#define SIG_FilterCfg_FilterCfg_Max_Distance        1, 0, 27, 12
+#define SIG_FilterCfg_FilterCfg_Max_Distance 1, 0, 27, 12
 
 /**
  * Signal FilterCfg_Max_Distance setup tuple.
@@ -13413,7 +13287,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Max_Distance or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Max_Distance      1, 0, 27, 12, 0
+#define SETUP_FilterCfg_FilterCfg_Max_Distance 1, 0, 27, 12, 0
 
 /**
  * Get signal FilterCfg_Max_Distance from buffer.
@@ -13423,10 +13297,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_Distance(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Max_Distance(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_Distance in buffer.
@@ -13436,12 +13307,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Max_Distance(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Max_Distance(buf, val)  \
+	{                                                     \
+		buf[3] &= ~(0x0f << 0);                             \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+		buf[4] &= ~(0xff << 0);                             \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+	}
 
 /**
  * Set signal FilterCfg_Max_Distance in buffer to its initial value.
@@ -13469,22 +13341,22 @@
 /**
  * Signal FilterCfg_Max_Distance raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Max_Distance      0
+#define START_FilterCfg_FilterCfg_Max_Distance 0
 
 /**
  * Signal FilterCfg_Max_Distance raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Max_Distance        0
+#define MIN_FilterCfg_FilterCfg_Max_Distance 0
 
 /**
  * Signal FilterCfg_Max_Distance raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Max_Distance        4095
+#define MAX_FilterCfg_FilterCfg_Max_Distance 4095
 
 /**
  * Signal FilterCfg_Max_Distance raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Max_Distance        0
+#define OFF_FilterCfg_FilterCfg_Max_Distance 0
 
 /**
  * @}
@@ -13506,7 +13378,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Max_Azimuth and \ref GET_FilterCfg_FilterCfg_Max_Azimuth instead.
  */
-#define SIG_FilterCfg_FilterCfg_Max_Azimuth         1, 0, 27, 12
+#define SIG_FilterCfg_FilterCfg_Max_Azimuth 1, 0, 27, 12
 
 /**
  * Signal FilterCfg_Max_Azimuth setup tuple.
@@ -13514,7 +13386,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Max_Azimuth or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Max_Azimuth       1, 0, 27, 12, 2000
+#define SETUP_FilterCfg_FilterCfg_Max_Azimuth 1, 0, 27, 12, 2000
 
 /**
  * Get signal FilterCfg_Max_Azimuth from buffer.
@@ -13524,10 +13396,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_Azimuth(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Max_Azimuth(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_Azimuth in buffer.
@@ -13537,12 +13406,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Max_Azimuth(buf, val) { \
-	buf[3] &= ~(0x0f << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Max_Azimuth(buf, val)   \
+	{                                                     \
+		buf[3] &= ~(0x0f << 0);                             \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+		buf[4] &= ~(0xff << 0);                             \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+	}
 
 /**
  * Set signal FilterCfg_Max_Azimuth in buffer to its initial value.
@@ -13570,22 +13440,22 @@
 /**
  * Signal FilterCfg_Max_Azimuth raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Max_Azimuth       2000
+#define START_FilterCfg_FilterCfg_Max_Azimuth 2000
 
 /**
  * Signal FilterCfg_Max_Azimuth raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Max_Azimuth         0
+#define MIN_FilterCfg_FilterCfg_Max_Azimuth 0
 
 /**
  * Signal FilterCfg_Max_Azimuth raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Max_Azimuth         4095
+#define MAX_FilterCfg_FilterCfg_Max_Azimuth 4095
 
 /**
  * Signal FilterCfg_Max_Azimuth raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Max_Azimuth         -2000
+#define OFF_FilterCfg_FilterCfg_Max_Azimuth -2000
 
 /**
  * @}
@@ -13607,7 +13477,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Min_VrelOncome and \ref GET_FilterCfg_FilterCfg_Min_VrelOncome instead.
  */
-#define SIG_FilterCfg_FilterCfg_Min_VrelOncome        1, 0, 11, 12
+#define SIG_FilterCfg_FilterCfg_Min_VrelOncome 1, 0, 11, 12
 
 /**
  * Signal FilterCfg_Min_VrelOncome setup tuple.
@@ -13615,7 +13485,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Min_VrelOncome or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Min_VrelOncome      1, 0, 11, 12, 0
+#define SETUP_FilterCfg_FilterCfg_Min_VrelOncome 1, 0, 11, 12, 0
 
 /**
  * Get signal FilterCfg_Min_VrelOncome from buffer.
@@ -13625,10 +13495,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_VrelOncome(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Min_VrelOncome(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_VrelOncome in buffer.
@@ -13638,12 +13505,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Min_VrelOncome(buf, val) { \
-	buf[1] &= ~(0x0f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Min_VrelOncome(buf, val) \
+	{                                                      \
+		buf[1] &= ~(0x0f << 0);                              \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;  \
+		buf[2] &= ~(0xff << 0);                              \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;         \
+	}
 
 /**
  * Set signal FilterCfg_Min_VrelOncome in buffer to its initial value.
@@ -13671,22 +13539,22 @@
 /**
  * Signal FilterCfg_Min_VrelOncome raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Min_VrelOncome      0
+#define START_FilterCfg_FilterCfg_Min_VrelOncome 0
 
 /**
  * Signal FilterCfg_Min_VrelOncome raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Min_VrelOncome        0
+#define MIN_FilterCfg_FilterCfg_Min_VrelOncome 0
 
 /**
  * Signal FilterCfg_Min_VrelOncome raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Min_VrelOncome        4095
+#define MAX_FilterCfg_FilterCfg_Min_VrelOncome 4095
 
 /**
  * Signal FilterCfg_Min_VrelOncome raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Min_VrelOncome        0
+#define OFF_FilterCfg_FilterCfg_Min_VrelOncome 0
 
 /**
  * @}
@@ -13708,7 +13576,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Min_VrelDepart and \ref GET_FilterCfg_FilterCfg_Min_VrelDepart instead.
  */
-#define SIG_FilterCfg_FilterCfg_Min_VrelDepart        1, 0, 11, 12
+#define SIG_FilterCfg_FilterCfg_Min_VrelDepart 1, 0, 11, 12
 
 /**
  * Signal FilterCfg_Min_VrelDepart setup tuple.
@@ -13716,7 +13584,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Min_VrelDepart or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Min_VrelDepart      1, 0, 11, 12, 0
+#define SETUP_FilterCfg_FilterCfg_Min_VrelDepart 1, 0, 11, 12, 0
 
 /**
  * Get signal FilterCfg_Min_VrelDepart from buffer.
@@ -13726,10 +13594,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_VrelDepart(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Min_VrelDepart(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_VrelDepart in buffer.
@@ -13739,12 +13604,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Min_VrelDepart(buf, val) { \
-	buf[1] &= ~(0x0f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Min_VrelDepart(buf, val) \
+	{                                                      \
+		buf[1] &= ~(0x0f << 0);                              \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;  \
+		buf[2] &= ~(0xff << 0);                              \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;         \
+	}
 
 /**
  * Set signal FilterCfg_Min_VrelDepart in buffer to its initial value.
@@ -13772,22 +13638,22 @@
 /**
  * Signal FilterCfg_Min_VrelDepart raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Min_VrelDepart      0
+#define START_FilterCfg_FilterCfg_Min_VrelDepart 0
 
 /**
  * Signal FilterCfg_Min_VrelDepart raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Min_VrelDepart        0
+#define MIN_FilterCfg_FilterCfg_Min_VrelDepart 0
 
 /**
  * Signal FilterCfg_Min_VrelDepart raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Min_VrelDepart        4095
+#define MAX_FilterCfg_FilterCfg_Min_VrelDepart 4095
 
 /**
  * Signal FilterCfg_Min_VrelDepart raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Min_VrelDepart        0
+#define OFF_FilterCfg_FilterCfg_Min_VrelDepart 0
 
 /**
  * @}
@@ -13809,7 +13675,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Min_Size and \ref GET_FilterCfg_FilterCfg_Min_Size instead.
  */
-#define SIG_FilterCfg_FilterCfg_Min_Size            1, 0, 11, 12
+#define SIG_FilterCfg_FilterCfg_Min_Size 1, 0, 11, 12
 
 /**
  * Signal FilterCfg_Min_Size setup tuple.
@@ -13817,7 +13683,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Min_Size or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Min_Size          1, 0, 11, 12, 0
+#define SETUP_FilterCfg_FilterCfg_Min_Size 1, 0, 11, 12, 0
 
 /**
  * Get signal FilterCfg_Min_Size from buffer.
@@ -13827,10 +13693,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_Size(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Min_Size(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_Size in buffer.
@@ -13840,12 +13703,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Min_Size(buf, val) { \
-	buf[1] &= ~(0x0f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Min_Size(buf, val)      \
+	{                                                     \
+		buf[1] &= ~(0x0f << 0);                             \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+		buf[2] &= ~(0xff << 0);                             \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+	}
 
 /**
  * Set signal FilterCfg_Min_Size in buffer to its initial value.
@@ -13873,22 +13737,22 @@
 /**
  * Signal FilterCfg_Min_Size raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Min_Size          0
+#define START_FilterCfg_FilterCfg_Min_Size 0
 
 /**
  * Signal FilterCfg_Min_Size raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Min_Size            0
+#define MIN_FilterCfg_FilterCfg_Min_Size 0
 
 /**
  * Signal FilterCfg_Min_Size raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Min_Size            4095
+#define MAX_FilterCfg_FilterCfg_Min_Size 4095
 
 /**
  * Signal FilterCfg_Min_Size raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Min_Size            0
+#define OFF_FilterCfg_FilterCfg_Min_Size 0
 
 /**
  * @}
@@ -13910,7 +13774,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Min_RCS and \ref GET_FilterCfg_FilterCfg_Min_RCS instead.
  */
-#define SIG_FilterCfg_FilterCfg_Min_RCS             1, 0, 11, 12
+#define SIG_FilterCfg_FilterCfg_Min_RCS 1, 0, 11, 12
 
 /**
  * Signal FilterCfg_Min_RCS setup tuple.
@@ -13918,7 +13782,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Min_RCS or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Min_RCS           1, 0, 11, 12, 2000
+#define SETUP_FilterCfg_FilterCfg_Min_RCS 1, 0, 11, 12, 2000
 
 /**
  * Get signal FilterCfg_Min_RCS from buffer.
@@ -13928,10 +13792,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_RCS(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Min_RCS(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_RCS in buffer.
@@ -13941,12 +13802,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Min_RCS(buf, val) { \
-	buf[1] &= ~(0x0f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Min_RCS(buf, val)       \
+	{                                                     \
+		buf[1] &= ~(0x0f << 0);                             \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+		buf[2] &= ~(0xff << 0);                             \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+	}
 
 /**
  * Set signal FilterCfg_Min_RCS in buffer to its initial value.
@@ -13974,22 +13836,22 @@
 /**
  * Signal FilterCfg_Min_RCS raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Min_RCS           2000
+#define START_FilterCfg_FilterCfg_Min_RCS 2000
 
 /**
  * Signal FilterCfg_Min_RCS raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Min_RCS             0
+#define MIN_FilterCfg_FilterCfg_Min_RCS 0
 
 /**
  * Signal FilterCfg_Min_RCS raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Min_RCS             4095
+#define MAX_FilterCfg_FilterCfg_Min_RCS 4095
 
 /**
  * Signal FilterCfg_Min_RCS raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Min_RCS             -2000
+#define OFF_FilterCfg_FilterCfg_Min_RCS -2000
 
 /**
  * @}
@@ -14013,7 +13875,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Min_ProbExists and \ref GET_FilterCfg_FilterCfg_Min_ProbExists instead.
  */
-#define SIG_FilterCfg_FilterCfg_Min_ProbExists        1, 0, 11, 12
+#define SIG_FilterCfg_FilterCfg_Min_ProbExists 1, 0, 11, 12
 
 /**
  * Signal FilterCfg_Min_ProbExists setup tuple.
@@ -14021,7 +13883,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Min_ProbExists or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Min_ProbExists      1, 0, 11, 12, 0
+#define SETUP_FilterCfg_FilterCfg_Min_ProbExists 1, 0, 11, 12, 0
 
 /**
  * Get signal FilterCfg_Min_ProbExists from buffer.
@@ -14031,10 +13893,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_ProbExists(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Min_ProbExists(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_ProbExists in buffer.
@@ -14044,12 +13903,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Min_ProbExists(buf, val) { \
-	buf[1] &= ~(0x0f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Min_ProbExists(buf, val) \
+	{                                                      \
+		buf[1] &= ~(0x0f << 0);                              \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;  \
+		buf[2] &= ~(0xff << 0);                              \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;         \
+	}
 
 /**
  * Set signal FilterCfg_Min_ProbExists in buffer to its initial value.
@@ -14077,22 +13937,22 @@
 /**
  * Signal FilterCfg_Min_ProbExists raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Min_ProbExists      0
+#define START_FilterCfg_FilterCfg_Min_ProbExists 0
 
 /**
  * Signal FilterCfg_Min_ProbExists raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Min_ProbExists        0
+#define MIN_FilterCfg_FilterCfg_Min_ProbExists 0
 
 /**
  * Signal FilterCfg_Min_ProbExists raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Min_ProbExists        4095
+#define MAX_FilterCfg_FilterCfg_Min_ProbExists 4095
 
 /**
  * Signal FilterCfg_Min_ProbExists raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Min_ProbExists        0
+#define OFF_FilterCfg_FilterCfg_Min_ProbExists 0
 
 /**
  * @}
@@ -14113,7 +13973,7 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Min_ProbExists
  */
-#define FilterCfg_FilterCfg_Min_ProbExists_100_                7
+#define FilterCfg_FilterCfg_Min_ProbExists_100_ 7
 
 /**
  * Value table FilterCfg_FilterCfg_Min_ProbExists entry __99_9_.
@@ -14122,7 +13982,7 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Min_ProbExists
  */
-#define FilterCfg_FilterCfg_Min_ProbExists___99_9_             6
+#define FilterCfg_FilterCfg_Min_ProbExists___99_9_ 6
 
 /**
  * Value table FilterCfg_FilterCfg_Min_ProbExists entry __99_.
@@ -14131,7 +13991,7 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Min_ProbExists
  */
-#define FilterCfg_FilterCfg_Min_ProbExists___99_               5
+#define FilterCfg_FilterCfg_Min_ProbExists___99_ 5
 
 /**
  * Value table FilterCfg_FilterCfg_Min_ProbExists entry __90_.
@@ -14140,7 +14000,7 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Min_ProbExists
  */
-#define FilterCfg_FilterCfg_Min_ProbExists___90_               4
+#define FilterCfg_FilterCfg_Min_ProbExists___90_ 4
 
 /**
  * Value table FilterCfg_FilterCfg_Min_ProbExists entry __75_.
@@ -14149,7 +14009,7 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Min_ProbExists
  */
-#define FilterCfg_FilterCfg_Min_ProbExists___75_               3
+#define FilterCfg_FilterCfg_Min_ProbExists___75_ 3
 
 /**
  * Value table FilterCfg_FilterCfg_Min_ProbExists entry __50_.
@@ -14158,7 +14018,7 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Min_ProbExists
  */
-#define FilterCfg_FilterCfg_Min_ProbExists___50_               2
+#define FilterCfg_FilterCfg_Min_ProbExists___50_ 2
 
 /**
  * Value table FilterCfg_FilterCfg_Min_ProbExists entry __25_.
@@ -14167,14 +14027,14 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Min_ProbExists
  */
-#define FilterCfg_FilterCfg_Min_ProbExists___25_               1
+#define FilterCfg_FilterCfg_Min_ProbExists___25_ 1
 
 /**
  * Value table FilterCfg_FilterCfg_Min_ProbExists entry invalid.
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Min_ProbExists
  */
-#define FilterCfg_FilterCfg_Min_ProbExists_invalid             0
+#define FilterCfg_FilterCfg_Min_ProbExists_invalid 0
 
 /**
  * @defgroup SIG_FilterCfg_FilterCfg_Min_Lifetime Signal FilterCfg_Min_Lifetime of Message FilterCfg (0x202)
@@ -14192,7 +14052,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Min_Lifetime and \ref GET_FilterCfg_FilterCfg_Min_Lifetime instead.
  */
-#define SIG_FilterCfg_FilterCfg_Min_Lifetime        1, 0, 11, 12
+#define SIG_FilterCfg_FilterCfg_Min_Lifetime 1, 0, 11, 12
 
 /**
  * Signal FilterCfg_Min_Lifetime setup tuple.
@@ -14200,7 +14060,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Min_Lifetime or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Min_Lifetime      1, 0, 11, 12, 0
+#define SETUP_FilterCfg_FilterCfg_Min_Lifetime 1, 0, 11, 12, 0
 
 /**
  * Get signal FilterCfg_Min_Lifetime from buffer.
@@ -14210,10 +14070,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_Lifetime(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Min_Lifetime(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_Lifetime in buffer.
@@ -14223,12 +14080,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Min_Lifetime(buf, val) { \
-	buf[1] &= ~(0x0f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Min_Lifetime(buf, val)  \
+	{                                                     \
+		buf[1] &= ~(0x0f << 0);                             \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+		buf[2] &= ~(0xff << 0);                             \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+	}
 
 /**
  * Set signal FilterCfg_Min_Lifetime in buffer to its initial value.
@@ -14256,22 +14114,22 @@
 /**
  * Signal FilterCfg_Min_Lifetime raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Min_Lifetime      0
+#define START_FilterCfg_FilterCfg_Min_Lifetime 0
 
 /**
  * Signal FilterCfg_Min_Lifetime raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Min_Lifetime        0
+#define MIN_FilterCfg_FilterCfg_Min_Lifetime 0
 
 /**
  * Signal FilterCfg_Min_Lifetime raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Min_Lifetime        4095
+#define MAX_FilterCfg_FilterCfg_Min_Lifetime 4095
 
 /**
  * Signal FilterCfg_Min_Lifetime raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Min_Lifetime        0
+#define OFF_FilterCfg_FilterCfg_Min_Lifetime 0
 
 /**
  * @}
@@ -14293,7 +14151,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Min_Azimuth and \ref GET_FilterCfg_FilterCfg_Min_Azimuth instead.
  */
-#define SIG_FilterCfg_FilterCfg_Min_Azimuth         1, 0, 11, 12
+#define SIG_FilterCfg_FilterCfg_Min_Azimuth 1, 0, 11, 12
 
 /**
  * Signal FilterCfg_Min_Azimuth setup tuple.
@@ -14301,7 +14159,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Min_Azimuth or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Min_Azimuth       1, 0, 11, 12, 2000
+#define SETUP_FilterCfg_FilterCfg_Min_Azimuth 1, 0, 11, 12, 2000
 
 /**
  * Get signal FilterCfg_Min_Azimuth from buffer.
@@ -14311,10 +14169,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_Azimuth(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Min_Azimuth(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_Azimuth in buffer.
@@ -14324,12 +14179,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Min_Azimuth(buf, val) { \
-	buf[1] &= ~(0x0f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Min_Azimuth(buf, val)   \
+	{                                                     \
+		buf[1] &= ~(0x0f << 0);                             \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+		buf[2] &= ~(0xff << 0);                             \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+	}
 
 /**
  * Set signal FilterCfg_Min_Azimuth in buffer to its initial value.
@@ -14357,22 +14213,22 @@
 /**
  * Signal FilterCfg_Min_Azimuth raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Min_Azimuth       2000
+#define START_FilterCfg_FilterCfg_Min_Azimuth 2000
 
 /**
  * Signal FilterCfg_Min_Azimuth raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Min_Azimuth         0
+#define MIN_FilterCfg_FilterCfg_Min_Azimuth 0
 
 /**
  * Signal FilterCfg_Min_Azimuth raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Min_Azimuth         4095
+#define MAX_FilterCfg_FilterCfg_Min_Azimuth 4095
 
 /**
  * Signal FilterCfg_Min_Azimuth raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Min_Azimuth         -2000
+#define OFF_FilterCfg_FilterCfg_Min_Azimuth -2000
 
 /**
  * @}
@@ -14394,7 +14250,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Min_NofObj and \ref GET_FilterCfg_FilterCfg_Min_NofObj instead.
  */
-#define SIG_FilterCfg_FilterCfg_Min_NofObj          1, 0, 11, 12
+#define SIG_FilterCfg_FilterCfg_Min_NofObj 1, 0, 11, 12
 
 /**
  * Signal FilterCfg_Min_NofObj setup tuple.
@@ -14402,7 +14258,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Min_NofObj or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Min_NofObj        1, 0, 11, 12, 0
+#define SETUP_FilterCfg_FilterCfg_Min_NofObj 1, 0, 11, 12, 0
 
 /**
  * Get signal FilterCfg_Min_NofObj from buffer.
@@ -14412,10 +14268,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_NofObj(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Min_NofObj(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_NofObj in buffer.
@@ -14425,12 +14278,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Min_NofObj(buf, val) { \
-	buf[1] &= ~(0x0f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Min_NofObj(buf, val)    \
+	{                                                     \
+		buf[1] &= ~(0x0f << 0);                             \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+		buf[2] &= ~(0xff << 0);                             \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+	}
 
 /**
  * Set signal FilterCfg_Min_NofObj in buffer to its initial value.
@@ -14458,22 +14312,22 @@
 /**
  * Signal FilterCfg_Min_NofObj raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Min_NofObj        0
+#define START_FilterCfg_FilterCfg_Min_NofObj 0
 
 /**
  * Signal FilterCfg_Min_NofObj raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Min_NofObj          0
+#define MIN_FilterCfg_FilterCfg_Min_NofObj 0
 
 /**
  * Signal FilterCfg_Min_NofObj raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Min_NofObj          4095
+#define MAX_FilterCfg_FilterCfg_Min_NofObj 4095
 
 /**
  * Signal FilterCfg_Min_NofObj raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Min_NofObj          0
+#define OFF_FilterCfg_FilterCfg_Min_NofObj 0
 
 /**
  * @}
@@ -14495,7 +14349,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Min_Distance and \ref GET_FilterCfg_FilterCfg_Min_Distance instead.
  */
-#define SIG_FilterCfg_FilterCfg_Min_Distance        1, 0, 11, 12
+#define SIG_FilterCfg_FilterCfg_Min_Distance 1, 0, 11, 12
 
 /**
  * Signal FilterCfg_Min_Distance setup tuple.
@@ -14503,7 +14357,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Min_Distance or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Min_Distance      1, 0, 11, 12, 0
+#define SETUP_FilterCfg_FilterCfg_Min_Distance 1, 0, 11, 12, 0
 
 /**
  * Get signal FilterCfg_Min_Distance from buffer.
@@ -14513,10 +14367,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_Distance(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Min_Distance(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_Distance in buffer.
@@ -14526,12 +14377,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Min_Distance(buf, val) { \
-	buf[1] &= ~(0x0f << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_FilterCfg_FilterCfg_Min_Distance(buf, val)  \
+	{                                                     \
+		buf[1] &= ~(0x0f << 0);                             \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+		buf[2] &= ~(0xff << 0);                             \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+	}
 
 /**
  * Set signal FilterCfg_Min_Distance in buffer to its initial value.
@@ -14559,22 +14411,22 @@
 /**
  * Signal FilterCfg_Min_Distance raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Min_Distance      0
+#define START_FilterCfg_FilterCfg_Min_Distance 0
 
 /**
  * Signal FilterCfg_Min_Distance raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Min_Distance        0
+#define MIN_FilterCfg_FilterCfg_Min_Distance 0
 
 /**
  * Signal FilterCfg_Min_Distance raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Min_Distance        4095
+#define MAX_FilterCfg_FilterCfg_Min_Distance 4095
 
 /**
  * Signal FilterCfg_Min_Distance raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Min_Distance        0
+#define OFF_FilterCfg_FilterCfg_Min_Distance 0
 
 /**
  * @}
@@ -14598,7 +14450,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Index and \ref GET_FilterCfg_FilterCfg_Index instead.
  */
-#define SIG_FilterCfg_FilterCfg_Index               1, 0, 6, 4
+#define SIG_FilterCfg_FilterCfg_Index 1, 0, 6, 4
 
 /**
  * Signal FilterCfg_Index setup tuple.
@@ -14606,7 +14458,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Index or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Index             1, 0, 6, 4, 0
+#define SETUP_FilterCfg_FilterCfg_Index 1, 0, 6, 4, 0
 
 /**
  * Get signal FilterCfg_Index from buffer.
@@ -14616,9 +14468,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Index(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 3) & 0x0f) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Index(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 3) & 0x0f) << 0))
 
 /**
  * Set signal FilterCfg_Index in buffer.
@@ -14628,10 +14478,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Index(buf, val) { \
-	buf[0] &= ~(0x0f << 3); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x0f) << 3; \
-}
+#define SET_FilterCfg_FilterCfg_Index(buf, val)  \
+	{                                              \
+		buf[0] &= ~(0x0f << 3);                      \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x0f) << 3; \
+	}
 
 /**
  * Set signal FilterCfg_Index in buffer to its initial value.
@@ -14659,22 +14510,22 @@
 /**
  * Signal FilterCfg_Index raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Index             0
+#define START_FilterCfg_FilterCfg_Index 0
 
 /**
  * Signal FilterCfg_Index raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Index               0
+#define MIN_FilterCfg_FilterCfg_Index 0
 
 /**
  * Signal FilterCfg_Index raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Index               15
+#define MAX_FilterCfg_FilterCfg_Index 15
 
 /**
  * Signal FilterCfg_Index raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Index               0
+#define OFF_FilterCfg_FilterCfg_Index 0
 
 /**
  * @}
@@ -14693,7 +14544,7 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Index
  */
-#define FilterCfg_FilterCfg_Index_Class               15
+#define FilterCfg_FilterCfg_Index_Class 15
 
 /**
  * Value table FilterCfg_FilterCfg_Index entry Longitud_.
@@ -14702,7 +14553,7 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Index
  */
-#define FilterCfg_FilterCfg_Index_Longitud_           14
+#define FilterCfg_FilterCfg_Index_Longitud_ 14
 
 /**
  * Value table FilterCfg_FilterCfg_Index entry Lateral.
@@ -14711,7 +14562,7 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Index
  */
-#define FilterCfg_FilterCfg_Index_Lateral             13
+#define FilterCfg_FilterCfg_Index_Lateral 13
 
 /**
  * Value table FilterCfg_FilterCfg_Index entry Longitud__C.
@@ -14720,7 +14571,7 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Index
  */
-#define FilterCfg_FilterCfg_Index_Longitud__C         12
+#define FilterCfg_FilterCfg_Index_Longitud__C 12
 
 /**
  * Value table FilterCfg_FilterCfg_Index entry Lateral_B.
@@ -14729,7 +14580,7 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Index
  */
-#define FilterCfg_FilterCfg_Index_Lateral_B           11
+#define FilterCfg_FilterCfg_Index_Lateral_B 11
 
 /**
  * Value table FilterCfg_FilterCfg_Index entry Longitudinal.
@@ -14738,7 +14589,7 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Index
  */
-#define FilterCfg_FilterCfg_Index_Longitudinal        10
+#define FilterCfg_FilterCfg_Index_Longitudinal 10
 
 /**
  * Value table FilterCfg_FilterCfg_Index entry Lateral_9.
@@ -14747,7 +14598,7 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Index
  */
-#define FilterCfg_FilterCfg_Index_Lateral_9           9
+#define FilterCfg_FilterCfg_Index_Lateral_9 9
 
 /**
  * Value table FilterCfg_FilterCfg_Index entry Probability.
@@ -14756,28 +14607,28 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Index
  */
-#define FilterCfg_FilterCfg_Index_Probability         8
+#define FilterCfg_FilterCfg_Index_Probability 8
 
 /**
  * Value table FilterCfg_FilterCfg_Index entry Size.
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Index
  */
-#define FilterCfg_FilterCfg_Index_Size                7
+#define FilterCfg_FilterCfg_Index_Size 7
 
 /**
  * Value table FilterCfg_FilterCfg_Index entry Lifetime.
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Index
  */
-#define FilterCfg_FilterCfg_Index_Lifetime            6
+#define FilterCfg_FilterCfg_Index_Lifetime 6
 
 /**
  * Value table FilterCfg_FilterCfg_Index entry RCS.
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Index
  */
-#define FilterCfg_FilterCfg_Index_RCS                 5
+#define FilterCfg_FilterCfg_Index_RCS 5
 
 /**
  * Value table FilterCfg_FilterCfg_Index entry Radial.
@@ -14786,7 +14637,7 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Index
  */
-#define FilterCfg_FilterCfg_Index_Radial              4
+#define FilterCfg_FilterCfg_Index_Radial 4
 
 /**
  * Value table FilterCfg_FilterCfg_Index entry Radial_3.
@@ -14795,14 +14646,14 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Index
  */
-#define FilterCfg_FilterCfg_Index_Radial_3            3
+#define FilterCfg_FilterCfg_Index_Radial_3 3
 
 /**
  * Value table FilterCfg_FilterCfg_Index entry Azimuth.
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Index
  */
-#define FilterCfg_FilterCfg_Index_Azimuth             2
+#define FilterCfg_FilterCfg_Index_Azimuth 2
 
 /**
  * Value table FilterCfg_FilterCfg_Index entry Radial_1.
@@ -14811,7 +14662,7 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Index
  */
-#define FilterCfg_FilterCfg_Index_Radial_1            1
+#define FilterCfg_FilterCfg_Index_Radial_1 1
 
 /**
  * Value table FilterCfg_FilterCfg_Index entry Number.
@@ -14820,7 +14671,7 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Index
  */
-#define FilterCfg_FilterCfg_Index_Number              0
+#define FilterCfg_FilterCfg_Index_Number 0
 
 /**
  * @defgroup SIG_FilterCfg_FilterCfg_Type Signal FilterCfg_Type of Message FilterCfg (0x202)
@@ -14840,7 +14691,7 @@
  * @deprecated
  *	Use \ref SET_FilterCfg_FilterCfg_Type and \ref GET_FilterCfg_FilterCfg_Type instead.
  */
-#define SIG_FilterCfg_FilterCfg_Type                1, 0, 7, 1
+#define SIG_FilterCfg_FilterCfg_Type 1, 0, 7, 1
 
 /**
  * Signal FilterCfg_Type setup tuple.
@@ -14848,7 +14699,7 @@
  * @deprecated
  *	Use \ref INITSIG_FilterCfg_FilterCfg_Type or \ref INIT_FilterCfg instead.
  */
-#define SETUP_FilterCfg_FilterCfg_Type              1, 0, 7, 1, 0
+#define SETUP_FilterCfg_FilterCfg_Type 1, 0, 7, 1, 0
 
 /**
  * Get signal FilterCfg_Type from buffer.
@@ -14858,9 +14709,7 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Type(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 7) & 0x01) << 0) \
-)
+#define GET_FilterCfg_FilterCfg_Type(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 7) & 0x01) << 0))
 
 /**
  * Set signal FilterCfg_Type in buffer.
@@ -14870,10 +14719,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_FilterCfg_FilterCfg_Type(buf, val) { \
-	buf[0] &= ~(0x01 << 7); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 7; \
-}
+#define SET_FilterCfg_FilterCfg_Type(buf, val)   \
+	{                                              \
+		buf[0] &= ~(0x01 << 7);                      \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 7; \
+	}
 
 /**
  * Set signal FilterCfg_Type in buffer to its initial value.
@@ -14901,22 +14751,22 @@
 /**
  * Signal FilterCfg_Type raw initial value.
  */
-#define START_FilterCfg_FilterCfg_Type              0
+#define START_FilterCfg_FilterCfg_Type 0
 
 /**
  * Signal FilterCfg_Type raw minimum value.
  */
-#define MIN_FilterCfg_FilterCfg_Type                0
+#define MIN_FilterCfg_FilterCfg_Type 0
 
 /**
  * Signal FilterCfg_Type raw maximum value.
  */
-#define MAX_FilterCfg_FilterCfg_Type                1
+#define MAX_FilterCfg_FilterCfg_Type 1
 
 /**
  * Signal FilterCfg_Type raw offset value.
  */
-#define OFF_FilterCfg_FilterCfg_Type                0
+#define OFF_FilterCfg_FilterCfg_Type 0
 
 /**
  * @}
@@ -14937,7 +14787,7 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Type
  */
-#define FilterCfg_FilterCfg_Type_Object              1
+#define FilterCfg_FilterCfg_Type_Object 1
 
 /**
  * Value table FilterCfg_FilterCfg_Type entry Cluster.
@@ -14946,7 +14796,7 @@
  *
  * @ingroup ENUM_FilterCfg_FilterCfg_Type
  */
-#define FilterCfg_FilterCfg_Type_Cluster             0
+#define FilterCfg_FilterCfg_Type_Cluster 0
 
 /**
  * @defgroup SIG_RadarConfiguration_RadarCfg_RCS_Threshold_Valid Signal RadarCfg_RCS_Threshold_Valid of Message RadarConfiguration (0x200)
@@ -14967,7 +14817,7 @@
  * @deprecated
  *	Use \ref SET_RadarConfiguration_RadarCfg_RCS_Threshold_Valid and \ref GET_RadarConfiguration_RadarCfg_RCS_Threshold_Valid instead.
  */
-#define SIG_RadarConfiguration_RadarCfg_RCS_Threshold_Valid        1, 0, 48, 1
+#define SIG_RadarConfiguration_RadarCfg_RCS_Threshold_Valid 1, 0, 48, 1
 
 /**
  * Signal RadarCfg_RCS_Threshold_Valid setup tuple.
@@ -14975,7 +14825,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarConfiguration_RadarCfg_RCS_Threshold_Valid or \ref INIT_RadarConfiguration instead.
  */
-#define SETUP_RadarConfiguration_RadarCfg_RCS_Threshold_Valid      1, 0, 48, 1, 0
+#define SETUP_RadarConfiguration_RadarCfg_RCS_Threshold_Valid 1, 0, 48, 1, 0
 
 /**
  * Get signal RadarCfg_RCS_Threshold_Valid from buffer.
@@ -14985,9 +14835,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarConfiguration_RadarCfg_RCS_Threshold_Valid(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[6] >> 0) & 0x01) << 0) \
-)
+#define GET_RadarConfiguration_RadarCfg_RCS_Threshold_Valid(buf) (0 | (ubyte)(+(ubyte)((buf[6] >> 0) & 0x01) << 0))
 
 /**
  * Set signal RadarCfg_RCS_Threshold_Valid in buffer.
@@ -14997,10 +14845,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarConfiguration_RadarCfg_RCS_Threshold_Valid(buf, val) { \
-	buf[6] &= ~(0x01 << 0); \
-	buf[6] |= (((ubyte)(val) >> 0) & 0x01) << 0; \
-}
+#define SET_RadarConfiguration_RadarCfg_RCS_Threshold_Valid(buf, val) \
+	{                                                                   \
+		buf[6] &= ~(0x01 << 0);                                           \
+		buf[6] |= (((ubyte)(val) >> 0) & 0x01) << 0;                      \
+	}
 
 /**
  * Set signal RadarCfg_RCS_Threshold_Valid in buffer to its initial value.
@@ -15028,22 +14877,22 @@
 /**
  * Signal RadarCfg_RCS_Threshold_Valid raw initial value.
  */
-#define START_RadarConfiguration_RadarCfg_RCS_Threshold_Valid      0
+#define START_RadarConfiguration_RadarCfg_RCS_Threshold_Valid 0
 
 /**
  * Signal RadarCfg_RCS_Threshold_Valid raw minimum value.
  */
-#define MIN_RadarConfiguration_RadarCfg_RCS_Threshold_Valid        0
+#define MIN_RadarConfiguration_RadarCfg_RCS_Threshold_Valid 0
 
 /**
  * Signal RadarCfg_RCS_Threshold_Valid raw maximum value.
  */
-#define MAX_RadarConfiguration_RadarCfg_RCS_Threshold_Valid        1
+#define MAX_RadarConfiguration_RadarCfg_RCS_Threshold_Valid 1
 
 /**
  * Signal RadarCfg_RCS_Threshold_Valid raw offset value.
  */
-#define OFF_RadarConfiguration_RadarCfg_RCS_Threshold_Valid        0
+#define OFF_RadarConfiguration_RadarCfg_RCS_Threshold_Valid 0
 
 /**
  * @}
@@ -15062,14 +14911,14 @@
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_RCS_Threshold_Valid
  */
-#define RadarConfiguration_RadarCfg_RCS_Threshold_Valid_Valid               1
+#define RadarConfiguration_RadarCfg_RCS_Threshold_Valid_Valid 1
 
 /**
  * Value table RadarConfiguration_RadarCfg_RCS_Threshold_Valid entry Invalid.
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_RCS_Threshold_Valid
  */
-#define RadarConfiguration_RadarCfg_RCS_Threshold_Valid_Invalid             0
+#define RadarConfiguration_RadarCfg_RCS_Threshold_Valid_Invalid 0
 
 /**
  * @defgroup SIG_RadarConfiguration_RadarCfg_RCS_Threshold Signal RadarCfg_RCS_Threshold of Message RadarConfiguration (0x200)
@@ -15090,7 +14939,7 @@
  * @deprecated
  *	Use \ref SET_RadarConfiguration_RadarCfg_RCS_Threshold and \ref GET_RadarConfiguration_RadarCfg_RCS_Threshold instead.
  */
-#define SIG_RadarConfiguration_RadarCfg_RCS_Threshold        1, 0, 51, 3
+#define SIG_RadarConfiguration_RadarCfg_RCS_Threshold 1, 0, 51, 3
 
 /**
  * Signal RadarCfg_RCS_Threshold setup tuple.
@@ -15098,7 +14947,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarConfiguration_RadarCfg_RCS_Threshold or \ref INIT_RadarConfiguration instead.
  */
-#define SETUP_RadarConfiguration_RadarCfg_RCS_Threshold      1, 0, 51, 3, 0
+#define SETUP_RadarConfiguration_RadarCfg_RCS_Threshold 1, 0, 51, 3, 0
 
 /**
  * Get signal RadarCfg_RCS_Threshold from buffer.
@@ -15108,9 +14957,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarConfiguration_RadarCfg_RCS_Threshold(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[6] >> 1) & 0x07) << 0) \
-)
+#define GET_RadarConfiguration_RadarCfg_RCS_Threshold(buf) (0 | (ubyte)(+(ubyte)((buf[6] >> 1) & 0x07) << 0))
 
 /**
  * Set signal RadarCfg_RCS_Threshold in buffer.
@@ -15120,10 +14967,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarConfiguration_RadarCfg_RCS_Threshold(buf, val) { \
-	buf[6] &= ~(0x07 << 1); \
-	buf[6] |= (((ubyte)(val) >> 0) & 0x07) << 1; \
-}
+#define SET_RadarConfiguration_RadarCfg_RCS_Threshold(buf, val) \
+	{                                                             \
+		buf[6] &= ~(0x07 << 1);                                     \
+		buf[6] |= (((ubyte)(val) >> 0) & 0x07) << 1;                \
+	}
 
 /**
  * Set signal RadarCfg_RCS_Threshold in buffer to its initial value.
@@ -15151,22 +14999,22 @@
 /**
  * Signal RadarCfg_RCS_Threshold raw initial value.
  */
-#define START_RadarConfiguration_RadarCfg_RCS_Threshold      0
+#define START_RadarConfiguration_RadarCfg_RCS_Threshold 0
 
 /**
  * Signal RadarCfg_RCS_Threshold raw minimum value.
  */
-#define MIN_RadarConfiguration_RadarCfg_RCS_Threshold        0
+#define MIN_RadarConfiguration_RadarCfg_RCS_Threshold 0
 
 /**
  * Signal RadarCfg_RCS_Threshold raw maximum value.
  */
-#define MAX_RadarConfiguration_RadarCfg_RCS_Threshold        7
+#define MAX_RadarConfiguration_RadarCfg_RCS_Threshold 7
 
 /**
  * Signal RadarCfg_RCS_Threshold raw offset value.
  */
-#define OFF_RadarConfiguration_RadarCfg_RCS_Threshold        0
+#define OFF_RadarConfiguration_RadarCfg_RCS_Threshold 0
 
 /**
  * @}
@@ -15185,42 +15033,42 @@
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_RCS_Threshold
  */
-#define RadarConfiguration_RadarCfg_RCS_Threshold_Reserved            7
+#define RadarConfiguration_RadarCfg_RCS_Threshold_Reserved 7
 
 /**
  * Value table RadarConfiguration_RadarCfg_RCS_Threshold entry Reserved_6.
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_RCS_Threshold
  */
-#define RadarConfiguration_RadarCfg_RCS_Threshold_Reserved_6          6
+#define RadarConfiguration_RadarCfg_RCS_Threshold_Reserved_6 6
 
 /**
  * Value table RadarConfiguration_RadarCfg_RCS_Threshold entry Reserved_5.
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_RCS_Threshold
  */
-#define RadarConfiguration_RadarCfg_RCS_Threshold_Reserved_5          5
+#define RadarConfiguration_RadarCfg_RCS_Threshold_Reserved_5 5
 
 /**
  * Value table RadarConfiguration_RadarCfg_RCS_Threshold entry Reserved_4.
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_RCS_Threshold
  */
-#define RadarConfiguration_RadarCfg_RCS_Threshold_Reserved_4          4
+#define RadarConfiguration_RadarCfg_RCS_Threshold_Reserved_4 4
 
 /**
  * Value table RadarConfiguration_RadarCfg_RCS_Threshold entry Reserved_3.
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_RCS_Threshold
  */
-#define RadarConfiguration_RadarCfg_RCS_Threshold_Reserved_3          3
+#define RadarConfiguration_RadarCfg_RCS_Threshold_Reserved_3 3
 
 /**
  * Value table RadarConfiguration_RadarCfg_RCS_Threshold entry Reserved_2.
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_RCS_Threshold
  */
-#define RadarConfiguration_RadarCfg_RCS_Threshold_Reserved_2          2
+#define RadarConfiguration_RadarCfg_RCS_Threshold_Reserved_2 2
 
 /**
  * Value table RadarConfiguration_RadarCfg_RCS_Threshold entry High.
@@ -15229,14 +15077,14 @@
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_RCS_Threshold
  */
-#define RadarConfiguration_RadarCfg_RCS_Threshold_High                1
+#define RadarConfiguration_RadarCfg_RCS_Threshold_High 1
 
 /**
  * Value table RadarConfiguration_RadarCfg_RCS_Threshold entry Standard.
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_RCS_Threshold
  */
-#define RadarConfiguration_RadarCfg_RCS_Threshold_Standard            0
+#define RadarConfiguration_RadarCfg_RCS_Threshold_Standard 0
 
 /**
  * @defgroup SIG_RadarConfiguration_RadarCfg_StoreInNVM_valid Signal RadarCfg_StoreInNVM_valid of Message RadarConfiguration (0x200)
@@ -15257,7 +15105,7 @@
  * @deprecated
  *	Use \ref SET_RadarConfiguration_RadarCfg_StoreInNVM_valid and \ref GET_RadarConfiguration_RadarCfg_StoreInNVM_valid instead.
  */
-#define SIG_RadarConfiguration_RadarCfg_StoreInNVM_valid        1, 0, 7, 1
+#define SIG_RadarConfiguration_RadarCfg_StoreInNVM_valid 1, 0, 7, 1
 
 /**
  * Signal RadarCfg_StoreInNVM_valid setup tuple.
@@ -15265,7 +15113,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarConfiguration_RadarCfg_StoreInNVM_valid or \ref INIT_RadarConfiguration instead.
  */
-#define SETUP_RadarConfiguration_RadarCfg_StoreInNVM_valid      1, 0, 7, 1, 0
+#define SETUP_RadarConfiguration_RadarCfg_StoreInNVM_valid 1, 0, 7, 1, 0
 
 /**
  * Get signal RadarCfg_StoreInNVM_valid from buffer.
@@ -15275,9 +15123,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarConfiguration_RadarCfg_StoreInNVM_valid(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 7) & 0x01) << 0) \
-)
+#define GET_RadarConfiguration_RadarCfg_StoreInNVM_valid(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 7) & 0x01) << 0))
 
 /**
  * Set signal RadarCfg_StoreInNVM_valid in buffer.
@@ -15287,10 +15133,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarConfiguration_RadarCfg_StoreInNVM_valid(buf, val) { \
-	buf[0] &= ~(0x01 << 7); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 7; \
-}
+#define SET_RadarConfiguration_RadarCfg_StoreInNVM_valid(buf, val) \
+	{                                                                \
+		buf[0] &= ~(0x01 << 7);                                        \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 7;                   \
+	}
 
 /**
  * Set signal RadarCfg_StoreInNVM_valid in buffer to its initial value.
@@ -15318,22 +15165,22 @@
 /**
  * Signal RadarCfg_StoreInNVM_valid raw initial value.
  */
-#define START_RadarConfiguration_RadarCfg_StoreInNVM_valid      0
+#define START_RadarConfiguration_RadarCfg_StoreInNVM_valid 0
 
 /**
  * Signal RadarCfg_StoreInNVM_valid raw minimum value.
  */
-#define MIN_RadarConfiguration_RadarCfg_StoreInNVM_valid        0
+#define MIN_RadarConfiguration_RadarCfg_StoreInNVM_valid 0
 
 /**
  * Signal RadarCfg_StoreInNVM_valid raw maximum value.
  */
-#define MAX_RadarConfiguration_RadarCfg_StoreInNVM_valid        1
+#define MAX_RadarConfiguration_RadarCfg_StoreInNVM_valid 1
 
 /**
  * Signal RadarCfg_StoreInNVM_valid raw offset value.
  */
-#define OFF_RadarConfiguration_RadarCfg_StoreInNVM_valid        0
+#define OFF_RadarConfiguration_RadarCfg_StoreInNVM_valid 0
 
 /**
  * @}
@@ -15352,14 +15199,14 @@
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_StoreInNVM_valid
  */
-#define RadarConfiguration_RadarCfg_StoreInNVM_valid_Valid               1
+#define RadarConfiguration_RadarCfg_StoreInNVM_valid_Valid 1
 
 /**
  * Value table RadarConfiguration_RadarCfg_StoreInNVM_valid entry Invalid.
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_StoreInNVM_valid
  */
-#define RadarConfiguration_RadarCfg_StoreInNVM_valid_Invalid             0
+#define RadarConfiguration_RadarCfg_StoreInNVM_valid_Invalid 0
 
 /**
  * @defgroup SIG_RadarConfiguration_RadarCfg_SortIndex_valid Signal RadarCfg_SortIndex_valid of Message RadarConfiguration (0x200)
@@ -15380,7 +15227,7 @@
  * @deprecated
  *	Use \ref SET_RadarConfiguration_RadarCfg_SortIndex_valid and \ref GET_RadarConfiguration_RadarCfg_SortIndex_valid instead.
  */
-#define SIG_RadarConfiguration_RadarCfg_SortIndex_valid        1, 0, 6, 1
+#define SIG_RadarConfiguration_RadarCfg_SortIndex_valid 1, 0, 6, 1
 
 /**
  * Signal RadarCfg_SortIndex_valid setup tuple.
@@ -15388,7 +15235,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarConfiguration_RadarCfg_SortIndex_valid or \ref INIT_RadarConfiguration instead.
  */
-#define SETUP_RadarConfiguration_RadarCfg_SortIndex_valid      1, 0, 6, 1, 0
+#define SETUP_RadarConfiguration_RadarCfg_SortIndex_valid 1, 0, 6, 1, 0
 
 /**
  * Get signal RadarCfg_SortIndex_valid from buffer.
@@ -15398,9 +15245,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarConfiguration_RadarCfg_SortIndex_valid(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 6) & 0x01) << 0) \
-)
+#define GET_RadarConfiguration_RadarCfg_SortIndex_valid(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 6) & 0x01) << 0))
 
 /**
  * Set signal RadarCfg_SortIndex_valid in buffer.
@@ -15410,10 +15255,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarConfiguration_RadarCfg_SortIndex_valid(buf, val) { \
-	buf[0] &= ~(0x01 << 6); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 6; \
-}
+#define SET_RadarConfiguration_RadarCfg_SortIndex_valid(buf, val) \
+	{                                                               \
+		buf[0] &= ~(0x01 << 6);                                       \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 6;                  \
+	}
 
 /**
  * Set signal RadarCfg_SortIndex_valid in buffer to its initial value.
@@ -15441,22 +15287,22 @@
 /**
  * Signal RadarCfg_SortIndex_valid raw initial value.
  */
-#define START_RadarConfiguration_RadarCfg_SortIndex_valid      0
+#define START_RadarConfiguration_RadarCfg_SortIndex_valid 0
 
 /**
  * Signal RadarCfg_SortIndex_valid raw minimum value.
  */
-#define MIN_RadarConfiguration_RadarCfg_SortIndex_valid        0
+#define MIN_RadarConfiguration_RadarCfg_SortIndex_valid 0
 
 /**
  * Signal RadarCfg_SortIndex_valid raw maximum value.
  */
-#define MAX_RadarConfiguration_RadarCfg_SortIndex_valid        1
+#define MAX_RadarConfiguration_RadarCfg_SortIndex_valid 1
 
 /**
  * Signal RadarCfg_SortIndex_valid raw offset value.
  */
-#define OFF_RadarConfiguration_RadarCfg_SortIndex_valid        0
+#define OFF_RadarConfiguration_RadarCfg_SortIndex_valid 0
 
 /**
  * @}
@@ -15475,14 +15321,14 @@
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_SortIndex_valid
  */
-#define RadarConfiguration_RadarCfg_SortIndex_valid_Valid               1
+#define RadarConfiguration_RadarCfg_SortIndex_valid_Valid 1
 
 /**
  * Value table RadarConfiguration_RadarCfg_SortIndex_valid entry Invalid.
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_SortIndex_valid
  */
-#define RadarConfiguration_RadarCfg_SortIndex_valid_Invalid             0
+#define RadarConfiguration_RadarCfg_SortIndex_valid_Invalid 0
 
 /**
  * @defgroup SIG_RadarConfiguration_RadarCfg_SortIndex Signal RadarCfg_SortIndex of Message RadarConfiguration (0x200)
@@ -15503,7 +15349,7 @@
  * @deprecated
  *	Use \ref SET_RadarConfiguration_RadarCfg_SortIndex and \ref GET_RadarConfiguration_RadarCfg_SortIndex instead.
  */
-#define SIG_RadarConfiguration_RadarCfg_SortIndex        1, 0, 46, 3
+#define SIG_RadarConfiguration_RadarCfg_SortIndex 1, 0, 46, 3
 
 /**
  * Signal RadarCfg_SortIndex setup tuple.
@@ -15511,7 +15357,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarConfiguration_RadarCfg_SortIndex or \ref INIT_RadarConfiguration instead.
  */
-#define SETUP_RadarConfiguration_RadarCfg_SortIndex      1, 0, 46, 3, 0
+#define SETUP_RadarConfiguration_RadarCfg_SortIndex 1, 0, 46, 3, 0
 
 /**
  * Get signal RadarCfg_SortIndex from buffer.
@@ -15521,9 +15367,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarConfiguration_RadarCfg_SortIndex(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[5] >> 4) & 0x07) << 0) \
-)
+#define GET_RadarConfiguration_RadarCfg_SortIndex(buf) (0 | (ubyte)(+(ubyte)((buf[5] >> 4) & 0x07) << 0))
 
 /**
  * Set signal RadarCfg_SortIndex in buffer.
@@ -15533,10 +15377,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarConfiguration_RadarCfg_SortIndex(buf, val) { \
-	buf[5] &= ~(0x07 << 4); \
-	buf[5] |= (((ubyte)(val) >> 0) & 0x07) << 4; \
-}
+#define SET_RadarConfiguration_RadarCfg_SortIndex(buf, val) \
+	{                                                         \
+		buf[5] &= ~(0x07 << 4);                                 \
+		buf[5] |= (((ubyte)(val) >> 0) & 0x07) << 4;            \
+	}
 
 /**
  * Set signal RadarCfg_SortIndex in buffer to its initial value.
@@ -15564,22 +15409,22 @@
 /**
  * Signal RadarCfg_SortIndex raw initial value.
  */
-#define START_RadarConfiguration_RadarCfg_SortIndex      0
+#define START_RadarConfiguration_RadarCfg_SortIndex 0
 
 /**
  * Signal RadarCfg_SortIndex raw minimum value.
  */
-#define MIN_RadarConfiguration_RadarCfg_SortIndex        0
+#define MIN_RadarConfiguration_RadarCfg_SortIndex 0
 
 /**
  * Signal RadarCfg_SortIndex raw maximum value.
  */
-#define MAX_RadarConfiguration_RadarCfg_SortIndex        7
+#define MAX_RadarConfiguration_RadarCfg_SortIndex 7
 
 /**
  * Signal RadarCfg_SortIndex raw offset value.
  */
-#define OFF_RadarConfiguration_RadarCfg_SortIndex        0
+#define OFF_RadarConfiguration_RadarCfg_SortIndex 0
 
 /**
  * @}
@@ -15600,7 +15445,7 @@
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_SortIndex
  */
-#define RadarConfiguration_RadarCfg_SortIndex_Sorted              2
+#define RadarConfiguration_RadarCfg_SortIndex_Sorted 2
 
 /**
  * Value table RadarConfiguration_RadarCfg_SortIndex entry Sorted_1.
@@ -15609,7 +15454,7 @@
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_SortIndex
  */
-#define RadarConfiguration_RadarCfg_SortIndex_Sorted_1            1
+#define RadarConfiguration_RadarCfg_SortIndex_Sorted_1 1
 
 /**
  * Value table RadarConfiguration_RadarCfg_SortIndex entry No.
@@ -15618,7 +15463,7 @@
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_SortIndex
  */
-#define RadarConfiguration_RadarCfg_SortIndex_No                  0
+#define RadarConfiguration_RadarCfg_SortIndex_No 0
 
 /**
  * @defgroup SIG_RadarConfiguration_RadarCfg_StoreInNVM Signal RadarCfg_StoreInNVM of Message RadarConfiguration (0x200)
@@ -15640,7 +15485,7 @@
  * @deprecated
  *	Use \ref SET_RadarConfiguration_RadarCfg_StoreInNVM and \ref GET_RadarConfiguration_RadarCfg_StoreInNVM instead.
  */
-#define SIG_RadarConfiguration_RadarCfg_StoreInNVM        1, 0, 47, 1
+#define SIG_RadarConfiguration_RadarCfg_StoreInNVM 1, 0, 47, 1
 
 /**
  * Signal RadarCfg_StoreInNVM setup tuple.
@@ -15648,7 +15493,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarConfiguration_RadarCfg_StoreInNVM or \ref INIT_RadarConfiguration instead.
  */
-#define SETUP_RadarConfiguration_RadarCfg_StoreInNVM      1, 0, 47, 1, 0
+#define SETUP_RadarConfiguration_RadarCfg_StoreInNVM 1, 0, 47, 1, 0
 
 /**
  * Get signal RadarCfg_StoreInNVM from buffer.
@@ -15658,9 +15503,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarConfiguration_RadarCfg_StoreInNVM(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[5] >> 7) & 0x01) << 0) \
-)
+#define GET_RadarConfiguration_RadarCfg_StoreInNVM(buf) (0 | (ubyte)(+(ubyte)((buf[5] >> 7) & 0x01) << 0))
 
 /**
  * Set signal RadarCfg_StoreInNVM in buffer.
@@ -15670,10 +15513,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarConfiguration_RadarCfg_StoreInNVM(buf, val) { \
-	buf[5] &= ~(0x01 << 7); \
-	buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 7; \
-}
+#define SET_RadarConfiguration_RadarCfg_StoreInNVM(buf, val) \
+	{                                                          \
+		buf[5] &= ~(0x01 << 7);                                  \
+		buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 7;             \
+	}
 
 /**
  * Set signal RadarCfg_StoreInNVM in buffer to its initial value.
@@ -15701,22 +15545,22 @@
 /**
  * Signal RadarCfg_StoreInNVM raw initial value.
  */
-#define START_RadarConfiguration_RadarCfg_StoreInNVM      0
+#define START_RadarConfiguration_RadarCfg_StoreInNVM 0
 
 /**
  * Signal RadarCfg_StoreInNVM raw minimum value.
  */
-#define MIN_RadarConfiguration_RadarCfg_StoreInNVM        0
+#define MIN_RadarConfiguration_RadarCfg_StoreInNVM 0
 
 /**
  * Signal RadarCfg_StoreInNVM raw maximum value.
  */
-#define MAX_RadarConfiguration_RadarCfg_StoreInNVM        1
+#define MAX_RadarConfiguration_RadarCfg_StoreInNVM 1
 
 /**
  * Signal RadarCfg_StoreInNVM raw offset value.
  */
-#define OFF_RadarConfiguration_RadarCfg_StoreInNVM        0
+#define OFF_RadarConfiguration_RadarCfg_StoreInNVM 0
 
 /**
  * @}
@@ -15735,14 +15579,14 @@
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_StoreInNVM
  */
-#define RadarConfiguration_RadarCfg_StoreInNVM_Active              1
+#define RadarConfiguration_RadarCfg_StoreInNVM_Active 1
 
 /**
  * Value table RadarConfiguration_RadarCfg_StoreInNVM entry Inactive.
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_StoreInNVM
  */
-#define RadarConfiguration_RadarCfg_StoreInNVM_Inactive            0
+#define RadarConfiguration_RadarCfg_StoreInNVM_Inactive 0
 
 /**
  * @defgroup SIG_RadarConfiguration_RadarCfg_SendExtInfo_valid Signal RadarCfg_SendExtInfo_valid of Message RadarConfiguration (0x200)
@@ -15764,7 +15608,7 @@
  * @deprecated
  *	Use \ref SET_RadarConfiguration_RadarCfg_SendExtInfo_valid and \ref GET_RadarConfiguration_RadarCfg_SendExtInfo_valid instead.
  */
-#define SIG_RadarConfiguration_RadarCfg_SendExtInfo_valid        1, 0, 5, 1
+#define SIG_RadarConfiguration_RadarCfg_SendExtInfo_valid 1, 0, 5, 1
 
 /**
  * Signal RadarCfg_SendExtInfo_valid setup tuple.
@@ -15772,7 +15616,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarConfiguration_RadarCfg_SendExtInfo_valid or \ref INIT_RadarConfiguration instead.
  */
-#define SETUP_RadarConfiguration_RadarCfg_SendExtInfo_valid      1, 0, 5, 1, 0
+#define SETUP_RadarConfiguration_RadarCfg_SendExtInfo_valid 1, 0, 5, 1, 0
 
 /**
  * Get signal RadarCfg_SendExtInfo_valid from buffer.
@@ -15782,9 +15626,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarConfiguration_RadarCfg_SendExtInfo_valid(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 5) & 0x01) << 0) \
-)
+#define GET_RadarConfiguration_RadarCfg_SendExtInfo_valid(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 5) & 0x01) << 0))
 
 /**
  * Set signal RadarCfg_SendExtInfo_valid in buffer.
@@ -15794,10 +15636,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarConfiguration_RadarCfg_SendExtInfo_valid(buf, val) { \
-	buf[0] &= ~(0x01 << 5); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 5; \
-}
+#define SET_RadarConfiguration_RadarCfg_SendExtInfo_valid(buf, val) \
+	{                                                                 \
+		buf[0] &= ~(0x01 << 5);                                         \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 5;                    \
+	}
 
 /**
  * Set signal RadarCfg_SendExtInfo_valid in buffer to its initial value.
@@ -15825,22 +15668,22 @@
 /**
  * Signal RadarCfg_SendExtInfo_valid raw initial value.
  */
-#define START_RadarConfiguration_RadarCfg_SendExtInfo_valid      0
+#define START_RadarConfiguration_RadarCfg_SendExtInfo_valid 0
 
 /**
  * Signal RadarCfg_SendExtInfo_valid raw minimum value.
  */
-#define MIN_RadarConfiguration_RadarCfg_SendExtInfo_valid        0
+#define MIN_RadarConfiguration_RadarCfg_SendExtInfo_valid 0
 
 /**
  * Signal RadarCfg_SendExtInfo_valid raw maximum value.
  */
-#define MAX_RadarConfiguration_RadarCfg_SendExtInfo_valid        1
+#define MAX_RadarConfiguration_RadarCfg_SendExtInfo_valid 1
 
 /**
  * Signal RadarCfg_SendExtInfo_valid raw offset value.
  */
-#define OFF_RadarConfiguration_RadarCfg_SendExtInfo_valid        0
+#define OFF_RadarConfiguration_RadarCfg_SendExtInfo_valid 0
 
 /**
  * @}
@@ -15859,14 +15702,14 @@
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_SendExtInfo_valid
  */
-#define RadarConfiguration_RadarCfg_SendExtInfo_valid_Valid               1
+#define RadarConfiguration_RadarCfg_SendExtInfo_valid_Valid 1
 
 /**
  * Value table RadarConfiguration_RadarCfg_SendExtInfo_valid entry Invalid.
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_SendExtInfo_valid
  */
-#define RadarConfiguration_RadarCfg_SendExtInfo_valid_Invalid             0
+#define RadarConfiguration_RadarCfg_SendExtInfo_valid_Invalid 0
 
 /**
  * @defgroup SIG_RadarConfiguration_RadarCfg_SendExtInfo Signal RadarCfg_SendExtInfo of Message RadarConfiguration (0x200)
@@ -15888,7 +15731,7 @@
  * @deprecated
  *	Use \ref SET_RadarConfiguration_RadarCfg_SendExtInfo and \ref GET_RadarConfiguration_RadarCfg_SendExtInfo instead.
  */
-#define SIG_RadarConfiguration_RadarCfg_SendExtInfo        1, 0, 43, 1
+#define SIG_RadarConfiguration_RadarCfg_SendExtInfo 1, 0, 43, 1
 
 /**
  * Signal RadarCfg_SendExtInfo setup tuple.
@@ -15896,7 +15739,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarConfiguration_RadarCfg_SendExtInfo or \ref INIT_RadarConfiguration instead.
  */
-#define SETUP_RadarConfiguration_RadarCfg_SendExtInfo      1, 0, 43, 1, 0
+#define SETUP_RadarConfiguration_RadarCfg_SendExtInfo 1, 0, 43, 1, 0
 
 /**
  * Get signal RadarCfg_SendExtInfo from buffer.
@@ -15906,9 +15749,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarConfiguration_RadarCfg_SendExtInfo(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[5] >> 3) & 0x01) << 0) \
-)
+#define GET_RadarConfiguration_RadarCfg_SendExtInfo(buf) (0 | (ubyte)(+(ubyte)((buf[5] >> 3) & 0x01) << 0))
 
 /**
  * Set signal RadarCfg_SendExtInfo in buffer.
@@ -15918,10 +15759,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarConfiguration_RadarCfg_SendExtInfo(buf, val) { \
-	buf[5] &= ~(0x01 << 3); \
-	buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 3; \
-}
+#define SET_RadarConfiguration_RadarCfg_SendExtInfo(buf, val) \
+	{                                                           \
+		buf[5] &= ~(0x01 << 3);                                   \
+		buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 3;              \
+	}
 
 /**
  * Set signal RadarCfg_SendExtInfo in buffer to its initial value.
@@ -15949,22 +15791,22 @@
 /**
  * Signal RadarCfg_SendExtInfo raw initial value.
  */
-#define START_RadarConfiguration_RadarCfg_SendExtInfo      0
+#define START_RadarConfiguration_RadarCfg_SendExtInfo 0
 
 /**
  * Signal RadarCfg_SendExtInfo raw minimum value.
  */
-#define MIN_RadarConfiguration_RadarCfg_SendExtInfo        0
+#define MIN_RadarConfiguration_RadarCfg_SendExtInfo 0
 
 /**
  * Signal RadarCfg_SendExtInfo raw maximum value.
  */
-#define MAX_RadarConfiguration_RadarCfg_SendExtInfo        1
+#define MAX_RadarConfiguration_RadarCfg_SendExtInfo 1
 
 /**
  * Signal RadarCfg_SendExtInfo raw offset value.
  */
-#define OFF_RadarConfiguration_RadarCfg_SendExtInfo        0
+#define OFF_RadarConfiguration_RadarCfg_SendExtInfo 0
 
 /**
  * @}
@@ -15983,14 +15825,14 @@
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_SendExtInfo
  */
-#define RadarConfiguration_RadarCfg_SendExtInfo_Active              1
+#define RadarConfiguration_RadarCfg_SendExtInfo_Active 1
 
 /**
  * Value table RadarConfiguration_RadarCfg_SendExtInfo entry Inactive.
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_SendExtInfo
  */
-#define RadarConfiguration_RadarCfg_SendExtInfo_Inactive            0
+#define RadarConfiguration_RadarCfg_SendExtInfo_Inactive 0
 
 /**
  * @defgroup SIG_RadarConfiguration_RadarCfg_CtrlRelay_valid Signal RadarCfg_CtrlRelay_valid of Message RadarConfiguration (0x200)
@@ -16012,7 +15854,7 @@
  * @deprecated
  *	Use \ref SET_RadarConfiguration_RadarCfg_CtrlRelay_valid and \ref GET_RadarConfiguration_RadarCfg_CtrlRelay_valid instead.
  */
-#define SIG_RadarConfiguration_RadarCfg_CtrlRelay_valid        1, 0, 40, 1
+#define SIG_RadarConfiguration_RadarCfg_CtrlRelay_valid 1, 0, 40, 1
 
 /**
  * Signal RadarCfg_CtrlRelay_valid setup tuple.
@@ -16020,7 +15862,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarConfiguration_RadarCfg_CtrlRelay_valid or \ref INIT_RadarConfiguration instead.
  */
-#define SETUP_RadarConfiguration_RadarCfg_CtrlRelay_valid      1, 0, 40, 1, 0
+#define SETUP_RadarConfiguration_RadarCfg_CtrlRelay_valid 1, 0, 40, 1, 0
 
 /**
  * Get signal RadarCfg_CtrlRelay_valid from buffer.
@@ -16030,9 +15872,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarConfiguration_RadarCfg_CtrlRelay_valid(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[5] >> 0) & 0x01) << 0) \
-)
+#define GET_RadarConfiguration_RadarCfg_CtrlRelay_valid(buf) (0 | (ubyte)(+(ubyte)((buf[5] >> 0) & 0x01) << 0))
 
 /**
  * Set signal RadarCfg_CtrlRelay_valid in buffer.
@@ -16042,10 +15882,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarConfiguration_RadarCfg_CtrlRelay_valid(buf, val) { \
-	buf[5] &= ~(0x01 << 0); \
-	buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 0; \
-}
+#define SET_RadarConfiguration_RadarCfg_CtrlRelay_valid(buf, val) \
+	{                                                               \
+		buf[5] &= ~(0x01 << 0);                                       \
+		buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 0;                  \
+	}
 
 /**
  * Set signal RadarCfg_CtrlRelay_valid in buffer to its initial value.
@@ -16073,22 +15914,22 @@
 /**
  * Signal RadarCfg_CtrlRelay_valid raw initial value.
  */
-#define START_RadarConfiguration_RadarCfg_CtrlRelay_valid      0
+#define START_RadarConfiguration_RadarCfg_CtrlRelay_valid 0
 
 /**
  * Signal RadarCfg_CtrlRelay_valid raw minimum value.
  */
-#define MIN_RadarConfiguration_RadarCfg_CtrlRelay_valid        0
+#define MIN_RadarConfiguration_RadarCfg_CtrlRelay_valid 0
 
 /**
  * Signal RadarCfg_CtrlRelay_valid raw maximum value.
  */
-#define MAX_RadarConfiguration_RadarCfg_CtrlRelay_valid        1
+#define MAX_RadarConfiguration_RadarCfg_CtrlRelay_valid 1
 
 /**
  * Signal RadarCfg_CtrlRelay_valid raw offset value.
  */
-#define OFF_RadarConfiguration_RadarCfg_CtrlRelay_valid        0
+#define OFF_RadarConfiguration_RadarCfg_CtrlRelay_valid 0
 
 /**
  * @}
@@ -16107,14 +15948,14 @@
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_CtrlRelay_valid
  */
-#define RadarConfiguration_RadarCfg_CtrlRelay_valid_Valid               1
+#define RadarConfiguration_RadarCfg_CtrlRelay_valid_Valid 1
 
 /**
  * Value table RadarConfiguration_RadarCfg_CtrlRelay_valid entry Invalid.
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_CtrlRelay_valid
  */
-#define RadarConfiguration_RadarCfg_CtrlRelay_valid_Invalid             0
+#define RadarConfiguration_RadarCfg_CtrlRelay_valid_Invalid 0
 
 /**
  * @defgroup SIG_RadarConfiguration_RadarCfg_CtrlRelay Signal RadarCfg_CtrlRelay of Message RadarConfiguration (0x200)
@@ -16136,7 +15977,7 @@
  * @deprecated
  *	Use \ref SET_RadarConfiguration_RadarCfg_CtrlRelay and \ref GET_RadarConfiguration_RadarCfg_CtrlRelay instead.
  */
-#define SIG_RadarConfiguration_RadarCfg_CtrlRelay        1, 0, 41, 1
+#define SIG_RadarConfiguration_RadarCfg_CtrlRelay 1, 0, 41, 1
 
 /**
  * Signal RadarCfg_CtrlRelay setup tuple.
@@ -16144,7 +15985,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarConfiguration_RadarCfg_CtrlRelay or \ref INIT_RadarConfiguration instead.
  */
-#define SETUP_RadarConfiguration_RadarCfg_CtrlRelay      1, 0, 41, 1, 0
+#define SETUP_RadarConfiguration_RadarCfg_CtrlRelay 1, 0, 41, 1, 0
 
 /**
  * Get signal RadarCfg_CtrlRelay from buffer.
@@ -16154,9 +15995,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarConfiguration_RadarCfg_CtrlRelay(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[5] >> 1) & 0x01) << 0) \
-)
+#define GET_RadarConfiguration_RadarCfg_CtrlRelay(buf) (0 | (ubyte)(+(ubyte)((buf[5] >> 1) & 0x01) << 0))
 
 /**
  * Set signal RadarCfg_CtrlRelay in buffer.
@@ -16166,10 +16005,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarConfiguration_RadarCfg_CtrlRelay(buf, val) { \
-	buf[5] &= ~(0x01 << 1); \
-	buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 1; \
-}
+#define SET_RadarConfiguration_RadarCfg_CtrlRelay(buf, val) \
+	{                                                         \
+		buf[5] &= ~(0x01 << 1);                                 \
+		buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 1;            \
+	}
 
 /**
  * Set signal RadarCfg_CtrlRelay in buffer to its initial value.
@@ -16197,22 +16037,22 @@
 /**
  * Signal RadarCfg_CtrlRelay raw initial value.
  */
-#define START_RadarConfiguration_RadarCfg_CtrlRelay      0
+#define START_RadarConfiguration_RadarCfg_CtrlRelay 0
 
 /**
  * Signal RadarCfg_CtrlRelay raw minimum value.
  */
-#define MIN_RadarConfiguration_RadarCfg_CtrlRelay        0
+#define MIN_RadarConfiguration_RadarCfg_CtrlRelay 0
 
 /**
  * Signal RadarCfg_CtrlRelay raw maximum value.
  */
-#define MAX_RadarConfiguration_RadarCfg_CtrlRelay        1
+#define MAX_RadarConfiguration_RadarCfg_CtrlRelay 1
 
 /**
  * Signal RadarCfg_CtrlRelay raw offset value.
  */
-#define OFF_RadarConfiguration_RadarCfg_CtrlRelay        0
+#define OFF_RadarConfiguration_RadarCfg_CtrlRelay 0
 
 /**
  * @}
@@ -16231,14 +16071,14 @@
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_CtrlRelay
  */
-#define RadarConfiguration_RadarCfg_CtrlRelay_Active              1
+#define RadarConfiguration_RadarCfg_CtrlRelay_Active 1
 
 /**
  * Value table RadarConfiguration_RadarCfg_CtrlRelay entry Inactive.
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_CtrlRelay
  */
-#define RadarConfiguration_RadarCfg_CtrlRelay_Inactive            0
+#define RadarConfiguration_RadarCfg_CtrlRelay_Inactive 0
 
 /**
  * @defgroup SIG_RadarConfiguration_RadarCfg_SendQuality_valid Signal RadarCfg_SendQuality_valid of Message RadarConfiguration (0x200)
@@ -16260,7 +16100,7 @@
  * @deprecated
  *	Use \ref SET_RadarConfiguration_RadarCfg_SendQuality_valid and \ref GET_RadarConfiguration_RadarCfg_SendQuality_valid instead.
  */
-#define SIG_RadarConfiguration_RadarCfg_SendQuality_valid        1, 0, 4, 1
+#define SIG_RadarConfiguration_RadarCfg_SendQuality_valid 1, 0, 4, 1
 
 /**
  * Signal RadarCfg_SendQuality_valid setup tuple.
@@ -16268,7 +16108,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarConfiguration_RadarCfg_SendQuality_valid or \ref INIT_RadarConfiguration instead.
  */
-#define SETUP_RadarConfiguration_RadarCfg_SendQuality_valid      1, 0, 4, 1, 0
+#define SETUP_RadarConfiguration_RadarCfg_SendQuality_valid 1, 0, 4, 1, 0
 
 /**
  * Get signal RadarCfg_SendQuality_valid from buffer.
@@ -16278,9 +16118,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarConfiguration_RadarCfg_SendQuality_valid(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 4) & 0x01) << 0) \
-)
+#define GET_RadarConfiguration_RadarCfg_SendQuality_valid(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 4) & 0x01) << 0))
 
 /**
  * Set signal RadarCfg_SendQuality_valid in buffer.
@@ -16290,10 +16128,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarConfiguration_RadarCfg_SendQuality_valid(buf, val) { \
-	buf[0] &= ~(0x01 << 4); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 4; \
-}
+#define SET_RadarConfiguration_RadarCfg_SendQuality_valid(buf, val) \
+	{                                                                 \
+		buf[0] &= ~(0x01 << 4);                                         \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 4;                    \
+	}
 
 /**
  * Set signal RadarCfg_SendQuality_valid in buffer to its initial value.
@@ -16321,22 +16160,22 @@
 /**
  * Signal RadarCfg_SendQuality_valid raw initial value.
  */
-#define START_RadarConfiguration_RadarCfg_SendQuality_valid      0
+#define START_RadarConfiguration_RadarCfg_SendQuality_valid 0
 
 /**
  * Signal RadarCfg_SendQuality_valid raw minimum value.
  */
-#define MIN_RadarConfiguration_RadarCfg_SendQuality_valid        0
+#define MIN_RadarConfiguration_RadarCfg_SendQuality_valid 0
 
 /**
  * Signal RadarCfg_SendQuality_valid raw maximum value.
  */
-#define MAX_RadarConfiguration_RadarCfg_SendQuality_valid        1
+#define MAX_RadarConfiguration_RadarCfg_SendQuality_valid 1
 
 /**
  * Signal RadarCfg_SendQuality_valid raw offset value.
  */
-#define OFF_RadarConfiguration_RadarCfg_SendQuality_valid        0
+#define OFF_RadarConfiguration_RadarCfg_SendQuality_valid 0
 
 /**
  * @}
@@ -16355,14 +16194,14 @@
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_SendQuality_valid
  */
-#define RadarConfiguration_RadarCfg_SendQuality_valid_Valid               1
+#define RadarConfiguration_RadarCfg_SendQuality_valid_Valid 1
 
 /**
  * Value table RadarConfiguration_RadarCfg_SendQuality_valid entry Invalid.
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_SendQuality_valid
  */
-#define RadarConfiguration_RadarCfg_SendQuality_valid_Invalid             0
+#define RadarConfiguration_RadarCfg_SendQuality_valid_Invalid 0
 
 /**
  * @defgroup SIG_RadarConfiguration_RadarCfg_SendQuality Signal RadarCfg_SendQuality of Message RadarConfiguration (0x200)
@@ -16384,7 +16223,7 @@
  * @deprecated
  *	Use \ref SET_RadarConfiguration_RadarCfg_SendQuality and \ref GET_RadarConfiguration_RadarCfg_SendQuality instead.
  */
-#define SIG_RadarConfiguration_RadarCfg_SendQuality        1, 0, 42, 1
+#define SIG_RadarConfiguration_RadarCfg_SendQuality 1, 0, 42, 1
 
 /**
  * Signal RadarCfg_SendQuality setup tuple.
@@ -16392,7 +16231,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarConfiguration_RadarCfg_SendQuality or \ref INIT_RadarConfiguration instead.
  */
-#define SETUP_RadarConfiguration_RadarCfg_SendQuality      1, 0, 42, 1, 0
+#define SETUP_RadarConfiguration_RadarCfg_SendQuality 1, 0, 42, 1, 0
 
 /**
  * Get signal RadarCfg_SendQuality from buffer.
@@ -16402,9 +16241,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarConfiguration_RadarCfg_SendQuality(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[5] >> 2) & 0x01) << 0) \
-)
+#define GET_RadarConfiguration_RadarCfg_SendQuality(buf) (0 | (ubyte)(+(ubyte)((buf[5] >> 2) & 0x01) << 0))
 
 /**
  * Set signal RadarCfg_SendQuality in buffer.
@@ -16414,10 +16251,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarConfiguration_RadarCfg_SendQuality(buf, val) { \
-	buf[5] &= ~(0x01 << 2); \
-	buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 2; \
-}
+#define SET_RadarConfiguration_RadarCfg_SendQuality(buf, val) \
+	{                                                           \
+		buf[5] &= ~(0x01 << 2);                                   \
+		buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 2;              \
+	}
 
 /**
  * Set signal RadarCfg_SendQuality in buffer to its initial value.
@@ -16445,22 +16283,22 @@
 /**
  * Signal RadarCfg_SendQuality raw initial value.
  */
-#define START_RadarConfiguration_RadarCfg_SendQuality      0
+#define START_RadarConfiguration_RadarCfg_SendQuality 0
 
 /**
  * Signal RadarCfg_SendQuality raw minimum value.
  */
-#define MIN_RadarConfiguration_RadarCfg_SendQuality        0
+#define MIN_RadarConfiguration_RadarCfg_SendQuality 0
 
 /**
  * Signal RadarCfg_SendQuality raw maximum value.
  */
-#define MAX_RadarConfiguration_RadarCfg_SendQuality        1
+#define MAX_RadarConfiguration_RadarCfg_SendQuality 1
 
 /**
  * Signal RadarCfg_SendQuality raw offset value.
  */
-#define OFF_RadarConfiguration_RadarCfg_SendQuality        0
+#define OFF_RadarConfiguration_RadarCfg_SendQuality 0
 
 /**
  * @}
@@ -16479,14 +16317,14 @@
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_SendQuality
  */
-#define RadarConfiguration_RadarCfg_SendQuality_Active              1
+#define RadarConfiguration_RadarCfg_SendQuality_Active 1
 
 /**
  * Value table RadarConfiguration_RadarCfg_SendQuality entry Inactive.
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_SendQuality
  */
-#define RadarConfiguration_RadarCfg_SendQuality_Inactive            0
+#define RadarConfiguration_RadarCfg_SendQuality_Inactive 0
 
 /**
  * @defgroup SIG_RadarConfiguration_RadarCfg_MaxDistance_valid Signal RadarCfg_MaxDistance_valid of Message RadarConfiguration (0x200)
@@ -16508,7 +16346,7 @@
  * @deprecated
  *	Use \ref SET_RadarConfiguration_RadarCfg_MaxDistance_valid and \ref GET_RadarConfiguration_RadarCfg_MaxDistance_valid instead.
  */
-#define SIG_RadarConfiguration_RadarCfg_MaxDistance_valid        1, 0, 0, 1
+#define SIG_RadarConfiguration_RadarCfg_MaxDistance_valid 1, 0, 0, 1
 
 /**
  * Signal RadarCfg_MaxDistance_valid setup tuple.
@@ -16516,7 +16354,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarConfiguration_RadarCfg_MaxDistance_valid or \ref INIT_RadarConfiguration instead.
  */
-#define SETUP_RadarConfiguration_RadarCfg_MaxDistance_valid      1, 0, 0, 1, 0
+#define SETUP_RadarConfiguration_RadarCfg_MaxDistance_valid 1, 0, 0, 1, 0
 
 /**
  * Get signal RadarCfg_MaxDistance_valid from buffer.
@@ -16526,9 +16364,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarConfiguration_RadarCfg_MaxDistance_valid(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 0) & 0x01) << 0) \
-)
+#define GET_RadarConfiguration_RadarCfg_MaxDistance_valid(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 0) & 0x01) << 0))
 
 /**
  * Set signal RadarCfg_MaxDistance_valid in buffer.
@@ -16538,10 +16374,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarConfiguration_RadarCfg_MaxDistance_valid(buf, val) { \
-	buf[0] &= ~(0x01 << 0); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 0; \
-}
+#define SET_RadarConfiguration_RadarCfg_MaxDistance_valid(buf, val) \
+	{                                                                 \
+		buf[0] &= ~(0x01 << 0);                                         \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 0;                    \
+	}
 
 /**
  * Set signal RadarCfg_MaxDistance_valid in buffer to its initial value.
@@ -16569,22 +16406,22 @@
 /**
  * Signal RadarCfg_MaxDistance_valid raw initial value.
  */
-#define START_RadarConfiguration_RadarCfg_MaxDistance_valid      0
+#define START_RadarConfiguration_RadarCfg_MaxDistance_valid 0
 
 /**
  * Signal RadarCfg_MaxDistance_valid raw minimum value.
  */
-#define MIN_RadarConfiguration_RadarCfg_MaxDistance_valid        0
+#define MIN_RadarConfiguration_RadarCfg_MaxDistance_valid 0
 
 /**
  * Signal RadarCfg_MaxDistance_valid raw maximum value.
  */
-#define MAX_RadarConfiguration_RadarCfg_MaxDistance_valid        1
+#define MAX_RadarConfiguration_RadarCfg_MaxDistance_valid 1
 
 /**
  * Signal RadarCfg_MaxDistance_valid raw offset value.
  */
-#define OFF_RadarConfiguration_RadarCfg_MaxDistance_valid        0
+#define OFF_RadarConfiguration_RadarCfg_MaxDistance_valid 0
 
 /**
  * @}
@@ -16603,14 +16440,14 @@
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_MaxDistance_valid
  */
-#define RadarConfiguration_RadarCfg_MaxDistance_valid_Valid               1
+#define RadarConfiguration_RadarCfg_MaxDistance_valid_Valid 1
 
 /**
  * Value table RadarConfiguration_RadarCfg_MaxDistance_valid entry Invalid.
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_MaxDistance_valid
  */
-#define RadarConfiguration_RadarCfg_MaxDistance_valid_Invalid             0
+#define RadarConfiguration_RadarCfg_MaxDistance_valid_Invalid 0
 
 /**
  * @defgroup SIG_RadarConfiguration_RadarCfg_RadarPower_valid Signal RadarCfg_RadarPower_valid of Message RadarConfiguration (0x200)
@@ -16632,7 +16469,7 @@
  * @deprecated
  *	Use \ref SET_RadarConfiguration_RadarCfg_RadarPower_valid and \ref GET_RadarConfiguration_RadarCfg_RadarPower_valid instead.
  */
-#define SIG_RadarConfiguration_RadarCfg_RadarPower_valid        1, 0, 2, 1
+#define SIG_RadarConfiguration_RadarCfg_RadarPower_valid 1, 0, 2, 1
 
 /**
  * Signal RadarCfg_RadarPower_valid setup tuple.
@@ -16640,7 +16477,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarConfiguration_RadarCfg_RadarPower_valid or \ref INIT_RadarConfiguration instead.
  */
-#define SETUP_RadarConfiguration_RadarCfg_RadarPower_valid      1, 0, 2, 1, 0
+#define SETUP_RadarConfiguration_RadarCfg_RadarPower_valid 1, 0, 2, 1, 0
 
 /**
  * Get signal RadarCfg_RadarPower_valid from buffer.
@@ -16650,9 +16487,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarConfiguration_RadarCfg_RadarPower_valid(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 2) & 0x01) << 0) \
-)
+#define GET_RadarConfiguration_RadarCfg_RadarPower_valid(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 2) & 0x01) << 0))
 
 /**
  * Set signal RadarCfg_RadarPower_valid in buffer.
@@ -16662,10 +16497,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarConfiguration_RadarCfg_RadarPower_valid(buf, val) { \
-	buf[0] &= ~(0x01 << 2); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 2; \
-}
+#define SET_RadarConfiguration_RadarCfg_RadarPower_valid(buf, val) \
+	{                                                                \
+		buf[0] &= ~(0x01 << 2);                                        \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 2;                   \
+	}
 
 /**
  * Set signal RadarCfg_RadarPower_valid in buffer to its initial value.
@@ -16693,22 +16529,22 @@
 /**
  * Signal RadarCfg_RadarPower_valid raw initial value.
  */
-#define START_RadarConfiguration_RadarCfg_RadarPower_valid      0
+#define START_RadarConfiguration_RadarCfg_RadarPower_valid 0
 
 /**
  * Signal RadarCfg_RadarPower_valid raw minimum value.
  */
-#define MIN_RadarConfiguration_RadarCfg_RadarPower_valid        0
+#define MIN_RadarConfiguration_RadarCfg_RadarPower_valid 0
 
 /**
  * Signal RadarCfg_RadarPower_valid raw maximum value.
  */
-#define MAX_RadarConfiguration_RadarCfg_RadarPower_valid        1
+#define MAX_RadarConfiguration_RadarCfg_RadarPower_valid 1
 
 /**
  * Signal RadarCfg_RadarPower_valid raw offset value.
  */
-#define OFF_RadarConfiguration_RadarCfg_RadarPower_valid        0
+#define OFF_RadarConfiguration_RadarCfg_RadarPower_valid 0
 
 /**
  * @}
@@ -16727,14 +16563,14 @@
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_RadarPower_valid
  */
-#define RadarConfiguration_RadarCfg_RadarPower_valid_Valid               1
+#define RadarConfiguration_RadarCfg_RadarPower_valid_Valid 1
 
 /**
  * Value table RadarConfiguration_RadarCfg_RadarPower_valid entry Invalid.
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_RadarPower_valid
  */
-#define RadarConfiguration_RadarCfg_RadarPower_valid_Invalid             0
+#define RadarConfiguration_RadarCfg_RadarPower_valid_Invalid 0
 
 /**
  * @defgroup SIG_RadarConfiguration_RadarCfg_OutputType_valid Signal RadarCfg_OutputType_valid of Message RadarConfiguration (0x200)
@@ -16756,7 +16592,7 @@
  * @deprecated
  *	Use \ref SET_RadarConfiguration_RadarCfg_OutputType_valid and \ref GET_RadarConfiguration_RadarCfg_OutputType_valid instead.
  */
-#define SIG_RadarConfiguration_RadarCfg_OutputType_valid        1, 0, 3, 1
+#define SIG_RadarConfiguration_RadarCfg_OutputType_valid 1, 0, 3, 1
 
 /**
  * Signal RadarCfg_OutputType_valid setup tuple.
@@ -16764,7 +16600,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarConfiguration_RadarCfg_OutputType_valid or \ref INIT_RadarConfiguration instead.
  */
-#define SETUP_RadarConfiguration_RadarCfg_OutputType_valid      1, 0, 3, 1, 0
+#define SETUP_RadarConfiguration_RadarCfg_OutputType_valid 1, 0, 3, 1, 0
 
 /**
  * Get signal RadarCfg_OutputType_valid from buffer.
@@ -16774,9 +16610,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarConfiguration_RadarCfg_OutputType_valid(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 3) & 0x01) << 0) \
-)
+#define GET_RadarConfiguration_RadarCfg_OutputType_valid(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 3) & 0x01) << 0))
 
 /**
  * Set signal RadarCfg_OutputType_valid in buffer.
@@ -16786,10 +16620,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarConfiguration_RadarCfg_OutputType_valid(buf, val) { \
-	buf[0] &= ~(0x01 << 3); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 3; \
-}
+#define SET_RadarConfiguration_RadarCfg_OutputType_valid(buf, val) \
+	{                                                                \
+		buf[0] &= ~(0x01 << 3);                                        \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 3;                   \
+	}
 
 /**
  * Set signal RadarCfg_OutputType_valid in buffer to its initial value.
@@ -16817,22 +16652,22 @@
 /**
  * Signal RadarCfg_OutputType_valid raw initial value.
  */
-#define START_RadarConfiguration_RadarCfg_OutputType_valid      0
+#define START_RadarConfiguration_RadarCfg_OutputType_valid 0
 
 /**
  * Signal RadarCfg_OutputType_valid raw minimum value.
  */
-#define MIN_RadarConfiguration_RadarCfg_OutputType_valid        0
+#define MIN_RadarConfiguration_RadarCfg_OutputType_valid 0
 
 /**
  * Signal RadarCfg_OutputType_valid raw maximum value.
  */
-#define MAX_RadarConfiguration_RadarCfg_OutputType_valid        1
+#define MAX_RadarConfiguration_RadarCfg_OutputType_valid 1
 
 /**
  * Signal RadarCfg_OutputType_valid raw offset value.
  */
-#define OFF_RadarConfiguration_RadarCfg_OutputType_valid        0
+#define OFF_RadarConfiguration_RadarCfg_OutputType_valid 0
 
 /**
  * @}
@@ -16851,14 +16686,14 @@
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_OutputType_valid
  */
-#define RadarConfiguration_RadarCfg_OutputType_valid_Valid               1
+#define RadarConfiguration_RadarCfg_OutputType_valid_Valid 1
 
 /**
  * Value table RadarConfiguration_RadarCfg_OutputType_valid entry Invalid.
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_OutputType_valid
  */
-#define RadarConfiguration_RadarCfg_OutputType_valid_Invalid             0
+#define RadarConfiguration_RadarCfg_OutputType_valid_Invalid 0
 
 /**
  * @defgroup SIG_RadarConfiguration_RadarCfg_SensorID_valid Signal RadarCfg_SensorID_valid of Message RadarConfiguration (0x200)
@@ -16880,7 +16715,7 @@
  * @deprecated
  *	Use \ref SET_RadarConfiguration_RadarCfg_SensorID_valid and \ref GET_RadarConfiguration_RadarCfg_SensorID_valid instead.
  */
-#define SIG_RadarConfiguration_RadarCfg_SensorID_valid        1, 0, 1, 1
+#define SIG_RadarConfiguration_RadarCfg_SensorID_valid 1, 0, 1, 1
 
 /**
  * Signal RadarCfg_SensorID_valid setup tuple.
@@ -16888,7 +16723,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarConfiguration_RadarCfg_SensorID_valid or \ref INIT_RadarConfiguration instead.
  */
-#define SETUP_RadarConfiguration_RadarCfg_SensorID_valid      1, 0, 1, 1, 0
+#define SETUP_RadarConfiguration_RadarCfg_SensorID_valid 1, 0, 1, 1, 0
 
 /**
  * Get signal RadarCfg_SensorID_valid from buffer.
@@ -16898,9 +16733,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarConfiguration_RadarCfg_SensorID_valid(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 1) & 0x01) << 0) \
-)
+#define GET_RadarConfiguration_RadarCfg_SensorID_valid(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 1) & 0x01) << 0))
 
 /**
  * Set signal RadarCfg_SensorID_valid in buffer.
@@ -16910,10 +16743,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarConfiguration_RadarCfg_SensorID_valid(buf, val) { \
-	buf[0] &= ~(0x01 << 1); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 1; \
-}
+#define SET_RadarConfiguration_RadarCfg_SensorID_valid(buf, val) \
+	{                                                              \
+		buf[0] &= ~(0x01 << 1);                                      \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 1;                 \
+	}
 
 /**
  * Set signal RadarCfg_SensorID_valid in buffer to its initial value.
@@ -16941,22 +16775,22 @@
 /**
  * Signal RadarCfg_SensorID_valid raw initial value.
  */
-#define START_RadarConfiguration_RadarCfg_SensorID_valid      0
+#define START_RadarConfiguration_RadarCfg_SensorID_valid 0
 
 /**
  * Signal RadarCfg_SensorID_valid raw minimum value.
  */
-#define MIN_RadarConfiguration_RadarCfg_SensorID_valid        0
+#define MIN_RadarConfiguration_RadarCfg_SensorID_valid 0
 
 /**
  * Signal RadarCfg_SensorID_valid raw maximum value.
  */
-#define MAX_RadarConfiguration_RadarCfg_SensorID_valid        1
+#define MAX_RadarConfiguration_RadarCfg_SensorID_valid 1
 
 /**
  * Signal RadarCfg_SensorID_valid raw offset value.
  */
-#define OFF_RadarConfiguration_RadarCfg_SensorID_valid        0
+#define OFF_RadarConfiguration_RadarCfg_SensorID_valid 0
 
 /**
  * @}
@@ -16975,14 +16809,14 @@
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_SensorID_valid
  */
-#define RadarConfiguration_RadarCfg_SensorID_valid_Valid               1
+#define RadarConfiguration_RadarCfg_SensorID_valid_Valid 1
 
 /**
  * Value table RadarConfiguration_RadarCfg_SensorID_valid entry Invalid.
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_SensorID_valid
  */
-#define RadarConfiguration_RadarCfg_SensorID_valid_Invalid             0
+#define RadarConfiguration_RadarCfg_SensorID_valid_Invalid 0
 
 /**
  * @defgroup SIG_RadarConfiguration_RadarCfg_MaxDistance Signal RadarCfg_MaxDistance of Message RadarConfiguration (0x200)
@@ -17002,7 +16836,7 @@
  * @deprecated
  *	Use \ref SET_RadarConfiguration_RadarCfg_MaxDistance and \ref GET_RadarConfiguration_RadarCfg_MaxDistance instead.
  */
-#define SIG_RadarConfiguration_RadarCfg_MaxDistance        1, 0, 15, 10
+#define SIG_RadarConfiguration_RadarCfg_MaxDistance 1, 0, 15, 10
 
 /**
  * Signal RadarCfg_MaxDistance setup tuple.
@@ -17010,7 +16844,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarConfiguration_RadarCfg_MaxDistance or \ref INIT_RadarConfiguration instead.
  */
-#define SETUP_RadarConfiguration_RadarCfg_MaxDistance      1, 0, 15, 10, 0
+#define SETUP_RadarConfiguration_RadarCfg_MaxDistance 1, 0, 15, 10, 0
 
 /**
  * Get signal RadarCfg_MaxDistance from buffer.
@@ -17020,10 +16854,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarConfiguration_RadarCfg_MaxDistance(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0xff) << 2) \
-	| (ubyte)(+(ubyte)((buf[2] >> 6) & 0x03) << 0) \
-)
+#define GET_RadarConfiguration_RadarCfg_MaxDistance(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0xff) << 2) | (ubyte)(+(ubyte)((buf[2] >> 6) & 0x03) << 0))
 
 /**
  * Set signal RadarCfg_MaxDistance in buffer.
@@ -17033,12 +16864,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarConfiguration_RadarCfg_MaxDistance(buf, val) { \
-	buf[1] &= ~(0xff << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 2) & 0xff) << 0; \
-	buf[2] &= ~(0x03 << 6); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0x03) << 6; \
-}
+#define SET_RadarConfiguration_RadarCfg_MaxDistance(buf, val) \
+	{                                                           \
+		buf[1] &= ~(0xff << 0);                                   \
+		buf[1] |= ((ubyte)((uword)(val) >> 2) & 0xff) << 0;       \
+		buf[2] &= ~(0x03 << 6);                                   \
+		buf[2] |= (((ubyte)(val) >> 0) & 0x03) << 6;              \
+	}
 
 /**
  * Set signal RadarCfg_MaxDistance in buffer to its initial value.
@@ -17066,22 +16898,22 @@
 /**
  * Signal RadarCfg_MaxDistance raw initial value.
  */
-#define START_RadarConfiguration_RadarCfg_MaxDistance      0
+#define START_RadarConfiguration_RadarCfg_MaxDistance 0
 
 /**
  * Signal RadarCfg_MaxDistance raw minimum value.
  */
-#define MIN_RadarConfiguration_RadarCfg_MaxDistance        0
+#define MIN_RadarConfiguration_RadarCfg_MaxDistance 0
 
 /**
  * Signal RadarCfg_MaxDistance raw maximum value.
  */
-#define MAX_RadarConfiguration_RadarCfg_MaxDistance        1023
+#define MAX_RadarConfiguration_RadarCfg_MaxDistance 1023
 
 /**
  * Signal RadarCfg_MaxDistance raw offset value.
  */
-#define OFF_RadarConfiguration_RadarCfg_MaxDistance        0
+#define OFF_RadarConfiguration_RadarCfg_MaxDistance 0
 
 /**
  * @}
@@ -17107,7 +16939,7 @@
  * @deprecated
  *	Use \ref SET_RadarConfiguration_RadarCfg_RadarPower and \ref GET_RadarConfiguration_RadarCfg_RadarPower instead.
  */
-#define SIG_RadarConfiguration_RadarCfg_RadarPower        1, 0, 39, 3
+#define SIG_RadarConfiguration_RadarCfg_RadarPower 1, 0, 39, 3
 
 /**
  * Signal RadarCfg_RadarPower setup tuple.
@@ -17115,7 +16947,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarConfiguration_RadarCfg_RadarPower or \ref INIT_RadarConfiguration instead.
  */
-#define SETUP_RadarConfiguration_RadarCfg_RadarPower      1, 0, 39, 3, 0
+#define SETUP_RadarConfiguration_RadarCfg_RadarPower 1, 0, 39, 3, 0
 
 /**
  * Get signal RadarCfg_RadarPower from buffer.
@@ -17125,9 +16957,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarConfiguration_RadarCfg_RadarPower(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[4] >> 5) & 0x07) << 0) \
-)
+#define GET_RadarConfiguration_RadarCfg_RadarPower(buf) (0 | (ubyte)(+(ubyte)((buf[4] >> 5) & 0x07) << 0))
 
 /**
  * Set signal RadarCfg_RadarPower in buffer.
@@ -17137,10 +16967,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarConfiguration_RadarCfg_RadarPower(buf, val) { \
-	buf[4] &= ~(0x07 << 5); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0x07) << 5; \
-}
+#define SET_RadarConfiguration_RadarCfg_RadarPower(buf, val) \
+	{                                                          \
+		buf[4] &= ~(0x07 << 5);                                  \
+		buf[4] |= (((ubyte)(val) >> 0) & 0x07) << 5;             \
+	}
 
 /**
  * Set signal RadarCfg_RadarPower in buffer to its initial value.
@@ -17168,22 +16999,22 @@
 /**
  * Signal RadarCfg_RadarPower raw initial value.
  */
-#define START_RadarConfiguration_RadarCfg_RadarPower      0
+#define START_RadarConfiguration_RadarCfg_RadarPower 0
 
 /**
  * Signal RadarCfg_RadarPower raw minimum value.
  */
-#define MIN_RadarConfiguration_RadarCfg_RadarPower        0
+#define MIN_RadarConfiguration_RadarCfg_RadarPower 0
 
 /**
  * Signal RadarCfg_RadarPower raw maximum value.
  */
-#define MAX_RadarConfiguration_RadarCfg_RadarPower        7
+#define MAX_RadarConfiguration_RadarCfg_RadarPower 7
 
 /**
  * Signal RadarCfg_RadarPower raw offset value.
  */
-#define OFF_RadarConfiguration_RadarCfg_RadarPower        0
+#define OFF_RadarConfiguration_RadarCfg_RadarPower 0
 
 /**
  * @}
@@ -17202,28 +17033,28 @@
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_RadarPower
  */
-#define RadarConfiguration_RadarCfg_RadarPower_Reserved            7
+#define RadarConfiguration_RadarCfg_RadarPower_Reserved 7
 
 /**
  * Value table RadarConfiguration_RadarCfg_RadarPower entry Reserved_6.
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_RadarPower
  */
-#define RadarConfiguration_RadarCfg_RadarPower_Reserved_6          6
+#define RadarConfiguration_RadarCfg_RadarPower_Reserved_6 6
 
 /**
  * Value table RadarConfiguration_RadarCfg_RadarPower entry Reserved_5.
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_RadarPower
  */
-#define RadarConfiguration_RadarCfg_RadarPower_Reserved_5          5
+#define RadarConfiguration_RadarCfg_RadarPower_Reserved_5 5
 
 /**
  * Value table RadarConfiguration_RadarCfg_RadarPower entry Reserved_4.
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_RadarPower
  */
-#define RadarConfiguration_RadarCfg_RadarPower_Reserved_4          4
+#define RadarConfiguration_RadarCfg_RadarPower_Reserved_4 4
 
 /**
  * Value table RadarConfiguration_RadarCfg_RadarPower entry _9.
@@ -17232,7 +17063,7 @@
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_RadarPower
  */
-#define RadarConfiguration_RadarCfg_RadarPower__9                  3
+#define RadarConfiguration_RadarCfg_RadarPower__9 3
 
 /**
  * Value table RadarConfiguration_RadarCfg_RadarPower entry _6.
@@ -17241,7 +17072,7 @@
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_RadarPower
  */
-#define RadarConfiguration_RadarCfg_RadarPower__6                  2
+#define RadarConfiguration_RadarCfg_RadarPower__6 2
 
 /**
  * Value table RadarConfiguration_RadarCfg_RadarPower entry _3.
@@ -17250,14 +17081,14 @@
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_RadarPower
  */
-#define RadarConfiguration_RadarCfg_RadarPower__3                  1
+#define RadarConfiguration_RadarCfg_RadarPower__3 1
 
 /**
  * Value table RadarConfiguration_RadarCfg_RadarPower entry Standard.
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_RadarPower
  */
-#define RadarConfiguration_RadarCfg_RadarPower_Standard            0
+#define RadarConfiguration_RadarCfg_RadarPower_Standard 0
 
 /**
  * @defgroup SIG_RadarConfiguration_RadarCfg_OutputType Signal RadarCfg_OutputType of Message RadarConfiguration (0x200)
@@ -17279,7 +17110,7 @@
  * @deprecated
  *	Use \ref SET_RadarConfiguration_RadarCfg_OutputType and \ref GET_RadarConfiguration_RadarCfg_OutputType instead.
  */
-#define SIG_RadarConfiguration_RadarCfg_OutputType        1, 0, 36, 2
+#define SIG_RadarConfiguration_RadarCfg_OutputType 1, 0, 36, 2
 
 /**
  * Signal RadarCfg_OutputType setup tuple.
@@ -17287,7 +17118,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarConfiguration_RadarCfg_OutputType or \ref INIT_RadarConfiguration instead.
  */
-#define SETUP_RadarConfiguration_RadarCfg_OutputType      1, 0, 36, 2, 0
+#define SETUP_RadarConfiguration_RadarCfg_OutputType 1, 0, 36, 2, 0
 
 /**
  * Get signal RadarCfg_OutputType from buffer.
@@ -17297,9 +17128,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarConfiguration_RadarCfg_OutputType(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[4] >> 3) & 0x03) << 0) \
-)
+#define GET_RadarConfiguration_RadarCfg_OutputType(buf) (0 | (ubyte)(+(ubyte)((buf[4] >> 3) & 0x03) << 0))
 
 /**
  * Set signal RadarCfg_OutputType in buffer.
@@ -17309,10 +17138,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarConfiguration_RadarCfg_OutputType(buf, val) { \
-	buf[4] &= ~(0x03 << 3); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0x03) << 3; \
-}
+#define SET_RadarConfiguration_RadarCfg_OutputType(buf, val) \
+	{                                                          \
+		buf[4] &= ~(0x03 << 3);                                  \
+		buf[4] |= (((ubyte)(val) >> 0) & 0x03) << 3;             \
+	}
 
 /**
  * Set signal RadarCfg_OutputType in buffer to its initial value.
@@ -17340,22 +17170,22 @@
 /**
  * Signal RadarCfg_OutputType raw initial value.
  */
-#define START_RadarConfiguration_RadarCfg_OutputType      0
+#define START_RadarConfiguration_RadarCfg_OutputType 0
 
 /**
  * Signal RadarCfg_OutputType raw minimum value.
  */
-#define MIN_RadarConfiguration_RadarCfg_OutputType        0
+#define MIN_RadarConfiguration_RadarCfg_OutputType 0
 
 /**
  * Signal RadarCfg_OutputType raw maximum value.
  */
-#define MAX_RadarConfiguration_RadarCfg_OutputType        2
+#define MAX_RadarConfiguration_RadarCfg_OutputType 2
 
 /**
  * Signal RadarCfg_OutputType raw offset value.
  */
-#define OFF_RadarConfiguration_RadarCfg_OutputType        0
+#define OFF_RadarConfiguration_RadarCfg_OutputType 0
 
 /**
  * @}
@@ -17376,28 +17206,28 @@
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_OutputType
  */
-#define RadarConfiguration_RadarCfg_OutputType_reserved            3
+#define RadarConfiguration_RadarCfg_OutputType_reserved 3
 
 /**
  * Value table RadarConfiguration_RadarCfg_OutputType entry SendClusters.
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_OutputType
  */
-#define RadarConfiguration_RadarCfg_OutputType_SendClusters        2
+#define RadarConfiguration_RadarCfg_OutputType_SendClusters 2
 
 /**
  * Value table RadarConfiguration_RadarCfg_OutputType entry SendObjects.
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_OutputType
  */
-#define RadarConfiguration_RadarCfg_OutputType_SendObjects         1
+#define RadarConfiguration_RadarCfg_OutputType_SendObjects 1
 
 /**
  * Value table RadarConfiguration_RadarCfg_OutputType entry None.
  *
  * @ingroup ENUM_RadarConfiguration_RadarCfg_OutputType
  */
-#define RadarConfiguration_RadarCfg_OutputType_None                0
+#define RadarConfiguration_RadarCfg_OutputType_None 0
 
 /**
  * @defgroup SIG_RadarConfiguration_RadarCfg_SensorID Signal RadarCfg_SensorID of Message RadarConfiguration (0x200)
@@ -17417,7 +17247,7 @@
  * @deprecated
  *	Use \ref SET_RadarConfiguration_RadarCfg_SensorID and \ref GET_RadarConfiguration_RadarCfg_SensorID instead.
  */
-#define SIG_RadarConfiguration_RadarCfg_SensorID        1, 0, 34, 3
+#define SIG_RadarConfiguration_RadarCfg_SensorID 1, 0, 34, 3
 
 /**
  * Signal RadarCfg_SensorID setup tuple.
@@ -17425,7 +17255,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarConfiguration_RadarCfg_SensorID or \ref INIT_RadarConfiguration instead.
  */
-#define SETUP_RadarConfiguration_RadarCfg_SensorID      1, 0, 34, 3, 0
+#define SETUP_RadarConfiguration_RadarCfg_SensorID 1, 0, 34, 3, 0
 
 /**
  * Get signal RadarCfg_SensorID from buffer.
@@ -17435,9 +17265,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarConfiguration_RadarCfg_SensorID(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0x07) << 0) \
-)
+#define GET_RadarConfiguration_RadarCfg_SensorID(buf) (0 | (ubyte)(+(ubyte)((buf[4] >> 0) & 0x07) << 0))
 
 /**
  * Set signal RadarCfg_SensorID in buffer.
@@ -17447,10 +17275,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarConfiguration_RadarCfg_SensorID(buf, val) { \
-	buf[4] &= ~(0x07 << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0x07) << 0; \
-}
+#define SET_RadarConfiguration_RadarCfg_SensorID(buf, val) \
+	{                                                        \
+		buf[4] &= ~(0x07 << 0);                                \
+		buf[4] |= (((ubyte)(val) >> 0) & 0x07) << 0;           \
+	}
 
 /**
  * Set signal RadarCfg_SensorID in buffer to its initial value.
@@ -17478,22 +17307,22 @@
 /**
  * Signal RadarCfg_SensorID raw initial value.
  */
-#define START_RadarConfiguration_RadarCfg_SensorID      0
+#define START_RadarConfiguration_RadarCfg_SensorID 0
 
 /**
  * Signal RadarCfg_SensorID raw minimum value.
  */
-#define MIN_RadarConfiguration_RadarCfg_SensorID        0
+#define MIN_RadarConfiguration_RadarCfg_SensorID 0
 
 /**
  * Signal RadarCfg_SensorID raw maximum value.
  */
-#define MAX_RadarConfiguration_RadarCfg_SensorID        7
+#define MAX_RadarConfiguration_RadarCfg_SensorID 7
 
 /**
  * Signal RadarCfg_SensorID raw offset value.
  */
-#define OFF_RadarConfiguration_RadarCfg_SensorID        0
+#define OFF_RadarConfiguration_RadarCfg_SensorID 0
 
 /**
  * @}
@@ -17516,7 +17345,7 @@
  * @deprecated
  *	Use \ref SET_RadarState_RadarState_Voltage_Error and \ref GET_RadarState_RadarState_Voltage_Error instead.
  */
-#define SIG_RadarState_RadarState_Voltage_Error        1, 0, 17, 1
+#define SIG_RadarState_RadarState_Voltage_Error 1, 0, 17, 1
 
 /**
  * Signal RadarState_Voltage_Error setup tuple.
@@ -17524,7 +17353,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarState_RadarState_Voltage_Error or \ref INIT_RadarState instead.
  */
-#define SETUP_RadarState_RadarState_Voltage_Error      1, 0, 17, 1, 0
+#define SETUP_RadarState_RadarState_Voltage_Error 1, 0, 17, 1, 0
 
 /**
  * Get signal RadarState_Voltage_Error from buffer.
@@ -17534,9 +17363,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarState_RadarState_Voltage_Error(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[2] >> 1) & 0x01) << 0) \
-)
+#define GET_RadarState_RadarState_Voltage_Error(buf) (0 | (ubyte)(+(ubyte)((buf[2] >> 1) & 0x01) << 0))
 
 /**
  * Set signal RadarState_Voltage_Error in buffer.
@@ -17546,10 +17373,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarState_RadarState_Voltage_Error(buf, val) { \
-	buf[2] &= ~(0x01 << 1); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0x01) << 1; \
-}
+#define SET_RadarState_RadarState_Voltage_Error(buf, val) \
+	{                                                       \
+		buf[2] &= ~(0x01 << 1);                               \
+		buf[2] |= (((ubyte)(val) >> 0) & 0x01) << 1;          \
+	}
 
 /**
  * Set signal RadarState_Voltage_Error in buffer to its initial value.
@@ -17577,22 +17405,22 @@
 /**
  * Signal RadarState_Voltage_Error raw initial value.
  */
-#define START_RadarState_RadarState_Voltage_Error      0
+#define START_RadarState_RadarState_Voltage_Error 0
 
 /**
  * Signal RadarState_Voltage_Error raw minimum value.
  */
-#define MIN_RadarState_RadarState_Voltage_Error        0
+#define MIN_RadarState_RadarState_Voltage_Error 0
 
 /**
  * Signal RadarState_Voltage_Error raw maximum value.
  */
-#define MAX_RadarState_RadarState_Voltage_Error        0
+#define MAX_RadarState_RadarState_Voltage_Error 0
 
 /**
  * Signal RadarState_Voltage_Error raw offset value.
  */
-#define OFF_RadarState_RadarState_Voltage_Error        0
+#define OFF_RadarState_RadarState_Voltage_Error 0
 
 /**
  * @}
@@ -17613,7 +17441,7 @@
  *
  * @ingroup ENUM_RadarState_RadarState_Voltage_Error
  */
-#define RadarState_RadarState_Voltage_Error_Error               1
+#define RadarState_RadarState_Voltage_Error_Error 1
 
 /**
  * Value table RadarState_RadarState_Voltage_Error entry No.
@@ -17622,7 +17450,7 @@
  *
  * @ingroup ENUM_RadarState_RadarState_Voltage_Error
  */
-#define RadarState_RadarState_Voltage_Error_No                  0
+#define RadarState_RadarState_Voltage_Error_No 0
 
 /**
  * @defgroup SIG_RadarState_RadarState_Temporary_Error Signal RadarState_Temporary_Error of Message RadarState (0x201)
@@ -17641,7 +17469,7 @@
  * @deprecated
  *	Use \ref SET_RadarState_RadarState_Temporary_Error and \ref GET_RadarState_RadarState_Temporary_Error instead.
  */
-#define SIG_RadarState_RadarState_Temporary_Error        1, 0, 18, 1
+#define SIG_RadarState_RadarState_Temporary_Error 1, 0, 18, 1
 
 /**
  * Signal RadarState_Temporary_Error setup tuple.
@@ -17649,7 +17477,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarState_RadarState_Temporary_Error or \ref INIT_RadarState instead.
  */
-#define SETUP_RadarState_RadarState_Temporary_Error      1, 0, 18, 1, 0
+#define SETUP_RadarState_RadarState_Temporary_Error 1, 0, 18, 1, 0
 
 /**
  * Get signal RadarState_Temporary_Error from buffer.
@@ -17659,9 +17487,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarState_RadarState_Temporary_Error(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[2] >> 2) & 0x01) << 0) \
-)
+#define GET_RadarState_RadarState_Temporary_Error(buf) (0 | (ubyte)(+(ubyte)((buf[2] >> 2) & 0x01) << 0))
 
 /**
  * Set signal RadarState_Temporary_Error in buffer.
@@ -17671,10 +17497,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarState_RadarState_Temporary_Error(buf, val) { \
-	buf[2] &= ~(0x01 << 2); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0x01) << 2; \
-}
+#define SET_RadarState_RadarState_Temporary_Error(buf, val) \
+	{                                                         \
+		buf[2] &= ~(0x01 << 2);                                 \
+		buf[2] |= (((ubyte)(val) >> 0) & 0x01) << 2;            \
+	}
 
 /**
  * Set signal RadarState_Temporary_Error in buffer to its initial value.
@@ -17702,22 +17529,22 @@
 /**
  * Signal RadarState_Temporary_Error raw initial value.
  */
-#define START_RadarState_RadarState_Temporary_Error      0
+#define START_RadarState_RadarState_Temporary_Error 0
 
 /**
  * Signal RadarState_Temporary_Error raw minimum value.
  */
-#define MIN_RadarState_RadarState_Temporary_Error        0
+#define MIN_RadarState_RadarState_Temporary_Error 0
 
 /**
  * Signal RadarState_Temporary_Error raw maximum value.
  */
-#define MAX_RadarState_RadarState_Temporary_Error        0
+#define MAX_RadarState_RadarState_Temporary_Error 0
 
 /**
  * Signal RadarState_Temporary_Error raw offset value.
  */
-#define OFF_RadarState_RadarState_Temporary_Error        0
+#define OFF_RadarState_RadarState_Temporary_Error 0
 
 /**
  * @}
@@ -17738,7 +17565,7 @@
  *
  * @ingroup ENUM_RadarState_RadarState_Temporary_Error
  */
-#define RadarState_RadarState_Temporary_Error_Error               1
+#define RadarState_RadarState_Temporary_Error_Error 1
 
 /**
  * Value table RadarState_RadarState_Temporary_Error entry No.
@@ -17747,7 +17574,7 @@
  *
  * @ingroup ENUM_RadarState_RadarState_Temporary_Error
  */
-#define RadarState_RadarState_Temporary_Error_No                  0
+#define RadarState_RadarState_Temporary_Error_No 0
 
 /**
  * @defgroup SIG_RadarState_RadarState_Temperature_Error Signal RadarState_Temperature_Error of Message RadarState (0x201)
@@ -17766,7 +17593,7 @@
  * @deprecated
  *	Use \ref SET_RadarState_RadarState_Temperature_Error and \ref GET_RadarState_RadarState_Temperature_Error instead.
  */
-#define SIG_RadarState_RadarState_Temperature_Error        1, 0, 19, 1
+#define SIG_RadarState_RadarState_Temperature_Error 1, 0, 19, 1
 
 /**
  * Signal RadarState_Temperature_Error setup tuple.
@@ -17774,7 +17601,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarState_RadarState_Temperature_Error or \ref INIT_RadarState instead.
  */
-#define SETUP_RadarState_RadarState_Temperature_Error      1, 0, 19, 1, 0
+#define SETUP_RadarState_RadarState_Temperature_Error 1, 0, 19, 1, 0
 
 /**
  * Get signal RadarState_Temperature_Error from buffer.
@@ -17784,9 +17611,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarState_RadarState_Temperature_Error(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[2] >> 3) & 0x01) << 0) \
-)
+#define GET_RadarState_RadarState_Temperature_Error(buf) (0 | (ubyte)(+(ubyte)((buf[2] >> 3) & 0x01) << 0))
 
 /**
  * Set signal RadarState_Temperature_Error in buffer.
@@ -17796,10 +17621,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarState_RadarState_Temperature_Error(buf, val) { \
-	buf[2] &= ~(0x01 << 3); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0x01) << 3; \
-}
+#define SET_RadarState_RadarState_Temperature_Error(buf, val) \
+	{                                                           \
+		buf[2] &= ~(0x01 << 3);                                   \
+		buf[2] |= (((ubyte)(val) >> 0) & 0x01) << 3;              \
+	}
 
 /**
  * Set signal RadarState_Temperature_Error in buffer to its initial value.
@@ -17827,22 +17653,22 @@
 /**
  * Signal RadarState_Temperature_Error raw initial value.
  */
-#define START_RadarState_RadarState_Temperature_Error      0
+#define START_RadarState_RadarState_Temperature_Error 0
 
 /**
  * Signal RadarState_Temperature_Error raw minimum value.
  */
-#define MIN_RadarState_RadarState_Temperature_Error        0
+#define MIN_RadarState_RadarState_Temperature_Error 0
 
 /**
  * Signal RadarState_Temperature_Error raw maximum value.
  */
-#define MAX_RadarState_RadarState_Temperature_Error        0
+#define MAX_RadarState_RadarState_Temperature_Error 0
 
 /**
  * Signal RadarState_Temperature_Error raw offset value.
  */
-#define OFF_RadarState_RadarState_Temperature_Error        0
+#define OFF_RadarState_RadarState_Temperature_Error 0
 
 /**
  * @}
@@ -17863,7 +17689,7 @@
  *
  * @ingroup ENUM_RadarState_RadarState_Temperature_Error
  */
-#define RadarState_RadarState_Temperature_Error_Error               1
+#define RadarState_RadarState_Temperature_Error_Error 1
 
 /**
  * Value table RadarState_RadarState_Temperature_Error entry No.
@@ -17872,7 +17698,7 @@
  *
  * @ingroup ENUM_RadarState_RadarState_Temperature_Error
  */
-#define RadarState_RadarState_Temperature_Error_No                  0
+#define RadarState_RadarState_Temperature_Error_No 0
 
 /**
  * @defgroup SIG_RadarState_RadarState_Interference Signal RadarState_Interference of Message RadarState (0x201)
@@ -17891,7 +17717,7 @@
  * @deprecated
  *	Use \ref SET_RadarState_RadarState_Interference and \ref GET_RadarState_RadarState_Interference instead.
  */
-#define SIG_RadarState_RadarState_Interference        1, 0, 20, 1
+#define SIG_RadarState_RadarState_Interference 1, 0, 20, 1
 
 /**
  * Signal RadarState_Interference setup tuple.
@@ -17899,7 +17725,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarState_RadarState_Interference or \ref INIT_RadarState instead.
  */
-#define SETUP_RadarState_RadarState_Interference      1, 0, 20, 1, 0
+#define SETUP_RadarState_RadarState_Interference 1, 0, 20, 1, 0
 
 /**
  * Get signal RadarState_Interference from buffer.
@@ -17909,9 +17735,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarState_RadarState_Interference(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[2] >> 4) & 0x01) << 0) \
-)
+#define GET_RadarState_RadarState_Interference(buf) (0 | (ubyte)(+(ubyte)((buf[2] >> 4) & 0x01) << 0))
 
 /**
  * Set signal RadarState_Interference in buffer.
@@ -17921,10 +17745,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarState_RadarState_Interference(buf, val) { \
-	buf[2] &= ~(0x01 << 4); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0x01) << 4; \
-}
+#define SET_RadarState_RadarState_Interference(buf, val) \
+	{                                                      \
+		buf[2] &= ~(0x01 << 4);                              \
+		buf[2] |= (((ubyte)(val) >> 0) & 0x01) << 4;         \
+	}
 
 /**
  * Set signal RadarState_Interference in buffer to its initial value.
@@ -17952,22 +17777,22 @@
 /**
  * Signal RadarState_Interference raw initial value.
  */
-#define START_RadarState_RadarState_Interference      0
+#define START_RadarState_RadarState_Interference 0
 
 /**
  * Signal RadarState_Interference raw minimum value.
  */
-#define MIN_RadarState_RadarState_Interference        0
+#define MIN_RadarState_RadarState_Interference 0
 
 /**
  * Signal RadarState_Interference raw maximum value.
  */
-#define MAX_RadarState_RadarState_Interference        0
+#define MAX_RadarState_RadarState_Interference 0
 
 /**
  * Signal RadarState_Interference raw offset value.
  */
-#define OFF_RadarState_RadarState_Interference        0
+#define OFF_RadarState_RadarState_Interference 0
 
 /**
  * @}
@@ -17988,7 +17813,7 @@
  *
  * @ingroup ENUM_RadarState_RadarState_Interference
  */
-#define RadarState_RadarState_Interference_Interference        1
+#define RadarState_RadarState_Interference_Interference 1
 
 /**
  * Value table RadarState_RadarState_Interference entry No.
@@ -17997,7 +17822,7 @@
  *
  * @ingroup ENUM_RadarState_RadarState_Interference
  */
-#define RadarState_RadarState_Interference_No                  0
+#define RadarState_RadarState_Interference_No 0
 
 /**
  * @defgroup SIG_RadarState_RadarState_Persistent_Error Signal RadarState_Persistent_Error of Message RadarState (0x201)
@@ -18016,7 +17841,7 @@
  * @deprecated
  *	Use \ref SET_RadarState_RadarState_Persistent_Error and \ref GET_RadarState_RadarState_Persistent_Error instead.
  */
-#define SIG_RadarState_RadarState_Persistent_Error        1, 0, 21, 1
+#define SIG_RadarState_RadarState_Persistent_Error 1, 0, 21, 1
 
 /**
  * Signal RadarState_Persistent_Error setup tuple.
@@ -18024,7 +17849,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarState_RadarState_Persistent_Error or \ref INIT_RadarState instead.
  */
-#define SETUP_RadarState_RadarState_Persistent_Error      1, 0, 21, 1, 0
+#define SETUP_RadarState_RadarState_Persistent_Error 1, 0, 21, 1, 0
 
 /**
  * Get signal RadarState_Persistent_Error from buffer.
@@ -18034,9 +17859,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarState_RadarState_Persistent_Error(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[2] >> 5) & 0x01) << 0) \
-)
+#define GET_RadarState_RadarState_Persistent_Error(buf) (0 | (ubyte)(+(ubyte)((buf[2] >> 5) & 0x01) << 0))
 
 /**
  * Set signal RadarState_Persistent_Error in buffer.
@@ -18046,10 +17869,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarState_RadarState_Persistent_Error(buf, val) { \
-	buf[2] &= ~(0x01 << 5); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0x01) << 5; \
-}
+#define SET_RadarState_RadarState_Persistent_Error(buf, val) \
+	{                                                          \
+		buf[2] &= ~(0x01 << 5);                                  \
+		buf[2] |= (((ubyte)(val) >> 0) & 0x01) << 5;             \
+	}
 
 /**
  * Set signal RadarState_Persistent_Error in buffer to its initial value.
@@ -18077,22 +17901,22 @@
 /**
  * Signal RadarState_Persistent_Error raw initial value.
  */
-#define START_RadarState_RadarState_Persistent_Error      0
+#define START_RadarState_RadarState_Persistent_Error 0
 
 /**
  * Signal RadarState_Persistent_Error raw minimum value.
  */
-#define MIN_RadarState_RadarState_Persistent_Error        0
+#define MIN_RadarState_RadarState_Persistent_Error 0
 
 /**
  * Signal RadarState_Persistent_Error raw maximum value.
  */
-#define MAX_RadarState_RadarState_Persistent_Error        0
+#define MAX_RadarState_RadarState_Persistent_Error 0
 
 /**
  * Signal RadarState_Persistent_Error raw offset value.
  */
-#define OFF_RadarState_RadarState_Persistent_Error        0
+#define OFF_RadarState_RadarState_Persistent_Error 0
 
 /**
  * @}
@@ -18113,7 +17937,7 @@
  *
  * @ingroup ENUM_RadarState_RadarState_Persistent_Error
  */
-#define RadarState_RadarState_Persistent_Error_Error               1
+#define RadarState_RadarState_Persistent_Error_Error 1
 
 /**
  * Value table RadarState_RadarState_Persistent_Error entry No.
@@ -18122,7 +17946,7 @@
  *
  * @ingroup ENUM_RadarState_RadarState_Persistent_Error
  */
-#define RadarState_RadarState_Persistent_Error_No                  0
+#define RadarState_RadarState_Persistent_Error_No 0
 
 /**
  * @defgroup SIG_RadarState_RadarState_SortIndex Signal RadarState_SortIndex of Message RadarState (0x201)
@@ -18141,7 +17965,7 @@
  * @deprecated
  *	Use \ref SET_RadarState_RadarState_SortIndex and \ref GET_RadarState_RadarState_SortIndex instead.
  */
-#define SIG_RadarState_RadarState_SortIndex         1, 0, 38, 3
+#define SIG_RadarState_RadarState_SortIndex 1, 0, 38, 3
 
 /**
  * Signal RadarState_SortIndex setup tuple.
@@ -18149,7 +17973,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarState_RadarState_SortIndex or \ref INIT_RadarState instead.
  */
-#define SETUP_RadarState_RadarState_SortIndex       1, 0, 38, 3, 0
+#define SETUP_RadarState_RadarState_SortIndex 1, 0, 38, 3, 0
 
 /**
  * Get signal RadarState_SortIndex from buffer.
@@ -18159,9 +17983,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarState_RadarState_SortIndex(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[4] >> 4) & 0x07) << 0) \
-)
+#define GET_RadarState_RadarState_SortIndex(buf) (0 | (ubyte)(+(ubyte)((buf[4] >> 4) & 0x07) << 0))
 
 /**
  * Set signal RadarState_SortIndex in buffer.
@@ -18171,10 +17993,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarState_RadarState_SortIndex(buf, val) { \
-	buf[4] &= ~(0x07 << 4); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0x07) << 4; \
-}
+#define SET_RadarState_RadarState_SortIndex(buf, val) \
+	{                                                   \
+		buf[4] &= ~(0x07 << 4);                           \
+		buf[4] |= (((ubyte)(val) >> 0) & 0x07) << 4;      \
+	}
 
 /**
  * Set signal RadarState_SortIndex in buffer to its initial value.
@@ -18202,22 +18025,22 @@
 /**
  * Signal RadarState_SortIndex raw initial value.
  */
-#define START_RadarState_RadarState_SortIndex       0
+#define START_RadarState_RadarState_SortIndex 0
 
 /**
  * Signal RadarState_SortIndex raw minimum value.
  */
-#define MIN_RadarState_RadarState_SortIndex         0
+#define MIN_RadarState_RadarState_SortIndex 0
 
 /**
  * Signal RadarState_SortIndex raw maximum value.
  */
-#define MAX_RadarState_RadarState_SortIndex         0
+#define MAX_RadarState_RadarState_SortIndex 0
 
 /**
  * Signal RadarState_SortIndex raw offset value.
  */
-#define OFF_RadarState_RadarState_SortIndex         0
+#define OFF_RadarState_RadarState_SortIndex 0
 
 /**
  * @}
@@ -18242,7 +18065,7 @@
  * @deprecated
  *	Use \ref SET_RadarState_RadarState_RCS_Threshold and \ref GET_RadarState_RadarState_RCS_Threshold instead.
  */
-#define SIG_RadarState_RadarState_RCS_Threshold        1, 0, 60, 3
+#define SIG_RadarState_RadarState_RCS_Threshold 1, 0, 60, 3
 
 /**
  * Signal RadarState_RCS_Threshold setup tuple.
@@ -18250,7 +18073,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarState_RadarState_RCS_Threshold or \ref INIT_RadarState instead.
  */
-#define SETUP_RadarState_RadarState_RCS_Threshold      1, 0, 60, 3, 0
+#define SETUP_RadarState_RadarState_RCS_Threshold 1, 0, 60, 3, 0
 
 /**
  * Get signal RadarState_RCS_Threshold from buffer.
@@ -18260,9 +18083,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarState_RadarState_RCS_Threshold(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[7] >> 2) & 0x07) << 0) \
-)
+#define GET_RadarState_RadarState_RCS_Threshold(buf) (0 | (ubyte)(+(ubyte)((buf[7] >> 2) & 0x07) << 0))
 
 /**
  * Set signal RadarState_RCS_Threshold in buffer.
@@ -18272,10 +18093,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarState_RadarState_RCS_Threshold(buf, val) { \
-	buf[7] &= ~(0x07 << 2); \
-	buf[7] |= (((ubyte)(val) >> 0) & 0x07) << 2; \
-}
+#define SET_RadarState_RadarState_RCS_Threshold(buf, val) \
+	{                                                       \
+		buf[7] &= ~(0x07 << 2);                               \
+		buf[7] |= (((ubyte)(val) >> 0) & 0x07) << 2;          \
+	}
 
 /**
  * Set signal RadarState_RCS_Threshold in buffer to its initial value.
@@ -18303,22 +18125,22 @@
 /**
  * Signal RadarState_RCS_Threshold raw initial value.
  */
-#define START_RadarState_RadarState_RCS_Threshold      0
+#define START_RadarState_RadarState_RCS_Threshold 0
 
 /**
  * Signal RadarState_RCS_Threshold raw minimum value.
  */
-#define MIN_RadarState_RadarState_RCS_Threshold        0
+#define MIN_RadarState_RadarState_RCS_Threshold 0
 
 /**
  * Signal RadarState_RCS_Threshold raw maximum value.
  */
-#define MAX_RadarState_RadarState_RCS_Threshold        7
+#define MAX_RadarState_RadarState_RCS_Threshold 7
 
 /**
  * Signal RadarState_RCS_Threshold raw offset value.
  */
-#define OFF_RadarState_RadarState_RCS_Threshold        0
+#define OFF_RadarState_RadarState_RCS_Threshold 0
 
 /**
  * @}
@@ -18337,42 +18159,42 @@
  *
  * @ingroup ENUM_RadarState_RadarState_RCS_Threshold
  */
-#define RadarState_RadarState_RCS_Threshold_Reserved            7
+#define RadarState_RadarState_RCS_Threshold_Reserved 7
 
 /**
  * Value table RadarState_RadarState_RCS_Threshold entry Reserved_6.
  *
  * @ingroup ENUM_RadarState_RadarState_RCS_Threshold
  */
-#define RadarState_RadarState_RCS_Threshold_Reserved_6          6
+#define RadarState_RadarState_RCS_Threshold_Reserved_6 6
 
 /**
  * Value table RadarState_RadarState_RCS_Threshold entry Reserved_5.
  *
  * @ingroup ENUM_RadarState_RadarState_RCS_Threshold
  */
-#define RadarState_RadarState_RCS_Threshold_Reserved_5          5
+#define RadarState_RadarState_RCS_Threshold_Reserved_5 5
 
 /**
  * Value table RadarState_RadarState_RCS_Threshold entry Reserved_4.
  *
  * @ingroup ENUM_RadarState_RadarState_RCS_Threshold
  */
-#define RadarState_RadarState_RCS_Threshold_Reserved_4          4
+#define RadarState_RadarState_RCS_Threshold_Reserved_4 4
 
 /**
  * Value table RadarState_RadarState_RCS_Threshold entry Reserved_3.
  *
  * @ingroup ENUM_RadarState_RadarState_RCS_Threshold
  */
-#define RadarState_RadarState_RCS_Threshold_Reserved_3          3
+#define RadarState_RadarState_RCS_Threshold_Reserved_3 3
 
 /**
  * Value table RadarState_RadarState_RCS_Threshold entry Reserved_2.
  *
  * @ingroup ENUM_RadarState_RadarState_RCS_Threshold
  */
-#define RadarState_RadarState_RCS_Threshold_Reserved_2          2
+#define RadarState_RadarState_RCS_Threshold_Reserved_2 2
 
 /**
  * Value table RadarState_RadarState_RCS_Threshold entry High.
@@ -18381,14 +18203,14 @@
  *
  * @ingroup ENUM_RadarState_RadarState_RCS_Threshold
  */
-#define RadarState_RadarState_RCS_Threshold_High                1
+#define RadarState_RadarState_RCS_Threshold_High 1
 
 /**
  * Value table RadarState_RadarState_RCS_Threshold entry Standard.
  *
  * @ingroup ENUM_RadarState_RadarState_RCS_Threshold
  */
-#define RadarState_RadarState_RCS_Threshold_Standard            0
+#define RadarState_RadarState_RCS_Threshold_Standard 0
 
 /**
  * @defgroup SIG_RadarState_RadarState_CtrlRelayCfg Signal RadarState_CtrlRelayCfg of Message RadarState (0x201)
@@ -18410,7 +18232,7 @@
  * @deprecated
  *	Use \ref SET_RadarState_RadarState_CtrlRelayCfg and \ref GET_RadarState_RadarState_CtrlRelayCfg instead.
  */
-#define SIG_RadarState_RadarState_CtrlRelayCfg        1, 0, 41, 1
+#define SIG_RadarState_RadarState_CtrlRelayCfg 1, 0, 41, 1
 
 /**
  * Signal RadarState_CtrlRelayCfg setup tuple.
@@ -18418,7 +18240,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarState_RadarState_CtrlRelayCfg or \ref INIT_RadarState instead.
  */
-#define SETUP_RadarState_RadarState_CtrlRelayCfg      1, 0, 41, 1, 0
+#define SETUP_RadarState_RadarState_CtrlRelayCfg 1, 0, 41, 1, 0
 
 /**
  * Get signal RadarState_CtrlRelayCfg from buffer.
@@ -18428,9 +18250,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarState_RadarState_CtrlRelayCfg(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[5] >> 1) & 0x01) << 0) \
-)
+#define GET_RadarState_RadarState_CtrlRelayCfg(buf) (0 | (ubyte)(+(ubyte)((buf[5] >> 1) & 0x01) << 0))
 
 /**
  * Set signal RadarState_CtrlRelayCfg in buffer.
@@ -18440,10 +18260,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarState_RadarState_CtrlRelayCfg(buf, val) { \
-	buf[5] &= ~(0x01 << 1); \
-	buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 1; \
-}
+#define SET_RadarState_RadarState_CtrlRelayCfg(buf, val) \
+	{                                                      \
+		buf[5] &= ~(0x01 << 1);                              \
+		buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 1;         \
+	}
 
 /**
  * Set signal RadarState_CtrlRelayCfg in buffer to its initial value.
@@ -18471,22 +18292,22 @@
 /**
  * Signal RadarState_CtrlRelayCfg raw initial value.
  */
-#define START_RadarState_RadarState_CtrlRelayCfg      0
+#define START_RadarState_RadarState_CtrlRelayCfg 0
 
 /**
  * Signal RadarState_CtrlRelayCfg raw minimum value.
  */
-#define MIN_RadarState_RadarState_CtrlRelayCfg        0
+#define MIN_RadarState_RadarState_CtrlRelayCfg 0
 
 /**
  * Signal RadarState_CtrlRelayCfg raw maximum value.
  */
-#define MAX_RadarState_RadarState_CtrlRelayCfg        1
+#define MAX_RadarState_RadarState_CtrlRelayCfg 1
 
 /**
  * Signal RadarState_CtrlRelayCfg raw offset value.
  */
-#define OFF_RadarState_RadarState_CtrlRelayCfg        0
+#define OFF_RadarState_RadarState_CtrlRelayCfg 0
 
 /**
  * @}
@@ -18505,14 +18326,14 @@
  *
  * @ingroup ENUM_RadarState_RadarState_CtrlRelayCfg
  */
-#define RadarState_RadarState_CtrlRelayCfg_Active              1
+#define RadarState_RadarState_CtrlRelayCfg_Active 1
 
 /**
  * Value table RadarState_RadarState_CtrlRelayCfg entry Inactive.
  *
  * @ingroup ENUM_RadarState_RadarState_CtrlRelayCfg
  */
-#define RadarState_RadarState_CtrlRelayCfg_Inactive            0
+#define RadarState_RadarState_CtrlRelayCfg_Inactive 0
 
 /**
  * @defgroup SIG_RadarState_RadarState_SendQualityCfg Signal RadarState_SendQualityCfg of Message RadarState (0x201)
@@ -18534,7 +18355,7 @@
  * @deprecated
  *	Use \ref SET_RadarState_RadarState_SendQualityCfg and \ref GET_RadarState_RadarState_SendQualityCfg instead.
  */
-#define SIG_RadarState_RadarState_SendQualityCfg        1, 0, 44, 1
+#define SIG_RadarState_RadarState_SendQualityCfg 1, 0, 44, 1
 
 /**
  * Signal RadarState_SendQualityCfg setup tuple.
@@ -18542,7 +18363,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarState_RadarState_SendQualityCfg or \ref INIT_RadarState instead.
  */
-#define SETUP_RadarState_RadarState_SendQualityCfg      1, 0, 44, 1, 0
+#define SETUP_RadarState_RadarState_SendQualityCfg 1, 0, 44, 1, 0
 
 /**
  * Get signal RadarState_SendQualityCfg from buffer.
@@ -18552,9 +18373,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarState_RadarState_SendQualityCfg(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[5] >> 4) & 0x01) << 0) \
-)
+#define GET_RadarState_RadarState_SendQualityCfg(buf) (0 | (ubyte)(+(ubyte)((buf[5] >> 4) & 0x01) << 0))
 
 /**
  * Set signal RadarState_SendQualityCfg in buffer.
@@ -18564,10 +18383,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarState_RadarState_SendQualityCfg(buf, val) { \
-	buf[5] &= ~(0x01 << 4); \
-	buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 4; \
-}
+#define SET_RadarState_RadarState_SendQualityCfg(buf, val) \
+	{                                                        \
+		buf[5] &= ~(0x01 << 4);                                \
+		buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 4;           \
+	}
 
 /**
  * Set signal RadarState_SendQualityCfg in buffer to its initial value.
@@ -18595,22 +18415,22 @@
 /**
  * Signal RadarState_SendQualityCfg raw initial value.
  */
-#define START_RadarState_RadarState_SendQualityCfg      0
+#define START_RadarState_RadarState_SendQualityCfg 0
 
 /**
  * Signal RadarState_SendQualityCfg raw minimum value.
  */
-#define MIN_RadarState_RadarState_SendQualityCfg        0
+#define MIN_RadarState_RadarState_SendQualityCfg 0
 
 /**
  * Signal RadarState_SendQualityCfg raw maximum value.
  */
-#define MAX_RadarState_RadarState_SendQualityCfg        1
+#define MAX_RadarState_RadarState_SendQualityCfg 1
 
 /**
  * Signal RadarState_SendQualityCfg raw offset value.
  */
-#define OFF_RadarState_RadarState_SendQualityCfg        0
+#define OFF_RadarState_RadarState_SendQualityCfg 0
 
 /**
  * @}
@@ -18629,14 +18449,14 @@
  *
  * @ingroup ENUM_RadarState_RadarState_SendQualityCfg
  */
-#define RadarState_RadarState_SendQualityCfg_Active              1
+#define RadarState_RadarState_SendQualityCfg_Active 1
 
 /**
  * Value table RadarState_RadarState_SendQualityCfg entry Inactive.
  *
  * @ingroup ENUM_RadarState_RadarState_SendQualityCfg
  */
-#define RadarState_RadarState_SendQualityCfg_Inactive            0
+#define RadarState_RadarState_SendQualityCfg_Inactive 0
 
 /**
  * @defgroup SIG_RadarState_RadarState_SendExtInfoCfg Signal RadarState_SendExtInfoCfg of Message RadarState (0x201)
@@ -18658,7 +18478,7 @@
  * @deprecated
  *	Use \ref SET_RadarState_RadarState_SendExtInfoCfg and \ref GET_RadarState_RadarState_SendExtInfoCfg instead.
  */
-#define SIG_RadarState_RadarState_SendExtInfoCfg        1, 0, 45, 1
+#define SIG_RadarState_RadarState_SendExtInfoCfg 1, 0, 45, 1
 
 /**
  * Signal RadarState_SendExtInfoCfg setup tuple.
@@ -18666,7 +18486,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarState_RadarState_SendExtInfoCfg or \ref INIT_RadarState instead.
  */
-#define SETUP_RadarState_RadarState_SendExtInfoCfg      1, 0, 45, 1, 0
+#define SETUP_RadarState_RadarState_SendExtInfoCfg 1, 0, 45, 1, 0
 
 /**
  * Get signal RadarState_SendExtInfoCfg from buffer.
@@ -18676,9 +18496,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarState_RadarState_SendExtInfoCfg(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[5] >> 5) & 0x01) << 0) \
-)
+#define GET_RadarState_RadarState_SendExtInfoCfg(buf) (0 | (ubyte)(+(ubyte)((buf[5] >> 5) & 0x01) << 0))
 
 /**
  * Set signal RadarState_SendExtInfoCfg in buffer.
@@ -18688,10 +18506,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarState_RadarState_SendExtInfoCfg(buf, val) { \
-	buf[5] &= ~(0x01 << 5); \
-	buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 5; \
-}
+#define SET_RadarState_RadarState_SendExtInfoCfg(buf, val) \
+	{                                                        \
+		buf[5] &= ~(0x01 << 5);                                \
+		buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 5;           \
+	}
 
 /**
  * Set signal RadarState_SendExtInfoCfg in buffer to its initial value.
@@ -18719,22 +18538,22 @@
 /**
  * Signal RadarState_SendExtInfoCfg raw initial value.
  */
-#define START_RadarState_RadarState_SendExtInfoCfg      0
+#define START_RadarState_RadarState_SendExtInfoCfg 0
 
 /**
  * Signal RadarState_SendExtInfoCfg raw minimum value.
  */
-#define MIN_RadarState_RadarState_SendExtInfoCfg        0
+#define MIN_RadarState_RadarState_SendExtInfoCfg 0
 
 /**
  * Signal RadarState_SendExtInfoCfg raw maximum value.
  */
-#define MAX_RadarState_RadarState_SendExtInfoCfg        1
+#define MAX_RadarState_RadarState_SendExtInfoCfg 1
 
 /**
  * Signal RadarState_SendExtInfoCfg raw offset value.
  */
-#define OFF_RadarState_RadarState_SendExtInfoCfg        0
+#define OFF_RadarState_RadarState_SendExtInfoCfg 0
 
 /**
  * @}
@@ -18753,14 +18572,14 @@
  *
  * @ingroup ENUM_RadarState_RadarState_SendExtInfoCfg
  */
-#define RadarState_RadarState_SendExtInfoCfg_Active              1
+#define RadarState_RadarState_SendExtInfoCfg_Active 1
 
 /**
  * Value table RadarState_RadarState_SendExtInfoCfg entry Inactive.
  *
  * @ingroup ENUM_RadarState_RadarState_SendExtInfoCfg
  */
-#define RadarState_RadarState_SendExtInfoCfg_Inactive            0
+#define RadarState_RadarState_SendExtInfoCfg_Inactive 0
 
 /**
  * @defgroup SIG_RadarState_RadarState_MotionRxState Signal RadarState_MotionRxState of Message RadarState (0x201)
@@ -18782,7 +18601,7 @@
  * @deprecated
  *	Use \ref SET_RadarState_RadarState_MotionRxState and \ref GET_RadarState_RadarState_MotionRxState instead.
  */
-#define SIG_RadarState_RadarState_MotionRxState        1, 0, 47, 2
+#define SIG_RadarState_RadarState_MotionRxState 1, 0, 47, 2
 
 /**
  * Signal RadarState_MotionRxState setup tuple.
@@ -18790,7 +18609,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarState_RadarState_MotionRxState or \ref INIT_RadarState instead.
  */
-#define SETUP_RadarState_RadarState_MotionRxState      1, 0, 47, 2, 0
+#define SETUP_RadarState_RadarState_MotionRxState 1, 0, 47, 2, 0
 
 /**
  * Get signal RadarState_MotionRxState from buffer.
@@ -18800,9 +18619,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarState_RadarState_MotionRxState(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[5] >> 6) & 0x03) << 0) \
-)
+#define GET_RadarState_RadarState_MotionRxState(buf) (0 | (ubyte)(+(ubyte)((buf[5] >> 6) & 0x03) << 0))
 
 /**
  * Set signal RadarState_MotionRxState in buffer.
@@ -18812,10 +18629,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarState_RadarState_MotionRxState(buf, val) { \
-	buf[5] &= ~(0x03 << 6); \
-	buf[5] |= (((ubyte)(val) >> 0) & 0x03) << 6; \
-}
+#define SET_RadarState_RadarState_MotionRxState(buf, val) \
+	{                                                       \
+		buf[5] &= ~(0x03 << 6);                               \
+		buf[5] |= (((ubyte)(val) >> 0) & 0x03) << 6;          \
+	}
 
 /**
  * Set signal RadarState_MotionRxState in buffer to its initial value.
@@ -18843,22 +18661,22 @@
 /**
  * Signal RadarState_MotionRxState raw initial value.
  */
-#define START_RadarState_RadarState_MotionRxState      0
+#define START_RadarState_RadarState_MotionRxState 0
 
 /**
  * Signal RadarState_MotionRxState raw minimum value.
  */
-#define MIN_RadarState_RadarState_MotionRxState        0
+#define MIN_RadarState_RadarState_MotionRxState 0
 
 /**
  * Signal RadarState_MotionRxState raw maximum value.
  */
-#define MAX_RadarState_RadarState_MotionRxState        3
+#define MAX_RadarState_RadarState_MotionRxState 3
 
 /**
  * Signal RadarState_MotionRxState raw offset value.
  */
-#define OFF_RadarState_RadarState_MotionRxState        0
+#define OFF_RadarState_RadarState_MotionRxState 0
 
 /**
  * @}
@@ -18879,7 +18697,7 @@
  *
  * @ingroup ENUM_RadarState_RadarState_MotionRxState
  */
-#define RadarState_RadarState_MotionRxState_Speed               3
+#define RadarState_RadarState_MotionRxState_Speed 3
 
 /**
  * Value table RadarState_RadarState_MotionRxState entry Yaw.
@@ -18888,7 +18706,7 @@
  *
  * @ingroup ENUM_RadarState_RadarState_MotionRxState
  */
-#define RadarState_RadarState_MotionRxState_Yaw                 2
+#define RadarState_RadarState_MotionRxState_Yaw 2
 
 /**
  * Value table RadarState_RadarState_MotionRxState entry Speed_1.
@@ -18897,7 +18715,7 @@
  *
  * @ingroup ENUM_RadarState_RadarState_MotionRxState
  */
-#define RadarState_RadarState_MotionRxState_Speed_1             1
+#define RadarState_RadarState_MotionRxState_Speed_1 1
 
 /**
  * Value table RadarState_RadarState_MotionRxState entry Input.
@@ -18906,7 +18724,7 @@
  *
  * @ingroup ENUM_RadarState_RadarState_MotionRxState
  */
-#define RadarState_RadarState_MotionRxState_Input               0
+#define RadarState_RadarState_MotionRxState_Input 0
 
 /**
  * @defgroup SIG_RadarState_RadarState_SensorID Signal RadarState_SensorID of Message RadarState (0x201)
@@ -18926,7 +18744,7 @@
  * @deprecated
  *	Use \ref SET_RadarState_RadarState_SensorID and \ref GET_RadarState_RadarState_SensorID instead.
  */
-#define SIG_RadarState_RadarState_SensorID          1, 0, 34, 3
+#define SIG_RadarState_RadarState_SensorID 1, 0, 34, 3
 
 /**
  * Signal RadarState_SensorID setup tuple.
@@ -18934,7 +18752,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarState_RadarState_SensorID or \ref INIT_RadarState instead.
  */
-#define SETUP_RadarState_RadarState_SensorID        1, 0, 34, 3, 0
+#define SETUP_RadarState_RadarState_SensorID 1, 0, 34, 3, 0
 
 /**
  * Get signal RadarState_SensorID from buffer.
@@ -18944,9 +18762,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarState_RadarState_SensorID(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0x07) << 0) \
-)
+#define GET_RadarState_RadarState_SensorID(buf) (0 | (ubyte)(+(ubyte)((buf[4] >> 0) & 0x07) << 0))
 
 /**
  * Set signal RadarState_SensorID in buffer.
@@ -18956,10 +18772,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarState_RadarState_SensorID(buf, val) { \
-	buf[4] &= ~(0x07 << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0x07) << 0; \
-}
+#define SET_RadarState_RadarState_SensorID(buf, val) \
+	{                                                  \
+		buf[4] &= ~(0x07 << 0);                          \
+		buf[4] |= (((ubyte)(val) >> 0) & 0x07) << 0;     \
+	}
 
 /**
  * Set signal RadarState_SensorID in buffer to its initial value.
@@ -18987,22 +18804,22 @@
 /**
  * Signal RadarState_SensorID raw initial value.
  */
-#define START_RadarState_RadarState_SensorID        0
+#define START_RadarState_RadarState_SensorID 0
 
 /**
  * Signal RadarState_SensorID raw minimum value.
  */
-#define MIN_RadarState_RadarState_SensorID          0
+#define MIN_RadarState_RadarState_SensorID 0
 
 /**
  * Signal RadarState_SensorID raw maximum value.
  */
-#define MAX_RadarState_RadarState_SensorID          7
+#define MAX_RadarState_RadarState_SensorID 7
 
 /**
  * Signal RadarState_SensorID raw offset value.
  */
-#define OFF_RadarState_RadarState_SensorID          0
+#define OFF_RadarState_RadarState_SensorID 0
 
 /**
  * @}
@@ -19028,7 +18845,7 @@
  * @deprecated
  *	Use \ref SET_RadarState_RadarState_OutputTypeCfg and \ref GET_RadarState_RadarState_OutputTypeCfg instead.
  */
-#define SIG_RadarState_RadarState_OutputTypeCfg        1, 0, 43, 2
+#define SIG_RadarState_RadarState_OutputTypeCfg 1, 0, 43, 2
 
 /**
  * Signal RadarState_OutputTypeCfg setup tuple.
@@ -19036,7 +18853,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarState_RadarState_OutputTypeCfg or \ref INIT_RadarState instead.
  */
-#define SETUP_RadarState_RadarState_OutputTypeCfg      1, 0, 43, 2, 0
+#define SETUP_RadarState_RadarState_OutputTypeCfg 1, 0, 43, 2, 0
 
 /**
  * Get signal RadarState_OutputTypeCfg from buffer.
@@ -19046,9 +18863,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarState_RadarState_OutputTypeCfg(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[5] >> 2) & 0x03) << 0) \
-)
+#define GET_RadarState_RadarState_OutputTypeCfg(buf) (0 | (ubyte)(+(ubyte)((buf[5] >> 2) & 0x03) << 0))
 
 /**
  * Set signal RadarState_OutputTypeCfg in buffer.
@@ -19058,10 +18873,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarState_RadarState_OutputTypeCfg(buf, val) { \
-	buf[5] &= ~(0x03 << 2); \
-	buf[5] |= (((ubyte)(val) >> 0) & 0x03) << 2; \
-}
+#define SET_RadarState_RadarState_OutputTypeCfg(buf, val) \
+	{                                                       \
+		buf[5] &= ~(0x03 << 2);                               \
+		buf[5] |= (((ubyte)(val) >> 0) & 0x03) << 2;          \
+	}
 
 /**
  * Set signal RadarState_OutputTypeCfg in buffer to its initial value.
@@ -19089,22 +18905,22 @@
 /**
  * Signal RadarState_OutputTypeCfg raw initial value.
  */
-#define START_RadarState_RadarState_OutputTypeCfg      0
+#define START_RadarState_RadarState_OutputTypeCfg 0
 
 /**
  * Signal RadarState_OutputTypeCfg raw minimum value.
  */
-#define MIN_RadarState_RadarState_OutputTypeCfg        0
+#define MIN_RadarState_RadarState_OutputTypeCfg 0
 
 /**
  * Signal RadarState_OutputTypeCfg raw maximum value.
  */
-#define MAX_RadarState_RadarState_OutputTypeCfg        3
+#define MAX_RadarState_RadarState_OutputTypeCfg 3
 
 /**
  * Signal RadarState_OutputTypeCfg raw offset value.
  */
-#define OFF_RadarState_RadarState_OutputTypeCfg        0
+#define OFF_RadarState_RadarState_OutputTypeCfg 0
 
 /**
  * @}
@@ -19125,28 +18941,28 @@
  *
  * @ingroup ENUM_RadarState_RadarState_OutputTypeCfg
  */
-#define RadarState_RadarState_OutputTypeCfg_reserved            3
+#define RadarState_RadarState_OutputTypeCfg_reserved 3
 
 /**
  * Value table RadarState_RadarState_OutputTypeCfg entry SendClusters.
  *
  * @ingroup ENUM_RadarState_RadarState_OutputTypeCfg
  */
-#define RadarState_RadarState_OutputTypeCfg_SendClusters        2
+#define RadarState_RadarState_OutputTypeCfg_SendClusters 2
 
 /**
  * Value table RadarState_RadarState_OutputTypeCfg entry SendObjects.
  *
  * @ingroup ENUM_RadarState_RadarState_OutputTypeCfg
  */
-#define RadarState_RadarState_OutputTypeCfg_SendObjects         1
+#define RadarState_RadarState_OutputTypeCfg_SendObjects 1
 
 /**
  * Value table RadarState_RadarState_OutputTypeCfg entry None.
  *
  * @ingroup ENUM_RadarState_RadarState_OutputTypeCfg
  */
-#define RadarState_RadarState_OutputTypeCfg_None                0
+#define RadarState_RadarState_OutputTypeCfg_None 0
 
 /**
  * @defgroup SIG_RadarState_RadarState_RadarPowerCfg Signal RadarState_RadarPowerCfg of Message RadarState (0x201)
@@ -19168,7 +18984,7 @@
  * @deprecated
  *	Use \ref SET_RadarState_RadarState_RadarPowerCfg and \ref GET_RadarState_RadarState_RadarPowerCfg instead.
  */
-#define SIG_RadarState_RadarState_RadarPowerCfg        1, 0, 25, 3
+#define SIG_RadarState_RadarState_RadarPowerCfg 1, 0, 25, 3
 
 /**
  * Signal RadarState_RadarPowerCfg setup tuple.
@@ -19176,7 +18992,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarState_RadarState_RadarPowerCfg or \ref INIT_RadarState instead.
  */
-#define SETUP_RadarState_RadarState_RadarPowerCfg      1, 0, 25, 3, 0
+#define SETUP_RadarState_RadarState_RadarPowerCfg 1, 0, 25, 3, 0
 
 /**
  * Get signal RadarState_RadarPowerCfg from buffer.
@@ -19186,10 +19002,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarState_RadarState_RadarPowerCfg(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[3] >> 0) & 0x03) << 1) \
-	| (ubyte)(+(ubyte)((buf[4] >> 7) & 0x01) << 0) \
-)
+#define GET_RadarState_RadarState_RadarPowerCfg(buf) (0 | (ubyte)(+(ubyte)((buf[3] >> 0) & 0x03) << 1) | (ubyte)(+(ubyte)((buf[4] >> 7) & 0x01) << 0))
 
 /**
  * Set signal RadarState_RadarPowerCfg in buffer.
@@ -19199,12 +19012,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarState_RadarState_RadarPowerCfg(buf, val) { \
-	buf[3] &= ~(0x03 << 0); \
-	buf[3] |= (((ubyte)(val) >> 1) & 0x03) << 0; \
-	buf[4] &= ~(0x01 << 7); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0x01) << 7; \
-}
+#define SET_RadarState_RadarState_RadarPowerCfg(buf, val) \
+	{                                                       \
+		buf[3] &= ~(0x03 << 0);                               \
+		buf[3] |= (((ubyte)(val) >> 1) & 0x03) << 0;          \
+		buf[4] &= ~(0x01 << 7);                               \
+		buf[4] |= (((ubyte)(val) >> 0) & 0x01) << 7;          \
+	}
 
 /**
  * Set signal RadarState_RadarPowerCfg in buffer to its initial value.
@@ -19232,22 +19046,22 @@
 /**
  * Signal RadarState_RadarPowerCfg raw initial value.
  */
-#define START_RadarState_RadarState_RadarPowerCfg      0
+#define START_RadarState_RadarState_RadarPowerCfg 0
 
 /**
  * Signal RadarState_RadarPowerCfg raw minimum value.
  */
-#define MIN_RadarState_RadarState_RadarPowerCfg        0
+#define MIN_RadarState_RadarState_RadarPowerCfg 0
 
 /**
  * Signal RadarState_RadarPowerCfg raw maximum value.
  */
-#define MAX_RadarState_RadarState_RadarPowerCfg        7
+#define MAX_RadarState_RadarState_RadarPowerCfg 7
 
 /**
  * Signal RadarState_RadarPowerCfg raw offset value.
  */
-#define OFF_RadarState_RadarState_RadarPowerCfg        0
+#define OFF_RadarState_RadarState_RadarPowerCfg 0
 
 /**
  * @}
@@ -19266,28 +19080,28 @@
  *
  * @ingroup ENUM_RadarState_RadarState_RadarPowerCfg
  */
-#define RadarState_RadarState_RadarPowerCfg_Reserved            7
+#define RadarState_RadarState_RadarPowerCfg_Reserved 7
 
 /**
  * Value table RadarState_RadarState_RadarPowerCfg entry Reserved_6.
  *
  * @ingroup ENUM_RadarState_RadarState_RadarPowerCfg
  */
-#define RadarState_RadarState_RadarPowerCfg_Reserved_6          6
+#define RadarState_RadarState_RadarPowerCfg_Reserved_6 6
 
 /**
  * Value table RadarState_RadarState_RadarPowerCfg entry Reserved_5.
  *
  * @ingroup ENUM_RadarState_RadarState_RadarPowerCfg
  */
-#define RadarState_RadarState_RadarPowerCfg_Reserved_5          5
+#define RadarState_RadarState_RadarPowerCfg_Reserved_5 5
 
 /**
  * Value table RadarState_RadarState_RadarPowerCfg entry Reserved_4.
  *
  * @ingroup ENUM_RadarState_RadarState_RadarPowerCfg
  */
-#define RadarState_RadarState_RadarPowerCfg_Reserved_4          4
+#define RadarState_RadarState_RadarPowerCfg_Reserved_4 4
 
 /**
  * Value table RadarState_RadarState_RadarPowerCfg entry _9.
@@ -19296,7 +19110,7 @@
  *
  * @ingroup ENUM_RadarState_RadarState_RadarPowerCfg
  */
-#define RadarState_RadarState_RadarPowerCfg__9                  3
+#define RadarState_RadarState_RadarPowerCfg__9 3
 
 /**
  * Value table RadarState_RadarState_RadarPowerCfg entry _6.
@@ -19305,7 +19119,7 @@
  *
  * @ingroup ENUM_RadarState_RadarState_RadarPowerCfg
  */
-#define RadarState_RadarState_RadarPowerCfg__6                  2
+#define RadarState_RadarState_RadarPowerCfg__6 2
 
 /**
  * Value table RadarState_RadarState_RadarPowerCfg entry _3.
@@ -19314,14 +19128,14 @@
  *
  * @ingroup ENUM_RadarState_RadarState_RadarPowerCfg
  */
-#define RadarState_RadarState_RadarPowerCfg__3                  1
+#define RadarState_RadarState_RadarPowerCfg__3 1
 
 /**
  * Value table RadarState_RadarState_RadarPowerCfg entry Standard.
  *
  * @ingroup ENUM_RadarState_RadarState_RadarPowerCfg
  */
-#define RadarState_RadarState_RadarPowerCfg_Standard            0
+#define RadarState_RadarState_RadarPowerCfg_Standard 0
 
 /**
  * @defgroup SIG_RadarState_RadarState_NVMReadStatus Signal RadarState_NVMReadStatus of Message RadarState (0x201)
@@ -19343,7 +19157,7 @@
  * @deprecated
  *	Use \ref SET_RadarState_RadarState_NVMReadStatus and \ref GET_RadarState_RadarState_NVMReadStatus instead.
  */
-#define SIG_RadarState_RadarState_NVMReadStatus        1, 0, 6, 1
+#define SIG_RadarState_RadarState_NVMReadStatus 1, 0, 6, 1
 
 /**
  * Signal RadarState_NVMReadStatus setup tuple.
@@ -19351,7 +19165,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarState_RadarState_NVMReadStatus or \ref INIT_RadarState instead.
  */
-#define SETUP_RadarState_RadarState_NVMReadStatus      1, 0, 6, 1, 0
+#define SETUP_RadarState_RadarState_NVMReadStatus 1, 0, 6, 1, 0
 
 /**
  * Get signal RadarState_NVMReadStatus from buffer.
@@ -19361,9 +19175,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarState_RadarState_NVMReadStatus(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 6) & 0x01) << 0) \
-)
+#define GET_RadarState_RadarState_NVMReadStatus(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 6) & 0x01) << 0))
 
 /**
  * Set signal RadarState_NVMReadStatus in buffer.
@@ -19373,10 +19185,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarState_RadarState_NVMReadStatus(buf, val) { \
-	buf[0] &= ~(0x01 << 6); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 6; \
-}
+#define SET_RadarState_RadarState_NVMReadStatus(buf, val) \
+	{                                                       \
+		buf[0] &= ~(0x01 << 6);                               \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 6;          \
+	}
 
 /**
  * Set signal RadarState_NVMReadStatus in buffer to its initial value.
@@ -19404,22 +19217,22 @@
 /**
  * Signal RadarState_NVMReadStatus raw initial value.
  */
-#define START_RadarState_RadarState_NVMReadStatus      0
+#define START_RadarState_RadarState_NVMReadStatus 0
 
 /**
  * Signal RadarState_NVMReadStatus raw minimum value.
  */
-#define MIN_RadarState_RadarState_NVMReadStatus        0
+#define MIN_RadarState_RadarState_NVMReadStatus 0
 
 /**
  * Signal RadarState_NVMReadStatus raw maximum value.
  */
-#define MAX_RadarState_RadarState_NVMReadStatus        1
+#define MAX_RadarState_RadarState_NVMReadStatus 1
 
 /**
  * Signal RadarState_NVMReadStatus raw offset value.
  */
-#define OFF_RadarState_RadarState_NVMReadStatus        0
+#define OFF_RadarState_RadarState_NVMReadStatus 0
 
 /**
  * @}
@@ -19438,14 +19251,14 @@
  *
  * @ingroup ENUM_RadarState_RadarState_NVMReadStatus
  */
-#define RadarState_RadarState_NVMReadStatus_successful          1
+#define RadarState_RadarState_NVMReadStatus_successful 1
 
 /**
  * Value table RadarState_RadarState_NVMReadStatus entry pending.
  *
  * @ingroup ENUM_RadarState_RadarState_NVMReadStatus
  */
-#define RadarState_RadarState_NVMReadStatus_pending             0
+#define RadarState_RadarState_NVMReadStatus_pending 0
 
 /**
  * @defgroup SIG_RadarState_RadarState_NVMwriteStatus Signal RadarState_NVMwriteStatus of Message RadarState (0x201)
@@ -19467,7 +19280,7 @@
  * @deprecated
  *	Use \ref SET_RadarState_RadarState_NVMwriteStatus and \ref GET_RadarState_RadarState_NVMwriteStatus instead.
  */
-#define SIG_RadarState_RadarState_NVMwriteStatus        1, 0, 7, 1
+#define SIG_RadarState_RadarState_NVMwriteStatus 1, 0, 7, 1
 
 /**
  * Signal RadarState_NVMwriteStatus setup tuple.
@@ -19475,7 +19288,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarState_RadarState_NVMwriteStatus or \ref INIT_RadarState instead.
  */
-#define SETUP_RadarState_RadarState_NVMwriteStatus      1, 0, 7, 1, 0
+#define SETUP_RadarState_RadarState_NVMwriteStatus 1, 0, 7, 1, 0
 
 /**
  * Get signal RadarState_NVMwriteStatus from buffer.
@@ -19485,9 +19298,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarState_RadarState_NVMwriteStatus(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 7) & 0x01) << 0) \
-)
+#define GET_RadarState_RadarState_NVMwriteStatus(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 7) & 0x01) << 0))
 
 /**
  * Set signal RadarState_NVMwriteStatus in buffer.
@@ -19497,10 +19308,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarState_RadarState_NVMwriteStatus(buf, val) { \
-	buf[0] &= ~(0x01 << 7); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 7; \
-}
+#define SET_RadarState_RadarState_NVMwriteStatus(buf, val) \
+	{                                                        \
+		buf[0] &= ~(0x01 << 7);                                \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 7;           \
+	}
 
 /**
  * Set signal RadarState_NVMwriteStatus in buffer to its initial value.
@@ -19528,22 +19340,22 @@
 /**
  * Signal RadarState_NVMwriteStatus raw initial value.
  */
-#define START_RadarState_RadarState_NVMwriteStatus      0
+#define START_RadarState_RadarState_NVMwriteStatus 0
 
 /**
  * Signal RadarState_NVMwriteStatus raw minimum value.
  */
-#define MIN_RadarState_RadarState_NVMwriteStatus        0
+#define MIN_RadarState_RadarState_NVMwriteStatus 0
 
 /**
  * Signal RadarState_NVMwriteStatus raw maximum value.
  */
-#define MAX_RadarState_RadarState_NVMwriteStatus        1
+#define MAX_RadarState_RadarState_NVMwriteStatus 1
 
 /**
  * Signal RadarState_NVMwriteStatus raw offset value.
  */
-#define OFF_RadarState_RadarState_NVMwriteStatus        0
+#define OFF_RadarState_RadarState_NVMwriteStatus 0
 
 /**
  * @}
@@ -19562,14 +19374,14 @@
  *
  * @ingroup ENUM_RadarState_RadarState_NVMwriteStatus
  */
-#define RadarState_RadarState_NVMwriteStatus_successful          1
+#define RadarState_RadarState_NVMwriteStatus_successful 1
 
 /**
  * Value table RadarState_RadarState_NVMwriteStatus entry failed.
  *
  * @ingroup ENUM_RadarState_RadarState_NVMwriteStatus
  */
-#define RadarState_RadarState_NVMwriteStatus_failed              0
+#define RadarState_RadarState_NVMwriteStatus_failed 0
 
 /**
  * @defgroup SIG_RadarState_RadarState_MaxDistanceCfg Signal RadarState_MaxDistanceCfg of Message RadarState (0x201)
@@ -19589,7 +19401,7 @@
  * @deprecated
  *	Use \ref SET_RadarState_RadarState_MaxDistanceCfg and \ref GET_RadarState_RadarState_MaxDistanceCfg instead.
  */
-#define SIG_RadarState_RadarState_MaxDistanceCfg        1, 0, 15, 10
+#define SIG_RadarState_RadarState_MaxDistanceCfg 1, 0, 15, 10
 
 /**
  * Signal RadarState_MaxDistanceCfg setup tuple.
@@ -19597,7 +19409,7 @@
  * @deprecated
  *	Use \ref INITSIG_RadarState_RadarState_MaxDistanceCfg or \ref INIT_RadarState instead.
  */
-#define SETUP_RadarState_RadarState_MaxDistanceCfg      1, 0, 15, 10, 0
+#define SETUP_RadarState_RadarState_MaxDistanceCfg 1, 0, 15, 10, 0
 
 /**
  * Get signal RadarState_MaxDistanceCfg from buffer.
@@ -19607,10 +19419,7 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarState_RadarState_MaxDistanceCfg(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0xff) << 2) \
-	| (ubyte)(+(ubyte)((buf[2] >> 6) & 0x03) << 0) \
-)
+#define GET_RadarState_RadarState_MaxDistanceCfg(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0xff) << 2) | (ubyte)(+(ubyte)((buf[2] >> 6) & 0x03) << 0))
 
 /**
  * Set signal RadarState_MaxDistanceCfg in buffer.
@@ -19620,12 +19429,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_RadarState_RadarState_MaxDistanceCfg(buf, val) { \
-	buf[1] &= ~(0xff << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 2) & 0xff) << 0; \
-	buf[2] &= ~(0x03 << 6); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0x03) << 6; \
-}
+#define SET_RadarState_RadarState_MaxDistanceCfg(buf, val) \
+	{                                                        \
+		buf[1] &= ~(0xff << 0);                                \
+		buf[1] |= ((ubyte)((uword)(val) >> 2) & 0xff) << 0;    \
+		buf[2] &= ~(0x03 << 6);                                \
+		buf[2] |= (((ubyte)(val) >> 0) & 0x03) << 6;           \
+	}
 
 /**
  * Set signal RadarState_MaxDistanceCfg in buffer to its initial value.
@@ -19653,22 +19463,22 @@
 /**
  * Signal RadarState_MaxDistanceCfg raw initial value.
  */
-#define START_RadarState_RadarState_MaxDistanceCfg      0
+#define START_RadarState_RadarState_MaxDistanceCfg 0
 
 /**
  * Signal RadarState_MaxDistanceCfg raw minimum value.
  */
-#define MIN_RadarState_RadarState_MaxDistanceCfg        0
+#define MIN_RadarState_RadarState_MaxDistanceCfg 0
 
 /**
  * Signal RadarState_MaxDistanceCfg raw maximum value.
  */
-#define MAX_RadarState_RadarState_MaxDistanceCfg        1023
+#define MAX_RadarState_RadarState_MaxDistanceCfg 1023
 
 /**
  * Signal RadarState_MaxDistanceCfg raw offset value.
  */
-#define OFF_RadarState_RadarState_MaxDistanceCfg        0
+#define OFF_RadarState_RadarState_MaxDistanceCfg 0
 
 /**
  * @}
@@ -19692,7 +19502,7 @@
  * @deprecated
  *	Use \ref SET_SpeedInformation_RadarDevice_Speed and \ref GET_SpeedInformation_RadarDevice_Speed instead.
  */
-#define SIG_SpeedInformation_RadarDevice_Speed        1, 0, 4, 13
+#define SIG_SpeedInformation_RadarDevice_Speed 1, 0, 4, 13
 
 /**
  * Signal RadarDevice_Speed setup tuple.
@@ -19700,7 +19510,7 @@
  * @deprecated
  *	Use \ref INITSIG_SpeedInformation_RadarDevice_Speed or \ref INIT_SpeedInformation instead.
  */
-#define SETUP_SpeedInformation_RadarDevice_Speed      1, 0, 4, 13, 0
+#define SETUP_SpeedInformation_RadarDevice_Speed 1, 0, 4, 13, 0
 
 /**
  * Get signal RadarDevice_Speed from buffer.
@@ -19710,10 +19520,7 @@
  * @return
  *	The raw signal
  */
-#define GET_SpeedInformation_RadarDevice_Speed(buf) (0 \
-	| (uword)(+(uword)((buf[0] >> 0) & 0x1f) << 8) \
-	| (ubyte)(+(ubyte)((buf[1] >> 0) & 0xff) << 0) \
-)
+#define GET_SpeedInformation_RadarDevice_Speed(buf) (0 | (uword)(+(uword)((buf[0] >> 0) & 0x1f) << 8) | (ubyte)(+(ubyte)((buf[1] >> 0) & 0xff) << 0))
 
 /**
  * Set signal RadarDevice_Speed in buffer.
@@ -19723,12 +19530,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_SpeedInformation_RadarDevice_Speed(buf, val) { \
-	buf[0] &= ~(0x1f << 0); \
-	buf[0] |= ((ubyte)((uword)(val) >> 8) & 0x1f) << 0; \
-	buf[1] &= ~(0xff << 0); \
-	buf[1] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_SpeedInformation_RadarDevice_Speed(buf, val) \
+	{                                                      \
+		buf[0] &= ~(0x1f << 0);                              \
+		buf[0] |= ((ubyte)((uword)(val) >> 8) & 0x1f) << 0;  \
+		buf[1] &= ~(0xff << 0);                              \
+		buf[1] |= (((ubyte)(val) >> 0) & 0xff) << 0;         \
+	}
 
 /**
  * Set signal RadarDevice_Speed in buffer to its initial value.
@@ -19756,22 +19564,22 @@
 /**
  * Signal RadarDevice_Speed raw initial value.
  */
-#define START_SpeedInformation_RadarDevice_Speed      0
+#define START_SpeedInformation_RadarDevice_Speed 0
 
 /**
  * Signal RadarDevice_Speed raw minimum value.
  */
-#define MIN_SpeedInformation_RadarDevice_Speed        0
+#define MIN_SpeedInformation_RadarDevice_Speed 0
 
 /**
  * Signal RadarDevice_Speed raw maximum value.
  */
-#define MAX_SpeedInformation_RadarDevice_Speed        8190
+#define MAX_SpeedInformation_RadarDevice_Speed 8190
 
 /**
  * Signal RadarDevice_Speed raw offset value.
  */
-#define OFF_SpeedInformation_RadarDevice_Speed        0
+#define OFF_SpeedInformation_RadarDevice_Speed 0
 
 /**
  * @}
@@ -19797,7 +19605,7 @@
  * @deprecated
  *	Use \ref SET_SpeedInformation_RadarDevice_SpeedDirection and \ref GET_SpeedInformation_RadarDevice_SpeedDirection instead.
  */
-#define SIG_SpeedInformation_RadarDevice_SpeedDirection        1, 0, 7, 2
+#define SIG_SpeedInformation_RadarDevice_SpeedDirection 1, 0, 7, 2
 
 /**
  * Signal RadarDevice_SpeedDirection setup tuple.
@@ -19805,7 +19613,7 @@
  * @deprecated
  *	Use \ref INITSIG_SpeedInformation_RadarDevice_SpeedDirection or \ref INIT_SpeedInformation instead.
  */
-#define SETUP_SpeedInformation_RadarDevice_SpeedDirection      1, 0, 7, 2, 0
+#define SETUP_SpeedInformation_RadarDevice_SpeedDirection 1, 0, 7, 2, 0
 
 /**
  * Get signal RadarDevice_SpeedDirection from buffer.
@@ -19815,9 +19623,7 @@
  * @return
  *	The raw signal
  */
-#define GET_SpeedInformation_RadarDevice_SpeedDirection(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 6) & 0x03) << 0) \
-)
+#define GET_SpeedInformation_RadarDevice_SpeedDirection(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 6) & 0x03) << 0))
 
 /**
  * Set signal RadarDevice_SpeedDirection in buffer.
@@ -19827,10 +19633,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_SpeedInformation_RadarDevice_SpeedDirection(buf, val) { \
-	buf[0] &= ~(0x03 << 6); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x03) << 6; \
-}
+#define SET_SpeedInformation_RadarDevice_SpeedDirection(buf, val) \
+	{                                                               \
+		buf[0] &= ~(0x03 << 6);                                       \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x03) << 6;                  \
+	}
 
 /**
  * Set signal RadarDevice_SpeedDirection in buffer to its initial value.
@@ -19858,22 +19665,22 @@
 /**
  * Signal RadarDevice_SpeedDirection raw initial value.
  */
-#define START_SpeedInformation_RadarDevice_SpeedDirection      0
+#define START_SpeedInformation_RadarDevice_SpeedDirection 0
 
 /**
  * Signal RadarDevice_SpeedDirection raw minimum value.
  */
-#define MIN_SpeedInformation_RadarDevice_SpeedDirection        0
+#define MIN_SpeedInformation_RadarDevice_SpeedDirection 0
 
 /**
  * Signal RadarDevice_SpeedDirection raw maximum value.
  */
-#define MAX_SpeedInformation_RadarDevice_SpeedDirection        2
+#define MAX_SpeedInformation_RadarDevice_SpeedDirection 2
 
 /**
  * Signal RadarDevice_SpeedDirection raw offset value.
  */
-#define OFF_SpeedInformation_RadarDevice_SpeedDirection        0
+#define OFF_SpeedInformation_RadarDevice_SpeedDirection 0
 
 /**
  * @}
@@ -19892,28 +19699,28 @@
  *
  * @ingroup ENUM_SpeedInformation_RadarDevice_SpeedDirection
  */
-#define SpeedInformation_RadarDevice_SpeedDirection_reserved            3
+#define SpeedInformation_RadarDevice_SpeedDirection_reserved 3
 
 /**
  * Value table SpeedInformation_RadarDevice_SpeedDirection entry reverse.
  *
  * @ingroup ENUM_SpeedInformation_RadarDevice_SpeedDirection
  */
-#define SpeedInformation_RadarDevice_SpeedDirection_reverse             2
+#define SpeedInformation_RadarDevice_SpeedDirection_reverse 2
 
 /**
  * Value table SpeedInformation_RadarDevice_SpeedDirection entry forward.
  *
  * @ingroup ENUM_SpeedInformation_RadarDevice_SpeedDirection
  */
-#define SpeedInformation_RadarDevice_SpeedDirection_forward             1
+#define SpeedInformation_RadarDevice_SpeedDirection_forward 1
 
 /**
  * Value table SpeedInformation_RadarDevice_SpeedDirection entry standstill.
  *
  * @ingroup ENUM_SpeedInformation_RadarDevice_SpeedDirection
  */
-#define SpeedInformation_RadarDevice_SpeedDirection_standstill          0
+#define SpeedInformation_RadarDevice_SpeedDirection_standstill 0
 
 /**
  * @defgroup SIG_YawRateInformation_RadarDevice_YawRate Signal RadarDevice_YawRate of Message YawRateInformation (0x301)
@@ -19933,7 +19740,7 @@
  * @deprecated
  *	Use \ref SET_YawRateInformation_RadarDevice_YawRate and \ref GET_YawRateInformation_RadarDevice_YawRate instead.
  */
-#define SIG_YawRateInformation_RadarDevice_YawRate        1, 0, 7, 16
+#define SIG_YawRateInformation_RadarDevice_YawRate 1, 0, 7, 16
 
 /**
  * Signal RadarDevice_YawRate setup tuple.
@@ -19941,7 +19748,7 @@
  * @deprecated
  *	Use \ref INITSIG_YawRateInformation_RadarDevice_YawRate or \ref INIT_YawRateInformation instead.
  */
-#define SETUP_YawRateInformation_RadarDevice_YawRate      1, 0, 7, 16, 0
+#define SETUP_YawRateInformation_RadarDevice_YawRate 1, 0, 7, 16, 0
 
 /**
  * Get signal RadarDevice_YawRate from buffer.
@@ -19951,10 +19758,7 @@
  * @return
  *	The raw signal
  */
-#define GET_YawRateInformation_RadarDevice_YawRate(buf) (0 \
-	| (uword)(+(uword)((buf[0] >> 0) & 0xff) << 8) \
-	| (ubyte)(+(ubyte)((buf[1] >> 0) & 0xff) << 0) \
-)
+#define GET_YawRateInformation_RadarDevice_YawRate(buf) (0 | (uword)(+(uword)((buf[0] >> 0) & 0xff) << 8) | (ubyte)(+(ubyte)((buf[1] >> 0) & 0xff) << 0))
 
 /**
  * Set signal RadarDevice_YawRate in buffer.
@@ -19964,12 +19768,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_YawRateInformation_RadarDevice_YawRate(buf, val) { \
-	buf[0] &= ~(0xff << 0); \
-	buf[0] |= ((ubyte)((uword)(val) >> 8) & 0xff) << 0; \
-	buf[1] &= ~(0xff << 0); \
-	buf[1] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_YawRateInformation_RadarDevice_YawRate(buf, val) \
+	{                                                          \
+		buf[0] &= ~(0xff << 0);                                  \
+		buf[0] |= ((ubyte)((uword)(val) >> 8) & 0xff) << 0;      \
+		buf[1] &= ~(0xff << 0);                                  \
+		buf[1] |= (((ubyte)(val) >> 0) & 0xff) << 0;             \
+	}
 
 /**
  * Set signal RadarDevice_YawRate in buffer to its initial value.
@@ -19997,22 +19802,22 @@
 /**
  * Signal RadarDevice_YawRate raw initial value.
  */
-#define START_YawRateInformation_RadarDevice_YawRate      0
+#define START_YawRateInformation_RadarDevice_YawRate 0
 
 /**
  * Signal RadarDevice_YawRate raw minimum value.
  */
-#define MIN_YawRateInformation_RadarDevice_YawRate        0
+#define MIN_YawRateInformation_RadarDevice_YawRate 0
 
 /**
  * Signal RadarDevice_YawRate raw maximum value.
  */
-#define MAX_YawRateInformation_RadarDevice_YawRate        65534
+#define MAX_YawRateInformation_RadarDevice_YawRate 65534
 
 /**
  * Signal RadarDevice_YawRate raw offset value.
  */
-#define OFF_YawRateInformation_RadarDevice_YawRate        -32768
+#define OFF_YawRateInformation_RadarDevice_YawRate -32768
 
 /**
  * @}
@@ -20036,7 +19841,7 @@
  * @deprecated
  *	Use \ref SET_CollDetCfg_CollDetCfg_ClearRegions and \ref GET_CollDetCfg_CollDetCfg_ClearRegions instead.
  */
-#define SIG_CollDetCfg_CollDetCfg_ClearRegions        1, 0, 7, 1
+#define SIG_CollDetCfg_CollDetCfg_ClearRegions 1, 0, 7, 1
 
 /**
  * Signal CollDetCfg_ClearRegions setup tuple.
@@ -20044,7 +19849,7 @@
  * @deprecated
  *	Use \ref INITSIG_CollDetCfg_CollDetCfg_ClearRegions or \ref INIT_CollDetCfg instead.
  */
-#define SETUP_CollDetCfg_CollDetCfg_ClearRegions      1, 0, 7, 1, 0
+#define SETUP_CollDetCfg_CollDetCfg_ClearRegions 1, 0, 7, 1, 0
 
 /**
  * Get signal CollDetCfg_ClearRegions from buffer.
@@ -20054,9 +19859,7 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetCfg_CollDetCfg_ClearRegions(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 7) & 0x01) << 0) \
-)
+#define GET_CollDetCfg_CollDetCfg_ClearRegions(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 7) & 0x01) << 0))
 
 /**
  * Set signal CollDetCfg_ClearRegions in buffer.
@@ -20066,10 +19869,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_CollDetCfg_CollDetCfg_ClearRegions(buf, val) { \
-	buf[0] &= ~(0x01 << 7); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 7; \
-}
+#define SET_CollDetCfg_CollDetCfg_ClearRegions(buf, val) \
+	{                                                      \
+		buf[0] &= ~(0x01 << 7);                              \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 7;         \
+	}
 
 /**
  * Set signal CollDetCfg_ClearRegions in buffer to its initial value.
@@ -20097,22 +19901,22 @@
 /**
  * Signal CollDetCfg_ClearRegions raw initial value.
  */
-#define START_CollDetCfg_CollDetCfg_ClearRegions      0
+#define START_CollDetCfg_CollDetCfg_ClearRegions 0
 
 /**
  * Signal CollDetCfg_ClearRegions raw minimum value.
  */
-#define MIN_CollDetCfg_CollDetCfg_ClearRegions        0
+#define MIN_CollDetCfg_CollDetCfg_ClearRegions 0
 
 /**
  * Signal CollDetCfg_ClearRegions raw maximum value.
  */
-#define MAX_CollDetCfg_CollDetCfg_ClearRegions        1
+#define MAX_CollDetCfg_CollDetCfg_ClearRegions 1
 
 /**
  * Signal CollDetCfg_ClearRegions raw offset value.
  */
-#define OFF_CollDetCfg_CollDetCfg_ClearRegions        0
+#define OFF_CollDetCfg_CollDetCfg_ClearRegions 0
 
 /**
  * @}
@@ -20133,14 +19937,14 @@
  *
  * @ingroup ENUM_CollDetCfg_CollDetCfg_ClearRegions
  */
-#define CollDetCfg_CollDetCfg_ClearRegions_Clear               1
+#define CollDetCfg_CollDetCfg_ClearRegions_Clear 1
 
 /**
  * Value table CollDetCfg_CollDetCfg_ClearRegions entry Idle.
  *
  * @ingroup ENUM_CollDetCfg_CollDetCfg_ClearRegions
  */
-#define CollDetCfg_CollDetCfg_ClearRegions_Idle                0
+#define CollDetCfg_CollDetCfg_ClearRegions_Idle 0
 
 /**
  * @defgroup SIG_CollDetCfg_CollDetCfg_WarningReset Signal CollDetCfg_WarningReset of Message CollDetCfg (0x400)
@@ -20160,7 +19964,7 @@
  * @deprecated
  *	Use \ref SET_CollDetCfg_CollDetCfg_WarningReset and \ref GET_CollDetCfg_CollDetCfg_WarningReset instead.
  */
-#define SIG_CollDetCfg_CollDetCfg_WarningReset        1, 0, 0, 1
+#define SIG_CollDetCfg_CollDetCfg_WarningReset 1, 0, 0, 1
 
 /**
  * Signal CollDetCfg_WarningReset setup tuple.
@@ -20168,7 +19972,7 @@
  * @deprecated
  *	Use \ref INITSIG_CollDetCfg_CollDetCfg_WarningReset or \ref INIT_CollDetCfg instead.
  */
-#define SETUP_CollDetCfg_CollDetCfg_WarningReset      1, 0, 0, 1, 0
+#define SETUP_CollDetCfg_CollDetCfg_WarningReset 1, 0, 0, 1, 0
 
 /**
  * Get signal CollDetCfg_WarningReset from buffer.
@@ -20178,9 +19982,7 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetCfg_CollDetCfg_WarningReset(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 0) & 0x01) << 0) \
-)
+#define GET_CollDetCfg_CollDetCfg_WarningReset(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 0) & 0x01) << 0))
 
 /**
  * Set signal CollDetCfg_WarningReset in buffer.
@@ -20190,10 +19992,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_CollDetCfg_CollDetCfg_WarningReset(buf, val) { \
-	buf[0] &= ~(0x01 << 0); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 0; \
-}
+#define SET_CollDetCfg_CollDetCfg_WarningReset(buf, val) \
+	{                                                      \
+		buf[0] &= ~(0x01 << 0);                              \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 0;         \
+	}
 
 /**
  * Set signal CollDetCfg_WarningReset in buffer to its initial value.
@@ -20221,22 +20024,22 @@
 /**
  * Signal CollDetCfg_WarningReset raw initial value.
  */
-#define START_CollDetCfg_CollDetCfg_WarningReset      0
+#define START_CollDetCfg_CollDetCfg_WarningReset 0
 
 /**
  * Signal CollDetCfg_WarningReset raw minimum value.
  */
-#define MIN_CollDetCfg_CollDetCfg_WarningReset        0
+#define MIN_CollDetCfg_CollDetCfg_WarningReset 0
 
 /**
  * Signal CollDetCfg_WarningReset raw maximum value.
  */
-#define MAX_CollDetCfg_CollDetCfg_WarningReset        1
+#define MAX_CollDetCfg_CollDetCfg_WarningReset 1
 
 /**
  * Signal CollDetCfg_WarningReset raw offset value.
  */
-#define OFF_CollDetCfg_CollDetCfg_WarningReset        0
+#define OFF_CollDetCfg_CollDetCfg_WarningReset 0
 
 /**
  * @}
@@ -20257,14 +20060,14 @@
  *
  * @ingroup ENUM_CollDetCfg_CollDetCfg_WarningReset
  */
-#define CollDetCfg_CollDetCfg_WarningReset_Warn                1
+#define CollDetCfg_CollDetCfg_WarningReset_Warn 1
 
 /**
  * Value table CollDetCfg_CollDetCfg_WarningReset entry Idle.
  *
  * @ingroup ENUM_CollDetCfg_CollDetCfg_WarningReset
  */
-#define CollDetCfg_CollDetCfg_WarningReset_Idle                0
+#define CollDetCfg_CollDetCfg_WarningReset_Idle 0
 
 /**
  * @defgroup SIG_CollDetCfg_CollDetCfg_Activate Signal CollDetCfg_Activate of Message CollDetCfg (0x400)
@@ -20284,7 +20087,7 @@
  * @deprecated
  *	Use \ref SET_CollDetCfg_CollDetCfg_Activate and \ref GET_CollDetCfg_CollDetCfg_Activate instead.
  */
-#define SIG_CollDetCfg_CollDetCfg_Activate          1, 0, 1, 1
+#define SIG_CollDetCfg_CollDetCfg_Activate 1, 0, 1, 1
 
 /**
  * Signal CollDetCfg_Activate setup tuple.
@@ -20292,7 +20095,7 @@
  * @deprecated
  *	Use \ref INITSIG_CollDetCfg_CollDetCfg_Activate or \ref INIT_CollDetCfg instead.
  */
-#define SETUP_CollDetCfg_CollDetCfg_Activate        1, 0, 1, 1, 0
+#define SETUP_CollDetCfg_CollDetCfg_Activate 1, 0, 1, 1, 0
 
 /**
  * Get signal CollDetCfg_Activate from buffer.
@@ -20302,9 +20105,7 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetCfg_CollDetCfg_Activate(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 1) & 0x01) << 0) \
-)
+#define GET_CollDetCfg_CollDetCfg_Activate(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 1) & 0x01) << 0))
 
 /**
  * Set signal CollDetCfg_Activate in buffer.
@@ -20314,10 +20115,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_CollDetCfg_CollDetCfg_Activate(buf, val) { \
-	buf[0] &= ~(0x01 << 1); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 1; \
-}
+#define SET_CollDetCfg_CollDetCfg_Activate(buf, val) \
+	{                                                  \
+		buf[0] &= ~(0x01 << 1);                          \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 1;     \
+	}
 
 /**
  * Set signal CollDetCfg_Activate in buffer to its initial value.
@@ -20345,22 +20147,22 @@
 /**
  * Signal CollDetCfg_Activate raw initial value.
  */
-#define START_CollDetCfg_CollDetCfg_Activate        0
+#define START_CollDetCfg_CollDetCfg_Activate 0
 
 /**
  * Signal CollDetCfg_Activate raw minimum value.
  */
-#define MIN_CollDetCfg_CollDetCfg_Activate          0
+#define MIN_CollDetCfg_CollDetCfg_Activate 0
 
 /**
  * Signal CollDetCfg_Activate raw maximum value.
  */
-#define MAX_CollDetCfg_CollDetCfg_Activate          1
+#define MAX_CollDetCfg_CollDetCfg_Activate 1
 
 /**
  * Signal CollDetCfg_Activate raw offset value.
  */
-#define OFF_CollDetCfg_CollDetCfg_Activate          0
+#define OFF_CollDetCfg_CollDetCfg_Activate 0
 
 /**
  * @}
@@ -20379,14 +20181,14 @@
  *
  * @ingroup ENUM_CollDetCfg_CollDetCfg_Activate
  */
-#define CollDetCfg_CollDetCfg_Activate_Active              1
+#define CollDetCfg_CollDetCfg_Activate_Active 1
 
 /**
  * Value table CollDetCfg_CollDetCfg_Activate entry Inactive.
  *
  * @ingroup ENUM_CollDetCfg_CollDetCfg_Activate
  */
-#define CollDetCfg_CollDetCfg_Activate_Inactive            0
+#define CollDetCfg_CollDetCfg_Activate_Inactive 0
 
 /**
  * @defgroup SIG_CollDetCfg_CollDetCfg_MinTime_valid Signal CollDetCfg_MinTime_valid of Message CollDetCfg (0x400)
@@ -20406,7 +20208,7 @@
  * @deprecated
  *	Use \ref SET_CollDetCfg_CollDetCfg_MinTime_valid and \ref GET_CollDetCfg_CollDetCfg_MinTime_valid instead.
  */
-#define SIG_CollDetCfg_CollDetCfg_MinTime_valid        1, 0, 3, 1
+#define SIG_CollDetCfg_CollDetCfg_MinTime_valid 1, 0, 3, 1
 
 /**
  * Signal CollDetCfg_MinTime_valid setup tuple.
@@ -20414,7 +20216,7 @@
  * @deprecated
  *	Use \ref INITSIG_CollDetCfg_CollDetCfg_MinTime_valid or \ref INIT_CollDetCfg instead.
  */
-#define SETUP_CollDetCfg_CollDetCfg_MinTime_valid      1, 0, 3, 1, 0
+#define SETUP_CollDetCfg_CollDetCfg_MinTime_valid 1, 0, 3, 1, 0
 
 /**
  * Get signal CollDetCfg_MinTime_valid from buffer.
@@ -20424,9 +20226,7 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetCfg_CollDetCfg_MinTime_valid(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 3) & 0x01) << 0) \
-)
+#define GET_CollDetCfg_CollDetCfg_MinTime_valid(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 3) & 0x01) << 0))
 
 /**
  * Set signal CollDetCfg_MinTime_valid in buffer.
@@ -20436,10 +20236,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_CollDetCfg_CollDetCfg_MinTime_valid(buf, val) { \
-	buf[0] &= ~(0x01 << 3); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 3; \
-}
+#define SET_CollDetCfg_CollDetCfg_MinTime_valid(buf, val) \
+	{                                                       \
+		buf[0] &= ~(0x01 << 3);                               \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 3;          \
+	}
 
 /**
  * Set signal CollDetCfg_MinTime_valid in buffer to its initial value.
@@ -20467,22 +20268,22 @@
 /**
  * Signal CollDetCfg_MinTime_valid raw initial value.
  */
-#define START_CollDetCfg_CollDetCfg_MinTime_valid      0
+#define START_CollDetCfg_CollDetCfg_MinTime_valid 0
 
 /**
  * Signal CollDetCfg_MinTime_valid raw minimum value.
  */
-#define MIN_CollDetCfg_CollDetCfg_MinTime_valid        0
+#define MIN_CollDetCfg_CollDetCfg_MinTime_valid 0
 
 /**
  * Signal CollDetCfg_MinTime_valid raw maximum value.
  */
-#define MAX_CollDetCfg_CollDetCfg_MinTime_valid        1
+#define MAX_CollDetCfg_CollDetCfg_MinTime_valid 1
 
 /**
  * Signal CollDetCfg_MinTime_valid raw offset value.
  */
-#define OFF_CollDetCfg_CollDetCfg_MinTime_valid        0
+#define OFF_CollDetCfg_CollDetCfg_MinTime_valid 0
 
 /**
  * @}
@@ -20501,14 +20302,14 @@
  *
  * @ingroup ENUM_CollDetCfg_CollDetCfg_MinTime_valid
  */
-#define CollDetCfg_CollDetCfg_MinTime_valid_Valid               1
+#define CollDetCfg_CollDetCfg_MinTime_valid_Valid 1
 
 /**
  * Value table CollDetCfg_CollDetCfg_MinTime_valid entry Invalid.
  *
  * @ingroup ENUM_CollDetCfg_CollDetCfg_MinTime_valid
  */
-#define CollDetCfg_CollDetCfg_MinTime_valid_Invalid             0
+#define CollDetCfg_CollDetCfg_MinTime_valid_Invalid 0
 
 /**
  * @defgroup SIG_CollDetCfg_CollDetCfg_MinDetectTime Signal CollDetCfg_MinDetectTime of Message CollDetCfg (0x400)
@@ -20526,7 +20327,7 @@
  * @deprecated
  *	Use \ref SET_CollDetCfg_CollDetCfg_MinDetectTime and \ref GET_CollDetCfg_CollDetCfg_MinDetectTime instead.
  */
-#define SIG_CollDetCfg_CollDetCfg_MinDetectTime        1, 0, 15, 8
+#define SIG_CollDetCfg_CollDetCfg_MinDetectTime 1, 0, 15, 8
 
 /**
  * Signal CollDetCfg_MinDetectTime setup tuple.
@@ -20534,7 +20335,7 @@
  * @deprecated
  *	Use \ref INITSIG_CollDetCfg_CollDetCfg_MinDetectTime or \ref INIT_CollDetCfg instead.
  */
-#define SETUP_CollDetCfg_CollDetCfg_MinDetectTime      1, 0, 15, 8, 0
+#define SETUP_CollDetCfg_CollDetCfg_MinDetectTime 1, 0, 15, 8, 0
 
 /**
  * Get signal CollDetCfg_MinDetectTime from buffer.
@@ -20544,9 +20345,7 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetCfg_CollDetCfg_MinDetectTime(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[1] >> 0) & 0xff) << 0) \
-)
+#define GET_CollDetCfg_CollDetCfg_MinDetectTime(buf) (0 | (ubyte)(+(ubyte)((buf[1] >> 0) & 0xff) << 0))
 
 /**
  * Set signal CollDetCfg_MinDetectTime in buffer.
@@ -20556,10 +20355,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_CollDetCfg_CollDetCfg_MinDetectTime(buf, val) { \
-	buf[1] &= ~(0xff << 0); \
-	buf[1] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_CollDetCfg_CollDetCfg_MinDetectTime(buf, val) \
+	{                                                       \
+		buf[1] &= ~(0xff << 0);                               \
+		buf[1] |= (((ubyte)(val) >> 0) & 0xff) << 0;          \
+	}
 
 /**
  * Set signal CollDetCfg_MinDetectTime in buffer to its initial value.
@@ -20587,22 +20387,22 @@
 /**
  * Signal CollDetCfg_MinDetectTime raw initial value.
  */
-#define START_CollDetCfg_CollDetCfg_MinDetectTime      0
+#define START_CollDetCfg_CollDetCfg_MinDetectTime 0
 
 /**
  * Signal CollDetCfg_MinDetectTime raw minimum value.
  */
-#define MIN_CollDetCfg_CollDetCfg_MinDetectTime        0
+#define MIN_CollDetCfg_CollDetCfg_MinDetectTime 0
 
 /**
  * Signal CollDetCfg_MinDetectTime raw maximum value.
  */
-#define MAX_CollDetCfg_CollDetCfg_MinDetectTime        255
+#define MAX_CollDetCfg_CollDetCfg_MinDetectTime 255
 
 /**
  * Signal CollDetCfg_MinDetectTime raw offset value.
  */
-#define OFF_CollDetCfg_CollDetCfg_MinDetectTime        0
+#define OFF_CollDetCfg_CollDetCfg_MinDetectTime 0
 
 /**
  * @}
@@ -20626,7 +20426,7 @@
  * @deprecated
  *	Use \ref SET_CollDetRegionCfg_CollDetRegCfg_Activate and \ref GET_CollDetRegionCfg_CollDetRegCfg_Activate instead.
  */
-#define SIG_CollDetRegionCfg_CollDetRegCfg_Activate        1, 0, 1, 1
+#define SIG_CollDetRegionCfg_CollDetRegCfg_Activate 1, 0, 1, 1
 
 /**
  * Signal CollDetRegCfg_Activate setup tuple.
@@ -20634,7 +20434,7 @@
  * @deprecated
  *	Use \ref INITSIG_CollDetRegionCfg_CollDetRegCfg_Activate or \ref INIT_CollDetRegionCfg instead.
  */
-#define SETUP_CollDetRegionCfg_CollDetRegCfg_Activate      1, 0, 1, 1, 0
+#define SETUP_CollDetRegionCfg_CollDetRegCfg_Activate 1, 0, 1, 1, 0
 
 /**
  * Get signal CollDetRegCfg_Activate from buffer.
@@ -20644,9 +20444,7 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetRegionCfg_CollDetRegCfg_Activate(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 1) & 0x01) << 0) \
-)
+#define GET_CollDetRegionCfg_CollDetRegCfg_Activate(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 1) & 0x01) << 0))
 
 /**
  * Set signal CollDetRegCfg_Activate in buffer.
@@ -20656,10 +20454,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_CollDetRegionCfg_CollDetRegCfg_Activate(buf, val) { \
-	buf[0] &= ~(0x01 << 1); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 1; \
-}
+#define SET_CollDetRegionCfg_CollDetRegCfg_Activate(buf, val) \
+	{                                                           \
+		buf[0] &= ~(0x01 << 1);                                   \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 1;              \
+	}
 
 /**
  * Set signal CollDetRegCfg_Activate in buffer to its initial value.
@@ -20687,22 +20486,22 @@
 /**
  * Signal CollDetRegCfg_Activate raw initial value.
  */
-#define START_CollDetRegionCfg_CollDetRegCfg_Activate      0
+#define START_CollDetRegionCfg_CollDetRegCfg_Activate 0
 
 /**
  * Signal CollDetRegCfg_Activate raw minimum value.
  */
-#define MIN_CollDetRegionCfg_CollDetRegCfg_Activate        0
+#define MIN_CollDetRegionCfg_CollDetRegCfg_Activate 0
 
 /**
  * Signal CollDetRegCfg_Activate raw maximum value.
  */
-#define MAX_CollDetRegionCfg_CollDetRegCfg_Activate        1
+#define MAX_CollDetRegionCfg_CollDetRegCfg_Activate 1
 
 /**
  * Signal CollDetRegCfg_Activate raw offset value.
  */
-#define OFF_CollDetRegionCfg_CollDetRegCfg_Activate        0
+#define OFF_CollDetRegionCfg_CollDetRegCfg_Activate 0
 
 /**
  * @}
@@ -20721,14 +20520,14 @@
  *
  * @ingroup ENUM_CollDetRegionCfg_CollDetRegCfg_Activate
  */
-#define CollDetRegionCfg_CollDetRegCfg_Activate_Active              1
+#define CollDetRegionCfg_CollDetRegCfg_Activate_Active 1
 
 /**
  * Value table CollDetRegionCfg_CollDetRegCfg_Activate entry Inactive.
  *
  * @ingroup ENUM_CollDetRegionCfg_CollDetRegCfg_Activate
  */
-#define CollDetRegionCfg_CollDetRegCfg_Activate_Inactive            0
+#define CollDetRegionCfg_CollDetRegCfg_Activate_Inactive 0
 
 /**
  * @defgroup SIG_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid Signal CollDetRegCfg_Coordinates_valid of Message CollDetRegionCfg (0x401)
@@ -20748,7 +20547,7 @@
  * @deprecated
  *	Use \ref SET_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid and \ref GET_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid instead.
  */
-#define SIG_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid        1, 0, 2, 1
+#define SIG_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid 1, 0, 2, 1
 
 /**
  * Signal CollDetRegCfg_Coordinates_valid setup tuple.
@@ -20756,7 +20555,7 @@
  * @deprecated
  *	Use \ref INITSIG_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid or \ref INIT_CollDetRegionCfg instead.
  */
-#define SETUP_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid      1, 0, 2, 1, 0
+#define SETUP_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid 1, 0, 2, 1, 0
 
 /**
  * Get signal CollDetRegCfg_Coordinates_valid from buffer.
@@ -20766,9 +20565,7 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 2) & 0x01) << 0) \
-)
+#define GET_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 2) & 0x01) << 0))
 
 /**
  * Set signal CollDetRegCfg_Coordinates_valid in buffer.
@@ -20778,10 +20575,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid(buf, val) { \
-	buf[0] &= ~(0x01 << 2); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 2; \
-}
+#define SET_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid(buf, val) \
+	{                                                                    \
+		buf[0] &= ~(0x01 << 2);                                            \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 2;                       \
+	}
 
 /**
  * Set signal CollDetRegCfg_Coordinates_valid in buffer to its initial value.
@@ -20809,22 +20607,22 @@
 /**
  * Signal CollDetRegCfg_Coordinates_valid raw initial value.
  */
-#define START_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid      0
+#define START_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid 0
 
 /**
  * Signal CollDetRegCfg_Coordinates_valid raw minimum value.
  */
-#define MIN_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid        0
+#define MIN_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid 0
 
 /**
  * Signal CollDetRegCfg_Coordinates_valid raw maximum value.
  */
-#define MAX_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid        1
+#define MAX_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid 1
 
 /**
  * Signal CollDetRegCfg_Coordinates_valid raw offset value.
  */
-#define OFF_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid        0
+#define OFF_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid 0
 
 /**
  * @}
@@ -20843,14 +20641,14 @@
  *
  * @ingroup ENUM_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid
  */
-#define CollDetRegionCfg_CollDetRegCfg_Coordinates_valid_Valid               1
+#define CollDetRegionCfg_CollDetRegCfg_Coordinates_valid_Valid 1
 
 /**
  * Value table CollDetRegionCfg_CollDetRegCfg_Coordinates_valid entry Invalid.
  *
  * @ingroup ENUM_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid
  */
-#define CollDetRegionCfg_CollDetRegCfg_Coordinates_valid_Invalid             0
+#define CollDetRegionCfg_CollDetRegCfg_Coordinates_valid_Invalid 0
 
 /**
  * @defgroup SIG_CollDetRegionCfg_CollDetRegCfg_RegionID Signal CollDetRegCfg_RegionID of Message CollDetRegionCfg (0x401)
@@ -20868,7 +20666,7 @@
  * @deprecated
  *	Use \ref SET_CollDetRegionCfg_CollDetRegCfg_RegionID and \ref GET_CollDetRegionCfg_CollDetRegCfg_RegionID instead.
  */
-#define SIG_CollDetRegionCfg_CollDetRegCfg_RegionID        1, 0, 10, 3
+#define SIG_CollDetRegionCfg_CollDetRegCfg_RegionID 1, 0, 10, 3
 
 /**
  * Signal CollDetRegCfg_RegionID setup tuple.
@@ -20876,7 +20674,7 @@
  * @deprecated
  *	Use \ref INITSIG_CollDetRegionCfg_CollDetRegCfg_RegionID or \ref INIT_CollDetRegionCfg instead.
  */
-#define SETUP_CollDetRegionCfg_CollDetRegCfg_RegionID      1, 0, 10, 3, 0
+#define SETUP_CollDetRegionCfg_CollDetRegCfg_RegionID 1, 0, 10, 3, 0
 
 /**
  * Get signal CollDetRegCfg_RegionID from buffer.
@@ -20886,9 +20684,7 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetRegionCfg_CollDetRegCfg_RegionID(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[1] >> 0) & 0x07) << 0) \
-)
+#define GET_CollDetRegionCfg_CollDetRegCfg_RegionID(buf) (0 | (ubyte)(+(ubyte)((buf[1] >> 0) & 0x07) << 0))
 
 /**
  * Set signal CollDetRegCfg_RegionID in buffer.
@@ -20898,10 +20694,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_CollDetRegionCfg_CollDetRegCfg_RegionID(buf, val) { \
-	buf[1] &= ~(0x07 << 0); \
-	buf[1] |= (((ubyte)(val) >> 0) & 0x07) << 0; \
-}
+#define SET_CollDetRegionCfg_CollDetRegCfg_RegionID(buf, val) \
+	{                                                           \
+		buf[1] &= ~(0x07 << 0);                                   \
+		buf[1] |= (((ubyte)(val) >> 0) & 0x07) << 0;              \
+	}
 
 /**
  * Set signal CollDetRegCfg_RegionID in buffer to its initial value.
@@ -20929,22 +20726,22 @@
 /**
  * Signal CollDetRegCfg_RegionID raw initial value.
  */
-#define START_CollDetRegionCfg_CollDetRegCfg_RegionID      0
+#define START_CollDetRegionCfg_CollDetRegCfg_RegionID 0
 
 /**
  * Signal CollDetRegCfg_RegionID raw minimum value.
  */
-#define MIN_CollDetRegionCfg_CollDetRegCfg_RegionID        0
+#define MIN_CollDetRegionCfg_CollDetRegCfg_RegionID 0
 
 /**
  * Signal CollDetRegCfg_RegionID raw maximum value.
  */
-#define MAX_CollDetRegionCfg_CollDetRegCfg_RegionID        7
+#define MAX_CollDetRegionCfg_CollDetRegCfg_RegionID 7
 
 /**
  * Signal CollDetRegCfg_RegionID raw offset value.
  */
-#define OFF_CollDetRegionCfg_CollDetRegCfg_RegionID        0
+#define OFF_CollDetRegionCfg_CollDetRegCfg_RegionID 0
 
 /**
  * @}
@@ -20966,7 +20763,7 @@
  * @deprecated
  *	Use \ref SET_CollDetRegionCfg_CollDetRegCfg_Point1X and \ref GET_CollDetRegionCfg_CollDetRegCfg_Point1X instead.
  */
-#define SIG_CollDetRegionCfg_CollDetRegCfg_Point1X        1, 0, 23, 13
+#define SIG_CollDetRegionCfg_CollDetRegCfg_Point1X 1, 0, 23, 13
 
 /**
  * Signal CollDetRegCfg_Point1X setup tuple.
@@ -20974,7 +20771,7 @@
  * @deprecated
  *	Use \ref INITSIG_CollDetRegionCfg_CollDetRegCfg_Point1X or \ref INIT_CollDetRegionCfg instead.
  */
-#define SETUP_CollDetRegionCfg_CollDetRegCfg_Point1X      1, 0, 23, 13, 2500
+#define SETUP_CollDetRegionCfg_CollDetRegCfg_Point1X 1, 0, 23, 13, 2500
 
 /**
  * Get signal CollDetRegCfg_Point1X from buffer.
@@ -20984,10 +20781,7 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetRegionCfg_CollDetRegCfg_Point1X(buf) (0 \
-	| (uword)(+(uword)((buf[2] >> 0) & 0xff) << 5) \
-	| (ubyte)(+(ubyte)((buf[3] >> 3) & 0x1f) << 0) \
-)
+#define GET_CollDetRegionCfg_CollDetRegCfg_Point1X(buf) (0 | (uword)(+(uword)((buf[2] >> 0) & 0xff) << 5) | (ubyte)(+(ubyte)((buf[3] >> 3) & 0x1f) << 0))
 
 /**
  * Set signal CollDetRegCfg_Point1X in buffer.
@@ -20997,12 +20791,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_CollDetRegionCfg_CollDetRegCfg_Point1X(buf, val) { \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= ((ubyte)((uword)(val) >> 5) & 0xff) << 0; \
-	buf[3] &= ~(0x1f << 3); \
-	buf[3] |= (((ubyte)(val) >> 0) & 0x1f) << 3; \
-}
+#define SET_CollDetRegionCfg_CollDetRegCfg_Point1X(buf, val) \
+	{                                                          \
+		buf[2] &= ~(0xff << 0);                                  \
+		buf[2] |= ((ubyte)((uword)(val) >> 5) & 0xff) << 0;      \
+		buf[3] &= ~(0x1f << 3);                                  \
+		buf[3] |= (((ubyte)(val) >> 0) & 0x1f) << 3;             \
+	}
 
 /**
  * Set signal CollDetRegCfg_Point1X in buffer to its initial value.
@@ -21030,22 +20825,22 @@
 /**
  * Signal CollDetRegCfg_Point1X raw initial value.
  */
-#define START_CollDetRegionCfg_CollDetRegCfg_Point1X      2500
+#define START_CollDetRegionCfg_CollDetRegCfg_Point1X 2500
 
 /**
  * Signal CollDetRegCfg_Point1X raw minimum value.
  */
-#define MIN_CollDetRegionCfg_CollDetRegCfg_Point1X        0
+#define MIN_CollDetRegionCfg_CollDetRegCfg_Point1X 0
 
 /**
  * Signal CollDetRegCfg_Point1X raw maximum value.
  */
-#define MAX_CollDetRegionCfg_CollDetRegCfg_Point1X        8191
+#define MAX_CollDetRegionCfg_CollDetRegCfg_Point1X 8191
 
 /**
  * Signal CollDetRegCfg_Point1X raw offset value.
  */
-#define OFF_CollDetRegionCfg_CollDetRegCfg_Point1X        -2500
+#define OFF_CollDetRegionCfg_CollDetRegCfg_Point1X -2500
 
 /**
  * @}
@@ -21067,7 +20862,7 @@
  * @deprecated
  *	Use \ref SET_CollDetRegionCfg_CollDetRegCfg_Point1Y and \ref GET_CollDetRegionCfg_CollDetRegCfg_Point1Y instead.
  */
-#define SIG_CollDetRegionCfg_CollDetRegCfg_Point1Y        1, 0, 26, 11
+#define SIG_CollDetRegionCfg_CollDetRegCfg_Point1Y 1, 0, 26, 11
 
 /**
  * Signal CollDetRegCfg_Point1Y setup tuple.
@@ -21075,7 +20870,7 @@
  * @deprecated
  *	Use \ref INITSIG_CollDetRegionCfg_CollDetRegCfg_Point1Y or \ref INIT_CollDetRegionCfg instead.
  */
-#define SETUP_CollDetRegionCfg_CollDetRegCfg_Point1Y      1, 0, 26, 11, 1023
+#define SETUP_CollDetRegionCfg_CollDetRegCfg_Point1Y 1, 0, 26, 11, 1023
 
 /**
  * Get signal CollDetRegCfg_Point1Y from buffer.
@@ -21085,10 +20880,7 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetRegionCfg_CollDetRegCfg_Point1Y(buf) (0 \
-	| (uword)(+(uword)((buf[3] >> 0) & 0x07) << 8) \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0) \
-)
+#define GET_CollDetRegionCfg_CollDetRegCfg_Point1Y(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x07) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal CollDetRegCfg_Point1Y in buffer.
@@ -21098,12 +20890,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_CollDetRegionCfg_CollDetRegCfg_Point1Y(buf, val) { \
-	buf[3] &= ~(0x07 << 0); \
-	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x07) << 0; \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_CollDetRegionCfg_CollDetRegCfg_Point1Y(buf, val) \
+	{                                                          \
+		buf[3] &= ~(0x07 << 0);                                  \
+		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x07) << 0;      \
+		buf[4] &= ~(0xff << 0);                                  \
+		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;             \
+	}
 
 /**
  * Set signal CollDetRegCfg_Point1Y in buffer to its initial value.
@@ -21131,22 +20924,22 @@
 /**
  * Signal CollDetRegCfg_Point1Y raw initial value.
  */
-#define START_CollDetRegionCfg_CollDetRegCfg_Point1Y      1023
+#define START_CollDetRegionCfg_CollDetRegCfg_Point1Y 1023
 
 /**
  * Signal CollDetRegCfg_Point1Y raw minimum value.
  */
-#define MIN_CollDetRegionCfg_CollDetRegCfg_Point1Y        0
+#define MIN_CollDetRegionCfg_CollDetRegCfg_Point1Y 0
 
 /**
  * Signal CollDetRegCfg_Point1Y raw maximum value.
  */
-#define MAX_CollDetRegionCfg_CollDetRegCfg_Point1Y        2047
+#define MAX_CollDetRegionCfg_CollDetRegCfg_Point1Y 2047
 
 /**
  * Signal CollDetRegCfg_Point1Y raw offset value.
  */
-#define OFF_CollDetRegionCfg_CollDetRegCfg_Point1Y        -1023
+#define OFF_CollDetRegionCfg_CollDetRegCfg_Point1Y -1023
 
 /**
  * @}
@@ -21168,7 +20961,7 @@
  * @deprecated
  *	Use \ref SET_CollDetRegionCfg_CollDetRegCfg_Point2X and \ref GET_CollDetRegionCfg_CollDetRegCfg_Point2X instead.
  */
-#define SIG_CollDetRegionCfg_CollDetRegCfg_Point2X        1, 0, 47, 13
+#define SIG_CollDetRegionCfg_CollDetRegCfg_Point2X 1, 0, 47, 13
 
 /**
  * Signal CollDetRegCfg_Point2X setup tuple.
@@ -21176,7 +20969,7 @@
  * @deprecated
  *	Use \ref INITSIG_CollDetRegionCfg_CollDetRegCfg_Point2X or \ref INIT_CollDetRegionCfg instead.
  */
-#define SETUP_CollDetRegionCfg_CollDetRegCfg_Point2X      1, 0, 47, 13, 2500
+#define SETUP_CollDetRegionCfg_CollDetRegCfg_Point2X 1, 0, 47, 13, 2500
 
 /**
  * Get signal CollDetRegCfg_Point2X from buffer.
@@ -21186,10 +20979,7 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetRegionCfg_CollDetRegCfg_Point2X(buf) (0 \
-	| (uword)(+(uword)((buf[5] >> 0) & 0xff) << 5) \
-	| (ubyte)(+(ubyte)((buf[6] >> 3) & 0x1f) << 0) \
-)
+#define GET_CollDetRegionCfg_CollDetRegCfg_Point2X(buf) (0 | (uword)(+(uword)((buf[5] >> 0) & 0xff) << 5) | (ubyte)(+(ubyte)((buf[6] >> 3) & 0x1f) << 0))
 
 /**
  * Set signal CollDetRegCfg_Point2X in buffer.
@@ -21199,12 +20989,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_CollDetRegionCfg_CollDetRegCfg_Point2X(buf, val) { \
-	buf[5] &= ~(0xff << 0); \
-	buf[5] |= ((ubyte)((uword)(val) >> 5) & 0xff) << 0; \
-	buf[6] &= ~(0x1f << 3); \
-	buf[6] |= (((ubyte)(val) >> 0) & 0x1f) << 3; \
-}
+#define SET_CollDetRegionCfg_CollDetRegCfg_Point2X(buf, val) \
+	{                                                          \
+		buf[5] &= ~(0xff << 0);                                  \
+		buf[5] |= ((ubyte)((uword)(val) >> 5) & 0xff) << 0;      \
+		buf[6] &= ~(0x1f << 3);                                  \
+		buf[6] |= (((ubyte)(val) >> 0) & 0x1f) << 3;             \
+	}
 
 /**
  * Set signal CollDetRegCfg_Point2X in buffer to its initial value.
@@ -21232,22 +21023,22 @@
 /**
  * Signal CollDetRegCfg_Point2X raw initial value.
  */
-#define START_CollDetRegionCfg_CollDetRegCfg_Point2X      2500
+#define START_CollDetRegionCfg_CollDetRegCfg_Point2X 2500
 
 /**
  * Signal CollDetRegCfg_Point2X raw minimum value.
  */
-#define MIN_CollDetRegionCfg_CollDetRegCfg_Point2X        0
+#define MIN_CollDetRegionCfg_CollDetRegCfg_Point2X 0
 
 /**
  * Signal CollDetRegCfg_Point2X raw maximum value.
  */
-#define MAX_CollDetRegionCfg_CollDetRegCfg_Point2X        8191
+#define MAX_CollDetRegionCfg_CollDetRegCfg_Point2X 8191
 
 /**
  * Signal CollDetRegCfg_Point2X raw offset value.
  */
-#define OFF_CollDetRegionCfg_CollDetRegCfg_Point2X        -2500
+#define OFF_CollDetRegionCfg_CollDetRegCfg_Point2X -2500
 
 /**
  * @}
@@ -21269,7 +21060,7 @@
  * @deprecated
  *	Use \ref SET_CollDetRegionCfg_CollDetRegCfg_Point2Y and \ref GET_CollDetRegionCfg_CollDetRegCfg_Point2Y instead.
  */
-#define SIG_CollDetRegionCfg_CollDetRegCfg_Point2Y        1, 0, 50, 11
+#define SIG_CollDetRegionCfg_CollDetRegCfg_Point2Y 1, 0, 50, 11
 
 /**
  * Signal CollDetRegCfg_Point2Y setup tuple.
@@ -21277,7 +21068,7 @@
  * @deprecated
  *	Use \ref INITSIG_CollDetRegionCfg_CollDetRegCfg_Point2Y or \ref INIT_CollDetRegionCfg instead.
  */
-#define SETUP_CollDetRegionCfg_CollDetRegCfg_Point2Y      1, 0, 50, 11, 1023
+#define SETUP_CollDetRegionCfg_CollDetRegCfg_Point2Y 1, 0, 50, 11, 1023
 
 /**
  * Get signal CollDetRegCfg_Point2Y from buffer.
@@ -21287,10 +21078,7 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetRegionCfg_CollDetRegCfg_Point2Y(buf) (0 \
-	| (uword)(+(uword)((buf[6] >> 0) & 0x07) << 8) \
-	| (ubyte)(+(ubyte)((buf[7] >> 0) & 0xff) << 0) \
-)
+#define GET_CollDetRegionCfg_CollDetRegCfg_Point2Y(buf) (0 | (uword)(+(uword)((buf[6] >> 0) & 0x07) << 8) | (ubyte)(+(ubyte)((buf[7] >> 0) & 0xff) << 0))
 
 /**
  * Set signal CollDetRegCfg_Point2Y in buffer.
@@ -21300,12 +21088,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_CollDetRegionCfg_CollDetRegCfg_Point2Y(buf, val) { \
-	buf[6] &= ~(0x07 << 0); \
-	buf[6] |= ((ubyte)((uword)(val) >> 8) & 0x07) << 0; \
-	buf[7] &= ~(0xff << 0); \
-	buf[7] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_CollDetRegionCfg_CollDetRegCfg_Point2Y(buf, val) \
+	{                                                          \
+		buf[6] &= ~(0x07 << 0);                                  \
+		buf[6] |= ((ubyte)((uword)(val) >> 8) & 0x07) << 0;      \
+		buf[7] &= ~(0xff << 0);                                  \
+		buf[7] |= (((ubyte)(val) >> 0) & 0xff) << 0;             \
+	}
 
 /**
  * Set signal CollDetRegCfg_Point2Y in buffer to its initial value.
@@ -21333,22 +21122,22 @@
 /**
  * Signal CollDetRegCfg_Point2Y raw initial value.
  */
-#define START_CollDetRegionCfg_CollDetRegCfg_Point2Y      1023
+#define START_CollDetRegionCfg_CollDetRegCfg_Point2Y 1023
 
 /**
  * Signal CollDetRegCfg_Point2Y raw minimum value.
  */
-#define MIN_CollDetRegionCfg_CollDetRegCfg_Point2Y        0
+#define MIN_CollDetRegionCfg_CollDetRegCfg_Point2Y 0
 
 /**
  * Signal CollDetRegCfg_Point2Y raw maximum value.
  */
-#define MAX_CollDetRegionCfg_CollDetRegCfg_Point2Y        2047
+#define MAX_CollDetRegionCfg_CollDetRegCfg_Point2Y 2047
 
 /**
  * Signal CollDetRegCfg_Point2Y raw offset value.
  */
-#define OFF_CollDetRegionCfg_CollDetRegCfg_Point2Y        -1023
+#define OFF_CollDetRegionCfg_CollDetRegCfg_Point2Y -1023
 
 /**
  * @}
@@ -21369,7 +21158,7 @@
  * @deprecated
  *	Use \ref SET_CollDetState_CollDetState_MeasCounter and \ref GET_CollDetState_CollDetState_MeasCounter instead.
  */
-#define SIG_CollDetState_CollDetState_MeasCounter        1, 0, 23, 16
+#define SIG_CollDetState_CollDetState_MeasCounter 1, 0, 23, 16
 
 /**
  * Signal CollDetState_MeasCounter setup tuple.
@@ -21377,7 +21166,7 @@
  * @deprecated
  *	Use \ref INITSIG_CollDetState_CollDetState_MeasCounter or \ref INIT_CollDetState instead.
  */
-#define SETUP_CollDetState_CollDetState_MeasCounter      1, 0, 23, 16, 0
+#define SETUP_CollDetState_CollDetState_MeasCounter 1, 0, 23, 16, 0
 
 /**
  * Get signal CollDetState_MeasCounter from buffer.
@@ -21387,10 +21176,7 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetState_CollDetState_MeasCounter(buf) (0 \
-	| (uword)(+(uword)((buf[2] >> 0) & 0xff) << 8) \
-	| (ubyte)(+(ubyte)((buf[3] >> 0) & 0xff) << 0) \
-)
+#define GET_CollDetState_CollDetState_MeasCounter(buf) (0 | (uword)(+(uword)((buf[2] >> 0) & 0xff) << 8) | (ubyte)(+(ubyte)((buf[3] >> 0) & 0xff) << 0))
 
 /**
  * Set signal CollDetState_MeasCounter in buffer.
@@ -21400,12 +21186,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_CollDetState_CollDetState_MeasCounter(buf, val) { \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= ((ubyte)((uword)(val) >> 8) & 0xff) << 0; \
-	buf[3] &= ~(0xff << 0); \
-	buf[3] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_CollDetState_CollDetState_MeasCounter(buf, val) \
+	{                                                         \
+		buf[2] &= ~(0xff << 0);                                 \
+		buf[2] |= ((ubyte)((uword)(val) >> 8) & 0xff) << 0;     \
+		buf[3] &= ~(0xff << 0);                                 \
+		buf[3] |= (((ubyte)(val) >> 0) & 0xff) << 0;            \
+	}
 
 /**
  * Set signal CollDetState_MeasCounter in buffer to its initial value.
@@ -21433,22 +21220,22 @@
 /**
  * Signal CollDetState_MeasCounter raw initial value.
  */
-#define START_CollDetState_CollDetState_MeasCounter      0
+#define START_CollDetState_CollDetState_MeasCounter 0
 
 /**
  * Signal CollDetState_MeasCounter raw minimum value.
  */
-#define MIN_CollDetState_CollDetState_MeasCounter        0
+#define MIN_CollDetState_CollDetState_MeasCounter 0
 
 /**
  * Signal CollDetState_MeasCounter raw maximum value.
  */
-#define MAX_CollDetState_CollDetState_MeasCounter        65535
+#define MAX_CollDetState_CollDetState_MeasCounter 65535
 
 /**
  * Signal CollDetState_MeasCounter raw offset value.
  */
-#define OFF_CollDetState_CollDetState_MeasCounter        0
+#define OFF_CollDetState_CollDetState_MeasCounter 0
 
 /**
  * @}
@@ -21471,7 +21258,7 @@
  * @deprecated
  *	Use \ref SET_CollDetState_CollDetState_Active and \ref GET_CollDetState_CollDetState_Active instead.
  */
-#define SIG_CollDetState_CollDetState_Active        1, 0, 1, 1
+#define SIG_CollDetState_CollDetState_Active 1, 0, 1, 1
 
 /**
  * Signal CollDetState_Active setup tuple.
@@ -21479,7 +21266,7 @@
  * @deprecated
  *	Use \ref INITSIG_CollDetState_CollDetState_Active or \ref INIT_CollDetState instead.
  */
-#define SETUP_CollDetState_CollDetState_Active      1, 0, 1, 1, 0
+#define SETUP_CollDetState_CollDetState_Active 1, 0, 1, 1, 0
 
 /**
  * Get signal CollDetState_Active from buffer.
@@ -21489,9 +21276,7 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetState_CollDetState_Active(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 1) & 0x01) << 0) \
-)
+#define GET_CollDetState_CollDetState_Active(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 1) & 0x01) << 0))
 
 /**
  * Set signal CollDetState_Active in buffer.
@@ -21501,10 +21286,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_CollDetState_CollDetState_Active(buf, val) { \
-	buf[0] &= ~(0x01 << 1); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 1; \
-}
+#define SET_CollDetState_CollDetState_Active(buf, val) \
+	{                                                    \
+		buf[0] &= ~(0x01 << 1);                            \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 1;       \
+	}
 
 /**
  * Set signal CollDetState_Active in buffer to its initial value.
@@ -21532,22 +21318,22 @@
 /**
  * Signal CollDetState_Active raw initial value.
  */
-#define START_CollDetState_CollDetState_Active      0
+#define START_CollDetState_CollDetState_Active 0
 
 /**
  * Signal CollDetState_Active raw minimum value.
  */
-#define MIN_CollDetState_CollDetState_Active        0
+#define MIN_CollDetState_CollDetState_Active 0
 
 /**
  * Signal CollDetState_Active raw maximum value.
  */
-#define MAX_CollDetState_CollDetState_Active        1
+#define MAX_CollDetState_CollDetState_Active 1
 
 /**
  * Signal CollDetState_Active raw offset value.
  */
-#define OFF_CollDetState_CollDetState_Active        0
+#define OFF_CollDetState_CollDetState_Active 0
 
 /**
  * @}
@@ -21566,14 +21352,14 @@
  *
  * @ingroup ENUM_CollDetState_CollDetState_Active
  */
-#define CollDetState_CollDetState_Active_Active              1
+#define CollDetState_CollDetState_Active_Active 1
 
 /**
  * Value table CollDetState_CollDetState_Active entry Inactive.
  *
  * @ingroup ENUM_CollDetState_CollDetState_Active
  */
-#define CollDetState_CollDetState_Active_Inactive            0
+#define CollDetState_CollDetState_Active_Inactive 0
 
 /**
  * @defgroup SIG_CollDetState_CollDetState_NofRegions Signal CollDetState_NofRegions of Message CollDetState (0x408)
@@ -21591,7 +21377,7 @@
  * @deprecated
  *	Use \ref SET_CollDetState_CollDetState_NofRegions and \ref GET_CollDetState_CollDetState_NofRegions instead.
  */
-#define SIG_CollDetState_CollDetState_NofRegions        1, 0, 7, 4
+#define SIG_CollDetState_CollDetState_NofRegions 1, 0, 7, 4
 
 /**
  * Signal CollDetState_NofRegions setup tuple.
@@ -21599,7 +21385,7 @@
  * @deprecated
  *	Use \ref INITSIG_CollDetState_CollDetState_NofRegions or \ref INIT_CollDetState instead.
  */
-#define SETUP_CollDetState_CollDetState_NofRegions      1, 0, 7, 4, 0
+#define SETUP_CollDetState_CollDetState_NofRegions 1, 0, 7, 4, 0
 
 /**
  * Get signal CollDetState_NofRegions from buffer.
@@ -21609,9 +21395,7 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetState_CollDetState_NofRegions(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 4) & 0x0f) << 0) \
-)
+#define GET_CollDetState_CollDetState_NofRegions(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 4) & 0x0f) << 0))
 
 /**
  * Set signal CollDetState_NofRegions in buffer.
@@ -21621,10 +21405,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_CollDetState_CollDetState_NofRegions(buf, val) { \
-	buf[0] &= ~(0x0f << 4); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0x0f) << 4; \
-}
+#define SET_CollDetState_CollDetState_NofRegions(buf, val) \
+	{                                                        \
+		buf[0] &= ~(0x0f << 4);                                \
+		buf[0] |= (((ubyte)(val) >> 0) & 0x0f) << 4;           \
+	}
 
 /**
  * Set signal CollDetState_NofRegions in buffer to its initial value.
@@ -21652,22 +21437,22 @@
 /**
  * Signal CollDetState_NofRegions raw initial value.
  */
-#define START_CollDetState_CollDetState_NofRegions      0
+#define START_CollDetState_CollDetState_NofRegions 0
 
 /**
  * Signal CollDetState_NofRegions raw minimum value.
  */
-#define MIN_CollDetState_CollDetState_NofRegions        0
+#define MIN_CollDetState_CollDetState_NofRegions 0
 
 /**
  * Signal CollDetState_NofRegions raw maximum value.
  */
-#define MAX_CollDetState_CollDetState_NofRegions        15
+#define MAX_CollDetState_CollDetState_NofRegions 15
 
 /**
  * Signal CollDetState_NofRegions raw offset value.
  */
-#define OFF_CollDetState_CollDetState_NofRegions        0
+#define OFF_CollDetState_CollDetState_NofRegions 0
 
 /**
  * @}
@@ -21689,7 +21474,7 @@
  * @deprecated
  *	Use \ref SET_CollDetState_CollDetState_MinDetectTime and \ref GET_CollDetState_CollDetState_MinDetectTime instead.
  */
-#define SIG_CollDetState_CollDetState_MinDetectTime        1, 0, 15, 8
+#define SIG_CollDetState_CollDetState_MinDetectTime 1, 0, 15, 8
 
 /**
  * Signal CollDetState_MinDetectTime setup tuple.
@@ -21697,7 +21482,7 @@
  * @deprecated
  *	Use \ref INITSIG_CollDetState_CollDetState_MinDetectTime or \ref INIT_CollDetState instead.
  */
-#define SETUP_CollDetState_CollDetState_MinDetectTime      1, 0, 15, 8, 0
+#define SETUP_CollDetState_CollDetState_MinDetectTime 1, 0, 15, 8, 0
 
 /**
  * Get signal CollDetState_MinDetectTime from buffer.
@@ -21707,9 +21492,7 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetState_CollDetState_MinDetectTime(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[1] >> 0) & 0xff) << 0) \
-)
+#define GET_CollDetState_CollDetState_MinDetectTime(buf) (0 | (ubyte)(+(ubyte)((buf[1] >> 0) & 0xff) << 0))
 
 /**
  * Set signal CollDetState_MinDetectTime in buffer.
@@ -21719,10 +21502,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_CollDetState_CollDetState_MinDetectTime(buf, val) { \
-	buf[1] &= ~(0xff << 0); \
-	buf[1] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_CollDetState_CollDetState_MinDetectTime(buf, val) \
+	{                                                           \
+		buf[1] &= ~(0xff << 0);                                   \
+		buf[1] |= (((ubyte)(val) >> 0) & 0xff) << 0;              \
+	}
 
 /**
  * Set signal CollDetState_MinDetectTime in buffer to its initial value.
@@ -21750,22 +21534,22 @@
 /**
  * Signal CollDetState_MinDetectTime raw initial value.
  */
-#define START_CollDetState_CollDetState_MinDetectTime      0
+#define START_CollDetState_CollDetState_MinDetectTime 0
 
 /**
  * Signal CollDetState_MinDetectTime raw minimum value.
  */
-#define MIN_CollDetState_CollDetState_MinDetectTime        0
+#define MIN_CollDetState_CollDetState_MinDetectTime 0
 
 /**
  * Signal CollDetState_MinDetectTime raw maximum value.
  */
-#define MAX_CollDetState_CollDetState_MinDetectTime        255
+#define MAX_CollDetState_CollDetState_MinDetectTime 255
 
 /**
  * Signal CollDetState_MinDetectTime raw offset value.
  */
-#define OFF_CollDetState_CollDetState_MinDetectTime        0
+#define OFF_CollDetState_CollDetState_MinDetectTime 0
 
 /**
  * @}
@@ -21789,7 +21573,7 @@
  * @deprecated
  *	Use \ref SET_Cluster_0_Status_Cluster_MeasCounter and \ref GET_Cluster_0_Status_Cluster_MeasCounter instead.
  */
-#define SIG_Cluster_0_Status_Cluster_MeasCounter        1, 0, 23, 16
+#define SIG_Cluster_0_Status_Cluster_MeasCounter 1, 0, 23, 16
 
 /**
  * Signal Cluster_MeasCounter setup tuple.
@@ -21797,7 +21581,7 @@
  * @deprecated
  *	Use \ref INITSIG_Cluster_0_Status_Cluster_MeasCounter or \ref INIT_Cluster_0_Status instead.
  */
-#define SETUP_Cluster_0_Status_Cluster_MeasCounter      1, 0, 23, 16, 0
+#define SETUP_Cluster_0_Status_Cluster_MeasCounter 1, 0, 23, 16, 0
 
 /**
  * Get signal Cluster_MeasCounter from buffer.
@@ -21807,10 +21591,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Cluster_0_Status_Cluster_MeasCounter(buf) (0 \
-	| (uword)(+(uword)((buf[2] >> 0) & 0xff) << 8) \
-	| (ubyte)(+(ubyte)((buf[3] >> 0) & 0xff) << 0) \
-)
+#define GET_Cluster_0_Status_Cluster_MeasCounter(buf) (0 | (uword)(+(uword)((buf[2] >> 0) & 0xff) << 8) | (ubyte)(+(ubyte)((buf[3] >> 0) & 0xff) << 0))
 
 /**
  * Set signal Cluster_MeasCounter in buffer.
@@ -21820,12 +21601,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Cluster_0_Status_Cluster_MeasCounter(buf, val) { \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= ((ubyte)((uword)(val) >> 8) & 0xff) << 0; \
-	buf[3] &= ~(0xff << 0); \
-	buf[3] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_Cluster_0_Status_Cluster_MeasCounter(buf, val) \
+	{                                                        \
+		buf[2] &= ~(0xff << 0);                                \
+		buf[2] |= ((ubyte)((uword)(val) >> 8) & 0xff) << 0;    \
+		buf[3] &= ~(0xff << 0);                                \
+		buf[3] |= (((ubyte)(val) >> 0) & 0xff) << 0;           \
+	}
 
 /**
  * Set signal Cluster_MeasCounter in buffer to its initial value.
@@ -21853,22 +21635,22 @@
 /**
  * Signal Cluster_MeasCounter raw initial value.
  */
-#define START_Cluster_0_Status_Cluster_MeasCounter      0
+#define START_Cluster_0_Status_Cluster_MeasCounter 0
 
 /**
  * Signal Cluster_MeasCounter raw minimum value.
  */
-#define MIN_Cluster_0_Status_Cluster_MeasCounter        0
+#define MIN_Cluster_0_Status_Cluster_MeasCounter 0
 
 /**
  * Signal Cluster_MeasCounter raw maximum value.
  */
-#define MAX_Cluster_0_Status_Cluster_MeasCounter        65535
+#define MAX_Cluster_0_Status_Cluster_MeasCounter 65535
 
 /**
  * Signal Cluster_MeasCounter raw offset value.
  */
-#define OFF_Cluster_0_Status_Cluster_MeasCounter        0
+#define OFF_Cluster_0_Status_Cluster_MeasCounter 0
 
 /**
  * @}
@@ -21892,7 +21674,7 @@
  * @deprecated
  *	Use \ref SET_Cluster_0_Status_Cluster_NofClustersNear and \ref GET_Cluster_0_Status_Cluster_NofClustersNear instead.
  */
-#define SIG_Cluster_0_Status_Cluster_NofClustersNear        1, 0, 7, 8
+#define SIG_Cluster_0_Status_Cluster_NofClustersNear 1, 0, 7, 8
 
 /**
  * Signal Cluster_NofClustersNear setup tuple.
@@ -21900,7 +21682,7 @@
  * @deprecated
  *	Use \ref INITSIG_Cluster_0_Status_Cluster_NofClustersNear or \ref INIT_Cluster_0_Status instead.
  */
-#define SETUP_Cluster_0_Status_Cluster_NofClustersNear      1, 0, 7, 8, 0
+#define SETUP_Cluster_0_Status_Cluster_NofClustersNear 1, 0, 7, 8, 0
 
 /**
  * Get signal Cluster_NofClustersNear from buffer.
@@ -21910,9 +21692,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Cluster_0_Status_Cluster_NofClustersNear(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 0) & 0xff) << 0) \
-)
+#define GET_Cluster_0_Status_Cluster_NofClustersNear(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 0) & 0xff) << 0))
 
 /**
  * Set signal Cluster_NofClustersNear in buffer.
@@ -21922,10 +21702,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Cluster_0_Status_Cluster_NofClustersNear(buf, val) { \
-	buf[0] &= ~(0xff << 0); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_Cluster_0_Status_Cluster_NofClustersNear(buf, val) \
+	{                                                            \
+		buf[0] &= ~(0xff << 0);                                    \
+		buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0;               \
+	}
 
 /**
  * Set signal Cluster_NofClustersNear in buffer to its initial value.
@@ -21953,22 +21734,22 @@
 /**
  * Signal Cluster_NofClustersNear raw initial value.
  */
-#define START_Cluster_0_Status_Cluster_NofClustersNear      0
+#define START_Cluster_0_Status_Cluster_NofClustersNear 0
 
 /**
  * Signal Cluster_NofClustersNear raw minimum value.
  */
-#define MIN_Cluster_0_Status_Cluster_NofClustersNear        0
+#define MIN_Cluster_0_Status_Cluster_NofClustersNear 0
 
 /**
  * Signal Cluster_NofClustersNear raw maximum value.
  */
-#define MAX_Cluster_0_Status_Cluster_NofClustersNear        255
+#define MAX_Cluster_0_Status_Cluster_NofClustersNear 255
 
 /**
  * Signal Cluster_NofClustersNear raw offset value.
  */
-#define OFF_Cluster_0_Status_Cluster_NofClustersNear        0
+#define OFF_Cluster_0_Status_Cluster_NofClustersNear 0
 
 /**
  * @}
@@ -21992,7 +21773,7 @@
  * @deprecated
  *	Use \ref SET_Cluster_0_Status_Cluster_NofClustersFar and \ref GET_Cluster_0_Status_Cluster_NofClustersFar instead.
  */
-#define SIG_Cluster_0_Status_Cluster_NofClustersFar        1, 0, 15, 8
+#define SIG_Cluster_0_Status_Cluster_NofClustersFar 1, 0, 15, 8
 
 /**
  * Signal Cluster_NofClustersFar setup tuple.
@@ -22000,7 +21781,7 @@
  * @deprecated
  *	Use \ref INITSIG_Cluster_0_Status_Cluster_NofClustersFar or \ref INIT_Cluster_0_Status instead.
  */
-#define SETUP_Cluster_0_Status_Cluster_NofClustersFar      1, 0, 15, 8, 0
+#define SETUP_Cluster_0_Status_Cluster_NofClustersFar 1, 0, 15, 8, 0
 
 /**
  * Get signal Cluster_NofClustersFar from buffer.
@@ -22010,9 +21791,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Cluster_0_Status_Cluster_NofClustersFar(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[1] >> 0) & 0xff) << 0) \
-)
+#define GET_Cluster_0_Status_Cluster_NofClustersFar(buf) (0 | (ubyte)(+(ubyte)((buf[1] >> 0) & 0xff) << 0))
 
 /**
  * Set signal Cluster_NofClustersFar in buffer.
@@ -22022,10 +21801,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Cluster_0_Status_Cluster_NofClustersFar(buf, val) { \
-	buf[1] &= ~(0xff << 0); \
-	buf[1] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_Cluster_0_Status_Cluster_NofClustersFar(buf, val) \
+	{                                                           \
+		buf[1] &= ~(0xff << 0);                                   \
+		buf[1] |= (((ubyte)(val) >> 0) & 0xff) << 0;              \
+	}
 
 /**
  * Set signal Cluster_NofClustersFar in buffer to its initial value.
@@ -22053,22 +21833,22 @@
 /**
  * Signal Cluster_NofClustersFar raw initial value.
  */
-#define START_Cluster_0_Status_Cluster_NofClustersFar      0
+#define START_Cluster_0_Status_Cluster_NofClustersFar 0
 
 /**
  * Signal Cluster_NofClustersFar raw minimum value.
  */
-#define MIN_Cluster_0_Status_Cluster_NofClustersFar        0
+#define MIN_Cluster_0_Status_Cluster_NofClustersFar 0
 
 /**
  * Signal Cluster_NofClustersFar raw maximum value.
  */
-#define MAX_Cluster_0_Status_Cluster_NofClustersFar        255
+#define MAX_Cluster_0_Status_Cluster_NofClustersFar 255
 
 /**
  * Signal Cluster_NofClustersFar raw offset value.
  */
-#define OFF_Cluster_0_Status_Cluster_NofClustersFar        0
+#define OFF_Cluster_0_Status_Cluster_NofClustersFar 0
 
 /**
  * @}
@@ -22092,7 +21872,7 @@
  * @deprecated
  *	Use \ref SET_Cluster_0_Status_Cluster_InterfaceVersion and \ref GET_Cluster_0_Status_Cluster_InterfaceVersion instead.
  */
-#define SIG_Cluster_0_Status_Cluster_InterfaceVersion        1, 0, 39, 4
+#define SIG_Cluster_0_Status_Cluster_InterfaceVersion 1, 0, 39, 4
 
 /**
  * Signal Cluster_InterfaceVersion setup tuple.
@@ -22100,7 +21880,7 @@
  * @deprecated
  *	Use \ref INITSIG_Cluster_0_Status_Cluster_InterfaceVersion or \ref INIT_Cluster_0_Status instead.
  */
-#define SETUP_Cluster_0_Status_Cluster_InterfaceVersion      1, 0, 39, 4, 0
+#define SETUP_Cluster_0_Status_Cluster_InterfaceVersion 1, 0, 39, 4, 0
 
 /**
  * Get signal Cluster_InterfaceVersion from buffer.
@@ -22110,9 +21890,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Cluster_0_Status_Cluster_InterfaceVersion(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[4] >> 4) & 0x0f) << 0) \
-)
+#define GET_Cluster_0_Status_Cluster_InterfaceVersion(buf) (0 | (ubyte)(+(ubyte)((buf[4] >> 4) & 0x0f) << 0))
 
 /**
  * Set signal Cluster_InterfaceVersion in buffer.
@@ -22122,10 +21900,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Cluster_0_Status_Cluster_InterfaceVersion(buf, val) { \
-	buf[4] &= ~(0x0f << 4); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0x0f) << 4; \
-}
+#define SET_Cluster_0_Status_Cluster_InterfaceVersion(buf, val) \
+	{                                                             \
+		buf[4] &= ~(0x0f << 4);                                     \
+		buf[4] |= (((ubyte)(val) >> 0) & 0x0f) << 4;                \
+	}
 
 /**
  * Set signal Cluster_InterfaceVersion in buffer to its initial value.
@@ -22153,22 +21932,22 @@
 /**
  * Signal Cluster_InterfaceVersion raw initial value.
  */
-#define START_Cluster_0_Status_Cluster_InterfaceVersion      0
+#define START_Cluster_0_Status_Cluster_InterfaceVersion 0
 
 /**
  * Signal Cluster_InterfaceVersion raw minimum value.
  */
-#define MIN_Cluster_0_Status_Cluster_InterfaceVersion        0
+#define MIN_Cluster_0_Status_Cluster_InterfaceVersion 0
 
 /**
  * Signal Cluster_InterfaceVersion raw maximum value.
  */
-#define MAX_Cluster_0_Status_Cluster_InterfaceVersion        15
+#define MAX_Cluster_0_Status_Cluster_InterfaceVersion 15
 
 /**
  * Signal Cluster_InterfaceVersion raw offset value.
  */
-#define OFF_Cluster_0_Status_Cluster_InterfaceVersion        0
+#define OFF_Cluster_0_Status_Cluster_InterfaceVersion 0
 
 /**
  * @}
@@ -22192,7 +21971,7 @@
  * @deprecated
  *	Use \ref SET_Obj_0_Status_Obj_NofObjects and \ref GET_Obj_0_Status_Obj_NofObjects instead.
  */
-#define SIG_Obj_0_Status_Obj_NofObjects             1, 0, 7, 8
+#define SIG_Obj_0_Status_Obj_NofObjects 1, 0, 7, 8
 
 /**
  * Signal Obj_NofObjects setup tuple.
@@ -22200,7 +21979,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_0_Status_Obj_NofObjects or \ref INIT_Obj_0_Status instead.
  */
-#define SETUP_Obj_0_Status_Obj_NofObjects           1, 0, 7, 8, 0
+#define SETUP_Obj_0_Status_Obj_NofObjects 1, 0, 7, 8, 0
 
 /**
  * Get signal Obj_NofObjects from buffer.
@@ -22210,9 +21989,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_0_Status_Obj_NofObjects(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 0) & 0xff) << 0) \
-)
+#define GET_Obj_0_Status_Obj_NofObjects(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 0) & 0xff) << 0))
 
 /**
  * Set signal Obj_NofObjects in buffer.
@@ -22222,10 +21999,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_0_Status_Obj_NofObjects(buf, val) { \
-	buf[0] &= ~(0xff << 0); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_Obj_0_Status_Obj_NofObjects(buf, val) \
+	{                                               \
+		buf[0] &= ~(0xff << 0);                       \
+		buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0;  \
+	}
 
 /**
  * Set signal Obj_NofObjects in buffer to its initial value.
@@ -22253,22 +22031,22 @@
 /**
  * Signal Obj_NofObjects raw initial value.
  */
-#define START_Obj_0_Status_Obj_NofObjects           0
+#define START_Obj_0_Status_Obj_NofObjects 0
 
 /**
  * Signal Obj_NofObjects raw minimum value.
  */
-#define MIN_Obj_0_Status_Obj_NofObjects             0
+#define MIN_Obj_0_Status_Obj_NofObjects 0
 
 /**
  * Signal Obj_NofObjects raw maximum value.
  */
-#define MAX_Obj_0_Status_Obj_NofObjects             255
+#define MAX_Obj_0_Status_Obj_NofObjects 255
 
 /**
  * Signal Obj_NofObjects raw offset value.
  */
-#define OFF_Obj_0_Status_Obj_NofObjects             0
+#define OFF_Obj_0_Status_Obj_NofObjects 0
 
 /**
  * @}
@@ -22292,7 +22070,7 @@
  * @deprecated
  *	Use \ref SET_Obj_0_Status_Obj_MeasCounter and \ref GET_Obj_0_Status_Obj_MeasCounter instead.
  */
-#define SIG_Obj_0_Status_Obj_MeasCounter            1, 0, 15, 16
+#define SIG_Obj_0_Status_Obj_MeasCounter 1, 0, 15, 16
 
 /**
  * Signal Obj_MeasCounter setup tuple.
@@ -22300,7 +22078,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_0_Status_Obj_MeasCounter or \ref INIT_Obj_0_Status instead.
  */
-#define SETUP_Obj_0_Status_Obj_MeasCounter          1, 0, 15, 16, 0
+#define SETUP_Obj_0_Status_Obj_MeasCounter 1, 0, 15, 16, 0
 
 /**
  * Get signal Obj_MeasCounter from buffer.
@@ -22310,10 +22088,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_0_Status_Obj_MeasCounter(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0xff) << 8) \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_Obj_0_Status_Obj_MeasCounter(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0xff) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal Obj_MeasCounter in buffer.
@@ -22323,12 +22098,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_0_Status_Obj_MeasCounter(buf, val) { \
-	buf[1] &= ~(0xff << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 8) & 0xff) << 0; \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_Obj_0_Status_Obj_MeasCounter(buf, val)      \
+	{                                                     \
+		buf[1] &= ~(0xff << 0);                             \
+		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0xff) << 0; \
+		buf[2] &= ~(0xff << 0);                             \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+	}
 
 /**
  * Set signal Obj_MeasCounter in buffer to its initial value.
@@ -22356,22 +22132,22 @@
 /**
  * Signal Obj_MeasCounter raw initial value.
  */
-#define START_Obj_0_Status_Obj_MeasCounter          0
+#define START_Obj_0_Status_Obj_MeasCounter 0
 
 /**
  * Signal Obj_MeasCounter raw minimum value.
  */
-#define MIN_Obj_0_Status_Obj_MeasCounter            0
+#define MIN_Obj_0_Status_Obj_MeasCounter 0
 
 /**
  * Signal Obj_MeasCounter raw maximum value.
  */
-#define MAX_Obj_0_Status_Obj_MeasCounter            65535
+#define MAX_Obj_0_Status_Obj_MeasCounter 65535
 
 /**
  * Signal Obj_MeasCounter raw offset value.
  */
-#define OFF_Obj_0_Status_Obj_MeasCounter            0
+#define OFF_Obj_0_Status_Obj_MeasCounter 0
 
 /**
  * @}
@@ -22395,7 +22171,7 @@
  * @deprecated
  *	Use \ref SET_Obj_0_Status_Obj_InterfaceVersion and \ref GET_Obj_0_Status_Obj_InterfaceVersion instead.
  */
-#define SIG_Obj_0_Status_Obj_InterfaceVersion        1, 0, 31, 4
+#define SIG_Obj_0_Status_Obj_InterfaceVersion 1, 0, 31, 4
 
 /**
  * Signal Obj_InterfaceVersion setup tuple.
@@ -22403,7 +22179,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_0_Status_Obj_InterfaceVersion or \ref INIT_Obj_0_Status instead.
  */
-#define SETUP_Obj_0_Status_Obj_InterfaceVersion      1, 0, 31, 4, 0
+#define SETUP_Obj_0_Status_Obj_InterfaceVersion 1, 0, 31, 4, 0
 
 /**
  * Get signal Obj_InterfaceVersion from buffer.
@@ -22413,9 +22189,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_0_Status_Obj_InterfaceVersion(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[3] >> 4) & 0x0f) << 0) \
-)
+#define GET_Obj_0_Status_Obj_InterfaceVersion(buf) (0 | (ubyte)(+(ubyte)((buf[3] >> 4) & 0x0f) << 0))
 
 /**
  * Set signal Obj_InterfaceVersion in buffer.
@@ -22425,10 +22199,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_0_Status_Obj_InterfaceVersion(buf, val) { \
-	buf[3] &= ~(0x0f << 4); \
-	buf[3] |= (((ubyte)(val) >> 0) & 0x0f) << 4; \
-}
+#define SET_Obj_0_Status_Obj_InterfaceVersion(buf, val) \
+	{                                                     \
+		buf[3] &= ~(0x0f << 4);                             \
+		buf[3] |= (((ubyte)(val) >> 0) & 0x0f) << 4;        \
+	}
 
 /**
  * Set signal Obj_InterfaceVersion in buffer to its initial value.
@@ -22456,22 +22231,22 @@
 /**
  * Signal Obj_InterfaceVersion raw initial value.
  */
-#define START_Obj_0_Status_Obj_InterfaceVersion      0
+#define START_Obj_0_Status_Obj_InterfaceVersion 0
 
 /**
  * Signal Obj_InterfaceVersion raw minimum value.
  */
-#define MIN_Obj_0_Status_Obj_InterfaceVersion        0
+#define MIN_Obj_0_Status_Obj_InterfaceVersion 0
 
 /**
  * Signal Obj_InterfaceVersion raw maximum value.
  */
-#define MAX_Obj_0_Status_Obj_InterfaceVersion        16
+#define MAX_Obj_0_Status_Obj_InterfaceVersion 16
 
 /**
  * Signal Obj_InterfaceVersion raw offset value.
  */
-#define OFF_Obj_0_Status_Obj_InterfaceVersion        0
+#define OFF_Obj_0_Status_Obj_InterfaceVersion 0
 
 /**
  * @}
@@ -22497,7 +22272,7 @@
  * @deprecated
  *	Use \ref SET_Obj_1_General_Obj_DynProp and \ref GET_Obj_1_General_Obj_DynProp instead.
  */
-#define SIG_Obj_1_General_Obj_DynProp               1, 0, 50, 3
+#define SIG_Obj_1_General_Obj_DynProp 1, 0, 50, 3
 
 /**
  * Signal Obj_DynProp setup tuple.
@@ -22505,7 +22280,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_1_General_Obj_DynProp or \ref INIT_Obj_1_General instead.
  */
-#define SETUP_Obj_1_General_Obj_DynProp             1, 0, 50, 3, 0
+#define SETUP_Obj_1_General_Obj_DynProp 1, 0, 50, 3, 0
 
 /**
  * Get signal Obj_DynProp from buffer.
@@ -22515,9 +22290,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_1_General_Obj_DynProp(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[6] >> 0) & 0x07) << 0) \
-)
+#define GET_Obj_1_General_Obj_DynProp(buf) (0 | (ubyte)(+(ubyte)((buf[6] >> 0) & 0x07) << 0))
 
 /**
  * Set signal Obj_DynProp in buffer.
@@ -22527,10 +22300,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_1_General_Obj_DynProp(buf, val) { \
-	buf[6] &= ~(0x07 << 0); \
-	buf[6] |= (((ubyte)(val) >> 0) & 0x07) << 0; \
-}
+#define SET_Obj_1_General_Obj_DynProp(buf, val)  \
+	{                                              \
+		buf[6] &= ~(0x07 << 0);                      \
+		buf[6] |= (((ubyte)(val) >> 0) & 0x07) << 0; \
+	}
 
 /**
  * Set signal Obj_DynProp in buffer to its initial value.
@@ -22558,22 +22332,22 @@
 /**
  * Signal Obj_DynProp raw initial value.
  */
-#define START_Obj_1_General_Obj_DynProp             0
+#define START_Obj_1_General_Obj_DynProp 0
 
 /**
  * Signal Obj_DynProp raw minimum value.
  */
-#define MIN_Obj_1_General_Obj_DynProp               0
+#define MIN_Obj_1_General_Obj_DynProp 0
 
 /**
  * Signal Obj_DynProp raw maximum value.
  */
-#define MAX_Obj_1_General_Obj_DynProp               7
+#define MAX_Obj_1_General_Obj_DynProp 7
 
 /**
  * Signal Obj_DynProp raw offset value.
  */
-#define OFF_Obj_1_General_Obj_DynProp               0
+#define OFF_Obj_1_General_Obj_DynProp 0
 
 /**
  * @}
@@ -22592,7 +22366,7 @@
  *
  * @ingroup ENUM_Obj_1_General_Obj_DynProp
  */
-#define Obj_1_General_Obj_DynProp_Stopped             7
+#define Obj_1_General_Obj_DynProp_Stopped 7
 
 /**
  * Value table Obj_1_General_Obj_DynProp entry Crossing.
@@ -22601,7 +22375,7 @@
  *
  * @ingroup ENUM_Obj_1_General_Obj_DynProp
  */
-#define Obj_1_General_Obj_DynProp_Crossing            6
+#define Obj_1_General_Obj_DynProp_Crossing 6
 
 /**
  * Value table Obj_1_General_Obj_DynProp entry Crossing_5.
@@ -22610,14 +22384,14 @@
  *
  * @ingroup ENUM_Obj_1_General_Obj_DynProp
  */
-#define Obj_1_General_Obj_DynProp_Crossing_5          5
+#define Obj_1_General_Obj_DynProp_Crossing_5 5
 
 /**
  * Value table Obj_1_General_Obj_DynProp entry Unknown.
  *
  * @ingroup ENUM_Obj_1_General_Obj_DynProp
  */
-#define Obj_1_General_Obj_DynProp_Unknown             4
+#define Obj_1_General_Obj_DynProp_Unknown 4
 
 /**
  * Value table Obj_1_General_Obj_DynProp entry Stationary.
@@ -22626,28 +22400,28 @@
  *
  * @ingroup ENUM_Obj_1_General_Obj_DynProp
  */
-#define Obj_1_General_Obj_DynProp_Stationary          3
+#define Obj_1_General_Obj_DynProp_Stationary 3
 
 /**
  * Value table Obj_1_General_Obj_DynProp entry Oncoming.
  *
  * @ingroup ENUM_Obj_1_General_Obj_DynProp
  */
-#define Obj_1_General_Obj_DynProp_Oncoming            2
+#define Obj_1_General_Obj_DynProp_Oncoming 2
 
 /**
  * Value table Obj_1_General_Obj_DynProp entry Stationary_1.
  *
  * @ingroup ENUM_Obj_1_General_Obj_DynProp
  */
-#define Obj_1_General_Obj_DynProp_Stationary_1        1
+#define Obj_1_General_Obj_DynProp_Stationary_1 1
 
 /**
  * Value table Obj_1_General_Obj_DynProp entry Moving.
  *
  * @ingroup ENUM_Obj_1_General_Obj_DynProp
  */
-#define Obj_1_General_Obj_DynProp_Moving              0
+#define Obj_1_General_Obj_DynProp_Moving 0
 
 /**
  * @defgroup SIG_Obj_1_General_Obj_RCS Signal Obj_RCS of Message Obj_1_General (0x60b)
@@ -22667,7 +22441,7 @@
  * @deprecated
  *	Use \ref SET_Obj_1_General_Obj_RCS and \ref GET_Obj_1_General_Obj_RCS instead.
  */
-#define SIG_Obj_1_General_Obj_RCS                   1, 0, 63, 8
+#define SIG_Obj_1_General_Obj_RCS 1, 0, 63, 8
 
 /**
  * Signal Obj_RCS setup tuple.
@@ -22675,7 +22449,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_1_General_Obj_RCS or \ref INIT_Obj_1_General instead.
  */
-#define SETUP_Obj_1_General_Obj_RCS                 1, 0, 63, 8, 0
+#define SETUP_Obj_1_General_Obj_RCS 1, 0, 63, 8, 0
 
 /**
  * Get signal Obj_RCS from buffer.
@@ -22685,9 +22459,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_1_General_Obj_RCS(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[7] >> 0) & 0xff) << 0) \
-)
+#define GET_Obj_1_General_Obj_RCS(buf) (0 | (ubyte)(+(ubyte)((buf[7] >> 0) & 0xff) << 0))
 
 /**
  * Set signal Obj_RCS in buffer.
@@ -22697,10 +22469,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_1_General_Obj_RCS(buf, val) { \
-	buf[7] &= ~(0xff << 0); \
-	buf[7] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_Obj_1_General_Obj_RCS(buf, val)      \
+	{                                              \
+		buf[7] &= ~(0xff << 0);                      \
+		buf[7] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
+	}
 
 /**
  * Set signal Obj_RCS in buffer to its initial value.
@@ -22728,22 +22501,22 @@
 /**
  * Signal Obj_RCS raw initial value.
  */
-#define START_Obj_1_General_Obj_RCS                 0
+#define START_Obj_1_General_Obj_RCS 0
 
 /**
  * Signal Obj_RCS raw minimum value.
  */
-#define MIN_Obj_1_General_Obj_RCS                   0
+#define MIN_Obj_1_General_Obj_RCS 0
 
 /**
  * Signal Obj_RCS raw maximum value.
  */
-#define MAX_Obj_1_General_Obj_RCS                   255
+#define MAX_Obj_1_General_Obj_RCS 255
 
 /**
  * Signal Obj_RCS raw offset value.
  */
-#define OFF_Obj_1_General_Obj_RCS                   -128
+#define OFF_Obj_1_General_Obj_RCS -128
 
 /**
  * @}
@@ -22767,7 +22540,7 @@
  * @deprecated
  *	Use \ref SET_Obj_1_General_Obj_VrelLat and \ref GET_Obj_1_General_Obj_VrelLat instead.
  */
-#define SIG_Obj_1_General_Obj_VrelLat               1, 0, 45, 9
+#define SIG_Obj_1_General_Obj_VrelLat 1, 0, 45, 9
 
 /**
  * Signal Obj_VrelLat setup tuple.
@@ -22775,7 +22548,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_1_General_Obj_VrelLat or \ref INIT_Obj_1_General instead.
  */
-#define SETUP_Obj_1_General_Obj_VrelLat             1, 0, 45, 9, 256
+#define SETUP_Obj_1_General_Obj_VrelLat 1, 0, 45, 9, 256
 
 /**
  * Get signal Obj_VrelLat from buffer.
@@ -22785,10 +22558,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_1_General_Obj_VrelLat(buf) (0 \
-	| (uword)(+(uword)((buf[5] >> 0) & 0x3f) << 3) \
-	| (ubyte)(+(ubyte)((buf[6] >> 5) & 0x07) << 0) \
-)
+#define GET_Obj_1_General_Obj_VrelLat(buf) (0 | (uword)(+(uword)((buf[5] >> 0) & 0x3f) << 3) | (ubyte)(+(ubyte)((buf[6] >> 5) & 0x07) << 0))
 
 /**
  * Set signal Obj_VrelLat in buffer.
@@ -22798,12 +22568,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_1_General_Obj_VrelLat(buf, val) { \
-	buf[5] &= ~(0x3f << 0); \
-	buf[5] |= ((ubyte)((uword)(val) >> 3) & 0x3f) << 0; \
-	buf[6] &= ~(0x07 << 5); \
-	buf[6] |= (((ubyte)(val) >> 0) & 0x07) << 5; \
-}
+#define SET_Obj_1_General_Obj_VrelLat(buf, val)         \
+	{                                                     \
+		buf[5] &= ~(0x3f << 0);                             \
+		buf[5] |= ((ubyte)((uword)(val) >> 3) & 0x3f) << 0; \
+		buf[6] &= ~(0x07 << 5);                             \
+		buf[6] |= (((ubyte)(val) >> 0) & 0x07) << 5;        \
+	}
 
 /**
  * Set signal Obj_VrelLat in buffer to its initial value.
@@ -22831,22 +22602,22 @@
 /**
  * Signal Obj_VrelLat raw initial value.
  */
-#define START_Obj_1_General_Obj_VrelLat             256
+#define START_Obj_1_General_Obj_VrelLat 256
 
 /**
  * Signal Obj_VrelLat raw minimum value.
  */
-#define MIN_Obj_1_General_Obj_VrelLat               0
+#define MIN_Obj_1_General_Obj_VrelLat 0
 
 /**
  * Signal Obj_VrelLat raw maximum value.
  */
-#define MAX_Obj_1_General_Obj_VrelLat               511
+#define MAX_Obj_1_General_Obj_VrelLat 511
 
 /**
  * Signal Obj_VrelLat raw offset value.
  */
-#define OFF_Obj_1_General_Obj_VrelLat               -256
+#define OFF_Obj_1_General_Obj_VrelLat -256
 
 /**
  * @}
@@ -22870,7 +22641,7 @@
  * @deprecated
  *	Use \ref SET_Obj_1_General_Obj_ID and \ref GET_Obj_1_General_Obj_ID instead.
  */
-#define SIG_Obj_1_General_Obj_ID                    1, 0, 7, 8
+#define SIG_Obj_1_General_Obj_ID 1, 0, 7, 8
 
 /**
  * Signal Obj_ID setup tuple.
@@ -22878,7 +22649,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_1_General_Obj_ID or \ref INIT_Obj_1_General instead.
  */
-#define SETUP_Obj_1_General_Obj_ID                  1, 0, 7, 8, 0
+#define SETUP_Obj_1_General_Obj_ID 1, 0, 7, 8, 0
 
 /**
  * Get signal Obj_ID from buffer.
@@ -22888,9 +22659,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_1_General_Obj_ID(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 0) & 0xff) << 0) \
-)
+#define GET_Obj_1_General_Obj_ID(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 0) & 0xff) << 0))
 
 /**
  * Set signal Obj_ID in buffer.
@@ -22900,10 +22669,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_1_General_Obj_ID(buf, val) { \
-	buf[0] &= ~(0xff << 0); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_Obj_1_General_Obj_ID(buf, val)       \
+	{                                              \
+		buf[0] &= ~(0xff << 0);                      \
+		buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
+	}
 
 /**
  * Set signal Obj_ID in buffer to its initial value.
@@ -22931,22 +22701,22 @@
 /**
  * Signal Obj_ID raw initial value.
  */
-#define START_Obj_1_General_Obj_ID                  0
+#define START_Obj_1_General_Obj_ID 0
 
 /**
  * Signal Obj_ID raw minimum value.
  */
-#define MIN_Obj_1_General_Obj_ID                    0
+#define MIN_Obj_1_General_Obj_ID 0
 
 /**
  * Signal Obj_ID raw maximum value.
  */
-#define MAX_Obj_1_General_Obj_ID                    255
+#define MAX_Obj_1_General_Obj_ID 255
 
 /**
  * Signal Obj_ID raw offset value.
  */
-#define OFF_Obj_1_General_Obj_ID                    0
+#define OFF_Obj_1_General_Obj_ID 0
 
 /**
  * @}
@@ -22970,7 +22740,7 @@
  * @deprecated
  *	Use \ref SET_Obj_1_General_Obj_DistLong and \ref GET_Obj_1_General_Obj_DistLong instead.
  */
-#define SIG_Obj_1_General_Obj_DistLong              1, 0, 15, 13
+#define SIG_Obj_1_General_Obj_DistLong 1, 0, 15, 13
 
 /**
  * Signal Obj_DistLong setup tuple.
@@ -22978,7 +22748,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_1_General_Obj_DistLong or \ref INIT_Obj_1_General instead.
  */
-#define SETUP_Obj_1_General_Obj_DistLong            1, 0, 15, 13, 2500
+#define SETUP_Obj_1_General_Obj_DistLong 1, 0, 15, 13, 2500
 
 /**
  * Get signal Obj_DistLong from buffer.
@@ -22988,10 +22758,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_1_General_Obj_DistLong(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0xff) << 5) \
-	| (ubyte)(+(ubyte)((buf[2] >> 3) & 0x1f) << 0) \
-)
+#define GET_Obj_1_General_Obj_DistLong(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0xff) << 5) | (ubyte)(+(ubyte)((buf[2] >> 3) & 0x1f) << 0))
 
 /**
  * Set signal Obj_DistLong in buffer.
@@ -23001,12 +22768,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_1_General_Obj_DistLong(buf, val) { \
-	buf[1] &= ~(0xff << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 5) & 0xff) << 0; \
-	buf[2] &= ~(0x1f << 3); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0x1f) << 3; \
-}
+#define SET_Obj_1_General_Obj_DistLong(buf, val)        \
+	{                                                     \
+		buf[1] &= ~(0xff << 0);                             \
+		buf[1] |= ((ubyte)((uword)(val) >> 5) & 0xff) << 0; \
+		buf[2] &= ~(0x1f << 3);                             \
+		buf[2] |= (((ubyte)(val) >> 0) & 0x1f) << 3;        \
+	}
 
 /**
  * Set signal Obj_DistLong in buffer to its initial value.
@@ -23034,22 +22802,22 @@
 /**
  * Signal Obj_DistLong raw initial value.
  */
-#define START_Obj_1_General_Obj_DistLong            2500
+#define START_Obj_1_General_Obj_DistLong 2500
 
 /**
  * Signal Obj_DistLong raw minimum value.
  */
-#define MIN_Obj_1_General_Obj_DistLong              0
+#define MIN_Obj_1_General_Obj_DistLong 0
 
 /**
  * Signal Obj_DistLong raw maximum value.
  */
-#define MAX_Obj_1_General_Obj_DistLong              8191
+#define MAX_Obj_1_General_Obj_DistLong 8191
 
 /**
  * Signal Obj_DistLong raw offset value.
  */
-#define OFF_Obj_1_General_Obj_DistLong              -2500
+#define OFF_Obj_1_General_Obj_DistLong -2500
 
 /**
  * @}
@@ -23073,7 +22841,7 @@
  * @deprecated
  *	Use \ref SET_Obj_1_General_Obj_VrelLong and \ref GET_Obj_1_General_Obj_VrelLong instead.
  */
-#define SIG_Obj_1_General_Obj_VrelLong              1, 0, 39, 10
+#define SIG_Obj_1_General_Obj_VrelLong 1, 0, 39, 10
 
 /**
  * Signal Obj_VrelLong setup tuple.
@@ -23081,7 +22849,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_1_General_Obj_VrelLong or \ref INIT_Obj_1_General instead.
  */
-#define SETUP_Obj_1_General_Obj_VrelLong            1, 0, 39, 10, 512
+#define SETUP_Obj_1_General_Obj_VrelLong 1, 0, 39, 10, 512
 
 /**
  * Get signal Obj_VrelLong from buffer.
@@ -23091,10 +22859,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_1_General_Obj_VrelLong(buf) (0 \
-	| (uword)(+(uword)((buf[4] >> 0) & 0xff) << 2) \
-	| (ubyte)(+(ubyte)((buf[5] >> 6) & 0x03) << 0) \
-)
+#define GET_Obj_1_General_Obj_VrelLong(buf) (0 | (uword)(+(uword)((buf[4] >> 0) & 0xff) << 2) | (ubyte)(+(ubyte)((buf[5] >> 6) & 0x03) << 0))
 
 /**
  * Set signal Obj_VrelLong in buffer.
@@ -23104,12 +22869,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_1_General_Obj_VrelLong(buf, val) { \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= ((ubyte)((uword)(val) >> 2) & 0xff) << 0; \
-	buf[5] &= ~(0x03 << 6); \
-	buf[5] |= (((ubyte)(val) >> 0) & 0x03) << 6; \
-}
+#define SET_Obj_1_General_Obj_VrelLong(buf, val)        \
+	{                                                     \
+		buf[4] &= ~(0xff << 0);                             \
+		buf[4] |= ((ubyte)((uword)(val) >> 2) & 0xff) << 0; \
+		buf[5] &= ~(0x03 << 6);                             \
+		buf[5] |= (((ubyte)(val) >> 0) & 0x03) << 6;        \
+	}
 
 /**
  * Set signal Obj_VrelLong in buffer to its initial value.
@@ -23137,22 +22903,22 @@
 /**
  * Signal Obj_VrelLong raw initial value.
  */
-#define START_Obj_1_General_Obj_VrelLong            512
+#define START_Obj_1_General_Obj_VrelLong 512
 
 /**
  * Signal Obj_VrelLong raw minimum value.
  */
-#define MIN_Obj_1_General_Obj_VrelLong              0
+#define MIN_Obj_1_General_Obj_VrelLong 0
 
 /**
  * Signal Obj_VrelLong raw maximum value.
  */
-#define MAX_Obj_1_General_Obj_VrelLong              1023
+#define MAX_Obj_1_General_Obj_VrelLong 1023
 
 /**
  * Signal Obj_VrelLong raw offset value.
  */
-#define OFF_Obj_1_General_Obj_VrelLong              -512
+#define OFF_Obj_1_General_Obj_VrelLong -512
 
 /**
  * @}
@@ -23176,7 +22942,7 @@
  * @deprecated
  *	Use \ref SET_Obj_1_General_Obj_DistLat and \ref GET_Obj_1_General_Obj_DistLat instead.
  */
-#define SIG_Obj_1_General_Obj_DistLat               1, 0, 18, 11
+#define SIG_Obj_1_General_Obj_DistLat 1, 0, 18, 11
 
 /**
  * Signal Obj_DistLat setup tuple.
@@ -23184,7 +22950,7 @@
  * @deprecated
  *	Use \ref INITSIG_Obj_1_General_Obj_DistLat or \ref INIT_Obj_1_General instead.
  */
-#define SETUP_Obj_1_General_Obj_DistLat             1, 0, 18, 11, 1023
+#define SETUP_Obj_1_General_Obj_DistLat 1, 0, 18, 11, 1023
 
 /**
  * Get signal Obj_DistLat from buffer.
@@ -23194,10 +22960,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_1_General_Obj_DistLat(buf) (0 \
-	| (uword)(+(uword)((buf[2] >> 0) & 0x07) << 8) \
-	| (ubyte)(+(ubyte)((buf[3] >> 0) & 0xff) << 0) \
-)
+#define GET_Obj_1_General_Obj_DistLat(buf) (0 | (uword)(+(uword)((buf[2] >> 0) & 0x07) << 8) | (ubyte)(+(ubyte)((buf[3] >> 0) & 0xff) << 0))
 
 /**
  * Set signal Obj_DistLat in buffer.
@@ -23207,12 +22970,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Obj_1_General_Obj_DistLat(buf, val) { \
-	buf[2] &= ~(0x07 << 0); \
-	buf[2] |= ((ubyte)((uword)(val) >> 8) & 0x07) << 0; \
-	buf[3] &= ~(0xff << 0); \
-	buf[3] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_Obj_1_General_Obj_DistLat(buf, val)         \
+	{                                                     \
+		buf[2] &= ~(0x07 << 0);                             \
+		buf[2] |= ((ubyte)((uword)(val) >> 8) & 0x07) << 0; \
+		buf[3] &= ~(0xff << 0);                             \
+		buf[3] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+	}
 
 /**
  * Set signal Obj_DistLat in buffer to its initial value.
@@ -23240,22 +23004,22 @@
 /**
  * Signal Obj_DistLat raw initial value.
  */
-#define START_Obj_1_General_Obj_DistLat             1023
+#define START_Obj_1_General_Obj_DistLat 1023
 
 /**
  * Signal Obj_DistLat raw minimum value.
  */
-#define MIN_Obj_1_General_Obj_DistLat               0
+#define MIN_Obj_1_General_Obj_DistLat 0
 
 /**
  * Signal Obj_DistLat raw maximum value.
  */
-#define MAX_Obj_1_General_Obj_DistLat               2047
+#define MAX_Obj_1_General_Obj_DistLat 2047
 
 /**
  * Signal Obj_DistLat raw offset value.
  */
-#define OFF_Obj_1_General_Obj_DistLat               -1023
+#define OFF_Obj_1_General_Obj_DistLat -1023
 
 /**
  * @}
@@ -23278,7 +23042,7 @@
  * @deprecated
  *	Use \ref SET_VersionID_Version_ExtendedRange and \ref GET_VersionID_Version_ExtendedRange instead.
  */
-#define SIG_VersionID_Version_ExtendedRange         1, 0, 25, 1
+#define SIG_VersionID_Version_ExtendedRange 1, 0, 25, 1
 
 /**
  * Signal Version_ExtendedRange setup tuple.
@@ -23286,7 +23050,7 @@
  * @deprecated
  *	Use \ref INITSIG_VersionID_Version_ExtendedRange or \ref INIT_VersionID instead.
  */
-#define SETUP_VersionID_Version_ExtendedRange       1, 0, 25, 1, 0
+#define SETUP_VersionID_Version_ExtendedRange 1, 0, 25, 1, 0
 
 /**
  * Get signal Version_ExtendedRange from buffer.
@@ -23296,9 +23060,7 @@
  * @return
  *	The raw signal
  */
-#define GET_VersionID_Version_ExtendedRange(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[3] >> 1) & 0x01) << 0) \
-)
+#define GET_VersionID_Version_ExtendedRange(buf) (0 | (ubyte)(+(ubyte)((buf[3] >> 1) & 0x01) << 0))
 
 /**
  * Set signal Version_ExtendedRange in buffer.
@@ -23308,10 +23070,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_VersionID_Version_ExtendedRange(buf, val) { \
-	buf[3] &= ~(0x01 << 1); \
-	buf[3] |= (((ubyte)(val) >> 0) & 0x01) << 1; \
-}
+#define SET_VersionID_Version_ExtendedRange(buf, val) \
+	{                                                   \
+		buf[3] &= ~(0x01 << 1);                           \
+		buf[3] |= (((ubyte)(val) >> 0) & 0x01) << 1;      \
+	}
 
 /**
  * Set signal Version_ExtendedRange in buffer to its initial value.
@@ -23339,22 +23102,22 @@
 /**
  * Signal Version_ExtendedRange raw initial value.
  */
-#define START_VersionID_Version_ExtendedRange       0
+#define START_VersionID_Version_ExtendedRange 0
 
 /**
  * Signal Version_ExtendedRange raw minimum value.
  */
-#define MIN_VersionID_Version_ExtendedRange         0
+#define MIN_VersionID_Version_ExtendedRange 0
 
 /**
  * Signal Version_ExtendedRange raw maximum value.
  */
-#define MAX_VersionID_Version_ExtendedRange         0
+#define MAX_VersionID_Version_ExtendedRange 0
 
 /**
  * Signal Version_ExtendedRange raw offset value.
  */
-#define OFF_VersionID_Version_ExtendedRange         0
+#define OFF_VersionID_Version_ExtendedRange 0
 
 /**
  * @}
@@ -23375,7 +23138,7 @@
  *
  * @ingroup ENUM_VersionID_Version_ExtendedRange
  */
-#define VersionID_Version_ExtendedRange_Extended            1
+#define VersionID_Version_ExtendedRange_Extended 1
 
 /**
  * Value table VersionID_Version_ExtendedRange entry Standard.
@@ -23384,7 +23147,7 @@
  *
  * @ingroup ENUM_VersionID_Version_ExtendedRange
  */
-#define VersionID_Version_ExtendedRange_Standard            0
+#define VersionID_Version_ExtendedRange_Standard 0
 
 /**
  * @defgroup SIG_VersionID_Version_CountryCode Signal Version_CountryCode of Message VersionID (0x700)
@@ -23403,7 +23166,7 @@
  * @deprecated
  *	Use \ref SET_VersionID_Version_CountryCode and \ref GET_VersionID_Version_CountryCode instead.
  */
-#define SIG_VersionID_Version_CountryCode           1, 0, 24, 1
+#define SIG_VersionID_Version_CountryCode 1, 0, 24, 1
 
 /**
  * Signal Version_CountryCode setup tuple.
@@ -23411,7 +23174,7 @@
  * @deprecated
  *	Use \ref INITSIG_VersionID_Version_CountryCode or \ref INIT_VersionID instead.
  */
-#define SETUP_VersionID_Version_CountryCode         1, 0, 24, 1, 0
+#define SETUP_VersionID_Version_CountryCode 1, 0, 24, 1, 0
 
 /**
  * Get signal Version_CountryCode from buffer.
@@ -23421,9 +23184,7 @@
  * @return
  *	The raw signal
  */
-#define GET_VersionID_Version_CountryCode(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[3] >> 0) & 0x01) << 0) \
-)
+#define GET_VersionID_Version_CountryCode(buf) (0 | (ubyte)(+(ubyte)((buf[3] >> 0) & 0x01) << 0))
 
 /**
  * Set signal Version_CountryCode in buffer.
@@ -23433,10 +23194,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_VersionID_Version_CountryCode(buf, val) { \
-	buf[3] &= ~(0x01 << 0); \
-	buf[3] |= (((ubyte)(val) >> 0) & 0x01) << 0; \
-}
+#define SET_VersionID_Version_CountryCode(buf, val) \
+	{                                                 \
+		buf[3] &= ~(0x01 << 0);                         \
+		buf[3] |= (((ubyte)(val) >> 0) & 0x01) << 0;    \
+	}
 
 /**
  * Set signal Version_CountryCode in buffer to its initial value.
@@ -23464,22 +23226,22 @@
 /**
  * Signal Version_CountryCode raw initial value.
  */
-#define START_VersionID_Version_CountryCode         0
+#define START_VersionID_Version_CountryCode 0
 
 /**
  * Signal Version_CountryCode raw minimum value.
  */
-#define MIN_VersionID_Version_CountryCode           0
+#define MIN_VersionID_Version_CountryCode 0
 
 /**
  * Signal Version_CountryCode raw maximum value.
  */
-#define MAX_VersionID_Version_CountryCode           0
+#define MAX_VersionID_Version_CountryCode 0
 
 /**
  * Signal Version_CountryCode raw offset value.
  */
-#define OFF_VersionID_Version_CountryCode           0
+#define OFF_VersionID_Version_CountryCode 0
 
 /**
  * @}
@@ -23500,7 +23262,7 @@
  *
  * @ingroup ENUM_VersionID_Version_CountryCode
  */
-#define VersionID_Version_CountryCode_South               1
+#define VersionID_Version_CountryCode_South 1
 
 /**
  * Value table VersionID_Version_CountryCode entry International.
@@ -23509,7 +23271,7 @@
  *
  * @ingroup ENUM_VersionID_Version_CountryCode
  */
-#define VersionID_Version_CountryCode_International       0
+#define VersionID_Version_CountryCode_International 0
 
 /**
  * @defgroup SIG_VersionID_Version_MajorRelease Signal Version_MajorRelease of Message VersionID (0x700)
@@ -23529,7 +23291,7 @@
  * @deprecated
  *	Use \ref SET_VersionID_Version_MajorRelease and \ref GET_VersionID_Version_MajorRelease instead.
  */
-#define SIG_VersionID_Version_MajorRelease          1, 0, 7, 8
+#define SIG_VersionID_Version_MajorRelease 1, 0, 7, 8
 
 /**
  * Signal Version_MajorRelease setup tuple.
@@ -23537,7 +23299,7 @@
  * @deprecated
  *	Use \ref INITSIG_VersionID_Version_MajorRelease or \ref INIT_VersionID instead.
  */
-#define SETUP_VersionID_Version_MajorRelease        1, 0, 7, 8, 0
+#define SETUP_VersionID_Version_MajorRelease 1, 0, 7, 8, 0
 
 /**
  * Get signal Version_MajorRelease from buffer.
@@ -23547,9 +23309,7 @@
  * @return
  *	The raw signal
  */
-#define GET_VersionID_Version_MajorRelease(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 0) & 0xff) << 0) \
-)
+#define GET_VersionID_Version_MajorRelease(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 0) & 0xff) << 0))
 
 /**
  * Set signal Version_MajorRelease in buffer.
@@ -23559,10 +23319,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_VersionID_Version_MajorRelease(buf, val) { \
-	buf[0] &= ~(0xff << 0); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_VersionID_Version_MajorRelease(buf, val) \
+	{                                                  \
+		buf[0] &= ~(0xff << 0);                          \
+		buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0;     \
+	}
 
 /**
  * Set signal Version_MajorRelease in buffer to its initial value.
@@ -23590,22 +23351,22 @@
 /**
  * Signal Version_MajorRelease raw initial value.
  */
-#define START_VersionID_Version_MajorRelease        0
+#define START_VersionID_Version_MajorRelease 0
 
 /**
  * Signal Version_MajorRelease raw minimum value.
  */
-#define MIN_VersionID_Version_MajorRelease          0
+#define MIN_VersionID_Version_MajorRelease 0
 
 /**
  * Signal Version_MajorRelease raw maximum value.
  */
-#define MAX_VersionID_Version_MajorRelease          256
+#define MAX_VersionID_Version_MajorRelease 256
 
 /**
  * Signal Version_MajorRelease raw offset value.
  */
-#define OFF_VersionID_Version_MajorRelease          0
+#define OFF_VersionID_Version_MajorRelease 0
 
 /**
  * @}
@@ -23629,7 +23390,7 @@
  * @deprecated
  *	Use \ref SET_VersionID_Version_MinorRelease and \ref GET_VersionID_Version_MinorRelease instead.
  */
-#define SIG_VersionID_Version_MinorRelease          1, 0, 15, 8
+#define SIG_VersionID_Version_MinorRelease 1, 0, 15, 8
 
 /**
  * Signal Version_MinorRelease setup tuple.
@@ -23637,7 +23398,7 @@
  * @deprecated
  *	Use \ref INITSIG_VersionID_Version_MinorRelease or \ref INIT_VersionID instead.
  */
-#define SETUP_VersionID_Version_MinorRelease        1, 0, 15, 8, 0
+#define SETUP_VersionID_Version_MinorRelease 1, 0, 15, 8, 0
 
 /**
  * Get signal Version_MinorRelease from buffer.
@@ -23647,9 +23408,7 @@
  * @return
  *	The raw signal
  */
-#define GET_VersionID_Version_MinorRelease(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[1] >> 0) & 0xff) << 0) \
-)
+#define GET_VersionID_Version_MinorRelease(buf) (0 | (ubyte)(+(ubyte)((buf[1] >> 0) & 0xff) << 0))
 
 /**
  * Set signal Version_MinorRelease in buffer.
@@ -23659,10 +23418,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_VersionID_Version_MinorRelease(buf, val) { \
-	buf[1] &= ~(0xff << 0); \
-	buf[1] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_VersionID_Version_MinorRelease(buf, val) \
+	{                                                  \
+		buf[1] &= ~(0xff << 0);                          \
+		buf[1] |= (((ubyte)(val) >> 0) & 0xff) << 0;     \
+	}
 
 /**
  * Set signal Version_MinorRelease in buffer to its initial value.
@@ -23690,22 +23450,22 @@
 /**
  * Signal Version_MinorRelease raw initial value.
  */
-#define START_VersionID_Version_MinorRelease        0
+#define START_VersionID_Version_MinorRelease 0
 
 /**
  * Signal Version_MinorRelease raw minimum value.
  */
-#define MIN_VersionID_Version_MinorRelease          0
+#define MIN_VersionID_Version_MinorRelease 0
 
 /**
  * Signal Version_MinorRelease raw maximum value.
  */
-#define MAX_VersionID_Version_MinorRelease          256
+#define MAX_VersionID_Version_MinorRelease 256
 
 /**
  * Signal Version_MinorRelease raw offset value.
  */
-#define OFF_VersionID_Version_MinorRelease          0
+#define OFF_VersionID_Version_MinorRelease 0
 
 /**
  * @}
@@ -23729,7 +23489,7 @@
  * @deprecated
  *	Use \ref SET_VersionID_Version_PatchLevel and \ref GET_VersionID_Version_PatchLevel instead.
  */
-#define SIG_VersionID_Version_PatchLevel            1, 0, 23, 8
+#define SIG_VersionID_Version_PatchLevel 1, 0, 23, 8
 
 /**
  * Signal Version_PatchLevel setup tuple.
@@ -23737,7 +23497,7 @@
  * @deprecated
  *	Use \ref INITSIG_VersionID_Version_PatchLevel or \ref INIT_VersionID instead.
  */
-#define SETUP_VersionID_Version_PatchLevel          1, 0, 23, 8, 0
+#define SETUP_VersionID_Version_PatchLevel 1, 0, 23, 8, 0
 
 /**
  * Get signal Version_PatchLevel from buffer.
@@ -23747,9 +23507,7 @@
  * @return
  *	The raw signal
  */
-#define GET_VersionID_Version_PatchLevel(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0) \
-)
+#define GET_VersionID_Version_PatchLevel(buf) (0 | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal Version_PatchLevel in buffer.
@@ -23759,10 +23517,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_VersionID_Version_PatchLevel(buf, val) { \
-	buf[2] &= ~(0xff << 0); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_VersionID_Version_PatchLevel(buf, val) \
+	{                                                \
+		buf[2] &= ~(0xff << 0);                        \
+		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;   \
+	}
 
 /**
  * Set signal Version_PatchLevel in buffer to its initial value.
@@ -23790,22 +23549,22 @@
 /**
  * Signal Version_PatchLevel raw initial value.
  */
-#define START_VersionID_Version_PatchLevel          0
+#define START_VersionID_Version_PatchLevel 0
 
 /**
  * Signal Version_PatchLevel raw minimum value.
  */
-#define MIN_VersionID_Version_PatchLevel            0
+#define MIN_VersionID_Version_PatchLevel 0
 
 /**
  * Signal Version_PatchLevel raw maximum value.
  */
-#define MAX_VersionID_Version_PatchLevel            256
+#define MAX_VersionID_Version_PatchLevel 256
 
 /**
  * Signal Version_PatchLevel raw offset value.
  */
-#define OFF_VersionID_Version_PatchLevel            0
+#define OFF_VersionID_Version_PatchLevel 0
 
 /**
  * @}
@@ -23831,7 +23590,7 @@
  * @deprecated
  *	Use \ref SET_Cluster_1_General_Cluster_DynProp and \ref GET_Cluster_1_General_Cluster_DynProp instead.
  */
-#define SIG_Cluster_1_General_Cluster_DynProp        1, 0, 50, 3
+#define SIG_Cluster_1_General_Cluster_DynProp 1, 0, 50, 3
 
 /**
  * Signal Cluster_DynProp setup tuple.
@@ -23839,7 +23598,7 @@
  * @deprecated
  *	Use \ref INITSIG_Cluster_1_General_Cluster_DynProp or \ref INIT_Cluster_1_General instead.
  */
-#define SETUP_Cluster_1_General_Cluster_DynProp      1, 0, 50, 3, 0
+#define SETUP_Cluster_1_General_Cluster_DynProp 1, 0, 50, 3, 0
 
 /**
  * Get signal Cluster_DynProp from buffer.
@@ -23849,9 +23608,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Cluster_1_General_Cluster_DynProp(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[6] >> 0) & 0x07) << 0) \
-)
+#define GET_Cluster_1_General_Cluster_DynProp(buf) (0 | (ubyte)(+(ubyte)((buf[6] >> 0) & 0x07) << 0))
 
 /**
  * Set signal Cluster_DynProp in buffer.
@@ -23861,10 +23618,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Cluster_1_General_Cluster_DynProp(buf, val) { \
-	buf[6] &= ~(0x07 << 0); \
-	buf[6] |= (((ubyte)(val) >> 0) & 0x07) << 0; \
-}
+#define SET_Cluster_1_General_Cluster_DynProp(buf, val) \
+	{                                                     \
+		buf[6] &= ~(0x07 << 0);                             \
+		buf[6] |= (((ubyte)(val) >> 0) & 0x07) << 0;        \
+	}
 
 /**
  * Set signal Cluster_DynProp in buffer to its initial value.
@@ -23892,22 +23650,22 @@
 /**
  * Signal Cluster_DynProp raw initial value.
  */
-#define START_Cluster_1_General_Cluster_DynProp      0
+#define START_Cluster_1_General_Cluster_DynProp 0
 
 /**
  * Signal Cluster_DynProp raw minimum value.
  */
-#define MIN_Cluster_1_General_Cluster_DynProp        0
+#define MIN_Cluster_1_General_Cluster_DynProp 0
 
 /**
  * Signal Cluster_DynProp raw maximum value.
  */
-#define MAX_Cluster_1_General_Cluster_DynProp        7
+#define MAX_Cluster_1_General_Cluster_DynProp 7
 
 /**
  * Signal Cluster_DynProp raw offset value.
  */
-#define OFF_Cluster_1_General_Cluster_DynProp        0
+#define OFF_Cluster_1_General_Cluster_DynProp 0
 
 /**
  * @}
@@ -23926,7 +23684,7 @@
  *
  * @ingroup ENUM_Cluster_1_General_Cluster_DynProp
  */
-#define Cluster_1_General_Cluster_DynProp_Stopped             7
+#define Cluster_1_General_Cluster_DynProp_Stopped 7
 
 /**
  * Value table Cluster_1_General_Cluster_DynProp entry Crossing.
@@ -23935,7 +23693,7 @@
  *
  * @ingroup ENUM_Cluster_1_General_Cluster_DynProp
  */
-#define Cluster_1_General_Cluster_DynProp_Crossing            6
+#define Cluster_1_General_Cluster_DynProp_Crossing 6
 
 /**
  * Value table Cluster_1_General_Cluster_DynProp entry Crossing_5.
@@ -23944,14 +23702,14 @@
  *
  * @ingroup ENUM_Cluster_1_General_Cluster_DynProp
  */
-#define Cluster_1_General_Cluster_DynProp_Crossing_5          5
+#define Cluster_1_General_Cluster_DynProp_Crossing_5 5
 
 /**
  * Value table Cluster_1_General_Cluster_DynProp entry Unknown.
  *
  * @ingroup ENUM_Cluster_1_General_Cluster_DynProp
  */
-#define Cluster_1_General_Cluster_DynProp_Unknown             4
+#define Cluster_1_General_Cluster_DynProp_Unknown 4
 
 /**
  * Value table Cluster_1_General_Cluster_DynProp entry Stationary.
@@ -23960,28 +23718,28 @@
  *
  * @ingroup ENUM_Cluster_1_General_Cluster_DynProp
  */
-#define Cluster_1_General_Cluster_DynProp_Stationary          3
+#define Cluster_1_General_Cluster_DynProp_Stationary 3
 
 /**
  * Value table Cluster_1_General_Cluster_DynProp entry Oncoming.
  *
  * @ingroup ENUM_Cluster_1_General_Cluster_DynProp
  */
-#define Cluster_1_General_Cluster_DynProp_Oncoming            2
+#define Cluster_1_General_Cluster_DynProp_Oncoming 2
 
 /**
  * Value table Cluster_1_General_Cluster_DynProp entry Stationary_1.
  *
  * @ingroup ENUM_Cluster_1_General_Cluster_DynProp
  */
-#define Cluster_1_General_Cluster_DynProp_Stationary_1        1
+#define Cluster_1_General_Cluster_DynProp_Stationary_1 1
 
 /**
  * Value table Cluster_1_General_Cluster_DynProp entry Moving.
  *
  * @ingroup ENUM_Cluster_1_General_Cluster_DynProp
  */
-#define Cluster_1_General_Cluster_DynProp_Moving              0
+#define Cluster_1_General_Cluster_DynProp_Moving 0
 
 /**
  * @defgroup SIG_Cluster_1_General_Cluster_VrelLat Signal Cluster_VrelLat of Message Cluster_1_General (0x701)
@@ -24001,7 +23759,7 @@
  * @deprecated
  *	Use \ref SET_Cluster_1_General_Cluster_VrelLat and \ref GET_Cluster_1_General_Cluster_VrelLat instead.
  */
-#define SIG_Cluster_1_General_Cluster_VrelLat        1, 0, 45, 9
+#define SIG_Cluster_1_General_Cluster_VrelLat 1, 0, 45, 9
 
 /**
  * Signal Cluster_VrelLat setup tuple.
@@ -24009,7 +23767,7 @@
  * @deprecated
  *	Use \ref INITSIG_Cluster_1_General_Cluster_VrelLat or \ref INIT_Cluster_1_General instead.
  */
-#define SETUP_Cluster_1_General_Cluster_VrelLat      1, 0, 45, 9, 256
+#define SETUP_Cluster_1_General_Cluster_VrelLat 1, 0, 45, 9, 256
 
 /**
  * Get signal Cluster_VrelLat from buffer.
@@ -24019,10 +23777,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Cluster_1_General_Cluster_VrelLat(buf) (0 \
-	| (uword)(+(uword)((buf[5] >> 0) & 0x3f) << 3) \
-	| (ubyte)(+(ubyte)((buf[6] >> 5) & 0x07) << 0) \
-)
+#define GET_Cluster_1_General_Cluster_VrelLat(buf) (0 | (uword)(+(uword)((buf[5] >> 0) & 0x3f) << 3) | (ubyte)(+(ubyte)((buf[6] >> 5) & 0x07) << 0))
 
 /**
  * Set signal Cluster_VrelLat in buffer.
@@ -24032,12 +23787,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Cluster_1_General_Cluster_VrelLat(buf, val) { \
-	buf[5] &= ~(0x3f << 0); \
-	buf[5] |= ((ubyte)((uword)(val) >> 3) & 0x3f) << 0; \
-	buf[6] &= ~(0x07 << 5); \
-	buf[6] |= (((ubyte)(val) >> 0) & 0x07) << 5; \
-}
+#define SET_Cluster_1_General_Cluster_VrelLat(buf, val) \
+	{                                                     \
+		buf[5] &= ~(0x3f << 0);                             \
+		buf[5] |= ((ubyte)((uword)(val) >> 3) & 0x3f) << 0; \
+		buf[6] &= ~(0x07 << 5);                             \
+		buf[6] |= (((ubyte)(val) >> 0) & 0x07) << 5;        \
+	}
 
 /**
  * Set signal Cluster_VrelLat in buffer to its initial value.
@@ -24065,22 +23821,22 @@
 /**
  * Signal Cluster_VrelLat raw initial value.
  */
-#define START_Cluster_1_General_Cluster_VrelLat      256
+#define START_Cluster_1_General_Cluster_VrelLat 256
 
 /**
  * Signal Cluster_VrelLat raw minimum value.
  */
-#define MIN_Cluster_1_General_Cluster_VrelLat        0
+#define MIN_Cluster_1_General_Cluster_VrelLat 0
 
 /**
  * Signal Cluster_VrelLat raw maximum value.
  */
-#define MAX_Cluster_1_General_Cluster_VrelLat        511
+#define MAX_Cluster_1_General_Cluster_VrelLat 511
 
 /**
  * Signal Cluster_VrelLat raw offset value.
  */
-#define OFF_Cluster_1_General_Cluster_VrelLat        -256
+#define OFF_Cluster_1_General_Cluster_VrelLat -256
 
 /**
  * @}
@@ -24104,7 +23860,7 @@
  * @deprecated
  *	Use \ref SET_Cluster_1_General_Cluster_RCS and \ref GET_Cluster_1_General_Cluster_RCS instead.
  */
-#define SIG_Cluster_1_General_Cluster_RCS           1, 0, 63, 8
+#define SIG_Cluster_1_General_Cluster_RCS 1, 0, 63, 8
 
 /**
  * Signal Cluster_RCS setup tuple.
@@ -24112,7 +23868,7 @@
  * @deprecated
  *	Use \ref INITSIG_Cluster_1_General_Cluster_RCS or \ref INIT_Cluster_1_General instead.
  */
-#define SETUP_Cluster_1_General_Cluster_RCS         1, 0, 63, 8, 0
+#define SETUP_Cluster_1_General_Cluster_RCS 1, 0, 63, 8, 0
 
 /**
  * Get signal Cluster_RCS from buffer.
@@ -24122,9 +23878,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Cluster_1_General_Cluster_RCS(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[7] >> 0) & 0xff) << 0) \
-)
+#define GET_Cluster_1_General_Cluster_RCS(buf) (0 | (ubyte)(+(ubyte)((buf[7] >> 0) & 0xff) << 0))
 
 /**
  * Set signal Cluster_RCS in buffer.
@@ -24134,10 +23888,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Cluster_1_General_Cluster_RCS(buf, val) { \
-	buf[7] &= ~(0xff << 0); \
-	buf[7] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_Cluster_1_General_Cluster_RCS(buf, val) \
+	{                                                 \
+		buf[7] &= ~(0xff << 0);                         \
+		buf[7] |= (((ubyte)(val) >> 0) & 0xff) << 0;    \
+	}
 
 /**
  * Set signal Cluster_RCS in buffer to its initial value.
@@ -24165,22 +23920,22 @@
 /**
  * Signal Cluster_RCS raw initial value.
  */
-#define START_Cluster_1_General_Cluster_RCS         0
+#define START_Cluster_1_General_Cluster_RCS 0
 
 /**
  * Signal Cluster_RCS raw minimum value.
  */
-#define MIN_Cluster_1_General_Cluster_RCS           0
+#define MIN_Cluster_1_General_Cluster_RCS 0
 
 /**
  * Signal Cluster_RCS raw maximum value.
  */
-#define MAX_Cluster_1_General_Cluster_RCS           255
+#define MAX_Cluster_1_General_Cluster_RCS 255
 
 /**
  * Signal Cluster_RCS raw offset value.
  */
-#define OFF_Cluster_1_General_Cluster_RCS           -128
+#define OFF_Cluster_1_General_Cluster_RCS -128
 
 /**
  * @}
@@ -24204,7 +23959,7 @@
  * @deprecated
  *	Use \ref SET_Cluster_1_General_Cluster_DistLong and \ref GET_Cluster_1_General_Cluster_DistLong instead.
  */
-#define SIG_Cluster_1_General_Cluster_DistLong        1, 0, 15, 13
+#define SIG_Cluster_1_General_Cluster_DistLong 1, 0, 15, 13
 
 /**
  * Signal Cluster_DistLong setup tuple.
@@ -24212,7 +23967,7 @@
  * @deprecated
  *	Use \ref INITSIG_Cluster_1_General_Cluster_DistLong or \ref INIT_Cluster_1_General instead.
  */
-#define SETUP_Cluster_1_General_Cluster_DistLong      1, 0, 15, 13, 2500
+#define SETUP_Cluster_1_General_Cluster_DistLong 1, 0, 15, 13, 2500
 
 /**
  * Get signal Cluster_DistLong from buffer.
@@ -24222,10 +23977,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Cluster_1_General_Cluster_DistLong(buf) (0 \
-	| (uword)(+(uword)((buf[1] >> 0) & 0xff) << 5) \
-	| (ubyte)(+(ubyte)((buf[2] >> 3) & 0x1f) << 0) \
-)
+#define GET_Cluster_1_General_Cluster_DistLong(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0xff) << 5) | (ubyte)(+(ubyte)((buf[2] >> 3) & 0x1f) << 0))
 
 /**
  * Set signal Cluster_DistLong in buffer.
@@ -24235,12 +23987,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Cluster_1_General_Cluster_DistLong(buf, val) { \
-	buf[1] &= ~(0xff << 0); \
-	buf[1] |= ((ubyte)((uword)(val) >> 5) & 0xff) << 0; \
-	buf[2] &= ~(0x1f << 3); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0x1f) << 3; \
-}
+#define SET_Cluster_1_General_Cluster_DistLong(buf, val) \
+	{                                                      \
+		buf[1] &= ~(0xff << 0);                              \
+		buf[1] |= ((ubyte)((uword)(val) >> 5) & 0xff) << 0;  \
+		buf[2] &= ~(0x1f << 3);                              \
+		buf[2] |= (((ubyte)(val) >> 0) & 0x1f) << 3;         \
+	}
 
 /**
  * Set signal Cluster_DistLong in buffer to its initial value.
@@ -24268,22 +24021,22 @@
 /**
  * Signal Cluster_DistLong raw initial value.
  */
-#define START_Cluster_1_General_Cluster_DistLong      2500
+#define START_Cluster_1_General_Cluster_DistLong 2500
 
 /**
  * Signal Cluster_DistLong raw minimum value.
  */
-#define MIN_Cluster_1_General_Cluster_DistLong        0
+#define MIN_Cluster_1_General_Cluster_DistLong 0
 
 /**
  * Signal Cluster_DistLong raw maximum value.
  */
-#define MAX_Cluster_1_General_Cluster_DistLong        8191
+#define MAX_Cluster_1_General_Cluster_DistLong 8191
 
 /**
  * Signal Cluster_DistLong raw offset value.
  */
-#define OFF_Cluster_1_General_Cluster_DistLong        -2500
+#define OFF_Cluster_1_General_Cluster_DistLong -2500
 
 /**
  * @}
@@ -24307,7 +24060,7 @@
  * @deprecated
  *	Use \ref SET_Cluster_1_General_Cluster_ID and \ref GET_Cluster_1_General_Cluster_ID instead.
  */
-#define SIG_Cluster_1_General_Cluster_ID            1, 0, 7, 8
+#define SIG_Cluster_1_General_Cluster_ID 1, 0, 7, 8
 
 /**
  * Signal Cluster_ID setup tuple.
@@ -24315,7 +24068,7 @@
  * @deprecated
  *	Use \ref INITSIG_Cluster_1_General_Cluster_ID or \ref INIT_Cluster_1_General instead.
  */
-#define SETUP_Cluster_1_General_Cluster_ID          1, 0, 7, 8, 0
+#define SETUP_Cluster_1_General_Cluster_ID 1, 0, 7, 8, 0
 
 /**
  * Get signal Cluster_ID from buffer.
@@ -24325,9 +24078,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Cluster_1_General_Cluster_ID(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 0) & 0xff) << 0) \
-)
+#define GET_Cluster_1_General_Cluster_ID(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 0) & 0xff) << 0))
 
 /**
  * Set signal Cluster_ID in buffer.
@@ -24337,10 +24088,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Cluster_1_General_Cluster_ID(buf, val) { \
-	buf[0] &= ~(0xff << 0); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_Cluster_1_General_Cluster_ID(buf, val) \
+	{                                                \
+		buf[0] &= ~(0xff << 0);                        \
+		buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0;   \
+	}
 
 /**
  * Set signal Cluster_ID in buffer to its initial value.
@@ -24368,22 +24120,22 @@
 /**
  * Signal Cluster_ID raw initial value.
  */
-#define START_Cluster_1_General_Cluster_ID          0
+#define START_Cluster_1_General_Cluster_ID 0
 
 /**
  * Signal Cluster_ID raw minimum value.
  */
-#define MIN_Cluster_1_General_Cluster_ID            0
+#define MIN_Cluster_1_General_Cluster_ID 0
 
 /**
  * Signal Cluster_ID raw maximum value.
  */
-#define MAX_Cluster_1_General_Cluster_ID            255
+#define MAX_Cluster_1_General_Cluster_ID 255
 
 /**
  * Signal Cluster_ID raw offset value.
  */
-#define OFF_Cluster_1_General_Cluster_ID            0
+#define OFF_Cluster_1_General_Cluster_ID 0
 
 /**
  * @}
@@ -24407,7 +24159,7 @@
  * @deprecated
  *	Use \ref SET_Cluster_1_General_Cluster_VrelLong and \ref GET_Cluster_1_General_Cluster_VrelLong instead.
  */
-#define SIG_Cluster_1_General_Cluster_VrelLong        1, 0, 39, 10
+#define SIG_Cluster_1_General_Cluster_VrelLong 1, 0, 39, 10
 
 /**
  * Signal Cluster_VrelLong setup tuple.
@@ -24415,7 +24167,7 @@
  * @deprecated
  *	Use \ref INITSIG_Cluster_1_General_Cluster_VrelLong or \ref INIT_Cluster_1_General instead.
  */
-#define SETUP_Cluster_1_General_Cluster_VrelLong      1, 0, 39, 10, 512
+#define SETUP_Cluster_1_General_Cluster_VrelLong 1, 0, 39, 10, 512
 
 /**
  * Get signal Cluster_VrelLong from buffer.
@@ -24425,10 +24177,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Cluster_1_General_Cluster_VrelLong(buf) (0 \
-	| (uword)(+(uword)((buf[4] >> 0) & 0xff) << 2) \
-	| (ubyte)(+(ubyte)((buf[5] >> 6) & 0x03) << 0) \
-)
+#define GET_Cluster_1_General_Cluster_VrelLong(buf) (0 | (uword)(+(uword)((buf[4] >> 0) & 0xff) << 2) | (ubyte)(+(ubyte)((buf[5] >> 6) & 0x03) << 0))
 
 /**
  * Set signal Cluster_VrelLong in buffer.
@@ -24438,12 +24187,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Cluster_1_General_Cluster_VrelLong(buf, val) { \
-	buf[4] &= ~(0xff << 0); \
-	buf[4] |= ((ubyte)((uword)(val) >> 2) & 0xff) << 0; \
-	buf[5] &= ~(0x03 << 6); \
-	buf[5] |= (((ubyte)(val) >> 0) & 0x03) << 6; \
-}
+#define SET_Cluster_1_General_Cluster_VrelLong(buf, val) \
+	{                                                      \
+		buf[4] &= ~(0xff << 0);                              \
+		buf[4] |= ((ubyte)((uword)(val) >> 2) & 0xff) << 0;  \
+		buf[5] &= ~(0x03 << 6);                              \
+		buf[5] |= (((ubyte)(val) >> 0) & 0x03) << 6;         \
+	}
 
 /**
  * Set signal Cluster_VrelLong in buffer to its initial value.
@@ -24471,22 +24221,22 @@
 /**
  * Signal Cluster_VrelLong raw initial value.
  */
-#define START_Cluster_1_General_Cluster_VrelLong      512
+#define START_Cluster_1_General_Cluster_VrelLong 512
 
 /**
  * Signal Cluster_VrelLong raw minimum value.
  */
-#define MIN_Cluster_1_General_Cluster_VrelLong        0
+#define MIN_Cluster_1_General_Cluster_VrelLong 0
 
 /**
  * Signal Cluster_VrelLong raw maximum value.
  */
-#define MAX_Cluster_1_General_Cluster_VrelLong        1023
+#define MAX_Cluster_1_General_Cluster_VrelLong 1023
 
 /**
  * Signal Cluster_VrelLong raw offset value.
  */
-#define OFF_Cluster_1_General_Cluster_VrelLong        -512
+#define OFF_Cluster_1_General_Cluster_VrelLong -512
 
 /**
  * @}
@@ -24510,7 +24260,7 @@
  * @deprecated
  *	Use \ref SET_Cluster_1_General_Cluster_DistLat and \ref GET_Cluster_1_General_Cluster_DistLat instead.
  */
-#define SIG_Cluster_1_General_Cluster_DistLat        1, 0, 17, 10
+#define SIG_Cluster_1_General_Cluster_DistLat 1, 0, 17, 10
 
 /**
  * Signal Cluster_DistLat setup tuple.
@@ -24518,7 +24268,7 @@
  * @deprecated
  *	Use \ref INITSIG_Cluster_1_General_Cluster_DistLat or \ref INIT_Cluster_1_General instead.
  */
-#define SETUP_Cluster_1_General_Cluster_DistLat      1, 0, 17, 10, 511.5
+#define SETUP_Cluster_1_General_Cluster_DistLat 1, 0, 17, 10, 511.5
 
 /**
  * Get signal Cluster_DistLat from buffer.
@@ -24528,10 +24278,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Cluster_1_General_Cluster_DistLat(buf) (0 \
-	| (uword)(+(uword)((buf[2] >> 0) & 0x03) << 8) \
-	| (ubyte)(+(ubyte)((buf[3] >> 0) & 0xff) << 0) \
-)
+#define GET_Cluster_1_General_Cluster_DistLat(buf) (0 | (uword)(+(uword)((buf[2] >> 0) & 0x03) << 8) | (ubyte)(+(ubyte)((buf[3] >> 0) & 0xff) << 0))
 
 /**
  * Set signal Cluster_DistLat in buffer.
@@ -24541,12 +24288,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Cluster_1_General_Cluster_DistLat(buf, val) { \
-	buf[2] &= ~(0x03 << 0); \
-	buf[2] |= ((ubyte)((uword)(val) >> 8) & 0x03) << 0; \
-	buf[3] &= ~(0xff << 0); \
-	buf[3] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_Cluster_1_General_Cluster_DistLat(buf, val) \
+	{                                                     \
+		buf[2] &= ~(0x03 << 0);                             \
+		buf[2] |= ((ubyte)((uword)(val) >> 8) & 0x03) << 0; \
+		buf[3] &= ~(0xff << 0);                             \
+		buf[3] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+	}
 
 /**
  * Set signal Cluster_DistLat in buffer to its initial value.
@@ -24574,22 +24322,22 @@
 /**
  * Signal Cluster_DistLat raw initial value.
  */
-#define START_Cluster_1_General_Cluster_DistLat      511.5
+#define START_Cluster_1_General_Cluster_DistLat 511.5
 
 /**
  * Signal Cluster_DistLat raw minimum value.
  */
-#define MIN_Cluster_1_General_Cluster_DistLat        0
+#define MIN_Cluster_1_General_Cluster_DistLat 0
 
 /**
  * Signal Cluster_DistLat raw maximum value.
  */
-#define MAX_Cluster_1_General_Cluster_DistLat        1023
+#define MAX_Cluster_1_General_Cluster_DistLat 1023
 
 /**
  * Signal Cluster_DistLat raw offset value.
  */
-#define OFF_Cluster_1_General_Cluster_DistLat        -511
+#define OFF_Cluster_1_General_Cluster_DistLat -511
 
 /**
  * @}
@@ -24613,7 +24361,7 @@
  * @deprecated
  *	Use \ref SET_Cluster_2_Quality_Cluster_ID and \ref GET_Cluster_2_Quality_Cluster_ID instead.
  */
-#define SIG_Cluster_2_Quality_Cluster_ID            1, 0, 7, 8
+#define SIG_Cluster_2_Quality_Cluster_ID 1, 0, 7, 8
 
 /**
  * Signal Cluster_ID setup tuple.
@@ -24621,7 +24369,7 @@
  * @deprecated
  *	Use \ref INITSIG_Cluster_2_Quality_Cluster_ID or \ref INIT_Cluster_2_Quality instead.
  */
-#define SETUP_Cluster_2_Quality_Cluster_ID          1, 0, 7, 8, 0
+#define SETUP_Cluster_2_Quality_Cluster_ID 1, 0, 7, 8, 0
 
 /**
  * Get signal Cluster_ID from buffer.
@@ -24631,9 +24379,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Cluster_2_Quality_Cluster_ID(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[0] >> 0) & 0xff) << 0) \
-)
+#define GET_Cluster_2_Quality_Cluster_ID(buf) (0 | (ubyte)(+(ubyte)((buf[0] >> 0) & 0xff) << 0))
 
 /**
  * Set signal Cluster_ID in buffer.
@@ -24643,10 +24389,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Cluster_2_Quality_Cluster_ID(buf, val) { \
-	buf[0] &= ~(0xff << 0); \
-	buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-}
+#define SET_Cluster_2_Quality_Cluster_ID(buf, val) \
+	{                                                \
+		buf[0] &= ~(0xff << 0);                        \
+		buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0;   \
+	}
 
 /**
  * Set signal Cluster_ID in buffer to its initial value.
@@ -24674,22 +24421,22 @@
 /**
  * Signal Cluster_ID raw initial value.
  */
-#define START_Cluster_2_Quality_Cluster_ID          0
+#define START_Cluster_2_Quality_Cluster_ID 0
 
 /**
  * Signal Cluster_ID raw minimum value.
  */
-#define MIN_Cluster_2_Quality_Cluster_ID            0
+#define MIN_Cluster_2_Quality_Cluster_ID 0
 
 /**
  * Signal Cluster_ID raw maximum value.
  */
-#define MAX_Cluster_2_Quality_Cluster_ID            255
+#define MAX_Cluster_2_Quality_Cluster_ID 255
 
 /**
  * Signal Cluster_ID raw offset value.
  */
-#define OFF_Cluster_2_Quality_Cluster_ID            0
+#define OFF_Cluster_2_Quality_Cluster_ID 0
 
 /**
  * @}
@@ -24715,7 +24462,7 @@
  * @deprecated
  *	Use \ref SET_Cluster_2_Quality_Cluster_VrelLat_rms and \ref GET_Cluster_2_Quality_Cluster_VrelLat_rms instead.
  */
-#define SIG_Cluster_2_Quality_Cluster_VrelLat_rms        1, 0, 16, 5
+#define SIG_Cluster_2_Quality_Cluster_VrelLat_rms 1, 0, 16, 5
 
 /**
  * Signal Cluster_VrelLat_rms setup tuple.
@@ -24723,7 +24470,7 @@
  * @deprecated
  *	Use \ref INITSIG_Cluster_2_Quality_Cluster_VrelLat_rms or \ref INIT_Cluster_2_Quality instead.
  */
-#define SETUP_Cluster_2_Quality_Cluster_VrelLat_rms      1, 0, 16, 5, 0
+#define SETUP_Cluster_2_Quality_Cluster_VrelLat_rms 1, 0, 16, 5, 0
 
 /**
  * Get signal Cluster_VrelLat_rms from buffer.
@@ -24733,10 +24480,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Cluster_2_Quality_Cluster_VrelLat_rms(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[2] >> 0) & 0x01) << 4) \
-	| (ubyte)(+(ubyte)((buf[3] >> 4) & 0x0f) << 0) \
-)
+#define GET_Cluster_2_Quality_Cluster_VrelLat_rms(buf) (0 | (ubyte)(+(ubyte)((buf[2] >> 0) & 0x01) << 4) | (ubyte)(+(ubyte)((buf[3] >> 4) & 0x0f) << 0))
 
 /**
  * Set signal Cluster_VrelLat_rms in buffer.
@@ -24746,12 +24490,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Cluster_2_Quality_Cluster_VrelLat_rms(buf, val) { \
-	buf[2] &= ~(0x01 << 0); \
-	buf[2] |= (((ubyte)(val) >> 4) & 0x01) << 0; \
-	buf[3] &= ~(0x0f << 4); \
-	buf[3] |= (((ubyte)(val) >> 0) & 0x0f) << 4; \
-}
+#define SET_Cluster_2_Quality_Cluster_VrelLat_rms(buf, val) \
+	{                                                         \
+		buf[2] &= ~(0x01 << 0);                                 \
+		buf[2] |= (((ubyte)(val) >> 4) & 0x01) << 0;            \
+		buf[3] &= ~(0x0f << 4);                                 \
+		buf[3] |= (((ubyte)(val) >> 0) & 0x0f) << 4;            \
+	}
 
 /**
  * Set signal Cluster_VrelLat_rms in buffer to its initial value.
@@ -24779,22 +24524,22 @@
 /**
  * Signal Cluster_VrelLat_rms raw initial value.
  */
-#define START_Cluster_2_Quality_Cluster_VrelLat_rms      0
+#define START_Cluster_2_Quality_Cluster_VrelLat_rms 0
 
 /**
  * Signal Cluster_VrelLat_rms raw minimum value.
  */
-#define MIN_Cluster_2_Quality_Cluster_VrelLat_rms        0
+#define MIN_Cluster_2_Quality_Cluster_VrelLat_rms 0
 
 /**
  * Signal Cluster_VrelLat_rms raw maximum value.
  */
-#define MAX_Cluster_2_Quality_Cluster_VrelLat_rms        31
+#define MAX_Cluster_2_Quality_Cluster_VrelLat_rms 31
 
 /**
  * Signal Cluster_VrelLat_rms raw offset value.
  */
-#define OFF_Cluster_2_Quality_Cluster_VrelLat_rms        0
+#define OFF_Cluster_2_Quality_Cluster_VrelLat_rms 0
 
 /**
  * @}
@@ -24813,7 +24558,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms_Invalid             31
+#define Cluster_2_Quality_Cluster_VrelLat_rms_Invalid 31
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _10_000.
@@ -24822,7 +24567,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__10_000             30
+#define Cluster_2_Quality_Cluster_VrelLat_rms__10_000 30
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _7_762.
@@ -24831,7 +24576,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__7_762              29
+#define Cluster_2_Quality_Cluster_VrelLat_rms__7_762 29
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _6_025.
@@ -24840,7 +24585,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__6_025              28
+#define Cluster_2_Quality_Cluster_VrelLat_rms__6_025 28
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _4_676.
@@ -24849,7 +24594,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__4_676              27
+#define Cluster_2_Quality_Cluster_VrelLat_rms__4_676 27
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _3_630.
@@ -24858,7 +24603,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__3_630              26
+#define Cluster_2_Quality_Cluster_VrelLat_rms__3_630 26
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _2_817.
@@ -24867,7 +24612,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__2_817              25
+#define Cluster_2_Quality_Cluster_VrelLat_rms__2_817 25
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _2_187.
@@ -24876,7 +24621,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__2_187              24
+#define Cluster_2_Quality_Cluster_VrelLat_rms__2_187 24
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _1_697.
@@ -24885,7 +24630,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__1_697              23
+#define Cluster_2_Quality_Cluster_VrelLat_rms__1_697 23
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _1_317.
@@ -24894,7 +24639,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__1_317              22
+#define Cluster_2_Quality_Cluster_VrelLat_rms__1_317 22
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _1_023.
@@ -24903,7 +24648,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__1_023              21
+#define Cluster_2_Quality_Cluster_VrelLat_rms__1_023 21
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _0_794.
@@ -24912,7 +24657,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__0_794              20
+#define Cluster_2_Quality_Cluster_VrelLat_rms__0_794 20
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _0_616.
@@ -24921,7 +24666,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__0_616              19
+#define Cluster_2_Quality_Cluster_VrelLat_rms__0_616 19
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _0_478.
@@ -24930,7 +24675,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__0_478              18
+#define Cluster_2_Quality_Cluster_VrelLat_rms__0_478 18
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _0_371.
@@ -24939,7 +24684,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__0_371              17
+#define Cluster_2_Quality_Cluster_VrelLat_rms__0_371 17
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _0_288.
@@ -24948,7 +24693,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__0_288              16
+#define Cluster_2_Quality_Cluster_VrelLat_rms__0_288 16
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _0_224.
@@ -24957,7 +24702,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__0_224              15
+#define Cluster_2_Quality_Cluster_VrelLat_rms__0_224 15
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _0_174.
@@ -24966,7 +24711,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__0_174              14
+#define Cluster_2_Quality_Cluster_VrelLat_rms__0_174 14
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _0_135.
@@ -24975,7 +24720,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__0_135              13
+#define Cluster_2_Quality_Cluster_VrelLat_rms__0_135 13
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _0_105.
@@ -24984,7 +24729,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__0_105              12
+#define Cluster_2_Quality_Cluster_VrelLat_rms__0_105 12
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _0_081.
@@ -24993,7 +24738,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__0_081              11
+#define Cluster_2_Quality_Cluster_VrelLat_rms__0_081 11
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _0_063.
@@ -25002,7 +24747,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__0_063              10
+#define Cluster_2_Quality_Cluster_VrelLat_rms__0_063 10
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _0_049.
@@ -25011,7 +24756,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__0_049              9
+#define Cluster_2_Quality_Cluster_VrelLat_rms__0_049 9
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _0_038.
@@ -25020,7 +24765,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__0_038              8
+#define Cluster_2_Quality_Cluster_VrelLat_rms__0_038 8
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _0_029.
@@ -25029,7 +24774,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__0_029              7
+#define Cluster_2_Quality_Cluster_VrelLat_rms__0_029 7
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _0_023.
@@ -25038,7 +24783,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__0_023              6
+#define Cluster_2_Quality_Cluster_VrelLat_rms__0_023 6
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _0_018.
@@ -25047,7 +24792,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__0_018              5
+#define Cluster_2_Quality_Cluster_VrelLat_rms__0_018 5
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _0_014.
@@ -25056,7 +24801,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__0_014              4
+#define Cluster_2_Quality_Cluster_VrelLat_rms__0_014 4
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _0_011.
@@ -25065,7 +24810,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__0_011              3
+#define Cluster_2_Quality_Cluster_VrelLat_rms__0_011 3
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _0_008.
@@ -25074,7 +24819,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__0_008              2
+#define Cluster_2_Quality_Cluster_VrelLat_rms__0_008 2
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _0_006.
@@ -25083,7 +24828,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__0_006              1
+#define Cluster_2_Quality_Cluster_VrelLat_rms__0_006 1
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLat_rms entry _0_005.
@@ -25092,7 +24837,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLat_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLat_rms__0_005              0
+#define Cluster_2_Quality_Cluster_VrelLat_rms__0_005 0
 
 /**
  * @defgroup SIG_Cluster_2_Quality_Cluster_InvalidState Signal Cluster_InvalidState of Message Cluster_2_Quality (0x702)
@@ -25114,7 +24859,7 @@
  * @deprecated
  *	Use \ref SET_Cluster_2_Quality_Cluster_InvalidState and \ref GET_Cluster_2_Quality_Cluster_InvalidState instead.
  */
-#define SIG_Cluster_2_Quality_Cluster_InvalidState        1, 0, 39, 5
+#define SIG_Cluster_2_Quality_Cluster_InvalidState 1, 0, 39, 5
 
 /**
  * Signal Cluster_InvalidState setup tuple.
@@ -25122,7 +24867,7 @@
  * @deprecated
  *	Use \ref INITSIG_Cluster_2_Quality_Cluster_InvalidState or \ref INIT_Cluster_2_Quality instead.
  */
-#define SETUP_Cluster_2_Quality_Cluster_InvalidState      1, 0, 39, 5, 0
+#define SETUP_Cluster_2_Quality_Cluster_InvalidState 1, 0, 39, 5, 0
 
 /**
  * Get signal Cluster_InvalidState from buffer.
@@ -25132,9 +24877,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Cluster_2_Quality_Cluster_InvalidState(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[4] >> 3) & 0x1f) << 0) \
-)
+#define GET_Cluster_2_Quality_Cluster_InvalidState(buf) (0 | (ubyte)(+(ubyte)((buf[4] >> 3) & 0x1f) << 0))
 
 /**
  * Set signal Cluster_InvalidState in buffer.
@@ -25144,10 +24887,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Cluster_2_Quality_Cluster_InvalidState(buf, val) { \
-	buf[4] &= ~(0x1f << 3); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0x1f) << 3; \
-}
+#define SET_Cluster_2_Quality_Cluster_InvalidState(buf, val) \
+	{                                                          \
+		buf[4] &= ~(0x1f << 3);                                  \
+		buf[4] |= (((ubyte)(val) >> 0) & 0x1f) << 3;             \
+	}
 
 /**
  * Set signal Cluster_InvalidState in buffer to its initial value.
@@ -25175,22 +24919,22 @@
 /**
  * Signal Cluster_InvalidState raw initial value.
  */
-#define START_Cluster_2_Quality_Cluster_InvalidState      0
+#define START_Cluster_2_Quality_Cluster_InvalidState 0
 
 /**
  * Signal Cluster_InvalidState raw minimum value.
  */
-#define MIN_Cluster_2_Quality_Cluster_InvalidState        0
+#define MIN_Cluster_2_Quality_Cluster_InvalidState 0
 
 /**
  * Signal Cluster_InvalidState raw maximum value.
  */
-#define MAX_Cluster_2_Quality_Cluster_InvalidState        31
+#define MAX_Cluster_2_Quality_Cluster_InvalidState 31
 
 /**
  * Signal Cluster_InvalidState raw offset value.
  */
-#define OFF_Cluster_2_Quality_Cluster_InvalidState        0
+#define OFF_Cluster_2_Quality_Cluster_InvalidState 0
 
 /**
  * @}
@@ -25211,7 +24955,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_InvalidState
  */
-#define Cluster_2_Quality_Cluster_InvalidState_Valid               17
+#define Cluster_2_Quality_Cluster_InvalidState_Valid 17
 
 /**
  * Value table Cluster_2_Quality_Cluster_InvalidState entry Valid_10.
@@ -25220,7 +24964,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_InvalidState
  */
-#define Cluster_2_Quality_Cluster_InvalidState_Valid_10            16
+#define Cluster_2_Quality_Cluster_InvalidState_Valid_10 16
 
 /**
  * Value table Cluster_2_Quality_Cluster_InvalidState entry Valid_F.
@@ -25229,32 +24973,32 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_InvalidState
  */
-#define Cluster_2_Quality_Cluster_InvalidState_Valid_F             15
+#define Cluster_2_Quality_Cluster_InvalidState_Valid_F 15
 
 /**
  * Value table Cluster_2_Quality_Cluster_InvalidState entry Invalid.
  *
- * harmonics 
+ * harmonics
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_InvalidState
  */
-#define Cluster_2_Quality_Cluster_InvalidState_Invalid             14
+#define Cluster_2_Quality_Cluster_InvalidState_Invalid 14
 
 /**
  * Value table Cluster_2_Quality_Cluster_InvalidState entry reserved.
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_InvalidState
  */
-#define Cluster_2_Quality_Cluster_InvalidState_reserved            13
+#define Cluster_2_Quality_Cluster_InvalidState_reserved 13
 
 /**
  * Value table Cluster_2_Quality_Cluster_InvalidState entry Valid_C.
  *
- * artefact 
+ * artefact
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_InvalidState
  */
-#define Cluster_2_Quality_Cluster_InvalidState_Valid_C             12
+#define Cluster_2_Quality_Cluster_InvalidState_Valid_C 12
 
 /**
  * Value table Cluster_2_Quality_Cluster_InvalidState entry Valid_B.
@@ -25263,7 +25007,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_InvalidState
  */
-#define Cluster_2_Quality_Cluster_InvalidState_Valid_B             11
+#define Cluster_2_Quality_Cluster_InvalidState_Valid_B 11
 
 /**
  * Value table Cluster_2_Quality_Cluster_InvalidState entry Valid_A.
@@ -25272,7 +25016,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_InvalidState
  */
-#define Cluster_2_Quality_Cluster_InvalidState_Valid_A             10
+#define Cluster_2_Quality_Cluster_InvalidState_Valid_A 10
 
 /**
  * Value table Cluster_2_Quality_Cluster_InvalidState entry Valid_9.
@@ -25281,7 +25025,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_InvalidState
  */
-#define Cluster_2_Quality_Cluster_InvalidState_Valid_9             9
+#define Cluster_2_Quality_Cluster_InvalidState_Valid_9 9
 
 /**
  * Value table Cluster_2_Quality_Cluster_InvalidState entry Valid_8.
@@ -25290,7 +25034,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_InvalidState
  */
-#define Cluster_2_Quality_Cluster_InvalidState_Valid_8             8
+#define Cluster_2_Quality_Cluster_InvalidState_Valid_8 8
 
 /**
  * Value table Cluster_2_Quality_Cluster_InvalidState entry Invalid_7.
@@ -25299,7 +25043,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_InvalidState
  */
-#define Cluster_2_Quality_Cluster_InvalidState_Invalid_7           7
+#define Cluster_2_Quality_Cluster_InvalidState_Invalid_7 7
 
 /**
  * Value table Cluster_2_Quality_Cluster_InvalidState entry Invalid_6.
@@ -25308,14 +25052,14 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_InvalidState
  */
-#define Cluster_2_Quality_Cluster_InvalidState_Invalid_6           6
+#define Cluster_2_Quality_Cluster_InvalidState_Invalid_6 6
 
 /**
  * Value table Cluster_2_Quality_Cluster_InvalidState entry reserved_5.
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_InvalidState
  */
-#define Cluster_2_Quality_Cluster_InvalidState_reserved_5          5
+#define Cluster_2_Quality_Cluster_InvalidState_reserved_5 5
 
 /**
  * Value table Cluster_2_Quality_Cluster_InvalidState entry Valid_4.
@@ -25324,7 +25068,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_InvalidState
  */
-#define Cluster_2_Quality_Cluster_InvalidState_Valid_4             4
+#define Cluster_2_Quality_Cluster_InvalidState_Valid_4 4
 
 /**
  * Value table Cluster_2_Quality_Cluster_InvalidState entry Invalid_3.
@@ -25333,7 +25077,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_InvalidState
  */
-#define Cluster_2_Quality_Cluster_InvalidState_Invalid_3           3
+#define Cluster_2_Quality_Cluster_InvalidState_Invalid_3 3
 
 /**
  * Value table Cluster_2_Quality_Cluster_InvalidState entry Invalid_2.
@@ -25342,7 +25086,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_InvalidState
  */
-#define Cluster_2_Quality_Cluster_InvalidState_Invalid_2           2
+#define Cluster_2_Quality_Cluster_InvalidState_Invalid_2 2
 
 /**
  * Value table Cluster_2_Quality_Cluster_InvalidState entry Invalid_1.
@@ -25351,14 +25095,14 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_InvalidState
  */
-#define Cluster_2_Quality_Cluster_InvalidState_Invalid_1           1
+#define Cluster_2_Quality_Cluster_InvalidState_Invalid_1 1
 
 /**
  * Value table Cluster_2_Quality_Cluster_InvalidState entry Valid_0.
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_InvalidState
  */
-#define Cluster_2_Quality_Cluster_InvalidState_Valid_0             0
+#define Cluster_2_Quality_Cluster_InvalidState_Valid_0 0
 
 /**
  * @defgroup SIG_Cluster_2_Quality_Cluster_DistLat_rms Signal Cluster_DistLat_rms of Message Cluster_2_Quality (0x702)
@@ -25380,7 +25124,7 @@
  * @deprecated
  *	Use \ref SET_Cluster_2_Quality_Cluster_DistLat_rms and \ref GET_Cluster_2_Quality_Cluster_DistLat_rms instead.
  */
-#define SIG_Cluster_2_Quality_Cluster_DistLat_rms        1, 0, 10, 5
+#define SIG_Cluster_2_Quality_Cluster_DistLat_rms 1, 0, 10, 5
 
 /**
  * Signal Cluster_DistLat_rms setup tuple.
@@ -25388,7 +25132,7 @@
  * @deprecated
  *	Use \ref INITSIG_Cluster_2_Quality_Cluster_DistLat_rms or \ref INIT_Cluster_2_Quality instead.
  */
-#define SETUP_Cluster_2_Quality_Cluster_DistLat_rms      1, 0, 10, 5, 0
+#define SETUP_Cluster_2_Quality_Cluster_DistLat_rms 1, 0, 10, 5, 0
 
 /**
  * Get signal Cluster_DistLat_rms from buffer.
@@ -25398,10 +25142,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Cluster_2_Quality_Cluster_DistLat_rms(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[1] >> 0) & 0x07) << 2) \
-	| (ubyte)(+(ubyte)((buf[2] >> 6) & 0x03) << 0) \
-)
+#define GET_Cluster_2_Quality_Cluster_DistLat_rms(buf) (0 | (ubyte)(+(ubyte)((buf[1] >> 0) & 0x07) << 2) | (ubyte)(+(ubyte)((buf[2] >> 6) & 0x03) << 0))
 
 /**
  * Set signal Cluster_DistLat_rms in buffer.
@@ -25411,12 +25152,13 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Cluster_2_Quality_Cluster_DistLat_rms(buf, val) { \
-	buf[1] &= ~(0x07 << 0); \
-	buf[1] |= (((ubyte)(val) >> 2) & 0x07) << 0; \
-	buf[2] &= ~(0x03 << 6); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0x03) << 6; \
-}
+#define SET_Cluster_2_Quality_Cluster_DistLat_rms(buf, val) \
+	{                                                         \
+		buf[1] &= ~(0x07 << 0);                                 \
+		buf[1] |= (((ubyte)(val) >> 2) & 0x07) << 0;            \
+		buf[2] &= ~(0x03 << 6);                                 \
+		buf[2] |= (((ubyte)(val) >> 0) & 0x03) << 6;            \
+	}
 
 /**
  * Set signal Cluster_DistLat_rms in buffer to its initial value.
@@ -25444,22 +25186,22 @@
 /**
  * Signal Cluster_DistLat_rms raw initial value.
  */
-#define START_Cluster_2_Quality_Cluster_DistLat_rms      0
+#define START_Cluster_2_Quality_Cluster_DistLat_rms 0
 
 /**
  * Signal Cluster_DistLat_rms raw minimum value.
  */
-#define MIN_Cluster_2_Quality_Cluster_DistLat_rms        0
+#define MIN_Cluster_2_Quality_Cluster_DistLat_rms 0
 
 /**
  * Signal Cluster_DistLat_rms raw maximum value.
  */
-#define MAX_Cluster_2_Quality_Cluster_DistLat_rms        31
+#define MAX_Cluster_2_Quality_Cluster_DistLat_rms 31
 
 /**
  * Signal Cluster_DistLat_rms raw offset value.
  */
-#define OFF_Cluster_2_Quality_Cluster_DistLat_rms        0
+#define OFF_Cluster_2_Quality_Cluster_DistLat_rms 0
 
 /**
  * @}
@@ -25478,7 +25220,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms_Invalid             31
+#define Cluster_2_Quality_Cluster_DistLat_rms_Invalid 31
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _10_000.
@@ -25487,7 +25229,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__10_000             30
+#define Cluster_2_Quality_Cluster_DistLat_rms__10_000 30
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _7_762.
@@ -25496,7 +25238,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__7_762              29
+#define Cluster_2_Quality_Cluster_DistLat_rms__7_762 29
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _6_025.
@@ -25505,7 +25247,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__6_025              28
+#define Cluster_2_Quality_Cluster_DistLat_rms__6_025 28
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _4_676.
@@ -25514,7 +25256,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__4_676              27
+#define Cluster_2_Quality_Cluster_DistLat_rms__4_676 27
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _3_630.
@@ -25523,7 +25265,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__3_630              26
+#define Cluster_2_Quality_Cluster_DistLat_rms__3_630 26
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _2_817.
@@ -25532,7 +25274,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__2_817              25
+#define Cluster_2_Quality_Cluster_DistLat_rms__2_817 25
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _2_187.
@@ -25541,7 +25283,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__2_187              24
+#define Cluster_2_Quality_Cluster_DistLat_rms__2_187 24
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _1_697.
@@ -25550,7 +25292,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__1_697              23
+#define Cluster_2_Quality_Cluster_DistLat_rms__1_697 23
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _1_317.
@@ -25559,7 +25301,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__1_317              22
+#define Cluster_2_Quality_Cluster_DistLat_rms__1_317 22
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _1_023.
@@ -25568,7 +25310,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__1_023              21
+#define Cluster_2_Quality_Cluster_DistLat_rms__1_023 21
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _0_794.
@@ -25577,7 +25319,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__0_794              20
+#define Cluster_2_Quality_Cluster_DistLat_rms__0_794 20
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _0_616.
@@ -25586,7 +25328,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__0_616              19
+#define Cluster_2_Quality_Cluster_DistLat_rms__0_616 19
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _0_478.
@@ -25595,7 +25337,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__0_478              18
+#define Cluster_2_Quality_Cluster_DistLat_rms__0_478 18
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _0_371.
@@ -25604,7 +25346,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__0_371              17
+#define Cluster_2_Quality_Cluster_DistLat_rms__0_371 17
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _0_288.
@@ -25613,7 +25355,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__0_288              16
+#define Cluster_2_Quality_Cluster_DistLat_rms__0_288 16
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _0_224.
@@ -25622,7 +25364,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__0_224              15
+#define Cluster_2_Quality_Cluster_DistLat_rms__0_224 15
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _0_174.
@@ -25631,7 +25373,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__0_174              14
+#define Cluster_2_Quality_Cluster_DistLat_rms__0_174 14
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _0_135.
@@ -25640,7 +25382,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__0_135              13
+#define Cluster_2_Quality_Cluster_DistLat_rms__0_135 13
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _0_105.
@@ -25649,7 +25391,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__0_105              12
+#define Cluster_2_Quality_Cluster_DistLat_rms__0_105 12
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _0_081.
@@ -25658,7 +25400,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__0_081              11
+#define Cluster_2_Quality_Cluster_DistLat_rms__0_081 11
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _0_063.
@@ -25667,7 +25409,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__0_063              10
+#define Cluster_2_Quality_Cluster_DistLat_rms__0_063 10
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _0_049.
@@ -25676,7 +25418,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__0_049              9
+#define Cluster_2_Quality_Cluster_DistLat_rms__0_049 9
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _0_038.
@@ -25685,7 +25427,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__0_038              8
+#define Cluster_2_Quality_Cluster_DistLat_rms__0_038 8
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _0_029.
@@ -25694,7 +25436,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__0_029              7
+#define Cluster_2_Quality_Cluster_DistLat_rms__0_029 7
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _0_023.
@@ -25703,7 +25445,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__0_023              6
+#define Cluster_2_Quality_Cluster_DistLat_rms__0_023 6
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _0_018.
@@ -25712,7 +25454,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__0_018              5
+#define Cluster_2_Quality_Cluster_DistLat_rms__0_018 5
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _0_014.
@@ -25721,7 +25463,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__0_014              4
+#define Cluster_2_Quality_Cluster_DistLat_rms__0_014 4
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _0_011.
@@ -25730,7 +25472,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__0_011              3
+#define Cluster_2_Quality_Cluster_DistLat_rms__0_011 3
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _0_008.
@@ -25739,7 +25481,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__0_008              2
+#define Cluster_2_Quality_Cluster_DistLat_rms__0_008 2
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _0_006.
@@ -25748,7 +25490,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__0_006              1
+#define Cluster_2_Quality_Cluster_DistLat_rms__0_006 1
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLat_rms entry _0_005.
@@ -25757,7 +25499,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLat_rms
  */
-#define Cluster_2_Quality_Cluster_DistLat_rms__0_005              0
+#define Cluster_2_Quality_Cluster_DistLat_rms__0_005 0
 
 /**
  * @defgroup SIG_Cluster_2_Quality_Cluster_DistLong_rms Signal Cluster_DistLong_rms of Message Cluster_2_Quality (0x702)
@@ -25779,7 +25521,7 @@
  * @deprecated
  *	Use \ref SET_Cluster_2_Quality_Cluster_DistLong_rms and \ref GET_Cluster_2_Quality_Cluster_DistLong_rms instead.
  */
-#define SIG_Cluster_2_Quality_Cluster_DistLong_rms        1, 0, 15, 5
+#define SIG_Cluster_2_Quality_Cluster_DistLong_rms 1, 0, 15, 5
 
 /**
  * Signal Cluster_DistLong_rms setup tuple.
@@ -25787,7 +25529,7 @@
  * @deprecated
  *	Use \ref INITSIG_Cluster_2_Quality_Cluster_DistLong_rms or \ref INIT_Cluster_2_Quality instead.
  */
-#define SETUP_Cluster_2_Quality_Cluster_DistLong_rms      1, 0, 15, 5, 0
+#define SETUP_Cluster_2_Quality_Cluster_DistLong_rms 1, 0, 15, 5, 0
 
 /**
  * Get signal Cluster_DistLong_rms from buffer.
@@ -25797,9 +25539,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Cluster_2_Quality_Cluster_DistLong_rms(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[1] >> 3) & 0x1f) << 0) \
-)
+#define GET_Cluster_2_Quality_Cluster_DistLong_rms(buf) (0 | (ubyte)(+(ubyte)((buf[1] >> 3) & 0x1f) << 0))
 
 /**
  * Set signal Cluster_DistLong_rms in buffer.
@@ -25809,10 +25549,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Cluster_2_Quality_Cluster_DistLong_rms(buf, val) { \
-	buf[1] &= ~(0x1f << 3); \
-	buf[1] |= (((ubyte)(val) >> 0) & 0x1f) << 3; \
-}
+#define SET_Cluster_2_Quality_Cluster_DistLong_rms(buf, val) \
+	{                                                          \
+		buf[1] &= ~(0x1f << 3);                                  \
+		buf[1] |= (((ubyte)(val) >> 0) & 0x1f) << 3;             \
+	}
 
 /**
  * Set signal Cluster_DistLong_rms in buffer to its initial value.
@@ -25840,22 +25581,22 @@
 /**
  * Signal Cluster_DistLong_rms raw initial value.
  */
-#define START_Cluster_2_Quality_Cluster_DistLong_rms      0
+#define START_Cluster_2_Quality_Cluster_DistLong_rms 0
 
 /**
  * Signal Cluster_DistLong_rms raw minimum value.
  */
-#define MIN_Cluster_2_Quality_Cluster_DistLong_rms        0
+#define MIN_Cluster_2_Quality_Cluster_DistLong_rms 0
 
 /**
  * Signal Cluster_DistLong_rms raw maximum value.
  */
-#define MAX_Cluster_2_Quality_Cluster_DistLong_rms        31
+#define MAX_Cluster_2_Quality_Cluster_DistLong_rms 31
 
 /**
  * Signal Cluster_DistLong_rms raw offset value.
  */
-#define OFF_Cluster_2_Quality_Cluster_DistLong_rms        0
+#define OFF_Cluster_2_Quality_Cluster_DistLong_rms 0
 
 /**
  * @}
@@ -25874,7 +25615,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms_Invalid             31
+#define Cluster_2_Quality_Cluster_DistLong_rms_Invalid 31
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _10_000.
@@ -25883,7 +25624,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__10_000             30
+#define Cluster_2_Quality_Cluster_DistLong_rms__10_000 30
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _7_762.
@@ -25892,7 +25633,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__7_762              29
+#define Cluster_2_Quality_Cluster_DistLong_rms__7_762 29
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _6_025.
@@ -25901,7 +25642,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__6_025              28
+#define Cluster_2_Quality_Cluster_DistLong_rms__6_025 28
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _4_676.
@@ -25910,7 +25651,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__4_676              27
+#define Cluster_2_Quality_Cluster_DistLong_rms__4_676 27
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _3_630.
@@ -25919,7 +25660,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__3_630              26
+#define Cluster_2_Quality_Cluster_DistLong_rms__3_630 26
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _2_817.
@@ -25928,7 +25669,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__2_817              25
+#define Cluster_2_Quality_Cluster_DistLong_rms__2_817 25
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _2_187.
@@ -25937,7 +25678,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__2_187              24
+#define Cluster_2_Quality_Cluster_DistLong_rms__2_187 24
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _1_697.
@@ -25946,7 +25687,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__1_697              23
+#define Cluster_2_Quality_Cluster_DistLong_rms__1_697 23
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _1_317.
@@ -25955,7 +25696,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__1_317              22
+#define Cluster_2_Quality_Cluster_DistLong_rms__1_317 22
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _1_023.
@@ -25964,7 +25705,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__1_023              21
+#define Cluster_2_Quality_Cluster_DistLong_rms__1_023 21
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _0_794.
@@ -25973,7 +25714,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__0_794              20
+#define Cluster_2_Quality_Cluster_DistLong_rms__0_794 20
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _0_616.
@@ -25982,7 +25723,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__0_616              19
+#define Cluster_2_Quality_Cluster_DistLong_rms__0_616 19
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _0_478.
@@ -25991,7 +25732,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__0_478              18
+#define Cluster_2_Quality_Cluster_DistLong_rms__0_478 18
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _0_371.
@@ -26000,7 +25741,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__0_371              17
+#define Cluster_2_Quality_Cluster_DistLong_rms__0_371 17
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _0_288.
@@ -26009,7 +25750,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__0_288              16
+#define Cluster_2_Quality_Cluster_DistLong_rms__0_288 16
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _0_224.
@@ -26018,7 +25759,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__0_224              15
+#define Cluster_2_Quality_Cluster_DistLong_rms__0_224 15
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _0_174.
@@ -26027,7 +25768,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__0_174              14
+#define Cluster_2_Quality_Cluster_DistLong_rms__0_174 14
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _0_135.
@@ -26036,7 +25777,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__0_135              13
+#define Cluster_2_Quality_Cluster_DistLong_rms__0_135 13
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _0_105.
@@ -26045,7 +25786,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__0_105              12
+#define Cluster_2_Quality_Cluster_DistLong_rms__0_105 12
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _0_081.
@@ -26054,7 +25795,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__0_081              11
+#define Cluster_2_Quality_Cluster_DistLong_rms__0_081 11
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _0_063.
@@ -26063,7 +25804,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__0_063              10
+#define Cluster_2_Quality_Cluster_DistLong_rms__0_063 10
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _0_049.
@@ -26072,7 +25813,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__0_049              9
+#define Cluster_2_Quality_Cluster_DistLong_rms__0_049 9
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _0_038.
@@ -26081,7 +25822,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__0_038              8
+#define Cluster_2_Quality_Cluster_DistLong_rms__0_038 8
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _0_029.
@@ -26090,7 +25831,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__0_029              7
+#define Cluster_2_Quality_Cluster_DistLong_rms__0_029 7
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _0_023.
@@ -26099,7 +25840,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__0_023              6
+#define Cluster_2_Quality_Cluster_DistLong_rms__0_023 6
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _0_018.
@@ -26108,7 +25849,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__0_018              5
+#define Cluster_2_Quality_Cluster_DistLong_rms__0_018 5
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _0_014.
@@ -26117,7 +25858,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__0_014              4
+#define Cluster_2_Quality_Cluster_DistLong_rms__0_014 4
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _0_011.
@@ -26126,7 +25867,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__0_011              3
+#define Cluster_2_Quality_Cluster_DistLong_rms__0_011 3
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _0_008.
@@ -26135,7 +25876,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__0_008              2
+#define Cluster_2_Quality_Cluster_DistLong_rms__0_008 2
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _0_006.
@@ -26144,7 +25885,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__0_006              1
+#define Cluster_2_Quality_Cluster_DistLong_rms__0_006 1
 
 /**
  * Value table Cluster_2_Quality_Cluster_DistLong_rms entry _0_005.
@@ -26153,7 +25894,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_DistLong_rms
  */
-#define Cluster_2_Quality_Cluster_DistLong_rms__0_005              0
+#define Cluster_2_Quality_Cluster_DistLong_rms__0_005 0
 
 /**
  * @defgroup SIG_Cluster_2_Quality_Cluster_VrelLong_rms Signal Cluster_VrelLong_rms of Message Cluster_2_Quality (0x702)
@@ -26175,7 +25916,7 @@
  * @deprecated
  *	Use \ref SET_Cluster_2_Quality_Cluster_VrelLong_rms and \ref GET_Cluster_2_Quality_Cluster_VrelLong_rms instead.
  */
-#define SIG_Cluster_2_Quality_Cluster_VrelLong_rms        1, 0, 21, 5
+#define SIG_Cluster_2_Quality_Cluster_VrelLong_rms 1, 0, 21, 5
 
 /**
  * Signal Cluster_VrelLong_rms setup tuple.
@@ -26183,7 +25924,7 @@
  * @deprecated
  *	Use \ref INITSIG_Cluster_2_Quality_Cluster_VrelLong_rms or \ref INIT_Cluster_2_Quality instead.
  */
-#define SETUP_Cluster_2_Quality_Cluster_VrelLong_rms      1, 0, 21, 5, 0
+#define SETUP_Cluster_2_Quality_Cluster_VrelLong_rms 1, 0, 21, 5, 0
 
 /**
  * Get signal Cluster_VrelLong_rms from buffer.
@@ -26193,9 +25934,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Cluster_2_Quality_Cluster_VrelLong_rms(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[2] >> 1) & 0x1f) << 0) \
-)
+#define GET_Cluster_2_Quality_Cluster_VrelLong_rms(buf) (0 | (ubyte)(+(ubyte)((buf[2] >> 1) & 0x1f) << 0))
 
 /**
  * Set signal Cluster_VrelLong_rms in buffer.
@@ -26205,10 +25944,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Cluster_2_Quality_Cluster_VrelLong_rms(buf, val) { \
-	buf[2] &= ~(0x1f << 1); \
-	buf[2] |= (((ubyte)(val) >> 0) & 0x1f) << 1; \
-}
+#define SET_Cluster_2_Quality_Cluster_VrelLong_rms(buf, val) \
+	{                                                          \
+		buf[2] &= ~(0x1f << 1);                                  \
+		buf[2] |= (((ubyte)(val) >> 0) & 0x1f) << 1;             \
+	}
 
 /**
  * Set signal Cluster_VrelLong_rms in buffer to its initial value.
@@ -26236,22 +25976,22 @@
 /**
  * Signal Cluster_VrelLong_rms raw initial value.
  */
-#define START_Cluster_2_Quality_Cluster_VrelLong_rms      0
+#define START_Cluster_2_Quality_Cluster_VrelLong_rms 0
 
 /**
  * Signal Cluster_VrelLong_rms raw minimum value.
  */
-#define MIN_Cluster_2_Quality_Cluster_VrelLong_rms        0
+#define MIN_Cluster_2_Quality_Cluster_VrelLong_rms 0
 
 /**
  * Signal Cluster_VrelLong_rms raw maximum value.
  */
-#define MAX_Cluster_2_Quality_Cluster_VrelLong_rms        31
+#define MAX_Cluster_2_Quality_Cluster_VrelLong_rms 31
 
 /**
  * Signal Cluster_VrelLong_rms raw offset value.
  */
-#define OFF_Cluster_2_Quality_Cluster_VrelLong_rms        0
+#define OFF_Cluster_2_Quality_Cluster_VrelLong_rms 0
 
 /**
  * @}
@@ -26270,7 +26010,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms_Invalid             31
+#define Cluster_2_Quality_Cluster_VrelLong_rms_Invalid 31
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _10_000.
@@ -26279,7 +26019,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__10_000             30
+#define Cluster_2_Quality_Cluster_VrelLong_rms__10_000 30
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _7_762.
@@ -26288,7 +26028,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__7_762              29
+#define Cluster_2_Quality_Cluster_VrelLong_rms__7_762 29
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _6_025.
@@ -26297,7 +26037,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__6_025              28
+#define Cluster_2_Quality_Cluster_VrelLong_rms__6_025 28
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _4_676.
@@ -26306,7 +26046,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__4_676              27
+#define Cluster_2_Quality_Cluster_VrelLong_rms__4_676 27
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _3_630.
@@ -26315,7 +26055,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__3_630              26
+#define Cluster_2_Quality_Cluster_VrelLong_rms__3_630 26
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _2_817.
@@ -26324,7 +26064,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__2_817              25
+#define Cluster_2_Quality_Cluster_VrelLong_rms__2_817 25
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _2_187.
@@ -26333,7 +26073,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__2_187              24
+#define Cluster_2_Quality_Cluster_VrelLong_rms__2_187 24
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _1_697.
@@ -26342,7 +26082,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__1_697              23
+#define Cluster_2_Quality_Cluster_VrelLong_rms__1_697 23
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _1_317.
@@ -26351,7 +26091,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__1_317              22
+#define Cluster_2_Quality_Cluster_VrelLong_rms__1_317 22
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _1_023.
@@ -26360,7 +26100,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__1_023              21
+#define Cluster_2_Quality_Cluster_VrelLong_rms__1_023 21
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _0_794.
@@ -26369,7 +26109,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__0_794              20
+#define Cluster_2_Quality_Cluster_VrelLong_rms__0_794 20
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _0_616.
@@ -26378,7 +26118,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__0_616              19
+#define Cluster_2_Quality_Cluster_VrelLong_rms__0_616 19
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _0_478.
@@ -26387,7 +26127,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__0_478              18
+#define Cluster_2_Quality_Cluster_VrelLong_rms__0_478 18
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _0_371.
@@ -26396,7 +26136,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__0_371              17
+#define Cluster_2_Quality_Cluster_VrelLong_rms__0_371 17
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _0_288.
@@ -26405,7 +26145,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__0_288              16
+#define Cluster_2_Quality_Cluster_VrelLong_rms__0_288 16
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _0_224.
@@ -26414,7 +26154,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__0_224              15
+#define Cluster_2_Quality_Cluster_VrelLong_rms__0_224 15
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _0_174.
@@ -26423,7 +26163,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__0_174              14
+#define Cluster_2_Quality_Cluster_VrelLong_rms__0_174 14
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _0_135.
@@ -26432,7 +26172,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__0_135              13
+#define Cluster_2_Quality_Cluster_VrelLong_rms__0_135 13
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _0_105.
@@ -26441,7 +26181,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__0_105              12
+#define Cluster_2_Quality_Cluster_VrelLong_rms__0_105 12
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _0_081.
@@ -26450,7 +26190,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__0_081              11
+#define Cluster_2_Quality_Cluster_VrelLong_rms__0_081 11
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _0_063.
@@ -26459,7 +26199,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__0_063              10
+#define Cluster_2_Quality_Cluster_VrelLong_rms__0_063 10
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _0_049.
@@ -26468,7 +26208,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__0_049              9
+#define Cluster_2_Quality_Cluster_VrelLong_rms__0_049 9
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _0_038.
@@ -26477,7 +26217,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__0_038              8
+#define Cluster_2_Quality_Cluster_VrelLong_rms__0_038 8
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _0_029.
@@ -26486,7 +26226,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__0_029              7
+#define Cluster_2_Quality_Cluster_VrelLong_rms__0_029 7
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _0_023.
@@ -26495,7 +26235,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__0_023              6
+#define Cluster_2_Quality_Cluster_VrelLong_rms__0_023 6
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _0_018.
@@ -26504,7 +26244,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__0_018              5
+#define Cluster_2_Quality_Cluster_VrelLong_rms__0_018 5
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _0_014.
@@ -26513,7 +26253,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__0_014              4
+#define Cluster_2_Quality_Cluster_VrelLong_rms__0_014 4
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _0_011.
@@ -26522,7 +26262,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__0_011              3
+#define Cluster_2_Quality_Cluster_VrelLong_rms__0_011 3
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _0_008.
@@ -26531,7 +26271,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__0_008              2
+#define Cluster_2_Quality_Cluster_VrelLong_rms__0_008 2
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _0_006.
@@ -26540,7 +26280,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__0_006              1
+#define Cluster_2_Quality_Cluster_VrelLong_rms__0_006 1
 
 /**
  * Value table Cluster_2_Quality_Cluster_VrelLong_rms entry _0_005.
@@ -26549,7 +26289,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_VrelLong_rms
  */
-#define Cluster_2_Quality_Cluster_VrelLong_rms__0_005              0
+#define Cluster_2_Quality_Cluster_VrelLong_rms__0_005 0
 
 /**
  * @defgroup SIG_Cluster_2_Quality_Cluster_PdH0 Signal Cluster_PdH0 of Message Cluster_2_Quality (0x702)
@@ -26571,7 +26311,7 @@
  * @deprecated
  *	Use \ref SET_Cluster_2_Quality_Cluster_PdH0 and \ref GET_Cluster_2_Quality_Cluster_PdH0 instead.
  */
-#define SIG_Cluster_2_Quality_Cluster_PdH0          1, 0, 26, 3
+#define SIG_Cluster_2_Quality_Cluster_PdH0 1, 0, 26, 3
 
 /**
  * Signal Cluster_PdH0 setup tuple.
@@ -26579,7 +26319,7 @@
  * @deprecated
  *	Use \ref INITSIG_Cluster_2_Quality_Cluster_PdH0 or \ref INIT_Cluster_2_Quality instead.
  */
-#define SETUP_Cluster_2_Quality_Cluster_PdH0        1, 0, 26, 3, 0
+#define SETUP_Cluster_2_Quality_Cluster_PdH0 1, 0, 26, 3, 0
 
 /**
  * Get signal Cluster_PdH0 from buffer.
@@ -26589,9 +26329,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Cluster_2_Quality_Cluster_PdH0(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[3] >> 0) & 0x07) << 0) \
-)
+#define GET_Cluster_2_Quality_Cluster_PdH0(buf) (0 | (ubyte)(+(ubyte)((buf[3] >> 0) & 0x07) << 0))
 
 /**
  * Set signal Cluster_PdH0 in buffer.
@@ -26601,10 +26339,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Cluster_2_Quality_Cluster_PdH0(buf, val) { \
-	buf[3] &= ~(0x07 << 0); \
-	buf[3] |= (((ubyte)(val) >> 0) & 0x07) << 0; \
-}
+#define SET_Cluster_2_Quality_Cluster_PdH0(buf, val) \
+	{                                                  \
+		buf[3] &= ~(0x07 << 0);                          \
+		buf[3] |= (((ubyte)(val) >> 0) & 0x07) << 0;     \
+	}
 
 /**
  * Set signal Cluster_PdH0 in buffer to its initial value.
@@ -26632,22 +26371,22 @@
 /**
  * Signal Cluster_PdH0 raw initial value.
  */
-#define START_Cluster_2_Quality_Cluster_PdH0        0
+#define START_Cluster_2_Quality_Cluster_PdH0 0
 
 /**
  * Signal Cluster_PdH0 raw minimum value.
  */
-#define MIN_Cluster_2_Quality_Cluster_PdH0          0
+#define MIN_Cluster_2_Quality_Cluster_PdH0 0
 
 /**
  * Signal Cluster_PdH0 raw maximum value.
  */
-#define MAX_Cluster_2_Quality_Cluster_PdH0          7
+#define MAX_Cluster_2_Quality_Cluster_PdH0 7
 
 /**
  * Signal Cluster_PdH0 raw offset value.
  */
-#define OFF_Cluster_2_Quality_Cluster_PdH0          0
+#define OFF_Cluster_2_Quality_Cluster_PdH0 0
 
 /**
  * @}
@@ -26668,7 +26407,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_PdH0
  */
-#define Cluster_2_Quality_Cluster_PdH0___100_              7
+#define Cluster_2_Quality_Cluster_PdH0___100_ 7
 
 /**
  * Value table Cluster_2_Quality_Cluster_PdH0 entry _99_9_.
@@ -26677,7 +26416,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_PdH0
  */
-#define Cluster_2_Quality_Cluster_PdH0__99_9_              6
+#define Cluster_2_Quality_Cluster_PdH0__99_9_ 6
 
 /**
  * Value table Cluster_2_Quality_Cluster_PdH0 entry _99_.
@@ -26686,7 +26425,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_PdH0
  */
-#define Cluster_2_Quality_Cluster_PdH0__99_                5
+#define Cluster_2_Quality_Cluster_PdH0__99_ 5
 
 /**
  * Value table Cluster_2_Quality_Cluster_PdH0 entry _90_.
@@ -26695,7 +26434,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_PdH0
  */
-#define Cluster_2_Quality_Cluster_PdH0__90_                4
+#define Cluster_2_Quality_Cluster_PdH0__90_ 4
 
 /**
  * Value table Cluster_2_Quality_Cluster_PdH0 entry _75_.
@@ -26704,7 +26443,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_PdH0
  */
-#define Cluster_2_Quality_Cluster_PdH0__75_                3
+#define Cluster_2_Quality_Cluster_PdH0__75_ 3
 
 /**
  * Value table Cluster_2_Quality_Cluster_PdH0 entry _50_.
@@ -26713,7 +26452,7 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_PdH0
  */
-#define Cluster_2_Quality_Cluster_PdH0__50_                2
+#define Cluster_2_Quality_Cluster_PdH0__50_ 2
 
 /**
  * Value table Cluster_2_Quality_Cluster_PdH0 entry _25_.
@@ -26722,14 +26461,14 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_PdH0
  */
-#define Cluster_2_Quality_Cluster_PdH0__25_                1
+#define Cluster_2_Quality_Cluster_PdH0__25_ 1
 
 /**
  * Value table Cluster_2_Quality_Cluster_PdH0 entry invalid.
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_PdH0
  */
-#define Cluster_2_Quality_Cluster_PdH0_invalid             0
+#define Cluster_2_Quality_Cluster_PdH0_invalid 0
 
 /**
  * @defgroup SIG_Cluster_2_Quality_Cluster_AmbigState Signal Cluster_AmbigState of Message Cluster_2_Quality (0x702)
@@ -26751,7 +26490,7 @@
  * @deprecated
  *	Use \ref SET_Cluster_2_Quality_Cluster_AmbigState and \ref GET_Cluster_2_Quality_Cluster_AmbigState instead.
  */
-#define SIG_Cluster_2_Quality_Cluster_AmbigState        1, 0, 34, 3
+#define SIG_Cluster_2_Quality_Cluster_AmbigState 1, 0, 34, 3
 
 /**
  * Signal Cluster_AmbigState setup tuple.
@@ -26759,7 +26498,7 @@
  * @deprecated
  *	Use \ref INITSIG_Cluster_2_Quality_Cluster_AmbigState or \ref INIT_Cluster_2_Quality instead.
  */
-#define SETUP_Cluster_2_Quality_Cluster_AmbigState      1, 0, 34, 3, 0
+#define SETUP_Cluster_2_Quality_Cluster_AmbigState 1, 0, 34, 3, 0
 
 /**
  * Get signal Cluster_AmbigState from buffer.
@@ -26769,9 +26508,7 @@
  * @return
  *	The raw signal
  */
-#define GET_Cluster_2_Quality_Cluster_AmbigState(buf) (0 \
-	| (ubyte)(+(ubyte)((buf[4] >> 0) & 0x07) << 0) \
-)
+#define GET_Cluster_2_Quality_Cluster_AmbigState(buf) (0 | (ubyte)(+(ubyte)((buf[4] >> 0) & 0x07) << 0))
 
 /**
  * Set signal Cluster_AmbigState in buffer.
@@ -26781,10 +26518,11 @@
  * @param val
  *	The raw value to set the signal to
  */
-#define SET_Cluster_2_Quality_Cluster_AmbigState(buf, val) { \
-	buf[4] &= ~(0x07 << 0); \
-	buf[4] |= (((ubyte)(val) >> 0) & 0x07) << 0; \
-}
+#define SET_Cluster_2_Quality_Cluster_AmbigState(buf, val) \
+	{                                                        \
+		buf[4] &= ~(0x07 << 0);                                \
+		buf[4] |= (((ubyte)(val) >> 0) & 0x07) << 0;           \
+	}
 
 /**
  * Set signal Cluster_AmbigState in buffer to its initial value.
@@ -26812,22 +26550,22 @@
 /**
  * Signal Cluster_AmbigState raw initial value.
  */
-#define START_Cluster_2_Quality_Cluster_AmbigState      0
+#define START_Cluster_2_Quality_Cluster_AmbigState 0
 
 /**
  * Signal Cluster_AmbigState raw minimum value.
  */
-#define MIN_Cluster_2_Quality_Cluster_AmbigState        0
+#define MIN_Cluster_2_Quality_Cluster_AmbigState 0
 
 /**
  * Signal Cluster_AmbigState raw maximum value.
  */
-#define MAX_Cluster_2_Quality_Cluster_AmbigState        7
+#define MAX_Cluster_2_Quality_Cluster_AmbigState 7
 
 /**
  * Signal Cluster_AmbigState raw offset value.
  */
-#define OFF_Cluster_2_Quality_Cluster_AmbigState        0
+#define OFF_Cluster_2_Quality_Cluster_AmbigState 0
 
 /**
  * @}
@@ -26848,14 +26586,14 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_AmbigState
  */
-#define Cluster_2_Quality_Cluster_AmbigState_Stationary          4
+#define Cluster_2_Quality_Cluster_AmbigState_Stationary 4
 
 /**
  * Value table Cluster_2_Quality_Cluster_AmbigState entry Unambiguous.
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_AmbigState
  */
-#define Cluster_2_Quality_Cluster_AmbigState_Unambiguous         3
+#define Cluster_2_Quality_Cluster_AmbigState_Unambiguous 3
 
 /**
  * Value table Cluster_2_Quality_Cluster_AmbigState entry Staggered.
@@ -26864,34 +26602,34 @@
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_AmbigState
  */
-#define Cluster_2_Quality_Cluster_AmbigState_Staggered           2
+#define Cluster_2_Quality_Cluster_AmbigState_Staggered 2
 
 /**
  * Value table Cluster_2_Quality_Cluster_AmbigState entry Ambiguous.
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_AmbigState
  */
-#define Cluster_2_Quality_Cluster_AmbigState_Ambiguous           1
+#define Cluster_2_Quality_Cluster_AmbigState_Ambiguous 1
 
 /**
  * Value table Cluster_2_Quality_Cluster_AmbigState entry Invalid.
  *
  * @ingroup ENUM_Cluster_2_Quality_Cluster_AmbigState
  */
-#define Cluster_2_Quality_Cluster_AmbigState_Invalid             0\
+#define Cluster_2_Quality_Cluster_AmbigState_Invalid 0
 
-#define Get_MsgID0_From_MsgID(id) (0 \
-    | (((id) >> 8) & 0xF) << 8 /* Extract 3rd digit and position it */ \
-    | (((id) >> 0) & 0xF) << 0 /* Extract 1st digit and position it */ \
+#define Get_MsgID0_From_MsgID(id) (0 | (((id) >> 8) & 0xF) << 8 /* Extract 3rd digit and position it */ \
+																	 | (((id) >> 0) & 0xF) << 0		/* Extract 1st digit and position it */ \
 )
 
-#define Get_SensorID_From_MsgID(id) (0 \
-    | (((id) >> 4) & 0xF) /* Extract 2nd (middle) digit */ \
+#define Get_SensorID_From_MsgID(id) (0 | (((id) >> 4) & 0xF) /* Extract 2nd (middle) digit */ \
 )
 
-#define Set_SensorID_In_MsgID(buf, id) { \
-	buf &= (0xF0F); \
-	buf |= (id & 0xF) << 4;\ 
+#define Set_SensorID_In_MsgID(buf, id) \
+	{                                    \
+		buf &= (0xF0F);                    \
+		buf |= (id & 0xF) << 4;            \
+	\ 
 }
 //     // | (((buf) >> 8) & 0xF) << 8 /* Keep the most significant digit */ \
 //     // | ((id) & 0xF) << 4 /* Insert the new middle digit */ \

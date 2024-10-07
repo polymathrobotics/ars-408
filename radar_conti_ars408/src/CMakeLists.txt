@@ -23,6 +23,7 @@ find_package(ament_cmake REQUIRED)
 find_package(ament_index_cpp REQUIRED)
 find_package(builtin_interfaces REQUIRED)
 find_package(example_interfaces REQUIRED)
+find_package(nav_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_components REQUIRED)
 find_package(rcutils REQUIRED)
@@ -50,6 +51,7 @@ set(dependencies
   can_msgs
   radar_msgs
   nav2_dynamic_msgs
+  nav_msgs
   visualization_msgs
   tf2_ros
   socketcan_adapter

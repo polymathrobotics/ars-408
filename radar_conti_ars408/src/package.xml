@@ -21,6 +21,7 @@
   <build_depend>tf2_ros</build_depend>
   <build_depend>radar_conti_ars408_msgs</build_depend>
   <build_depend>can_msgs</build_depend>
+  <build_depend>nav_msgs</build_depend>
   <build_depend>radar_msgs</build_depend>
   <build_depend>nav2_dynamic_msgs</build_depend>
   <build_depend>unique_identifier_msgs</build_depend>
