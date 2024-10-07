@@ -30,12 +30,12 @@ public:
   std::thread spin_thread;
   std::shared_ptr<FHAC::radar_conti_ars408> node;
   std::unique_ptr<polymath::socketcan::SocketcanAdapter> socketcan_adapter_;
-  std::vector<std::unique_ptr<const polymath::socketcan::CanFrame>> frames;
+  std::unordered_map<canid_t, std::vector<std::unique_ptr<const polymath::socketcan::CanFrame>>> frames;
 
-  void Setup(const int radar_power, const int radar_power_valid)
+  void Setup(radar_conti_ars408_msgs::msg::RadarConfiguration &radar_config, std::string odom_topic_name = "", bool send_motion = false)
   {
     rclcpp::NodeOptions node_options;
-    node_options.parameter_overrides({{"can_channel", "vcan0"}, {"radar_0.link_name", "link_0"}, {"radar_0.radarcfg_radar_power", radar_power}, {"radar_0.radarcfg_radar_power_valid", radar_power_valid}});
+    node_options.parameter_overrides({{"can_channel", "vcan0"}, {"odom_topic_name", odom_topic_name}, {"radar_0.link_name", "link_0"}, {"radar_0.radarcfg_radar_power", radar_config.radarcfg_radarpower.data}, {"radar_0.radarcfg_radar_power_valid", radar_config.radarcfg_radarpower_valid.data}, {"radar_0.send_motion", send_motion}});
     node = std::make_shared<FHAC::radar_conti_ars408>(node_options);
 
     executor.add_node(node->get_node_base_interface());
@@ -44,7 +44,7 @@ public:
     socketcan_adapter_ = std::make_unique<polymath::socketcan::SocketcanAdapter>("vcan0", recv_timeout);
     auto cb = [this](std::unique_ptr<const polymath::socketcan::CanFrame> frame)
     {
-      this->frames.push_back(std::move(frame));
+      this->frames[frame->get_id()].push_back(std::move(frame));
     };
 
     socketcan_adapter_->setOnReceiveCallback(std::move(cb));
@@ -95,7 +95,10 @@ TEST_CASE_METHOD(ROS2Fixture, "Continental Radar Configuration", "[ars408]")
     try
     {
       ROSTestWrapper test_wrapper;
-      test_wrapper.Setup(0, 1);
+      radar_conti_ars408_msgs::msg::RadarConfiguration radar_cfg;
+      radar_cfg.radarcfg_radarpower.data = 0;
+      radar_cfg.radarcfg_radarpower_valid.data = 1;
+      test_wrapper.Setup(radar_cfg);
 
       // Create a client for the service
       auto client = test_wrapper.node->create_client<radar_conti_ars408_msgs::srv::TriggerSetCfg>("/radar_conti_ars408/set_radar_configuration");
@@ -120,9 +123,9 @@ TEST_CASE_METHOD(ROS2Fixture, "Continental Radar Configuration", "[ars408]")
       }
 
       REQUIRE(service_called);
-      REQUIRE(test_wrapper.frames.size() > 1);
+      REQUIRE(test_wrapper.frames[ID_RadarConfiguration].size() == 1);
       std::array<unsigned char, DLC_RadarConfiguration> radar_config_frame = {0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
-      REQUIRE(test_wrapper.frames.back()->get_data() == radar_config_frame);
+      REQUIRE(test_wrapper.frames[ID_RadarConfiguration].back()->get_data() == radar_config_frame);
 
       test_wrapper.Teardown();
     }
@@ -138,7 +141,10 @@ TEST_CASE_METHOD(ROS2Fixture, "Continental Radar Configuration", "[ars408]")
     try
     {
       ROSTestWrapper test_wrapper;
-      test_wrapper.Setup(-1, 1);
+      radar_conti_ars408_msgs::msg::RadarConfiguration radar_cfg;
+      radar_cfg.radarcfg_radarpower.data = -1;
+      radar_cfg.radarcfg_radarpower_valid.data = 1;
+      test_wrapper.Setup(radar_cfg);
 
       // Create a client for the service
       auto client = test_wrapper.node->create_client<radar_conti_ars408_msgs::srv::TriggerSetCfg>("/radar_conti_ars408/set_radar_configuration");
@@ -163,6 +169,153 @@ TEST_CASE_METHOD(ROS2Fixture, "Continental Radar Configuration", "[ars408]")
       }
 
       REQUIRE(service_called);
+      test_wrapper.Teardown();
+    }
+    catch (const std::exception &e)
+    {
+      RCLCPP_ERROR(rclcpp::get_logger("Test"), "Caught exception during teardown: %s", e.what());
+      REQUIRE(false); // Fail the test if an exception occurs
+    }
+  }
+}
+
+TEST_CASE_METHOD(ROS2Fixture, "Motion Input Signals", "[ars408]")
+{
+  SECTION("Basic motion input signal")
+  {
+    try
+    {
+
+      // Setup
+      ROSTestWrapper test_wrapper;
+      radar_conti_ars408_msgs::msg::RadarConfiguration radar_cfg;
+      test_wrapper.Setup(radar_cfg, "/vehicle/odometry", true);
+
+      auto odom_publisher = test_wrapper.node->create_publisher<nav_msgs::msg::Odometry>("/vehicle/odometry", 10);
+      odom_publisher->on_activate();
+      nav_msgs::msg::Odometry nav_msg;
+      nav_msg.twist.twist.linear.x = 1;
+      nav_msg.twist.twist.angular.z = 1;
+      odom_publisher->publish(std::move(nav_msg));
+
+      // Wait for socketcan to publish over network
+      std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+      REQUIRE(test_wrapper.frames[ID_SpeedInformation].size() == 1);
+      auto speed_info_frame = std::move(test_wrapper.frames[ID_SpeedInformation].back());
+      auto speed = CALC_SpeedInformation_RadarDevice_Speed(GET_SpeedInformation_RadarDevice_Speed(speed_info_frame->get_data()), 1.0);
+      auto direction = CALC_SpeedInformation_RadarDevice_SpeedDirection(GET_SpeedInformation_RadarDevice_SpeedDirection(speed_info_frame->get_data()), 1.0);
+      REQUIRE(speed == 1.0);
+      REQUIRE(direction == 1.0);
+
+      REQUIRE(test_wrapper.frames[ID_YawRateInformation].size() == 1);
+      auto yaw_rate_frame = std::move(test_wrapper.frames[ID_YawRateInformation].back());
+      auto yaw_rate = CALC_YawRateInformation_RadarDevice_YawRate(GET_YawRateInformation_RadarDevice_YawRate(yaw_rate_frame->get_data()), 1.0);
+      REQUIRE(yaw_rate == Approx(57.29));
+
+      // Cleanup
+      odom_publisher->on_deactivate();
+      test_wrapper.Teardown();
+    }
+    catch (const std::exception &e)
+    {
+      RCLCPP_ERROR(rclcpp::get_logger("Test"), "Caught exception during teardown: %s", e.what());
+      REQUIRE(false); // Fail the test if an exception occurs
+    }
+  }
+
+  SECTION("No motion input signal sent if not set to true")
+  {
+    try
+    {
+      ROSTestWrapper test_wrapper;
+      radar_conti_ars408_msgs::msg::RadarConfiguration radar_cfg;
+      test_wrapper.Setup(radar_cfg, "/vehicle/odometry", false);
+
+      auto odom_publisher = test_wrapper.node->create_publisher<nav_msgs::msg::Odometry>("/vehicle/odometry", 10);
+      odom_publisher->on_activate();
+      nav_msgs::msg::Odometry nav_msg;
+      nav_msg.twist.twist.linear.x = 1;
+      nav_msg.twist.twist.angular.z = 1;
+      odom_publisher->publish(std::move(nav_msg));
+
+      // Wait for socketcan to publish over network
+      std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+      REQUIRE(test_wrapper.frames[ID_SpeedInformation].size() == 0);
+      REQUIRE(test_wrapper.frames[ID_YawRateInformation].size() == 0);
+
+      odom_publisher->on_deactivate();
+      test_wrapper.Teardown();
+    }
+    catch (const std::exception &e)
+    {
+      RCLCPP_ERROR(rclcpp::get_logger("Test"), "Caught exception during teardown: %s", e.what());
+      REQUIRE(false); // Fail the test if an exception occurs
+    }
+  }
+
+  SECTION("Backwards motion")
+  {
+    try
+    {
+
+      // Setup
+      ROSTestWrapper test_wrapper;
+      radar_conti_ars408_msgs::msg::RadarConfiguration radar_cfg;
+      test_wrapper.Setup(radar_cfg, "/vehicle/odometry", true);
+
+      auto odom_publisher = test_wrapper.node->create_publisher<nav_msgs::msg::Odometry>("/vehicle/odometry", 10);
+      odom_publisher->on_activate();
+      nav_msgs::msg::Odometry nav_msg;
+      nav_msg.twist.twist.linear.x = -1;
+      odom_publisher->publish(std::move(nav_msg));
+
+      // Wait for socketcan to publish over network
+      std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+      REQUIRE(test_wrapper.frames[ID_SpeedInformation].size() == 1);
+      auto speed_info_frame = std::move(test_wrapper.frames[ID_SpeedInformation].back());
+      auto direction = CALC_SpeedInformation_RadarDevice_SpeedDirection(GET_SpeedInformation_RadarDevice_SpeedDirection(speed_info_frame->get_data()), 1.0);
+      REQUIRE(direction == 2.0);
+
+      // Cleanup
+      odom_publisher->on_deactivate();
+      test_wrapper.Teardown();
+    }
+    catch (const std::exception &e)
+    {
+      RCLCPP_ERROR(rclcpp::get_logger("Test"), "Caught exception during teardown: %s", e.what());
+      REQUIRE(false); // Fail the test if an exception occurs
+    }
+  }
+
+  SECTION("Little to no motion")
+  {
+    try
+    {
+
+      // Setup
+      ROSTestWrapper test_wrapper;
+      radar_conti_ars408_msgs::msg::RadarConfiguration radar_cfg;
+      test_wrapper.Setup(radar_cfg, "/vehicle/odometry", true);
+
+      auto odom_publisher = test_wrapper.node->create_publisher<nav_msgs::msg::Odometry>("/vehicle/odometry", 10);
+      odom_publisher->on_activate();
+      nav_msgs::msg::Odometry nav_msg;
+      nav_msg.twist.twist.linear.x = 0.01;
+      odom_publisher->publish(std::move(nav_msg));
+
+      // Wait for socketcan to publish over network
+      std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+      REQUIRE(test_wrapper.frames[ID_SpeedInformation].size() == 1);
+      auto speed_info_frame = std::move(test_wrapper.frames[ID_SpeedInformation].back());
+      auto direction = CALC_SpeedInformation_RadarDevice_SpeedDirection(GET_SpeedInformation_RadarDevice_SpeedDirection(speed_info_frame->get_data()), 1.0);
+      REQUIRE(direction == 0.0);
+
+      // Cleanup
+      odom_publisher->on_deactivate();
       test_wrapper.Teardown();
     }
     catch (const std::exception &e)

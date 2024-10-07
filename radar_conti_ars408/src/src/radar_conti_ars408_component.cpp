@@ -1,4 +1,5 @@
 #include "../include/radar_conti_ars408_component.hpp"
+#include "../include/offsets.hpp"
 
 #include <chrono>
 #include <iostream>
@@ -50,6 +51,7 @@ namespace FHAC
     RCUTILS_LOG_INFO_NAMED(get_name(), "on_configure() is called.");
     auto node = shared_from_this();
     node->declare_parameter("can_channel", rclcpp::ParameterValue(""));
+    node->declare_parameter("odom_topic_name", rclcpp::ParameterValue(""));
     node->declare_parameter("object_list_topic_name", rclcpp::ParameterValue("ars408/objectlist"));
     node->declare_parameter("marker_array_topic_name", rclcpp::ParameterValue("ars408/marker_array"));
     node->declare_parameter("radar_tracks_topic_name", rclcpp::ParameterValue("ars408/radar_tracks"));
@@ -58,6 +60,7 @@ namespace FHAC
     node->declare_parameter("radar_state_topic_name", rclcpp::ParameterValue("ars408/radar_state"));
 
     node->get_parameter("can_channel", can_channel_);
+    node->get_parameter("odom_topic_name", odom_topic_name_);
     node->get_parameter("object_list_topic_name", object_list_topic_name_);
     node->get_parameter("marker_array_topic_name", marker_array_topic_name_);
     node->get_parameter("radar_tracks_topic_name", radar_tracks_topic_name_);
@@ -115,6 +118,10 @@ namespace FHAC
         std::vector<bool> init_radar_valid_values = {false, false, false, false, false, false, false, false, false, false, false, false, false, false, false};
         node->declare_parameter(radar_name + ".valid", rclcpp::ParameterValue(init_radar_valid_values));
         node->get_parameter(radar_name + ".valid", radar_filter_valid_[topic_ind]);
+
+        // Send motion state
+        node->declare_parameter(radar_name + ".send_motion", rclcpp::ParameterValue(false));
+        node->get_parameter(radar_name + ".send_motion", motion_configs_[topic_ind]);
 
         radar_link_names_.push_back(parameter.as_string());
 
@@ -232,6 +239,12 @@ namespace FHAC
     object_count = 0.0;
     set_filter_service_ = create_service<radar_conti_ars408_msgs::srv::SetFilter>("/radar_conti_ars408/set_filter", std::bind(&radar_conti_ars408::setFilterService, this, std::placeholders::_1, std::placeholders::_2));
     radar_config_service_ = create_service<radar_conti_ars408_msgs::srv::TriggerSetCfg>("/radar_conti_ars408/set_radar_configuration", std::bind(&radar_conti_ars408::setRadarConfigurationService, this, std::placeholders::_1, std::placeholders::_2));
+    if (!odom_topic_name_.empty())
+    {
+      rclcpp::QoS qos_settings(10);
+      qos_settings.reliability(RMW_QOS_POLICY_RELIABILITY_RELIABLE);
+      odometry_subscriber_ = create_subscription<nav_msgs::msg::Odometry>(odom_topic_name_, qos_settings, std::bind(&radar_conti_ars408::odomCallback, this, std::placeholders::_1));
+    }
 
     generateUUIDTable();
 
@@ -1086,6 +1099,78 @@ namespace FHAC
     if (filter_config_initialized_list_[sensor_id])
     {
       filter_config_publishers_[sensor_id]->publish(radar_filter_configs_[sensor_id]);
+    }
+  }
+
+  void radar_conti_ars408::odomCallback(const nav_msgs::msg::Odometry::SharedPtr msg)
+  {
+    // Threshold for standstill detection
+    const double standstill_threshold = 0.01;
+
+    double velocity_x = msg->twist.twist.linear.x;
+    // Calculate speed in m/s
+    double speed = std::hypot(msg->twist.twist.linear.x, msg->twist.twist.linear.y);
+
+    // Calculate direction (0x0 standstill, 0x1 forward, 0x2 backward)
+    uint8_t direction = 0x0; // Default to standstill
+    if (std::abs(velocity_x) > standstill_threshold)
+    {
+      direction = (velocity_x > 0) ? 0x1 : 0x2; // Forward or backward
+    }
+
+    // Calculate yaw rate in deg/s (angular velocity around the z-axis)
+    double yaw_rate_rad_per_sec = msg->twist.twist.angular.z;
+    double yaw_rate_deg_per_sec = yaw_rate_rad_per_sec * (180.0 / M_PI);
+
+    for (auto &motion_config : motion_configs_)
+    {
+      auto sensor_id = motion_config.first;
+      auto enable = motion_config.second;
+      if (enable)
+      {
+        sendMotionInputSignals(sensor_id, direction, speed, yaw_rate_deg_per_sec);
+      }
+    }
+  }
+
+  void radar_conti_ars408::sendMotionInputSignals(const size_t &sensor_id, uint8_t direction, double speed, double yaw_rate)
+  {
+    RCLCPP_DEBUG_THROTTLE(this->get_logger(), *this->get_clock(), 1000, "Sending motion input");
+    // Set up speed frame
+    polymath::socketcan::CanFrame speed_frame;
+    speed_frame.set_len(DLC_SpeedInformation);
+    uint32_t speed_msg_id = ID_SpeedInformation;
+    Set_SensorID_In_MsgID(speed_msg_id, sensor_id);
+    speed_frame.set_can_id(speed_msg_id);
+    std::array<unsigned char, CAN_MAX_DLC> speed_data{0};
+
+    SET_SpeedInformation_RadarDevice_Speed(speed_data, speed / SpeedInformation::SPEED_RESOLUTION);
+    SET_SpeedInformation_RadarDevice_SpeedDirection(speed_data, direction);
+
+    speed_frame.set_data(speed_data);
+    auto speed_err = socketcan_adapter_->send(speed_frame);
+    if (speed_err.has_value())
+    {
+      auto msg = fmt::format("Error sending speed frame: %s", speed_err.value().c_str());
+      RCLCPP_ERROR(this->get_logger(), msg.c_str());
+    }
+
+    // Set up yaw rate frame
+    polymath::socketcan::CanFrame yaw_rate_frame;
+    yaw_rate_frame.set_len(DLC_YawRateInformation);
+    uint32_t yaw_rate_msg_id = ID_YawRateInformation;
+    Set_SensorID_In_MsgID(yaw_rate_msg_id, sensor_id);
+    yaw_rate_frame.set_can_id(yaw_rate_msg_id);
+    std::array<unsigned char, CAN_MAX_DLC> yaw_rate_info_data{0};
+
+    SET_YawRateInformation_RadarDevice_YawRate(yaw_rate_info_data, (yaw_rate + YawRateInformation::YAW_RATE_OFFSET) / YawRateInformation::YAW_RATE_RESOLUTION);
+
+    yaw_rate_frame.set_data(yaw_rate_info_data);
+    auto yaw_err = socketcan_adapter_->send(yaw_rate_frame);
+    if (yaw_err.has_value())
+    {
+      auto msg = fmt::format("Error sending yaw frame: %s", yaw_err.value().c_str());
+      RCLCPP_ERROR(this->get_logger(), msg.c_str());
     }
   }
 
