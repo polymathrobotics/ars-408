@@ -32,10 +32,10 @@ public:
   std::unique_ptr<polymath::socketcan::SocketcanAdapter> socketcan_adapter_;
   std::unordered_map<canid_t, std::vector<std::unique_ptr<const polymath::socketcan::CanFrame>>> frames;
 
-  void Setup(radar_conti_ars408_msgs::msg::RadarConfiguration &radar_config, std::string odom_topic_name = "", bool send_motion = false)
+  void Setup(std::vector<rclcpp::Parameter> params)
   {
     rclcpp::NodeOptions node_options;
-    node_options.parameter_overrides({{"can_channel", "vcan0"}, {"odom_topic_name", odom_topic_name}, {"radar_0.link_name", "link_0"}, {"radar_0.radarcfg_radar_power", radar_config.radarcfg_radarpower.data}, {"radar_0.radarcfg_radar_power_valid", radar_config.radarcfg_radarpower_valid.data}, {"radar_0.send_motion", send_motion}});
+    node_options.parameter_overrides(params);
     node = std::make_shared<FHAC::radar_conti_ars408>(node_options);
 
     executor.add_node(node->get_node_base_interface());
@@ -88,6 +88,19 @@ public:
   }
 };
 
+const polymath::socketcan::CanFrame *findFrameWithIndex(const std::vector<std::unique_ptr<const polymath::socketcan::CanFrame>> &frames, FilterType index)
+{
+  for (const auto &frame : frames)
+  {
+    auto data = frame->get_data();
+    if (GET_FilterCfg_FilterCfg_Index(data) == static_cast<int>(index))
+    {
+      return frame.get();
+    }
+  }
+  return nullptr;
+}
+
 TEST_CASE_METHOD(ROS2Fixture, "Continental Radar Configuration", "[ars408]")
 {
   SECTION("Happy path for radar configuration")
@@ -95,10 +108,7 @@ TEST_CASE_METHOD(ROS2Fixture, "Continental Radar Configuration", "[ars408]")
     try
     {
       ROSTestWrapper test_wrapper;
-      radar_conti_ars408_msgs::msg::RadarConfiguration radar_cfg;
-      radar_cfg.radarcfg_radarpower.data = 0;
-      radar_cfg.radarcfg_radarpower_valid.data = 1;
-      test_wrapper.Setup(radar_cfg);
+      test_wrapper.Setup({{"can_channel", "vcan0"}, {"odom_topic_name", "/vehicle/odometry"}, {"radar_0.link_name", "link_0"}, {"radar_0.radarcfg_radar_power", 0}, {"radar_0.radarcfg_radar_power_valid", 1}, {"radar_0.send_motion", true}});
 
       // Create a client for the service
       auto client = test_wrapper.node->create_client<radar_conti_ars408_msgs::srv::TriggerSetCfg>("/radar_conti_ars408/set_radar_configuration");
@@ -141,10 +151,8 @@ TEST_CASE_METHOD(ROS2Fixture, "Continental Radar Configuration", "[ars408]")
     try
     {
       ROSTestWrapper test_wrapper;
-      radar_conti_ars408_msgs::msg::RadarConfiguration radar_cfg;
-      radar_cfg.radarcfg_radarpower.data = -1;
-      radar_cfg.radarcfg_radarpower_valid.data = 1;
-      test_wrapper.Setup(radar_cfg);
+      int radarcfg_radarpower = -1;
+      test_wrapper.Setup({{"can_channel", "vcan0"}, {"odom_topic_name", "/vehicle/odometry"}, {"radar_0.link_name", "link_0"}, {"radar_0.radarcfg_radar_power", radarcfg_radarpower}, {"radar_0.radarcfg_radar_power_valid", 1}, {"radar_0.send_motion", true}});
 
       // Create a client for the service
       auto client = test_wrapper.node->create_client<radar_conti_ars408_msgs::srv::TriggerSetCfg>("/radar_conti_ars408/set_radar_configuration");
@@ -179,6 +187,39 @@ TEST_CASE_METHOD(ROS2Fixture, "Continental Radar Configuration", "[ars408]")
   }
 }
 
+TEST_CASE_METHOD(ROS2Fixture, "Filter Configuration", "[ars408]")
+{
+  SECTION("Smoke test for filter configuration")
+  {
+    try
+    {
+
+      // Setup
+      ROSTestWrapper test_wrapper;
+      test_wrapper.Setup({{"radar_0.filtercfg_min_rcs", -20.0}, {"radar_0.filtercfg_max_rcs", 30.0}, {"can_channel", "vcan0"}, {"radar_0.link_name", "link_0"}});
+
+      // Wait for socketcan to publish over network
+      std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+      REQUIRE(test_wrapper.frames[ID_FilterCfg].size() == 14);
+      auto filter_cfg_frame = findFrameWithIndex(test_wrapper.frames[ID_FilterCfg], FilterType::RCS);
+      REQUIRE(filter_cfg_frame != nullptr);
+
+      auto data = filter_cfg_frame->get_data();
+      REQUIRE(CALC_FilterCfg_FilterCfg_Max_RCS(GET_FilterCfg_FilterCfg_Max_RCS(data), 1.0) == Approx(30.0));
+      REQUIRE(CALC_FilterCfg_FilterCfg_Min_RCS(GET_FilterCfg_FilterCfg_Min_RCS(data), 1.0) == Approx(-20.0));
+
+      // Cleanup
+      test_wrapper.Teardown();
+    }
+    catch (const std::exception &e)
+    {
+      RCLCPP_ERROR(rclcpp::get_logger("Test"), "Caught exception during teardown: %s", e.what());
+      REQUIRE(false); // Fail the test if an exception occurs
+    }
+  }
+}
+
 TEST_CASE_METHOD(ROS2Fixture, "Motion Input Signals", "[ars408]")
 {
   SECTION("Basic motion input signal")
@@ -188,8 +229,7 @@ TEST_CASE_METHOD(ROS2Fixture, "Motion Input Signals", "[ars408]")
 
       // Setup
       ROSTestWrapper test_wrapper;
-      radar_conti_ars408_msgs::msg::RadarConfiguration radar_cfg;
-      test_wrapper.Setup(radar_cfg, "/vehicle/odometry", true);
+      test_wrapper.Setup({{"can_channel", "vcan0"}, {"odom_topic_name", "/vehicle/odometry"}, {"radar_0.link_name", "link_0"}, {"radar_0.send_motion", true}});
 
       auto odom_publisher = test_wrapper.node->create_publisher<nav_msgs::msg::Odometry>("/vehicle/odometry", 10);
       odom_publisher->on_activate();
@@ -230,7 +270,7 @@ TEST_CASE_METHOD(ROS2Fixture, "Motion Input Signals", "[ars408]")
     {
       ROSTestWrapper test_wrapper;
       radar_conti_ars408_msgs::msg::RadarConfiguration radar_cfg;
-      test_wrapper.Setup(radar_cfg, "/vehicle/odometry", false);
+      test_wrapper.Setup({{"can_channel", "vcan0"}, {"odom_topic_name", "/vehicle/odometry"}, {"radar_0.link_name", "link_0"}, {"radar_0.send_motion", false}});
 
       auto odom_publisher = test_wrapper.node->create_publisher<nav_msgs::msg::Odometry>("/vehicle/odometry", 10);
       odom_publisher->on_activate();
@@ -263,7 +303,7 @@ TEST_CASE_METHOD(ROS2Fixture, "Motion Input Signals", "[ars408]")
       // Setup
       ROSTestWrapper test_wrapper;
       radar_conti_ars408_msgs::msg::RadarConfiguration radar_cfg;
-      test_wrapper.Setup(radar_cfg, "/vehicle/odometry", true);
+      test_wrapper.Setup({{"can_channel", "vcan0"}, {"odom_topic_name", "/vehicle/odometry"}, {"radar_0.link_name", "link_0"}, {"radar_0.send_motion", true}});
 
       auto odom_publisher = test_wrapper.node->create_publisher<nav_msgs::msg::Odometry>("/vehicle/odometry", 10);
       odom_publisher->on_activate();
@@ -298,7 +338,7 @@ TEST_CASE_METHOD(ROS2Fixture, "Motion Input Signals", "[ars408]")
       // Setup
       ROSTestWrapper test_wrapper;
       radar_conti_ars408_msgs::msg::RadarConfiguration radar_cfg;
-      test_wrapper.Setup(radar_cfg, "/vehicle/odometry", true);
+      test_wrapper.Setup({{"can_channel", "vcan0"}, {"odom_topic_name", "/vehicle/odometry"}, {"radar_0.link_name", "link_0"}, {"radar_0.send_motion", true}});
 
       auto odom_publisher = test_wrapper.node->create_publisher<nav_msgs::msg::Odometry>("/vehicle/odometry", 10);
       odom_publisher->on_activate();

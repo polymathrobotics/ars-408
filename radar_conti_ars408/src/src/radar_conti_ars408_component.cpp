@@ -814,38 +814,38 @@ namespace FHAC
       break;
     case FilterType::DISTANCE:
       RCLCPP_DEBUG(this->get_logger(), "Setting Distance Filter");
-      SET_FilterCfg_FilterCfg_Max_Distance(data, max_value / 0.1);
-      SET_FilterCfg_FilterCfg_Min_Distance(data, min_value / 0.1);
+      SET_FilterCfg_FilterCfg_Max_Distance(data, max_value / FilterConfig::DISTANCE_RESOLUTION);
+      SET_FilterCfg_FilterCfg_Min_Distance(data, min_value / FilterConfig::DISTANCE_RESOLUTION);
       break;
     case FilterType::AZIMUTH:
       RCLCPP_DEBUG(this->get_logger(), "Setting Azimuth Filter");
-      SET_FilterCfg_FilterCfg_Max_Azimuth(data, max_value / 0.025);
-      SET_FilterCfg_FilterCfg_Min_Azimuth(data, min_value / 0.025);
+      SET_FilterCfg_FilterCfg_Max_Azimuth(data, (max_value + FilterConfig::AZIMUTH_OFFSET) / FilterConfig::AZIMUTH_RESOLUTION);
+      SET_FilterCfg_FilterCfg_Min_Azimuth(data, (min_value + FilterConfig::AZIMUTH_OFFSET) / FilterConfig::AZIMUTH_RESOLUTION);
       break;
     case FilterType::VRELONCOME:
       RCLCPP_DEBUG(this->get_logger(), "Setting Oncoming Velocity Filter");
-      SET_FilterCfg_FilterCfg_Max_VrelOncome(data, max_value / 0.0315);
-      SET_FilterCfg_FilterCfg_Min_VrelOncome(data, min_value / 0.0315);
+      SET_FilterCfg_FilterCfg_Max_VrelOncome(data, max_value / FilterConfig::VRELONCOME_RESOLUTION);
+      SET_FilterCfg_FilterCfg_Min_VrelOncome(data, min_value / FilterConfig::VRELONCOME_RESOLUTION);
       break;
     case FilterType::VRELDEPART:
       RCLCPP_DEBUG(this->get_logger(), "Setting Departing Velocity Filter");
-      SET_FilterCfg_FilterCfg_Max_VrelDepart(data, max_value / 0.0315);
-      SET_FilterCfg_FilterCfg_Min_VrelDepart(data, min_value / 0.0315);
+      SET_FilterCfg_FilterCfg_Max_VrelDepart(data, max_value / FilterConfig::VRELDEPART_RESOLUTION);
+      SET_FilterCfg_FilterCfg_Min_VrelDepart(data, min_value / FilterConfig::VRELDEPART_RESOLUTION);
       break;
     case FilterType::RCS:
       RCLCPP_DEBUG(this->get_logger(), "Setting RCS Filter");
-      SET_FilterCfg_FilterCfg_Max_RCS(data, max_value / 0.025);
-      SET_FilterCfg_FilterCfg_Min_RCS(data, min_value / 0.025);
+      SET_FilterCfg_FilterCfg_Max_RCS(data, (max_value + FilterConfig::RCS_OFFSET) / FilterConfig::RCS_RESOLUTION);
+      SET_FilterCfg_FilterCfg_Min_RCS(data, (min_value + FilterConfig::RCS_OFFSET) / FilterConfig::RCS_RESOLUTION);
       break;
     case FilterType::LIFETIME:
       RCLCPP_DEBUG(this->get_logger(), "Setting Lifetime Filter");
-      SET_FilterCfg_FilterCfg_Max_Lifetime(data, max_value / 0.1);
-      SET_FilterCfg_FilterCfg_Min_Lifetime(data, min_value / 0.1);
+      SET_FilterCfg_FilterCfg_Max_Lifetime(data, max_value / FilterConfig::LIFETIME_RESOLUTION);
+      SET_FilterCfg_FilterCfg_Min_Lifetime(data, min_value / FilterConfig::LIFETIME_RESOLUTION);
       break;
     case FilterType::SIZE:
       RCLCPP_DEBUG(this->get_logger(), "Setting Size Filter");
-      SET_FilterCfg_FilterCfg_Max_Size(data, max_value / 0.025);
-      SET_FilterCfg_FilterCfg_Min_Size(data, min_value / 0.025);
+      SET_FilterCfg_FilterCfg_Max_Size(data, max_value / FilterConfig::SIZE_RESOLUTION);
+      SET_FilterCfg_FilterCfg_Min_Size(data, min_value / FilterConfig::SIZE_RESOLUTION);
       break;
     case FilterType::PROBEXISTS:
       RCLCPP_DEBUG(this->get_logger(), "Setting Probability of Existence Filter");
@@ -854,8 +854,8 @@ namespace FHAC
       break;
     case FilterType::Y:
       RCLCPP_DEBUG(this->get_logger(), "Setting Y Filter");
-      SET_FilterCfg_FilterCfg_Max_Y(data, max_value / 0.2);
-      SET_FilterCfg_FilterCfg_Min_Y(data, min_value / 0.2);
+      SET_FilterCfg_FilterCfg_Max_Y(data, (max_value + FilterConfig::Y_OFFSET) / FilterConfig::Y_RESOLUTION);
+      SET_FilterCfg_FilterCfg_Min_Y(data, (min_value + FilterConfig::Y_OFFSET) / FilterConfig::Y_RESOLUTION);
       break;
     case FilterType::X:
       // TODO: MAKE THIS 13BIT
@@ -863,23 +863,23 @@ namespace FHAC
       return false;
     case FilterType::VYRIGHTLEFT:
       RCLCPP_DEBUG(this->get_logger(), "Setting Right Left Filter");
-      SET_FilterCfg_FilterCfg_Max_VYRightLeft(data, max_value / 0.0315);
-      SET_FilterCfg_FilterCfg_Min_VYRightLeft(data, min_value / 0.0315);
+      SET_FilterCfg_FilterCfg_Max_VYRightLeft(data, max_value / FilterConfig::VYRIGHTLEFT_RESOLUTION);
+      SET_FilterCfg_FilterCfg_Min_VYRightLeft(data, min_value / FilterConfig::VYRIGHTLEFT_RESOLUTION);
       break;
     case FilterType::VXONCOME:
       RCLCPP_DEBUG(this->get_logger(), "Setting X Oncoming Filter");
-      SET_FilterCfg_FilterCfg_Max_VXOncome(data, max_value / 0.0315);
-      SET_FilterCfg_FilterCfg_Min_VXOncome(data, min_value / 0.0315);
+      SET_FilterCfg_FilterCfg_Max_VXOncome(data, max_value / FilterConfig::VXONCOME_RESOLUTION);
+      SET_FilterCfg_FilterCfg_Min_VXOncome(data, min_value / FilterConfig::VXONCOME_RESOLUTION);
       break;
     case FilterType::VYLEFTRIGHT:
       RCLCPP_DEBUG(this->get_logger(), "Setting Left Right Filter");
-      SET_FilterCfg_FilterCfg_Max_VYLeftRight(data, max_value / 0.0315);
-      SET_FilterCfg_FilterCfg_Min_VYLeftRight(data, min_value / 0.0315);
+      SET_FilterCfg_FilterCfg_Max_VYLeftRight(data, max_value / FilterConfig::VYLEFTRIGHT_RESOLUTION);
+      SET_FilterCfg_FilterCfg_Min_VYLeftRight(data, min_value / FilterConfig::VYLEFTRIGHT_RESOLUTION);
       break;
     case FilterType::VXDEPART:
       RCLCPP_DEBUG(this->get_logger(), "Setting X Departing Filter");
-      SET_FilterCfg_FilterCfg_Max_VXDepart(data, max_value / 0.0315);
-      SET_FilterCfg_FilterCfg_Min_VXDepart(data, min_value / 0.0315);
+      SET_FilterCfg_FilterCfg_Max_VXDepart(data, max_value / FilterConfig::VXDEPART_RESOLUTION);
+      SET_FilterCfg_FilterCfg_Min_VXDepart(data, min_value / FilterConfig::VXDEPART_RESOLUTION);
       break;
     default:
       RCLCPP_ERROR(this->get_logger(), "Unknown Filter Index");
@@ -1145,6 +1145,7 @@ namespace FHAC
     std::array<unsigned char, CAN_MAX_DLC> speed_data{0};
 
     SET_SpeedInformation_RadarDevice_Speed(speed_data, speed / SpeedInformation::SPEED_RESOLUTION);
+    // TODO(troy): Use odom tf to see if the radar is mounted backwards or forwards
     SET_SpeedInformation_RadarDevice_SpeedDirection(speed_data, direction);
 
     speed_frame.set_data(speed_data);
