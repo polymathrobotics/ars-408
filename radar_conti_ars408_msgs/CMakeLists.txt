@@ -35,6 +35,8 @@ rosidl_generate_interfaces(radar_conti_ars408_msgs
   "msg/Object.msg"  
   "msg/ClusterList.msg"
   "msg/ObjectList.msg"
+  "msg/FilterStateCfgEntryFloat.msg"
+  "msg/FilterStateCfgEntryInt.msg"
   "msg/FilterStateCfg.msg"
   "msg/FilterCfg.msg"
   "msg/FilterStateHeader.msg"
