@@ -1,5 +1,6 @@
 #include "../include/radar_conti_ars408_component.hpp"
 #include "../include/offsets.hpp"
+#include "../include/visualization.hpp"
 
 #include <chrono>
 #include <iostream>
@@ -101,6 +102,7 @@ namespace FHAC
         object_list_publishers_.push_back(this->create_publisher<radar_conti_ars408_msgs::msg::ObjectList>(parameter.as_string() + "/" + object_list_topic_name_, qos));
         tf_publishers_.push_back(this->create_publisher<tf2_msgs::msg::TFMessage>(parameter.as_string() + "/" + pub_tf_topic_name, qos));
         marker_array_publishers_.push_back(this->create_publisher<visualization_msgs::msg::MarkerArray>(parameter.as_string() + "/" + marker_array_topic_name_, qos));
+        fov_marker_publishers_.push_back(this->create_publisher<visualization_msgs::msg::Marker>(parameter.as_string() + "/fov/marker", qos));
         radar_tracks_publishers_.push_back(this->create_publisher<radar_msgs::msg::RadarTracks>(parameter.as_string() + "/" + radar_tracks_topic_name_, radar_tracks_qos));
         obstacle_array_publishers_.push_back(this->create_publisher<nav2_dynamic_msgs::msg::ObstacleArray>(parameter.as_string() + "/" + obstacle_array_topic_name_, radar_tracks_qos));
         filter_config_publishers_.push_back(this->create_publisher<radar_conti_ars408_msgs::msg::FilterStateCfg>(parameter.as_string() + "/" + filter_config_topic_name_, transient_local_qos));
@@ -342,6 +344,7 @@ namespace FHAC
       object_list_publishers_[i]->on_activate();
       tf_publishers_[i]->on_activate();
       marker_array_publishers_[i]->on_activate();
+      fov_marker_publishers_[i]->on_activate();
       radar_tracks_publishers_[i]->on_activate();
       obstacle_array_publishers_[i]->on_activate();
       filter_config_publishers_[i]->on_activate();
@@ -363,6 +366,7 @@ namespace FHAC
       const rclcpp_lifecycle::State &)
   {
     RCUTILS_LOG_INFO_NAMED(get_name(), "on_deactivate() is called.");
+    filter_config_timer_->cancel();
     socketcan_adapter_->joinReceptionThread();
     if (!socketcan_adapter_->closeSocket())
     {
@@ -483,7 +487,9 @@ namespace FHAC
       }
       // initialized and publish once
       filter_config_initialized_list_[radar_index] = true;
-      filter_config_publishers_[radar_index]->publish(radar_filter_configs_[radar_index]);
+
+      filter_config_timer_ = this->create_wall_timer(
+          1s, std::bind(&radar_conti_ars408::publishFilterConfigMetadata, this));
     }
   }
 
@@ -1109,10 +1115,33 @@ namespace FHAC
     default:
       break;
     }
-    // only publish once we have initialized values in the filter config by sending invalid values for a response
-    if (filter_config_initialized_list_[sensor_id])
+  }
+
+  void radar_conti_ars408::publishFilterConfigMetadata()
+  {
+    for (size_t sensor_id = 0; sensor_id < radar_filter_configs_.size(); ++sensor_id)
     {
+
+      // only publish once we have initialized values in the filter config by sending invalid values for a response
+      if (!filter_config_initialized_list_[sensor_id])
+      {
+        continue;
+      }
+
       filter_config_publishers_[sensor_id]->publish(radar_filter_configs_[sensor_id]);
+
+      if (radar_filter_configs_[sensor_id].azimuth.active && radar_filter_configs_[sensor_id].distance.active)
+      {
+        auto fov_marker = radar_visualization::createRadarFOVMarker(
+            radar_link_names_[sensor_id],
+            radar_filter_configs_[sensor_id].azimuth.min,
+            radar_filter_configs_[sensor_id].azimuth.max,
+            radar_filter_configs_[sensor_id].distance.min,
+            radar_filter_configs_[sensor_id].distance.max,
+            this->get_clock());
+
+        fov_marker_publishers_[sensor_id]->publish(fov_marker);
+      }
     }
   }
 
