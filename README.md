@@ -1,11 +1,48 @@
 # ars-408
-Continental ARS 408 Driver for ROS2
 
-# Configuring Filter Settings
-The driver provides a convenient ros service interface to configure various filter parameters. The filter can be configured with the following command
+Continental ARS 408 Driver for ROS2.
+
+## Getting Started
+
+### Quick Start
 
 ```
-ros2 service call /set_filter radar_conti_ars408_msgs/srv/SetFilter "type: <type>
+ros2 launch radar_conti_ars408 radar.launch.py
+```
+
+### Configuring Sensor ID
+
+In the case where you have multiple Continental radars, you'll need to configure each sensor id. Each CAN frame id's second byte is encoded with the sensor id. 
+
+With `can-utils`, one can configure the sensor with the following `cansend` command:
+
+```
+cansend can0 2<index of sensor to be changed>0#820000000<desired index>800000
+```
+
+If sensor 0 is to be changed to sensor 1, command would be as follows:
+
+```
+cansend can0 200#8200000001800000
+```
+
+### Configuring Radar Settings
+
+There are ros params for setting the radar configuration that are set declaratively by the ROS2 configuration service (`/radar_conti_ars408/set_radar_configuration`). Unlike the filter configuration, which fires off filter settings on startup of the driver, the radar configurations shouldn't be overly used. From the Continental docs:
+
+> It is important to note that the number of transmissions to the NVM should be kept to a minimum as this could reduce the service life of the memory.
+
+Therefore, when you want to update the configuration, simply call the service with:
+```
+ros2 service call /radar_conti_ars408/set_radar_configuration radar_conti_ars408_msgs/srv/TriggerSetCfg "sensor_id: <sensor_id>"
+```
+
+### Configuring Filter Settings
+
+The driver provides a convenient ROS2 service interface to configure various filter parameters. The filter can be configured with the following command
+
+```
+ros2 service call /radar_conti_ars408/set_filter radar_conti_ars408_msgs/srv/SetFilter "type: <type>
 index: <index>
 sensor_id: <sensor_id>
 min_value: <min_value>
@@ -39,44 +76,10 @@ The `min_value` and `max_value` parameter specifies the minimum and maximum valu
 
 Further information about the filter configurations can be found in the ARS408 technical documentation
 
-# Configuring Sensor ID
-Ideally the sensors should be already configured prior to the use of the driver. With `can-utils`, one can configure the sensor with the following `cansend` command:
+## Configuring Motion Input
 
-```
-cansend can0 2<index of sensor to be changed>0#820000000<desired index>800000
-```
+This driver optionally lets you input your odometry into the sensor, which will be intepreted by the radars and used in their own tracking algorithms. There are two parameters you need to set:
 
-If sensor 0 is to be changed to sensor 1, command would be as follows:
+- `odom_topic_name`: string
+- `radar_[index].send_motion`: bool
 
-```
-cansend can0 200#8200000001800000
-```
-
-# Configuring Sensor Power
-The radar power may need to be changed depending on the application. For applications where the sensor needs to be in close proximity to obstacles the power should be lower. With `can-utils`, one can configure the sensor in the following way
-
-For standard gain:
-```
-cansend can0 2<index of sensor to be changed>0#8400000000800000
-```  
-
-For -3dB gain
-```
-cansend can0 2<index of sensor to be changed>0#8400000020800000
-```
-
-For -6dB gain
-```
-cansend can0 2<index of sensor to be changed>0#8400000040800000
-```
-
-For -9dB gain
-```
-cansend can0 2<index of sensor to be changed>0#8400000060800000
-```
-
-If sensor 0 is to be changed to -6dB gain, command would be as follows:
-
-```
-cansend can0 200#8200000040800000
-```
