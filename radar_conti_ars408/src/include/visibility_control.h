@@ -20,39 +20,37 @@ extern "C"
 {
 #endif
 
-// This logic was borrowed (then namespaced) from the examples on the gcc wiki:
-//     https://gcc.gnu.org/wiki/Visibility
+  // This logic was borrowed (then namespaced) from the examples on the gcc wiki:
+  //     https://gcc.gnu.org/wiki/Visibility
 
 #if defined _WIN32 || defined __CYGWIN__
-  #ifdef __GNUC__
-    #define RADAR_CONTI_ARS408_EXPORT __attribute__ ((dllexport))
-    #define RADAR_CONTI_ARS408_IMPORT __attribute__ ((dllimport))
-  #else
-    #define RADAR_CONTI_ARS408_EXPORT __declspec(dllexport)
-    #define RADAR_CONTI_ARS408_IMPORT __declspec(dllimport)
-  #endif
-  #ifdef RADAR_CONTI_ARS408_BUILDING_DLL
-    #define RADAR_CONTI_ARS408_PUBLIC RADAR_CONTI_ARS408_EXPORT
-  #else
-    #define RADAR_CONTI_ARS408_PUBLIC RADAR_CONTI_ARS408_IMPORT
-  #endif
-  #define RADAR_CONTI_ARS408_PUBLIC_TYPE RADAR_CONTI_ARS408_PUBLIC
-  #define RADAR_CONTI_ARS408_LOCAL
+#ifdef __GNUC__
+#define RADAR_CONTI_ARS408_EXPORT __attribute__((dllexport))
+#define RADAR_CONTI_ARS408_IMPORT __attribute__((dllimport))
 #else
-  #define RADAR_CONTI_ARS408_RADAR_CONTI_ARS408 __attribute__ ((visibility("default")))
-  #define RADAR_CONTI_ARS408_RADAR_CONTI_ARS408
-  #if __GNUC__ >= 4
-    #define RADAR_CONTI_ARS408_PUBLIC __attribute__ ((visibility("default")))
-    #define RADAR_CONTI_ARS408_LOCAL  __attribute__ ((visibility("hidden")))
-  #else
-    #define RADAR_CONTI_ARS408_PUBLIC
-    #define RADAR_CONTI_ARS408_LOCAL
-  #endif
-  #define RADAR_CONTI_ARS408_PUBLIC_TYPE
+#define RADAR_CONTI_ARS408_EXPORT __declspec(dllexport)
+#define RADAR_CONTI_ARS408_IMPORT __declspec(dllimport)
+#endif
+#ifdef RADAR_CONTI_ARS408_BUILDING_DLL
+#define RADAR_CONTI_ARS408_PUBLIC RADAR_CONTI_ARS408_EXPORT
+#else
+#define RADAR_CONTI_ARS408_PUBLIC RADAR_CONTI_ARS408_IMPORT
+#endif
+#define RADAR_CONTI_ARS408_PUBLIC_TYPE RADAR_CONTI_ARS408_PUBLIC
+#define RADAR_CONTI_ARS408_LOCAL
+#else
+#if __GNUC__ >= 4
+#define RADAR_CONTI_ARS408_PUBLIC __attribute__((visibility("default")))
+#define RADAR_CONTI_ARS408_LOCAL __attribute__((visibility("hidden")))
+#else
+#define RADAR_CONTI_ARS408_PUBLIC
+#define RADAR_CONTI_ARS408_LOCAL
+#endif
+#define RADAR_CONTI_ARS408_PUBLIC_TYPE
 #endif
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif  // RADAR_CONTI_ARS408__VISIBILITY_CONTROL_H_
+#endif // RADAR_CONTI_ARS408__VISIBILITY_CONTROL_H_
