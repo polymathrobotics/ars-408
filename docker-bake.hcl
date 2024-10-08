@@ -21,7 +21,7 @@ variable "TAG_ADENDUM"{
 target "_common" {
   dockerfile = "Containerfile"
   args = {
-    BASE_IMAGE = "docker.io/polymathrobotics/ros_base:humble"
+    BASE_IMAGE = "registry.gitlab.com/polymathrobotics/ros_base:humble"
     SRC_DIR="${SRC_DIR}"
   }
   tags = ["${CONTAINER_REGISTRY}/${IMAGE_NAME}:humble${TAG_ADENDUM}"]
@@ -41,13 +41,21 @@ target "local" {
 
 target "amd64" {
   inherits = ["_common"]
-  tags = ["${CONTAINER_REGISTRY}/${IMAGE_NAME}/amd64:humble${TAG_ADENDUM}"]
+  args = {
+    BASE_IMAGE = "registry.gitlab.com/polymathrobotics/ros_base:humble"
+    SRC_DIR="${SRC_DIR}"
+  }
+  tags=["${CONTAINER_REGISTRY}/${IMAGE_NAME}/amd64:humble${TAG_ADENDUM}"]
   platforms = ["linux/amd64"]
 }
 
 target "arm64" {
   inherits = ["_common"]
-  tags = ["${CONTAINER_REGISTRY}/${IMAGE_NAME}/arm64:humble${TAG_ADENDUM}"]
+  args = {
+    BASE_IMAGE = "registry.gitlab.com/polymathrobotics/ros_base/arm64:humble"
+    SRC_DIR="${SRC_DIR}"
+  }
+  tags=["${CONTAINER_REGISTRY}/${IMAGE_NAME}/arm64:humble${TAG_ADENDUM}"]
   platforms = ["linux/arm64/v8"]
 }
 
