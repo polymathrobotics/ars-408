@@ -308,7 +308,8 @@ namespace FHAC
         std::vector<rclcpp_lifecycle::LifecyclePublisher<radar_conti_ars408_msgs::msg::ObjectList>::SharedPtr> object_list_publishers_;
         std::vector<rclcpp_lifecycle::LifecyclePublisher<tf2_msgs::msg::TFMessage>::SharedPtr> tf_publishers_;
         std::vector<rclcpp_lifecycle::LifecyclePublisher<visualization_msgs::msg::MarkerArray>::SharedPtr> marker_array_publishers_;
-        std::vector<rclcpp_lifecycle::LifecyclePublisher<visualization_msgs::msg::Marker>::SharedPtr> fov_marker_publishers_;
+        std::vector<rclcpp_lifecycle::LifecyclePublisher<visualization_msgs::msg::MarkerArray>::SharedPtr> fov_marker_publishers_;
+        std::vector<rclcpp_lifecycle::LifecyclePublisher<visualization_msgs::msg::Marker>::SharedPtr> fov_filter_marker_publishers_;
         std::vector<rclcpp_lifecycle::LifecyclePublisher<radar_msgs::msg::RadarTracks>::SharedPtr> radar_tracks_publishers_;
         std::vector<rclcpp_lifecycle::LifecyclePublisher<nav2_dynamic_msgs::msg::ObstacleArray>::SharedPtr> obstacle_array_publishers_;
         std::vector<rclcpp_lifecycle::LifecyclePublisher<radar_conti_ars408_msgs::msg::FilterStateCfg>::SharedPtr> filter_config_publishers_;
@@ -338,6 +339,7 @@ namespace FHAC
         void publishFilterConfigMetadata();
         void odomCallback(const nav_msgs::msg::Odometry::SharedPtr msg);
         void sendMotionInputSignals(const size_t &sensor_id, uint8_t direction, double speed, double yaw_rate);
+        void publishFovMetadata();
 
         // create map container for object list
         std::map<int, radar_conti_ars408_msgs::msg::Object> object_map_;
@@ -356,6 +358,7 @@ namespace FHAC
         std::vector<std::vector<bool>> radar_filter_valid_;
 
         // additional variables
+        rclcpp::TimerBase::SharedPtr fov_marker_timer_;
         int operation_mode_;
         int object_count;
         int number_of_radars_;
