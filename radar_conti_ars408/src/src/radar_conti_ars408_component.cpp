@@ -870,9 +870,10 @@ namespace FHAC
       SET_FilterCfg_FilterCfg_Min_Y(data, (min_value + FilterConfig::Y_OFFSET) / FilterConfig::Y_RESOLUTION);
       break;
     case FilterType::X:
-      // TODO: MAKE THIS 13BIT
-      RCLCPP_DEBUG(this->get_logger(), "X Filter currently not implemented");
-      return false;
+      RCLCPP_DEBUG(this->get_logger(), "Setting X Filter");
+      SET_FilterCfg_FilterCfg_Max_X(data, (max_value + FilterConfig::X_OFFSET) / FilterConfig::X_RESOLUTION);
+      SET_FilterCfg_FilterCfg_Min_X(data, (min_value + FilterConfig::X_OFFSET) / FilterConfig::X_RESOLUTION);
+      break;
     case FilterType::VYRIGHTLEFT:
       RCLCPP_DEBUG(this->get_logger(), "Setting Right Left Filter");
       SET_FilterCfg_FilterCfg_Max_VYRightLeft(data, max_value / FilterConfig::VYRIGHTLEFT_RESOLUTION);

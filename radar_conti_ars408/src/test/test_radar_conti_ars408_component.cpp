@@ -201,13 +201,43 @@ TEST_CASE_METHOD(ROS2Fixture, "Filter Configuration", "[ars408]")
       // Wait for socketcan to publish over network
       std::this_thread::sleep_for(std::chrono::milliseconds(100));
 
-      REQUIRE(test_wrapper.frames[ID_FilterCfg].size() == 14);
+      REQUIRE(test_wrapper.frames[ID_FilterCfg].size() == 15);
       auto filter_cfg_frame = findFrameWithIndex(test_wrapper.frames[ID_FilterCfg], FilterType::RCS);
       REQUIRE(filter_cfg_frame != nullptr);
 
       auto data = filter_cfg_frame->get_data();
       REQUIRE(CALC_FilterCfg_FilterCfg_Max_RCS(GET_FilterCfg_FilterCfg_Max_RCS(data), 1.0) == Approx(30.0));
       REQUIRE(CALC_FilterCfg_FilterCfg_Min_RCS(GET_FilterCfg_FilterCfg_Min_RCS(data), 1.0) == Approx(-20.0));
+
+      // Cleanup
+      test_wrapper.Teardown();
+    }
+    catch (const std::exception &e)
+    {
+      RCLCPP_ERROR(rclcpp::get_logger("Test"), "Caught exception during teardown: %s", e.what());
+      REQUIRE(false); // Fail the test if an exception occurs
+    }
+  }
+
+  SECTION("Min/max X")
+  {
+    try
+    {
+
+      // Setup
+      ROSTestWrapper test_wrapper;
+      test_wrapper.Setup({{"radar_0.filtercfg_min_x", 10.0}, {"radar_0.filtercfg_max_x", 50.0}, {"can_channel", "vcan0"}, {"radar_0.link_name", "link_0"}});
+
+      // Wait for socketcan to publish over network
+      std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+      REQUIRE(test_wrapper.frames[ID_FilterCfg].size() == 15);
+      auto filter_cfg_frame = findFrameWithIndex(test_wrapper.frames[ID_FilterCfg], FilterType::X);
+      REQUIRE(filter_cfg_frame != nullptr);
+
+      auto data = filter_cfg_frame->get_data();
+      REQUIRE(CALC_FilterCfg_FilterCfg_Max_X(GET_FilterCfg_FilterCfg_Max_X(data), 1.0) == Approx(50.0));
+      REQUIRE(CALC_FilterCfg_FilterCfg_Min_X(GET_FilterCfg_FilterCfg_Min_X(data), 1.0) == Approx(10.0));
 
       // Cleanup
       test_wrapper.Teardown();
