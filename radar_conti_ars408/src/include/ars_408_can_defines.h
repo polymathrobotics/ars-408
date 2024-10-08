@@ -26629,15 +26629,4 @@
 	{                                    \
 		buf &= (0xF0F);                    \
 		buf |= (id & 0xF) << 4;            \
-	\ 
-}
-//     // | (((buf) >> 8) & 0xF) << 8 /* Keep the most significant digit */ \
-//     // | ((id) & 0xF) << 4 /* Insert the new middle digit */ \
-//     // | ((buf) & 0xF) /* Keep the least significant digit */ \
-// )
-// #define SET_FilterCfg_FilterCfg_Max_NofObj(buf, val) { \
-// 	buf[3] &= ~(0x0f << 0); \
-// 	buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-// 	buf[4] &= ~(0xff << 0); \
-// 	buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-// }
+	}

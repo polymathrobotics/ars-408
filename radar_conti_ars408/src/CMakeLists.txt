@@ -101,6 +101,8 @@ target_link_libraries(${library_name} dl -lboost_system
     ${ament_index_cpp_LIBRARIES}
 )
 
+set_source_files_properties(include/ars_408_can_defines.h PROPERTIES COMPILE_FLAGS "-Wno-type-limits")
+
 ament_target_dependencies(${library_name} ${dependencies})
 
 rclcpp_components_register_nodes(radar_conti_ars408_component "FHAC::radar_conti_ars408")

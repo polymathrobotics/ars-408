@@ -15,7 +15,6 @@
 #include "std_msgs/msg/string.hpp"
 
 #include <ament_index_cpp/get_package_share_directory.hpp>
-
 using std::placeholders::_1;
 using namespace std::chrono_literals;
 
@@ -264,14 +263,14 @@ namespace FHAC
   }
 
   rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn radar_conti_ars408::on_shutdown(
-      const rclcpp_lifecycle::State &previous_state)
+      const rclcpp_lifecycle::State &)
   {
     RCUTILS_LOG_INFO_NAMED(get_name(), "on shutdown is called.");
     return rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::SUCCESS;
   }
 
   rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn radar_conti_ars408::on_error(
-      const rclcpp_lifecycle::State &previous_state)
+      const rclcpp_lifecycle::State &)
   {
     RCUTILS_LOG_INFO_NAMED(get_name(), "on error is called.");
     return rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::SUCCESS;
@@ -398,7 +397,7 @@ namespace FHAC
 
   void radar_conti_ars408::generateUUIDTable()
   {
-    for (size_t i = 0; i <= (max_radar_id * number_of_radars_); i++)
+    for (int i = 0; i <= (max_radar_id * number_of_radars_); i++)
     {
       UUID_table_.emplace_back(radar_conti_ars408::generateRandomUUID());
     }
@@ -410,7 +409,7 @@ namespace FHAC
     int min_value = 0;
     int max_value = 0;
 
-    for (int radar_index = 0; radar_index < radar_filter_configs_.size(); radar_index++)
+    for (size_t radar_index = 0; radar_index < radar_filter_configs_.size(); radar_index++)
     {
       for (int filter_index = 0; filter_index < MAX_FilterState_Cfg_FilterState_Index; filter_index++)
       {
@@ -944,7 +943,7 @@ namespace FHAC
     auto current_radar_config = it->second;
 
     // RADAR POWER CFG
-    if (current_radar_config.radarcfg_radarpower.data < MIN_RadarConfiguration_RadarCfg_RadarPower || current_radar_config.radarcfg_radarpower.data > MAX_RadarConfiguration_RadarCfg_RadarPower)
+    if (current_radar_config.radarcfg_radarpower.data > MAX_RadarConfiguration_RadarCfg_RadarPower)
     {
       std::string msg = fmt::format("Radar Power '{}' outside of range", current_radar_config.radarcfg_radarpower.data);
       response->message = msg;
