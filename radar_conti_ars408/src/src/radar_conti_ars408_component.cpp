@@ -702,7 +702,7 @@ namespace FHAC
 
       mobject.header.stamp = rclcpp_lifecycle::LifecycleNode::now();
       mobject.header.frame_id = radar_link_names_[sensor_id];
-      mobject.ns = "";
+      mobject.ns = "track";
       mobject.id = itr->first;
       mobject.type = 1;   // Cube
       mobject.action = 0; // add/modify
@@ -712,7 +712,6 @@ namespace FHAC
       double yaw = itr->second.object_extended.obj_orientationangle.data * 3.1416 / 180.0;
 
       myQuaternion.setRPY(0, 0, yaw);
-
       mobject.pose.orientation.w = myQuaternion.getW();
       mobject.pose.orientation.x = myQuaternion.getX();
       mobject.pose.orientation.y = myQuaternion.getY();
@@ -732,7 +731,6 @@ namespace FHAC
 
       radar_track.velocity.x = itr->second.object_general.obj_vrellong.data;
       radar_track.velocity.y = itr->second.object_general.obj_vrellat.data;
-      ;
       radar_track.velocity.z = 0.0;
 
       radar_track.acceleration.x = 0.0;
@@ -773,7 +771,39 @@ namespace FHAC
       mobject.pose.position = radar_track.position;
       mobject.scale = radar_track.size;
 
+      visualization_msgs::msg::Marker arrow_vrelong = mobject;
+      arrow_vrelong.type = 0; // Arrow
+      arrow_vrelong.scale.x = radar_track.velocity.x;
+      arrow_vrelong.scale.y = 0.1;
+      arrow_vrelong.scale.z = 0.1;
+      arrow_vrelong.ns = "vrelong_arrow";
+      arrow_vrelong.color.r = 1.0;
+      arrow_vrelong.color.g = 0.0;
+      arrow_vrelong.color.b = 0.0;
+      arrow_vrelong.color.a = 1.0;
+
+      visualization_msgs::msg::Marker arrow_vrelat = mobject;
+      auto vrelat_quat = myQuaternion;
+      vrelat_quat.setRPY(0, 0, yaw + M_PI_2);
+      arrow_vrelat.pose.orientation.w = vrelat_quat.getW();
+      arrow_vrelat.pose.orientation.x = vrelat_quat.getX();
+      arrow_vrelat.pose.orientation.y = vrelat_quat.getY();
+      arrow_vrelat.pose.orientation.z = vrelat_quat.getZ();
+
+      arrow_vrelat.type = 0; // Arrow
+      arrow_vrelat.scale.x = radar_track.velocity.y;
+      arrow_vrelat.scale.y = 0.1;
+      arrow_vrelat.scale.z = 0.1;
+      arrow_vrelat.ns = "vrelat_arrow";
+      arrow_vrelat.color.r = 0.0;
+      arrow_vrelat.color.g = 1.0;
+      arrow_vrelat.color.b = 0.0;
+      arrow_vrelat.color.a = 1.0;
+
       marker_array.markers.push_back(mobject);
+      marker_array.markers.push_back(arrow_vrelong);
+      marker_array.markers.push_back(arrow_vrelat);
+
       radar_tracks.tracks.push_back(radar_track);
       obstacle_array.obstacles.push_back(obstacle);
     }
