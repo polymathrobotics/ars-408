@@ -10,6 +10,8 @@
 #include "visibility_control.h"
 #include "rclcpp/rclcpp.hpp"
 #include "nav_msgs/msg/odometry.hpp"
+#include "tf2_ros/transform_listener.h"
+#include "tf2_ros/buffer.h"
 
 #include "can_msgs/msg/frame.hpp"
 #include "std_msgs/msg/string.hpp"
@@ -338,6 +340,11 @@ namespace FHAC
         void initializeFilterConfigs();
         void publishFilterConfigMetadata();
         void odomCallback(const nav_msgs::msg::Odometry::SharedPtr msg);
+        nav_msgs::msg::Odometry vehicle_odometry_;
+        std::shared_ptr<tf2_ros::Buffer> tf_buffer_;
+        std::shared_ptr<tf2_ros::TransformListener> tf_listener_;
+        rclcpp::Duration transform_timeout_{0, 0};
+
         void sendMotionInputSignals(const size_t &sensor_id, uint8_t direction, double speed, double yaw_rate);
         void publishFovMetadata();
 
@@ -371,6 +378,7 @@ namespace FHAC
         std::unique_ptr<bond::Bond> bond_{nullptr};
 
         std::vector<std::string> radar_link_names_;
+        std::string robot_base_frame_;
         std::vector<bool> filter_config_initialized_list_;
 
         // ##################################

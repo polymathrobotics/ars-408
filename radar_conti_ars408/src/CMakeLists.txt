@@ -167,19 +167,31 @@ install(DIRECTORY
 
 
 if(BUILD_TESTING)
+  find_package(Catch2 2 REQUIRED)
+  set(test_dependencies
+    Catch2 
+  )
+  add_executable(test_radar_transforms test/test_radar_transforms.cpp)
+  target_link_libraries(test_radar_transforms Catch2::Catch2 ${library_name})
+  ament_target_dependencies(test_radar_transforms
+    ${test_dependencies}
+    ${dependencies}
+  )
+  add_test(NAME test_radar_transforms COMMAND catch_tests)
+ 
   # Until CI has VCAN support, don't run this test
   if(NOT DEFINED ENV{CI})
     find_package(Catch2 2 REQUIRED)
     set(test_dependencies
       Catch2 
     )
-    add_executable(catch_tests test/test_radar_conti_ars408_component.cpp)
-    target_link_libraries(catch_tests Catch2::Catch2 ${library_name})
-    ament_target_dependencies(catch_tests
+    add_executable(test_radar_conti_ars408_component test/test_radar_conti_ars408_component.cpp)
+    target_link_libraries(test_radar_conti_ars408_component Catch2::Catch2 ${library_name})
+    ament_target_dependencies(test_radar_conti_ars408_component
       ${test_dependencies}
       ${dependencies}
     )
-    add_test(NAME catch_tests COMMAND catch_tests)
+    add_test(NAME test_radar_conti_ars408_component COMMAND catch_tests)
   endif()
 endif()
 

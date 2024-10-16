@@ -76,10 +76,18 @@ The `min_value` and `max_value` parameter specifies the minimum and maximum valu
 
 Further information about the filter configurations can be found in the ARS408 technical documentation
 
-## Configuring Motion Input
+### Configuring Motion Input
 
 This driver optionally lets you input your odometry into the sensor, which will be intepreted by the radars and used in their own tracking algorithms. There are two parameters you need to set:
 
 - `odom_topic_name`: string
 - `radar_[index].send_motion`: bool
+
+## Relative Velocity
+
+Since the ARS408 tracks return their velocities under the assumption that the radar sensor frame is stationary, this driver will calculate the velocity of tracks relative to odom frame, assuming you've added an odometry topic as a parameter under `odom_topic_name`.
+
+You can also set:
+- `transform_timeout`: Used in `lookupTransform`
+- `robot_base_frame`: Default is `base_link`
 
