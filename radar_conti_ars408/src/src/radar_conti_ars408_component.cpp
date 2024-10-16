@@ -8,6 +8,8 @@
 #include <utility>
 #include <math.h>
 #include <fmt/core.h>
+#include <tf2/LinearMath/Quaternion.h>
+#include "../include/radar_transforms.hpp"
 
 #define _USE_MATH_DEFINES
 
@@ -52,6 +54,8 @@ namespace FHAC
     auto node = shared_from_this();
     node->declare_parameter("can_channel", rclcpp::ParameterValue(""));
     node->declare_parameter("odom_topic_name", rclcpp::ParameterValue(""));
+    node->declare_parameter("robot_base_frame", rclcpp::ParameterValue("base_link"));
+    node->declare_parameter("transform_timeout", rclcpp::ParameterValue(0.1));
     node->declare_parameter("object_list_topic_name", rclcpp::ParameterValue("ars408/objectlist"));
     node->declare_parameter("marker_array_topic_name", rclcpp::ParameterValue("ars408/marker_array"));
     node->declare_parameter("radar_tracks_topic_name", rclcpp::ParameterValue("ars408/radar_tracks"));
@@ -59,8 +63,11 @@ namespace FHAC
     node->declare_parameter("filter_config_topic_name", rclcpp::ParameterValue("ars408/filter_config"));
     node->declare_parameter("radar_state_topic_name", rclcpp::ParameterValue("ars408/radar_state"));
 
+    double transform_timeout_double;
     node->get_parameter("can_channel", can_channel_);
     node->get_parameter("odom_topic_name", odom_topic_name_);
+    node->get_parameter("robot_base_frame", robot_base_frame_);
+    node->get_parameter("transform_timeout", transform_timeout_double);
     node->get_parameter("object_list_topic_name", object_list_topic_name_);
     node->get_parameter("marker_array_topic_name", marker_array_topic_name_);
     node->get_parameter("radar_tracks_topic_name", radar_tracks_topic_name_);
@@ -248,6 +255,9 @@ namespace FHAC
       odometry_subscriber_ = create_subscription<nav_msgs::msg::Odometry>(odom_topic_name_, qos_settings, std::bind(&radar_conti_ars408::odomCallback, this, std::placeholders::_1));
     }
 
+    tf_buffer_ = std::make_unique<tf2_ros::Buffer>(node->get_clock());
+    tf_listener_ = std::make_shared<tf2_ros::TransformListener>(*tf_buffer_);
+    transform_timeout_ = rclcpp::Duration::from_seconds(transform_timeout_double);
     generateUUIDTable();
 
     return rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::SUCCESS;
@@ -695,6 +705,12 @@ namespace FHAC
 
     std::map<int, radar_conti_ars408_msgs::msg::Object>::iterator itr;
 
+    nav_msgs::msg::Odometry corrected_odom;
+    if (!odom_topic_name_.empty())
+    {
+      corrected_odom = radar_transforms::transform2DOdom(vehicle_odometry_, tf_buffer_, radar_link_names_[sensor_id], robot_base_frame_, transform_timeout_, this->get_clock()->now(), this->get_clock());
+    }
+
     for (itr = object_map_list_[sensor_id].begin(); itr != object_map_list_[sensor_id].end(); ++itr)
     {
 
@@ -729,9 +745,11 @@ namespace FHAC
       radar_track.position.y = itr->second.object_general.obj_distlat.data;
       radar_track.position.z = 0.0;
 
-      radar_track.velocity.x = itr->second.object_general.obj_vrellong.data;
-      radar_track.velocity.y = itr->second.object_general.obj_vrellat.data;
-      radar_track.velocity.z = 0.0;
+      geometry_msgs::msg::Vector3 radar_track_vel_raw;
+      radar_track_vel_raw.x = itr->second.object_general.obj_vrellong.data;
+      radar_track_vel_raw.y = itr->second.object_general.obj_vrellat.data;
+      radar_track_vel_raw.z = 0.0;
+      radar_track.velocity = radar_transforms::correctObstacleVelocity(corrected_odom, radar_track_vel_raw, radar_track.position);
 
       radar_track.acceleration.x = 0.0;
       radar_track.acceleration.y = 0.0;
@@ -1194,6 +1212,9 @@ namespace FHAC
 
   void radar_conti_ars408::odomCallback(const nav_msgs::msg::Odometry::SharedPtr msg)
   {
+
+    vehicle_odometry_ = *msg;
+
     // Threshold for standstill detection
     const double standstill_threshold = 0.01;
 

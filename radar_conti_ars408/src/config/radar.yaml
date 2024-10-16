@@ -1,19 +1,16 @@
 radar_node:
   ros__parameters:
-    can_channel: "can0"
+    can_channel: "vcan0"
     object_list_topic_name: "object_list"
     marker_array_topic_name: "marker_array"
     radar_tracks_topic_name: "radar_tracks"
     obstacle_array_topic_name: "obstacle_array"
     filter_config_topic_name: "filter_config"
     radar_state_topic_name: "radar_state"
-    odom_topic_name: "/vehicle/odometry" 
 
     radar_0:
         #link of radar, should be relative to base_link      
         link_name: "front_radar_link"
-        send_motion: true
-
         radarcfg_sensor_id: 0
         radarcfg_sensor_id_valid: 1
         radarcfg_storeinnvm: 1
