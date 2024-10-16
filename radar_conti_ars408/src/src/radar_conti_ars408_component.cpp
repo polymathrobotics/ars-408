@@ -741,7 +741,7 @@ namespace FHAC
 
       radar_msgs::msg::RadarTrack radar_track;
       radar_track.uuid = UUID_table_[itr->first + max_radar_id * sensor_id];
-      radar_track.position.x = itr->second.object_general.obj_distlong.data;
+      radar_track.position.x = (itr->second.object_extended.obj_length.data / 2) + itr->second.object_general.obj_distlong.data;
       radar_track.position.y = itr->second.object_general.obj_distlat.data;
       radar_track.position.z = 0.0;
 
@@ -755,8 +755,8 @@ namespace FHAC
       radar_track.acceleration.y = 0.0;
       radar_track.acceleration.z = 0.0;
 
-      radar_track.size.y = itr->second.object_extended.obj_length.data;
-      radar_track.size.x = itr->second.object_extended.obj_width.data;
+      radar_track.size.x = itr->second.object_extended.obj_length.data;
+      radar_track.size.y = itr->second.object_extended.obj_width.data;
       radar_track.size.z = 1.0;
 
       nav2_dynamic_msgs::msg::Obstacle obstacle;
