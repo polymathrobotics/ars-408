@@ -20,7 +20,7 @@ namespace radar_transforms
     geometry_msgs::msg::TransformStamped base_link_to_sensor_transform;
     try
     {
-      base_link_to_sensor_transform = tf_buffer->lookupTransform(sensor_frame_id, base_frame_id, stamp, transform_timeout);
+      base_link_to_sensor_transform = tf_buffer->lookupTransform(base_frame_id, sensor_frame_id, stamp, transform_timeout);
     }
     catch (tf2::TimeoutException &exception)
     {
@@ -40,8 +40,8 @@ namespace radar_transforms
     transformed_odometry_base_link.header = odometry.header;
     transformed_odometry_base_link.header.frame_id = base_link_to_sensor_transform.header.frame_id;
     transformed_odometry_base_link.child_frame_id = base_link_to_sensor_transform.child_frame_id;
-    transformed_odometry_base_link.twist.twist.linear.x = odometry.twist.twist.linear.x;
-    transformed_odometry_base_link.twist.twist.linear.y = odometry.twist.twist.linear.y;
+    transformed_odometry_base_link.twist.twist.linear.x = odometry.twist.twist.linear.x - odometry.twist.twist.angular.z * base_link_to_sensor_transform.transform.translation.y;
+    transformed_odometry_base_link.twist.twist.linear.y = odometry.twist.twist.linear.y + odometry.twist.twist.angular.z * base_link_to_sensor_transform.transform.translation.x;
     transformed_odometry_base_link.twist.twist.angular.z = odometry.twist.twist.angular.z;
 
     tf2::Quaternion q(
@@ -54,8 +54,8 @@ namespace radar_transforms
     m.getRPY(roll, pitch, yaw);
 
     transformed_odometry_sensor = transformed_odometry_base_link;
-    transformed_odometry_sensor.twist.twist.linear.x = cos(yaw) * transformed_odometry_base_link.twist.twist.linear.x - sin(yaw) * transformed_odometry_base_link.twist.twist.linear.y;
-    transformed_odometry_sensor.twist.twist.linear.y = sin(yaw) * transformed_odometry_base_link.twist.twist.linear.x + cos(yaw) * transformed_odometry_base_link.twist.twist.linear.y;
+    transformed_odometry_sensor.twist.twist.linear.x = cos(-yaw) * transformed_odometry_base_link.twist.twist.linear.x - sin(-yaw) * transformed_odometry_base_link.twist.twist.linear.y;
+    transformed_odometry_sensor.twist.twist.linear.y = sin(-yaw) * transformed_odometry_base_link.twist.twist.linear.x + cos(-yaw) * transformed_odometry_base_link.twist.twist.linear.y;
     transformed_odometry_base_link.twist.twist.angular.z = odometry.twist.twist.angular.z;
 
     return transformed_odometry_sensor;

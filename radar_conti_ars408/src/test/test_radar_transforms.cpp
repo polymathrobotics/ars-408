@@ -202,7 +202,7 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
 
     geometry_msgs::msg::Vector3 raw_obj_velocity;
     raw_obj_velocity.x = 0.25;
-    raw_obj_velocity.y = -0.25;
+    raw_obj_velocity.y = -0.50;
     raw_obj_velocity.z = 0.0;
 
     geometry_msgs::msg::Point raw_obj_pos;
@@ -211,6 +211,7 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
     raw_obj_pos.z = 0.0;
 
     auto corrected_obstacle_velocity = radar_transforms::correctObstacleVelocity(corrected_odom, raw_obj_velocity, raw_obj_pos);
+
     REQUIRE_THAT(corrected_obstacle_velocity.x, Catch::Matchers::WithinAbs(0.0, 1e-12));
     REQUIRE_THAT(corrected_obstacle_velocity.y, Catch::Matchers::WithinAbs(0.0, 1e-12));
     REQUIRE_THAT(corrected_obstacle_velocity.z, Catch::Matchers::WithinAbs(0.0, 1e-12));
@@ -264,8 +265,8 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
     auto timeout = rclcpp::Duration::from_seconds(0.2);
     auto corrected_odom = radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, stamp, clock);
 
-    double x_s = cos(M_PI / 3) * -linear_velocity;
-    double y_s = sin(M_PI / 3) * linear_velocity;
+    double x_s = cos(-M_PI / 3) * -linear_velocity;
+    double y_s = sin(-M_PI / 3) * -linear_velocity;
 
     geometry_msgs::msg::Vector3 raw_obj_velocity;
     raw_obj_velocity.x = x_s;
@@ -298,8 +299,8 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
     auto timeout = rclcpp::Duration::from_seconds(0.2);
     auto corrected_odom = radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, stamp, clock);
 
-    double x_s = cos(M_PI / 3) * linear_velocity;
-    double y_s = sin(M_PI / 3) * -linear_velocity;
+    double x_s = cos(-M_PI / 3) * linear_velocity;
+    double y_s = sin(-M_PI / 3) * linear_velocity;
 
     geometry_msgs::msg::Vector3 raw_obj_velocity;
     raw_obj_velocity.x = 0.0;
