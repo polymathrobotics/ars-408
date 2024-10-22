@@ -11,16 +11,17 @@
 #include <cmath>
 #include <memory>
 #include <string>
+#include <structs.hpp>
 
 namespace radar_transforms
 {
-  nav_msgs::msg::Odometry transform2DOdom(const nav_msgs::msg::Odometry &odometry, const std::shared_ptr<tf2_ros::Buffer> &tf_buffer, std::string &sensor_frame_id, std::string &base_frame_id, rclcpp::Duration &transform_timeout, const rclcpp::Time &stamp, rclcpp::Clock::SharedPtr clock)
+  nav_msgs::msg::Odometry transform2DOdom(const nav_msgs::msg::Odometry &odometry, const std::shared_ptr<tf2_ros::Buffer> &tf_buffer, std::string &sensor_frame_id, std::string &base_frame_id, rclcpp::Duration &transform_timeout, rclcpp::Clock::SharedPtr clock)
   {
 
     geometry_msgs::msg::TransformStamped base_link_to_sensor_transform;
     try
     {
-      base_link_to_sensor_transform = tf_buffer->lookupTransform(base_frame_id, sensor_frame_id, stamp, transform_timeout);
+      base_link_to_sensor_transform = tf_buffer->lookupTransform(base_frame_id, sensor_frame_id, odometry.header.stamp, transform_timeout);
     }
     catch (tf2::TimeoutException &exception)
     {
@@ -78,6 +79,31 @@ namespace radar_transforms
     corrected_velocity.z = raw_obj_velocity.z; // Assuming no change in z
     return corrected_velocity;
   }
+
+  radar_conti_ars408_structs::MotionInputSignal createMotionInputSignal(nav_msgs::msg::Odometry &odom, const std::shared_ptr<tf2_ros::Buffer> &tf_buffer, std::string &sensor_frame_id, std::string &base_frame_id, rclcpp::Duration &transform_timeout, rclcpp::Clock::SharedPtr clock)
+  {
+    auto corrected_odom = radar_transforms::transform2DOdom(odom, tf_buffer, sensor_frame_id, base_frame_id, transform_timeout, clock);
+
+    radar_conti_ars408_structs::MotionInputSignal motion_input_signal;
+    // Threshold for standstill detection
+    const double standstill_threshold = 0.01;
+
+    motion_input_signal.speed = corrected_odom.twist.twist.linear.x;
+
+    // Calculate direction (0x0 standstill, 0x1 forward, 0x2 backward)
+    motion_input_signal.direction = 0x0; // Default to standstill
+    if (std::abs(motion_input_signal.speed) > standstill_threshold)
+    {
+      motion_input_signal.direction = (motion_input_signal.speed > 0.0) ? 0x1 : 0x2; // Forward or backward
+    }
+
+    // Calculate yaw rate in deg/s (angular velocity around the z-axis)
+    double yaw_rate_rad_per_sec = corrected_odom.twist.twist.angular.z;
+    motion_input_signal.yaw_rate = yaw_rate_rad_per_sec * (180.0 / M_PI);
+
+    return motion_input_signal;
+  }
+
 }
 
 #endif // TRANSFORMS_HPP

@@ -8,7 +8,7 @@
 #include <memory>
 #include <string>
 #include <vector>
-#include "radar_transforms.hpp"
+#include "../include/radar_transforms.hpp"
 
 #include "tf2/utils.h"
 #include "tf2_ros/buffer.h"
@@ -92,19 +92,20 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
 
   SECTION("Stationary Obstacle and Vehicle")
   {
+    auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
+    rclcpp::Time stamp = clock->now();
+
     nav_msgs::msg::Odometry vehicle_odometry;
+    vehicle_odometry.header.stamp = stamp;
     vehicle_odometry.header.frame_id = odom_link;
     vehicle_odometry.child_frame_id = base_link;
     vehicle_odometry.twist.twist.linear.x = 0.0;
     vehicle_odometry.twist.twist.angular.z = 0.0;
 
-    auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
-    rclcpp::Time stamp = clock->now();
-
     auto tf_buffer = initializeBuffer(clock, stamp);
 
     auto timeout = rclcpp::Duration::from_seconds(0.2);
-    auto corrected_odom = radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, stamp, clock);
+    auto corrected_odom = radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
 
     geometry_msgs::msg::Vector3 raw_obj_velocity;
     raw_obj_velocity.x = 0.0;
@@ -120,20 +121,20 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
   }
   SECTION("Moving Obstacle and Stationary Vehicle")
   {
+    auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
+    rclcpp::Time stamp = clock->now();
 
     nav_msgs::msg::Odometry vehicle_odometry;
+    vehicle_odometry.header.stamp = stamp;
     vehicle_odometry.header.frame_id = odom_link;
     vehicle_odometry.child_frame_id = base_link;
     vehicle_odometry.twist.twist.linear.x = 0.0;
     vehicle_odometry.twist.twist.angular.z = 0.0;
 
-    auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
-    rclcpp::Time stamp = clock->now();
-
     auto tf_buffer = initializeBuffer(clock, stamp);
 
     auto timeout = rclcpp::Duration::from_seconds(0.2);
-    auto corrected_odom = radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, stamp, clock);
+    auto corrected_odom = radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
 
     geometry_msgs::msg::Vector3 raw_obj_velocity;
     raw_obj_velocity.x = 1.0;
@@ -152,20 +153,20 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
   {
 
     double linear_velocity = 20.5;
+    auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
+    rclcpp::Time stamp = clock->now();
 
     nav_msgs::msg::Odometry vehicle_odometry;
+    vehicle_odometry.header.stamp = stamp;
     vehicle_odometry.header.frame_id = odom_link;
     vehicle_odometry.child_frame_id = base_link;
     vehicle_odometry.twist.twist.linear.x = linear_velocity;
     vehicle_odometry.twist.twist.angular.z = 0.0;
 
-    auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
-    rclcpp::Time stamp = clock->now();
-
     auto tf_buffer = initializeBuffer(clock, stamp);
 
     auto timeout = rclcpp::Duration::from_seconds(0.2);
-    auto corrected_odom = radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, stamp, clock);
+    auto corrected_odom = radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
 
     geometry_msgs::msg::Vector3 raw_obj_velocity;
     raw_obj_velocity.x = -linear_velocity;
@@ -185,20 +186,20 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
 
     double linear_velocity = 0.0;
     double angular_velocity = 0.25;
+    auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
+    rclcpp::Time stamp = clock->now();
 
     nav_msgs::msg::Odometry vehicle_odometry;
+    vehicle_odometry.header.stamp = stamp;
     vehicle_odometry.header.frame_id = odom_link;
     vehicle_odometry.child_frame_id = base_link;
     vehicle_odometry.twist.twist.linear.x = 0.0;
     vehicle_odometry.twist.twist.angular.z = angular_velocity;
 
-    auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
-    rclcpp::Time stamp = clock->now();
-
     auto tf_buffer = initializeBuffer(clock, stamp);
 
     auto timeout = rclcpp::Duration::from_seconds(0.2);
-    auto corrected_odom = radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, stamp, clock);
+    auto corrected_odom = radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
 
     geometry_msgs::msg::Vector3 raw_obj_velocity;
     raw_obj_velocity.x = 0.25;
@@ -219,20 +220,20 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
 
   SECTION("Stationary Obstacle and Vehicle with sensor rotated 90 degrees")
   {
+    auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
+    rclcpp::Time stamp = clock->now();
 
     nav_msgs::msg::Odometry vehicle_odometry;
+    vehicle_odometry.header.stamp = stamp;
     vehicle_odometry.header.frame_id = odom_link;
     vehicle_odometry.child_frame_id = base_link;
     vehicle_odometry.twist.twist.linear.x = 0.0;
     vehicle_odometry.twist.twist.angular.z = 0.0;
 
-    auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
-    rclcpp::Time stamp = clock->now();
-
     auto tf_buffer = initializeBuffer(clock, stamp, M_PI / 2);
 
     auto timeout = rclcpp::Duration::from_seconds(0.2);
-    auto corrected_odom = radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, stamp, clock);
+    auto corrected_odom = radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
 
     geometry_msgs::msg::Vector3 raw_obj_velocity;
     raw_obj_velocity.x = 0.0;
@@ -250,20 +251,20 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
   {
 
     double linear_velocity = 14.0;
+    auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
+    rclcpp::Time stamp = clock->now();
 
     nav_msgs::msg::Odometry vehicle_odometry;
+    vehicle_odometry.header.stamp = stamp;
     vehicle_odometry.header.frame_id = odom_link;
     vehicle_odometry.child_frame_id = base_link;
     vehicle_odometry.twist.twist.linear.x = linear_velocity;
     vehicle_odometry.twist.twist.angular.z = 0.0;
 
-    auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
-    rclcpp::Time stamp = clock->now();
-
     auto tf_buffer = initializeBuffer(clock, stamp, M_PI / 3);
 
     auto timeout = rclcpp::Duration::from_seconds(0.2);
-    auto corrected_odom = radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, stamp, clock);
+    auto corrected_odom = radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
 
     double x_s = cos(-M_PI / 3) * -linear_velocity;
     double y_s = sin(-M_PI / 3) * -linear_velocity;
@@ -285,19 +286,20 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
 
     double linear_velocity = 14.0;
 
+    auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
+    rclcpp::Time stamp = clock->now();
+
     nav_msgs::msg::Odometry vehicle_odometry;
+    vehicle_odometry.header.stamp = stamp;
     vehicle_odometry.header.frame_id = odom_link;
     vehicle_odometry.child_frame_id = base_link;
     vehicle_odometry.twist.twist.linear.x = linear_velocity;
     vehicle_odometry.twist.twist.angular.z = 0.0;
 
-    auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
-    rclcpp::Time stamp = clock->now();
-
     auto tf_buffer = initializeBuffer(clock, stamp, M_PI / 3);
 
     auto timeout = rclcpp::Duration::from_seconds(0.2);
-    auto corrected_odom = radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, stamp, clock);
+    auto corrected_odom = radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
 
     double x_s = cos(-M_PI / 3) * linear_velocity;
     double y_s = sin(-M_PI / 3) * linear_velocity;
@@ -312,5 +314,124 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
     REQUIRE_THAT(corrected_obstacle_velocity.x, Catch::Matchers::WithinAbs(x_s, 1e-12));
     REQUIRE_THAT(corrected_obstacle_velocity.y, Catch::Matchers::WithinAbs(y_s, 1e-12));
     REQUIRE(corrected_obstacle_velocity.z == 0.0);
+  }
+}
+
+TEST_CASE_METHOD(TestFixture, "Motion Input Assertions")
+{
+  SECTION("Vehicle with sensor straight ahead")
+  {
+
+    auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
+    rclcpp::Time stamp = clock->now();
+
+    nav_msgs::msg::Odometry vehicle_odometry;
+    vehicle_odometry.header.stamp = stamp;
+    vehicle_odometry.header.frame_id = odom_link;
+    vehicle_odometry.child_frame_id = base_link;
+    vehicle_odometry.twist.twist.linear.x = 1.0;
+    vehicle_odometry.twist.twist.angular.z = 0.0;
+
+    auto tf_buffer = initializeBuffer(clock, stamp, 0.0);
+
+    auto timeout = rclcpp::Duration::from_seconds(0.2);
+    auto motion_input_signal = radar_transforms::createMotionInputSignal(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
+
+    REQUIRE(motion_input_signal.speed == 1.0);
+    REQUIRE(motion_input_signal.direction == 0x1);
+    REQUIRE_THAT(motion_input_signal.yaw_rate, Catch::Matchers::WithinAbs(0.0, 1e-12));
+  }
+
+  SECTION("Vehicle with sensor rotated 90 degrees")
+  {
+    auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
+    rclcpp::Time stamp = clock->now();
+
+    nav_msgs::msg::Odometry vehicle_odometry;
+    vehicle_odometry.header.stamp = stamp;
+    vehicle_odometry.header.frame_id = odom_link;
+    vehicle_odometry.child_frame_id = base_link;
+    vehicle_odometry.twist.twist.linear.x = 1.0;
+    vehicle_odometry.twist.twist.angular.z = 0.0;
+
+    auto tf_buffer = initializeBuffer(clock, stamp, M_PI / 2.0);
+
+    auto timeout = rclcpp::Duration::from_seconds(0.2);
+    auto motion_input_signal = radar_transforms::createMotionInputSignal(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
+
+    // Since the sensor is rotated 90 degrees, the vehicle is moving in the y direction
+    REQUIRE_THAT(motion_input_signal.speed, Catch::Matchers::WithinAbs(0.0, 1e-12));
+    // Should report that the radar is at a standstill
+    REQUIRE(motion_input_signal.direction == 0x0);
+    REQUIRE_THAT(motion_input_signal.yaw_rate, Catch::Matchers::WithinAbs(0.0, 1e-12));
+  }
+
+  SECTION("Vehicle with sensor rotated 180 degrees")
+  {
+    auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
+    rclcpp::Time stamp = clock->now();
+
+    nav_msgs::msg::Odometry vehicle_odometry;
+    vehicle_odometry.header.stamp = stamp;
+    vehicle_odometry.header.frame_id = odom_link;
+    vehicle_odometry.child_frame_id = base_link;
+    vehicle_odometry.twist.twist.linear.x = 1.0;
+    vehicle_odometry.twist.twist.angular.z = 0.0;
+
+    auto tf_buffer = initializeBuffer(clock, stamp, M_PI);
+
+    auto timeout = rclcpp::Duration::from_seconds(0.2);
+    auto motion_input_signal = radar_transforms::createMotionInputSignal(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
+
+    REQUIRE_THAT(motion_input_signal.speed, Catch::Matchers::WithinAbs(-1.0, 1e-12));
+    // Should report that we are now going backwards
+    REQUIRE(motion_input_signal.direction == 0x2);
+    REQUIRE_THAT(motion_input_signal.yaw_rate, Catch::Matchers::WithinAbs(0.0, 1e-12));
+  }
+
+  SECTION("Vehicle with sensor rotated -90 degrees")
+  {
+    auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
+    rclcpp::Time stamp = clock->now();
+
+    nav_msgs::msg::Odometry vehicle_odometry;
+    vehicle_odometry.header.stamp = stamp;
+    vehicle_odometry.header.frame_id = odom_link;
+    vehicle_odometry.child_frame_id = base_link;
+    vehicle_odometry.twist.twist.linear.x = 1.0;
+    vehicle_odometry.twist.twist.angular.z = 0.0;
+
+    auto tf_buffer = initializeBuffer(clock, stamp, -M_PI / 2);
+
+    auto timeout = rclcpp::Duration::from_seconds(0.2);
+    auto motion_input_signal = radar_transforms::createMotionInputSignal(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
+
+    // Since the sensor is rotated 90 degrees, the vehicle is moving in the y direction
+    REQUIRE_THAT(motion_input_signal.speed, Catch::Matchers::WithinAbs(0.0, 1e-12));
+    // Should report that the radar is at a standstill
+    REQUIRE(motion_input_signal.direction == 0x0);
+    REQUIRE_THAT(motion_input_signal.yaw_rate, Catch::Matchers::WithinAbs(0.0, 1e-12));
+  }
+
+  SECTION("Vehicle with sensor rotated 45 degrees")
+  {
+    auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
+    rclcpp::Time stamp = clock->now();
+
+    nav_msgs::msg::Odometry vehicle_odometry;
+    vehicle_odometry.header.stamp = stamp;
+    vehicle_odometry.header.frame_id = odom_link;
+    vehicle_odometry.child_frame_id = base_link;
+    vehicle_odometry.twist.twist.linear.x = 1.0;
+    vehicle_odometry.twist.twist.angular.z = 0.0;
+
+    auto tf_buffer = initializeBuffer(clock, stamp, M_PI / 4);
+
+    auto timeout = rclcpp::Duration::from_seconds(0.2);
+    auto motion_input_signal = radar_transforms::createMotionInputSignal(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
+
+    REQUIRE_THAT(motion_input_signal.speed, Catch::Matchers::WithinRel(0.707, 1e-3));
+    REQUIRE(motion_input_signal.direction == 0x1);
+    REQUIRE_THAT(motion_input_signal.yaw_rate, Catch::Matchers::WithinAbs(0.0, 1e-12));
   }
 }

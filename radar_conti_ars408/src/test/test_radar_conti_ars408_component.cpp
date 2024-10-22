@@ -86,6 +86,28 @@ public:
     socketcan_adapter_->joinReceptionThread();
     socketcan_adapter_->closeSocket();
   }
+
+  void publishTfs(const rclcpp::Time &stamp)
+  {
+    auto tf_broadcaster_ = std::make_shared<tf2_ros::TransformBroadcaster>(node->shared_from_this());
+    geometry_msgs::msg::TransformStamped tf_stamped;
+    tf_stamped.header.frame_id = "odom";
+    tf_stamped.header.stamp = stamp;
+    tf_stamped.child_frame_id = "base_link";
+    tf_stamped.transform.translation.x = 0.0;
+    tf_stamped.transform.translation.y = 0.0;
+    tf_stamped.transform.rotation.w = 1.0;
+    tf_broadcaster_->sendTransform(tf_stamped);
+
+    geometry_msgs::msg::TransformStamped tf_stamped_sensor_link;
+    tf_stamped_sensor_link.header.frame_id = "base_link";
+    tf_stamped_sensor_link.header.stamp = stamp;
+    tf_stamped_sensor_link.child_frame_id = "link_0";
+    tf_stamped_sensor_link.transform.translation.x = 0.0;
+    tf_stamped_sensor_link.transform.translation.y = 0.0;
+    tf_stamped_sensor_link.transform.rotation.w = 1.0;
+    tf_broadcaster_->sendTransform(tf_stamped_sensor_link);
+  }
 };
 
 const polymath::socketcan::CanFrame *findFrameWithIndex(const std::vector<std::unique_ptr<const polymath::socketcan::CanFrame>> &frames, FilterType index)
@@ -260,16 +282,21 @@ TEST_CASE_METHOD(ROS2Fixture, "Motion Input Signals", "[ars408]")
       // Setup
       ROSTestWrapper test_wrapper;
       test_wrapper.Setup({{"can_channel", "vcan0"}, {"odom_topic_name", "/vehicle/odometry"}, {"radar_0.link_name", "link_0"}, {"radar_0.send_motion", true}});
+      auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
+      rclcpp::Time stamp = clock->now();
 
       auto odom_publisher = test_wrapper.node->create_publisher<nav_msgs::msg::Odometry>("/vehicle/odometry", 10);
       odom_publisher->on_activate();
       nav_msgs::msg::Odometry nav_msg;
+      nav_msg.header.stamp = stamp;
       nav_msg.twist.twist.linear.x = 1;
       nav_msg.twist.twist.angular.z = 1;
+
+      test_wrapper.publishTfs(stamp);
       odom_publisher->publish(std::move(nav_msg));
 
       // Wait for socketcan to publish over network
-      std::this_thread::sleep_for(std::chrono::milliseconds(100));
+      std::this_thread::sleep_for(std::chrono::milliseconds(500));
 
       REQUIRE(test_wrapper.frames[ID_SpeedInformation].size() == 1);
       auto speed_info_frame = std::move(test_wrapper.frames[ID_SpeedInformation].back());
@@ -301,12 +328,15 @@ TEST_CASE_METHOD(ROS2Fixture, "Motion Input Signals", "[ars408]")
       ROSTestWrapper test_wrapper;
       radar_conti_ars408_msgs::msg::RadarConfiguration radar_cfg;
       test_wrapper.Setup({{"can_channel", "vcan0"}, {"odom_topic_name", "/vehicle/odometry"}, {"radar_0.link_name", "link_0"}, {"radar_0.send_motion", false}});
+      auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
+      rclcpp::Time stamp = clock->now();
 
       auto odom_publisher = test_wrapper.node->create_publisher<nav_msgs::msg::Odometry>("/vehicle/odometry", 10);
       odom_publisher->on_activate();
       nav_msgs::msg::Odometry nav_msg;
       nav_msg.twist.twist.linear.x = 1;
       nav_msg.twist.twist.angular.z = 1;
+      test_wrapper.publishTfs(stamp);
       odom_publisher->publish(std::move(nav_msg));
 
       // Wait for socketcan to publish over network
@@ -333,12 +363,16 @@ TEST_CASE_METHOD(ROS2Fixture, "Motion Input Signals", "[ars408]")
       // Setup
       ROSTestWrapper test_wrapper;
       radar_conti_ars408_msgs::msg::RadarConfiguration radar_cfg;
+
       test_wrapper.Setup({{"can_channel", "vcan0"}, {"odom_topic_name", "/vehicle/odometry"}, {"radar_0.link_name", "link_0"}, {"radar_0.send_motion", true}});
+      auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
+      rclcpp::Time stamp = clock->now();
 
       auto odom_publisher = test_wrapper.node->create_publisher<nav_msgs::msg::Odometry>("/vehicle/odometry", 10);
       odom_publisher->on_activate();
       nav_msgs::msg::Odometry nav_msg;
       nav_msg.twist.twist.linear.x = -1;
+      test_wrapper.publishTfs(stamp);
       odom_publisher->publish(std::move(nav_msg));
 
       // Wait for socketcan to publish over network
@@ -369,11 +403,14 @@ TEST_CASE_METHOD(ROS2Fixture, "Motion Input Signals", "[ars408]")
       ROSTestWrapper test_wrapper;
       radar_conti_ars408_msgs::msg::RadarConfiguration radar_cfg;
       test_wrapper.Setup({{"can_channel", "vcan0"}, {"odom_topic_name", "/vehicle/odometry"}, {"radar_0.link_name", "link_0"}, {"radar_0.send_motion", true}});
+      auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
+      rclcpp::Time stamp = clock->now();
 
       auto odom_publisher = test_wrapper.node->create_publisher<nav_msgs::msg::Odometry>("/vehicle/odometry", 10);
       odom_publisher->on_activate();
       nav_msgs::msg::Odometry nav_msg;
       nav_msg.twist.twist.linear.x = 0.01;
+      test_wrapper.publishTfs(stamp);
       odom_publisher->publish(std::move(nav_msg));
 
       // Wait for socketcan to publish over network

@@ -58,6 +58,7 @@
 #include "socketcan_adapter/socketcan_adapter.hpp"
 
 #include <ars_408_can_defines.h>
+#include <structs.hpp>
 
 #include "bondcpp/bond.hpp"
 
@@ -345,7 +346,7 @@ namespace FHAC
         std::shared_ptr<tf2_ros::TransformListener> tf_listener_;
         rclcpp::Duration transform_timeout_{0, 0};
 
-        void sendMotionInputSignals(const size_t &sensor_id, uint8_t direction, double speed, double yaw_rate);
+        void sendMotionInputSignals(const size_t &sensor_id, radar_conti_ars408_structs::MotionInputSignal &motion_input_signal);
         void publishFovMetadata();
 
         // create map container for object list
