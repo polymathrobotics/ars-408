@@ -708,7 +708,7 @@ namespace FHAC
     nav_msgs::msg::Odometry corrected_odom;
     if (!odom_topic_name_.empty())
     {
-      corrected_odom = radar_transforms::transform2DOdom(vehicle_odometry_, tf_buffer_, radar_link_names_[sensor_id], robot_base_frame_, transform_timeout_, this->get_clock()->now(), this->get_clock());
+      corrected_odom = radar_transforms::transform2DOdom(vehicle_odometry_, tf_buffer_, radar_link_names_[sensor_id], robot_base_frame_, transform_timeout_, this->get_clock());
     }
 
     for (itr = object_map_list_[sensor_id].begin(); itr != object_map_list_[sensor_id].end(); ++itr)
@@ -1215,36 +1215,19 @@ namespace FHAC
 
     vehicle_odometry_ = *msg;
 
-    // Threshold for standstill detection
-    const double standstill_threshold = 0.01;
-
-    double velocity_x = msg->twist.twist.linear.x;
-    // Calculate speed in m/s
-    double speed = std::hypot(msg->twist.twist.linear.x, msg->twist.twist.linear.y);
-
-    // Calculate direction (0x0 standstill, 0x1 forward, 0x2 backward)
-    uint8_t direction = 0x0; // Default to standstill
-    if (std::abs(velocity_x) > standstill_threshold)
-    {
-      direction = (velocity_x > 0) ? 0x1 : 0x2; // Forward or backward
-    }
-
-    // Calculate yaw rate in deg/s (angular velocity around the z-axis)
-    double yaw_rate_rad_per_sec = msg->twist.twist.angular.z;
-    double yaw_rate_deg_per_sec = yaw_rate_rad_per_sec * (180.0 / M_PI);
-
     for (auto &motion_config : motion_configs_)
     {
       auto sensor_id = motion_config.first;
       auto enable = motion_config.second;
       if (enable)
       {
-        sendMotionInputSignals(sensor_id, direction, speed, yaw_rate_deg_per_sec);
+        auto motion_input_signal = radar_transforms::createMotionInputSignal(vehicle_odometry_, tf_buffer_, radar_link_names_[sensor_id], robot_base_frame_, transform_timeout_, this->get_clock());
+        sendMotionInputSignals(sensor_id, motion_input_signal);
       }
     }
   }
 
-  void radar_conti_ars408::sendMotionInputSignals(const size_t &sensor_id, uint8_t direction, double speed, double yaw_rate)
+  void radar_conti_ars408::sendMotionInputSignals(const size_t &sensor_id, radar_conti_ars408_structs::MotionInputSignal &motion_input_signal)
   {
     RCLCPP_DEBUG_THROTTLE(this->get_logger(), *this->get_clock(), 1000, "Sending motion input");
     // Set up speed frame
@@ -1255,9 +1238,9 @@ namespace FHAC
     speed_frame.set_can_id(speed_msg_id);
     std::array<unsigned char, CAN_MAX_DLC> speed_data{0};
 
-    SET_SpeedInformation_RadarDevice_Speed(speed_data, speed / SpeedInformation::SPEED_RESOLUTION);
+    SET_SpeedInformation_RadarDevice_Speed(speed_data, motion_input_signal.speed / SpeedInformation::SPEED_RESOLUTION);
     // TODO(troy): Use odom tf to see if the radar is mounted backwards or forwards
-    SET_SpeedInformation_RadarDevice_SpeedDirection(speed_data, direction);
+    SET_SpeedInformation_RadarDevice_SpeedDirection(speed_data, motion_input_signal.direction);
 
     speed_frame.set_data(speed_data);
     auto speed_err = socketcan_adapter_->send(speed_frame);
@@ -1275,7 +1258,7 @@ namespace FHAC
     yaw_rate_frame.set_can_id(yaw_rate_msg_id);
     std::array<unsigned char, CAN_MAX_DLC> yaw_rate_info_data{0};
 
-    SET_YawRateInformation_RadarDevice_YawRate(yaw_rate_info_data, (yaw_rate + YawRateInformation::YAW_RATE_OFFSET) / YawRateInformation::YAW_RATE_RESOLUTION);
+    SET_YawRateInformation_RadarDevice_YawRate(yaw_rate_info_data, (motion_input_signal.yaw_rate + YawRateInformation::YAW_RATE_OFFSET) / YawRateInformation::YAW_RATE_RESOLUTION);
 
     yaw_rate_frame.set_data(yaw_rate_info_data);
     auto yaw_err = socketcan_adapter_->send(yaw_rate_frame);
