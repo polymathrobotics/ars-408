@@ -119,14 +119,10 @@ namespace FHAC
         radar_filter_configs_.push_back(radar_conti_ars408_msgs::msg::FilterStateCfg());
         radar_configuration_configs_.emplace(topic_ind, radar_conti_ars408_msgs::msg::RadarConfiguration());
         radar_filter_active_.push_back(std::vector<bool>());
-        radar_filter_valid_.push_back(std::vector<bool>());
 
         std::vector<bool> init_radar_active_values = {false, false, false, false, false, false, false, false, false, false, false, false, false, false, false};
         node->declare_parameter(radar_name + ".active", rclcpp::ParameterValue(init_radar_active_values));
         node->get_parameter(radar_name + ".active", radar_filter_active_[topic_ind]);
-        std::vector<bool> init_radar_valid_values = {false, false, false, false, false, false, false, false, false, false, false, false, false, false, false};
-        node->declare_parameter(radar_name + ".valid", rclcpp::ParameterValue(init_radar_valid_values));
-        node->get_parameter(radar_name + ".valid", radar_filter_valid_[topic_ind]);
 
         // Send motion state
         node->declare_parameter(radar_name + ".send_motion", rclcpp::ParameterValue(false));
@@ -426,7 +422,6 @@ namespace FHAC
       for (int filter_index = 0; filter_index < MAX_FilterState_Cfg_FilterState_Index; filter_index++)
       {
         int active = radar_filter_active_[radar_index][filter_index] ? FilterCfg_FilterCfg_Active_active : FilterCfg_FilterCfg_Active_inactive;
-        int valid = radar_filter_valid_[radar_index][filter_index] ? FilterCfg_FilterCfg_Valid_valid : FilterCfg_FilterCfg_Valid_invalid;
         switch (filterTypes[filter_index])
         {
         case FilterType::NOFOBJ:
@@ -492,7 +487,7 @@ namespace FHAC
         default:
           break;
         }
-        setFilter(radar_index, active, valid, type, filter_index, min_value, max_value);
+        setFilter(radar_index, active, type, filter_index, min_value, max_value);
         // need to sleep in order to read properly and not spam the can bus
         std::this_thread::sleep_for(std::chrono::milliseconds(50));
       }
@@ -840,7 +835,6 @@ namespace FHAC
     std::this_thread::sleep_for(std::chrono::milliseconds(1));
     if (!setFilter(req.sensor_id,
                    FilterCfg_FilterCfg_Active_active,
-                   FilterCfg_FilterCfg_Valid_valid,
                    req.type, req.index, req.min_value, req.max_value))
     {
       response->success = false;
@@ -849,7 +843,7 @@ namespace FHAC
     response->success = true;
   }
 
-  bool radar_conti_ars408::setFilter(const int &sensor_id, const int &active, const int &valid, const int &type, const int &index, const int &min_value, const int &max_value)
+  bool radar_conti_ars408::setFilter(const int &sensor_id, const int &active, const int &type, const int &index, const int &min_value, const int &max_value)
   {
     polymath::socketcan::CanFrame frame;
     frame.set_len(CAN_MAX_DLC);
@@ -860,7 +854,8 @@ namespace FHAC
 
     std::array<unsigned char, CAN_MAX_DLC> data{0};
     SET_FilterCfg_FilterCfg_Active(data, active);
-    SET_FilterCfg_FilterCfg_Valid(data, valid);
+    // Always set to valid-- there is no reason a configuration should be considered invalid
+    SET_FilterCfg_FilterCfg_Valid(data, 1);
     SET_FilterCfg_FilterCfg_Type(data, type);
     SET_FilterCfg_FilterCfg_Index(data, index);
 
@@ -946,7 +941,6 @@ namespace FHAC
       return false;
     }
 
-    RCLCPP_DEBUG(this->get_logger(), "valid: %i", valid);
     RCLCPP_DEBUG(this->get_logger(), "active: %i", active);
     RCLCPP_DEBUG(this->get_logger(), "min_value is: %i", min_value);
     RCLCPP_DEBUG(this->get_logger(), "max_value is: %i", max_value);

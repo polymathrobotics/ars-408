@@ -332,7 +332,7 @@ namespace FHAC
         // create publish_object_map
         void publish_object_map(int sensor_id);
         // update filter
-        bool setFilter(const int &sensor_id, const int &active, const int &valid, const int &type, const int &index, const int &min_value, const int &max_value);
+        bool setFilter(const int &sensor_id, const int &active, const int &type, const int &index, const int &min_value, const int &max_value);
         // update config
         bool setRadarConfiguration(const int &sensor_id, std::shared_ptr<radar_conti_ars408_msgs::srv::TriggerSetCfg::Response> &response);
 
