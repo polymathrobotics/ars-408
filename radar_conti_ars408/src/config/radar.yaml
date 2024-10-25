@@ -15,7 +15,7 @@ radar_node:
         radarcfg_sensor_id_valid: 1
         radarcfg_storeinnvm: 1
         radarcfg_storeinnvm_valid: 1
-        radarcfg_radar_power: 1
+        radarcfg_radar_power: 3
         radarcfg_radar_power_valid: 1
         radarcfg_send_ext_info: 1
         radarcfg_send_ext_info_valid: 1
@@ -27,6 +27,11 @@ radar_node:
         radarcfg_max_distance_valid: 1
         radarcfg_output_type: 1
         radarcfg_output_type_valid: 1
+        radarcfg_rcs_threshold: 0
+        radarcfg_rcs_threshold_valid: 1
+        radarcfg_sort_index: 1
+        radarcfg_sort_index_valid: 1
+
 
         #set filter active flag on filter config index
         active: [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]

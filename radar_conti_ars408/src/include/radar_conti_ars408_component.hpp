@@ -363,7 +363,6 @@ namespace FHAC
         std::unordered_map<size_t, radar_conti_ars408_msgs::msg::RadarConfiguration> radar_configuration_configs_;
         std::unordered_map<size_t, bool> motion_configs_;
         std::vector<std::vector<bool>> radar_filter_active_;
-        std::vector<std::vector<bool>> radar_filter_valid_;
 
         // additional variables
         rclcpp::TimerBase::SharedPtr fov_marker_timer_;

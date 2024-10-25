@@ -158,13 +158,21 @@ namespace FHAC
         initializeConfig<uint8_t>(radar_name, std::string("radarcfg_max_distance"), 0, radar_configuration_configs_[topic_ind].radarcfg_maxdistance.data);
         initializeConfig<uint8_t>(radar_name, std::string("radarcfg_max_distance_valid"), 0, radar_configuration_configs_[topic_ind].radarcfg_maxdistance_valid.data);
 
+        // Sensor ID
+        initializeConfig<uint8_t>(radar_name, std::string("radarcfg_sensor_id"), 0, radar_configuration_configs_[topic_ind].radarcfg_sensorid.data);
+        initializeConfig<uint8_t>(radar_name, std::string("radarcfg_sensor_id_valid"), 0, radar_configuration_configs_[topic_ind].radarcfg_sensorid_valid.data);
+
+        // RCS Threshold
+        initializeConfig<uint8_t>(radar_name, std::string("radarcfg_rcs_threshold"), 0, radar_configuration_configs_[topic_ind].radarcfg_rcs_threshold.data);
+        initializeConfig<uint8_t>(radar_name, std::string("radarcfg_rcs_threshold_valid"), 0, radar_configuration_configs_[topic_ind].radarcfg_rcs_threshold_valid.data);
+
         // Output Type
         initializeConfig<uint8_t>(radar_name, std::string("radarcfg_output_type"), 0, radar_configuration_configs_[topic_ind].radarcfg_outputtype.data);
         initializeConfig<uint8_t>(radar_name, std::string("radarcfg_output_type_valid"), 0, radar_configuration_configs_[topic_ind].radarcfg_outputtype_valid.data);
 
-        // Sensor ID
-        initializeConfig<uint8_t>(radar_name, std::string("radarcfg_sensor_id"), 0, radar_configuration_configs_[topic_ind].radarcfg_sensorid.data);
-        initializeConfig<uint8_t>(radar_name, std::string("radarcfg_sensor_id_valid"), 0, radar_configuration_configs_[topic_ind].radarcfg_sensorid_valid.data);
+        // Sort Index
+        initializeConfig<uint8_t>(radar_name, std::string("radarcfg_sort_index"), 0, radar_configuration_configs_[topic_ind].radarcfg_sortindex.data);
+        initializeConfig<uint8_t>(radar_name, std::string("radarcfg_sort_index_valid"), 0, radar_configuration_configs_[topic_ind].radarcfg_sortindex_valid.data);
 
         // FILTER CONFIGS
         // Initialize Number of Objects Filters
@@ -1024,13 +1032,21 @@ namespace FHAC
     SET_RadarConfiguration_RadarCfg_MaxDistance(data, current_radar_config.radarcfg_maxdistance.data / 2);
     SET_RadarConfiguration_RadarCfg_MaxDistance_valid(data, current_radar_config.radarcfg_maxdistance_valid.data);
 
+    // Sensor ID
+    SET_RadarConfiguration_RadarCfg_SensorID(data, current_radar_config.radarcfg_sensorid.data);
+    SET_RadarConfiguration_RadarCfg_SensorID_valid(data, current_radar_config.radarcfg_sensorid_valid.data);
+
+    // RCS Threshold
+    SET_RadarConfiguration_RadarCfg_RCS_Threshold(data, current_radar_config.radarcfg_rcs_threshold.data);
+    SET_RadarConfiguration_RadarCfg_RCS_Threshold_Valid(data, current_radar_config.radarcfg_rcs_threshold_valid.data);
+
     // Output Type
     SET_RadarConfiguration_RadarCfg_OutputType(data, current_radar_config.radarcfg_outputtype.data);
     SET_RadarConfiguration_RadarCfg_OutputType_valid(data, current_radar_config.radarcfg_outputtype_valid.data);
 
-    // Sensor ID
-    SET_RadarConfiguration_RadarCfg_SensorID(data, current_radar_config.radarcfg_sensorid.data);
-    SET_RadarConfiguration_RadarCfg_SensorID_valid(data, current_radar_config.radarcfg_sensorid_valid.data);
+    // Sort Index
+    SET_RadarConfiguration_RadarCfg_SortIndex(data, current_radar_config.radarcfg_sortindex.data);
+    SET_RadarConfiguration_RadarCfg_SortIndex_valid(data, current_radar_config.radarcfg_sortindex_valid.data);
 
     frame.set_data(data);
     auto err = socketcan_adapter_->send(frame);
