@@ -62,8 +62,10 @@ namespace FHAC
     node->declare_parameter("obstacle_array_topic_name", rclcpp::ParameterValue("ars408/obstacle_array"));
     node->declare_parameter("filter_config_topic_name", rclcpp::ParameterValue("ars408/filter_config"));
     node->declare_parameter("radar_state_topic_name", rclcpp::ParameterValue("ars408/radar_state"));
+    node->declare_parameter("qos_deadline_hz", rclcpp::ParameterValue(15));
 
     double transform_timeout_double;
+    int qos_deadline_hz;
     node->get_parameter("can_channel", can_channel_);
     node->get_parameter("odom_topic_name", odom_topic_name_);
     node->get_parameter("robot_base_frame", robot_base_frame_);
@@ -74,6 +76,7 @@ namespace FHAC
     node->get_parameter("obstacle_array_topic_name", obstacle_array_topic_name_);
     node->get_parameter("filter_config_topic_name", filter_config_topic_name_);
     node->get_parameter("radar_state_topic_name", radar_state_topic_name_);
+    node->get_parameter("qos_deadline_hz", qos_deadline_hz);
 
     if (can_channel_.empty())
     {
@@ -85,7 +88,7 @@ namespace FHAC
 
     auto transient_local_qos = rclcpp::QoS(rclcpp::KeepLast(5)).reliability(rclcpp::ReliabilityPolicy::Reliable).durability(rclcpp::DurabilityPolicy::TransientLocal);
 
-    auto deadline = rclcpp::Duration(0, static_cast<int>(1e9 / 15)); // 15 Hz
+    auto deadline = rclcpp::Duration(0, static_cast<int>(1e9 / qos_deadline_hz));
     auto radar_tracks_qos = rclcpp::QoS(rclcpp::KeepLast(5)).reliability(rclcpp::ReliabilityPolicy::Reliable).durability(rclcpp::DurabilityPolicy::Volatile).deadline(deadline);
 
     size_t topic_ind = 0;
