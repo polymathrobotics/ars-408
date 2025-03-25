@@ -88,7 +88,7 @@ namespace FHAC
 
     auto transient_local_qos = rclcpp::QoS(rclcpp::KeepLast(5)).reliability(rclcpp::ReliabilityPolicy::Reliable).durability(rclcpp::DurabilityPolicy::TransientLocal);
 
-    auto deadline = rclcpp::Duration(0, static_cast<int>(1e9 / qos_deadline_hz));
+    rclcpp::Duration deadline{std::chrono::seconds(1) / static_cast<float>(qos_deadline_hz)};
     auto radar_tracks_qos = rclcpp::QoS(rclcpp::KeepLast(5)).reliability(rclcpp::ReliabilityPolicy::Reliable).durability(rclcpp::DurabilityPolicy::Volatile).deadline(deadline);
 
     size_t topic_ind = 0;
