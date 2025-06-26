@@ -47,7 +47,8 @@ def generate_launch_description():
         emulate_tty=True,
         parameters=[{'use_sim_time': use_sim_time},
                     {'autostart': autostart},
-                    {'node_names': lifecycle_nodes}])
+                    {'node_names': lifecycle_nodes},
+                    {"bond_timeout": 0.0}])
 
     radar_node = Node(
         package='radar_conti_ars408',
