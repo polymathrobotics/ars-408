@@ -15,3 +15,15 @@ repositories:
     type: git
     url: git@gitlab.com:polymathrobotics/third_party/prometheus-cpp-ros.git
     version: main
+  socketcan_adapter:
+    type: git
+    url: git@github.com:polymathrobotics/socketcan_adapter.git
+    version: main
+  protective_stop:
+    type: git
+    url: git@gitlab.com:polymathrobotics/protective-stop.git
+    version: main
+  rosgraph_monitor:
+    type: git
+    url: git@github.com:ros-tooling/graph-monitor.git
+    version: 0.2.0

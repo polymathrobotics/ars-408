@@ -1,8 +1,7 @@
-#define CATCH_CONFIG_MAIN
 #include <math.h>
 
 #include "rclcpp/rclcpp.hpp"
-#include <catch2/catch.hpp>
+#include "polymath_test/catch2.hpp"
 #include <iostream>
 #include <limits>
 #include <memory>
