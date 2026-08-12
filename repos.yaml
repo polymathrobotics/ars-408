@@ -1,0 +1,5 @@
+repositories:
+  navigation2_dynamic:
+    type: git
+    url: https://polymathrobotics/navigation2_dynamic.git
+    version: master
