@@ -1,3 +1,16 @@
+# Copyright 2026 Polymath Robotics, Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 cmake_minimum_required(VERSION 3.5)
 project(radar_conti_ars408_msgs)
 
@@ -32,7 +45,7 @@ rosidl_generate_interfaces(radar_conti_ars408_msgs
   "msg/RadarState.msg"
   "msg/VersionID.msg"
   "msg/Cluster.msg"
-  "msg/Object.msg"  
+  "msg/Object.msg"
   "msg/ClusterList.msg"
   "msg/ObjectList.msg"
   "msg/FilterStateCfgEntryFloat.msg"
@@ -45,19 +58,7 @@ rosidl_generate_interfaces(radar_conti_ars408_msgs
   DEPENDENCIES builtin_interfaces std_msgs
 )
 
-
-# uncomment the following section in order to fill in
-# further dependencies manually.
-# find_package(<dependency> REQUIRED)
-
 if(BUILD_TESTING)
-  # the following line skips the linter which checks for copyrights
-  # uncomment the line when a copyright and license is not present in all source files
-  # set(ament_cmake_copyright_FOUND TRUE)
-  # the following line skips cpplint (only works in a git repo)
-  # uncomment the line when this package is not in a git repo
-  # set(ament_cmake_cpplint_FOUND TRUE)
-  # ament_lint_auto_find_test_dependencies()
 endif()
 
 ament_package()

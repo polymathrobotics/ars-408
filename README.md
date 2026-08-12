@@ -12,7 +12,7 @@ ros2 launch radar_conti_ars408 radar.launch.py
 
 ### Configuring Sensor ID
 
-In the case where you have multiple Continental radars, you'll need to configure each sensor id. Each CAN frame id's second byte is encoded with the sensor id. 
+In the case where you have multiple Continental radars, you'll need to configure each sensor id. Each CAN frame id's second byte is encoded with the sensor id.
 
 With `can-utils`, one can configure the sensor with the following `cansend` command:
 
@@ -33,6 +33,7 @@ There are ros params for setting the radar configuration that are set declarativ
 > It is important to note that the number of transmissions to the NVM should be kept to a minimum as this could reduce the service life of the memory.
 
 Therefore, when you want to update the configuration, simply call the service with:
+
 ```
 ros2 service call /radar_conti_ars408/set_radar_configuration radar_conti_ars408_msgs/srv/TriggerSetCfg "sensor_id: <sensor_id>"
 ```
@@ -90,4 +91,3 @@ Since the ARS408 tracks return their velocities under the assumption that the ra
 You can also set:
 - `transform_timeout`: Used in `lookupTransform`
 - `robot_base_frame`: Default is `base_link`
-

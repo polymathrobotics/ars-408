@@ -1,3 +1,17 @@
+// Copyright 2026 Polymath Robotics, Inc.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 /** \file
  * CAN DBC C-Headers
  *
@@ -301,18 +315,18 @@
  *	The can message buffer to initialise
  */
 #define INIT_Obj_2_Quality(buf)                     \
-	{                                                 \
-		INITSIG_Obj_2_Quality_Obj_ProbOfExist(buf);     \
-		INITSIG_Obj_2_Quality_Obj_MeasState(buf);       \
-		INITSIG_Obj_2_Quality_Obj_ArelLong_rms(buf);    \
-		INITSIG_Obj_2_Quality_Obj_ArelLat_rms(buf);     \
-		INITSIG_Obj_2_Quality_Obj_VrelLong_rms(buf);    \
-		INITSIG_Obj_2_Quality_Obj_VrelLat_rms(buf);     \
-		INITSIG_Obj_2_Quality_Obj_Orientation_rms(buf); \
-		INITSIG_Obj_2_Quality_Obj_DistLong_rms(buf);    \
-		INITSIG_Obj_2_Quality_Obj_DistLat_rms(buf);     \
-		INITSIG_Obj_2_Quality_Obj_ID(buf);              \
-	}
+  {                                                 \
+    INITSIG_Obj_2_Quality_Obj_ProbOfExist(buf);     \
+    INITSIG_Obj_2_Quality_Obj_MeasState(buf);       \
+    INITSIG_Obj_2_Quality_Obj_ArelLong_rms(buf);    \
+    INITSIG_Obj_2_Quality_Obj_ArelLat_rms(buf);     \
+    INITSIG_Obj_2_Quality_Obj_VrelLong_rms(buf);    \
+    INITSIG_Obj_2_Quality_Obj_VrelLat_rms(buf);     \
+    INITSIG_Obj_2_Quality_Obj_Orientation_rms(buf); \
+    INITSIG_Obj_2_Quality_Obj_DistLong_rms(buf);    \
+    INITSIG_Obj_2_Quality_Obj_DistLat_rms(buf);     \
+    INITSIG_Obj_2_Quality_Obj_ID(buf);              \
+  }
 
 /**
  * @}
@@ -377,15 +391,15 @@
  *	The can message buffer to initialise
  */
 #define INIT_Obj_3_Extended(buf)                      \
-	{                                                   \
-		INITSIG_Obj_3_Extended_Obj_Class(buf);            \
-		INITSIG_Obj_3_Extended_Obj_ArelLat(buf);          \
-		INITSIG_Obj_3_Extended_Obj_ID(buf);               \
-		INITSIG_Obj_3_Extended_Obj_OrientationAngle(buf); \
-		INITSIG_Obj_3_Extended_Obj_Width(buf);            \
-		INITSIG_Obj_3_Extended_Obj_Length(buf);           \
-		INITSIG_Obj_3_Extended_Obj_ArelLong(buf);         \
-	}
+  {                                                   \
+    INITSIG_Obj_3_Extended_Obj_Class(buf);            \
+    INITSIG_Obj_3_Extended_Obj_ArelLat(buf);          \
+    INITSIG_Obj_3_Extended_Obj_ID(buf);               \
+    INITSIG_Obj_3_Extended_Obj_OrientationAngle(buf); \
+    INITSIG_Obj_3_Extended_Obj_Width(buf);            \
+    INITSIG_Obj_3_Extended_Obj_Length(buf);           \
+    INITSIG_Obj_3_Extended_Obj_ArelLong(buf);         \
+  }
 
 /**
  * @}
@@ -450,15 +464,15 @@
  *	The can message buffer to initialise
  */
 #define INIT_CollDetRegionState(buf)                              \
-	{                                                               \
-		INITSIG_CollDetRegionState_CollDetRegState_WarningLevel(buf); \
-		INITSIG_CollDetRegionState_CollDetRegState_NofObjects(buf);   \
-		INITSIG_CollDetRegionState_CollDetRegState_RegionID(buf);     \
-		INITSIG_CollDetRegionState_CollDetRegState_Point2Y(buf);      \
-		INITSIG_CollDetRegionState_CollDetRegState_Point2X(buf);      \
-		INITSIG_CollDetRegionState_CollDetRegState_Point1Y(buf);      \
-		INITSIG_CollDetRegionState_CollDetRegState_Point1X(buf);      \
-	}
+  {                                                               \
+    INITSIG_CollDetRegionState_CollDetRegState_WarningLevel(buf); \
+    INITSIG_CollDetRegionState_CollDetRegState_NofObjects(buf);   \
+    INITSIG_CollDetRegionState_CollDetRegState_RegionID(buf);     \
+    INITSIG_CollDetRegionState_CollDetRegState_Point2Y(buf);      \
+    INITSIG_CollDetRegionState_CollDetRegState_Point2X(buf);      \
+    INITSIG_CollDetRegionState_CollDetRegState_Point1Y(buf);      \
+    INITSIG_CollDetRegionState_CollDetRegState_Point1X(buf);      \
+  }
 
 /**
  * @}
@@ -518,10 +532,10 @@
  *	The can message buffer to initialise
  */
 #define INIT_Obj_4_Warning(buf)                           \
-	{                                                       \
-		INITSIG_Obj_4_Warning_Obj_CollDetRegionBitfield(buf); \
-		INITSIG_Obj_4_Warning_Obj_ID(buf);                    \
-	}
+  {                                                       \
+    INITSIG_Obj_4_Warning_Obj_CollDetRegionBitfield(buf); \
+    INITSIG_Obj_4_Warning_Obj_ID(buf);                    \
+  }
 
 /**
  * @}
@@ -580,9 +594,9 @@
  *	The can message buffer to initialise
  */
 #define INIT_CollDetRelayCtrl(buf)                        \
-	{                                                       \
-		INITSIG_CollDetRelayCtrl_CollDetRelayCtrl_Param(buf); \
-	}
+  {                                                       \
+    INITSIG_CollDetRelayCtrl_CollDetRelayCtrl_Param(buf); \
+  }
 
 /**
  * @}
@@ -675,43 +689,43 @@
  *	The can message buffer to initialise
  */
 #define INIT_FilterState_Cfg(buf)                             \
-	{                                                           \
-		INITSIG_FilterState_Cfg_FilterState_Max_Class(buf);       \
-		INITSIG_FilterState_Cfg_FilterState_Min_Class(buf);       \
-		INITSIG_FilterState_Cfg_FilterState_Min_Y(buf);           \
-		INITSIG_FilterState_Cfg_FilterState_Min_X(buf);           \
-		INITSIG_FilterState_Cfg_FilterState_Min_VYRightLeft(buf); \
-		INITSIG_FilterState_Cfg_FilterState_Min_VYLeftRight(buf); \
-		INITSIG_FilterState_Cfg_FilterState_Min_VXOncome(buf);    \
-		INITSIG_FilterState_Cfg_FilterState_Min_VXDepart(buf);    \
-		INITSIG_FilterState_Cfg_FilterState_Max_Y(buf);           \
-		INITSIG_FilterState_Cfg_FilterState_Max_X(buf);           \
-		INITSIG_FilterState_Cfg_FilterState_Max_VYRightLeft(buf); \
-		INITSIG_FilterState_Cfg_FilterState_Max_VYLeftRight(buf); \
-		INITSIG_FilterState_Cfg_FilterState_Max_VXOncome(buf);    \
-		INITSIG_FilterState_Cfg_FilterState_Max_VXDepart(buf);    \
-		INITSIG_FilterState_Cfg_FilterState_Type(buf);            \
-		INITSIG_FilterState_Cfg_FilterState_Min_VrelOncome(buf);  \
-		INITSIG_FilterState_Cfg_FilterState_Min_VrelDepart(buf);  \
-		INITSIG_FilterState_Cfg_FilterState_Min_Size(buf);        \
-		INITSIG_FilterState_Cfg_FilterState_Min_RCS(buf);         \
-		INITSIG_FilterState_Cfg_FilterState_Min_ProbExists(buf);  \
-		INITSIG_FilterState_Cfg_FilterState_Min_NofObj(buf);      \
-		INITSIG_FilterState_Cfg_FilterState_Min_Lifetime(buf);    \
-		INITSIG_FilterState_Cfg_FilterState_Min_Distance(buf);    \
-		INITSIG_FilterState_Cfg_FilterState_Min_Azimuth(buf);     \
-		INITSIG_FilterState_Cfg_FilterState_Max_VrelOncome(buf);  \
-		INITSIG_FilterState_Cfg_FilterState_Max_VrelDepart(buf);  \
-		INITSIG_FilterState_Cfg_FilterState_Max_Size(buf);        \
-		INITSIG_FilterState_Cfg_FilterState_Max_RCS(buf);         \
-		INITSIG_FilterState_Cfg_FilterState_Max_ProbExists(buf);  \
-		INITSIG_FilterState_Cfg_FilterState_Max_NofObj(buf);      \
-		INITSIG_FilterState_Cfg_FilterState_Max_Lifetime(buf);    \
-		INITSIG_FilterState_Cfg_FilterState_Max_Distance(buf);    \
-		INITSIG_FilterState_Cfg_FilterState_Max_Azimuth(buf);     \
-		INITSIG_FilterState_Cfg_FilterState_Index(buf);           \
-		INITSIG_FilterState_Cfg_FilterState_Active(buf);          \
-	}
+  {                                                           \
+    INITSIG_FilterState_Cfg_FilterState_Max_Class(buf);       \
+    INITSIG_FilterState_Cfg_FilterState_Min_Class(buf);       \
+    INITSIG_FilterState_Cfg_FilterState_Min_Y(buf);           \
+    INITSIG_FilterState_Cfg_FilterState_Min_X(buf);           \
+    INITSIG_FilterState_Cfg_FilterState_Min_VYRightLeft(buf); \
+    INITSIG_FilterState_Cfg_FilterState_Min_VYLeftRight(buf); \
+    INITSIG_FilterState_Cfg_FilterState_Min_VXOncome(buf);    \
+    INITSIG_FilterState_Cfg_FilterState_Min_VXDepart(buf);    \
+    INITSIG_FilterState_Cfg_FilterState_Max_Y(buf);           \
+    INITSIG_FilterState_Cfg_FilterState_Max_X(buf);           \
+    INITSIG_FilterState_Cfg_FilterState_Max_VYRightLeft(buf); \
+    INITSIG_FilterState_Cfg_FilterState_Max_VYLeftRight(buf); \
+    INITSIG_FilterState_Cfg_FilterState_Max_VXOncome(buf);    \
+    INITSIG_FilterState_Cfg_FilterState_Max_VXDepart(buf);    \
+    INITSIG_FilterState_Cfg_FilterState_Type(buf);            \
+    INITSIG_FilterState_Cfg_FilterState_Min_VrelOncome(buf);  \
+    INITSIG_FilterState_Cfg_FilterState_Min_VrelDepart(buf);  \
+    INITSIG_FilterState_Cfg_FilterState_Min_Size(buf);        \
+    INITSIG_FilterState_Cfg_FilterState_Min_RCS(buf);         \
+    INITSIG_FilterState_Cfg_FilterState_Min_ProbExists(buf);  \
+    INITSIG_FilterState_Cfg_FilterState_Min_NofObj(buf);      \
+    INITSIG_FilterState_Cfg_FilterState_Min_Lifetime(buf);    \
+    INITSIG_FilterState_Cfg_FilterState_Min_Distance(buf);    \
+    INITSIG_FilterState_Cfg_FilterState_Min_Azimuth(buf);     \
+    INITSIG_FilterState_Cfg_FilterState_Max_VrelOncome(buf);  \
+    INITSIG_FilterState_Cfg_FilterState_Max_VrelDepart(buf);  \
+    INITSIG_FilterState_Cfg_FilterState_Max_Size(buf);        \
+    INITSIG_FilterState_Cfg_FilterState_Max_RCS(buf);         \
+    INITSIG_FilterState_Cfg_FilterState_Max_ProbExists(buf);  \
+    INITSIG_FilterState_Cfg_FilterState_Max_NofObj(buf);      \
+    INITSIG_FilterState_Cfg_FilterState_Max_Lifetime(buf);    \
+    INITSIG_FilterState_Cfg_FilterState_Max_Distance(buf);    \
+    INITSIG_FilterState_Cfg_FilterState_Max_Azimuth(buf);     \
+    INITSIG_FilterState_Cfg_FilterState_Index(buf);           \
+    INITSIG_FilterState_Cfg_FilterState_Active(buf);          \
+  }
 
 /**
  * @}
@@ -771,10 +785,10 @@
  *	The can message buffer to initialise
  */
 #define INIT_FilterState_Header(buf)                                 \
-	{                                                                  \
-		INITSIG_FilterState_Header_FilterState_NofObjectFilterCfg(buf);  \
-		INITSIG_FilterState_Header_FilterState_NofClusterFilterCfg(buf); \
-	}
+  {                                                                  \
+    INITSIG_FilterState_Header_FilterState_NofObjectFilterCfg(buf);  \
+    INITSIG_FilterState_Header_FilterState_NofClusterFilterCfg(buf); \
+  }
 
 /**
  * @}
@@ -868,44 +882,44 @@
  *	The can message buffer to initialise
  */
 #define INIT_FilterCfg(buf)                           \
-	{                                                   \
-		INITSIG_FilterCfg_FilterCfg_Min_Class(buf);       \
-		INITSIG_FilterCfg_FilterCfg_Max_Class(buf);       \
-		INITSIG_FilterCfg_FilterCfg_Min_Y(buf);           \
-		INITSIG_FilterCfg_FilterCfg_Min_X(buf);           \
-		INITSIG_FilterCfg_FilterCfg_Min_VYRightLeft(buf); \
-		INITSIG_FilterCfg_FilterCfg_Min_VYLeftRight(buf); \
-		INITSIG_FilterCfg_FilterCfg_Min_VXOncome(buf);    \
-		INITSIG_FilterCfg_FilterCfg_Min_VXDepart(buf);    \
-		INITSIG_FilterCfg_FilterCfg_Max_Y(buf);           \
-		INITSIG_FilterCfg_FilterCfg_Max_X(buf);           \
-		INITSIG_FilterCfg_FilterCfg_Max_VYRightLeft(buf); \
-		INITSIG_FilterCfg_FilterCfg_Max_VXOncome(buf);    \
-		INITSIG_FilterCfg_FilterCfg_Max_VYLeftRight(buf); \
-		INITSIG_FilterCfg_FilterCfg_Max_VXDepart(buf);    \
-		INITSIG_FilterCfg_FilterCfg_Valid(buf);           \
-		INITSIG_FilterCfg_FilterCfg_Active(buf);          \
-		INITSIG_FilterCfg_FilterCfg_Max_VrelOncome(buf);  \
-		INITSIG_FilterCfg_FilterCfg_Max_VrelDepart(buf);  \
-		INITSIG_FilterCfg_FilterCfg_Max_Size(buf);        \
-		INITSIG_FilterCfg_FilterCfg_Max_RCS(buf);         \
-		INITSIG_FilterCfg_FilterCfg_Max_ProbExists(buf);  \
-		INITSIG_FilterCfg_FilterCfg_Max_NofObj(buf);      \
-		INITSIG_FilterCfg_FilterCfg_Max_Lifetime(buf);    \
-		INITSIG_FilterCfg_FilterCfg_Max_Distance(buf);    \
-		INITSIG_FilterCfg_FilterCfg_Max_Azimuth(buf);     \
-		INITSIG_FilterCfg_FilterCfg_Min_VrelOncome(buf);  \
-		INITSIG_FilterCfg_FilterCfg_Min_VrelDepart(buf);  \
-		INITSIG_FilterCfg_FilterCfg_Min_Size(buf);        \
-		INITSIG_FilterCfg_FilterCfg_Min_RCS(buf);         \
-		INITSIG_FilterCfg_FilterCfg_Min_ProbExists(buf);  \
-		INITSIG_FilterCfg_FilterCfg_Min_Lifetime(buf);    \
-		INITSIG_FilterCfg_FilterCfg_Min_Azimuth(buf);     \
-		INITSIG_FilterCfg_FilterCfg_Min_NofObj(buf);      \
-		INITSIG_FilterCfg_FilterCfg_Min_Distance(buf);    \
-		INITSIG_FilterCfg_FilterCfg_Index(buf);           \
-		INITSIG_FilterCfg_FilterCfg_Type(buf);            \
-	}
+  {                                                   \
+    INITSIG_FilterCfg_FilterCfg_Min_Class(buf);       \
+    INITSIG_FilterCfg_FilterCfg_Max_Class(buf);       \
+    INITSIG_FilterCfg_FilterCfg_Min_Y(buf);           \
+    INITSIG_FilterCfg_FilterCfg_Min_X(buf);           \
+    INITSIG_FilterCfg_FilterCfg_Min_VYRightLeft(buf); \
+    INITSIG_FilterCfg_FilterCfg_Min_VYLeftRight(buf); \
+    INITSIG_FilterCfg_FilterCfg_Min_VXOncome(buf);    \
+    INITSIG_FilterCfg_FilterCfg_Min_VXDepart(buf);    \
+    INITSIG_FilterCfg_FilterCfg_Max_Y(buf);           \
+    INITSIG_FilterCfg_FilterCfg_Max_X(buf);           \
+    INITSIG_FilterCfg_FilterCfg_Max_VYRightLeft(buf); \
+    INITSIG_FilterCfg_FilterCfg_Max_VXOncome(buf);    \
+    INITSIG_FilterCfg_FilterCfg_Max_VYLeftRight(buf); \
+    INITSIG_FilterCfg_FilterCfg_Max_VXDepart(buf);    \
+    INITSIG_FilterCfg_FilterCfg_Valid(buf);           \
+    INITSIG_FilterCfg_FilterCfg_Active(buf);          \
+    INITSIG_FilterCfg_FilterCfg_Max_VrelOncome(buf);  \
+    INITSIG_FilterCfg_FilterCfg_Max_VrelDepart(buf);  \
+    INITSIG_FilterCfg_FilterCfg_Max_Size(buf);        \
+    INITSIG_FilterCfg_FilterCfg_Max_RCS(buf);         \
+    INITSIG_FilterCfg_FilterCfg_Max_ProbExists(buf);  \
+    INITSIG_FilterCfg_FilterCfg_Max_NofObj(buf);      \
+    INITSIG_FilterCfg_FilterCfg_Max_Lifetime(buf);    \
+    INITSIG_FilterCfg_FilterCfg_Max_Distance(buf);    \
+    INITSIG_FilterCfg_FilterCfg_Max_Azimuth(buf);     \
+    INITSIG_FilterCfg_FilterCfg_Min_VrelOncome(buf);  \
+    INITSIG_FilterCfg_FilterCfg_Min_VrelDepart(buf);  \
+    INITSIG_FilterCfg_FilterCfg_Min_Size(buf);        \
+    INITSIG_FilterCfg_FilterCfg_Min_RCS(buf);         \
+    INITSIG_FilterCfg_FilterCfg_Min_ProbExists(buf);  \
+    INITSIG_FilterCfg_FilterCfg_Min_Lifetime(buf);    \
+    INITSIG_FilterCfg_FilterCfg_Min_Azimuth(buf);     \
+    INITSIG_FilterCfg_FilterCfg_Min_NofObj(buf);      \
+    INITSIG_FilterCfg_FilterCfg_Min_Distance(buf);    \
+    INITSIG_FilterCfg_FilterCfg_Index(buf);           \
+    INITSIG_FilterCfg_FilterCfg_Type(buf);            \
+  }
 
 /**
  * @}
@@ -983,28 +997,28 @@
  *	The can message buffer to initialise
  */
 #define INIT_RadarConfiguration(buf)                              \
-	{                                                               \
-		INITSIG_RadarConfiguration_RadarCfg_RCS_Threshold_Valid(buf); \
-		INITSIG_RadarConfiguration_RadarCfg_RCS_Threshold(buf);       \
-		INITSIG_RadarConfiguration_RadarCfg_StoreInNVM_valid(buf);    \
-		INITSIG_RadarConfiguration_RadarCfg_SortIndex_valid(buf);     \
-		INITSIG_RadarConfiguration_RadarCfg_SortIndex(buf);           \
-		INITSIG_RadarConfiguration_RadarCfg_StoreInNVM(buf);          \
-		INITSIG_RadarConfiguration_RadarCfg_SendExtInfo_valid(buf);   \
-		INITSIG_RadarConfiguration_RadarCfg_SendExtInfo(buf);         \
-		INITSIG_RadarConfiguration_RadarCfg_CtrlRelay_valid(buf);     \
-		INITSIG_RadarConfiguration_RadarCfg_CtrlRelay(buf);           \
-		INITSIG_RadarConfiguration_RadarCfg_SendQuality_valid(buf);   \
-		INITSIG_RadarConfiguration_RadarCfg_SendQuality(buf);         \
-		INITSIG_RadarConfiguration_RadarCfg_MaxDistance_valid(buf);   \
-		INITSIG_RadarConfiguration_RadarCfg_RadarPower_valid(buf);    \
-		INITSIG_RadarConfiguration_RadarCfg_OutputType_valid(buf);    \
-		INITSIG_RadarConfiguration_RadarCfg_SensorID_valid(buf);      \
-		INITSIG_RadarConfiguration_RadarCfg_MaxDistance(buf);         \
-		INITSIG_RadarConfiguration_RadarCfg_RadarPower(buf);          \
-		INITSIG_RadarConfiguration_RadarCfg_OutputType(buf);          \
-		INITSIG_RadarConfiguration_RadarCfg_SensorID(buf);            \
-	}
+  {                                                               \
+    INITSIG_RadarConfiguration_RadarCfg_RCS_Threshold_Valid(buf); \
+    INITSIG_RadarConfiguration_RadarCfg_RCS_Threshold(buf);       \
+    INITSIG_RadarConfiguration_RadarCfg_StoreInNVM_valid(buf);    \
+    INITSIG_RadarConfiguration_RadarCfg_SortIndex_valid(buf);     \
+    INITSIG_RadarConfiguration_RadarCfg_SortIndex(buf);           \
+    INITSIG_RadarConfiguration_RadarCfg_StoreInNVM(buf);          \
+    INITSIG_RadarConfiguration_RadarCfg_SendExtInfo_valid(buf);   \
+    INITSIG_RadarConfiguration_RadarCfg_SendExtInfo(buf);         \
+    INITSIG_RadarConfiguration_RadarCfg_CtrlRelay_valid(buf);     \
+    INITSIG_RadarConfiguration_RadarCfg_CtrlRelay(buf);           \
+    INITSIG_RadarConfiguration_RadarCfg_SendQuality_valid(buf);   \
+    INITSIG_RadarConfiguration_RadarCfg_SendQuality(buf);         \
+    INITSIG_RadarConfiguration_RadarCfg_MaxDistance_valid(buf);   \
+    INITSIG_RadarConfiguration_RadarCfg_RadarPower_valid(buf);    \
+    INITSIG_RadarConfiguration_RadarCfg_OutputType_valid(buf);    \
+    INITSIG_RadarConfiguration_RadarCfg_SensorID_valid(buf);      \
+    INITSIG_RadarConfiguration_RadarCfg_MaxDistance(buf);         \
+    INITSIG_RadarConfiguration_RadarCfg_RadarPower(buf);          \
+    INITSIG_RadarConfiguration_RadarCfg_OutputType(buf);          \
+    INITSIG_RadarConfiguration_RadarCfg_SensorID(buf);            \
+  }
 
 /**
  * @}
@@ -1079,25 +1093,25 @@
  *	The can message buffer to initialise
  */
 #define INIT_RadarState(buf)                              \
-	{                                                       \
-		INITSIG_RadarState_RadarState_Voltage_Error(buf);     \
-		INITSIG_RadarState_RadarState_Temporary_Error(buf);   \
-		INITSIG_RadarState_RadarState_Temperature_Error(buf); \
-		INITSIG_RadarState_RadarState_Interference(buf);      \
-		INITSIG_RadarState_RadarState_Persistent_Error(buf);  \
-		INITSIG_RadarState_RadarState_SortIndex(buf);         \
-		INITSIG_RadarState_RadarState_RCS_Threshold(buf);     \
-		INITSIG_RadarState_RadarState_CtrlRelayCfg(buf);      \
-		INITSIG_RadarState_RadarState_SendQualityCfg(buf);    \
-		INITSIG_RadarState_RadarState_SendExtInfoCfg(buf);    \
-		INITSIG_RadarState_RadarState_MotionRxState(buf);     \
-		INITSIG_RadarState_RadarState_SensorID(buf);          \
-		INITSIG_RadarState_RadarState_OutputTypeCfg(buf);     \
-		INITSIG_RadarState_RadarState_RadarPowerCfg(buf);     \
-		INITSIG_RadarState_RadarState_NVMReadStatus(buf);     \
-		INITSIG_RadarState_RadarState_NVMwriteStatus(buf);    \
-		INITSIG_RadarState_RadarState_MaxDistanceCfg(buf);    \
-	}
+  {                                                       \
+    INITSIG_RadarState_RadarState_Voltage_Error(buf);     \
+    INITSIG_RadarState_RadarState_Temporary_Error(buf);   \
+    INITSIG_RadarState_RadarState_Temperature_Error(buf); \
+    INITSIG_RadarState_RadarState_Interference(buf);      \
+    INITSIG_RadarState_RadarState_Persistent_Error(buf);  \
+    INITSIG_RadarState_RadarState_SortIndex(buf);         \
+    INITSIG_RadarState_RadarState_RCS_Threshold(buf);     \
+    INITSIG_RadarState_RadarState_CtrlRelayCfg(buf);      \
+    INITSIG_RadarState_RadarState_SendQualityCfg(buf);    \
+    INITSIG_RadarState_RadarState_SendExtInfoCfg(buf);    \
+    INITSIG_RadarState_RadarState_MotionRxState(buf);     \
+    INITSIG_RadarState_RadarState_SensorID(buf);          \
+    INITSIG_RadarState_RadarState_OutputTypeCfg(buf);     \
+    INITSIG_RadarState_RadarState_RadarPowerCfg(buf);     \
+    INITSIG_RadarState_RadarState_NVMReadStatus(buf);     \
+    INITSIG_RadarState_RadarState_NVMwriteStatus(buf);    \
+    INITSIG_RadarState_RadarState_MaxDistanceCfg(buf);    \
+  }
 
 /**
  * @}
@@ -1157,10 +1171,10 @@
  *	The can message buffer to initialise
  */
 #define INIT_SpeedInformation(buf)                            \
-	{                                                           \
-		INITSIG_SpeedInformation_RadarDevice_Speed(buf);          \
-		INITSIG_SpeedInformation_RadarDevice_SpeedDirection(buf); \
-	}
+  {                                                           \
+    INITSIG_SpeedInformation_RadarDevice_Speed(buf);          \
+    INITSIG_SpeedInformation_RadarDevice_SpeedDirection(buf); \
+  }
 
 /**
  * @}
@@ -1219,9 +1233,9 @@
  *	The can message buffer to initialise
  */
 #define INIT_YawRateInformation(buf)                     \
-	{                                                      \
-		INITSIG_YawRateInformation_RadarDevice_YawRate(buf); \
-	}
+  {                                                      \
+    INITSIG_YawRateInformation_RadarDevice_YawRate(buf); \
+  }
 
 /**
  * @}
@@ -1284,13 +1298,13 @@
  *	The can message buffer to initialise
  */
 #define INIT_CollDetCfg(buf)                          \
-	{                                                   \
-		INITSIG_CollDetCfg_CollDetCfg_ClearRegions(buf);  \
-		INITSIG_CollDetCfg_CollDetCfg_WarningReset(buf);  \
-		INITSIG_CollDetCfg_CollDetCfg_Activate(buf);      \
-		INITSIG_CollDetCfg_CollDetCfg_MinTime_valid(buf); \
-		INITSIG_CollDetCfg_CollDetCfg_MinDetectTime(buf); \
-	}
+  {                                                   \
+    INITSIG_CollDetCfg_CollDetCfg_ClearRegions(buf);  \
+    INITSIG_CollDetCfg_CollDetCfg_WarningReset(buf);  \
+    INITSIG_CollDetCfg_CollDetCfg_Activate(buf);      \
+    INITSIG_CollDetCfg_CollDetCfg_MinTime_valid(buf); \
+    INITSIG_CollDetCfg_CollDetCfg_MinDetectTime(buf); \
+  }
 
 /**
  * @}
@@ -1355,15 +1369,15 @@
  *	The can message buffer to initialise
  */
 #define INIT_CollDetRegionCfg(buf)                                 \
-	{                                                                \
-		INITSIG_CollDetRegionCfg_CollDetRegCfg_Activate(buf);          \
-		INITSIG_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid(buf); \
-		INITSIG_CollDetRegionCfg_CollDetRegCfg_RegionID(buf);          \
-		INITSIG_CollDetRegionCfg_CollDetRegCfg_Point1X(buf);           \
-		INITSIG_CollDetRegionCfg_CollDetRegCfg_Point1Y(buf);           \
-		INITSIG_CollDetRegionCfg_CollDetRegCfg_Point2X(buf);           \
-		INITSIG_CollDetRegionCfg_CollDetRegCfg_Point2Y(buf);           \
-	}
+  {                                                                \
+    INITSIG_CollDetRegionCfg_CollDetRegCfg_Activate(buf);          \
+    INITSIG_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid(buf); \
+    INITSIG_CollDetRegionCfg_CollDetRegCfg_RegionID(buf);          \
+    INITSIG_CollDetRegionCfg_CollDetRegCfg_Point1X(buf);           \
+    INITSIG_CollDetRegionCfg_CollDetRegCfg_Point1Y(buf);           \
+    INITSIG_CollDetRegionCfg_CollDetRegCfg_Point2X(buf);           \
+    INITSIG_CollDetRegionCfg_CollDetRegCfg_Point2Y(buf);           \
+  }
 
 /**
  * @}
@@ -1425,12 +1439,12 @@
  *	The can message buffer to initialise
  */
 #define INIT_CollDetState(buf)                            \
-	{                                                       \
-		INITSIG_CollDetState_CollDetState_MeasCounter(buf);   \
-		INITSIG_CollDetState_CollDetState_Active(buf);        \
-		INITSIG_CollDetState_CollDetState_NofRegions(buf);    \
-		INITSIG_CollDetState_CollDetState_MinDetectTime(buf); \
-	}
+  {                                                       \
+    INITSIG_CollDetState_CollDetState_MeasCounter(buf);   \
+    INITSIG_CollDetState_CollDetState_Active(buf);        \
+    INITSIG_CollDetState_CollDetState_NofRegions(buf);    \
+    INITSIG_CollDetState_CollDetState_MinDetectTime(buf); \
+  }
 
 /**
  * @}
@@ -1492,12 +1506,12 @@
  *	The can message buffer to initialise
  */
 #define INIT_Cluster_0_Status(buf)                          \
-	{                                                         \
-		INITSIG_Cluster_0_Status_Cluster_MeasCounter(buf);      \
-		INITSIG_Cluster_0_Status_Cluster_NofClustersNear(buf);  \
-		INITSIG_Cluster_0_Status_Cluster_NofClustersFar(buf);   \
-		INITSIG_Cluster_0_Status_Cluster_InterfaceVersion(buf); \
-	}
+  {                                                         \
+    INITSIG_Cluster_0_Status_Cluster_MeasCounter(buf);      \
+    INITSIG_Cluster_0_Status_Cluster_NofClustersNear(buf);  \
+    INITSIG_Cluster_0_Status_Cluster_NofClustersFar(buf);   \
+    INITSIG_Cluster_0_Status_Cluster_InterfaceVersion(buf); \
+  }
 
 /**
  * @}
@@ -1558,11 +1572,11 @@
  *	The can message buffer to initialise
  */
 #define INIT_Obj_0_Status(buf)                      \
-	{                                                 \
-		INITSIG_Obj_0_Status_Obj_NofObjects(buf);       \
-		INITSIG_Obj_0_Status_Obj_MeasCounter(buf);      \
-		INITSIG_Obj_0_Status_Obj_InterfaceVersion(buf); \
-	}
+  {                                                 \
+    INITSIG_Obj_0_Status_Obj_NofObjects(buf);       \
+    INITSIG_Obj_0_Status_Obj_MeasCounter(buf);      \
+    INITSIG_Obj_0_Status_Obj_InterfaceVersion(buf); \
+  }
 
 /**
  * @}
@@ -1627,15 +1641,15 @@
  *	The can message buffer to initialise
  */
 #define INIT_Obj_1_General(buf)              \
-	{                                          \
-		INITSIG_Obj_1_General_Obj_DynProp(buf);  \
-		INITSIG_Obj_1_General_Obj_RCS(buf);      \
-		INITSIG_Obj_1_General_Obj_VrelLat(buf);  \
-		INITSIG_Obj_1_General_Obj_ID(buf);       \
-		INITSIG_Obj_1_General_Obj_DistLong(buf); \
-		INITSIG_Obj_1_General_Obj_VrelLong(buf); \
-		INITSIG_Obj_1_General_Obj_DistLat(buf);  \
-	}
+  {                                          \
+    INITSIG_Obj_1_General_Obj_DynProp(buf);  \
+    INITSIG_Obj_1_General_Obj_RCS(buf);      \
+    INITSIG_Obj_1_General_Obj_VrelLat(buf);  \
+    INITSIG_Obj_1_General_Obj_ID(buf);       \
+    INITSIG_Obj_1_General_Obj_DistLong(buf); \
+    INITSIG_Obj_1_General_Obj_VrelLong(buf); \
+    INITSIG_Obj_1_General_Obj_DistLat(buf);  \
+  }
 
 /**
  * @}
@@ -1698,13 +1712,13 @@
  *	The can message buffer to initialise
  */
 #define INIT_VersionID(buf)                       \
-	{                                               \
-		INITSIG_VersionID_Version_ExtendedRange(buf); \
-		INITSIG_VersionID_Version_CountryCode(buf);   \
-		INITSIG_VersionID_Version_MajorRelease(buf);  \
-		INITSIG_VersionID_Version_MinorRelease(buf);  \
-		INITSIG_VersionID_Version_PatchLevel(buf);    \
-	}
+  {                                               \
+    INITSIG_VersionID_Version_ExtendedRange(buf); \
+    INITSIG_VersionID_Version_CountryCode(buf);   \
+    INITSIG_VersionID_Version_MajorRelease(buf);  \
+    INITSIG_VersionID_Version_MinorRelease(buf);  \
+    INITSIG_VersionID_Version_PatchLevel(buf);    \
+  }
 
 /**
  * @}
@@ -1769,15 +1783,15 @@
  *	The can message buffer to initialise
  */
 #define INIT_Cluster_1_General(buf)                  \
-	{                                                  \
-		INITSIG_Cluster_1_General_Cluster_DynProp(buf);  \
-		INITSIG_Cluster_1_General_Cluster_VrelLat(buf);  \
-		INITSIG_Cluster_1_General_Cluster_RCS(buf);      \
-		INITSIG_Cluster_1_General_Cluster_DistLong(buf); \
-		INITSIG_Cluster_1_General_Cluster_ID(buf);       \
-		INITSIG_Cluster_1_General_Cluster_VrelLong(buf); \
-		INITSIG_Cluster_1_General_Cluster_DistLat(buf);  \
-	}
+  {                                                  \
+    INITSIG_Cluster_1_General_Cluster_DynProp(buf);  \
+    INITSIG_Cluster_1_General_Cluster_VrelLat(buf);  \
+    INITSIG_Cluster_1_General_Cluster_RCS(buf);      \
+    INITSIG_Cluster_1_General_Cluster_DistLong(buf); \
+    INITSIG_Cluster_1_General_Cluster_ID(buf);       \
+    INITSIG_Cluster_1_General_Cluster_VrelLong(buf); \
+    INITSIG_Cluster_1_General_Cluster_DistLat(buf);  \
+  }
 
 /**
  * @}
@@ -1843,16 +1857,16 @@
  *	The can message buffer to initialise
  */
 #define INIT_Cluster_2_Quality(buf)                      \
-	{                                                      \
-		INITSIG_Cluster_2_Quality_Cluster_ID(buf);           \
-		INITSIG_Cluster_2_Quality_Cluster_VrelLat_rms(buf);  \
-		INITSIG_Cluster_2_Quality_Cluster_InvalidState(buf); \
-		INITSIG_Cluster_2_Quality_Cluster_DistLat_rms(buf);  \
-		INITSIG_Cluster_2_Quality_Cluster_DistLong_rms(buf); \
-		INITSIG_Cluster_2_Quality_Cluster_VrelLong_rms(buf); \
-		INITSIG_Cluster_2_Quality_Cluster_PdH0(buf);         \
-		INITSIG_Cluster_2_Quality_Cluster_AmbigState(buf);   \
-	}
+  {                                                      \
+    INITSIG_Cluster_2_Quality_Cluster_ID(buf);           \
+    INITSIG_Cluster_2_Quality_Cluster_VrelLat_rms(buf);  \
+    INITSIG_Cluster_2_Quality_Cluster_InvalidState(buf); \
+    INITSIG_Cluster_2_Quality_Cluster_DistLat_rms(buf);  \
+    INITSIG_Cluster_2_Quality_Cluster_DistLong_rms(buf); \
+    INITSIG_Cluster_2_Quality_Cluster_VrelLong_rms(buf); \
+    INITSIG_Cluster_2_Quality_Cluster_PdH0(buf);         \
+    INITSIG_Cluster_2_Quality_Cluster_AmbigState(buf);   \
+  }
 
 /**
  * @}
@@ -1907,10 +1921,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_2_Quality_Obj_ProbOfExist(buf, val) \
-	{                                                 \
-		buf[6] &= ~(0x07 << 5);                         \
-		buf[6] |= (((ubyte)(val) >> 0) & 0x07) << 5;    \
-	}
+  {                                                 \
+    buf[6] &= ~(0x07 << 5);                         \
+    buf[6] |= (((ubyte)(val) >> 0) & 0x07) << 5;    \
+  }
 
 /**
  * Set signal Obj_ProbOfExist in buffer to its initial value.
@@ -1918,8 +1932,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_2_Quality_Obj_ProbOfExist(buf) \
-	SET_Obj_2_Quality_Obj_ProbOfExist(buf, 0)
+#define INITSIG_Obj_2_Quality_Obj_ProbOfExist(buf) SET_Obj_2_Quality_Obj_ProbOfExist(buf, 0)
 
 /**
  * Signal Obj_ProbOfExist value conversion with 16 bit factor and offset.
@@ -1932,8 +1945,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_2_Quality_Obj_ProbOfExist(x, fmt) \
-	((x) * fmt)
+#define CALC_Obj_2_Quality_Obj_ProbOfExist(x, fmt) ((x) * fmt)
 
 /**
  * Signal Obj_ProbOfExist raw initial value.
@@ -2086,10 +2098,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_2_Quality_Obj_MeasState(buf, val) \
-	{                                               \
-		buf[6] &= ~(0x07 << 2);                       \
-		buf[6] |= (((ubyte)(val) >> 0) & 0x07) << 2;  \
-	}
+  {                                               \
+    buf[6] &= ~(0x07 << 2);                       \
+    buf[6] |= (((ubyte)(val) >> 0) & 0x07) << 2;  \
+  }
 
 /**
  * Set signal Obj_MeasState in buffer to its initial value.
@@ -2097,8 +2109,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_2_Quality_Obj_MeasState(buf) \
-	SET_Obj_2_Quality_Obj_MeasState(buf, 0)
+#define INITSIG_Obj_2_Quality_Obj_MeasState(buf) SET_Obj_2_Quality_Obj_MeasState(buf, 0)
 
 /**
  * Signal Obj_MeasState value conversion with 16 bit factor and offset.
@@ -2111,8 +2122,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_2_Quality_Obj_MeasState(x, fmt) \
-	((x) * fmt)
+#define CALC_Obj_2_Quality_Obj_MeasState(x, fmt) ((x) * fmt)
 
 /**
  * Signal Obj_MeasState raw initial value.
@@ -2230,7 +2240,8 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_2_Quality_Obj_ArelLong_rms(buf) (0 | (ubyte)(+(ubyte)((buf[3] >> 0) & 0x0f) << 1) | (ubyte)(+(ubyte)((buf[4] >> 7) & 0x01) << 0))
+#define GET_Obj_2_Quality_Obj_ArelLong_rms(buf) \
+  (0 | (ubyte)(+(ubyte)((buf[3] >> 0) & 0x0f) << 1) | (ubyte)(+(ubyte)((buf[4] >> 7) & 0x01) << 0))
 
 /**
  * Set signal Obj_ArelLong_rms in buffer.
@@ -2241,12 +2252,12 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_2_Quality_Obj_ArelLong_rms(buf, val) \
-	{                                                  \
-		buf[3] &= ~(0x0f << 0);                          \
-		buf[3] |= (((ubyte)(val) >> 1) & 0x0f) << 0;     \
-		buf[4] &= ~(0x01 << 7);                          \
-		buf[4] |= (((ubyte)(val) >> 0) & 0x01) << 7;     \
-	}
+  {                                                  \
+    buf[3] &= ~(0x0f << 0);                          \
+    buf[3] |= (((ubyte)(val) >> 1) & 0x0f) << 0;     \
+    buf[4] &= ~(0x01 << 7);                          \
+    buf[4] |= (((ubyte)(val) >> 0) & 0x01) << 7;     \
+  }
 
 /**
  * Set signal Obj_ArelLong_rms in buffer to its initial value.
@@ -2254,8 +2265,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_2_Quality_Obj_ArelLong_rms(buf) \
-	SET_Obj_2_Quality_Obj_ArelLong_rms(buf, 0)
+#define INITSIG_Obj_2_Quality_Obj_ArelLong_rms(buf) SET_Obj_2_Quality_Obj_ArelLong_rms(buf, 0)
 
 /**
  * Signal Obj_ArelLong_rms value conversion with 16 bit factor and offset.
@@ -2268,8 +2278,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_2_Quality_Obj_ArelLong_rms(x, fmt) \
-	((x) * fmt)
+#define CALC_Obj_2_Quality_Obj_ArelLong_rms(x, fmt) ((x) * fmt)
 
 /**
  * Signal Obj_ArelLong_rms raw initial value.
@@ -2638,10 +2647,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_2_Quality_Obj_ArelLat_rms(buf, val) \
-	{                                                 \
-		buf[4] &= ~(0x1f << 2);                         \
-		buf[4] |= (((ubyte)(val) >> 0) & 0x1f) << 2;    \
-	}
+  {                                                 \
+    buf[4] &= ~(0x1f << 2);                         \
+    buf[4] |= (((ubyte)(val) >> 0) & 0x1f) << 2;    \
+  }
 
 /**
  * Set signal Obj_ArelLat_rms in buffer to its initial value.
@@ -2649,8 +2658,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_2_Quality_Obj_ArelLat_rms(buf) \
-	SET_Obj_2_Quality_Obj_ArelLat_rms(buf, 0)
+#define INITSIG_Obj_2_Quality_Obj_ArelLat_rms(buf) SET_Obj_2_Quality_Obj_ArelLat_rms(buf, 0)
 
 /**
  * Signal Obj_ArelLat_rms value conversion with 16 bit factor and offset.
@@ -2663,8 +2671,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_2_Quality_Obj_ArelLat_rms(x, fmt) \
-	((x) * fmt)
+#define CALC_Obj_2_Quality_Obj_ArelLat_rms(x, fmt) ((x) * fmt)
 
 /**
  * Signal Obj_ArelLat_rms raw initial value.
@@ -3033,10 +3040,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_2_Quality_Obj_VrelLong_rms(buf, val) \
-	{                                                  \
-		buf[2] &= ~(0x1f << 1);                          \
-		buf[2] |= (((ubyte)(val) >> 0) & 0x1f) << 1;     \
-	}
+  {                                                  \
+    buf[2] &= ~(0x1f << 1);                          \
+    buf[2] |= (((ubyte)(val) >> 0) & 0x1f) << 1;     \
+  }
 
 /**
  * Set signal Obj_VrelLong_rms in buffer to its initial value.
@@ -3044,8 +3051,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_2_Quality_Obj_VrelLong_rms(buf) \
-	SET_Obj_2_Quality_Obj_VrelLong_rms(buf, 0)
+#define INITSIG_Obj_2_Quality_Obj_VrelLong_rms(buf) SET_Obj_2_Quality_Obj_VrelLong_rms(buf, 0)
 
 /**
  * Signal Obj_VrelLong_rms value conversion with 16 bit factor and offset.
@@ -3058,8 +3064,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_2_Quality_Obj_VrelLong_rms(x, fmt) \
-	((x) * fmt)
+#define CALC_Obj_2_Quality_Obj_VrelLong_rms(x, fmt) ((x) * fmt)
 
 /**
  * Signal Obj_VrelLong_rms raw initial value.
@@ -3417,7 +3422,8 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_2_Quality_Obj_VrelLat_rms(buf) (0 | (ubyte)(+(ubyte)((buf[2] >> 0) & 0x01) << 4) | (ubyte)(+(ubyte)((buf[3] >> 4) & 0x0f) << 0))
+#define GET_Obj_2_Quality_Obj_VrelLat_rms(buf) \
+  (0 | (ubyte)(+(ubyte)((buf[2] >> 0) & 0x01) << 4) | (ubyte)(+(ubyte)((buf[3] >> 4) & 0x0f) << 0))
 
 /**
  * Set signal Obj_VrelLat_rms in buffer.
@@ -3428,12 +3434,12 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_2_Quality_Obj_VrelLat_rms(buf, val) \
-	{                                                 \
-		buf[2] &= ~(0x01 << 0);                         \
-		buf[2] |= (((ubyte)(val) >> 4) & 0x01) << 0;    \
-		buf[3] &= ~(0x0f << 4);                         \
-		buf[3] |= (((ubyte)(val) >> 0) & 0x0f) << 4;    \
-	}
+  {                                                 \
+    buf[2] &= ~(0x01 << 0);                         \
+    buf[2] |= (((ubyte)(val) >> 4) & 0x01) << 0;    \
+    buf[3] &= ~(0x0f << 4);                         \
+    buf[3] |= (((ubyte)(val) >> 0) & 0x0f) << 4;    \
+  }
 
 /**
  * Set signal Obj_VrelLat_rms in buffer to its initial value.
@@ -3441,8 +3447,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_2_Quality_Obj_VrelLat_rms(buf) \
-	SET_Obj_2_Quality_Obj_VrelLat_rms(buf, 0)
+#define INITSIG_Obj_2_Quality_Obj_VrelLat_rms(buf) SET_Obj_2_Quality_Obj_VrelLat_rms(buf, 0)
 
 /**
  * Signal Obj_VrelLat_rms value conversion with 16 bit factor and offset.
@@ -3455,8 +3460,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_2_Quality_Obj_VrelLat_rms(x, fmt) \
-	((x) * fmt)
+#define CALC_Obj_2_Quality_Obj_VrelLat_rms(x, fmt) ((x) * fmt)
 
 /**
  * Signal Obj_VrelLat_rms raw initial value.
@@ -3814,7 +3818,8 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_2_Quality_Obj_Orientation_rms(buf) (0 | (ubyte)(+(ubyte)((buf[4] >> 0) & 0x03) << 3) | (ubyte)(+(ubyte)((buf[5] >> 5) & 0x07) << 0))
+#define GET_Obj_2_Quality_Obj_Orientation_rms(buf) \
+  (0 | (ubyte)(+(ubyte)((buf[4] >> 0) & 0x03) << 3) | (ubyte)(+(ubyte)((buf[5] >> 5) & 0x07) << 0))
 
 /**
  * Set signal Obj_Orientation_rms in buffer.
@@ -3825,12 +3830,12 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_2_Quality_Obj_Orientation_rms(buf, val) \
-	{                                                     \
-		buf[4] &= ~(0x03 << 0);                             \
-		buf[4] |= (((ubyte)(val) >> 3) & 0x03) << 0;        \
-		buf[5] &= ~(0x07 << 5);                             \
-		buf[5] |= (((ubyte)(val) >> 0) & 0x07) << 5;        \
-	}
+  {                                                     \
+    buf[4] &= ~(0x03 << 0);                             \
+    buf[4] |= (((ubyte)(val) >> 3) & 0x03) << 0;        \
+    buf[5] &= ~(0x07 << 5);                             \
+    buf[5] |= (((ubyte)(val) >> 0) & 0x07) << 5;        \
+  }
 
 /**
  * Set signal Obj_Orientation_rms in buffer to its initial value.
@@ -3838,8 +3843,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_2_Quality_Obj_Orientation_rms(buf) \
-	SET_Obj_2_Quality_Obj_Orientation_rms(buf, 0)
+#define INITSIG_Obj_2_Quality_Obj_Orientation_rms(buf) SET_Obj_2_Quality_Obj_Orientation_rms(buf, 0)
 
 /**
  * Signal Obj_Orientation_rms value conversion with 16 bit factor and offset.
@@ -3852,8 +3856,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_2_Quality_Obj_Orientation_rms(x, fmt) \
-	((x) * fmt)
+#define CALC_Obj_2_Quality_Obj_Orientation_rms(x, fmt) ((x) * fmt)
 
 /**
  * Signal Obj_Orientation_rms raw initial value.
@@ -4222,10 +4225,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_2_Quality_Obj_DistLong_rms(buf, val) \
-	{                                                  \
-		buf[1] &= ~(0x1f << 3);                          \
-		buf[1] |= (((ubyte)(val) >> 0) & 0x1f) << 3;     \
-	}
+  {                                                  \
+    buf[1] &= ~(0x1f << 3);                          \
+    buf[1] |= (((ubyte)(val) >> 0) & 0x1f) << 3;     \
+  }
 
 /**
  * Set signal Obj_DistLong_rms in buffer to its initial value.
@@ -4233,8 +4236,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_2_Quality_Obj_DistLong_rms(buf) \
-	SET_Obj_2_Quality_Obj_DistLong_rms(buf, 0)
+#define INITSIG_Obj_2_Quality_Obj_DistLong_rms(buf) SET_Obj_2_Quality_Obj_DistLong_rms(buf, 0)
 
 /**
  * Signal Obj_DistLong_rms value conversion with 16 bit factor and offset.
@@ -4247,8 +4249,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_2_Quality_Obj_DistLong_rms(x, fmt) \
-	((x) * fmt)
+#define CALC_Obj_2_Quality_Obj_DistLong_rms(x, fmt) ((x) * fmt)
 
 /**
  * Signal Obj_DistLong_rms raw initial value.
@@ -4606,7 +4607,8 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_2_Quality_Obj_DistLat_rms(buf) (0 | (ubyte)(+(ubyte)((buf[1] >> 0) & 0x07) << 2) | (ubyte)(+(ubyte)((buf[2] >> 6) & 0x03) << 0))
+#define GET_Obj_2_Quality_Obj_DistLat_rms(buf) \
+  (0 | (ubyte)(+(ubyte)((buf[1] >> 0) & 0x07) << 2) | (ubyte)(+(ubyte)((buf[2] >> 6) & 0x03) << 0))
 
 /**
  * Set signal Obj_DistLat_rms in buffer.
@@ -4617,12 +4619,12 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_2_Quality_Obj_DistLat_rms(buf, val) \
-	{                                                 \
-		buf[1] &= ~(0x07 << 0);                         \
-		buf[1] |= (((ubyte)(val) >> 2) & 0x07) << 0;    \
-		buf[2] &= ~(0x03 << 6);                         \
-		buf[2] |= (((ubyte)(val) >> 0) & 0x03) << 6;    \
-	}
+  {                                                 \
+    buf[1] &= ~(0x07 << 0);                         \
+    buf[1] |= (((ubyte)(val) >> 2) & 0x07) << 0;    \
+    buf[2] &= ~(0x03 << 6);                         \
+    buf[2] |= (((ubyte)(val) >> 0) & 0x03) << 6;    \
+  }
 
 /**
  * Set signal Obj_DistLat_rms in buffer to its initial value.
@@ -4630,8 +4632,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_2_Quality_Obj_DistLat_rms(buf) \
-	SET_Obj_2_Quality_Obj_DistLat_rms(buf, 0)
+#define INITSIG_Obj_2_Quality_Obj_DistLat_rms(buf) SET_Obj_2_Quality_Obj_DistLat_rms(buf, 0)
 
 /**
  * Signal Obj_DistLat_rms value conversion with 16 bit factor and offset.
@@ -4644,8 +4645,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_2_Quality_Obj_DistLat_rms(x, fmt) \
-	((x) * fmt)
+#define CALC_Obj_2_Quality_Obj_DistLat_rms(x, fmt) ((x) * fmt)
 
 /**
  * Signal Obj_DistLat_rms raw initial value.
@@ -5012,10 +5012,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_2_Quality_Obj_ID(buf, val)       \
-	{                                              \
-		buf[0] &= ~(0xff << 0);                      \
-		buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-	}
+  {                                              \
+    buf[0] &= ~(0xff << 0);                      \
+    buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
+  }
 
 /**
  * Set signal Obj_ID in buffer to its initial value.
@@ -5023,8 +5023,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_2_Quality_Obj_ID(buf) \
-	SET_Obj_2_Quality_Obj_ID(buf, 0)
+#define INITSIG_Obj_2_Quality_Obj_ID(buf) SET_Obj_2_Quality_Obj_ID(buf, 0)
 
 /**
  * Signal Obj_ID value conversion with 16 bit factor and offset.
@@ -5037,8 +5036,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_2_Quality_Obj_ID(x, fmt) \
-	((x) * fmt)
+#define CALC_Obj_2_Quality_Obj_ID(x, fmt) ((x) * fmt)
 
 /**
  * Signal Obj_ID raw initial value.
@@ -5113,10 +5111,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_3_Extended_Obj_Class(buf, val)   \
-	{                                              \
-		buf[3] &= ~(0x07 << 0);                      \
-		buf[3] |= (((ubyte)(val) >> 0) & 0x07) << 0; \
-	}
+  {                                              \
+    buf[3] &= ~(0x07 << 0);                      \
+    buf[3] |= (((ubyte)(val) >> 0) & 0x07) << 0; \
+  }
 
 /**
  * Set signal Obj_Class in buffer to its initial value.
@@ -5124,8 +5122,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_3_Extended_Obj_Class(buf) \
-	SET_Obj_3_Extended_Obj_Class(buf, 0)
+#define INITSIG_Obj_3_Extended_Obj_Class(buf) SET_Obj_3_Extended_Obj_Class(buf, 0)
 
 /**
  * Signal Obj_Class value conversion with 16 bit factor and offset.
@@ -5138,8 +5135,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_3_Extended_Obj_Class(x, fmt) \
-	((x) * fmt)
+#define CALC_Obj_3_Extended_Obj_Class(x, fmt) ((x) * fmt)
 
 /**
  * Signal Obj_Class raw initial value.
@@ -5267,7 +5263,8 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_3_Extended_Obj_ArelLat(buf) (0 | (uword)(+(uword)((buf[2] >> 0) & 0x1f) << 4) | (ubyte)(+(ubyte)((buf[3] >> 4) & 0x0f) << 0))
+#define GET_Obj_3_Extended_Obj_ArelLat(buf) \
+  (0 | (uword)(+(uword)((buf[2] >> 0) & 0x1f) << 4) | (ubyte)(+(ubyte)((buf[3] >> 4) & 0x0f) << 0))
 
 /**
  * Set signal Obj_ArelLat in buffer.
@@ -5278,12 +5275,12 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_3_Extended_Obj_ArelLat(buf, val)        \
-	{                                                     \
-		buf[2] &= ~(0x1f << 0);                             \
-		buf[2] |= ((ubyte)((uword)(val) >> 4) & 0x1f) << 0; \
-		buf[3] &= ~(0x0f << 4);                             \
-		buf[3] |= (((ubyte)(val) >> 0) & 0x0f) << 4;        \
-	}
+  {                                                     \
+    buf[2] &= ~(0x1f << 0);                             \
+    buf[2] |= ((ubyte)((uword)(val) >> 4) & 0x1f) << 0; \
+    buf[3] &= ~(0x0f << 4);                             \
+    buf[3] |= (((ubyte)(val) >> 0) & 0x0f) << 4;        \
+  }
 
 /**
  * Set signal Obj_ArelLat in buffer to its initial value.
@@ -5291,8 +5288,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_3_Extended_Obj_ArelLat(buf) \
-	SET_Obj_3_Extended_Obj_ArelLat(buf, 250)
+#define INITSIG_Obj_3_Extended_Obj_ArelLat(buf) SET_Obj_3_Extended_Obj_ArelLat(buf, 250)
 
 /**
  * Signal Obj_ArelLat value conversion with 16 bit factor and offset.
@@ -5305,8 +5301,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_3_Extended_Obj_ArelLat(x, fmt) \
-	((x) * fmt / 100 + fmt * 5 / (-2))
+#define CALC_Obj_3_Extended_Obj_ArelLat(x, fmt) ((x) * fmt / 100 + fmt * 5 / (-2))
 
 /**
  * Signal Obj_ArelLat raw initial value.
@@ -5379,10 +5374,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_3_Extended_Obj_ID(buf, val)      \
-	{                                              \
-		buf[0] &= ~(0xff << 0);                      \
-		buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-	}
+  {                                              \
+    buf[0] &= ~(0xff << 0);                      \
+    buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
+  }
 
 /**
  * Set signal Obj_ID in buffer to its initial value.
@@ -5390,8 +5385,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_3_Extended_Obj_ID(buf) \
-	SET_Obj_3_Extended_Obj_ID(buf, 0)
+#define INITSIG_Obj_3_Extended_Obj_ID(buf) SET_Obj_3_Extended_Obj_ID(buf, 0)
 
 /**
  * Signal Obj_ID value conversion with 16 bit factor and offset.
@@ -5404,8 +5398,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_3_Extended_Obj_ID(x, fmt) \
-	((x) * fmt)
+#define CALC_Obj_3_Extended_Obj_ID(x, fmt) ((x) * fmt)
 
 /**
  * Signal Obj_ID raw initial value.
@@ -5467,7 +5460,8 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_3_Extended_Obj_OrientationAngle(buf) (0 | (uword)(+(uword)((buf[4] >> 0) & 0xff) << 2) | (ubyte)(+(ubyte)((buf[5] >> 6) & 0x03) << 0))
+#define GET_Obj_3_Extended_Obj_OrientationAngle(buf) \
+  (0 | (uword)(+(uword)((buf[4] >> 0) & 0xff) << 2) | (ubyte)(+(ubyte)((buf[5] >> 6) & 0x03) << 0))
 
 /**
  * Set signal Obj_OrientationAngle in buffer.
@@ -5478,12 +5472,12 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_3_Extended_Obj_OrientationAngle(buf, val) \
-	{                                                       \
-		buf[4] &= ~(0xff << 0);                               \
-		buf[4] |= ((ubyte)((uword)(val) >> 2) & 0xff) << 0;   \
-		buf[5] &= ~(0x03 << 6);                               \
-		buf[5] |= (((ubyte)(val) >> 0) & 0x03) << 6;          \
-	}
+  {                                                       \
+    buf[4] &= ~(0xff << 0);                               \
+    buf[4] |= ((ubyte)((uword)(val) >> 2) & 0xff) << 0;   \
+    buf[5] &= ~(0x03 << 6);                               \
+    buf[5] |= (((ubyte)(val) >> 0) & 0x03) << 6;          \
+  }
 
 /**
  * Set signal Obj_OrientationAngle in buffer to its initial value.
@@ -5491,8 +5485,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_3_Extended_Obj_OrientationAngle(buf) \
-	SET_Obj_3_Extended_Obj_OrientationAngle(buf, 450)
+#define INITSIG_Obj_3_Extended_Obj_OrientationAngle(buf) SET_Obj_3_Extended_Obj_OrientationAngle(buf, 450)
 
 /**
  * Signal Obj_OrientationAngle value conversion with 16 bit factor and offset.
@@ -5505,8 +5498,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_3_Extended_Obj_OrientationAngle(x, fmt) \
-	((x) * fmt * 2 / 5 + fmt * (-180))
+#define CALC_Obj_3_Extended_Obj_OrientationAngle(x, fmt) ((x) * fmt * 2 / 5 + fmt * (-180))
 
 /**
  * Signal Obj_OrientationAngle raw initial value.
@@ -5579,10 +5571,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_3_Extended_Obj_Width(buf, val)   \
-	{                                              \
-		buf[7] &= ~(0xff << 0);                      \
-		buf[7] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-	}
+  {                                              \
+    buf[7] &= ~(0xff << 0);                      \
+    buf[7] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
+  }
 
 /**
  * Set signal Obj_Width in buffer to its initial value.
@@ -5590,8 +5582,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_3_Extended_Obj_Width(buf) \
-	SET_Obj_3_Extended_Obj_Width(buf, 0)
+#define INITSIG_Obj_3_Extended_Obj_Width(buf) SET_Obj_3_Extended_Obj_Width(buf, 0)
 
 /**
  * Signal Obj_Width value conversion with 16 bit factor and offset.
@@ -5604,8 +5595,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_3_Extended_Obj_Width(x, fmt) \
-	((x) * fmt / 5)
+#define CALC_Obj_3_Extended_Obj_Width(x, fmt) ((x) * fmt / 5)
 
 /**
  * Signal Obj_Width raw initial value.
@@ -5678,10 +5668,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_3_Extended_Obj_Length(buf, val)  \
-	{                                              \
-		buf[6] &= ~(0xff << 0);                      \
-		buf[6] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-	}
+  {                                              \
+    buf[6] &= ~(0xff << 0);                      \
+    buf[6] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
+  }
 
 /**
  * Set signal Obj_Length in buffer to its initial value.
@@ -5689,8 +5679,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_3_Extended_Obj_Length(buf) \
-	SET_Obj_3_Extended_Obj_Length(buf, 0)
+#define INITSIG_Obj_3_Extended_Obj_Length(buf) SET_Obj_3_Extended_Obj_Length(buf, 0)
 
 /**
  * Signal Obj_Length value conversion with 16 bit factor and offset.
@@ -5703,8 +5692,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_3_Extended_Obj_Length(x, fmt) \
-	((x) * fmt / 5)
+#define CALC_Obj_3_Extended_Obj_Length(x, fmt) ((x) * fmt / 5)
 
 /**
  * Signal Obj_Length raw initial value.
@@ -5766,7 +5754,8 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_3_Extended_Obj_ArelLong(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0xff) << 3) | (ubyte)(+(ubyte)((buf[2] >> 5) & 0x07) << 0))
+#define GET_Obj_3_Extended_Obj_ArelLong(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0xff) << 3) | (ubyte)(+(ubyte)((buf[2] >> 5) & 0x07) << 0))
 
 /**
  * Set signal Obj_ArelLong in buffer.
@@ -5777,12 +5766,12 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_3_Extended_Obj_ArelLong(buf, val)       \
-	{                                                     \
-		buf[1] &= ~(0xff << 0);                             \
-		buf[1] |= ((ubyte)((uword)(val) >> 3) & 0xff) << 0; \
-		buf[2] &= ~(0x07 << 5);                             \
-		buf[2] |= (((ubyte)(val) >> 0) & 0x07) << 5;        \
-	}
+  {                                                     \
+    buf[1] &= ~(0xff << 0);                             \
+    buf[1] |= ((ubyte)((uword)(val) >> 3) & 0xff) << 0; \
+    buf[2] &= ~(0x07 << 5);                             \
+    buf[2] |= (((ubyte)(val) >> 0) & 0x07) << 5;        \
+  }
 
 /**
  * Set signal Obj_ArelLong in buffer to its initial value.
@@ -5790,8 +5779,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_3_Extended_Obj_ArelLong(buf) \
-	SET_Obj_3_Extended_Obj_ArelLong(buf, 1000)
+#define INITSIG_Obj_3_Extended_Obj_ArelLong(buf) SET_Obj_3_Extended_Obj_ArelLong(buf, 1000)
 
 /**
  * Signal Obj_ArelLong value conversion with 16 bit factor and offset.
@@ -5804,8 +5792,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_3_Extended_Obj_ArelLong(x, fmt) \
-	((x) * fmt / 100 + fmt * (-10))
+#define CALC_Obj_3_Extended_Obj_ArelLong(x, fmt) ((x) * fmt / 100 + fmt * (-10))
 
 /**
  * Signal Obj_ArelLong raw initial value.
@@ -5878,10 +5865,10 @@
  *	The raw value to set the signal to
  */
 #define SET_CollDetRegionState_CollDetRegState_WarningLevel(buf, val) \
-	{                                                                   \
-		buf[0] &= ~(0x03 << 3);                                           \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x03) << 3;                      \
-	}
+  {                                                                   \
+    buf[0] &= ~(0x03 << 3);                                           \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x03) << 3;                      \
+  }
 
 /**
  * Set signal CollDetRegState_WarningLevel in buffer to its initial value.
@@ -5890,7 +5877,7 @@
  *	The can message buffer to initialise
  */
 #define INITSIG_CollDetRegionState_CollDetRegState_WarningLevel(buf) \
-	SET_CollDetRegionState_CollDetRegState_WarningLevel(buf, 0)
+  SET_CollDetRegionState_CollDetRegState_WarningLevel(buf, 0)
 
 /**
  * Signal CollDetRegState_WarningLevel value conversion with 16 bit factor and offset.
@@ -5903,8 +5890,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_CollDetRegionState_CollDetRegState_WarningLevel(x, fmt) \
-	((x) * fmt)
+#define CALC_CollDetRegionState_CollDetRegState_WarningLevel(x, fmt) ((x) * fmt)
 
 /**
  * Signal CollDetRegState_WarningLevel raw initial value.
@@ -6019,10 +6005,10 @@
  *	The raw value to set the signal to
  */
 #define SET_CollDetRegionState_CollDetRegState_NofObjects(buf, val) \
-	{                                                                 \
-		buf[7] &= ~(0xff << 0);                                         \
-		buf[7] |= (((ubyte)(val) >> 0) & 0xff) << 0;                    \
-	}
+  {                                                                 \
+    buf[7] &= ~(0xff << 0);                                         \
+    buf[7] |= (((ubyte)(val) >> 0) & 0xff) << 0;                    \
+  }
 
 /**
  * Set signal CollDetRegState_NofObjects in buffer to its initial value.
@@ -6031,7 +6017,7 @@
  *	The can message buffer to initialise
  */
 #define INITSIG_CollDetRegionState_CollDetRegState_NofObjects(buf) \
-	SET_CollDetRegionState_CollDetRegState_NofObjects(buf, 0)
+  SET_CollDetRegionState_CollDetRegState_NofObjects(buf, 0)
 
 /**
  * Signal CollDetRegState_NofObjects value conversion with 16 bit factor and offset.
@@ -6044,8 +6030,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_CollDetRegionState_CollDetRegState_NofObjects(x, fmt) \
-	((x) * fmt)
+#define CALC_CollDetRegionState_CollDetRegState_NofObjects(x, fmt) ((x) * fmt)
 
 /**
  * Signal CollDetRegState_NofObjects raw initial value.
@@ -6116,10 +6101,10 @@
  *	The raw value to set the signal to
  */
 #define SET_CollDetRegionState_CollDetRegState_RegionID(buf, val) \
-	{                                                               \
-		buf[0] &= ~(0x07 << 5);                                       \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x07) << 5;                  \
-	}
+  {                                                               \
+    buf[0] &= ~(0x07 << 5);                                       \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x07) << 5;                  \
+  }
 
 /**
  * Set signal CollDetRegState_RegionID in buffer to its initial value.
@@ -6127,8 +6112,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_CollDetRegionState_CollDetRegState_RegionID(buf) \
-	SET_CollDetRegionState_CollDetRegState_RegionID(buf, 0)
+#define INITSIG_CollDetRegionState_CollDetRegState_RegionID(buf) SET_CollDetRegionState_CollDetRegState_RegionID(buf, 0)
 
 /**
  * Signal CollDetRegState_RegionID value conversion with 16 bit factor and offset.
@@ -6141,8 +6125,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_CollDetRegionState_CollDetRegState_RegionID(x, fmt) \
-	((x) * fmt)
+#define CALC_CollDetRegionState_CollDetRegState_RegionID(x, fmt) ((x) * fmt)
 
 /**
  * Signal CollDetRegState_RegionID raw initial value.
@@ -6202,7 +6185,8 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetRegionState_CollDetRegState_Point2Y(buf) (0 | (uword)(+(uword)((buf[5] >> 0) & 0x07) << 8) | (ubyte)(+(ubyte)((buf[6] >> 0) & 0xff) << 0))
+#define GET_CollDetRegionState_CollDetRegState_Point2Y(buf) \
+  (0 | (uword)(+(uword)((buf[5] >> 0) & 0x07) << 8) | (ubyte)(+(ubyte)((buf[6] >> 0) & 0xff) << 0))
 
 /**
  * Set signal CollDetRegState_Point2Y in buffer.
@@ -6213,12 +6197,12 @@
  *	The raw value to set the signal to
  */
 #define SET_CollDetRegionState_CollDetRegState_Point2Y(buf, val) \
-	{                                                              \
-		buf[5] &= ~(0x07 << 0);                                      \
-		buf[5] |= ((ubyte)((uword)(val) >> 8) & 0x07) << 0;          \
-		buf[6] &= ~(0xff << 0);                                      \
-		buf[6] |= (((ubyte)(val) >> 0) & 0xff) << 0;                 \
-	}
+  {                                                              \
+    buf[5] &= ~(0x07 << 0);                                      \
+    buf[5] |= ((ubyte)((uword)(val) >> 8) & 0x07) << 0;          \
+    buf[6] &= ~(0xff << 0);                                      \
+    buf[6] |= (((ubyte)(val) >> 0) & 0xff) << 0;                 \
+  }
 
 /**
  * Set signal CollDetRegState_Point2Y in buffer to its initial value.
@@ -6227,7 +6211,7 @@
  *	The can message buffer to initialise
  */
 #define INITSIG_CollDetRegionState_CollDetRegState_Point2Y(buf) \
-	SET_CollDetRegionState_CollDetRegState_Point2Y(buf, 1023)
+  SET_CollDetRegionState_CollDetRegState_Point2Y(buf, 1023)
 
 /**
  * Signal CollDetRegState_Point2Y value conversion with 16 bit factor and offset.
@@ -6240,8 +6224,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_CollDetRegionState_CollDetRegState_Point2Y(x, fmt) \
-	((x) * fmt / 5 + fmt * (-1024) / 5)
+#define CALC_CollDetRegionState_CollDetRegState_Point2Y(x, fmt) ((x) * fmt / 5 + fmt * (-1024) / 5)
 
 /**
  * Signal CollDetRegState_Point2Y raw initial value.
@@ -6301,7 +6284,8 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetRegionState_CollDetRegState_Point2X(buf) (0 | (uword)(+(uword)((buf[4] >> 0) & 0xff) << 5) | (ubyte)(+(ubyte)((buf[5] >> 3) & 0x1f) << 0))
+#define GET_CollDetRegionState_CollDetRegState_Point2X(buf) \
+  (0 | (uword)(+(uword)((buf[4] >> 0) & 0xff) << 5) | (ubyte)(+(ubyte)((buf[5] >> 3) & 0x1f) << 0))
 
 /**
  * Set signal CollDetRegState_Point2X in buffer.
@@ -6312,12 +6296,12 @@
  *	The raw value to set the signal to
  */
 #define SET_CollDetRegionState_CollDetRegState_Point2X(buf, val) \
-	{                                                              \
-		buf[4] &= ~(0xff << 0);                                      \
-		buf[4] |= ((ubyte)((uword)(val) >> 5) & 0xff) << 0;          \
-		buf[5] &= ~(0x1f << 3);                                      \
-		buf[5] |= (((ubyte)(val) >> 0) & 0x1f) << 3;                 \
-	}
+  {                                                              \
+    buf[4] &= ~(0xff << 0);                                      \
+    buf[4] |= ((ubyte)((uword)(val) >> 5) & 0xff) << 0;          \
+    buf[5] &= ~(0x1f << 3);                                      \
+    buf[5] |= (((ubyte)(val) >> 0) & 0x1f) << 3;                 \
+  }
 
 /**
  * Set signal CollDetRegState_Point2X in buffer to its initial value.
@@ -6326,7 +6310,7 @@
  *	The can message buffer to initialise
  */
 #define INITSIG_CollDetRegionState_CollDetRegState_Point2X(buf) \
-	SET_CollDetRegionState_CollDetRegState_Point2X(buf, 2500)
+  SET_CollDetRegionState_CollDetRegState_Point2X(buf, 2500)
 
 /**
  * Signal CollDetRegState_Point2X value conversion with 16 bit factor and offset.
@@ -6339,8 +6323,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_CollDetRegionState_CollDetRegState_Point2X(x, fmt) \
-	((x) * fmt / 5 + fmt * (-500))
+#define CALC_CollDetRegionState_CollDetRegState_Point2X(x, fmt) ((x) * fmt / 5 + fmt * (-500))
 
 /**
  * Signal CollDetRegState_Point2X raw initial value.
@@ -6400,7 +6383,8 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetRegionState_CollDetRegState_Point1Y(buf) (0 | (uword)(+(uword)((buf[2] >> 0) & 0x07) << 8) | (ubyte)(+(ubyte)((buf[3] >> 0) & 0xff) << 0))
+#define GET_CollDetRegionState_CollDetRegState_Point1Y(buf) \
+  (0 | (uword)(+(uword)((buf[2] >> 0) & 0x07) << 8) | (ubyte)(+(ubyte)((buf[3] >> 0) & 0xff) << 0))
 
 /**
  * Set signal CollDetRegState_Point1Y in buffer.
@@ -6411,12 +6395,12 @@
  *	The raw value to set the signal to
  */
 #define SET_CollDetRegionState_CollDetRegState_Point1Y(buf, val) \
-	{                                                              \
-		buf[2] &= ~(0x07 << 0);                                      \
-		buf[2] |= ((ubyte)((uword)(val) >> 8) & 0x07) << 0;          \
-		buf[3] &= ~(0xff << 0);                                      \
-		buf[3] |= (((ubyte)(val) >> 0) & 0xff) << 0;                 \
-	}
+  {                                                              \
+    buf[2] &= ~(0x07 << 0);                                      \
+    buf[2] |= ((ubyte)((uword)(val) >> 8) & 0x07) << 0;          \
+    buf[3] &= ~(0xff << 0);                                      \
+    buf[3] |= (((ubyte)(val) >> 0) & 0xff) << 0;                 \
+  }
 
 /**
  * Set signal CollDetRegState_Point1Y in buffer to its initial value.
@@ -6425,7 +6409,7 @@
  *	The can message buffer to initialise
  */
 #define INITSIG_CollDetRegionState_CollDetRegState_Point1Y(buf) \
-	SET_CollDetRegionState_CollDetRegState_Point1Y(buf, 1023)
+  SET_CollDetRegionState_CollDetRegState_Point1Y(buf, 1023)
 
 /**
  * Signal CollDetRegState_Point1Y value conversion with 16 bit factor and offset.
@@ -6438,8 +6422,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_CollDetRegionState_CollDetRegState_Point1Y(x, fmt) \
-	((x) * fmt / 5 + fmt * (-1024) / 5)
+#define CALC_CollDetRegionState_CollDetRegState_Point1Y(x, fmt) ((x) * fmt / 5 + fmt * (-1024) / 5)
 
 /**
  * Signal CollDetRegState_Point1Y raw initial value.
@@ -6499,7 +6482,8 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetRegionState_CollDetRegState_Point1X(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0xff) << 5) | (ubyte)(+(ubyte)((buf[2] >> 3) & 0x1f) << 0))
+#define GET_CollDetRegionState_CollDetRegState_Point1X(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0xff) << 5) | (ubyte)(+(ubyte)((buf[2] >> 3) & 0x1f) << 0))
 
 /**
  * Set signal CollDetRegState_Point1X in buffer.
@@ -6510,12 +6494,12 @@
  *	The raw value to set the signal to
  */
 #define SET_CollDetRegionState_CollDetRegState_Point1X(buf, val) \
-	{                                                              \
-		buf[1] &= ~(0xff << 0);                                      \
-		buf[1] |= ((ubyte)((uword)(val) >> 5) & 0xff) << 0;          \
-		buf[2] &= ~(0x1f << 3);                                      \
-		buf[2] |= (((ubyte)(val) >> 0) & 0x1f) << 3;                 \
-	}
+  {                                                              \
+    buf[1] &= ~(0xff << 0);                                      \
+    buf[1] |= ((ubyte)((uword)(val) >> 5) & 0xff) << 0;          \
+    buf[2] &= ~(0x1f << 3);                                      \
+    buf[2] |= (((ubyte)(val) >> 0) & 0x1f) << 3;                 \
+  }
 
 /**
  * Set signal CollDetRegState_Point1X in buffer to its initial value.
@@ -6524,7 +6508,7 @@
  *	The can message buffer to initialise
  */
 #define INITSIG_CollDetRegionState_CollDetRegState_Point1X(buf) \
-	SET_CollDetRegionState_CollDetRegState_Point1X(buf, 2500)
+  SET_CollDetRegionState_CollDetRegState_Point1X(buf, 2500)
 
 /**
  * Signal CollDetRegState_Point1X value conversion with 16 bit factor and offset.
@@ -6537,8 +6521,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_CollDetRegionState_CollDetRegState_Point1X(x, fmt) \
-	((x) * fmt / 5 + fmt * (-500))
+#define CALC_CollDetRegionState_CollDetRegState_Point1X(x, fmt) ((x) * fmt / 5 + fmt * (-500))
 
 /**
  * Signal CollDetRegState_Point1X raw initial value.
@@ -6611,10 +6594,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_4_Warning_Obj_CollDetRegionBitfield(buf, val) \
-	{                                                           \
-		buf[1] &= ~(0xff << 0);                                   \
-		buf[1] |= (((ubyte)(val) >> 0) & 0xff) << 0;              \
-	}
+  {                                                           \
+    buf[1] &= ~(0xff << 0);                                   \
+    buf[1] |= (((ubyte)(val) >> 0) & 0xff) << 0;              \
+  }
 
 /**
  * Set signal Obj_CollDetRegionBitfield in buffer to its initial value.
@@ -6622,8 +6605,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_4_Warning_Obj_CollDetRegionBitfield(buf) \
-	SET_Obj_4_Warning_Obj_CollDetRegionBitfield(buf, 0)
+#define INITSIG_Obj_4_Warning_Obj_CollDetRegionBitfield(buf) SET_Obj_4_Warning_Obj_CollDetRegionBitfield(buf, 0)
 
 /**
  * Signal Obj_CollDetRegionBitfield value conversion with 16 bit factor and offset.
@@ -6636,8 +6618,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_4_Warning_Obj_CollDetRegionBitfield(x, fmt) \
-	((x) * fmt)
+#define CALC_Obj_4_Warning_Obj_CollDetRegionBitfield(x, fmt) ((x) * fmt)
 
 /**
  * Signal Obj_CollDetRegionBitfield raw initial value.
@@ -6710,10 +6691,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_4_Warning_Obj_ID(buf, val)       \
-	{                                              \
-		buf[0] &= ~(0xff << 0);                      \
-		buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-	}
+  {                                              \
+    buf[0] &= ~(0xff << 0);                      \
+    buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
+  }
 
 /**
  * Set signal Obj_ID in buffer to its initial value.
@@ -6721,8 +6702,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_4_Warning_Obj_ID(buf) \
-	SET_Obj_4_Warning_Obj_ID(buf, 0)
+#define INITSIG_Obj_4_Warning_Obj_ID(buf) SET_Obj_4_Warning_Obj_ID(buf, 0)
 
 /**
  * Signal Obj_ID value conversion with 16 bit factor and offset.
@@ -6735,8 +6715,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_4_Warning_Obj_ID(x, fmt) \
-	((x) * fmt)
+#define CALC_Obj_4_Warning_Obj_ID(x, fmt) ((x) * fmt)
 
 /**
  * Signal Obj_ID raw initial value.
@@ -6809,10 +6788,10 @@
  *	The raw value to set the signal to
  */
 #define SET_CollDetRelayCtrl_CollDetRelayCtrl_Param(buf, val) \
-	{                                                           \
-		buf[0] &= ~(0xff << 0);                                   \
-		buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0;              \
-	}
+  {                                                           \
+    buf[0] &= ~(0xff << 0);                                   \
+    buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0;              \
+  }
 
 /**
  * Set signal CollDetRelayCtrl_Param in buffer to its initial value.
@@ -6820,8 +6799,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_CollDetRelayCtrl_CollDetRelayCtrl_Param(buf) \
-	SET_CollDetRelayCtrl_CollDetRelayCtrl_Param(buf, 0)
+#define INITSIG_CollDetRelayCtrl_CollDetRelayCtrl_Param(buf) SET_CollDetRelayCtrl_CollDetRelayCtrl_Param(buf, 0)
 
 /**
  * Signal CollDetRelayCtrl_Param value conversion with 16 bit factor and offset.
@@ -6834,8 +6812,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_CollDetRelayCtrl_CollDetRelayCtrl_Param(x, fmt) \
-	((x) * fmt)
+#define CALC_CollDetRelayCtrl_CollDetRelayCtrl_Param(x, fmt) ((x) * fmt)
 
 /**
  * Signal CollDetRelayCtrl_Param raw initial value.
@@ -6906,10 +6883,10 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Max_Class(buf, val) \
-	{                                                         \
-		buf[4] &= ~(0xff << 0);                                 \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;            \
-	}
+  {                                                         \
+    buf[4] &= ~(0xff << 0);                                 \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;            \
+  }
 
 /**
  * Set signal FilterState_Max_Class in buffer to its initial value.
@@ -6917,8 +6894,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Max_Class(buf) \
-	SET_FilterState_Cfg_FilterState_Max_Class(buf, 0)
+#define INITSIG_FilterState_Cfg_FilterState_Max_Class(buf) SET_FilterState_Cfg_FilterState_Max_Class(buf, 0)
 
 /**
  * Signal FilterState_Max_Class value conversion with 16 bit factor and offset.
@@ -6931,8 +6907,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Max_Class(x, fmt) \
-	((x) * fmt)
+#define CALC_FilterState_Cfg_FilterState_Max_Class(x, fmt) ((x) * fmt)
 
 /**
  * Signal FilterState_Max_Class raw initial value.
@@ -7003,10 +6978,10 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Min_Class(buf, val) \
-	{                                                         \
-		buf[2] &= ~(0xff << 0);                                 \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;            \
-	}
+  {                                                         \
+    buf[2] &= ~(0xff << 0);                                 \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;            \
+  }
 
 /**
  * Set signal FilterState_Min_Class in buffer to its initial value.
@@ -7014,8 +6989,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Min_Class(buf) \
-	SET_FilterState_Cfg_FilterState_Min_Class(buf, 0)
+#define INITSIG_FilterState_Cfg_FilterState_Min_Class(buf) SET_FilterState_Cfg_FilterState_Min_Class(buf, 0)
 
 /**
  * Signal FilterState_Min_Class value conversion with 16 bit factor and offset.
@@ -7028,8 +7002,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Min_Class(x, fmt) \
-	((x) * fmt)
+#define CALC_FilterState_Cfg_FilterState_Min_Class(x, fmt) ((x) * fmt)
 
 /**
  * Signal FilterState_Min_Class raw initial value.
@@ -7089,7 +7062,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_Y(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Min_Y(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_Y in buffer.
@@ -7100,12 +7074,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Min_Y(buf, val) \
-	{                                                     \
-		buf[1] &= ~(0x0f << 0);                             \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-		buf[2] &= ~(0xff << 0);                             \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
-	}
+  {                                                     \
+    buf[1] &= ~(0x0f << 0);                             \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+    buf[2] &= ~(0xff << 0);                             \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+  }
 
 /**
  * Set signal FilterState_Min_Y in buffer to its initial value.
@@ -7113,8 +7087,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Min_Y(buf) \
-	SET_FilterState_Cfg_FilterState_Min_Y(buf, 2047.5)
+#define INITSIG_FilterState_Cfg_FilterState_Min_Y(buf) SET_FilterState_Cfg_FilterState_Min_Y(buf, 2047.5)
 
 /**
  * Signal FilterState_Min_Y value conversion with 16 bit factor and offset.
@@ -7127,8 +7100,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Min_Y(x, fmt) \
-	((x) * fmt / 5 + fmt * 819 / (-2))
+#define CALC_FilterState_Cfg_FilterState_Min_Y(x, fmt) ((x) * fmt / 5 + fmt * 819 / (-2))
 
 /**
  * Signal FilterState_Min_Y raw initial value.
@@ -7188,7 +7160,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_X(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x1f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Min_X(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x1f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_X in buffer.
@@ -7199,12 +7172,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Min_X(buf, val) \
-	{                                                     \
-		buf[1] &= ~(0x1f << 0);                             \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x1f) << 0; \
-		buf[2] &= ~(0xff << 0);                             \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
-	}
+  {                                                     \
+    buf[1] &= ~(0x1f << 0);                             \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x1f) << 0; \
+    buf[2] &= ~(0xff << 0);                             \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+  }
 
 /**
  * Set signal FilterState_Min_X in buffer to its initial value.
@@ -7212,8 +7185,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Min_X(buf) \
-	SET_FilterState_Cfg_FilterState_Min_X(buf, 2047.5)
+#define INITSIG_FilterState_Cfg_FilterState_Min_X(buf) SET_FilterState_Cfg_FilterState_Min_X(buf, 2047.5)
 
 /**
  * Signal FilterState_Min_X value conversion with 16 bit factor and offset.
@@ -7226,8 +7198,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Min_X(x, fmt) \
-	((x) * fmt / 5 + fmt * (-500))
+#define CALC_FilterState_Cfg_FilterState_Min_X(x, fmt) ((x) * fmt / 5 + fmt * (-500))
 
 /**
  * Signal FilterState_Min_X raw initial value.
@@ -7287,7 +7258,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_VYRightLeft(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Min_VYRightLeft(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_VYRightLeft in buffer.
@@ -7298,12 +7270,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Min_VYRightLeft(buf, val) \
-	{                                                               \
-		buf[1] &= ~(0x0f << 0);                                       \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;           \
-		buf[2] &= ~(0xff << 0);                                       \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;                  \
-	}
+  {                                                               \
+    buf[1] &= ~(0x0f << 0);                                       \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;           \
+    buf[2] &= ~(0xff << 0);                                       \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;                  \
+  }
 
 /**
  * Set signal FilterState_Min_VYRightLeft in buffer to its initial value.
@@ -7311,8 +7283,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Min_VYRightLeft(buf) \
-	SET_FilterState_Cfg_FilterState_Min_VYRightLeft(buf, 0)
+#define INITSIG_FilterState_Cfg_FilterState_Min_VYRightLeft(buf) SET_FilterState_Cfg_FilterState_Min_VYRightLeft(buf, 0)
 
 /**
  * Signal FilterState_Min_VYRightLeft value conversion with 16 bit factor and offset.
@@ -7325,8 +7296,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Min_VYRightLeft(x, fmt) \
-	((x) * fmt * 63 / 2000)
+#define CALC_FilterState_Cfg_FilterState_Min_VYRightLeft(x, fmt) ((x) * fmt * 63 / 2000)
 
 /**
  * Signal FilterState_Min_VYRightLeft raw initial value.
@@ -7386,7 +7356,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_VYLeftRight(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Min_VYLeftRight(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_VYLeftRight in buffer.
@@ -7397,12 +7368,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Min_VYLeftRight(buf, val) \
-	{                                                               \
-		buf[1] &= ~(0x0f << 0);                                       \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;           \
-		buf[2] &= ~(0xff << 0);                                       \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;                  \
-	}
+  {                                                               \
+    buf[1] &= ~(0x0f << 0);                                       \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;           \
+    buf[2] &= ~(0xff << 0);                                       \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;                  \
+  }
 
 /**
  * Set signal FilterState_Min_VYLeftRight in buffer to its initial value.
@@ -7410,8 +7381,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Min_VYLeftRight(buf) \
-	SET_FilterState_Cfg_FilterState_Min_VYLeftRight(buf, 0)
+#define INITSIG_FilterState_Cfg_FilterState_Min_VYLeftRight(buf) SET_FilterState_Cfg_FilterState_Min_VYLeftRight(buf, 0)
 
 /**
  * Signal FilterState_Min_VYLeftRight value conversion with 16 bit factor and offset.
@@ -7424,8 +7394,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Min_VYLeftRight(x, fmt) \
-	((x) * fmt * 63 / 2000)
+#define CALC_FilterState_Cfg_FilterState_Min_VYLeftRight(x, fmt) ((x) * fmt * 63 / 2000)
 
 /**
  * Signal FilterState_Min_VYLeftRight raw initial value.
@@ -7485,7 +7454,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_VXOncome(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Min_VXOncome(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_VXOncome in buffer.
@@ -7496,12 +7466,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Min_VXOncome(buf, val) \
-	{                                                            \
-		buf[1] &= ~(0x0f << 0);                                    \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;        \
-		buf[2] &= ~(0xff << 0);                                    \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;               \
-	}
+  {                                                            \
+    buf[1] &= ~(0x0f << 0);                                    \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;        \
+    buf[2] &= ~(0xff << 0);                                    \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;               \
+  }
 
 /**
  * Set signal FilterState_Min_VXOncome in buffer to its initial value.
@@ -7509,8 +7479,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Min_VXOncome(buf) \
-	SET_FilterState_Cfg_FilterState_Min_VXOncome(buf, 0)
+#define INITSIG_FilterState_Cfg_FilterState_Min_VXOncome(buf) SET_FilterState_Cfg_FilterState_Min_VXOncome(buf, 0)
 
 /**
  * Signal FilterState_Min_VXOncome value conversion with 16 bit factor and offset.
@@ -7523,8 +7492,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Min_VXOncome(x, fmt) \
-	((x) * fmt * 63 / 2000)
+#define CALC_FilterState_Cfg_FilterState_Min_VXOncome(x, fmt) ((x) * fmt * 63 / 2000)
 
 /**
  * Signal FilterState_Min_VXOncome raw initial value.
@@ -7584,7 +7552,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_VXDepart(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Min_VXDepart(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_VXDepart in buffer.
@@ -7595,12 +7564,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Min_VXDepart(buf, val) \
-	{                                                            \
-		buf[1] &= ~(0x0f << 0);                                    \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;        \
-		buf[2] &= ~(0xff << 0);                                    \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;               \
-	}
+  {                                                            \
+    buf[1] &= ~(0x0f << 0);                                    \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;        \
+    buf[2] &= ~(0xff << 0);                                    \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;               \
+  }
 
 /**
  * Set signal FilterState_Min_VXDepart in buffer to its initial value.
@@ -7608,8 +7577,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Min_VXDepart(buf) \
-	SET_FilterState_Cfg_FilterState_Min_VXDepart(buf, 0)
+#define INITSIG_FilterState_Cfg_FilterState_Min_VXDepart(buf) SET_FilterState_Cfg_FilterState_Min_VXDepart(buf, 0)
 
 /**
  * Signal FilterState_Min_VXDepart value conversion with 16 bit factor and offset.
@@ -7622,8 +7590,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Min_VXDepart(x, fmt) \
-	((x) * fmt * 63 / 2000)
+#define CALC_FilterState_Cfg_FilterState_Min_VXDepart(x, fmt) ((x) * fmt * 63 / 2000)
 
 /**
  * Signal FilterState_Min_VXDepart raw initial value.
@@ -7683,7 +7650,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_Y(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Max_Y(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_Y in buffer.
@@ -7694,12 +7662,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Max_Y(buf, val) \
-	{                                                     \
-		buf[3] &= ~(0x0f << 0);                             \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-		buf[4] &= ~(0xff << 0);                             \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
-	}
+  {                                                     \
+    buf[3] &= ~(0x0f << 0);                             \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+    buf[4] &= ~(0xff << 0);                             \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+  }
 
 /**
  * Set signal FilterState_Max_Y in buffer to its initial value.
@@ -7707,8 +7675,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Max_Y(buf) \
-	SET_FilterState_Cfg_FilterState_Max_Y(buf, 2047.5)
+#define INITSIG_FilterState_Cfg_FilterState_Max_Y(buf) SET_FilterState_Cfg_FilterState_Max_Y(buf, 2047.5)
 
 /**
  * Signal FilterState_Max_Y value conversion with 16 bit factor and offset.
@@ -7721,8 +7688,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Max_Y(x, fmt) \
-	((x) * fmt / 5 + fmt * 819 / (-2))
+#define CALC_FilterState_Cfg_FilterState_Max_Y(x, fmt) ((x) * fmt / 5 + fmt * 819 / (-2))
 
 /**
  * Signal FilterState_Max_Y raw initial value.
@@ -7782,7 +7748,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_X(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x1f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Max_X(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x1f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_X in buffer.
@@ -7793,12 +7760,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Max_X(buf, val) \
-	{                                                     \
-		buf[3] &= ~(0x1f << 0);                             \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x1f) << 0; \
-		buf[4] &= ~(0xff << 0);                             \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
-	}
+  {                                                     \
+    buf[3] &= ~(0x1f << 0);                             \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x1f) << 0; \
+    buf[4] &= ~(0xff << 0);                             \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+  }
 
 /**
  * Set signal FilterState_Max_X in buffer to its initial value.
@@ -7806,8 +7773,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Max_X(buf) \
-	SET_FilterState_Cfg_FilterState_Max_X(buf, 2047.5)
+#define INITSIG_FilterState_Cfg_FilterState_Max_X(buf) SET_FilterState_Cfg_FilterState_Max_X(buf, 2047.5)
 
 /**
  * Signal FilterState_Max_X value conversion with 16 bit factor and offset.
@@ -7820,8 +7786,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Max_X(x, fmt) \
-	((x) * fmt / 5 + fmt * (-500))
+#define CALC_FilterState_Cfg_FilterState_Max_X(x, fmt) ((x) * fmt / 5 + fmt * (-500))
 
 /**
  * Signal FilterState_Max_X raw initial value.
@@ -7881,7 +7846,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_VYRightLeft(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Max_VYRightLeft(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_VYRightLeft in buffer.
@@ -7892,12 +7858,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Max_VYRightLeft(buf, val) \
-	{                                                               \
-		buf[3] &= ~(0x0f << 0);                                       \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;           \
-		buf[4] &= ~(0xff << 0);                                       \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;                  \
-	}
+  {                                                               \
+    buf[3] &= ~(0x0f << 0);                                       \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;           \
+    buf[4] &= ~(0xff << 0);                                       \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;                  \
+  }
 
 /**
  * Set signal FilterState_Max_VYRightLeft in buffer to its initial value.
@@ -7905,8 +7871,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Max_VYRightLeft(buf) \
-	SET_FilterState_Cfg_FilterState_Max_VYRightLeft(buf, 0)
+#define INITSIG_FilterState_Cfg_FilterState_Max_VYRightLeft(buf) SET_FilterState_Cfg_FilterState_Max_VYRightLeft(buf, 0)
 
 /**
  * Signal FilterState_Max_VYRightLeft value conversion with 16 bit factor and offset.
@@ -7919,8 +7884,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Max_VYRightLeft(x, fmt) \
-	((x) * fmt * 63 / 2000)
+#define CALC_FilterState_Cfg_FilterState_Max_VYRightLeft(x, fmt) ((x) * fmt * 63 / 2000)
 
 /**
  * Signal FilterState_Max_VYRightLeft raw initial value.
@@ -7980,7 +7944,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_VYLeftRight(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Max_VYLeftRight(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_VYLeftRight in buffer.
@@ -7991,12 +7956,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Max_VYLeftRight(buf, val) \
-	{                                                               \
-		buf[3] &= ~(0x0f << 0);                                       \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;           \
-		buf[4] &= ~(0xff << 0);                                       \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;                  \
-	}
+  {                                                               \
+    buf[3] &= ~(0x0f << 0);                                       \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;           \
+    buf[4] &= ~(0xff << 0);                                       \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;                  \
+  }
 
 /**
  * Set signal FilterState_Max_VYLeftRight in buffer to its initial value.
@@ -8004,8 +7969,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Max_VYLeftRight(buf) \
-	SET_FilterState_Cfg_FilterState_Max_VYLeftRight(buf, 0)
+#define INITSIG_FilterState_Cfg_FilterState_Max_VYLeftRight(buf) SET_FilterState_Cfg_FilterState_Max_VYLeftRight(buf, 0)
 
 /**
  * Signal FilterState_Max_VYLeftRight value conversion with 16 bit factor and offset.
@@ -8018,8 +7982,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Max_VYLeftRight(x, fmt) \
-	((x) * fmt * 63 / 2000)
+#define CALC_FilterState_Cfg_FilterState_Max_VYLeftRight(x, fmt) ((x) * fmt * 63 / 2000)
 
 /**
  * Signal FilterState_Max_VYLeftRight raw initial value.
@@ -8079,7 +8042,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_VXOncome(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Max_VXOncome(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_VXOncome in buffer.
@@ -8090,12 +8054,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Max_VXOncome(buf, val) \
-	{                                                            \
-		buf[3] &= ~(0x0f << 0);                                    \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;        \
-		buf[4] &= ~(0xff << 0);                                    \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;               \
-	}
+  {                                                            \
+    buf[3] &= ~(0x0f << 0);                                    \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;        \
+    buf[4] &= ~(0xff << 0);                                    \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;               \
+  }
 
 /**
  * Set signal FilterState_Max_VXOncome in buffer to its initial value.
@@ -8103,8 +8067,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Max_VXOncome(buf) \
-	SET_FilterState_Cfg_FilterState_Max_VXOncome(buf, 0)
+#define INITSIG_FilterState_Cfg_FilterState_Max_VXOncome(buf) SET_FilterState_Cfg_FilterState_Max_VXOncome(buf, 0)
 
 /**
  * Signal FilterState_Max_VXOncome value conversion with 16 bit factor and offset.
@@ -8117,8 +8080,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Max_VXOncome(x, fmt) \
-	((x) * fmt * 63 / 2000)
+#define CALC_FilterState_Cfg_FilterState_Max_VXOncome(x, fmt) ((x) * fmt * 63 / 2000)
 
 /**
  * Signal FilterState_Max_VXOncome raw initial value.
@@ -8178,7 +8140,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_VXDepart(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Max_VXDepart(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_VXDepart in buffer.
@@ -8189,12 +8152,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Max_VXDepart(buf, val) \
-	{                                                            \
-		buf[3] &= ~(0x0f << 0);                                    \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;        \
-		buf[4] &= ~(0xff << 0);                                    \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;               \
-	}
+  {                                                            \
+    buf[3] &= ~(0x0f << 0);                                    \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;        \
+    buf[4] &= ~(0xff << 0);                                    \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;               \
+  }
 
 /**
  * Set signal FilterState_Max_VXDepart in buffer to its initial value.
@@ -8202,8 +8165,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Max_VXDepart(buf) \
-	SET_FilterState_Cfg_FilterState_Max_VXDepart(buf, 0)
+#define INITSIG_FilterState_Cfg_FilterState_Max_VXDepart(buf) SET_FilterState_Cfg_FilterState_Max_VXDepart(buf, 0)
 
 /**
  * Signal FilterState_Max_VXDepart value conversion with 16 bit factor and offset.
@@ -8216,8 +8178,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Max_VXDepart(x, fmt) \
-	((x) * fmt * 63 / 2000)
+#define CALC_FilterState_Cfg_FilterState_Max_VXDepart(x, fmt) ((x) * fmt * 63 / 2000)
 
 /**
  * Signal FilterState_Max_VXDepart raw initial value.
@@ -8290,10 +8251,10 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Type(buf, val) \
-	{                                                    \
-		buf[0] &= ~(0x01 << 7);                            \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 7;       \
-	}
+  {                                                    \
+    buf[0] &= ~(0x01 << 7);                            \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 7;       \
+  }
 
 /**
  * Set signal FilterState_Type in buffer to its initial value.
@@ -8301,8 +8262,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Type(buf) \
-	SET_FilterState_Cfg_FilterState_Type(buf, 0)
+#define INITSIG_FilterState_Cfg_FilterState_Type(buf) SET_FilterState_Cfg_FilterState_Type(buf, 0)
 
 /**
  * Signal FilterState_Type value conversion with 16 bit factor and offset.
@@ -8315,8 +8275,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Type(x, fmt) \
-	((x) * fmt)
+#define CALC_FilterState_Cfg_FilterState_Type(x, fmt) ((x) * fmt)
 
 /**
  * Signal FilterState_Type raw initial value.
@@ -8402,7 +8361,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_VrelOncome(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Min_VrelOncome(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_VrelOncome in buffer.
@@ -8413,12 +8373,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Min_VrelOncome(buf, val) \
-	{                                                              \
-		buf[1] &= ~(0x0f << 0);                                      \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;          \
-		buf[2] &= ~(0xff << 0);                                      \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;                 \
-	}
+  {                                                              \
+    buf[1] &= ~(0x0f << 0);                                      \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;          \
+    buf[2] &= ~(0xff << 0);                                      \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;                 \
+  }
 
 /**
  * Set signal FilterState_Min_VrelOncome in buffer to its initial value.
@@ -8426,8 +8386,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Min_VrelOncome(buf) \
-	SET_FilterState_Cfg_FilterState_Min_VrelOncome(buf, 0)
+#define INITSIG_FilterState_Cfg_FilterState_Min_VrelOncome(buf) SET_FilterState_Cfg_FilterState_Min_VrelOncome(buf, 0)
 
 /**
  * Signal FilterState_Min_VrelOncome value conversion with 16 bit factor and offset.
@@ -8440,8 +8399,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Min_VrelOncome(x, fmt) \
-	((x) * fmt * 63 / 2000)
+#define CALC_FilterState_Cfg_FilterState_Min_VrelOncome(x, fmt) ((x) * fmt * 63 / 2000)
 
 /**
  * Signal FilterState_Min_VrelOncome raw initial value.
@@ -8501,7 +8459,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_VrelDepart(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Min_VrelDepart(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_VrelDepart in buffer.
@@ -8512,12 +8471,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Min_VrelDepart(buf, val) \
-	{                                                              \
-		buf[1] &= ~(0x0f << 0);                                      \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;          \
-		buf[2] &= ~(0xff << 0);                                      \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;                 \
-	}
+  {                                                              \
+    buf[1] &= ~(0x0f << 0);                                      \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;          \
+    buf[2] &= ~(0xff << 0);                                      \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;                 \
+  }
 
 /**
  * Set signal FilterState_Min_VrelDepart in buffer to its initial value.
@@ -8525,8 +8484,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Min_VrelDepart(buf) \
-	SET_FilterState_Cfg_FilterState_Min_VrelDepart(buf, 0)
+#define INITSIG_FilterState_Cfg_FilterState_Min_VrelDepart(buf) SET_FilterState_Cfg_FilterState_Min_VrelDepart(buf, 0)
 
 /**
  * Signal FilterState_Min_VrelDepart value conversion with 16 bit factor and offset.
@@ -8539,8 +8497,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Min_VrelDepart(x, fmt) \
-	((x) * fmt * 63 / 2000)
+#define CALC_FilterState_Cfg_FilterState_Min_VrelDepart(x, fmt) ((x) * fmt * 63 / 2000)
 
 /**
  * Signal FilterState_Min_VrelDepart raw initial value.
@@ -8600,7 +8557,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_Size(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Min_Size(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_Size in buffer.
@@ -8611,12 +8569,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Min_Size(buf, val) \
-	{                                                        \
-		buf[1] &= ~(0x0f << 0);                                \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;    \
-		buf[2] &= ~(0xff << 0);                                \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;           \
-	}
+  {                                                        \
+    buf[1] &= ~(0x0f << 0);                                \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;    \
+    buf[2] &= ~(0xff << 0);                                \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;           \
+  }
 
 /**
  * Set signal FilterState_Min_Size in buffer to its initial value.
@@ -8624,8 +8582,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Min_Size(buf) \
-	SET_FilterState_Cfg_FilterState_Min_Size(buf, 0)
+#define INITSIG_FilterState_Cfg_FilterState_Min_Size(buf) SET_FilterState_Cfg_FilterState_Min_Size(buf, 0)
 
 /**
  * Signal FilterState_Min_Size value conversion with 16 bit factor and offset.
@@ -8638,8 +8595,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Min_Size(x, fmt) \
-	((x) * fmt / 40)
+#define CALC_FilterState_Cfg_FilterState_Min_Size(x, fmt) ((x) * fmt / 40)
 
 /**
  * Signal FilterState_Min_Size raw initial value.
@@ -8699,7 +8655,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_RCS(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Min_RCS(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_RCS in buffer.
@@ -8710,12 +8667,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Min_RCS(buf, val) \
-	{                                                       \
-		buf[1] &= ~(0x0f << 0);                               \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;   \
-		buf[2] &= ~(0xff << 0);                               \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;          \
-	}
+  {                                                       \
+    buf[1] &= ~(0x0f << 0);                               \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;   \
+    buf[2] &= ~(0xff << 0);                               \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;          \
+  }
 
 /**
  * Set signal FilterState_Min_RCS in buffer to its initial value.
@@ -8723,8 +8680,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Min_RCS(buf) \
-	SET_FilterState_Cfg_FilterState_Min_RCS(buf, 2000)
+#define INITSIG_FilterState_Cfg_FilterState_Min_RCS(buf) SET_FilterState_Cfg_FilterState_Min_RCS(buf, 2000)
 
 /**
  * Signal FilterState_Min_RCS value conversion with 16 bit factor and offset.
@@ -8737,8 +8693,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Min_RCS(x, fmt) \
-	((x) * fmt / 40 + fmt * (-50))
+#define CALC_FilterState_Cfg_FilterState_Min_RCS(x, fmt) ((x) * fmt / 40 + fmt * (-50))
 
 /**
  * Signal FilterState_Min_RCS raw initial value.
@@ -8800,7 +8755,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_ProbExists(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Min_ProbExists(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_ProbExists in buffer.
@@ -8811,12 +8767,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Min_ProbExists(buf, val) \
-	{                                                              \
-		buf[1] &= ~(0x0f << 0);                                      \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;          \
-		buf[2] &= ~(0xff << 0);                                      \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;                 \
-	}
+  {                                                              \
+    buf[1] &= ~(0x0f << 0);                                      \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;          \
+    buf[2] &= ~(0xff << 0);                                      \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;                 \
+  }
 
 /**
  * Set signal FilterState_Min_ProbExists in buffer to its initial value.
@@ -8824,8 +8780,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Min_ProbExists(buf) \
-	SET_FilterState_Cfg_FilterState_Min_ProbExists(buf, 0)
+#define INITSIG_FilterState_Cfg_FilterState_Min_ProbExists(buf) SET_FilterState_Cfg_FilterState_Min_ProbExists(buf, 0)
 
 /**
  * Signal FilterState_Min_ProbExists value conversion with 16 bit factor and offset.
@@ -8838,8 +8793,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Min_ProbExists(x, fmt) \
-	((x) * fmt)
+#define CALC_FilterState_Cfg_FilterState_Min_ProbExists(x, fmt) ((x) * fmt)
 
 /**
  * Signal FilterState_Min_ProbExists raw initial value.
@@ -8977,7 +8931,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_NofObj(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Min_NofObj(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_NofObj in buffer.
@@ -8988,12 +8943,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Min_NofObj(buf, val) \
-	{                                                          \
-		buf[1] &= ~(0x0f << 0);                                  \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;      \
-		buf[2] &= ~(0xff << 0);                                  \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;             \
-	}
+  {                                                          \
+    buf[1] &= ~(0x0f << 0);                                  \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;      \
+    buf[2] &= ~(0xff << 0);                                  \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;             \
+  }
 
 /**
  * Set signal FilterState_Min_NofObj in buffer to its initial value.
@@ -9001,8 +8956,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Min_NofObj(buf) \
-	SET_FilterState_Cfg_FilterState_Min_NofObj(buf, 0)
+#define INITSIG_FilterState_Cfg_FilterState_Min_NofObj(buf) SET_FilterState_Cfg_FilterState_Min_NofObj(buf, 0)
 
 /**
  * Signal FilterState_Min_NofObj value conversion with 16 bit factor and offset.
@@ -9015,8 +8969,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Min_NofObj(x, fmt) \
-	((x) * fmt)
+#define CALC_FilterState_Cfg_FilterState_Min_NofObj(x, fmt) ((x) * fmt)
 
 /**
  * Signal FilterState_Min_NofObj raw initial value.
@@ -9076,7 +9029,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_Lifetime(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Min_Lifetime(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_Lifetime in buffer.
@@ -9087,12 +9041,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Min_Lifetime(buf, val) \
-	{                                                            \
-		buf[1] &= ~(0x0f << 0);                                    \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;        \
-		buf[2] &= ~(0xff << 0);                                    \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;               \
-	}
+  {                                                            \
+    buf[1] &= ~(0x0f << 0);                                    \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;        \
+    buf[2] &= ~(0xff << 0);                                    \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;               \
+  }
 
 /**
  * Set signal FilterState_Min_Lifetime in buffer to its initial value.
@@ -9100,8 +9054,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Min_Lifetime(buf) \
-	SET_FilterState_Cfg_FilterState_Min_Lifetime(buf, 0)
+#define INITSIG_FilterState_Cfg_FilterState_Min_Lifetime(buf) SET_FilterState_Cfg_FilterState_Min_Lifetime(buf, 0)
 
 /**
  * Signal FilterState_Min_Lifetime value conversion with 16 bit factor and offset.
@@ -9114,8 +9067,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Min_Lifetime(x, fmt) \
-	((x) * fmt / 10)
+#define CALC_FilterState_Cfg_FilterState_Min_Lifetime(x, fmt) ((x) * fmt / 10)
 
 /**
  * Signal FilterState_Min_Lifetime raw initial value.
@@ -9175,7 +9127,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_Distance(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Min_Distance(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_Distance in buffer.
@@ -9186,12 +9139,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Min_Distance(buf, val) \
-	{                                                            \
-		buf[1] &= ~(0x0f << 0);                                    \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;        \
-		buf[2] &= ~(0xff << 0);                                    \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;               \
-	}
+  {                                                            \
+    buf[1] &= ~(0x0f << 0);                                    \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;        \
+    buf[2] &= ~(0xff << 0);                                    \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;               \
+  }
 
 /**
  * Set signal FilterState_Min_Distance in buffer to its initial value.
@@ -9199,8 +9152,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Min_Distance(buf) \
-	SET_FilterState_Cfg_FilterState_Min_Distance(buf, 0)
+#define INITSIG_FilterState_Cfg_FilterState_Min_Distance(buf) SET_FilterState_Cfg_FilterState_Min_Distance(buf, 0)
 
 /**
  * Signal FilterState_Min_Distance value conversion with 16 bit factor and offset.
@@ -9213,8 +9165,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Min_Distance(x, fmt) \
-	((x) * fmt / 10)
+#define CALC_FilterState_Cfg_FilterState_Min_Distance(x, fmt) ((x) * fmt / 10)
 
 /**
  * Signal FilterState_Min_Distance raw initial value.
@@ -9274,7 +9225,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Min_Azimuth(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Min_Azimuth(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Min_Azimuth in buffer.
@@ -9285,12 +9237,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Min_Azimuth(buf, val) \
-	{                                                           \
-		buf[1] &= ~(0x0f << 0);                                   \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;       \
-		buf[2] &= ~(0xff << 0);                                   \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;              \
-	}
+  {                                                           \
+    buf[1] &= ~(0x0f << 0);                                   \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;       \
+    buf[2] &= ~(0xff << 0);                                   \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;              \
+  }
 
 /**
  * Set signal FilterState_Min_Azimuth in buffer to its initial value.
@@ -9298,8 +9250,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Min_Azimuth(buf) \
-	SET_FilterState_Cfg_FilterState_Min_Azimuth(buf, 2000)
+#define INITSIG_FilterState_Cfg_FilterState_Min_Azimuth(buf) SET_FilterState_Cfg_FilterState_Min_Azimuth(buf, 2000)
 
 /**
  * Signal FilterState_Min_Azimuth value conversion with 16 bit factor and offset.
@@ -9312,8 +9263,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Min_Azimuth(x, fmt) \
-	((x) * fmt / 40 + fmt * (-50))
+#define CALC_FilterState_Cfg_FilterState_Min_Azimuth(x, fmt) ((x) * fmt / 40 + fmt * (-50))
 
 /**
  * Signal FilterState_Min_Azimuth raw initial value.
@@ -9373,7 +9323,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_VrelOncome(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Max_VrelOncome(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_VrelOncome in buffer.
@@ -9384,12 +9335,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Max_VrelOncome(buf, val) \
-	{                                                              \
-		buf[3] &= ~(0x0f << 0);                                      \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;          \
-		buf[4] &= ~(0xff << 0);                                      \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;                 \
-	}
+  {                                                              \
+    buf[3] &= ~(0x0f << 0);                                      \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;          \
+    buf[4] &= ~(0xff << 0);                                      \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;                 \
+  }
 
 /**
  * Set signal FilterState_Max_VrelOncome in buffer to its initial value.
@@ -9397,8 +9348,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Max_VrelOncome(buf) \
-	SET_FilterState_Cfg_FilterState_Max_VrelOncome(buf, 0)
+#define INITSIG_FilterState_Cfg_FilterState_Max_VrelOncome(buf) SET_FilterState_Cfg_FilterState_Max_VrelOncome(buf, 0)
 
 /**
  * Signal FilterState_Max_VrelOncome value conversion with 16 bit factor and offset.
@@ -9411,8 +9361,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Max_VrelOncome(x, fmt) \
-	((x) * fmt * 63 / 2000)
+#define CALC_FilterState_Cfg_FilterState_Max_VrelOncome(x, fmt) ((x) * fmt * 63 / 2000)
 
 /**
  * Signal FilterState_Max_VrelOncome raw initial value.
@@ -9472,7 +9421,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_VrelDepart(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Max_VrelDepart(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_VrelDepart in buffer.
@@ -9483,12 +9433,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Max_VrelDepart(buf, val) \
-	{                                                              \
-		buf[3] &= ~(0x0f << 0);                                      \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;          \
-		buf[4] &= ~(0xff << 0);                                      \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;                 \
-	}
+  {                                                              \
+    buf[3] &= ~(0x0f << 0);                                      \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;          \
+    buf[4] &= ~(0xff << 0);                                      \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;                 \
+  }
 
 /**
  * Set signal FilterState_Max_VrelDepart in buffer to its initial value.
@@ -9496,8 +9446,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Max_VrelDepart(buf) \
-	SET_FilterState_Cfg_FilterState_Max_VrelDepart(buf, 0)
+#define INITSIG_FilterState_Cfg_FilterState_Max_VrelDepart(buf) SET_FilterState_Cfg_FilterState_Max_VrelDepart(buf, 0)
 
 /**
  * Signal FilterState_Max_VrelDepart value conversion with 16 bit factor and offset.
@@ -9510,8 +9459,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Max_VrelDepart(x, fmt) \
-	((x) * fmt * 63 / 2000)
+#define CALC_FilterState_Cfg_FilterState_Max_VrelDepart(x, fmt) ((x) * fmt * 63 / 2000)
 
 /**
  * Signal FilterState_Max_VrelDepart raw initial value.
@@ -9571,7 +9519,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_Size(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Max_Size(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_Size in buffer.
@@ -9582,12 +9531,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Max_Size(buf, val) \
-	{                                                        \
-		buf[3] &= ~(0x0f << 0);                                \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;    \
-		buf[4] &= ~(0xff << 0);                                \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;           \
-	}
+  {                                                        \
+    buf[3] &= ~(0x0f << 0);                                \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;    \
+    buf[4] &= ~(0xff << 0);                                \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;           \
+  }
 
 /**
  * Set signal FilterState_Max_Size in buffer to its initial value.
@@ -9595,8 +9544,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Max_Size(buf) \
-	SET_FilterState_Cfg_FilterState_Max_Size(buf, 0)
+#define INITSIG_FilterState_Cfg_FilterState_Max_Size(buf) SET_FilterState_Cfg_FilterState_Max_Size(buf, 0)
 
 /**
  * Signal FilterState_Max_Size value conversion with 16 bit factor and offset.
@@ -9609,8 +9557,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Max_Size(x, fmt) \
-	((x) * fmt / 40)
+#define CALC_FilterState_Cfg_FilterState_Max_Size(x, fmt) ((x) * fmt / 40)
 
 /**
  * Signal FilterState_Max_Size raw initial value.
@@ -9670,7 +9617,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_RCS(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Max_RCS(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_RCS in buffer.
@@ -9681,12 +9629,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Max_RCS(buf, val) \
-	{                                                       \
-		buf[3] &= ~(0x0f << 0);                               \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;   \
-		buf[4] &= ~(0xff << 0);                               \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;          \
-	}
+  {                                                       \
+    buf[3] &= ~(0x0f << 0);                               \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;   \
+    buf[4] &= ~(0xff << 0);                               \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;          \
+  }
 
 /**
  * Set signal FilterState_Max_RCS in buffer to its initial value.
@@ -9694,8 +9642,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Max_RCS(buf) \
-	SET_FilterState_Cfg_FilterState_Max_RCS(buf, 2000)
+#define INITSIG_FilterState_Cfg_FilterState_Max_RCS(buf) SET_FilterState_Cfg_FilterState_Max_RCS(buf, 2000)
 
 /**
  * Signal FilterState_Max_RCS value conversion with 16 bit factor and offset.
@@ -9708,8 +9655,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Max_RCS(x, fmt) \
-	((x) * fmt / 40 + fmt * (-50))
+#define CALC_FilterState_Cfg_FilterState_Max_RCS(x, fmt) ((x) * fmt / 40 + fmt * (-50))
 
 /**
  * Signal FilterState_Max_RCS raw initial value.
@@ -9771,7 +9717,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_ProbExists(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Max_ProbExists(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_ProbExists in buffer.
@@ -9782,12 +9729,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Max_ProbExists(buf, val) \
-	{                                                              \
-		buf[3] &= ~(0x0f << 0);                                      \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;          \
-		buf[4] &= ~(0xff << 0);                                      \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;                 \
-	}
+  {                                                              \
+    buf[3] &= ~(0x0f << 0);                                      \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;          \
+    buf[4] &= ~(0xff << 0);                                      \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;                 \
+  }
 
 /**
  * Set signal FilterState_Max_ProbExists in buffer to its initial value.
@@ -9795,8 +9742,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Max_ProbExists(buf) \
-	SET_FilterState_Cfg_FilterState_Max_ProbExists(buf, 0)
+#define INITSIG_FilterState_Cfg_FilterState_Max_ProbExists(buf) SET_FilterState_Cfg_FilterState_Max_ProbExists(buf, 0)
 
 /**
  * Signal FilterState_Max_ProbExists value conversion with 16 bit factor and offset.
@@ -9809,8 +9755,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Max_ProbExists(x, fmt) \
-	((x) * fmt)
+#define CALC_FilterState_Cfg_FilterState_Max_ProbExists(x, fmt) ((x) * fmt)
 
 /**
  * Signal FilterState_Max_ProbExists raw initial value.
@@ -9948,7 +9893,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_NofObj(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Max_NofObj(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_NofObj in buffer.
@@ -9959,12 +9905,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Max_NofObj(buf, val) \
-	{                                                          \
-		buf[3] &= ~(0x0f << 0);                                  \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;      \
-		buf[4] &= ~(0xff << 0);                                  \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;             \
-	}
+  {                                                          \
+    buf[3] &= ~(0x0f << 0);                                  \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;      \
+    buf[4] &= ~(0xff << 0);                                  \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;             \
+  }
 
 /**
  * Set signal FilterState_Max_NofObj in buffer to its initial value.
@@ -9972,8 +9918,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Max_NofObj(buf) \
-	SET_FilterState_Cfg_FilterState_Max_NofObj(buf, 0)
+#define INITSIG_FilterState_Cfg_FilterState_Max_NofObj(buf) SET_FilterState_Cfg_FilterState_Max_NofObj(buf, 0)
 
 /**
  * Signal FilterState_Max_NofObj value conversion with 16 bit factor and offset.
@@ -9986,8 +9931,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Max_NofObj(x, fmt) \
-	((x) * fmt)
+#define CALC_FilterState_Cfg_FilterState_Max_NofObj(x, fmt) ((x) * fmt)
 
 /**
  * Signal FilterState_Max_NofObj raw initial value.
@@ -10047,7 +9991,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_Lifetime(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Max_Lifetime(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_Lifetime in buffer.
@@ -10058,12 +10003,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Max_Lifetime(buf, val) \
-	{                                                            \
-		buf[3] &= ~(0x0f << 0);                                    \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;        \
-		buf[4] &= ~(0xff << 0);                                    \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;               \
-	}
+  {                                                            \
+    buf[3] &= ~(0x0f << 0);                                    \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;        \
+    buf[4] &= ~(0xff << 0);                                    \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;               \
+  }
 
 /**
  * Set signal FilterState_Max_Lifetime in buffer to its initial value.
@@ -10071,8 +10016,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Max_Lifetime(buf) \
-	SET_FilterState_Cfg_FilterState_Max_Lifetime(buf, 0)
+#define INITSIG_FilterState_Cfg_FilterState_Max_Lifetime(buf) SET_FilterState_Cfg_FilterState_Max_Lifetime(buf, 0)
 
 /**
  * Signal FilterState_Max_Lifetime value conversion with 16 bit factor and offset.
@@ -10085,8 +10029,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Max_Lifetime(x, fmt) \
-	((x) * fmt / 10)
+#define CALC_FilterState_Cfg_FilterState_Max_Lifetime(x, fmt) ((x) * fmt / 10)
 
 /**
  * Signal FilterState_Max_Lifetime raw initial value.
@@ -10146,7 +10089,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_Distance(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Max_Distance(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_Distance in buffer.
@@ -10157,12 +10101,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Max_Distance(buf, val) \
-	{                                                            \
-		buf[3] &= ~(0x0f << 0);                                    \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;        \
-		buf[4] &= ~(0xff << 0);                                    \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;               \
-	}
+  {                                                            \
+    buf[3] &= ~(0x0f << 0);                                    \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;        \
+    buf[4] &= ~(0xff << 0);                                    \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;               \
+  }
 
 /**
  * Set signal FilterState_Max_Distance in buffer to its initial value.
@@ -10170,8 +10114,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Max_Distance(buf) \
-	SET_FilterState_Cfg_FilterState_Max_Distance(buf, 0)
+#define INITSIG_FilterState_Cfg_FilterState_Max_Distance(buf) SET_FilterState_Cfg_FilterState_Max_Distance(buf, 0)
 
 /**
  * Signal FilterState_Max_Distance value conversion with 16 bit factor and offset.
@@ -10184,8 +10127,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Max_Distance(x, fmt) \
-	((x) * fmt / 10)
+#define CALC_FilterState_Cfg_FilterState_Max_Distance(x, fmt) ((x) * fmt / 10)
 
 /**
  * Signal FilterState_Max_Distance raw initial value.
@@ -10245,7 +10187,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterState_Cfg_FilterState_Max_Azimuth(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterState_Cfg_FilterState_Max_Azimuth(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterState_Max_Azimuth in buffer.
@@ -10256,12 +10199,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Max_Azimuth(buf, val) \
-	{                                                           \
-		buf[3] &= ~(0x0f << 0);                                   \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;       \
-		buf[4] &= ~(0xff << 0);                                   \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;              \
-	}
+  {                                                           \
+    buf[3] &= ~(0x0f << 0);                                   \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;       \
+    buf[4] &= ~(0xff << 0);                                   \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;              \
+  }
 
 /**
  * Set signal FilterState_Max_Azimuth in buffer to its initial value.
@@ -10269,8 +10212,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Max_Azimuth(buf) \
-	SET_FilterState_Cfg_FilterState_Max_Azimuth(buf, 2000)
+#define INITSIG_FilterState_Cfg_FilterState_Max_Azimuth(buf) SET_FilterState_Cfg_FilterState_Max_Azimuth(buf, 2000)
 
 /**
  * Signal FilterState_Max_Azimuth value conversion with 16 bit factor and offset.
@@ -10283,8 +10225,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Max_Azimuth(x, fmt) \
-	((x) * fmt / 40 + fmt * (-50))
+#define CALC_FilterState_Cfg_FilterState_Max_Azimuth(x, fmt) ((x) * fmt / 40 + fmt * (-50))
 
 /**
  * Signal FilterState_Max_Azimuth raw initial value.
@@ -10357,10 +10298,10 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Index(buf, val) \
-	{                                                     \
-		buf[0] &= ~(0x0f << 3);                             \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x0f) << 3;        \
-	}
+  {                                                     \
+    buf[0] &= ~(0x0f << 3);                             \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x0f) << 3;        \
+  }
 
 /**
  * Set signal FilterState_Index in buffer to its initial value.
@@ -10368,8 +10309,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Index(buf) \
-	SET_FilterState_Cfg_FilterState_Index(buf, 0)
+#define INITSIG_FilterState_Cfg_FilterState_Index(buf) SET_FilterState_Cfg_FilterState_Index(buf, 0)
 
 /**
  * Signal FilterState_Index value conversion with 16 bit factor and offset.
@@ -10382,8 +10322,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Index(x, fmt) \
-	((x) * fmt)
+#define CALC_FilterState_Cfg_FilterState_Index(x, fmt) ((x) * fmt)
 
 /**
  * Signal FilterState_Index raw initial value.
@@ -10598,10 +10537,10 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Cfg_FilterState_Active(buf, val) \
-	{                                                      \
-		buf[0] &= ~(0x01 << 2);                              \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 2;         \
-	}
+  {                                                      \
+    buf[0] &= ~(0x01 << 2);                              \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 2;         \
+  }
 
 /**
  * Set signal FilterState_Active in buffer to its initial value.
@@ -10609,8 +10548,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterState_Cfg_FilterState_Active(buf) \
-	SET_FilterState_Cfg_FilterState_Active(buf, 0)
+#define INITSIG_FilterState_Cfg_FilterState_Active(buf) SET_FilterState_Cfg_FilterState_Active(buf, 0)
 
 /**
  * Signal FilterState_Active value conversion with 16 bit factor and offset.
@@ -10623,8 +10561,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Cfg_FilterState_Active(x, fmt) \
-	((x) * fmt)
+#define CALC_FilterState_Cfg_FilterState_Active(x, fmt) ((x) * fmt)
 
 /**
  * Signal FilterState_Active raw initial value.
@@ -10717,10 +10654,10 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Header_FilterState_NofObjectFilterCfg(buf, val) \
-	{                                                                     \
-		buf[1] &= ~(0x1f << 3);                                             \
-		buf[1] |= (((ubyte)(val) >> 0) & 0x1f) << 3;                        \
-	}
+  {                                                                     \
+    buf[1] &= ~(0x1f << 3);                                             \
+    buf[1] |= (((ubyte)(val) >> 0) & 0x1f) << 3;                        \
+  }
 
 /**
  * Set signal FilterState_NofObjectFilterCfg in buffer to its initial value.
@@ -10729,7 +10666,7 @@
  *	The can message buffer to initialise
  */
 #define INITSIG_FilterState_Header_FilterState_NofObjectFilterCfg(buf) \
-	SET_FilterState_Header_FilterState_NofObjectFilterCfg(buf, 0)
+  SET_FilterState_Header_FilterState_NofObjectFilterCfg(buf, 0)
 
 /**
  * Signal FilterState_NofObjectFilterCfg value conversion with 16 bit factor and offset.
@@ -10742,8 +10679,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Header_FilterState_NofObjectFilterCfg(x, fmt) \
-	((x) * fmt)
+#define CALC_FilterState_Header_FilterState_NofObjectFilterCfg(x, fmt) ((x) * fmt)
 
 /**
  * Signal FilterState_NofObjectFilterCfg raw initial value.
@@ -10814,10 +10750,10 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterState_Header_FilterState_NofClusterFilterCfg(buf, val) \
-	{                                                                      \
-		buf[0] &= ~(0x1f << 3);                                              \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x1f) << 3;                         \
-	}
+  {                                                                      \
+    buf[0] &= ~(0x1f << 3);                                              \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x1f) << 3;                         \
+  }
 
 /**
  * Set signal FilterState_NofClusterFilterCfg in buffer to its initial value.
@@ -10826,7 +10762,7 @@
  *	The can message buffer to initialise
  */
 #define INITSIG_FilterState_Header_FilterState_NofClusterFilterCfg(buf) \
-	SET_FilterState_Header_FilterState_NofClusterFilterCfg(buf, 0)
+  SET_FilterState_Header_FilterState_NofClusterFilterCfg(buf, 0)
 
 /**
  * Signal FilterState_NofClusterFilterCfg value conversion with 16 bit factor and offset.
@@ -10839,8 +10775,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterState_Header_FilterState_NofClusterFilterCfg(x, fmt) \
-	((x) * fmt)
+#define CALC_FilterState_Header_FilterState_NofClusterFilterCfg(x, fmt) ((x) * fmt)
 
 /**
  * Signal FilterState_NofClusterFilterCfg raw initial value.
@@ -10911,10 +10846,10 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Min_Class(buf, val) \
-	{                                                 \
-		buf[2] &= ~(0xff << 0);                         \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;    \
-	}
+  {                                                 \
+    buf[2] &= ~(0xff << 0);                         \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;    \
+  }
 
 /**
  * Set signal FilterCfg_Min_Class in buffer to its initial value.
@@ -10922,8 +10857,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Min_Class(buf) \
-	SET_FilterCfg_FilterCfg_Min_Class(buf, 0)
+#define INITSIG_FilterCfg_FilterCfg_Min_Class(buf) SET_FilterCfg_FilterCfg_Min_Class(buf, 0)
 
 /**
  * Signal FilterCfg_Min_Class value conversion with 16 bit factor and offset.
@@ -10936,8 +10870,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Min_Class(x, fmt) \
-	((x) * fmt)
+#define CALC_FilterCfg_FilterCfg_Min_Class(x, fmt) ((x) * fmt)
 
 /**
  * Signal FilterCfg_Min_Class raw initial value.
@@ -11008,10 +10941,10 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Max_Class(buf, val) \
-	{                                                 \
-		buf[4] &= ~(0xff << 0);                         \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;    \
-	}
+  {                                                 \
+    buf[4] &= ~(0xff << 0);                         \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;    \
+  }
 
 /**
  * Set signal FilterCfg_Max_Class in buffer to its initial value.
@@ -11019,8 +10952,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Max_Class(buf) \
-	SET_FilterCfg_FilterCfg_Max_Class(buf, 0)
+#define INITSIG_FilterCfg_FilterCfg_Max_Class(buf) SET_FilterCfg_FilterCfg_Max_Class(buf, 0)
 
 /**
  * Signal FilterCfg_Max_Class value conversion with 16 bit factor and offset.
@@ -11033,8 +10965,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Max_Class(x, fmt) \
-	((x) * fmt)
+#define CALC_FilterCfg_FilterCfg_Max_Class(x, fmt) ((x) * fmt)
 
 /**
  * Signal FilterCfg_Max_Class raw initial value.
@@ -11094,7 +11025,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_Y(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Min_Y(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_Y in buffer.
@@ -11105,12 +11037,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Min_Y(buf, val)         \
-	{                                                     \
-		buf[1] &= ~(0x0f << 0);                             \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-		buf[2] &= ~(0xff << 0);                             \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
-	}
+  {                                                     \
+    buf[1] &= ~(0x0f << 0);                             \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+    buf[2] &= ~(0xff << 0);                             \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+  }
 
 /**
  * Set signal FilterCfg_Min_Y in buffer to its initial value.
@@ -11118,8 +11050,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Min_Y(buf) \
-	SET_FilterCfg_FilterCfg_Min_Y(buf, 2047.5)
+#define INITSIG_FilterCfg_FilterCfg_Min_Y(buf) SET_FilterCfg_FilterCfg_Min_Y(buf, 2047.5)
 
 /**
  * Signal FilterCfg_Min_Y value conversion with 16 bit factor and offset.
@@ -11132,8 +11063,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Min_Y(x, fmt) \
-	((x) * fmt / 5 + fmt * 819 / (-2))
+#define CALC_FilterCfg_FilterCfg_Min_Y(x, fmt) ((x) * fmt / 5 + fmt * 819 / (-2))
 
 /**
  * Signal FilterCfg_Min_Y raw initial value.
@@ -11193,7 +11123,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_X(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x1f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Min_X(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x1f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_X in buffer.
@@ -11204,12 +11135,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Min_X(buf, val)         \
-	{                                                     \
-		buf[1] &= ~(0x1f << 0);                             \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x1f) << 0; \
-		buf[2] &= ~(0xff << 0);                             \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
-	}
+  {                                                     \
+    buf[1] &= ~(0x1f << 0);                             \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x1f) << 0; \
+    buf[2] &= ~(0xff << 0);                             \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+  }
 
 /**
  * Set signal FilterCfg_Min_X in buffer to its initial value.
@@ -11217,8 +11148,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Min_X(buf) \
-	SET_FilterCfg_FilterCfg_Min_X(buf, 2500)
+#define INITSIG_FilterCfg_FilterCfg_Min_X(buf) SET_FilterCfg_FilterCfg_Min_X(buf, 2500)
 
 /**
  * Signal FilterCfg_Min_X value conversion with 16 bit factor and offset.
@@ -11231,8 +11161,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Min_X(x, fmt) \
-	((x) * fmt / 5 + fmt * (-500))
+#define CALC_FilterCfg_FilterCfg_Min_X(x, fmt) ((x) * fmt / 5 + fmt * (-500))
 
 /**
  * Signal FilterCfg_Min_X raw initial value.
@@ -11292,7 +11221,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_VYRightLeft(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Min_VYRightLeft(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_VYRightLeft in buffer.
@@ -11303,12 +11233,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Min_VYRightLeft(buf, val) \
-	{                                                       \
-		buf[1] &= ~(0x0f << 0);                               \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;   \
-		buf[2] &= ~(0xff << 0);                               \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;          \
-	}
+  {                                                       \
+    buf[1] &= ~(0x0f << 0);                               \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;   \
+    buf[2] &= ~(0xff << 0);                               \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;          \
+  }
 
 /**
  * Set signal FilterCfg_Min_VYRightLeft in buffer to its initial value.
@@ -11316,8 +11246,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Min_VYRightLeft(buf) \
-	SET_FilterCfg_FilterCfg_Min_VYRightLeft(buf, 0)
+#define INITSIG_FilterCfg_FilterCfg_Min_VYRightLeft(buf) SET_FilterCfg_FilterCfg_Min_VYRightLeft(buf, 0)
 
 /**
  * Signal FilterCfg_Min_VYRightLeft value conversion with 16 bit factor and offset.
@@ -11330,8 +11259,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Min_VYRightLeft(x, fmt) \
-	((x) * fmt * 63 / 2000)
+#define CALC_FilterCfg_FilterCfg_Min_VYRightLeft(x, fmt) ((x) * fmt * 63 / 2000)
 
 /**
  * Signal FilterCfg_Min_VYRightLeft raw initial value.
@@ -11391,7 +11319,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_VYLeftRight(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Min_VYLeftRight(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_VYLeftRight in buffer.
@@ -11402,12 +11331,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Min_VYLeftRight(buf, val) \
-	{                                                       \
-		buf[1] &= ~(0x0f << 0);                               \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;   \
-		buf[2] &= ~(0xff << 0);                               \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;          \
-	}
+  {                                                       \
+    buf[1] &= ~(0x0f << 0);                               \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;   \
+    buf[2] &= ~(0xff << 0);                               \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;          \
+  }
 
 /**
  * Set signal FilterCfg_Min_VYLeftRight in buffer to its initial value.
@@ -11415,8 +11344,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Min_VYLeftRight(buf) \
-	SET_FilterCfg_FilterCfg_Min_VYLeftRight(buf, 0)
+#define INITSIG_FilterCfg_FilterCfg_Min_VYLeftRight(buf) SET_FilterCfg_FilterCfg_Min_VYLeftRight(buf, 0)
 
 /**
  * Signal FilterCfg_Min_VYLeftRight value conversion with 16 bit factor and offset.
@@ -11429,8 +11357,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Min_VYLeftRight(x, fmt) \
-	((x) * fmt * 63 / 2000)
+#define CALC_FilterCfg_FilterCfg_Min_VYLeftRight(x, fmt) ((x) * fmt * 63 / 2000)
 
 /**
  * Signal FilterCfg_Min_VYLeftRight raw initial value.
@@ -11490,7 +11417,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_VXOncome(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Min_VXOncome(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_VXOncome in buffer.
@@ -11501,12 +11429,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Min_VXOncome(buf, val)  \
-	{                                                     \
-		buf[1] &= ~(0x0f << 0);                             \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-		buf[2] &= ~(0xff << 0);                             \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
-	}
+  {                                                     \
+    buf[1] &= ~(0x0f << 0);                             \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+    buf[2] &= ~(0xff << 0);                             \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+  }
 
 /**
  * Set signal FilterCfg_Min_VXOncome in buffer to its initial value.
@@ -11514,8 +11442,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Min_VXOncome(buf) \
-	SET_FilterCfg_FilterCfg_Min_VXOncome(buf, 0)
+#define INITSIG_FilterCfg_FilterCfg_Min_VXOncome(buf) SET_FilterCfg_FilterCfg_Min_VXOncome(buf, 0)
 
 /**
  * Signal FilterCfg_Min_VXOncome value conversion with 16 bit factor and offset.
@@ -11528,8 +11455,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Min_VXOncome(x, fmt) \
-	((x) * fmt * 63 / 2000)
+#define CALC_FilterCfg_FilterCfg_Min_VXOncome(x, fmt) ((x) * fmt * 63 / 2000)
 
 /**
  * Signal FilterCfg_Min_VXOncome raw initial value.
@@ -11589,7 +11515,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_VXDepart(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Min_VXDepart(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_VXDepart in buffer.
@@ -11600,12 +11527,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Min_VXDepart(buf, val)  \
-	{                                                     \
-		buf[1] &= ~(0x0f << 0);                             \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-		buf[2] &= ~(0xff << 0);                             \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
-	}
+  {                                                     \
+    buf[1] &= ~(0x0f << 0);                             \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+    buf[2] &= ~(0xff << 0);                             \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+  }
 
 /**
  * Set signal FilterCfg_Min_VXDepart in buffer to its initial value.
@@ -11613,8 +11540,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Min_VXDepart(buf) \
-	SET_FilterCfg_FilterCfg_Min_VXDepart(buf, 0)
+#define INITSIG_FilterCfg_FilterCfg_Min_VXDepart(buf) SET_FilterCfg_FilterCfg_Min_VXDepart(buf, 0)
 
 /**
  * Signal FilterCfg_Min_VXDepart value conversion with 16 bit factor and offset.
@@ -11627,8 +11553,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Min_VXDepart(x, fmt) \
-	((x) * fmt * 63 / 2000)
+#define CALC_FilterCfg_FilterCfg_Min_VXDepart(x, fmt) ((x) * fmt * 63 / 2000)
 
 /**
  * Signal FilterCfg_Min_VXDepart raw initial value.
@@ -11688,7 +11613,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_Y(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Max_Y(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_Y in buffer.
@@ -11699,12 +11625,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Max_Y(buf, val)         \
-	{                                                     \
-		buf[3] &= ~(0x0f << 0);                             \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-		buf[4] &= ~(0xff << 0);                             \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
-	}
+  {                                                     \
+    buf[3] &= ~(0x0f << 0);                             \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+    buf[4] &= ~(0xff << 0);                             \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+  }
 
 /**
  * Set signal FilterCfg_Max_Y in buffer to its initial value.
@@ -11712,8 +11638,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Max_Y(buf) \
-	SET_FilterCfg_FilterCfg_Max_Y(buf, 2047.5)
+#define INITSIG_FilterCfg_FilterCfg_Max_Y(buf) SET_FilterCfg_FilterCfg_Max_Y(buf, 2047.5)
 
 /**
  * Signal FilterCfg_Max_Y value conversion with 16 bit factor and offset.
@@ -11726,8 +11651,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Max_Y(x, fmt) \
-	((x) * fmt / 5 + fmt * 819 / (-2))
+#define CALC_FilterCfg_FilterCfg_Max_Y(x, fmt) ((x) * fmt / 5 + fmt * 819 / (-2))
 
 /**
  * Signal FilterCfg_Max_Y raw initial value.
@@ -11787,7 +11711,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_X(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x1f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Max_X(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x1f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_X in buffer.
@@ -11798,12 +11723,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Max_X(buf, val)         \
-	{                                                     \
-		buf[3] &= ~(0x1f << 0);                             \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x1f) << 0; \
-		buf[4] &= ~(0xff << 0);                             \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
-	}
+  {                                                     \
+    buf[3] &= ~(0x1f << 0);                             \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x1f) << 0; \
+    buf[4] &= ~(0xff << 0);                             \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+  }
 
 /**
  * Set signal FilterCfg_Max_X in buffer to its initial value.
@@ -11811,8 +11736,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Max_X(buf) \
-	SET_FilterCfg_FilterCfg_Max_X(buf, 2500)
+#define INITSIG_FilterCfg_FilterCfg_Max_X(buf) SET_FilterCfg_FilterCfg_Max_X(buf, 2500)
 
 /**
  * Signal FilterCfg_Max_X value conversion with 16 bit factor and offset.
@@ -11825,8 +11749,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Max_X(x, fmt) \
-	((x) * fmt / 5 + fmt * (-500))
+#define CALC_FilterCfg_FilterCfg_Max_X(x, fmt) ((x) * fmt / 5 + fmt * (-500))
 
 /**
  * Signal FilterCfg_Max_X raw initial value.
@@ -11886,7 +11809,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_VYRightLeft(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Max_VYRightLeft(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_VYRightLeft in buffer.
@@ -11897,12 +11821,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Max_VYRightLeft(buf, val) \
-	{                                                       \
-		buf[3] &= ~(0x0f << 0);                               \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;   \
-		buf[4] &= ~(0xff << 0);                               \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;          \
-	}
+  {                                                       \
+    buf[3] &= ~(0x0f << 0);                               \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;   \
+    buf[4] &= ~(0xff << 0);                               \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;          \
+  }
 
 /**
  * Set signal FilterCfg_Max_VYRightLeft in buffer to its initial value.
@@ -11910,8 +11834,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Max_VYRightLeft(buf) \
-	SET_FilterCfg_FilterCfg_Max_VYRightLeft(buf, 0)
+#define INITSIG_FilterCfg_FilterCfg_Max_VYRightLeft(buf) SET_FilterCfg_FilterCfg_Max_VYRightLeft(buf, 0)
 
 /**
  * Signal FilterCfg_Max_VYRightLeft value conversion with 16 bit factor and offset.
@@ -11924,8 +11847,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Max_VYRightLeft(x, fmt) \
-	((x) * fmt * 63 / 2000)
+#define CALC_FilterCfg_FilterCfg_Max_VYRightLeft(x, fmt) ((x) * fmt * 63 / 2000)
 
 /**
  * Signal FilterCfg_Max_VYRightLeft raw initial value.
@@ -11985,7 +11907,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_VXOncome(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Max_VXOncome(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_VXOncome in buffer.
@@ -11996,12 +11919,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Max_VXOncome(buf, val)  \
-	{                                                     \
-		buf[3] &= ~(0x0f << 0);                             \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-		buf[4] &= ~(0xff << 0);                             \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
-	}
+  {                                                     \
+    buf[3] &= ~(0x0f << 0);                             \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+    buf[4] &= ~(0xff << 0);                             \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+  }
 
 /**
  * Set signal FilterCfg_Max_VXOncome in buffer to its initial value.
@@ -12009,8 +11932,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Max_VXOncome(buf) \
-	SET_FilterCfg_FilterCfg_Max_VXOncome(buf, 0)
+#define INITSIG_FilterCfg_FilterCfg_Max_VXOncome(buf) SET_FilterCfg_FilterCfg_Max_VXOncome(buf, 0)
 
 /**
  * Signal FilterCfg_Max_VXOncome value conversion with 16 bit factor and offset.
@@ -12023,8 +11945,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Max_VXOncome(x, fmt) \
-	((x) * fmt * 63 / 2000)
+#define CALC_FilterCfg_FilterCfg_Max_VXOncome(x, fmt) ((x) * fmt * 63 / 2000)
 
 /**
  * Signal FilterCfg_Max_VXOncome raw initial value.
@@ -12084,7 +12005,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_VYLeftRight(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Max_VYLeftRight(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_VYLeftRight in buffer.
@@ -12095,12 +12017,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Max_VYLeftRight(buf, val) \
-	{                                                       \
-		buf[3] &= ~(0x0f << 0);                               \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;   \
-		buf[4] &= ~(0xff << 0);                               \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;          \
-	}
+  {                                                       \
+    buf[3] &= ~(0x0f << 0);                               \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;   \
+    buf[4] &= ~(0xff << 0);                               \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;          \
+  }
 
 /**
  * Set signal FilterCfg_Max_VYLeftRight in buffer to its initial value.
@@ -12108,8 +12030,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Max_VYLeftRight(buf) \
-	SET_FilterCfg_FilterCfg_Max_VYLeftRight(buf, 0)
+#define INITSIG_FilterCfg_FilterCfg_Max_VYLeftRight(buf) SET_FilterCfg_FilterCfg_Max_VYLeftRight(buf, 0)
 
 /**
  * Signal FilterCfg_Max_VYLeftRight value conversion with 16 bit factor and offset.
@@ -12122,8 +12043,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Max_VYLeftRight(x, fmt) \
-	((x) * fmt * 63 / 2000)
+#define CALC_FilterCfg_FilterCfg_Max_VYLeftRight(x, fmt) ((x) * fmt * 63 / 2000)
 
 /**
  * Signal FilterCfg_Max_VYLeftRight raw initial value.
@@ -12183,7 +12103,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_VXDepart(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Max_VXDepart(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_VXDepart in buffer.
@@ -12194,12 +12115,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Max_VXDepart(buf, val)  \
-	{                                                     \
-		buf[3] &= ~(0x0f << 0);                             \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-		buf[4] &= ~(0xff << 0);                             \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
-	}
+  {                                                     \
+    buf[3] &= ~(0x0f << 0);                             \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+    buf[4] &= ~(0xff << 0);                             \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+  }
 
 /**
  * Set signal FilterCfg_Max_VXDepart in buffer to its initial value.
@@ -12207,8 +12128,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Max_VXDepart(buf) \
-	SET_FilterCfg_FilterCfg_Max_VXDepart(buf, 0)
+#define INITSIG_FilterCfg_FilterCfg_Max_VXDepart(buf) SET_FilterCfg_FilterCfg_Max_VXDepart(buf, 0)
 
 /**
  * Signal FilterCfg_Max_VXDepart value conversion with 16 bit factor and offset.
@@ -12221,8 +12141,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Max_VXDepart(x, fmt) \
-	((x) * fmt * 63 / 2000)
+#define CALC_FilterCfg_FilterCfg_Max_VXDepart(x, fmt) ((x) * fmt * 63 / 2000)
 
 /**
  * Signal FilterCfg_Max_VXDepart raw initial value.
@@ -12295,10 +12214,10 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Valid(buf, val)  \
-	{                                              \
-		buf[0] &= ~(0x01 << 1);                      \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 1; \
-	}
+  {                                              \
+    buf[0] &= ~(0x01 << 1);                      \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 1; \
+  }
 
 /**
  * Set signal FilterCfg_Valid in buffer to its initial value.
@@ -12306,8 +12225,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Valid(buf) \
-	SET_FilterCfg_FilterCfg_Valid(buf, 0)
+#define INITSIG_FilterCfg_FilterCfg_Valid(buf) SET_FilterCfg_FilterCfg_Valid(buf, 0)
 
 /**
  * Signal FilterCfg_Valid value conversion with 16 bit factor and offset.
@@ -12320,8 +12238,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Valid(x, fmt) \
-	((x) * fmt)
+#define CALC_FilterCfg_FilterCfg_Valid(x, fmt) ((x) * fmt)
 
 /**
  * Signal FilterCfg_Valid raw initial value.
@@ -12416,10 +12333,10 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Active(buf, val) \
-	{                                              \
-		buf[0] &= ~(0x01 << 2);                      \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 2; \
-	}
+  {                                              \
+    buf[0] &= ~(0x01 << 2);                      \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 2; \
+  }
 
 /**
  * Set signal FilterCfg_Active in buffer to its initial value.
@@ -12427,8 +12344,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Active(buf) \
-	SET_FilterCfg_FilterCfg_Active(buf, 0)
+#define INITSIG_FilterCfg_FilterCfg_Active(buf) SET_FilterCfg_FilterCfg_Active(buf, 0)
 
 /**
  * Signal FilterCfg_Active value conversion with 16 bit factor and offset.
@@ -12441,8 +12357,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Active(x, fmt) \
-	((x) * fmt)
+#define CALC_FilterCfg_FilterCfg_Active(x, fmt) ((x) * fmt)
 
 /**
  * Signal FilterCfg_Active raw initial value.
@@ -12524,7 +12439,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_VrelOncome(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Max_VrelOncome(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_VrelOncome in buffer.
@@ -12535,12 +12451,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Max_VrelOncome(buf, val) \
-	{                                                      \
-		buf[3] &= ~(0x0f << 0);                              \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;  \
-		buf[4] &= ~(0xff << 0);                              \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;         \
-	}
+  {                                                      \
+    buf[3] &= ~(0x0f << 0);                              \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;  \
+    buf[4] &= ~(0xff << 0);                              \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;         \
+  }
 
 /**
  * Set signal FilterCfg_Max_VrelOncome in buffer to its initial value.
@@ -12548,8 +12464,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Max_VrelOncome(buf) \
-	SET_FilterCfg_FilterCfg_Max_VrelOncome(buf, 0)
+#define INITSIG_FilterCfg_FilterCfg_Max_VrelOncome(buf) SET_FilterCfg_FilterCfg_Max_VrelOncome(buf, 0)
 
 /**
  * Signal FilterCfg_Max_VrelOncome value conversion with 16 bit factor and offset.
@@ -12562,8 +12477,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Max_VrelOncome(x, fmt) \
-	((x) * fmt * 63 / 2000)
+#define CALC_FilterCfg_FilterCfg_Max_VrelOncome(x, fmt) ((x) * fmt * 63 / 2000)
 
 /**
  * Signal FilterCfg_Max_VrelOncome raw initial value.
@@ -12623,7 +12537,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_VrelDepart(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Max_VrelDepart(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_VrelDepart in buffer.
@@ -12634,12 +12549,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Max_VrelDepart(buf, val) \
-	{                                                      \
-		buf[3] &= ~(0x0f << 0);                              \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;  \
-		buf[4] &= ~(0xff << 0);                              \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;         \
-	}
+  {                                                      \
+    buf[3] &= ~(0x0f << 0);                              \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;  \
+    buf[4] &= ~(0xff << 0);                              \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;         \
+  }
 
 /**
  * Set signal FilterCfg_Max_VrelDepart in buffer to its initial value.
@@ -12647,8 +12562,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Max_VrelDepart(buf) \
-	SET_FilterCfg_FilterCfg_Max_VrelDepart(buf, 0)
+#define INITSIG_FilterCfg_FilterCfg_Max_VrelDepart(buf) SET_FilterCfg_FilterCfg_Max_VrelDepart(buf, 0)
 
 /**
  * Signal FilterCfg_Max_VrelDepart value conversion with 16 bit factor and offset.
@@ -12661,8 +12575,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Max_VrelDepart(x, fmt) \
-	((x) * fmt * 63 / 2000)
+#define CALC_FilterCfg_FilterCfg_Max_VrelDepart(x, fmt) ((x) * fmt * 63 / 2000)
 
 /**
  * Signal FilterCfg_Max_VrelDepart raw initial value.
@@ -12722,7 +12635,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_Size(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Max_Size(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_Size in buffer.
@@ -12733,12 +12647,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Max_Size(buf, val)      \
-	{                                                     \
-		buf[3] &= ~(0x0f << 0);                             \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-		buf[4] &= ~(0xff << 0);                             \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
-	}
+  {                                                     \
+    buf[3] &= ~(0x0f << 0);                             \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+    buf[4] &= ~(0xff << 0);                             \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+  }
 
 /**
  * Set signal FilterCfg_Max_Size in buffer to its initial value.
@@ -12746,8 +12660,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Max_Size(buf) \
-	SET_FilterCfg_FilterCfg_Max_Size(buf, 0)
+#define INITSIG_FilterCfg_FilterCfg_Max_Size(buf) SET_FilterCfg_FilterCfg_Max_Size(buf, 0)
 
 /**
  * Signal FilterCfg_Max_Size value conversion with 16 bit factor and offset.
@@ -12760,8 +12673,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Max_Size(x, fmt) \
-	((x) * fmt / 40)
+#define CALC_FilterCfg_FilterCfg_Max_Size(x, fmt) ((x) * fmt / 40)
 
 /**
  * Signal FilterCfg_Max_Size raw initial value.
@@ -12821,7 +12733,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_RCS(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Max_RCS(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_RCS in buffer.
@@ -12832,12 +12745,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Max_RCS(buf, val)       \
-	{                                                     \
-		buf[3] &= ~(0x0f << 0);                             \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-		buf[4] &= ~(0xff << 0);                             \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
-	}
+  {                                                     \
+    buf[3] &= ~(0x0f << 0);                             \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+    buf[4] &= ~(0xff << 0);                             \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+  }
 
 /**
  * Set signal FilterCfg_Max_RCS in buffer to its initial value.
@@ -12845,8 +12758,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Max_RCS(buf) \
-	SET_FilterCfg_FilterCfg_Max_RCS(buf, 2000)
+#define INITSIG_FilterCfg_FilterCfg_Max_RCS(buf) SET_FilterCfg_FilterCfg_Max_RCS(buf, 2000)
 
 /**
  * Signal FilterCfg_Max_RCS value conversion with 16 bit factor and offset.
@@ -12859,8 +12771,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Max_RCS(x, fmt) \
-	((x) * fmt / 40 + fmt * (-50))
+#define CALC_FilterCfg_FilterCfg_Max_RCS(x, fmt) ((x) * fmt / 40 + fmt * (-50))
 
 /**
  * Signal FilterCfg_Max_RCS raw initial value.
@@ -12922,7 +12833,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_ProbExists(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Max_ProbExists(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_ProbExists in buffer.
@@ -12933,12 +12845,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Max_ProbExists(buf, val) \
-	{                                                      \
-		buf[3] &= ~(0x0f << 0);                              \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;  \
-		buf[4] &= ~(0xff << 0);                              \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;         \
-	}
+  {                                                      \
+    buf[3] &= ~(0x0f << 0);                              \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;  \
+    buf[4] &= ~(0xff << 0);                              \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;         \
+  }
 
 /**
  * Set signal FilterCfg_Max_ProbExists in buffer to its initial value.
@@ -12946,8 +12858,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Max_ProbExists(buf) \
-	SET_FilterCfg_FilterCfg_Max_ProbExists(buf, 0)
+#define INITSIG_FilterCfg_FilterCfg_Max_ProbExists(buf) SET_FilterCfg_FilterCfg_Max_ProbExists(buf, 0)
 
 /**
  * Signal FilterCfg_Max_ProbExists value conversion with 16 bit factor and offset.
@@ -12960,8 +12871,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Max_ProbExists(x, fmt) \
-	((x) * fmt)
+#define CALC_FilterCfg_FilterCfg_Max_ProbExists(x, fmt) ((x) * fmt)
 
 /**
  * Signal FilterCfg_Max_ProbExists raw initial value.
@@ -13099,7 +13009,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_NofObj(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Max_NofObj(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_NofObj in buffer.
@@ -13110,12 +13021,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Max_NofObj(buf, val)    \
-	{                                                     \
-		buf[3] &= ~(0x0f << 0);                             \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-		buf[4] &= ~(0xff << 0);                             \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
-	}
+  {                                                     \
+    buf[3] &= ~(0x0f << 0);                             \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+    buf[4] &= ~(0xff << 0);                             \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+  }
 
 /**
  * Set signal FilterCfg_Max_NofObj in buffer to its initial value.
@@ -13123,8 +13034,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Max_NofObj(buf) \
-	SET_FilterCfg_FilterCfg_Max_NofObj(buf, 0)
+#define INITSIG_FilterCfg_FilterCfg_Max_NofObj(buf) SET_FilterCfg_FilterCfg_Max_NofObj(buf, 0)
 
 /**
  * Signal FilterCfg_Max_NofObj value conversion with 16 bit factor and offset.
@@ -13137,8 +13047,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Max_NofObj(x, fmt) \
-	((x) * fmt)
+#define CALC_FilterCfg_FilterCfg_Max_NofObj(x, fmt) ((x) * fmt)
 
 /**
  * Signal FilterCfg_Max_NofObj raw initial value.
@@ -13198,7 +13107,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_Lifetime(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Max_Lifetime(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_Lifetime in buffer.
@@ -13209,12 +13119,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Max_Lifetime(buf, val)  \
-	{                                                     \
-		buf[3] &= ~(0x0f << 0);                             \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-		buf[4] &= ~(0xff << 0);                             \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
-	}
+  {                                                     \
+    buf[3] &= ~(0x0f << 0);                             \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+    buf[4] &= ~(0xff << 0);                             \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+  }
 
 /**
  * Set signal FilterCfg_Max_Lifetime in buffer to its initial value.
@@ -13222,8 +13132,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Max_Lifetime(buf) \
-	SET_FilterCfg_FilterCfg_Max_Lifetime(buf, 0)
+#define INITSIG_FilterCfg_FilterCfg_Max_Lifetime(buf) SET_FilterCfg_FilterCfg_Max_Lifetime(buf, 0)
 
 /**
  * Signal FilterCfg_Max_Lifetime value conversion with 16 bit factor and offset.
@@ -13236,8 +13145,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Max_Lifetime(x, fmt) \
-	((x) * fmt / 10)
+#define CALC_FilterCfg_FilterCfg_Max_Lifetime(x, fmt) ((x) * fmt / 10)
 
 /**
  * Signal FilterCfg_Max_Lifetime raw initial value.
@@ -13297,7 +13205,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_Distance(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Max_Distance(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_Distance in buffer.
@@ -13308,12 +13217,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Max_Distance(buf, val)  \
-	{                                                     \
-		buf[3] &= ~(0x0f << 0);                             \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-		buf[4] &= ~(0xff << 0);                             \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
-	}
+  {                                                     \
+    buf[3] &= ~(0x0f << 0);                             \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+    buf[4] &= ~(0xff << 0);                             \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+  }
 
 /**
  * Set signal FilterCfg_Max_Distance in buffer to its initial value.
@@ -13321,8 +13230,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Max_Distance(buf) \
-	SET_FilterCfg_FilterCfg_Max_Distance(buf, 0)
+#define INITSIG_FilterCfg_FilterCfg_Max_Distance(buf) SET_FilterCfg_FilterCfg_Max_Distance(buf, 0)
 
 /**
  * Signal FilterCfg_Max_Distance value conversion with 16 bit factor and offset.
@@ -13335,8 +13243,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Max_Distance(x, fmt) \
-	((x) * fmt / 10)
+#define CALC_FilterCfg_FilterCfg_Max_Distance(x, fmt) ((x) * fmt / 10)
 
 /**
  * Signal FilterCfg_Max_Distance raw initial value.
@@ -13396,7 +13303,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Max_Azimuth(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Max_Azimuth(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Max_Azimuth in buffer.
@@ -13407,12 +13315,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Max_Azimuth(buf, val)   \
-	{                                                     \
-		buf[3] &= ~(0x0f << 0);                             \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-		buf[4] &= ~(0xff << 0);                             \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
-	}
+  {                                                     \
+    buf[3] &= ~(0x0f << 0);                             \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+    buf[4] &= ~(0xff << 0);                             \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+  }
 
 /**
  * Set signal FilterCfg_Max_Azimuth in buffer to its initial value.
@@ -13420,8 +13328,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Max_Azimuth(buf) \
-	SET_FilterCfg_FilterCfg_Max_Azimuth(buf, 2000)
+#define INITSIG_FilterCfg_FilterCfg_Max_Azimuth(buf) SET_FilterCfg_FilterCfg_Max_Azimuth(buf, 2000)
 
 /**
  * Signal FilterCfg_Max_Azimuth value conversion with 16 bit factor and offset.
@@ -13434,8 +13341,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Max_Azimuth(x, fmt) \
-	((x) * fmt / 40 + fmt * (-50))
+#define CALC_FilterCfg_FilterCfg_Max_Azimuth(x, fmt) ((x) * fmt / 40 + fmt * (-50))
 
 /**
  * Signal FilterCfg_Max_Azimuth raw initial value.
@@ -13495,7 +13401,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_VrelOncome(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Min_VrelOncome(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_VrelOncome in buffer.
@@ -13506,12 +13413,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Min_VrelOncome(buf, val) \
-	{                                                      \
-		buf[1] &= ~(0x0f << 0);                              \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;  \
-		buf[2] &= ~(0xff << 0);                              \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;         \
-	}
+  {                                                      \
+    buf[1] &= ~(0x0f << 0);                              \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;  \
+    buf[2] &= ~(0xff << 0);                              \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;         \
+  }
 
 /**
  * Set signal FilterCfg_Min_VrelOncome in buffer to its initial value.
@@ -13519,8 +13426,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Min_VrelOncome(buf) \
-	SET_FilterCfg_FilterCfg_Min_VrelOncome(buf, 0)
+#define INITSIG_FilterCfg_FilterCfg_Min_VrelOncome(buf) SET_FilterCfg_FilterCfg_Min_VrelOncome(buf, 0)
 
 /**
  * Signal FilterCfg_Min_VrelOncome value conversion with 16 bit factor and offset.
@@ -13533,8 +13439,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Min_VrelOncome(x, fmt) \
-	((x) * fmt * 63 / 2000)
+#define CALC_FilterCfg_FilterCfg_Min_VrelOncome(x, fmt) ((x) * fmt * 63 / 2000)
 
 /**
  * Signal FilterCfg_Min_VrelOncome raw initial value.
@@ -13594,7 +13499,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_VrelDepart(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Min_VrelDepart(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_VrelDepart in buffer.
@@ -13605,12 +13511,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Min_VrelDepart(buf, val) \
-	{                                                      \
-		buf[1] &= ~(0x0f << 0);                              \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;  \
-		buf[2] &= ~(0xff << 0);                              \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;         \
-	}
+  {                                                      \
+    buf[1] &= ~(0x0f << 0);                              \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;  \
+    buf[2] &= ~(0xff << 0);                              \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;         \
+  }
 
 /**
  * Set signal FilterCfg_Min_VrelDepart in buffer to its initial value.
@@ -13618,8 +13524,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Min_VrelDepart(buf) \
-	SET_FilterCfg_FilterCfg_Min_VrelDepart(buf, 0)
+#define INITSIG_FilterCfg_FilterCfg_Min_VrelDepart(buf) SET_FilterCfg_FilterCfg_Min_VrelDepart(buf, 0)
 
 /**
  * Signal FilterCfg_Min_VrelDepart value conversion with 16 bit factor and offset.
@@ -13632,8 +13537,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Min_VrelDepart(x, fmt) \
-	((x) * fmt * 63 / 2000)
+#define CALC_FilterCfg_FilterCfg_Min_VrelDepart(x, fmt) ((x) * fmt * 63 / 2000)
 
 /**
  * Signal FilterCfg_Min_VrelDepart raw initial value.
@@ -13693,7 +13597,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_Size(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Min_Size(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_Size in buffer.
@@ -13704,12 +13609,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Min_Size(buf, val)      \
-	{                                                     \
-		buf[1] &= ~(0x0f << 0);                             \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-		buf[2] &= ~(0xff << 0);                             \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
-	}
+  {                                                     \
+    buf[1] &= ~(0x0f << 0);                             \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+    buf[2] &= ~(0xff << 0);                             \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+  }
 
 /**
  * Set signal FilterCfg_Min_Size in buffer to its initial value.
@@ -13717,8 +13622,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Min_Size(buf) \
-	SET_FilterCfg_FilterCfg_Min_Size(buf, 0)
+#define INITSIG_FilterCfg_FilterCfg_Min_Size(buf) SET_FilterCfg_FilterCfg_Min_Size(buf, 0)
 
 /**
  * Signal FilterCfg_Min_Size value conversion with 16 bit factor and offset.
@@ -13731,8 +13635,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Min_Size(x, fmt) \
-	((x) * fmt / 40)
+#define CALC_FilterCfg_FilterCfg_Min_Size(x, fmt) ((x) * fmt / 40)
 
 /**
  * Signal FilterCfg_Min_Size raw initial value.
@@ -13792,7 +13695,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_RCS(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Min_RCS(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_RCS in buffer.
@@ -13803,12 +13707,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Min_RCS(buf, val)       \
-	{                                                     \
-		buf[1] &= ~(0x0f << 0);                             \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-		buf[2] &= ~(0xff << 0);                             \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
-	}
+  {                                                     \
+    buf[1] &= ~(0x0f << 0);                             \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+    buf[2] &= ~(0xff << 0);                             \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+  }
 
 /**
  * Set signal FilterCfg_Min_RCS in buffer to its initial value.
@@ -13816,8 +13720,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Min_RCS(buf) \
-	SET_FilterCfg_FilterCfg_Min_RCS(buf, 2000)
+#define INITSIG_FilterCfg_FilterCfg_Min_RCS(buf) SET_FilterCfg_FilterCfg_Min_RCS(buf, 2000)
 
 /**
  * Signal FilterCfg_Min_RCS value conversion with 16 bit factor and offset.
@@ -13830,8 +13733,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Min_RCS(x, fmt) \
-	((x) * fmt / 40 + fmt * (-50))
+#define CALC_FilterCfg_FilterCfg_Min_RCS(x, fmt) ((x) * fmt / 40 + fmt * (-50))
 
 /**
  * Signal FilterCfg_Min_RCS raw initial value.
@@ -13893,7 +13795,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_ProbExists(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Min_ProbExists(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_ProbExists in buffer.
@@ -13904,12 +13807,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Min_ProbExists(buf, val) \
-	{                                                      \
-		buf[1] &= ~(0x0f << 0);                              \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;  \
-		buf[2] &= ~(0xff << 0);                              \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;         \
-	}
+  {                                                      \
+    buf[1] &= ~(0x0f << 0);                              \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0;  \
+    buf[2] &= ~(0xff << 0);                              \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;         \
+  }
 
 /**
  * Set signal FilterCfg_Min_ProbExists in buffer to its initial value.
@@ -13917,8 +13820,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Min_ProbExists(buf) \
-	SET_FilterCfg_FilterCfg_Min_ProbExists(buf, 0)
+#define INITSIG_FilterCfg_FilterCfg_Min_ProbExists(buf) SET_FilterCfg_FilterCfg_Min_ProbExists(buf, 0)
 
 /**
  * Signal FilterCfg_Min_ProbExists value conversion with 16 bit factor and offset.
@@ -13931,8 +13833,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Min_ProbExists(x, fmt) \
-	((x) * fmt)
+#define CALC_FilterCfg_FilterCfg_Min_ProbExists(x, fmt) ((x) * fmt)
 
 /**
  * Signal FilterCfg_Min_ProbExists raw initial value.
@@ -14070,7 +13971,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_Lifetime(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Min_Lifetime(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_Lifetime in buffer.
@@ -14081,12 +13983,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Min_Lifetime(buf, val)  \
-	{                                                     \
-		buf[1] &= ~(0x0f << 0);                             \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-		buf[2] &= ~(0xff << 0);                             \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
-	}
+  {                                                     \
+    buf[1] &= ~(0x0f << 0);                             \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+    buf[2] &= ~(0xff << 0);                             \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+  }
 
 /**
  * Set signal FilterCfg_Min_Lifetime in buffer to its initial value.
@@ -14094,8 +13996,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Min_Lifetime(buf) \
-	SET_FilterCfg_FilterCfg_Min_Lifetime(buf, 0)
+#define INITSIG_FilterCfg_FilterCfg_Min_Lifetime(buf) SET_FilterCfg_FilterCfg_Min_Lifetime(buf, 0)
 
 /**
  * Signal FilterCfg_Min_Lifetime value conversion with 16 bit factor and offset.
@@ -14108,8 +14009,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Min_Lifetime(x, fmt) \
-	((x) * fmt / 10)
+#define CALC_FilterCfg_FilterCfg_Min_Lifetime(x, fmt) ((x) * fmt / 10)
 
 /**
  * Signal FilterCfg_Min_Lifetime raw initial value.
@@ -14169,7 +14069,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_Azimuth(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Min_Azimuth(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_Azimuth in buffer.
@@ -14180,12 +14081,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Min_Azimuth(buf, val)   \
-	{                                                     \
-		buf[1] &= ~(0x0f << 0);                             \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-		buf[2] &= ~(0xff << 0);                             \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
-	}
+  {                                                     \
+    buf[1] &= ~(0x0f << 0);                             \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+    buf[2] &= ~(0xff << 0);                             \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+  }
 
 /**
  * Set signal FilterCfg_Min_Azimuth in buffer to its initial value.
@@ -14193,8 +14094,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Min_Azimuth(buf) \
-	SET_FilterCfg_FilterCfg_Min_Azimuth(buf, 2000)
+#define INITSIG_FilterCfg_FilterCfg_Min_Azimuth(buf) SET_FilterCfg_FilterCfg_Min_Azimuth(buf, 2000)
 
 /**
  * Signal FilterCfg_Min_Azimuth value conversion with 16 bit factor and offset.
@@ -14207,8 +14107,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Min_Azimuth(x, fmt) \
-	((x) * fmt / 40 + fmt * (-50))
+#define CALC_FilterCfg_FilterCfg_Min_Azimuth(x, fmt) ((x) * fmt / 40 + fmt * (-50))
 
 /**
  * Signal FilterCfg_Min_Azimuth raw initial value.
@@ -14268,7 +14167,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_NofObj(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Min_NofObj(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_NofObj in buffer.
@@ -14279,12 +14179,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Min_NofObj(buf, val)    \
-	{                                                     \
-		buf[1] &= ~(0x0f << 0);                             \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-		buf[2] &= ~(0xff << 0);                             \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
-	}
+  {                                                     \
+    buf[1] &= ~(0x0f << 0);                             \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+    buf[2] &= ~(0xff << 0);                             \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+  }
 
 /**
  * Set signal FilterCfg_Min_NofObj in buffer to its initial value.
@@ -14292,8 +14192,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Min_NofObj(buf) \
-	SET_FilterCfg_FilterCfg_Min_NofObj(buf, 0)
+#define INITSIG_FilterCfg_FilterCfg_Min_NofObj(buf) SET_FilterCfg_FilterCfg_Min_NofObj(buf, 0)
 
 /**
  * Signal FilterCfg_Min_NofObj value conversion with 16 bit factor and offset.
@@ -14306,8 +14205,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Min_NofObj(x, fmt) \
-	((x) * fmt)
+#define CALC_FilterCfg_FilterCfg_Min_NofObj(x, fmt) ((x) * fmt)
 
 /**
  * Signal FilterCfg_Min_NofObj raw initial value.
@@ -14367,7 +14265,8 @@
  * @return
  *	The raw signal
  */
-#define GET_FilterCfg_FilterCfg_Min_Distance(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_FilterCfg_FilterCfg_Min_Distance(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0x0f) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal FilterCfg_Min_Distance in buffer.
@@ -14378,12 +14277,12 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Min_Distance(buf, val)  \
-	{                                                     \
-		buf[1] &= ~(0x0f << 0);                             \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
-		buf[2] &= ~(0xff << 0);                             \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
-	}
+  {                                                     \
+    buf[1] &= ~(0x0f << 0);                             \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0x0f) << 0; \
+    buf[2] &= ~(0xff << 0);                             \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+  }
 
 /**
  * Set signal FilterCfg_Min_Distance in buffer to its initial value.
@@ -14391,8 +14290,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Min_Distance(buf) \
-	SET_FilterCfg_FilterCfg_Min_Distance(buf, 0)
+#define INITSIG_FilterCfg_FilterCfg_Min_Distance(buf) SET_FilterCfg_FilterCfg_Min_Distance(buf, 0)
 
 /**
  * Signal FilterCfg_Min_Distance value conversion with 16 bit factor and offset.
@@ -14405,8 +14303,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Min_Distance(x, fmt) \
-	((x) * fmt / 10)
+#define CALC_FilterCfg_FilterCfg_Min_Distance(x, fmt) ((x) * fmt / 10)
 
 /**
  * Signal FilterCfg_Min_Distance raw initial value.
@@ -14479,10 +14376,10 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Index(buf, val)  \
-	{                                              \
-		buf[0] &= ~(0x0f << 3);                      \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x0f) << 3; \
-	}
+  {                                              \
+    buf[0] &= ~(0x0f << 3);                      \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x0f) << 3; \
+  }
 
 /**
  * Set signal FilterCfg_Index in buffer to its initial value.
@@ -14490,8 +14387,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Index(buf) \
-	SET_FilterCfg_FilterCfg_Index(buf, 0)
+#define INITSIG_FilterCfg_FilterCfg_Index(buf) SET_FilterCfg_FilterCfg_Index(buf, 0)
 
 /**
  * Signal FilterCfg_Index value conversion with 16 bit factor and offset.
@@ -14504,8 +14400,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Index(x, fmt) \
-	((x) * fmt)
+#define CALC_FilterCfg_FilterCfg_Index(x, fmt) ((x) * fmt)
 
 /**
  * Signal FilterCfg_Index raw initial value.
@@ -14720,10 +14615,10 @@
  *	The raw value to set the signal to
  */
 #define SET_FilterCfg_FilterCfg_Type(buf, val)   \
-	{                                              \
-		buf[0] &= ~(0x01 << 7);                      \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 7; \
-	}
+  {                                              \
+    buf[0] &= ~(0x01 << 7);                      \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 7; \
+  }
 
 /**
  * Set signal FilterCfg_Type in buffer to its initial value.
@@ -14731,8 +14626,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_FilterCfg_FilterCfg_Type(buf) \
-	SET_FilterCfg_FilterCfg_Type(buf, 0)
+#define INITSIG_FilterCfg_FilterCfg_Type(buf) SET_FilterCfg_FilterCfg_Type(buf, 0)
 
 /**
  * Signal FilterCfg_Type value conversion with 16 bit factor and offset.
@@ -14745,8 +14639,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_FilterCfg_FilterCfg_Type(x, fmt) \
-	((x) * fmt)
+#define CALC_FilterCfg_FilterCfg_Type(x, fmt) ((x) * fmt)
 
 /**
  * Signal FilterCfg_Type raw initial value.
@@ -14846,10 +14739,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarConfiguration_RadarCfg_RCS_Threshold_Valid(buf, val) \
-	{                                                                   \
-		buf[6] &= ~(0x01 << 0);                                           \
-		buf[6] |= (((ubyte)(val) >> 0) & 0x01) << 0;                      \
-	}
+  {                                                                   \
+    buf[6] &= ~(0x01 << 0);                                           \
+    buf[6] |= (((ubyte)(val) >> 0) & 0x01) << 0;                      \
+  }
 
 /**
  * Set signal RadarCfg_RCS_Threshold_Valid in buffer to its initial value.
@@ -14858,7 +14751,7 @@
  *	The can message buffer to initialise
  */
 #define INITSIG_RadarConfiguration_RadarCfg_RCS_Threshold_Valid(buf) \
-	SET_RadarConfiguration_RadarCfg_RCS_Threshold_Valid(buf, 0)
+  SET_RadarConfiguration_RadarCfg_RCS_Threshold_Valid(buf, 0)
 
 /**
  * Signal RadarCfg_RCS_Threshold_Valid value conversion with 16 bit factor and offset.
@@ -14871,8 +14764,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarConfiguration_RadarCfg_RCS_Threshold_Valid(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarConfiguration_RadarCfg_RCS_Threshold_Valid(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarCfg_RCS_Threshold_Valid raw initial value.
@@ -14968,10 +14860,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarConfiguration_RadarCfg_RCS_Threshold(buf, val) \
-	{                                                             \
-		buf[6] &= ~(0x07 << 1);                                     \
-		buf[6] |= (((ubyte)(val) >> 0) & 0x07) << 1;                \
-	}
+  {                                                             \
+    buf[6] &= ~(0x07 << 1);                                     \
+    buf[6] |= (((ubyte)(val) >> 0) & 0x07) << 1;                \
+  }
 
 /**
  * Set signal RadarCfg_RCS_Threshold in buffer to its initial value.
@@ -14979,8 +14871,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarConfiguration_RadarCfg_RCS_Threshold(buf) \
-	SET_RadarConfiguration_RadarCfg_RCS_Threshold(buf, 0)
+#define INITSIG_RadarConfiguration_RadarCfg_RCS_Threshold(buf) SET_RadarConfiguration_RadarCfg_RCS_Threshold(buf, 0)
 
 /**
  * Signal RadarCfg_RCS_Threshold value conversion with 16 bit factor and offset.
@@ -14993,8 +14884,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarConfiguration_RadarCfg_RCS_Threshold(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarConfiguration_RadarCfg_RCS_Threshold(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarCfg_RCS_Threshold raw initial value.
@@ -15134,10 +15024,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarConfiguration_RadarCfg_StoreInNVM_valid(buf, val) \
-	{                                                                \
-		buf[0] &= ~(0x01 << 7);                                        \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 7;                   \
-	}
+  {                                                                \
+    buf[0] &= ~(0x01 << 7);                                        \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 7;                   \
+  }
 
 /**
  * Set signal RadarCfg_StoreInNVM_valid in buffer to its initial value.
@@ -15146,7 +15036,7 @@
  *	The can message buffer to initialise
  */
 #define INITSIG_RadarConfiguration_RadarCfg_StoreInNVM_valid(buf) \
-	SET_RadarConfiguration_RadarCfg_StoreInNVM_valid(buf, 0)
+  SET_RadarConfiguration_RadarCfg_StoreInNVM_valid(buf, 0)
 
 /**
  * Signal RadarCfg_StoreInNVM_valid value conversion with 16 bit factor and offset.
@@ -15159,8 +15049,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarConfiguration_RadarCfg_StoreInNVM_valid(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarConfiguration_RadarCfg_StoreInNVM_valid(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarCfg_StoreInNVM_valid raw initial value.
@@ -15256,10 +15145,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarConfiguration_RadarCfg_SortIndex_valid(buf, val) \
-	{                                                               \
-		buf[0] &= ~(0x01 << 6);                                       \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 6;                  \
-	}
+  {                                                               \
+    buf[0] &= ~(0x01 << 6);                                       \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 6;                  \
+  }
 
 /**
  * Set signal RadarCfg_SortIndex_valid in buffer to its initial value.
@@ -15267,8 +15156,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarConfiguration_RadarCfg_SortIndex_valid(buf) \
-	SET_RadarConfiguration_RadarCfg_SortIndex_valid(buf, 0)
+#define INITSIG_RadarConfiguration_RadarCfg_SortIndex_valid(buf) SET_RadarConfiguration_RadarCfg_SortIndex_valid(buf, 0)
 
 /**
  * Signal RadarCfg_SortIndex_valid value conversion with 16 bit factor and offset.
@@ -15281,8 +15169,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarConfiguration_RadarCfg_SortIndex_valid(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarConfiguration_RadarCfg_SortIndex_valid(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarCfg_SortIndex_valid raw initial value.
@@ -15378,10 +15265,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarConfiguration_RadarCfg_SortIndex(buf, val) \
-	{                                                         \
-		buf[5] &= ~(0x07 << 4);                                 \
-		buf[5] |= (((ubyte)(val) >> 0) & 0x07) << 4;            \
-	}
+  {                                                         \
+    buf[5] &= ~(0x07 << 4);                                 \
+    buf[5] |= (((ubyte)(val) >> 0) & 0x07) << 4;            \
+  }
 
 /**
  * Set signal RadarCfg_SortIndex in buffer to its initial value.
@@ -15389,8 +15276,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarConfiguration_RadarCfg_SortIndex(buf) \
-	SET_RadarConfiguration_RadarCfg_SortIndex(buf, 0)
+#define INITSIG_RadarConfiguration_RadarCfg_SortIndex(buf) SET_RadarConfiguration_RadarCfg_SortIndex(buf, 0)
 
 /**
  * Signal RadarCfg_SortIndex value conversion with 16 bit factor and offset.
@@ -15403,8 +15289,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarConfiguration_RadarCfg_SortIndex(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarConfiguration_RadarCfg_SortIndex(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarCfg_SortIndex raw initial value.
@@ -15514,10 +15399,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarConfiguration_RadarCfg_StoreInNVM(buf, val) \
-	{                                                          \
-		buf[5] &= ~(0x01 << 7);                                  \
-		buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 7;             \
-	}
+  {                                                          \
+    buf[5] &= ~(0x01 << 7);                                  \
+    buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 7;             \
+  }
 
 /**
  * Set signal RadarCfg_StoreInNVM in buffer to its initial value.
@@ -15525,8 +15410,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarConfiguration_RadarCfg_StoreInNVM(buf) \
-	SET_RadarConfiguration_RadarCfg_StoreInNVM(buf, 0)
+#define INITSIG_RadarConfiguration_RadarCfg_StoreInNVM(buf) SET_RadarConfiguration_RadarCfg_StoreInNVM(buf, 0)
 
 /**
  * Signal RadarCfg_StoreInNVM value conversion with 16 bit factor and offset.
@@ -15539,8 +15423,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarConfiguration_RadarCfg_StoreInNVM(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarConfiguration_RadarCfg_StoreInNVM(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarCfg_StoreInNVM raw initial value.
@@ -15637,10 +15520,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarConfiguration_RadarCfg_SendExtInfo_valid(buf, val) \
-	{                                                                 \
-		buf[0] &= ~(0x01 << 5);                                         \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 5;                    \
-	}
+  {                                                                 \
+    buf[0] &= ~(0x01 << 5);                                         \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 5;                    \
+  }
 
 /**
  * Set signal RadarCfg_SendExtInfo_valid in buffer to its initial value.
@@ -15649,7 +15532,7 @@
  *	The can message buffer to initialise
  */
 #define INITSIG_RadarConfiguration_RadarCfg_SendExtInfo_valid(buf) \
-	SET_RadarConfiguration_RadarCfg_SendExtInfo_valid(buf, 0)
+  SET_RadarConfiguration_RadarCfg_SendExtInfo_valid(buf, 0)
 
 /**
  * Signal RadarCfg_SendExtInfo_valid value conversion with 16 bit factor and offset.
@@ -15662,8 +15545,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarConfiguration_RadarCfg_SendExtInfo_valid(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarConfiguration_RadarCfg_SendExtInfo_valid(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarCfg_SendExtInfo_valid raw initial value.
@@ -15760,10 +15642,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarConfiguration_RadarCfg_SendExtInfo(buf, val) \
-	{                                                           \
-		buf[5] &= ~(0x01 << 3);                                   \
-		buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 3;              \
-	}
+  {                                                           \
+    buf[5] &= ~(0x01 << 3);                                   \
+    buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 3;              \
+  }
 
 /**
  * Set signal RadarCfg_SendExtInfo in buffer to its initial value.
@@ -15771,8 +15653,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarConfiguration_RadarCfg_SendExtInfo(buf) \
-	SET_RadarConfiguration_RadarCfg_SendExtInfo(buf, 0)
+#define INITSIG_RadarConfiguration_RadarCfg_SendExtInfo(buf) SET_RadarConfiguration_RadarCfg_SendExtInfo(buf, 0)
 
 /**
  * Signal RadarCfg_SendExtInfo value conversion with 16 bit factor and offset.
@@ -15785,8 +15666,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarConfiguration_RadarCfg_SendExtInfo(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarConfiguration_RadarCfg_SendExtInfo(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarCfg_SendExtInfo raw initial value.
@@ -15883,10 +15763,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarConfiguration_RadarCfg_CtrlRelay_valid(buf, val) \
-	{                                                               \
-		buf[5] &= ~(0x01 << 0);                                       \
-		buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 0;                  \
-	}
+  {                                                               \
+    buf[5] &= ~(0x01 << 0);                                       \
+    buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 0;                  \
+  }
 
 /**
  * Set signal RadarCfg_CtrlRelay_valid in buffer to its initial value.
@@ -15894,8 +15774,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarConfiguration_RadarCfg_CtrlRelay_valid(buf) \
-	SET_RadarConfiguration_RadarCfg_CtrlRelay_valid(buf, 0)
+#define INITSIG_RadarConfiguration_RadarCfg_CtrlRelay_valid(buf) SET_RadarConfiguration_RadarCfg_CtrlRelay_valid(buf, 0)
 
 /**
  * Signal RadarCfg_CtrlRelay_valid value conversion with 16 bit factor and offset.
@@ -15908,8 +15787,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarConfiguration_RadarCfg_CtrlRelay_valid(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarConfiguration_RadarCfg_CtrlRelay_valid(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarCfg_CtrlRelay_valid raw initial value.
@@ -16006,10 +15884,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarConfiguration_RadarCfg_CtrlRelay(buf, val) \
-	{                                                         \
-		buf[5] &= ~(0x01 << 1);                                 \
-		buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 1;            \
-	}
+  {                                                         \
+    buf[5] &= ~(0x01 << 1);                                 \
+    buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 1;            \
+  }
 
 /**
  * Set signal RadarCfg_CtrlRelay in buffer to its initial value.
@@ -16017,8 +15895,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarConfiguration_RadarCfg_CtrlRelay(buf) \
-	SET_RadarConfiguration_RadarCfg_CtrlRelay(buf, 0)
+#define INITSIG_RadarConfiguration_RadarCfg_CtrlRelay(buf) SET_RadarConfiguration_RadarCfg_CtrlRelay(buf, 0)
 
 /**
  * Signal RadarCfg_CtrlRelay value conversion with 16 bit factor and offset.
@@ -16031,8 +15908,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarConfiguration_RadarCfg_CtrlRelay(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarConfiguration_RadarCfg_CtrlRelay(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarCfg_CtrlRelay raw initial value.
@@ -16129,10 +16005,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarConfiguration_RadarCfg_SendQuality_valid(buf, val) \
-	{                                                                 \
-		buf[0] &= ~(0x01 << 4);                                         \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 4;                    \
-	}
+  {                                                                 \
+    buf[0] &= ~(0x01 << 4);                                         \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 4;                    \
+  }
 
 /**
  * Set signal RadarCfg_SendQuality_valid in buffer to its initial value.
@@ -16141,7 +16017,7 @@
  *	The can message buffer to initialise
  */
 #define INITSIG_RadarConfiguration_RadarCfg_SendQuality_valid(buf) \
-	SET_RadarConfiguration_RadarCfg_SendQuality_valid(buf, 0)
+  SET_RadarConfiguration_RadarCfg_SendQuality_valid(buf, 0)
 
 /**
  * Signal RadarCfg_SendQuality_valid value conversion with 16 bit factor and offset.
@@ -16154,8 +16030,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarConfiguration_RadarCfg_SendQuality_valid(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarConfiguration_RadarCfg_SendQuality_valid(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarCfg_SendQuality_valid raw initial value.
@@ -16252,10 +16127,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarConfiguration_RadarCfg_SendQuality(buf, val) \
-	{                                                           \
-		buf[5] &= ~(0x01 << 2);                                   \
-		buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 2;              \
-	}
+  {                                                           \
+    buf[5] &= ~(0x01 << 2);                                   \
+    buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 2;              \
+  }
 
 /**
  * Set signal RadarCfg_SendQuality in buffer to its initial value.
@@ -16263,8 +16138,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarConfiguration_RadarCfg_SendQuality(buf) \
-	SET_RadarConfiguration_RadarCfg_SendQuality(buf, 0)
+#define INITSIG_RadarConfiguration_RadarCfg_SendQuality(buf) SET_RadarConfiguration_RadarCfg_SendQuality(buf, 0)
 
 /**
  * Signal RadarCfg_SendQuality value conversion with 16 bit factor and offset.
@@ -16277,8 +16151,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarConfiguration_RadarCfg_SendQuality(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarConfiguration_RadarCfg_SendQuality(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarCfg_SendQuality raw initial value.
@@ -16375,10 +16248,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarConfiguration_RadarCfg_MaxDistance_valid(buf, val) \
-	{                                                                 \
-		buf[0] &= ~(0x01 << 0);                                         \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 0;                    \
-	}
+  {                                                                 \
+    buf[0] &= ~(0x01 << 0);                                         \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 0;                    \
+  }
 
 /**
  * Set signal RadarCfg_MaxDistance_valid in buffer to its initial value.
@@ -16387,7 +16260,7 @@
  *	The can message buffer to initialise
  */
 #define INITSIG_RadarConfiguration_RadarCfg_MaxDistance_valid(buf) \
-	SET_RadarConfiguration_RadarCfg_MaxDistance_valid(buf, 0)
+  SET_RadarConfiguration_RadarCfg_MaxDistance_valid(buf, 0)
 
 /**
  * Signal RadarCfg_MaxDistance_valid value conversion with 16 bit factor and offset.
@@ -16400,8 +16273,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarConfiguration_RadarCfg_MaxDistance_valid(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarConfiguration_RadarCfg_MaxDistance_valid(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarCfg_MaxDistance_valid raw initial value.
@@ -16498,10 +16370,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarConfiguration_RadarCfg_RadarPower_valid(buf, val) \
-	{                                                                \
-		buf[0] &= ~(0x01 << 2);                                        \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 2;                   \
-	}
+  {                                                                \
+    buf[0] &= ~(0x01 << 2);                                        \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 2;                   \
+  }
 
 /**
  * Set signal RadarCfg_RadarPower_valid in buffer to its initial value.
@@ -16510,7 +16382,7 @@
  *	The can message buffer to initialise
  */
 #define INITSIG_RadarConfiguration_RadarCfg_RadarPower_valid(buf) \
-	SET_RadarConfiguration_RadarCfg_RadarPower_valid(buf, 0)
+  SET_RadarConfiguration_RadarCfg_RadarPower_valid(buf, 0)
 
 /**
  * Signal RadarCfg_RadarPower_valid value conversion with 16 bit factor and offset.
@@ -16523,8 +16395,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarConfiguration_RadarCfg_RadarPower_valid(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarConfiguration_RadarCfg_RadarPower_valid(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarCfg_RadarPower_valid raw initial value.
@@ -16621,10 +16492,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarConfiguration_RadarCfg_OutputType_valid(buf, val) \
-	{                                                                \
-		buf[0] &= ~(0x01 << 3);                                        \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 3;                   \
-	}
+  {                                                                \
+    buf[0] &= ~(0x01 << 3);                                        \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 3;                   \
+  }
 
 /**
  * Set signal RadarCfg_OutputType_valid in buffer to its initial value.
@@ -16633,7 +16504,7 @@
  *	The can message buffer to initialise
  */
 #define INITSIG_RadarConfiguration_RadarCfg_OutputType_valid(buf) \
-	SET_RadarConfiguration_RadarCfg_OutputType_valid(buf, 0)
+  SET_RadarConfiguration_RadarCfg_OutputType_valid(buf, 0)
 
 /**
  * Signal RadarCfg_OutputType_valid value conversion with 16 bit factor and offset.
@@ -16646,8 +16517,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarConfiguration_RadarCfg_OutputType_valid(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarConfiguration_RadarCfg_OutputType_valid(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarCfg_OutputType_valid raw initial value.
@@ -16744,10 +16614,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarConfiguration_RadarCfg_SensorID_valid(buf, val) \
-	{                                                              \
-		buf[0] &= ~(0x01 << 1);                                      \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 1;                 \
-	}
+  {                                                              \
+    buf[0] &= ~(0x01 << 1);                                      \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 1;                 \
+  }
 
 /**
  * Set signal RadarCfg_SensorID_valid in buffer to its initial value.
@@ -16755,8 +16625,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarConfiguration_RadarCfg_SensorID_valid(buf) \
-	SET_RadarConfiguration_RadarCfg_SensorID_valid(buf, 0)
+#define INITSIG_RadarConfiguration_RadarCfg_SensorID_valid(buf) SET_RadarConfiguration_RadarCfg_SensorID_valid(buf, 0)
 
 /**
  * Signal RadarCfg_SensorID_valid value conversion with 16 bit factor and offset.
@@ -16769,8 +16638,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarConfiguration_RadarCfg_SensorID_valid(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarConfiguration_RadarCfg_SensorID_valid(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarCfg_SensorID_valid raw initial value.
@@ -16854,7 +16722,8 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarConfiguration_RadarCfg_MaxDistance(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0xff) << 2) | (ubyte)(+(ubyte)((buf[2] >> 6) & 0x03) << 0))
+#define GET_RadarConfiguration_RadarCfg_MaxDistance(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0xff) << 2) | (ubyte)(+(ubyte)((buf[2] >> 6) & 0x03) << 0))
 
 /**
  * Set signal RadarCfg_MaxDistance in buffer.
@@ -16865,12 +16734,12 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarConfiguration_RadarCfg_MaxDistance(buf, val) \
-	{                                                           \
-		buf[1] &= ~(0xff << 0);                                   \
-		buf[1] |= ((ubyte)((uword)(val) >> 2) & 0xff) << 0;       \
-		buf[2] &= ~(0x03 << 6);                                   \
-		buf[2] |= (((ubyte)(val) >> 0) & 0x03) << 6;              \
-	}
+  {                                                           \
+    buf[1] &= ~(0xff << 0);                                   \
+    buf[1] |= ((ubyte)((uword)(val) >> 2) & 0xff) << 0;       \
+    buf[2] &= ~(0x03 << 6);                                   \
+    buf[2] |= (((ubyte)(val) >> 0) & 0x03) << 6;              \
+  }
 
 /**
  * Set signal RadarCfg_MaxDistance in buffer to its initial value.
@@ -16878,8 +16747,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarConfiguration_RadarCfg_MaxDistance(buf) \
-	SET_RadarConfiguration_RadarCfg_MaxDistance(buf, 0)
+#define INITSIG_RadarConfiguration_RadarCfg_MaxDistance(buf) SET_RadarConfiguration_RadarCfg_MaxDistance(buf, 0)
 
 /**
  * Signal RadarCfg_MaxDistance value conversion with 16 bit factor and offset.
@@ -16892,8 +16760,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarConfiguration_RadarCfg_MaxDistance(x, fmt) \
-	((x) * fmt * 2)
+#define CALC_RadarConfiguration_RadarCfg_MaxDistance(x, fmt) ((x) * fmt * 2)
 
 /**
  * Signal RadarCfg_MaxDistance raw initial value.
@@ -16968,10 +16835,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarConfiguration_RadarCfg_RadarPower(buf, val) \
-	{                                                          \
-		buf[4] &= ~(0x07 << 5);                                  \
-		buf[4] |= (((ubyte)(val) >> 0) & 0x07) << 5;             \
-	}
+  {                                                          \
+    buf[4] &= ~(0x07 << 5);                                  \
+    buf[4] |= (((ubyte)(val) >> 0) & 0x07) << 5;             \
+  }
 
 /**
  * Set signal RadarCfg_RadarPower in buffer to its initial value.
@@ -16979,8 +16846,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarConfiguration_RadarCfg_RadarPower(buf) \
-	SET_RadarConfiguration_RadarCfg_RadarPower(buf, 0)
+#define INITSIG_RadarConfiguration_RadarCfg_RadarPower(buf) SET_RadarConfiguration_RadarCfg_RadarPower(buf, 0)
 
 /**
  * Signal RadarCfg_RadarPower value conversion with 16 bit factor and offset.
@@ -16993,8 +16859,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarConfiguration_RadarCfg_RadarPower(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarConfiguration_RadarCfg_RadarPower(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarCfg_RadarPower raw initial value.
@@ -17139,10 +17004,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarConfiguration_RadarCfg_OutputType(buf, val) \
-	{                                                          \
-		buf[4] &= ~(0x03 << 3);                                  \
-		buf[4] |= (((ubyte)(val) >> 0) & 0x03) << 3;             \
-	}
+  {                                                          \
+    buf[4] &= ~(0x03 << 3);                                  \
+    buf[4] |= (((ubyte)(val) >> 0) & 0x03) << 3;             \
+  }
 
 /**
  * Set signal RadarCfg_OutputType in buffer to its initial value.
@@ -17150,8 +17015,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarConfiguration_RadarCfg_OutputType(buf) \
-	SET_RadarConfiguration_RadarCfg_OutputType(buf, 0)
+#define INITSIG_RadarConfiguration_RadarCfg_OutputType(buf) SET_RadarConfiguration_RadarCfg_OutputType(buf, 0)
 
 /**
  * Signal RadarCfg_OutputType value conversion with 16 bit factor and offset.
@@ -17164,8 +17028,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarConfiguration_RadarCfg_OutputType(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarConfiguration_RadarCfg_OutputType(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarCfg_OutputType raw initial value.
@@ -17276,10 +17139,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarConfiguration_RadarCfg_SensorID(buf, val) \
-	{                                                        \
-		buf[4] &= ~(0x07 << 0);                                \
-		buf[4] |= (((ubyte)(val) >> 0) & 0x07) << 0;           \
-	}
+  {                                                        \
+    buf[4] &= ~(0x07 << 0);                                \
+    buf[4] |= (((ubyte)(val) >> 0) & 0x07) << 0;           \
+  }
 
 /**
  * Set signal RadarCfg_SensorID in buffer to its initial value.
@@ -17287,8 +17150,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarConfiguration_RadarCfg_SensorID(buf) \
-	SET_RadarConfiguration_RadarCfg_SensorID(buf, 0)
+#define INITSIG_RadarConfiguration_RadarCfg_SensorID(buf) SET_RadarConfiguration_RadarCfg_SensorID(buf, 0)
 
 /**
  * Signal RadarCfg_SensorID value conversion with 16 bit factor and offset.
@@ -17301,8 +17163,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarConfiguration_RadarCfg_SensorID(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarConfiguration_RadarCfg_SensorID(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarCfg_SensorID raw initial value.
@@ -17374,10 +17235,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarState_RadarState_Voltage_Error(buf, val) \
-	{                                                       \
-		buf[2] &= ~(0x01 << 1);                               \
-		buf[2] |= (((ubyte)(val) >> 0) & 0x01) << 1;          \
-	}
+  {                                                       \
+    buf[2] &= ~(0x01 << 1);                               \
+    buf[2] |= (((ubyte)(val) >> 0) & 0x01) << 1;          \
+  }
 
 /**
  * Set signal RadarState_Voltage_Error in buffer to its initial value.
@@ -17385,8 +17246,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarState_RadarState_Voltage_Error(buf) \
-	SET_RadarState_RadarState_Voltage_Error(buf, 0)
+#define INITSIG_RadarState_RadarState_Voltage_Error(buf) SET_RadarState_RadarState_Voltage_Error(buf, 0)
 
 /**
  * Signal RadarState_Voltage_Error value conversion with 16 bit factor and offset.
@@ -17399,8 +17259,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarState_RadarState_Voltage_Error(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarState_RadarState_Voltage_Error(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarState_Voltage_Error raw initial value.
@@ -17498,10 +17357,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarState_RadarState_Temporary_Error(buf, val) \
-	{                                                         \
-		buf[2] &= ~(0x01 << 2);                                 \
-		buf[2] |= (((ubyte)(val) >> 0) & 0x01) << 2;            \
-	}
+  {                                                         \
+    buf[2] &= ~(0x01 << 2);                                 \
+    buf[2] |= (((ubyte)(val) >> 0) & 0x01) << 2;            \
+  }
 
 /**
  * Set signal RadarState_Temporary_Error in buffer to its initial value.
@@ -17509,8 +17368,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarState_RadarState_Temporary_Error(buf) \
-	SET_RadarState_RadarState_Temporary_Error(buf, 0)
+#define INITSIG_RadarState_RadarState_Temporary_Error(buf) SET_RadarState_RadarState_Temporary_Error(buf, 0)
 
 /**
  * Signal RadarState_Temporary_Error value conversion with 16 bit factor and offset.
@@ -17523,8 +17381,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarState_RadarState_Temporary_Error(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarState_RadarState_Temporary_Error(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarState_Temporary_Error raw initial value.
@@ -17622,10 +17479,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarState_RadarState_Temperature_Error(buf, val) \
-	{                                                           \
-		buf[2] &= ~(0x01 << 3);                                   \
-		buf[2] |= (((ubyte)(val) >> 0) & 0x01) << 3;              \
-	}
+  {                                                           \
+    buf[2] &= ~(0x01 << 3);                                   \
+    buf[2] |= (((ubyte)(val) >> 0) & 0x01) << 3;              \
+  }
 
 /**
  * Set signal RadarState_Temperature_Error in buffer to its initial value.
@@ -17633,8 +17490,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarState_RadarState_Temperature_Error(buf) \
-	SET_RadarState_RadarState_Temperature_Error(buf, 0)
+#define INITSIG_RadarState_RadarState_Temperature_Error(buf) SET_RadarState_RadarState_Temperature_Error(buf, 0)
 
 /**
  * Signal RadarState_Temperature_Error value conversion with 16 bit factor and offset.
@@ -17647,8 +17503,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarState_RadarState_Temperature_Error(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarState_RadarState_Temperature_Error(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarState_Temperature_Error raw initial value.
@@ -17746,10 +17601,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarState_RadarState_Interference(buf, val) \
-	{                                                      \
-		buf[2] &= ~(0x01 << 4);                              \
-		buf[2] |= (((ubyte)(val) >> 0) & 0x01) << 4;         \
-	}
+  {                                                      \
+    buf[2] &= ~(0x01 << 4);                              \
+    buf[2] |= (((ubyte)(val) >> 0) & 0x01) << 4;         \
+  }
 
 /**
  * Set signal RadarState_Interference in buffer to its initial value.
@@ -17757,8 +17612,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarState_RadarState_Interference(buf) \
-	SET_RadarState_RadarState_Interference(buf, 0)
+#define INITSIG_RadarState_RadarState_Interference(buf) SET_RadarState_RadarState_Interference(buf, 0)
 
 /**
  * Signal RadarState_Interference value conversion with 16 bit factor and offset.
@@ -17771,8 +17625,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarState_RadarState_Interference(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarState_RadarState_Interference(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarState_Interference raw initial value.
@@ -17870,10 +17723,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarState_RadarState_Persistent_Error(buf, val) \
-	{                                                          \
-		buf[2] &= ~(0x01 << 5);                                  \
-		buf[2] |= (((ubyte)(val) >> 0) & 0x01) << 5;             \
-	}
+  {                                                          \
+    buf[2] &= ~(0x01 << 5);                                  \
+    buf[2] |= (((ubyte)(val) >> 0) & 0x01) << 5;             \
+  }
 
 /**
  * Set signal RadarState_Persistent_Error in buffer to its initial value.
@@ -17881,8 +17734,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarState_RadarState_Persistent_Error(buf) \
-	SET_RadarState_RadarState_Persistent_Error(buf, 0)
+#define INITSIG_RadarState_RadarState_Persistent_Error(buf) SET_RadarState_RadarState_Persistent_Error(buf, 0)
 
 /**
  * Signal RadarState_Persistent_Error value conversion with 16 bit factor and offset.
@@ -17895,8 +17747,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarState_RadarState_Persistent_Error(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarState_RadarState_Persistent_Error(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarState_Persistent_Error raw initial value.
@@ -17994,10 +17845,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarState_RadarState_SortIndex(buf, val) \
-	{                                                   \
-		buf[4] &= ~(0x07 << 4);                           \
-		buf[4] |= (((ubyte)(val) >> 0) & 0x07) << 4;      \
-	}
+  {                                                   \
+    buf[4] &= ~(0x07 << 4);                           \
+    buf[4] |= (((ubyte)(val) >> 0) & 0x07) << 4;      \
+  }
 
 /**
  * Set signal RadarState_SortIndex in buffer to its initial value.
@@ -18005,8 +17856,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarState_RadarState_SortIndex(buf) \
-	SET_RadarState_RadarState_SortIndex(buf, 0)
+#define INITSIG_RadarState_RadarState_SortIndex(buf) SET_RadarState_RadarState_SortIndex(buf, 0)
 
 /**
  * Signal RadarState_SortIndex value conversion with 16 bit factor and offset.
@@ -18019,8 +17869,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarState_RadarState_SortIndex(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarState_RadarState_SortIndex(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarState_SortIndex raw initial value.
@@ -18094,10 +17943,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarState_RadarState_RCS_Threshold(buf, val) \
-	{                                                       \
-		buf[7] &= ~(0x07 << 2);                               \
-		buf[7] |= (((ubyte)(val) >> 0) & 0x07) << 2;          \
-	}
+  {                                                       \
+    buf[7] &= ~(0x07 << 2);                               \
+    buf[7] |= (((ubyte)(val) >> 0) & 0x07) << 2;          \
+  }
 
 /**
  * Set signal RadarState_RCS_Threshold in buffer to its initial value.
@@ -18105,8 +17954,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarState_RadarState_RCS_Threshold(buf) \
-	SET_RadarState_RadarState_RCS_Threshold(buf, 0)
+#define INITSIG_RadarState_RadarState_RCS_Threshold(buf) SET_RadarState_RadarState_RCS_Threshold(buf, 0)
 
 /**
  * Signal RadarState_RCS_Threshold value conversion with 16 bit factor and offset.
@@ -18119,8 +17967,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarState_RadarState_RCS_Threshold(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarState_RadarState_RCS_Threshold(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarState_RCS_Threshold raw initial value.
@@ -18261,10 +18108,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarState_RadarState_CtrlRelayCfg(buf, val) \
-	{                                                      \
-		buf[5] &= ~(0x01 << 1);                              \
-		buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 1;         \
-	}
+  {                                                      \
+    buf[5] &= ~(0x01 << 1);                              \
+    buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 1;         \
+  }
 
 /**
  * Set signal RadarState_CtrlRelayCfg in buffer to its initial value.
@@ -18272,8 +18119,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarState_RadarState_CtrlRelayCfg(buf) \
-	SET_RadarState_RadarState_CtrlRelayCfg(buf, 0)
+#define INITSIG_RadarState_RadarState_CtrlRelayCfg(buf) SET_RadarState_RadarState_CtrlRelayCfg(buf, 0)
 
 /**
  * Signal RadarState_CtrlRelayCfg value conversion with 16 bit factor and offset.
@@ -18286,8 +18132,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarState_RadarState_CtrlRelayCfg(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarState_RadarState_CtrlRelayCfg(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarState_CtrlRelayCfg raw initial value.
@@ -18384,10 +18229,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarState_RadarState_SendQualityCfg(buf, val) \
-	{                                                        \
-		buf[5] &= ~(0x01 << 4);                                \
-		buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 4;           \
-	}
+  {                                                        \
+    buf[5] &= ~(0x01 << 4);                                \
+    buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 4;           \
+  }
 
 /**
  * Set signal RadarState_SendQualityCfg in buffer to its initial value.
@@ -18395,8 +18240,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarState_RadarState_SendQualityCfg(buf) \
-	SET_RadarState_RadarState_SendQualityCfg(buf, 0)
+#define INITSIG_RadarState_RadarState_SendQualityCfg(buf) SET_RadarState_RadarState_SendQualityCfg(buf, 0)
 
 /**
  * Signal RadarState_SendQualityCfg value conversion with 16 bit factor and offset.
@@ -18409,8 +18253,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarState_RadarState_SendQualityCfg(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarState_RadarState_SendQualityCfg(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarState_SendQualityCfg raw initial value.
@@ -18507,10 +18350,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarState_RadarState_SendExtInfoCfg(buf, val) \
-	{                                                        \
-		buf[5] &= ~(0x01 << 5);                                \
-		buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 5;           \
-	}
+  {                                                        \
+    buf[5] &= ~(0x01 << 5);                                \
+    buf[5] |= (((ubyte)(val) >> 0) & 0x01) << 5;           \
+  }
 
 /**
  * Set signal RadarState_SendExtInfoCfg in buffer to its initial value.
@@ -18518,8 +18361,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarState_RadarState_SendExtInfoCfg(buf) \
-	SET_RadarState_RadarState_SendExtInfoCfg(buf, 0)
+#define INITSIG_RadarState_RadarState_SendExtInfoCfg(buf) SET_RadarState_RadarState_SendExtInfoCfg(buf, 0)
 
 /**
  * Signal RadarState_SendExtInfoCfg value conversion with 16 bit factor and offset.
@@ -18532,8 +18374,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarState_RadarState_SendExtInfoCfg(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarState_RadarState_SendExtInfoCfg(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarState_SendExtInfoCfg raw initial value.
@@ -18630,10 +18471,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarState_RadarState_MotionRxState(buf, val) \
-	{                                                       \
-		buf[5] &= ~(0x03 << 6);                               \
-		buf[5] |= (((ubyte)(val) >> 0) & 0x03) << 6;          \
-	}
+  {                                                       \
+    buf[5] &= ~(0x03 << 6);                               \
+    buf[5] |= (((ubyte)(val) >> 0) & 0x03) << 6;          \
+  }
 
 /**
  * Set signal RadarState_MotionRxState in buffer to its initial value.
@@ -18641,8 +18482,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarState_RadarState_MotionRxState(buf) \
-	SET_RadarState_RadarState_MotionRxState(buf, 0)
+#define INITSIG_RadarState_RadarState_MotionRxState(buf) SET_RadarState_RadarState_MotionRxState(buf, 0)
 
 /**
  * Signal RadarState_MotionRxState value conversion with 16 bit factor and offset.
@@ -18655,8 +18495,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarState_RadarState_MotionRxState(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarState_RadarState_MotionRxState(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarState_MotionRxState raw initial value.
@@ -18773,10 +18612,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarState_RadarState_SensorID(buf, val) \
-	{                                                  \
-		buf[4] &= ~(0x07 << 0);                          \
-		buf[4] |= (((ubyte)(val) >> 0) & 0x07) << 0;     \
-	}
+  {                                                  \
+    buf[4] &= ~(0x07 << 0);                          \
+    buf[4] |= (((ubyte)(val) >> 0) & 0x07) << 0;     \
+  }
 
 /**
  * Set signal RadarState_SensorID in buffer to its initial value.
@@ -18784,8 +18623,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarState_RadarState_SensorID(buf) \
-	SET_RadarState_RadarState_SensorID(buf, 0)
+#define INITSIG_RadarState_RadarState_SensorID(buf) SET_RadarState_RadarState_SensorID(buf, 0)
 
 /**
  * Signal RadarState_SensorID value conversion with 16 bit factor and offset.
@@ -18798,8 +18636,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarState_RadarState_SensorID(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarState_RadarState_SensorID(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarState_SensorID raw initial value.
@@ -18874,10 +18711,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarState_RadarState_OutputTypeCfg(buf, val) \
-	{                                                       \
-		buf[5] &= ~(0x03 << 2);                               \
-		buf[5] |= (((ubyte)(val) >> 0) & 0x03) << 2;          \
-	}
+  {                                                       \
+    buf[5] &= ~(0x03 << 2);                               \
+    buf[5] |= (((ubyte)(val) >> 0) & 0x03) << 2;          \
+  }
 
 /**
  * Set signal RadarState_OutputTypeCfg in buffer to its initial value.
@@ -18885,8 +18722,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarState_RadarState_OutputTypeCfg(buf) \
-	SET_RadarState_RadarState_OutputTypeCfg(buf, 0)
+#define INITSIG_RadarState_RadarState_OutputTypeCfg(buf) SET_RadarState_RadarState_OutputTypeCfg(buf, 0)
 
 /**
  * Signal RadarState_OutputTypeCfg value conversion with 16 bit factor and offset.
@@ -18899,8 +18735,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarState_RadarState_OutputTypeCfg(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarState_RadarState_OutputTypeCfg(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarState_OutputTypeCfg raw initial value.
@@ -19002,7 +18837,8 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarState_RadarState_RadarPowerCfg(buf) (0 | (ubyte)(+(ubyte)((buf[3] >> 0) & 0x03) << 1) | (ubyte)(+(ubyte)((buf[4] >> 7) & 0x01) << 0))
+#define GET_RadarState_RadarState_RadarPowerCfg(buf) \
+  (0 | (ubyte)(+(ubyte)((buf[3] >> 0) & 0x03) << 1) | (ubyte)(+(ubyte)((buf[4] >> 7) & 0x01) << 0))
 
 /**
  * Set signal RadarState_RadarPowerCfg in buffer.
@@ -19013,12 +18849,12 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarState_RadarState_RadarPowerCfg(buf, val) \
-	{                                                       \
-		buf[3] &= ~(0x03 << 0);                               \
-		buf[3] |= (((ubyte)(val) >> 1) & 0x03) << 0;          \
-		buf[4] &= ~(0x01 << 7);                               \
-		buf[4] |= (((ubyte)(val) >> 0) & 0x01) << 7;          \
-	}
+  {                                                       \
+    buf[3] &= ~(0x03 << 0);                               \
+    buf[3] |= (((ubyte)(val) >> 1) & 0x03) << 0;          \
+    buf[4] &= ~(0x01 << 7);                               \
+    buf[4] |= (((ubyte)(val) >> 0) & 0x01) << 7;          \
+  }
 
 /**
  * Set signal RadarState_RadarPowerCfg in buffer to its initial value.
@@ -19026,8 +18862,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarState_RadarState_RadarPowerCfg(buf) \
-	SET_RadarState_RadarState_RadarPowerCfg(buf, 0)
+#define INITSIG_RadarState_RadarState_RadarPowerCfg(buf) SET_RadarState_RadarState_RadarPowerCfg(buf, 0)
 
 /**
  * Signal RadarState_RadarPowerCfg value conversion with 16 bit factor and offset.
@@ -19040,8 +18875,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarState_RadarState_RadarPowerCfg(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarState_RadarState_RadarPowerCfg(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarState_RadarPowerCfg raw initial value.
@@ -19186,10 +19020,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarState_RadarState_NVMReadStatus(buf, val) \
-	{                                                       \
-		buf[0] &= ~(0x01 << 6);                               \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 6;          \
-	}
+  {                                                       \
+    buf[0] &= ~(0x01 << 6);                               \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 6;          \
+  }
 
 /**
  * Set signal RadarState_NVMReadStatus in buffer to its initial value.
@@ -19197,8 +19031,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarState_RadarState_NVMReadStatus(buf) \
-	SET_RadarState_RadarState_NVMReadStatus(buf, 0)
+#define INITSIG_RadarState_RadarState_NVMReadStatus(buf) SET_RadarState_RadarState_NVMReadStatus(buf, 0)
 
 /**
  * Signal RadarState_NVMReadStatus value conversion with 16 bit factor and offset.
@@ -19211,8 +19044,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarState_RadarState_NVMReadStatus(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarState_RadarState_NVMReadStatus(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarState_NVMReadStatus raw initial value.
@@ -19309,10 +19141,10 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarState_RadarState_NVMwriteStatus(buf, val) \
-	{                                                        \
-		buf[0] &= ~(0x01 << 7);                                \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 7;           \
-	}
+  {                                                        \
+    buf[0] &= ~(0x01 << 7);                                \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 7;           \
+  }
 
 /**
  * Set signal RadarState_NVMwriteStatus in buffer to its initial value.
@@ -19320,8 +19152,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarState_RadarState_NVMwriteStatus(buf) \
-	SET_RadarState_RadarState_NVMwriteStatus(buf, 0)
+#define INITSIG_RadarState_RadarState_NVMwriteStatus(buf) SET_RadarState_RadarState_NVMwriteStatus(buf, 0)
 
 /**
  * Signal RadarState_NVMwriteStatus value conversion with 16 bit factor and offset.
@@ -19334,8 +19165,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarState_RadarState_NVMwriteStatus(x, fmt) \
-	((x) * fmt)
+#define CALC_RadarState_RadarState_NVMwriteStatus(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarState_NVMwriteStatus raw initial value.
@@ -19419,7 +19249,8 @@
  * @return
  *	The raw signal
  */
-#define GET_RadarState_RadarState_MaxDistanceCfg(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0xff) << 2) | (ubyte)(+(ubyte)((buf[2] >> 6) & 0x03) << 0))
+#define GET_RadarState_RadarState_MaxDistanceCfg(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0xff) << 2) | (ubyte)(+(ubyte)((buf[2] >> 6) & 0x03) << 0))
 
 /**
  * Set signal RadarState_MaxDistanceCfg in buffer.
@@ -19430,12 +19261,12 @@
  *	The raw value to set the signal to
  */
 #define SET_RadarState_RadarState_MaxDistanceCfg(buf, val) \
-	{                                                        \
-		buf[1] &= ~(0xff << 0);                                \
-		buf[1] |= ((ubyte)((uword)(val) >> 2) & 0xff) << 0;    \
-		buf[2] &= ~(0x03 << 6);                                \
-		buf[2] |= (((ubyte)(val) >> 0) & 0x03) << 6;           \
-	}
+  {                                                        \
+    buf[1] &= ~(0xff << 0);                                \
+    buf[1] |= ((ubyte)((uword)(val) >> 2) & 0xff) << 0;    \
+    buf[2] &= ~(0x03 << 6);                                \
+    buf[2] |= (((ubyte)(val) >> 0) & 0x03) << 6;           \
+  }
 
 /**
  * Set signal RadarState_MaxDistanceCfg in buffer to its initial value.
@@ -19443,8 +19274,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_RadarState_RadarState_MaxDistanceCfg(buf) \
-	SET_RadarState_RadarState_MaxDistanceCfg(buf, 0)
+#define INITSIG_RadarState_RadarState_MaxDistanceCfg(buf) SET_RadarState_RadarState_MaxDistanceCfg(buf, 0)
 
 /**
  * Signal RadarState_MaxDistanceCfg value conversion with 16 bit factor and offset.
@@ -19457,8 +19287,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_RadarState_RadarState_MaxDistanceCfg(x, fmt) \
-	((x) * fmt * 2)
+#define CALC_RadarState_RadarState_MaxDistanceCfg(x, fmt) ((x) * fmt * 2)
 
 /**
  * Signal RadarState_MaxDistanceCfg raw initial value.
@@ -19520,7 +19349,8 @@
  * @return
  *	The raw signal
  */
-#define GET_SpeedInformation_RadarDevice_Speed(buf) (0 | (uword)(+(uword)((buf[0] >> 0) & 0x1f) << 8) | (ubyte)(+(ubyte)((buf[1] >> 0) & 0xff) << 0))
+#define GET_SpeedInformation_RadarDevice_Speed(buf) \
+  (0 | (uword)(+(uword)((buf[0] >> 0) & 0x1f) << 8) | (ubyte)(+(ubyte)((buf[1] >> 0) & 0xff) << 0))
 
 /**
  * Set signal RadarDevice_Speed in buffer.
@@ -19531,12 +19361,12 @@
  *	The raw value to set the signal to
  */
 #define SET_SpeedInformation_RadarDevice_Speed(buf, val) \
-	{                                                      \
-		buf[0] &= ~(0x1f << 0);                              \
-		buf[0] |= ((ubyte)((uword)(val) >> 8) & 0x1f) << 0;  \
-		buf[1] &= ~(0xff << 0);                              \
-		buf[1] |= (((ubyte)(val) >> 0) & 0xff) << 0;         \
-	}
+  {                                                      \
+    buf[0] &= ~(0x1f << 0);                              \
+    buf[0] |= ((ubyte)((uword)(val) >> 8) & 0x1f) << 0;  \
+    buf[1] &= ~(0xff << 0);                              \
+    buf[1] |= (((ubyte)(val) >> 0) & 0xff) << 0;         \
+  }
 
 /**
  * Set signal RadarDevice_Speed in buffer to its initial value.
@@ -19544,8 +19374,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_SpeedInformation_RadarDevice_Speed(buf) \
-	SET_SpeedInformation_RadarDevice_Speed(buf, 0)
+#define INITSIG_SpeedInformation_RadarDevice_Speed(buf) SET_SpeedInformation_RadarDevice_Speed(buf, 0)
 
 /**
  * Signal RadarDevice_Speed value conversion with 16 bit factor and offset.
@@ -19558,8 +19387,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_SpeedInformation_RadarDevice_Speed(x, fmt) \
-	((x) * fmt / 50)
+#define CALC_SpeedInformation_RadarDevice_Speed(x, fmt) ((x) * fmt / 50)
 
 /**
  * Signal RadarDevice_Speed raw initial value.
@@ -19634,10 +19462,10 @@
  *	The raw value to set the signal to
  */
 #define SET_SpeedInformation_RadarDevice_SpeedDirection(buf, val) \
-	{                                                               \
-		buf[0] &= ~(0x03 << 6);                                       \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x03) << 6;                  \
-	}
+  {                                                               \
+    buf[0] &= ~(0x03 << 6);                                       \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x03) << 6;                  \
+  }
 
 /**
  * Set signal RadarDevice_SpeedDirection in buffer to its initial value.
@@ -19645,8 +19473,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_SpeedInformation_RadarDevice_SpeedDirection(buf) \
-	SET_SpeedInformation_RadarDevice_SpeedDirection(buf, 0)
+#define INITSIG_SpeedInformation_RadarDevice_SpeedDirection(buf) SET_SpeedInformation_RadarDevice_SpeedDirection(buf, 0)
 
 /**
  * Signal RadarDevice_SpeedDirection value conversion with 16 bit factor and offset.
@@ -19659,8 +19486,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_SpeedInformation_RadarDevice_SpeedDirection(x, fmt) \
-	((x) * fmt)
+#define CALC_SpeedInformation_RadarDevice_SpeedDirection(x, fmt) ((x) * fmt)
 
 /**
  * Signal RadarDevice_SpeedDirection raw initial value.
@@ -19758,7 +19584,8 @@
  * @return
  *	The raw signal
  */
-#define GET_YawRateInformation_RadarDevice_YawRate(buf) (0 | (uword)(+(uword)((buf[0] >> 0) & 0xff) << 8) | (ubyte)(+(ubyte)((buf[1] >> 0) & 0xff) << 0))
+#define GET_YawRateInformation_RadarDevice_YawRate(buf) \
+  (0 | (uword)(+(uword)((buf[0] >> 0) & 0xff) << 8) | (ubyte)(+(ubyte)((buf[1] >> 0) & 0xff) << 0))
 
 /**
  * Set signal RadarDevice_YawRate in buffer.
@@ -19769,12 +19596,12 @@
  *	The raw value to set the signal to
  */
 #define SET_YawRateInformation_RadarDevice_YawRate(buf, val) \
-	{                                                          \
-		buf[0] &= ~(0xff << 0);                                  \
-		buf[0] |= ((ubyte)((uword)(val) >> 8) & 0xff) << 0;      \
-		buf[1] &= ~(0xff << 0);                                  \
-		buf[1] |= (((ubyte)(val) >> 0) & 0xff) << 0;             \
-	}
+  {                                                          \
+    buf[0] &= ~(0xff << 0);                                  \
+    buf[0] |= ((ubyte)((uword)(val) >> 8) & 0xff) << 0;      \
+    buf[1] &= ~(0xff << 0);                                  \
+    buf[1] |= (((ubyte)(val) >> 0) & 0xff) << 0;             \
+  }
 
 /**
  * Set signal RadarDevice_YawRate in buffer to its initial value.
@@ -19782,8 +19609,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_YawRateInformation_RadarDevice_YawRate(buf) \
-	SET_YawRateInformation_RadarDevice_YawRate(buf, 0)
+#define INITSIG_YawRateInformation_RadarDevice_YawRate(buf) SET_YawRateInformation_RadarDevice_YawRate(buf, 0)
 
 /**
  * Signal RadarDevice_YawRate value conversion with 16 bit factor and offset.
@@ -19796,8 +19622,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_YawRateInformation_RadarDevice_YawRate(x, fmt) \
-	((x) * fmt / 100 + fmt * 8192 / (-25))
+#define CALC_YawRateInformation_RadarDevice_YawRate(x, fmt) ((x) * fmt / 100 + fmt * 8192 / (-25))
 
 /**
  * Signal RadarDevice_YawRate raw initial value.
@@ -19870,10 +19695,10 @@
  *	The raw value to set the signal to
  */
 #define SET_CollDetCfg_CollDetCfg_ClearRegions(buf, val) \
-	{                                                      \
-		buf[0] &= ~(0x01 << 7);                              \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 7;         \
-	}
+  {                                                      \
+    buf[0] &= ~(0x01 << 7);                              \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 7;         \
+  }
 
 /**
  * Set signal CollDetCfg_ClearRegions in buffer to its initial value.
@@ -19881,8 +19706,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_CollDetCfg_CollDetCfg_ClearRegions(buf) \
-	SET_CollDetCfg_CollDetCfg_ClearRegions(buf, 0)
+#define INITSIG_CollDetCfg_CollDetCfg_ClearRegions(buf) SET_CollDetCfg_CollDetCfg_ClearRegions(buf, 0)
 
 /**
  * Signal CollDetCfg_ClearRegions value conversion with 16 bit factor and offset.
@@ -19895,8 +19719,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_CollDetCfg_CollDetCfg_ClearRegions(x, fmt) \
-	((x) * fmt)
+#define CALC_CollDetCfg_CollDetCfg_ClearRegions(x, fmt) ((x) * fmt)
 
 /**
  * Signal CollDetCfg_ClearRegions raw initial value.
@@ -19993,10 +19816,10 @@
  *	The raw value to set the signal to
  */
 #define SET_CollDetCfg_CollDetCfg_WarningReset(buf, val) \
-	{                                                      \
-		buf[0] &= ~(0x01 << 0);                              \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 0;         \
-	}
+  {                                                      \
+    buf[0] &= ~(0x01 << 0);                              \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 0;         \
+  }
 
 /**
  * Set signal CollDetCfg_WarningReset in buffer to its initial value.
@@ -20004,8 +19827,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_CollDetCfg_CollDetCfg_WarningReset(buf) \
-	SET_CollDetCfg_CollDetCfg_WarningReset(buf, 0)
+#define INITSIG_CollDetCfg_CollDetCfg_WarningReset(buf) SET_CollDetCfg_CollDetCfg_WarningReset(buf, 0)
 
 /**
  * Signal CollDetCfg_WarningReset value conversion with 16 bit factor and offset.
@@ -20018,8 +19840,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_CollDetCfg_CollDetCfg_WarningReset(x, fmt) \
-	((x) * fmt)
+#define CALC_CollDetCfg_CollDetCfg_WarningReset(x, fmt) ((x) * fmt)
 
 /**
  * Signal CollDetCfg_WarningReset raw initial value.
@@ -20116,10 +19937,10 @@
  *	The raw value to set the signal to
  */
 #define SET_CollDetCfg_CollDetCfg_Activate(buf, val) \
-	{                                                  \
-		buf[0] &= ~(0x01 << 1);                          \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 1;     \
-	}
+  {                                                  \
+    buf[0] &= ~(0x01 << 1);                          \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 1;     \
+  }
 
 /**
  * Set signal CollDetCfg_Activate in buffer to its initial value.
@@ -20127,8 +19948,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_CollDetCfg_CollDetCfg_Activate(buf) \
-	SET_CollDetCfg_CollDetCfg_Activate(buf, 0)
+#define INITSIG_CollDetCfg_CollDetCfg_Activate(buf) SET_CollDetCfg_CollDetCfg_Activate(buf, 0)
 
 /**
  * Signal CollDetCfg_Activate value conversion with 16 bit factor and offset.
@@ -20141,8 +19961,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_CollDetCfg_CollDetCfg_Activate(x, fmt) \
-	((x) * fmt)
+#define CALC_CollDetCfg_CollDetCfg_Activate(x, fmt) ((x) * fmt)
 
 /**
  * Signal CollDetCfg_Activate raw initial value.
@@ -20237,10 +20056,10 @@
  *	The raw value to set the signal to
  */
 #define SET_CollDetCfg_CollDetCfg_MinTime_valid(buf, val) \
-	{                                                       \
-		buf[0] &= ~(0x01 << 3);                               \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 3;          \
-	}
+  {                                                       \
+    buf[0] &= ~(0x01 << 3);                               \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 3;          \
+  }
 
 /**
  * Set signal CollDetCfg_MinTime_valid in buffer to its initial value.
@@ -20248,8 +20067,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_CollDetCfg_CollDetCfg_MinTime_valid(buf) \
-	SET_CollDetCfg_CollDetCfg_MinTime_valid(buf, 0)
+#define INITSIG_CollDetCfg_CollDetCfg_MinTime_valid(buf) SET_CollDetCfg_CollDetCfg_MinTime_valid(buf, 0)
 
 /**
  * Signal CollDetCfg_MinTime_valid value conversion with 16 bit factor and offset.
@@ -20262,8 +20080,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_CollDetCfg_CollDetCfg_MinTime_valid(x, fmt) \
-	((x) * fmt)
+#define CALC_CollDetCfg_CollDetCfg_MinTime_valid(x, fmt) ((x) * fmt)
 
 /**
  * Signal CollDetCfg_MinTime_valid raw initial value.
@@ -20356,10 +20173,10 @@
  *	The raw value to set the signal to
  */
 #define SET_CollDetCfg_CollDetCfg_MinDetectTime(buf, val) \
-	{                                                       \
-		buf[1] &= ~(0xff << 0);                               \
-		buf[1] |= (((ubyte)(val) >> 0) & 0xff) << 0;          \
-	}
+  {                                                       \
+    buf[1] &= ~(0xff << 0);                               \
+    buf[1] |= (((ubyte)(val) >> 0) & 0xff) << 0;          \
+  }
 
 /**
  * Set signal CollDetCfg_MinDetectTime in buffer to its initial value.
@@ -20367,8 +20184,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_CollDetCfg_CollDetCfg_MinDetectTime(buf) \
-	SET_CollDetCfg_CollDetCfg_MinDetectTime(buf, 0)
+#define INITSIG_CollDetCfg_CollDetCfg_MinDetectTime(buf) SET_CollDetCfg_CollDetCfg_MinDetectTime(buf, 0)
 
 /**
  * Signal CollDetCfg_MinDetectTime value conversion with 16 bit factor and offset.
@@ -20381,8 +20197,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_CollDetCfg_CollDetCfg_MinDetectTime(x, fmt) \
-	((x) * fmt / 10)
+#define CALC_CollDetCfg_CollDetCfg_MinDetectTime(x, fmt) ((x) * fmt / 10)
 
 /**
  * Signal CollDetCfg_MinDetectTime raw initial value.
@@ -20455,10 +20270,10 @@
  *	The raw value to set the signal to
  */
 #define SET_CollDetRegionCfg_CollDetRegCfg_Activate(buf, val) \
-	{                                                           \
-		buf[0] &= ~(0x01 << 1);                                   \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 1;              \
-	}
+  {                                                           \
+    buf[0] &= ~(0x01 << 1);                                   \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 1;              \
+  }
 
 /**
  * Set signal CollDetRegCfg_Activate in buffer to its initial value.
@@ -20466,8 +20281,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_CollDetRegionCfg_CollDetRegCfg_Activate(buf) \
-	SET_CollDetRegionCfg_CollDetRegCfg_Activate(buf, 0)
+#define INITSIG_CollDetRegionCfg_CollDetRegCfg_Activate(buf) SET_CollDetRegionCfg_CollDetRegCfg_Activate(buf, 0)
 
 /**
  * Signal CollDetRegCfg_Activate value conversion with 16 bit factor and offset.
@@ -20480,8 +20294,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_CollDetRegionCfg_CollDetRegCfg_Activate(x, fmt) \
-	((x) * fmt)
+#define CALC_CollDetRegionCfg_CollDetRegCfg_Activate(x, fmt) ((x) * fmt)
 
 /**
  * Signal CollDetRegCfg_Activate raw initial value.
@@ -20576,10 +20389,10 @@
  *	The raw value to set the signal to
  */
 #define SET_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid(buf, val) \
-	{                                                                    \
-		buf[0] &= ~(0x01 << 2);                                            \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 2;                       \
-	}
+  {                                                                    \
+    buf[0] &= ~(0x01 << 2);                                            \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 2;                       \
+  }
 
 /**
  * Set signal CollDetRegCfg_Coordinates_valid in buffer to its initial value.
@@ -20588,7 +20401,7 @@
  *	The can message buffer to initialise
  */
 #define INITSIG_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid(buf) \
-	SET_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid(buf, 0)
+  SET_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid(buf, 0)
 
 /**
  * Signal CollDetRegCfg_Coordinates_valid value conversion with 16 bit factor and offset.
@@ -20601,8 +20414,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid(x, fmt) \
-	((x) * fmt)
+#define CALC_CollDetRegionCfg_CollDetRegCfg_Coordinates_valid(x, fmt) ((x) * fmt)
 
 /**
  * Signal CollDetRegCfg_Coordinates_valid raw initial value.
@@ -20695,10 +20507,10 @@
  *	The raw value to set the signal to
  */
 #define SET_CollDetRegionCfg_CollDetRegCfg_RegionID(buf, val) \
-	{                                                           \
-		buf[1] &= ~(0x07 << 0);                                   \
-		buf[1] |= (((ubyte)(val) >> 0) & 0x07) << 0;              \
-	}
+  {                                                           \
+    buf[1] &= ~(0x07 << 0);                                   \
+    buf[1] |= (((ubyte)(val) >> 0) & 0x07) << 0;              \
+  }
 
 /**
  * Set signal CollDetRegCfg_RegionID in buffer to its initial value.
@@ -20706,8 +20518,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_CollDetRegionCfg_CollDetRegCfg_RegionID(buf) \
-	SET_CollDetRegionCfg_CollDetRegCfg_RegionID(buf, 0)
+#define INITSIG_CollDetRegionCfg_CollDetRegCfg_RegionID(buf) SET_CollDetRegionCfg_CollDetRegCfg_RegionID(buf, 0)
 
 /**
  * Signal CollDetRegCfg_RegionID value conversion with 16 bit factor and offset.
@@ -20720,8 +20531,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_CollDetRegionCfg_CollDetRegCfg_RegionID(x, fmt) \
-	((x) * fmt)
+#define CALC_CollDetRegionCfg_CollDetRegCfg_RegionID(x, fmt) ((x) * fmt)
 
 /**
  * Signal CollDetRegCfg_RegionID raw initial value.
@@ -20781,7 +20591,8 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetRegionCfg_CollDetRegCfg_Point1X(buf) (0 | (uword)(+(uword)((buf[2] >> 0) & 0xff) << 5) | (ubyte)(+(ubyte)((buf[3] >> 3) & 0x1f) << 0))
+#define GET_CollDetRegionCfg_CollDetRegCfg_Point1X(buf) \
+  (0 | (uword)(+(uword)((buf[2] >> 0) & 0xff) << 5) | (ubyte)(+(ubyte)((buf[3] >> 3) & 0x1f) << 0))
 
 /**
  * Set signal CollDetRegCfg_Point1X in buffer.
@@ -20792,12 +20603,12 @@
  *	The raw value to set the signal to
  */
 #define SET_CollDetRegionCfg_CollDetRegCfg_Point1X(buf, val) \
-	{                                                          \
-		buf[2] &= ~(0xff << 0);                                  \
-		buf[2] |= ((ubyte)((uword)(val) >> 5) & 0xff) << 0;      \
-		buf[3] &= ~(0x1f << 3);                                  \
-		buf[3] |= (((ubyte)(val) >> 0) & 0x1f) << 3;             \
-	}
+  {                                                          \
+    buf[2] &= ~(0xff << 0);                                  \
+    buf[2] |= ((ubyte)((uword)(val) >> 5) & 0xff) << 0;      \
+    buf[3] &= ~(0x1f << 3);                                  \
+    buf[3] |= (((ubyte)(val) >> 0) & 0x1f) << 3;             \
+  }
 
 /**
  * Set signal CollDetRegCfg_Point1X in buffer to its initial value.
@@ -20805,8 +20616,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_CollDetRegionCfg_CollDetRegCfg_Point1X(buf) \
-	SET_CollDetRegionCfg_CollDetRegCfg_Point1X(buf, 2500)
+#define INITSIG_CollDetRegionCfg_CollDetRegCfg_Point1X(buf) SET_CollDetRegionCfg_CollDetRegCfg_Point1X(buf, 2500)
 
 /**
  * Signal CollDetRegCfg_Point1X value conversion with 16 bit factor and offset.
@@ -20819,8 +20629,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_CollDetRegionCfg_CollDetRegCfg_Point1X(x, fmt) \
-	((x) * fmt / 5 + fmt * (-500))
+#define CALC_CollDetRegionCfg_CollDetRegCfg_Point1X(x, fmt) ((x) * fmt / 5 + fmt * (-500))
 
 /**
  * Signal CollDetRegCfg_Point1X raw initial value.
@@ -20880,7 +20689,8 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetRegionCfg_CollDetRegCfg_Point1Y(buf) (0 | (uword)(+(uword)((buf[3] >> 0) & 0x07) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
+#define GET_CollDetRegionCfg_CollDetRegCfg_Point1Y(buf) \
+  (0 | (uword)(+(uword)((buf[3] >> 0) & 0x07) << 8) | (ubyte)(+(ubyte)((buf[4] >> 0) & 0xff) << 0))
 
 /**
  * Set signal CollDetRegCfg_Point1Y in buffer.
@@ -20891,12 +20701,12 @@
  *	The raw value to set the signal to
  */
 #define SET_CollDetRegionCfg_CollDetRegCfg_Point1Y(buf, val) \
-	{                                                          \
-		buf[3] &= ~(0x07 << 0);                                  \
-		buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x07) << 0;      \
-		buf[4] &= ~(0xff << 0);                                  \
-		buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;             \
-	}
+  {                                                          \
+    buf[3] &= ~(0x07 << 0);                                  \
+    buf[3] |= ((ubyte)((uword)(val) >> 8) & 0x07) << 0;      \
+    buf[4] &= ~(0xff << 0);                                  \
+    buf[4] |= (((ubyte)(val) >> 0) & 0xff) << 0;             \
+  }
 
 /**
  * Set signal CollDetRegCfg_Point1Y in buffer to its initial value.
@@ -20904,8 +20714,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_CollDetRegionCfg_CollDetRegCfg_Point1Y(buf) \
-	SET_CollDetRegionCfg_CollDetRegCfg_Point1Y(buf, 1023)
+#define INITSIG_CollDetRegionCfg_CollDetRegCfg_Point1Y(buf) SET_CollDetRegionCfg_CollDetRegCfg_Point1Y(buf, 1023)
 
 /**
  * Signal CollDetRegCfg_Point1Y value conversion with 16 bit factor and offset.
@@ -20918,8 +20727,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_CollDetRegionCfg_CollDetRegCfg_Point1Y(x, fmt) \
-	((x) * fmt / 5 + fmt * (-1024) / 5)
+#define CALC_CollDetRegionCfg_CollDetRegCfg_Point1Y(x, fmt) ((x) * fmt / 5 + fmt * (-1024) / 5)
 
 /**
  * Signal CollDetRegCfg_Point1Y raw initial value.
@@ -20979,7 +20787,8 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetRegionCfg_CollDetRegCfg_Point2X(buf) (0 | (uword)(+(uword)((buf[5] >> 0) & 0xff) << 5) | (ubyte)(+(ubyte)((buf[6] >> 3) & 0x1f) << 0))
+#define GET_CollDetRegionCfg_CollDetRegCfg_Point2X(buf) \
+  (0 | (uword)(+(uword)((buf[5] >> 0) & 0xff) << 5) | (ubyte)(+(ubyte)((buf[6] >> 3) & 0x1f) << 0))
 
 /**
  * Set signal CollDetRegCfg_Point2X in buffer.
@@ -20990,12 +20799,12 @@
  *	The raw value to set the signal to
  */
 #define SET_CollDetRegionCfg_CollDetRegCfg_Point2X(buf, val) \
-	{                                                          \
-		buf[5] &= ~(0xff << 0);                                  \
-		buf[5] |= ((ubyte)((uword)(val) >> 5) & 0xff) << 0;      \
-		buf[6] &= ~(0x1f << 3);                                  \
-		buf[6] |= (((ubyte)(val) >> 0) & 0x1f) << 3;             \
-	}
+  {                                                          \
+    buf[5] &= ~(0xff << 0);                                  \
+    buf[5] |= ((ubyte)((uword)(val) >> 5) & 0xff) << 0;      \
+    buf[6] &= ~(0x1f << 3);                                  \
+    buf[6] |= (((ubyte)(val) >> 0) & 0x1f) << 3;             \
+  }
 
 /**
  * Set signal CollDetRegCfg_Point2X in buffer to its initial value.
@@ -21003,8 +20812,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_CollDetRegionCfg_CollDetRegCfg_Point2X(buf) \
-	SET_CollDetRegionCfg_CollDetRegCfg_Point2X(buf, 2500)
+#define INITSIG_CollDetRegionCfg_CollDetRegCfg_Point2X(buf) SET_CollDetRegionCfg_CollDetRegCfg_Point2X(buf, 2500)
 
 /**
  * Signal CollDetRegCfg_Point2X value conversion with 16 bit factor and offset.
@@ -21017,8 +20825,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_CollDetRegionCfg_CollDetRegCfg_Point2X(x, fmt) \
-	((x) * fmt / 5 + fmt * (-500))
+#define CALC_CollDetRegionCfg_CollDetRegCfg_Point2X(x, fmt) ((x) * fmt / 5 + fmt * (-500))
 
 /**
  * Signal CollDetRegCfg_Point2X raw initial value.
@@ -21078,7 +20885,8 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetRegionCfg_CollDetRegCfg_Point2Y(buf) (0 | (uword)(+(uword)((buf[6] >> 0) & 0x07) << 8) | (ubyte)(+(ubyte)((buf[7] >> 0) & 0xff) << 0))
+#define GET_CollDetRegionCfg_CollDetRegCfg_Point2Y(buf) \
+  (0 | (uword)(+(uword)((buf[6] >> 0) & 0x07) << 8) | (ubyte)(+(ubyte)((buf[7] >> 0) & 0xff) << 0))
 
 /**
  * Set signal CollDetRegCfg_Point2Y in buffer.
@@ -21089,12 +20897,12 @@
  *	The raw value to set the signal to
  */
 #define SET_CollDetRegionCfg_CollDetRegCfg_Point2Y(buf, val) \
-	{                                                          \
-		buf[6] &= ~(0x07 << 0);                                  \
-		buf[6] |= ((ubyte)((uword)(val) >> 8) & 0x07) << 0;      \
-		buf[7] &= ~(0xff << 0);                                  \
-		buf[7] |= (((ubyte)(val) >> 0) & 0xff) << 0;             \
-	}
+  {                                                          \
+    buf[6] &= ~(0x07 << 0);                                  \
+    buf[6] |= ((ubyte)((uword)(val) >> 8) & 0x07) << 0;      \
+    buf[7] &= ~(0xff << 0);                                  \
+    buf[7] |= (((ubyte)(val) >> 0) & 0xff) << 0;             \
+  }
 
 /**
  * Set signal CollDetRegCfg_Point2Y in buffer to its initial value.
@@ -21102,8 +20910,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_CollDetRegionCfg_CollDetRegCfg_Point2Y(buf) \
-	SET_CollDetRegionCfg_CollDetRegCfg_Point2Y(buf, 1023)
+#define INITSIG_CollDetRegionCfg_CollDetRegCfg_Point2Y(buf) SET_CollDetRegionCfg_CollDetRegCfg_Point2Y(buf, 1023)
 
 /**
  * Signal CollDetRegCfg_Point2Y value conversion with 16 bit factor and offset.
@@ -21116,8 +20923,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_CollDetRegionCfg_CollDetRegCfg_Point2Y(x, fmt) \
-	((x) * fmt / 5 + fmt * (-1024) / 5)
+#define CALC_CollDetRegionCfg_CollDetRegCfg_Point2Y(x, fmt) ((x) * fmt / 5 + fmt * (-1024) / 5)
 
 /**
  * Signal CollDetRegCfg_Point2Y raw initial value.
@@ -21176,7 +20982,8 @@
  * @return
  *	The raw signal
  */
-#define GET_CollDetState_CollDetState_MeasCounter(buf) (0 | (uword)(+(uword)((buf[2] >> 0) & 0xff) << 8) | (ubyte)(+(ubyte)((buf[3] >> 0) & 0xff) << 0))
+#define GET_CollDetState_CollDetState_MeasCounter(buf) \
+  (0 | (uword)(+(uword)((buf[2] >> 0) & 0xff) << 8) | (ubyte)(+(ubyte)((buf[3] >> 0) & 0xff) << 0))
 
 /**
  * Set signal CollDetState_MeasCounter in buffer.
@@ -21187,12 +20994,12 @@
  *	The raw value to set the signal to
  */
 #define SET_CollDetState_CollDetState_MeasCounter(buf, val) \
-	{                                                         \
-		buf[2] &= ~(0xff << 0);                                 \
-		buf[2] |= ((ubyte)((uword)(val) >> 8) & 0xff) << 0;     \
-		buf[3] &= ~(0xff << 0);                                 \
-		buf[3] |= (((ubyte)(val) >> 0) & 0xff) << 0;            \
-	}
+  {                                                         \
+    buf[2] &= ~(0xff << 0);                                 \
+    buf[2] |= ((ubyte)((uword)(val) >> 8) & 0xff) << 0;     \
+    buf[3] &= ~(0xff << 0);                                 \
+    buf[3] |= (((ubyte)(val) >> 0) & 0xff) << 0;            \
+  }
 
 /**
  * Set signal CollDetState_MeasCounter in buffer to its initial value.
@@ -21200,8 +21007,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_CollDetState_CollDetState_MeasCounter(buf) \
-	SET_CollDetState_CollDetState_MeasCounter(buf, 0)
+#define INITSIG_CollDetState_CollDetState_MeasCounter(buf) SET_CollDetState_CollDetState_MeasCounter(buf, 0)
 
 /**
  * Signal CollDetState_MeasCounter value conversion with 16 bit factor and offset.
@@ -21214,8 +21020,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_CollDetState_CollDetState_MeasCounter(x, fmt) \
-	((x) * fmt)
+#define CALC_CollDetState_CollDetState_MeasCounter(x, fmt) ((x) * fmt)
 
 /**
  * Signal CollDetState_MeasCounter raw initial value.
@@ -21287,10 +21092,10 @@
  *	The raw value to set the signal to
  */
 #define SET_CollDetState_CollDetState_Active(buf, val) \
-	{                                                    \
-		buf[0] &= ~(0x01 << 1);                            \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 1;       \
-	}
+  {                                                    \
+    buf[0] &= ~(0x01 << 1);                            \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x01) << 1;       \
+  }
 
 /**
  * Set signal CollDetState_Active in buffer to its initial value.
@@ -21298,8 +21103,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_CollDetState_CollDetState_Active(buf) \
-	SET_CollDetState_CollDetState_Active(buf, 0)
+#define INITSIG_CollDetState_CollDetState_Active(buf) SET_CollDetState_CollDetState_Active(buf, 0)
 
 /**
  * Signal CollDetState_Active value conversion with 16 bit factor and offset.
@@ -21312,8 +21116,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_CollDetState_CollDetState_Active(x, fmt) \
-	((x) * fmt)
+#define CALC_CollDetState_CollDetState_Active(x, fmt) ((x) * fmt)
 
 /**
  * Signal CollDetState_Active raw initial value.
@@ -21406,10 +21209,10 @@
  *	The raw value to set the signal to
  */
 #define SET_CollDetState_CollDetState_NofRegions(buf, val) \
-	{                                                        \
-		buf[0] &= ~(0x0f << 4);                                \
-		buf[0] |= (((ubyte)(val) >> 0) & 0x0f) << 4;           \
-	}
+  {                                                        \
+    buf[0] &= ~(0x0f << 4);                                \
+    buf[0] |= (((ubyte)(val) >> 0) & 0x0f) << 4;           \
+  }
 
 /**
  * Set signal CollDetState_NofRegions in buffer to its initial value.
@@ -21417,8 +21220,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_CollDetState_CollDetState_NofRegions(buf) \
-	SET_CollDetState_CollDetState_NofRegions(buf, 0)
+#define INITSIG_CollDetState_CollDetState_NofRegions(buf) SET_CollDetState_CollDetState_NofRegions(buf, 0)
 
 /**
  * Signal CollDetState_NofRegions value conversion with 16 bit factor and offset.
@@ -21431,8 +21233,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_CollDetState_CollDetState_NofRegions(x, fmt) \
-	((x) * fmt)
+#define CALC_CollDetState_CollDetState_NofRegions(x, fmt) ((x) * fmt)
 
 /**
  * Signal CollDetState_NofRegions raw initial value.
@@ -21503,10 +21304,10 @@
  *	The raw value to set the signal to
  */
 #define SET_CollDetState_CollDetState_MinDetectTime(buf, val) \
-	{                                                           \
-		buf[1] &= ~(0xff << 0);                                   \
-		buf[1] |= (((ubyte)(val) >> 0) & 0xff) << 0;              \
-	}
+  {                                                           \
+    buf[1] &= ~(0xff << 0);                                   \
+    buf[1] |= (((ubyte)(val) >> 0) & 0xff) << 0;              \
+  }
 
 /**
  * Set signal CollDetState_MinDetectTime in buffer to its initial value.
@@ -21514,8 +21315,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_CollDetState_CollDetState_MinDetectTime(buf) \
-	SET_CollDetState_CollDetState_MinDetectTime(buf, 0)
+#define INITSIG_CollDetState_CollDetState_MinDetectTime(buf) SET_CollDetState_CollDetState_MinDetectTime(buf, 0)
 
 /**
  * Signal CollDetState_MinDetectTime value conversion with 16 bit factor and offset.
@@ -21528,8 +21328,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_CollDetState_CollDetState_MinDetectTime(x, fmt) \
-	((x) * fmt / 10)
+#define CALC_CollDetState_CollDetState_MinDetectTime(x, fmt) ((x) * fmt / 10)
 
 /**
  * Signal CollDetState_MinDetectTime raw initial value.
@@ -21591,7 +21390,8 @@
  * @return
  *	The raw signal
  */
-#define GET_Cluster_0_Status_Cluster_MeasCounter(buf) (0 | (uword)(+(uword)((buf[2] >> 0) & 0xff) << 8) | (ubyte)(+(ubyte)((buf[3] >> 0) & 0xff) << 0))
+#define GET_Cluster_0_Status_Cluster_MeasCounter(buf) \
+  (0 | (uword)(+(uword)((buf[2] >> 0) & 0xff) << 8) | (ubyte)(+(ubyte)((buf[3] >> 0) & 0xff) << 0))
 
 /**
  * Set signal Cluster_MeasCounter in buffer.
@@ -21602,12 +21402,12 @@
  *	The raw value to set the signal to
  */
 #define SET_Cluster_0_Status_Cluster_MeasCounter(buf, val) \
-	{                                                        \
-		buf[2] &= ~(0xff << 0);                                \
-		buf[2] |= ((ubyte)((uword)(val) >> 8) & 0xff) << 0;    \
-		buf[3] &= ~(0xff << 0);                                \
-		buf[3] |= (((ubyte)(val) >> 0) & 0xff) << 0;           \
-	}
+  {                                                        \
+    buf[2] &= ~(0xff << 0);                                \
+    buf[2] |= ((ubyte)((uword)(val) >> 8) & 0xff) << 0;    \
+    buf[3] &= ~(0xff << 0);                                \
+    buf[3] |= (((ubyte)(val) >> 0) & 0xff) << 0;           \
+  }
 
 /**
  * Set signal Cluster_MeasCounter in buffer to its initial value.
@@ -21615,8 +21415,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Cluster_0_Status_Cluster_MeasCounter(buf) \
-	SET_Cluster_0_Status_Cluster_MeasCounter(buf, 0)
+#define INITSIG_Cluster_0_Status_Cluster_MeasCounter(buf) SET_Cluster_0_Status_Cluster_MeasCounter(buf, 0)
 
 /**
  * Signal Cluster_MeasCounter value conversion with 16 bit factor and offset.
@@ -21629,8 +21428,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Cluster_0_Status_Cluster_MeasCounter(x, fmt) \
-	((x) * fmt)
+#define CALC_Cluster_0_Status_Cluster_MeasCounter(x, fmt) ((x) * fmt)
 
 /**
  * Signal Cluster_MeasCounter raw initial value.
@@ -21703,10 +21501,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Cluster_0_Status_Cluster_NofClustersNear(buf, val) \
-	{                                                            \
-		buf[0] &= ~(0xff << 0);                                    \
-		buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0;               \
-	}
+  {                                                            \
+    buf[0] &= ~(0xff << 0);                                    \
+    buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0;               \
+  }
 
 /**
  * Set signal Cluster_NofClustersNear in buffer to its initial value.
@@ -21714,8 +21512,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Cluster_0_Status_Cluster_NofClustersNear(buf) \
-	SET_Cluster_0_Status_Cluster_NofClustersNear(buf, 0)
+#define INITSIG_Cluster_0_Status_Cluster_NofClustersNear(buf) SET_Cluster_0_Status_Cluster_NofClustersNear(buf, 0)
 
 /**
  * Signal Cluster_NofClustersNear value conversion with 16 bit factor and offset.
@@ -21728,8 +21525,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Cluster_0_Status_Cluster_NofClustersNear(x, fmt) \
-	((x) * fmt)
+#define CALC_Cluster_0_Status_Cluster_NofClustersNear(x, fmt) ((x) * fmt)
 
 /**
  * Signal Cluster_NofClustersNear raw initial value.
@@ -21802,10 +21598,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Cluster_0_Status_Cluster_NofClustersFar(buf, val) \
-	{                                                           \
-		buf[1] &= ~(0xff << 0);                                   \
-		buf[1] |= (((ubyte)(val) >> 0) & 0xff) << 0;              \
-	}
+  {                                                           \
+    buf[1] &= ~(0xff << 0);                                   \
+    buf[1] |= (((ubyte)(val) >> 0) & 0xff) << 0;              \
+  }
 
 /**
  * Set signal Cluster_NofClustersFar in buffer to its initial value.
@@ -21813,8 +21609,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Cluster_0_Status_Cluster_NofClustersFar(buf) \
-	SET_Cluster_0_Status_Cluster_NofClustersFar(buf, 0)
+#define INITSIG_Cluster_0_Status_Cluster_NofClustersFar(buf) SET_Cluster_0_Status_Cluster_NofClustersFar(buf, 0)
 
 /**
  * Signal Cluster_NofClustersFar value conversion with 16 bit factor and offset.
@@ -21827,8 +21622,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Cluster_0_Status_Cluster_NofClustersFar(x, fmt) \
-	((x) * fmt)
+#define CALC_Cluster_0_Status_Cluster_NofClustersFar(x, fmt) ((x) * fmt)
 
 /**
  * Signal Cluster_NofClustersFar raw initial value.
@@ -21901,10 +21695,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Cluster_0_Status_Cluster_InterfaceVersion(buf, val) \
-	{                                                             \
-		buf[4] &= ~(0x0f << 4);                                     \
-		buf[4] |= (((ubyte)(val) >> 0) & 0x0f) << 4;                \
-	}
+  {                                                             \
+    buf[4] &= ~(0x0f << 4);                                     \
+    buf[4] |= (((ubyte)(val) >> 0) & 0x0f) << 4;                \
+  }
 
 /**
  * Set signal Cluster_InterfaceVersion in buffer to its initial value.
@@ -21912,8 +21706,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Cluster_0_Status_Cluster_InterfaceVersion(buf) \
-	SET_Cluster_0_Status_Cluster_InterfaceVersion(buf, 0)
+#define INITSIG_Cluster_0_Status_Cluster_InterfaceVersion(buf) SET_Cluster_0_Status_Cluster_InterfaceVersion(buf, 0)
 
 /**
  * Signal Cluster_InterfaceVersion value conversion with 16 bit factor and offset.
@@ -21926,8 +21719,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Cluster_0_Status_Cluster_InterfaceVersion(x, fmt) \
-	((x) * fmt)
+#define CALC_Cluster_0_Status_Cluster_InterfaceVersion(x, fmt) ((x) * fmt)
 
 /**
  * Signal Cluster_InterfaceVersion raw initial value.
@@ -22000,10 +21792,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_0_Status_Obj_NofObjects(buf, val) \
-	{                                               \
-		buf[0] &= ~(0xff << 0);                       \
-		buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0;  \
-	}
+  {                                               \
+    buf[0] &= ~(0xff << 0);                       \
+    buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0;  \
+  }
 
 /**
  * Set signal Obj_NofObjects in buffer to its initial value.
@@ -22011,8 +21803,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_0_Status_Obj_NofObjects(buf) \
-	SET_Obj_0_Status_Obj_NofObjects(buf, 0)
+#define INITSIG_Obj_0_Status_Obj_NofObjects(buf) SET_Obj_0_Status_Obj_NofObjects(buf, 0)
 
 /**
  * Signal Obj_NofObjects value conversion with 16 bit factor and offset.
@@ -22025,8 +21816,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_0_Status_Obj_NofObjects(x, fmt) \
-	((x) * fmt)
+#define CALC_Obj_0_Status_Obj_NofObjects(x, fmt) ((x) * fmt)
 
 /**
  * Signal Obj_NofObjects raw initial value.
@@ -22088,7 +21878,8 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_0_Status_Obj_MeasCounter(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0xff) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
+#define GET_Obj_0_Status_Obj_MeasCounter(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0xff) << 8) | (ubyte)(+(ubyte)((buf[2] >> 0) & 0xff) << 0))
 
 /**
  * Set signal Obj_MeasCounter in buffer.
@@ -22099,12 +21890,12 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_0_Status_Obj_MeasCounter(buf, val)      \
-	{                                                     \
-		buf[1] &= ~(0xff << 0);                             \
-		buf[1] |= ((ubyte)((uword)(val) >> 8) & 0xff) << 0; \
-		buf[2] &= ~(0xff << 0);                             \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
-	}
+  {                                                     \
+    buf[1] &= ~(0xff << 0);                             \
+    buf[1] |= ((ubyte)((uword)(val) >> 8) & 0xff) << 0; \
+    buf[2] &= ~(0xff << 0);                             \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+  }
 
 /**
  * Set signal Obj_MeasCounter in buffer to its initial value.
@@ -22112,8 +21903,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_0_Status_Obj_MeasCounter(buf) \
-	SET_Obj_0_Status_Obj_MeasCounter(buf, 0)
+#define INITSIG_Obj_0_Status_Obj_MeasCounter(buf) SET_Obj_0_Status_Obj_MeasCounter(buf, 0)
 
 /**
  * Signal Obj_MeasCounter value conversion with 16 bit factor and offset.
@@ -22126,8 +21916,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_0_Status_Obj_MeasCounter(x, fmt) \
-	((x) * fmt)
+#define CALC_Obj_0_Status_Obj_MeasCounter(x, fmt) ((x) * fmt)
 
 /**
  * Signal Obj_MeasCounter raw initial value.
@@ -22200,10 +21989,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_0_Status_Obj_InterfaceVersion(buf, val) \
-	{                                                     \
-		buf[3] &= ~(0x0f << 4);                             \
-		buf[3] |= (((ubyte)(val) >> 0) & 0x0f) << 4;        \
-	}
+  {                                                     \
+    buf[3] &= ~(0x0f << 4);                             \
+    buf[3] |= (((ubyte)(val) >> 0) & 0x0f) << 4;        \
+  }
 
 /**
  * Set signal Obj_InterfaceVersion in buffer to its initial value.
@@ -22211,8 +22000,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_0_Status_Obj_InterfaceVersion(buf) \
-	SET_Obj_0_Status_Obj_InterfaceVersion(buf, 0)
+#define INITSIG_Obj_0_Status_Obj_InterfaceVersion(buf) SET_Obj_0_Status_Obj_InterfaceVersion(buf, 0)
 
 /**
  * Signal Obj_InterfaceVersion value conversion with 16 bit factor and offset.
@@ -22225,8 +22013,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_0_Status_Obj_InterfaceVersion(x, fmt) \
-	((x) * fmt)
+#define CALC_Obj_0_Status_Obj_InterfaceVersion(x, fmt) ((x) * fmt)
 
 /**
  * Signal Obj_InterfaceVersion raw initial value.
@@ -22301,10 +22088,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_1_General_Obj_DynProp(buf, val)  \
-	{                                              \
-		buf[6] &= ~(0x07 << 0);                      \
-		buf[6] |= (((ubyte)(val) >> 0) & 0x07) << 0; \
-	}
+  {                                              \
+    buf[6] &= ~(0x07 << 0);                      \
+    buf[6] |= (((ubyte)(val) >> 0) & 0x07) << 0; \
+  }
 
 /**
  * Set signal Obj_DynProp in buffer to its initial value.
@@ -22312,8 +22099,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_1_General_Obj_DynProp(buf) \
-	SET_Obj_1_General_Obj_DynProp(buf, 0)
+#define INITSIG_Obj_1_General_Obj_DynProp(buf) SET_Obj_1_General_Obj_DynProp(buf, 0)
 
 /**
  * Signal Obj_DynProp value conversion with 16 bit factor and offset.
@@ -22326,8 +22112,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_1_General_Obj_DynProp(x, fmt) \
-	((x) * fmt)
+#define CALC_Obj_1_General_Obj_DynProp(x, fmt) ((x) * fmt)
 
 /**
  * Signal Obj_DynProp raw initial value.
@@ -22470,10 +22255,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_1_General_Obj_RCS(buf, val)      \
-	{                                              \
-		buf[7] &= ~(0xff << 0);                      \
-		buf[7] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-	}
+  {                                              \
+    buf[7] &= ~(0xff << 0);                      \
+    buf[7] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
+  }
 
 /**
  * Set signal Obj_RCS in buffer to its initial value.
@@ -22481,8 +22266,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_1_General_Obj_RCS(buf) \
-	SET_Obj_1_General_Obj_RCS(buf, 0)
+#define INITSIG_Obj_1_General_Obj_RCS(buf) SET_Obj_1_General_Obj_RCS(buf, 0)
 
 /**
  * Signal Obj_RCS value conversion with 16 bit factor and offset.
@@ -22495,8 +22279,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_1_General_Obj_RCS(x, fmt) \
-	((x) * fmt / 2 + fmt * (-64))
+#define CALC_Obj_1_General_Obj_RCS(x, fmt) ((x) * fmt / 2 + fmt * (-64))
 
 /**
  * Signal Obj_RCS raw initial value.
@@ -22558,7 +22341,8 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_1_General_Obj_VrelLat(buf) (0 | (uword)(+(uword)((buf[5] >> 0) & 0x3f) << 3) | (ubyte)(+(ubyte)((buf[6] >> 5) & 0x07) << 0))
+#define GET_Obj_1_General_Obj_VrelLat(buf) \
+  (0 | (uword)(+(uword)((buf[5] >> 0) & 0x3f) << 3) | (ubyte)(+(ubyte)((buf[6] >> 5) & 0x07) << 0))
 
 /**
  * Set signal Obj_VrelLat in buffer.
@@ -22569,12 +22353,12 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_1_General_Obj_VrelLat(buf, val)         \
-	{                                                     \
-		buf[5] &= ~(0x3f << 0);                             \
-		buf[5] |= ((ubyte)((uword)(val) >> 3) & 0x3f) << 0; \
-		buf[6] &= ~(0x07 << 5);                             \
-		buf[6] |= (((ubyte)(val) >> 0) & 0x07) << 5;        \
-	}
+  {                                                     \
+    buf[5] &= ~(0x3f << 0);                             \
+    buf[5] |= ((ubyte)((uword)(val) >> 3) & 0x3f) << 0; \
+    buf[6] &= ~(0x07 << 5);                             \
+    buf[6] |= (((ubyte)(val) >> 0) & 0x07) << 5;        \
+  }
 
 /**
  * Set signal Obj_VrelLat in buffer to its initial value.
@@ -22582,8 +22366,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_1_General_Obj_VrelLat(buf) \
-	SET_Obj_1_General_Obj_VrelLat(buf, 256)
+#define INITSIG_Obj_1_General_Obj_VrelLat(buf) SET_Obj_1_General_Obj_VrelLat(buf, 256)
 
 /**
  * Signal Obj_VrelLat value conversion with 16 bit factor and offset.
@@ -22596,8 +22379,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_1_General_Obj_VrelLat(x, fmt) \
-	((x) * fmt / 4 + fmt * (-64))
+#define CALC_Obj_1_General_Obj_VrelLat(x, fmt) ((x) * fmt / 4 + fmt * (-64))
 
 /**
  * Signal Obj_VrelLat raw initial value.
@@ -22670,10 +22452,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_1_General_Obj_ID(buf, val)       \
-	{                                              \
-		buf[0] &= ~(0xff << 0);                      \
-		buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
-	}
+  {                                              \
+    buf[0] &= ~(0xff << 0);                      \
+    buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0; \
+  }
 
 /**
  * Set signal Obj_ID in buffer to its initial value.
@@ -22681,8 +22463,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_1_General_Obj_ID(buf) \
-	SET_Obj_1_General_Obj_ID(buf, 0)
+#define INITSIG_Obj_1_General_Obj_ID(buf) SET_Obj_1_General_Obj_ID(buf, 0)
 
 /**
  * Signal Obj_ID value conversion with 16 bit factor and offset.
@@ -22695,8 +22476,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_1_General_Obj_ID(x, fmt) \
-	((x) * fmt)
+#define CALC_Obj_1_General_Obj_ID(x, fmt) ((x) * fmt)
 
 /**
  * Signal Obj_ID raw initial value.
@@ -22758,7 +22538,8 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_1_General_Obj_DistLong(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0xff) << 5) | (ubyte)(+(ubyte)((buf[2] >> 3) & 0x1f) << 0))
+#define GET_Obj_1_General_Obj_DistLong(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0xff) << 5) | (ubyte)(+(ubyte)((buf[2] >> 3) & 0x1f) << 0))
 
 /**
  * Set signal Obj_DistLong in buffer.
@@ -22769,12 +22550,12 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_1_General_Obj_DistLong(buf, val)        \
-	{                                                     \
-		buf[1] &= ~(0xff << 0);                             \
-		buf[1] |= ((ubyte)((uword)(val) >> 5) & 0xff) << 0; \
-		buf[2] &= ~(0x1f << 3);                             \
-		buf[2] |= (((ubyte)(val) >> 0) & 0x1f) << 3;        \
-	}
+  {                                                     \
+    buf[1] &= ~(0xff << 0);                             \
+    buf[1] |= ((ubyte)((uword)(val) >> 5) & 0xff) << 0; \
+    buf[2] &= ~(0x1f << 3);                             \
+    buf[2] |= (((ubyte)(val) >> 0) & 0x1f) << 3;        \
+  }
 
 /**
  * Set signal Obj_DistLong in buffer to its initial value.
@@ -22782,8 +22563,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_1_General_Obj_DistLong(buf) \
-	SET_Obj_1_General_Obj_DistLong(buf, 2500)
+#define INITSIG_Obj_1_General_Obj_DistLong(buf) SET_Obj_1_General_Obj_DistLong(buf, 2500)
 
 /**
  * Signal Obj_DistLong value conversion with 16 bit factor and offset.
@@ -22796,8 +22576,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_1_General_Obj_DistLong(x, fmt) \
-	((x) * fmt / 5 + fmt * (-500))
+#define CALC_Obj_1_General_Obj_DistLong(x, fmt) ((x) * fmt / 5 + fmt * (-500))
 
 /**
  * Signal Obj_DistLong raw initial value.
@@ -22859,7 +22638,8 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_1_General_Obj_VrelLong(buf) (0 | (uword)(+(uword)((buf[4] >> 0) & 0xff) << 2) | (ubyte)(+(ubyte)((buf[5] >> 6) & 0x03) << 0))
+#define GET_Obj_1_General_Obj_VrelLong(buf) \
+  (0 | (uword)(+(uword)((buf[4] >> 0) & 0xff) << 2) | (ubyte)(+(ubyte)((buf[5] >> 6) & 0x03) << 0))
 
 /**
  * Set signal Obj_VrelLong in buffer.
@@ -22870,12 +22650,12 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_1_General_Obj_VrelLong(buf, val)        \
-	{                                                     \
-		buf[4] &= ~(0xff << 0);                             \
-		buf[4] |= ((ubyte)((uword)(val) >> 2) & 0xff) << 0; \
-		buf[5] &= ~(0x03 << 6);                             \
-		buf[5] |= (((ubyte)(val) >> 0) & 0x03) << 6;        \
-	}
+  {                                                     \
+    buf[4] &= ~(0xff << 0);                             \
+    buf[4] |= ((ubyte)((uword)(val) >> 2) & 0xff) << 0; \
+    buf[5] &= ~(0x03 << 6);                             \
+    buf[5] |= (((ubyte)(val) >> 0) & 0x03) << 6;        \
+  }
 
 /**
  * Set signal Obj_VrelLong in buffer to its initial value.
@@ -22883,8 +22663,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_1_General_Obj_VrelLong(buf) \
-	SET_Obj_1_General_Obj_VrelLong(buf, 512)
+#define INITSIG_Obj_1_General_Obj_VrelLong(buf) SET_Obj_1_General_Obj_VrelLong(buf, 512)
 
 /**
  * Signal Obj_VrelLong value conversion with 16 bit factor and offset.
@@ -22897,8 +22676,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_1_General_Obj_VrelLong(x, fmt) \
-	((x) * fmt / 4 + fmt * (-128))
+#define CALC_Obj_1_General_Obj_VrelLong(x, fmt) ((x) * fmt / 4 + fmt * (-128))
 
 /**
  * Signal Obj_VrelLong raw initial value.
@@ -22960,7 +22738,8 @@
  * @return
  *	The raw signal
  */
-#define GET_Obj_1_General_Obj_DistLat(buf) (0 | (uword)(+(uword)((buf[2] >> 0) & 0x07) << 8) | (ubyte)(+(ubyte)((buf[3] >> 0) & 0xff) << 0))
+#define GET_Obj_1_General_Obj_DistLat(buf) \
+  (0 | (uword)(+(uword)((buf[2] >> 0) & 0x07) << 8) | (ubyte)(+(ubyte)((buf[3] >> 0) & 0xff) << 0))
 
 /**
  * Set signal Obj_DistLat in buffer.
@@ -22971,12 +22750,12 @@
  *	The raw value to set the signal to
  */
 #define SET_Obj_1_General_Obj_DistLat(buf, val)         \
-	{                                                     \
-		buf[2] &= ~(0x07 << 0);                             \
-		buf[2] |= ((ubyte)((uword)(val) >> 8) & 0x07) << 0; \
-		buf[3] &= ~(0xff << 0);                             \
-		buf[3] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
-	}
+  {                                                     \
+    buf[2] &= ~(0x07 << 0);                             \
+    buf[2] |= ((ubyte)((uword)(val) >> 8) & 0x07) << 0; \
+    buf[3] &= ~(0xff << 0);                             \
+    buf[3] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+  }
 
 /**
  * Set signal Obj_DistLat in buffer to its initial value.
@@ -22984,8 +22763,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Obj_1_General_Obj_DistLat(buf) \
-	SET_Obj_1_General_Obj_DistLat(buf, 1023)
+#define INITSIG_Obj_1_General_Obj_DistLat(buf) SET_Obj_1_General_Obj_DistLat(buf, 1023)
 
 /**
  * Signal Obj_DistLat value conversion with 16 bit factor and offset.
@@ -22998,8 +22776,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_1_General_Obj_DistLat(x, fmt) \
-	((x) * fmt / 5 + fmt * (-1024) / 5)
+#define CALC_Obj_1_General_Obj_DistLat(x, fmt) ((x) * fmt / 5 + fmt * (-1024) / 5)
 
 /**
  * Signal Obj_DistLat raw initial value.
@@ -23071,10 +22848,10 @@
  *	The raw value to set the signal to
  */
 #define SET_VersionID_Version_ExtendedRange(buf, val) \
-	{                                                   \
-		buf[3] &= ~(0x01 << 1);                           \
-		buf[3] |= (((ubyte)(val) >> 0) & 0x01) << 1;      \
-	}
+  {                                                   \
+    buf[3] &= ~(0x01 << 1);                           \
+    buf[3] |= (((ubyte)(val) >> 0) & 0x01) << 1;      \
+  }
 
 /**
  * Set signal Version_ExtendedRange in buffer to its initial value.
@@ -23082,8 +22859,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_VersionID_Version_ExtendedRange(buf) \
-	SET_VersionID_Version_ExtendedRange(buf, 0)
+#define INITSIG_VersionID_Version_ExtendedRange(buf) SET_VersionID_Version_ExtendedRange(buf, 0)
 
 /**
  * Signal Version_ExtendedRange value conversion with 16 bit factor and offset.
@@ -23096,8 +22872,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_VersionID_Version_ExtendedRange(x, fmt) \
-	((x) * fmt)
+#define CALC_VersionID_Version_ExtendedRange(x, fmt) ((x) * fmt)
 
 /**
  * Signal Version_ExtendedRange raw initial value.
@@ -23195,10 +22970,10 @@
  *	The raw value to set the signal to
  */
 #define SET_VersionID_Version_CountryCode(buf, val) \
-	{                                                 \
-		buf[3] &= ~(0x01 << 0);                         \
-		buf[3] |= (((ubyte)(val) >> 0) & 0x01) << 0;    \
-	}
+  {                                                 \
+    buf[3] &= ~(0x01 << 0);                         \
+    buf[3] |= (((ubyte)(val) >> 0) & 0x01) << 0;    \
+  }
 
 /**
  * Set signal Version_CountryCode in buffer to its initial value.
@@ -23206,8 +22981,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_VersionID_Version_CountryCode(buf) \
-	SET_VersionID_Version_CountryCode(buf, 0)
+#define INITSIG_VersionID_Version_CountryCode(buf) SET_VersionID_Version_CountryCode(buf, 0)
 
 /**
  * Signal Version_CountryCode value conversion with 16 bit factor and offset.
@@ -23220,8 +22994,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_VersionID_Version_CountryCode(x, fmt) \
-	((x) * fmt)
+#define CALC_VersionID_Version_CountryCode(x, fmt) ((x) * fmt)
 
 /**
  * Signal Version_CountryCode raw initial value.
@@ -23320,10 +23093,10 @@
  *	The raw value to set the signal to
  */
 #define SET_VersionID_Version_MajorRelease(buf, val) \
-	{                                                  \
-		buf[0] &= ~(0xff << 0);                          \
-		buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0;     \
-	}
+  {                                                  \
+    buf[0] &= ~(0xff << 0);                          \
+    buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0;     \
+  }
 
 /**
  * Set signal Version_MajorRelease in buffer to its initial value.
@@ -23331,8 +23104,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_VersionID_Version_MajorRelease(buf) \
-	SET_VersionID_Version_MajorRelease(buf, 0)
+#define INITSIG_VersionID_Version_MajorRelease(buf) SET_VersionID_Version_MajorRelease(buf, 0)
 
 /**
  * Signal Version_MajorRelease value conversion with 16 bit factor and offset.
@@ -23345,8 +23117,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_VersionID_Version_MajorRelease(x, fmt) \
-	((x) * fmt)
+#define CALC_VersionID_Version_MajorRelease(x, fmt) ((x) * fmt)
 
 /**
  * Signal Version_MajorRelease raw initial value.
@@ -23419,10 +23190,10 @@
  *	The raw value to set the signal to
  */
 #define SET_VersionID_Version_MinorRelease(buf, val) \
-	{                                                  \
-		buf[1] &= ~(0xff << 0);                          \
-		buf[1] |= (((ubyte)(val) >> 0) & 0xff) << 0;     \
-	}
+  {                                                  \
+    buf[1] &= ~(0xff << 0);                          \
+    buf[1] |= (((ubyte)(val) >> 0) & 0xff) << 0;     \
+  }
 
 /**
  * Set signal Version_MinorRelease in buffer to its initial value.
@@ -23430,8 +23201,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_VersionID_Version_MinorRelease(buf) \
-	SET_VersionID_Version_MinorRelease(buf, 0)
+#define INITSIG_VersionID_Version_MinorRelease(buf) SET_VersionID_Version_MinorRelease(buf, 0)
 
 /**
  * Signal Version_MinorRelease value conversion with 16 bit factor and offset.
@@ -23444,8 +23214,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_VersionID_Version_MinorRelease(x, fmt) \
-	((x) * fmt)
+#define CALC_VersionID_Version_MinorRelease(x, fmt) ((x) * fmt)
 
 /**
  * Signal Version_MinorRelease raw initial value.
@@ -23518,10 +23287,10 @@
  *	The raw value to set the signal to
  */
 #define SET_VersionID_Version_PatchLevel(buf, val) \
-	{                                                \
-		buf[2] &= ~(0xff << 0);                        \
-		buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;   \
-	}
+  {                                                \
+    buf[2] &= ~(0xff << 0);                        \
+    buf[2] |= (((ubyte)(val) >> 0) & 0xff) << 0;   \
+  }
 
 /**
  * Set signal Version_PatchLevel in buffer to its initial value.
@@ -23529,8 +23298,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_VersionID_Version_PatchLevel(buf) \
-	SET_VersionID_Version_PatchLevel(buf, 0)
+#define INITSIG_VersionID_Version_PatchLevel(buf) SET_VersionID_Version_PatchLevel(buf, 0)
 
 /**
  * Signal Version_PatchLevel value conversion with 16 bit factor and offset.
@@ -23543,8 +23311,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_VersionID_Version_PatchLevel(x, fmt) \
-	((x) * fmt)
+#define CALC_VersionID_Version_PatchLevel(x, fmt) ((x) * fmt)
 
 /**
  * Signal Version_PatchLevel raw initial value.
@@ -23619,10 +23386,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Cluster_1_General_Cluster_DynProp(buf, val) \
-	{                                                     \
-		buf[6] &= ~(0x07 << 0);                             \
-		buf[6] |= (((ubyte)(val) >> 0) & 0x07) << 0;        \
-	}
+  {                                                     \
+    buf[6] &= ~(0x07 << 0);                             \
+    buf[6] |= (((ubyte)(val) >> 0) & 0x07) << 0;        \
+  }
 
 /**
  * Set signal Cluster_DynProp in buffer to its initial value.
@@ -23630,8 +23397,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Cluster_1_General_Cluster_DynProp(buf) \
-	SET_Cluster_1_General_Cluster_DynProp(buf, 0)
+#define INITSIG_Cluster_1_General_Cluster_DynProp(buf) SET_Cluster_1_General_Cluster_DynProp(buf, 0)
 
 /**
  * Signal Cluster_DynProp value conversion with 16 bit factor and offset.
@@ -23644,8 +23410,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Cluster_1_General_Cluster_DynProp(x, fmt) \
-	((x) * fmt)
+#define CALC_Cluster_1_General_Cluster_DynProp(x, fmt) ((x) * fmt)
 
 /**
  * Signal Cluster_DynProp raw initial value.
@@ -23777,7 +23542,8 @@
  * @return
  *	The raw signal
  */
-#define GET_Cluster_1_General_Cluster_VrelLat(buf) (0 | (uword)(+(uword)((buf[5] >> 0) & 0x3f) << 3) | (ubyte)(+(ubyte)((buf[6] >> 5) & 0x07) << 0))
+#define GET_Cluster_1_General_Cluster_VrelLat(buf) \
+  (0 | (uword)(+(uword)((buf[5] >> 0) & 0x3f) << 3) | (ubyte)(+(ubyte)((buf[6] >> 5) & 0x07) << 0))
 
 /**
  * Set signal Cluster_VrelLat in buffer.
@@ -23788,12 +23554,12 @@
  *	The raw value to set the signal to
  */
 #define SET_Cluster_1_General_Cluster_VrelLat(buf, val) \
-	{                                                     \
-		buf[5] &= ~(0x3f << 0);                             \
-		buf[5] |= ((ubyte)((uword)(val) >> 3) & 0x3f) << 0; \
-		buf[6] &= ~(0x07 << 5);                             \
-		buf[6] |= (((ubyte)(val) >> 0) & 0x07) << 5;        \
-	}
+  {                                                     \
+    buf[5] &= ~(0x3f << 0);                             \
+    buf[5] |= ((ubyte)((uword)(val) >> 3) & 0x3f) << 0; \
+    buf[6] &= ~(0x07 << 5);                             \
+    buf[6] |= (((ubyte)(val) >> 0) & 0x07) << 5;        \
+  }
 
 /**
  * Set signal Cluster_VrelLat in buffer to its initial value.
@@ -23801,8 +23567,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Cluster_1_General_Cluster_VrelLat(buf) \
-	SET_Cluster_1_General_Cluster_VrelLat(buf, 256)
+#define INITSIG_Cluster_1_General_Cluster_VrelLat(buf) SET_Cluster_1_General_Cluster_VrelLat(buf, 256)
 
 /**
  * Signal Cluster_VrelLat value conversion with 16 bit factor and offset.
@@ -23815,8 +23580,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Cluster_1_General_Cluster_VrelLat(x, fmt) \
-	((x) * fmt / 4 + fmt * (-64))
+#define CALC_Cluster_1_General_Cluster_VrelLat(x, fmt) ((x) * fmt / 4 + fmt * (-64))
 
 /**
  * Signal Cluster_VrelLat raw initial value.
@@ -23889,10 +23653,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Cluster_1_General_Cluster_RCS(buf, val) \
-	{                                                 \
-		buf[7] &= ~(0xff << 0);                         \
-		buf[7] |= (((ubyte)(val) >> 0) & 0xff) << 0;    \
-	}
+  {                                                 \
+    buf[7] &= ~(0xff << 0);                         \
+    buf[7] |= (((ubyte)(val) >> 0) & 0xff) << 0;    \
+  }
 
 /**
  * Set signal Cluster_RCS in buffer to its initial value.
@@ -23900,8 +23664,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Cluster_1_General_Cluster_RCS(buf) \
-	SET_Cluster_1_General_Cluster_RCS(buf, 0)
+#define INITSIG_Cluster_1_General_Cluster_RCS(buf) SET_Cluster_1_General_Cluster_RCS(buf, 0)
 
 /**
  * Signal Cluster_RCS value conversion with 16 bit factor and offset.
@@ -23914,8 +23677,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Cluster_1_General_Cluster_RCS(x, fmt) \
-	((x) * fmt / 2 + fmt * (-64))
+#define CALC_Cluster_1_General_Cluster_RCS(x, fmt) ((x) * fmt / 2 + fmt * (-64))
 
 /**
  * Signal Cluster_RCS raw initial value.
@@ -23977,7 +23739,8 @@
  * @return
  *	The raw signal
  */
-#define GET_Cluster_1_General_Cluster_DistLong(buf) (0 | (uword)(+(uword)((buf[1] >> 0) & 0xff) << 5) | (ubyte)(+(ubyte)((buf[2] >> 3) & 0x1f) << 0))
+#define GET_Cluster_1_General_Cluster_DistLong(buf) \
+  (0 | (uword)(+(uword)((buf[1] >> 0) & 0xff) << 5) | (ubyte)(+(ubyte)((buf[2] >> 3) & 0x1f) << 0))
 
 /**
  * Set signal Cluster_DistLong in buffer.
@@ -23988,12 +23751,12 @@
  *	The raw value to set the signal to
  */
 #define SET_Cluster_1_General_Cluster_DistLong(buf, val) \
-	{                                                      \
-		buf[1] &= ~(0xff << 0);                              \
-		buf[1] |= ((ubyte)((uword)(val) >> 5) & 0xff) << 0;  \
-		buf[2] &= ~(0x1f << 3);                              \
-		buf[2] |= (((ubyte)(val) >> 0) & 0x1f) << 3;         \
-	}
+  {                                                      \
+    buf[1] &= ~(0xff << 0);                              \
+    buf[1] |= ((ubyte)((uword)(val) >> 5) & 0xff) << 0;  \
+    buf[2] &= ~(0x1f << 3);                              \
+    buf[2] |= (((ubyte)(val) >> 0) & 0x1f) << 3;         \
+  }
 
 /**
  * Set signal Cluster_DistLong in buffer to its initial value.
@@ -24001,8 +23764,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Cluster_1_General_Cluster_DistLong(buf) \
-	SET_Cluster_1_General_Cluster_DistLong(buf, 2500)
+#define INITSIG_Cluster_1_General_Cluster_DistLong(buf) SET_Cluster_1_General_Cluster_DistLong(buf, 2500)
 
 /**
  * Signal Cluster_DistLong value conversion with 16 bit factor and offset.
@@ -24015,8 +23777,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Cluster_1_General_Cluster_DistLong(x, fmt) \
-	((x) * fmt / 5 + fmt * (-500))
+#define CALC_Cluster_1_General_Cluster_DistLong(x, fmt) ((x) * fmt / 5 + fmt * (-500))
 
 /**
  * Signal Cluster_DistLong raw initial value.
@@ -24089,10 +23850,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Cluster_1_General_Cluster_ID(buf, val) \
-	{                                                \
-		buf[0] &= ~(0xff << 0);                        \
-		buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0;   \
-	}
+  {                                                \
+    buf[0] &= ~(0xff << 0);                        \
+    buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0;   \
+  }
 
 /**
  * Set signal Cluster_ID in buffer to its initial value.
@@ -24100,8 +23861,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Cluster_1_General_Cluster_ID(buf) \
-	SET_Cluster_1_General_Cluster_ID(buf, 0)
+#define INITSIG_Cluster_1_General_Cluster_ID(buf) SET_Cluster_1_General_Cluster_ID(buf, 0)
 
 /**
  * Signal Cluster_ID value conversion with 16 bit factor and offset.
@@ -24114,8 +23874,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Cluster_1_General_Cluster_ID(x, fmt) \
-	((x) * fmt)
+#define CALC_Cluster_1_General_Cluster_ID(x, fmt) ((x) * fmt)
 
 /**
  * Signal Cluster_ID raw initial value.
@@ -24177,7 +23936,8 @@
  * @return
  *	The raw signal
  */
-#define GET_Cluster_1_General_Cluster_VrelLong(buf) (0 | (uword)(+(uword)((buf[4] >> 0) & 0xff) << 2) | (ubyte)(+(ubyte)((buf[5] >> 6) & 0x03) << 0))
+#define GET_Cluster_1_General_Cluster_VrelLong(buf) \
+  (0 | (uword)(+(uword)((buf[4] >> 0) & 0xff) << 2) | (ubyte)(+(ubyte)((buf[5] >> 6) & 0x03) << 0))
 
 /**
  * Set signal Cluster_VrelLong in buffer.
@@ -24188,12 +23948,12 @@
  *	The raw value to set the signal to
  */
 #define SET_Cluster_1_General_Cluster_VrelLong(buf, val) \
-	{                                                      \
-		buf[4] &= ~(0xff << 0);                              \
-		buf[4] |= ((ubyte)((uword)(val) >> 2) & 0xff) << 0;  \
-		buf[5] &= ~(0x03 << 6);                              \
-		buf[5] |= (((ubyte)(val) >> 0) & 0x03) << 6;         \
-	}
+  {                                                      \
+    buf[4] &= ~(0xff << 0);                              \
+    buf[4] |= ((ubyte)((uword)(val) >> 2) & 0xff) << 0;  \
+    buf[5] &= ~(0x03 << 6);                              \
+    buf[5] |= (((ubyte)(val) >> 0) & 0x03) << 6;         \
+  }
 
 /**
  * Set signal Cluster_VrelLong in buffer to its initial value.
@@ -24201,8 +23961,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Cluster_1_General_Cluster_VrelLong(buf) \
-	SET_Cluster_1_General_Cluster_VrelLong(buf, 512)
+#define INITSIG_Cluster_1_General_Cluster_VrelLong(buf) SET_Cluster_1_General_Cluster_VrelLong(buf, 512)
 
 /**
  * Signal Cluster_VrelLong value conversion with 16 bit factor and offset.
@@ -24215,8 +23974,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Cluster_1_General_Cluster_VrelLong(x, fmt) \
-	((x) * fmt / 4 + fmt * (-128))
+#define CALC_Cluster_1_General_Cluster_VrelLong(x, fmt) ((x) * fmt / 4 + fmt * (-128))
 
 /**
  * Signal Cluster_VrelLong raw initial value.
@@ -24278,7 +24036,8 @@
  * @return
  *	The raw signal
  */
-#define GET_Cluster_1_General_Cluster_DistLat(buf) (0 | (uword)(+(uword)((buf[2] >> 0) & 0x03) << 8) | (ubyte)(+(ubyte)((buf[3] >> 0) & 0xff) << 0))
+#define GET_Cluster_1_General_Cluster_DistLat(buf) \
+  (0 | (uword)(+(uword)((buf[2] >> 0) & 0x03) << 8) | (ubyte)(+(ubyte)((buf[3] >> 0) & 0xff) << 0))
 
 /**
  * Set signal Cluster_DistLat in buffer.
@@ -24289,12 +24048,12 @@
  *	The raw value to set the signal to
  */
 #define SET_Cluster_1_General_Cluster_DistLat(buf, val) \
-	{                                                     \
-		buf[2] &= ~(0x03 << 0);                             \
-		buf[2] |= ((ubyte)((uword)(val) >> 8) & 0x03) << 0; \
-		buf[3] &= ~(0xff << 0);                             \
-		buf[3] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
-	}
+  {                                                     \
+    buf[2] &= ~(0x03 << 0);                             \
+    buf[2] |= ((ubyte)((uword)(val) >> 8) & 0x03) << 0; \
+    buf[3] &= ~(0xff << 0);                             \
+    buf[3] |= (((ubyte)(val) >> 0) & 0xff) << 0;        \
+  }
 
 /**
  * Set signal Cluster_DistLat in buffer to its initial value.
@@ -24302,8 +24061,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Cluster_1_General_Cluster_DistLat(buf) \
-	SET_Cluster_1_General_Cluster_DistLat(buf, 511.5)
+#define INITSIG_Cluster_1_General_Cluster_DistLat(buf) SET_Cluster_1_General_Cluster_DistLat(buf, 511.5)
 
 /**
  * Signal Cluster_DistLat value conversion with 16 bit factor and offset.
@@ -24316,8 +24074,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Cluster_1_General_Cluster_DistLat(x, fmt) \
-	((x) * fmt / 5 + fmt * (-512) / 5)
+#define CALC_Cluster_1_General_Cluster_DistLat(x, fmt) ((x) * fmt / 5 + fmt * (-512) / 5)
 
 /**
  * Signal Cluster_DistLat raw initial value.
@@ -24390,10 +24147,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Cluster_2_Quality_Cluster_ID(buf, val) \
-	{                                                \
-		buf[0] &= ~(0xff << 0);                        \
-		buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0;   \
-	}
+  {                                                \
+    buf[0] &= ~(0xff << 0);                        \
+    buf[0] |= (((ubyte)(val) >> 0) & 0xff) << 0;   \
+  }
 
 /**
  * Set signal Cluster_ID in buffer to its initial value.
@@ -24401,8 +24158,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Cluster_2_Quality_Cluster_ID(buf) \
-	SET_Cluster_2_Quality_Cluster_ID(buf, 0)
+#define INITSIG_Cluster_2_Quality_Cluster_ID(buf) SET_Cluster_2_Quality_Cluster_ID(buf, 0)
 
 /**
  * Signal Cluster_ID value conversion with 16 bit factor and offset.
@@ -24415,8 +24171,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Cluster_2_Quality_Cluster_ID(x, fmt) \
-	((x) * fmt)
+#define CALC_Cluster_2_Quality_Cluster_ID(x, fmt) ((x) * fmt)
 
 /**
  * Signal Cluster_ID raw initial value.
@@ -24480,7 +24235,8 @@
  * @return
  *	The raw signal
  */
-#define GET_Cluster_2_Quality_Cluster_VrelLat_rms(buf) (0 | (ubyte)(+(ubyte)((buf[2] >> 0) & 0x01) << 4) | (ubyte)(+(ubyte)((buf[3] >> 4) & 0x0f) << 0))
+#define GET_Cluster_2_Quality_Cluster_VrelLat_rms(buf) \
+  (0 | (ubyte)(+(ubyte)((buf[2] >> 0) & 0x01) << 4) | (ubyte)(+(ubyte)((buf[3] >> 4) & 0x0f) << 0))
 
 /**
  * Set signal Cluster_VrelLat_rms in buffer.
@@ -24491,12 +24247,12 @@
  *	The raw value to set the signal to
  */
 #define SET_Cluster_2_Quality_Cluster_VrelLat_rms(buf, val) \
-	{                                                         \
-		buf[2] &= ~(0x01 << 0);                                 \
-		buf[2] |= (((ubyte)(val) >> 4) & 0x01) << 0;            \
-		buf[3] &= ~(0x0f << 4);                                 \
-		buf[3] |= (((ubyte)(val) >> 0) & 0x0f) << 4;            \
-	}
+  {                                                         \
+    buf[2] &= ~(0x01 << 0);                                 \
+    buf[2] |= (((ubyte)(val) >> 4) & 0x01) << 0;            \
+    buf[3] &= ~(0x0f << 4);                                 \
+    buf[3] |= (((ubyte)(val) >> 0) & 0x0f) << 4;            \
+  }
 
 /**
  * Set signal Cluster_VrelLat_rms in buffer to its initial value.
@@ -24504,8 +24260,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Cluster_2_Quality_Cluster_VrelLat_rms(buf) \
-	SET_Cluster_2_Quality_Cluster_VrelLat_rms(buf, 0)
+#define INITSIG_Cluster_2_Quality_Cluster_VrelLat_rms(buf) SET_Cluster_2_Quality_Cluster_VrelLat_rms(buf, 0)
 
 /**
  * Signal Cluster_VrelLat_rms value conversion with 16 bit factor and offset.
@@ -24518,8 +24273,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Cluster_2_Quality_Cluster_VrelLat_rms(x, fmt) \
-	((x) * fmt)
+#define CALC_Cluster_2_Quality_Cluster_VrelLat_rms(x, fmt) ((x) * fmt)
 
 /**
  * Signal Cluster_VrelLat_rms raw initial value.
@@ -24888,10 +24642,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Cluster_2_Quality_Cluster_InvalidState(buf, val) \
-	{                                                          \
-		buf[4] &= ~(0x1f << 3);                                  \
-		buf[4] |= (((ubyte)(val) >> 0) & 0x1f) << 3;             \
-	}
+  {                                                          \
+    buf[4] &= ~(0x1f << 3);                                  \
+    buf[4] |= (((ubyte)(val) >> 0) & 0x1f) << 3;             \
+  }
 
 /**
  * Set signal Cluster_InvalidState in buffer to its initial value.
@@ -24899,8 +24653,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Cluster_2_Quality_Cluster_InvalidState(buf) \
-	SET_Cluster_2_Quality_Cluster_InvalidState(buf, 0)
+#define INITSIG_Cluster_2_Quality_Cluster_InvalidState(buf) SET_Cluster_2_Quality_Cluster_InvalidState(buf, 0)
 
 /**
  * Signal Cluster_InvalidState value conversion with 16 bit factor and offset.
@@ -24913,8 +24666,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Cluster_2_Quality_Cluster_InvalidState(x, fmt) \
-	((x) * fmt)
+#define CALC_Cluster_2_Quality_Cluster_InvalidState(x, fmt) ((x) * fmt)
 
 /**
  * Signal Cluster_InvalidState raw initial value.
@@ -25142,7 +24894,8 @@
  * @return
  *	The raw signal
  */
-#define GET_Cluster_2_Quality_Cluster_DistLat_rms(buf) (0 | (ubyte)(+(ubyte)((buf[1] >> 0) & 0x07) << 2) | (ubyte)(+(ubyte)((buf[2] >> 6) & 0x03) << 0))
+#define GET_Cluster_2_Quality_Cluster_DistLat_rms(buf) \
+  (0 | (ubyte)(+(ubyte)((buf[1] >> 0) & 0x07) << 2) | (ubyte)(+(ubyte)((buf[2] >> 6) & 0x03) << 0))
 
 /**
  * Set signal Cluster_DistLat_rms in buffer.
@@ -25153,12 +24906,12 @@
  *	The raw value to set the signal to
  */
 #define SET_Cluster_2_Quality_Cluster_DistLat_rms(buf, val) \
-	{                                                         \
-		buf[1] &= ~(0x07 << 0);                                 \
-		buf[1] |= (((ubyte)(val) >> 2) & 0x07) << 0;            \
-		buf[2] &= ~(0x03 << 6);                                 \
-		buf[2] |= (((ubyte)(val) >> 0) & 0x03) << 6;            \
-	}
+  {                                                         \
+    buf[1] &= ~(0x07 << 0);                                 \
+    buf[1] |= (((ubyte)(val) >> 2) & 0x07) << 0;            \
+    buf[2] &= ~(0x03 << 6);                                 \
+    buf[2] |= (((ubyte)(val) >> 0) & 0x03) << 6;            \
+  }
 
 /**
  * Set signal Cluster_DistLat_rms in buffer to its initial value.
@@ -25166,8 +24919,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Cluster_2_Quality_Cluster_DistLat_rms(buf) \
-	SET_Cluster_2_Quality_Cluster_DistLat_rms(buf, 0)
+#define INITSIG_Cluster_2_Quality_Cluster_DistLat_rms(buf) SET_Cluster_2_Quality_Cluster_DistLat_rms(buf, 0)
 
 /**
  * Signal Cluster_DistLat_rms value conversion with 16 bit factor and offset.
@@ -25180,8 +24932,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Cluster_2_Quality_Cluster_DistLat_rms(x, fmt) \
-	((x) * fmt)
+#define CALC_Cluster_2_Quality_Cluster_DistLat_rms(x, fmt) ((x) * fmt)
 
 /**
  * Signal Cluster_DistLat_rms raw initial value.
@@ -25550,10 +25301,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Cluster_2_Quality_Cluster_DistLong_rms(buf, val) \
-	{                                                          \
-		buf[1] &= ~(0x1f << 3);                                  \
-		buf[1] |= (((ubyte)(val) >> 0) & 0x1f) << 3;             \
-	}
+  {                                                          \
+    buf[1] &= ~(0x1f << 3);                                  \
+    buf[1] |= (((ubyte)(val) >> 0) & 0x1f) << 3;             \
+  }
 
 /**
  * Set signal Cluster_DistLong_rms in buffer to its initial value.
@@ -25561,8 +25312,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Cluster_2_Quality_Cluster_DistLong_rms(buf) \
-	SET_Cluster_2_Quality_Cluster_DistLong_rms(buf, 0)
+#define INITSIG_Cluster_2_Quality_Cluster_DistLong_rms(buf) SET_Cluster_2_Quality_Cluster_DistLong_rms(buf, 0)
 
 /**
  * Signal Cluster_DistLong_rms value conversion with 16 bit factor and offset.
@@ -25575,8 +25325,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Cluster_2_Quality_Cluster_DistLong_rms(x, fmt) \
-	((x) * fmt)
+#define CALC_Cluster_2_Quality_Cluster_DistLong_rms(x, fmt) ((x) * fmt)
 
 /**
  * Signal Cluster_DistLong_rms raw initial value.
@@ -25945,10 +25694,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Cluster_2_Quality_Cluster_VrelLong_rms(buf, val) \
-	{                                                          \
-		buf[2] &= ~(0x1f << 1);                                  \
-		buf[2] |= (((ubyte)(val) >> 0) & 0x1f) << 1;             \
-	}
+  {                                                          \
+    buf[2] &= ~(0x1f << 1);                                  \
+    buf[2] |= (((ubyte)(val) >> 0) & 0x1f) << 1;             \
+  }
 
 /**
  * Set signal Cluster_VrelLong_rms in buffer to its initial value.
@@ -25956,8 +25705,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Cluster_2_Quality_Cluster_VrelLong_rms(buf) \
-	SET_Cluster_2_Quality_Cluster_VrelLong_rms(buf, 0)
+#define INITSIG_Cluster_2_Quality_Cluster_VrelLong_rms(buf) SET_Cluster_2_Quality_Cluster_VrelLong_rms(buf, 0)
 
 /**
  * Signal Cluster_VrelLong_rms value conversion with 16 bit factor and offset.
@@ -25970,8 +25718,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Cluster_2_Quality_Cluster_VrelLong_rms(x, fmt) \
-	((x) * fmt)
+#define CALC_Cluster_2_Quality_Cluster_VrelLong_rms(x, fmt) ((x) * fmt)
 
 /**
  * Signal Cluster_VrelLong_rms raw initial value.
@@ -26340,10 +26087,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Cluster_2_Quality_Cluster_PdH0(buf, val) \
-	{                                                  \
-		buf[3] &= ~(0x07 << 0);                          \
-		buf[3] |= (((ubyte)(val) >> 0) & 0x07) << 0;     \
-	}
+  {                                                  \
+    buf[3] &= ~(0x07 << 0);                          \
+    buf[3] |= (((ubyte)(val) >> 0) & 0x07) << 0;     \
+  }
 
 /**
  * Set signal Cluster_PdH0 in buffer to its initial value.
@@ -26351,8 +26098,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Cluster_2_Quality_Cluster_PdH0(buf) \
-	SET_Cluster_2_Quality_Cluster_PdH0(buf, 0)
+#define INITSIG_Cluster_2_Quality_Cluster_PdH0(buf) SET_Cluster_2_Quality_Cluster_PdH0(buf, 0)
 
 /**
  * Signal Cluster_PdH0 value conversion with 16 bit factor and offset.
@@ -26365,8 +26111,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Cluster_2_Quality_Cluster_PdH0(x, fmt) \
-	((x) * fmt)
+#define CALC_Cluster_2_Quality_Cluster_PdH0(x, fmt) ((x) * fmt)
 
 /**
  * Signal Cluster_PdH0 raw initial value.
@@ -26519,10 +26264,10 @@
  *	The raw value to set the signal to
  */
 #define SET_Cluster_2_Quality_Cluster_AmbigState(buf, val) \
-	{                                                        \
-		buf[4] &= ~(0x07 << 0);                                \
-		buf[4] |= (((ubyte)(val) >> 0) & 0x07) << 0;           \
-	}
+  {                                                        \
+    buf[4] &= ~(0x07 << 0);                                \
+    buf[4] |= (((ubyte)(val) >> 0) & 0x07) << 0;           \
+  }
 
 /**
  * Set signal Cluster_AmbigState in buffer to its initial value.
@@ -26530,8 +26275,7 @@
  * @param buf
  *	The can message buffer to initialise
  */
-#define INITSIG_Cluster_2_Quality_Cluster_AmbigState(buf) \
-	SET_Cluster_2_Quality_Cluster_AmbigState(buf, 0)
+#define INITSIG_Cluster_2_Quality_Cluster_AmbigState(buf) SET_Cluster_2_Quality_Cluster_AmbigState(buf, 0)
 
 /**
  * Signal Cluster_AmbigState value conversion with 16 bit factor and offset.
@@ -26544,8 +26288,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Cluster_2_Quality_Cluster_AmbigState(x, fmt) \
-	((x) * fmt)
+#define CALC_Cluster_2_Quality_Cluster_AmbigState(x, fmt) ((x) * fmt)
 
 /**
  * Signal Cluster_AmbigState raw initial value.
@@ -26618,15 +26361,17 @@
  */
 #define Cluster_2_Quality_Cluster_AmbigState_Invalid 0
 
-#define Get_MsgID0_From_MsgID(id) (0 | (((id) >> 8) & 0xF) << 8 /* Extract 3rd digit and position it */ \
-																	 | (((id) >> 0) & 0xF) << 0		/* Extract 1st digit and position it */ \
-)
+#define Get_MsgID0_From_MsgID(id)                                       \
+  (0 | (((id) >> 8) & 0xF) << 8 /* Extract 3rd digit and position it */ \
+   | (((id) >> 0) & 0xF) << 0 /* Extract 1st digit and position it */   \
+  )
 
-#define Get_SensorID_From_MsgID(id) (0 | (((id) >> 4) & 0xF) /* Extract 2nd (middle) digit */ \
-)
+#define Get_SensorID_From_MsgID(id)                         \
+  (0 | (((id) >> 4) & 0xF) /* Extract 2nd (middle) digit */ \
+  )
 
 #define Set_SensorID_In_MsgID(buf, id) \
-	{                                    \
-		buf &= (0xF0F);                    \
-		buf |= (id & 0xF) << 4;            \
-	}
+  {                                    \
+    buf &= (0xF0F);                    \
+    buf |= (id & 0xF) << 4;            \
+  }

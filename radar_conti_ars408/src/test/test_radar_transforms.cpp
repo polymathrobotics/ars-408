@@ -1,94 +1,121 @@
+// Copyright 2026 Polymath Robotics, Inc.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 #include <math.h>
 
-#include "rclcpp/rclcpp.hpp"
-#include "polymath_test/catch2.hpp"
 #include <iostream>
 #include <limits>
 #include <memory>
 #include <string>
 #include <vector>
+
 #include "../include/radar_transforms.hpp"
 
+#if __has_include(<catch2/catch_all.hpp>)
+  #include <catch2/catch_all.hpp>
+  #include <catch2/catch_approx.hpp>
+using Catch::Approx;
+#elif __has_include(<catch2/catch.hpp>)
+  #include <catch2/catch.hpp>
+#else
+  #error "Catch2 headers not found. Please install Catch2 (v2 or v3)."
+#endif
+
+#include "geometry_msgs/msg/quaternion.hpp"
+#include "geometry_msgs/msg/vector3.hpp"
+#include "nav_msgs/msg/odometry.hpp"
+#include "rclcpp/rclcpp.hpp"
+#include "tf2/LinearMath/Quaternion.h"
 #include "tf2/utils.h"
 #include "tf2_ros/buffer.h"
 #include "tf2_ros/create_timer_ros.h"
-#include "tf2_ros/transform_broadcaster.h"
 #include "tf2_ros/static_transform_broadcaster.h"
+#include "tf2_ros/transform_broadcaster.h"
 #include "tf2_ros/transform_listener.h"
-#include "nav_msgs/msg/odometry.hpp"
-#include "geometry_msgs/msg/vector3.hpp"
-#include "tf2/LinearMath/Quaternion.h"
-#include "geometry_msgs/msg/quaternion.hpp"
 
 struct TestFixture
 {
-  TestFixture() {}
-  ~TestFixture() {}
-};
+  TestFixture()
+  {}
 
-std::string base_link = "base_link";
-std::string radar_link = "radar_link";
-std::string odom_link = "odom";
+  ~TestFixture()
+  {}
 
-void addTransformToBuffer(
+  std::string base_link = "base_link";
+  std::string radar_link = "radar_link";
+  std::string odom_link = "odom";
+
+  void addTransformToBuffer(
     std::shared_ptr<tf2_ros::Buffer> tf_buffer,
-    const std::string &parent_frame,
-    const std::string &child_frame,
-    const geometry_msgs::msg::Transform &transform,
-    const rclcpp::Time &stamp)
-{
-  geometry_msgs::msg::TransformStamped transform_stamped;
-  transform_stamped.header.stamp = stamp;
-  transform_stamped.header.frame_id = parent_frame;
-  transform_stamped.child_frame_id = child_frame;
-  transform_stamped.transform = transform;
+    const std::string & parent_frame,
+    const std::string & child_frame,
+    const geometry_msgs::msg::Transform & transform,
+    const rclcpp::Time & stamp)
+  {
+    geometry_msgs::msg::TransformStamped transform_stamped;
+    transform_stamped.header.stamp = stamp;
+    transform_stamped.header.frame_id = parent_frame;
+    transform_stamped.child_frame_id = child_frame;
+    transform_stamped.transform = transform;
 
-  tf_buffer->setTransform(transform_stamped, "default_authority", false);
-}
+    tf_buffer->setTransform(transform_stamped, "default_authority", false);
+  }
 
-std::shared_ptr<tf2_ros::Buffer> initializeBuffer(rclcpp::Clock::SharedPtr clock, const rclcpp::Time &stamp, double radar_yaw = 0.0)
-{
-  auto tf_buffer = std::make_shared<tf2_ros::Buffer>(clock);
-  tf_buffer->setUsingDedicatedThread(true); // Use a dedicated thread for handling transforms
+  std::shared_ptr<tf2_ros::Buffer> initializeBuffer(
+    rclcpp::Clock::SharedPtr clock, const rclcpp::Time & stamp, double radar_yaw = 0.0)
+  {
+    auto tf_buffer = std::make_shared<tf2_ros::Buffer>(clock);
+    tf_buffer->setUsingDedicatedThread(true);  // Use a dedicated thread for handling transforms
 
-  // Add transforms directly to the buffer
-  geometry_msgs::msg::Transform base_link_to_radar_transform;
-  base_link_to_radar_transform.translation.x = 1.0;
-  base_link_to_radar_transform.translation.y = 1.0;
-  base_link_to_radar_transform.translation.z = 0.0;
+    // Add transforms directly to the buffer
+    geometry_msgs::msg::Transform base_link_to_radar_transform;
+    base_link_to_radar_transform.translation.x = 1.0;
+    base_link_to_radar_transform.translation.y = 1.0;
+    base_link_to_radar_transform.translation.z = 0.0;
 
-  tf2::Quaternion q;
-  q.setRPY(0, 0, radar_yaw);
-  base_link_to_radar_transform.rotation.x = q.x();
-  base_link_to_radar_transform.rotation.y = q.y();
-  base_link_to_radar_transform.rotation.z = q.z();
-  base_link_to_radar_transform.rotation.w = q.w();
+    tf2::Quaternion q;
+    q.setRPY(0, 0, radar_yaw);
+    base_link_to_radar_transform.rotation.x = q.x();
+    base_link_to_radar_transform.rotation.y = q.y();
+    base_link_to_radar_transform.rotation.z = q.z();
+    base_link_to_radar_transform.rotation.w = q.w();
 
-  base_link_to_radar_transform.translation.x = 1.0;
-  base_link_to_radar_transform.translation.y = 0.0;
-  base_link_to_radar_transform.translation.z = 0.0;
-  addTransformToBuffer(tf_buffer, base_link, radar_link, base_link_to_radar_transform, stamp);
+    base_link_to_radar_transform.translation.x = 1.0;
+    base_link_to_radar_transform.translation.y = 0.0;
+    base_link_to_radar_transform.translation.z = 0.0;
+    addTransformToBuffer(tf_buffer, base_link, radar_link, base_link_to_radar_transform, stamp);
 
-  geometry_msgs::msg::Transform odom_to_base_link_transform;
-  odom_to_base_link_transform.translation.x = 5.0;
-  odom_to_base_link_transform.translation.y = 0.0;
-  odom_to_base_link_transform.translation.z = 0.0;
-  odom_to_base_link_transform.rotation.x = 0.0;
-  odom_to_base_link_transform.rotation.y = 0.0;
-  odom_to_base_link_transform.rotation.z = 0.0;
-  odom_to_base_link_transform.rotation.w = 1.0;
+    geometry_msgs::msg::Transform odom_to_base_link_transform;
+    odom_to_base_link_transform.translation.x = 5.0;
+    odom_to_base_link_transform.translation.y = 0.0;
+    odom_to_base_link_transform.translation.z = 0.0;
+    odom_to_base_link_transform.rotation.x = 0.0;
+    odom_to_base_link_transform.rotation.y = 0.0;
+    odom_to_base_link_transform.rotation.z = 0.0;
+    odom_to_base_link_transform.rotation.w = 1.0;
 
-  odom_to_base_link_transform.translation.x = 0.0;
-  odom_to_base_link_transform.translation.y = 0.0;
-  odom_to_base_link_transform.translation.z = 0.0;
-  addTransformToBuffer(tf_buffer, odom_link, base_link, odom_to_base_link_transform, stamp);
+    odom_to_base_link_transform.translation.x = 0.0;
+    odom_to_base_link_transform.translation.y = 0.0;
+    odom_to_base_link_transform.translation.z = 0.0;
+    addTransformToBuffer(tf_buffer, odom_link, base_link, odom_to_base_link_transform, stamp);
 
-  return tf_buffer;
-}
+    return tf_buffer;
+  }
+};
 
 TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
 {
-
   SECTION("Stationary Obstacle and Vehicle")
   {
     auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
@@ -104,7 +131,8 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
     auto tf_buffer = initializeBuffer(clock, stamp);
 
     auto timeout = rclcpp::Duration::from_seconds(0.2);
-    auto corrected_odom = radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
+    auto corrected_odom =
+      radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
 
     geometry_msgs::msg::Vector3 raw_obj_velocity;
     raw_obj_velocity.x = 0.0;
@@ -112,7 +140,8 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
     raw_obj_velocity.z = 0.0;
 
     geometry_msgs::msg::Point raw_obj_pos;
-    auto corrected_obstacle_velocity = radar_transforms::correctObstacleVelocity(corrected_odom, raw_obj_velocity, raw_obj_pos);
+    auto corrected_obstacle_velocity =
+      radar_transforms::correctObstacleVelocity(corrected_odom, raw_obj_velocity, raw_obj_pos);
 
     REQUIRE(corrected_obstacle_velocity.x == raw_obj_velocity.x);
     REQUIRE(corrected_obstacle_velocity.y == raw_obj_velocity.y);
@@ -133,7 +162,8 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
     auto tf_buffer = initializeBuffer(clock, stamp);
 
     auto timeout = rclcpp::Duration::from_seconds(0.2);
-    auto corrected_odom = radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
+    auto corrected_odom =
+      radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
 
     geometry_msgs::msg::Vector3 raw_obj_velocity;
     raw_obj_velocity.x = 1.0;
@@ -141,7 +171,8 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
     raw_obj_velocity.z = 0.0;
 
     geometry_msgs::msg::Point raw_obj_pos;
-    auto corrected_obstacle_velocity = radar_transforms::correctObstacleVelocity(corrected_odom, raw_obj_velocity, raw_obj_pos);
+    auto corrected_obstacle_velocity =
+      radar_transforms::correctObstacleVelocity(corrected_odom, raw_obj_velocity, raw_obj_pos);
 
     REQUIRE(corrected_obstacle_velocity.x == raw_obj_velocity.x);
     REQUIRE(corrected_obstacle_velocity.y == raw_obj_velocity.y);
@@ -150,7 +181,6 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
 
   SECTION("Stationary Obstacle and Linearly Moving Vehicle")
   {
-
     double linear_velocity = 20.5;
     auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
     rclcpp::Time stamp = clock->now();
@@ -165,7 +195,8 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
     auto tf_buffer = initializeBuffer(clock, stamp);
 
     auto timeout = rclcpp::Duration::from_seconds(0.2);
-    auto corrected_odom = radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
+    auto corrected_odom =
+      radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
 
     geometry_msgs::msg::Vector3 raw_obj_velocity;
     raw_obj_velocity.x = -linear_velocity;
@@ -173,7 +204,8 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
     raw_obj_velocity.z = 0.0;
 
     geometry_msgs::msg::Point raw_obj_pos;
-    auto corrected_obstacle_velocity = radar_transforms::correctObstacleVelocity(corrected_odom, raw_obj_velocity, raw_obj_pos);
+    auto corrected_obstacle_velocity =
+      radar_transforms::correctObstacleVelocity(corrected_odom, raw_obj_velocity, raw_obj_pos);
 
     REQUIRE(corrected_obstacle_velocity.x == 0.0);
     REQUIRE(corrected_obstacle_velocity.y == 0.0);
@@ -182,7 +214,6 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
 
   SECTION("Stationary Obstacle and Angular Moving Vehicle")
   {
-
     double linear_velocity = 0.0;
     double angular_velocity = 0.25;
     auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
@@ -198,7 +229,8 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
     auto tf_buffer = initializeBuffer(clock, stamp);
 
     auto timeout = rclcpp::Duration::from_seconds(0.2);
-    auto corrected_odom = radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
+    auto corrected_odom =
+      radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
 
     geometry_msgs::msg::Vector3 raw_obj_velocity;
     raw_obj_velocity.x = 0.25;
@@ -210,7 +242,8 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
     raw_obj_pos.y = 1.0;
     raw_obj_pos.z = 0.0;
 
-    auto corrected_obstacle_velocity = radar_transforms::correctObstacleVelocity(corrected_odom, raw_obj_velocity, raw_obj_pos);
+    auto corrected_obstacle_velocity =
+      radar_transforms::correctObstacleVelocity(corrected_odom, raw_obj_velocity, raw_obj_pos);
 
     REQUIRE_THAT(corrected_obstacle_velocity.x, Catch::Matchers::WithinAbs(0.0, 1e-12));
     REQUIRE_THAT(corrected_obstacle_velocity.y, Catch::Matchers::WithinAbs(0.0, 1e-12));
@@ -232,14 +265,16 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
     auto tf_buffer = initializeBuffer(clock, stamp, M_PI / 2);
 
     auto timeout = rclcpp::Duration::from_seconds(0.2);
-    auto corrected_odom = radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
+    auto corrected_odom =
+      radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
 
     geometry_msgs::msg::Vector3 raw_obj_velocity;
     raw_obj_velocity.x = 0.0;
     raw_obj_velocity.y = 0.0;
     raw_obj_velocity.z = 0.0;
     geometry_msgs::msg::Point raw_obj_pos;
-    auto corrected_obstacle_velocity = radar_transforms::correctObstacleVelocity(corrected_odom, raw_obj_velocity, raw_obj_pos);
+    auto corrected_obstacle_velocity =
+      radar_transforms::correctObstacleVelocity(corrected_odom, raw_obj_velocity, raw_obj_pos);
 
     REQUIRE(corrected_obstacle_velocity.x == raw_obj_velocity.x);
     REQUIRE(corrected_obstacle_velocity.y == raw_obj_velocity.y);
@@ -248,7 +283,6 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
 
   SECTION("Stationary Obstacle and Vehicle moving with sensor rotated pi/3 radians")
   {
-
     double linear_velocity = 14.0;
     auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
     rclcpp::Time stamp = clock->now();
@@ -263,7 +297,8 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
     auto tf_buffer = initializeBuffer(clock, stamp, M_PI / 3);
 
     auto timeout = rclcpp::Duration::from_seconds(0.2);
-    auto corrected_odom = radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
+    auto corrected_odom =
+      radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
 
     double x_s = cos(-M_PI / 3) * -linear_velocity;
     double y_s = sin(-M_PI / 3) * -linear_velocity;
@@ -273,7 +308,8 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
     raw_obj_velocity.y = y_s;
     raw_obj_velocity.z = 0.0;
     geometry_msgs::msg::Point raw_obj_pos;
-    auto corrected_obstacle_velocity = radar_transforms::correctObstacleVelocity(corrected_odom, raw_obj_velocity, raw_obj_pos);
+    auto corrected_obstacle_velocity =
+      radar_transforms::correctObstacleVelocity(corrected_odom, raw_obj_velocity, raw_obj_pos);
 
     REQUIRE_THAT(corrected_obstacle_velocity.x, Catch::Matchers::WithinAbs(0, 1e-12));
     REQUIRE_THAT(corrected_obstacle_velocity.y, Catch::Matchers::WithinAbs(0, 1e-12));
@@ -282,7 +318,6 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
 
   SECTION("Obstacle and Vehicle moving at the same velocity with sensor rotated pi/3 radians")
   {
-
     double linear_velocity = 14.0;
 
     auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
@@ -298,7 +333,8 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
     auto tf_buffer = initializeBuffer(clock, stamp, M_PI / 3);
 
     auto timeout = rclcpp::Duration::from_seconds(0.2);
-    auto corrected_odom = radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
+    auto corrected_odom =
+      radar_transforms::transform2DOdom(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
 
     double x_s = cos(-M_PI / 3) * linear_velocity;
     double y_s = sin(-M_PI / 3) * linear_velocity;
@@ -308,7 +344,8 @@ TEST_CASE_METHOD(TestFixture, "Obstacle Assertions")
     raw_obj_velocity.y = 0.0;
     raw_obj_velocity.z = 0.0;
     geometry_msgs::msg::Point raw_obj_pos;
-    auto corrected_obstacle_velocity = radar_transforms::correctObstacleVelocity(corrected_odom, raw_obj_velocity, raw_obj_pos);
+    auto corrected_obstacle_velocity =
+      radar_transforms::correctObstacleVelocity(corrected_odom, raw_obj_velocity, raw_obj_pos);
 
     REQUIRE_THAT(corrected_obstacle_velocity.x, Catch::Matchers::WithinAbs(x_s, 1e-12));
     REQUIRE_THAT(corrected_obstacle_velocity.y, Catch::Matchers::WithinAbs(y_s, 1e-12));
@@ -320,7 +357,6 @@ TEST_CASE_METHOD(TestFixture, "Motion Input Assertions")
 {
   SECTION("Vehicle with sensor straight ahead")
   {
-
     auto clock = rclcpp::Clock::SharedPtr(new rclcpp::Clock());
     rclcpp::Time stamp = clock->now();
 
@@ -334,7 +370,8 @@ TEST_CASE_METHOD(TestFixture, "Motion Input Assertions")
     auto tf_buffer = initializeBuffer(clock, stamp, 0.0);
 
     auto timeout = rclcpp::Duration::from_seconds(0.2);
-    auto motion_input_signal = radar_transforms::createMotionInputSignal(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
+    auto motion_input_signal =
+      radar_transforms::createMotionInputSignal(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
 
     REQUIRE(motion_input_signal.speed == 1.0);
     REQUIRE(motion_input_signal.direction == 0x1);
@@ -356,7 +393,8 @@ TEST_CASE_METHOD(TestFixture, "Motion Input Assertions")
     auto tf_buffer = initializeBuffer(clock, stamp, M_PI / 2.0);
 
     auto timeout = rclcpp::Duration::from_seconds(0.2);
-    auto motion_input_signal = radar_transforms::createMotionInputSignal(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
+    auto motion_input_signal =
+      radar_transforms::createMotionInputSignal(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
 
     // Since the sensor is rotated 90 degrees, the vehicle is moving in the y direction
     REQUIRE_THAT(motion_input_signal.speed, Catch::Matchers::WithinAbs(0.0, 1e-12));
@@ -380,7 +418,8 @@ TEST_CASE_METHOD(TestFixture, "Motion Input Assertions")
     auto tf_buffer = initializeBuffer(clock, stamp, M_PI);
 
     auto timeout = rclcpp::Duration::from_seconds(0.2);
-    auto motion_input_signal = radar_transforms::createMotionInputSignal(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
+    auto motion_input_signal =
+      radar_transforms::createMotionInputSignal(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
 
     REQUIRE_THAT(motion_input_signal.speed, Catch::Matchers::WithinAbs(-1.0, 1e-12));
     // Should report that we are now going backwards
@@ -403,7 +442,8 @@ TEST_CASE_METHOD(TestFixture, "Motion Input Assertions")
     auto tf_buffer = initializeBuffer(clock, stamp, -M_PI / 2);
 
     auto timeout = rclcpp::Duration::from_seconds(0.2);
-    auto motion_input_signal = radar_transforms::createMotionInputSignal(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
+    auto motion_input_signal =
+      radar_transforms::createMotionInputSignal(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
 
     // Since the sensor is rotated 90 degrees, the vehicle is moving in the y direction
     REQUIRE_THAT(motion_input_signal.speed, Catch::Matchers::WithinAbs(0.0, 1e-12));
@@ -427,7 +467,8 @@ TEST_CASE_METHOD(TestFixture, "Motion Input Assertions")
     auto tf_buffer = initializeBuffer(clock, stamp, M_PI / 4);
 
     auto timeout = rclcpp::Duration::from_seconds(0.2);
-    auto motion_input_signal = radar_transforms::createMotionInputSignal(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
+    auto motion_input_signal =
+      radar_transforms::createMotionInputSignal(vehicle_odometry, tf_buffer, radar_link, base_link, timeout, clock);
 
     REQUIRE_THAT(motion_input_signal.speed, Catch::Matchers::WithinRel(0.707, 1e-3));
     REQUIRE(motion_input_signal.direction == 0x1);
