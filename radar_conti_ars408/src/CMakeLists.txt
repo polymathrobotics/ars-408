@@ -1,3 +1,16 @@
+# Copyright 2026 Polymath Robotics, Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 cmake_minimum_required(VERSION 3.22)
 
 project(radar_conti_ars408)
@@ -12,12 +25,12 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 endif()
 
 # if CMAKE_BUILD_TYPE is not specified, take 'Release' as default
-IF(NOT CMAKE_BUILD_TYPE)
-    SET(CMAKE_BUILD_TYPE Release)
-ENDIF(NOT CMAKE_BUILD_TYPE)
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE Release)
+endif()
 
 find_package(ament_cmake_auto REQUIRED)
-ament_auto_find_build_depedencies()
+ament_auto_find_build_dependencies()
 
 set(ars_lib ${PROJECT_NAME}_component)
 set(ars_bin ${PROJECT_NAME}_composition)
@@ -98,14 +111,17 @@ install(DIRECTORY
 
 if(BUILD_TESTING)
   ament_auto_find_test_dependencies()
+  find_package(Catch2 REQUIRED)
 
-  polymath_add_catch2_test(test_radar_transforms test/test_radar_transforms.cpp
-    ${ars_lib} ${dependencies})
+  add_executable(test_radar_transforms test/test_radar_transforms.cpp)
+  target_link_libraries(test_radar_transforms Catch2::Catch2WithMain ${ars_lib})
+  add_test(NAME test_radar_transforms COMMAND test_radar_transforms)
 
   # Until CI has VCAN support, don't run this test
   if(NOT DEFINED ENV{CI})
-    polymath_add_catch2_test(test_radar_conti_ars408_component test/test_radar_conti_ars408_component.cpp
-      ${ars_lib} ${dependencies})
+    add_executable(test_component test/test_radar_conti_ars408_component.cpp)
+    target_link_libraries(test_component Catch2::Catch2WithMain ${ars_lib})
+    add_test(NAME test_component COMMAND test_component)
   endif()
 endif()
 

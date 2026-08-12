@@ -35,4 +35,3 @@ std_msgs/UInt8 filtercfg_max_vxoncome
 std_msgs/UInt8 filtercfg_max_vyleftright
 std_msgs/UInt8 filtercfg_max_vxdepart
 std_msgs/UInt8 filtercfg_max_object_class
-

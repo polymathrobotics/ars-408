@@ -1,69 +1,67 @@
+---
 radar_node:
   ros__parameters:
-    can_channel: "can0"
-    object_list_topic_name: "object_list"
-    marker_array_topic_name: "marker_array"
-    radar_tracks_topic_name: "radar_tracks"
-    obstacle_array_topic_name: "obstacle_array"
-    filter_config_topic_name: "filter_config"
-    radar_state_topic_name: "radar_state"
+    can_channel: can0
+    object_list_topic_name: object_list
+    marker_array_topic_name: marker_array
+    radar_tracks_topic_name: radar_tracks
+    obstacle_array_topic_name: obstacle_array
+    filter_config_topic_name: filter_config
+    radar_state_topic_name: radar_state
 
     radar_0:
-        #link of radar, should be relative to base_link      
-        link_name: "front_radar_link"
-        radarcfg_sensor_id: 0
-        radarcfg_sensor_id_valid: 1
-        radarcfg_storeinnvm: 1
-        radarcfg_storeinnvm_valid: 1
-        radarcfg_radar_power: 3
-        radarcfg_radar_power_valid: 1
-        radarcfg_send_ext_info: 1
-        radarcfg_send_ext_info_valid: 1
-        radarcfg_ctrl_relay: 0
-        radarcfg_ctrl_relay_valid: 1
-        radarcfg_send_quality: 1
-        radarcfg_send_quality_valid: 1
-        radarcfg_max_distance: 196
-        radarcfg_max_distance_valid: 1
-        radarcfg_output_type: 1
-        radarcfg_output_type_valid: 1
-        radarcfg_rcs_threshold: 0
-        radarcfg_rcs_threshold_valid: 1
-        radarcfg_sort_index: 1
-        radarcfg_sort_index_valid: 1
+        # link of radar, should be relative to base_link
+      link_name: front_radar_link
+      radarcfg_sensor_id: 0
+      radarcfg_sensor_id_valid: 1
+      radarcfg_storeinnvm: 1
+      radarcfg_storeinnvm_valid: 1
+      radarcfg_radar_power: 3
+      radarcfg_radar_power_valid: 1
+      radarcfg_send_ext_info: 1
+      radarcfg_send_ext_info_valid: 1
+      radarcfg_ctrl_relay: 0
+      radarcfg_ctrl_relay_valid: 1
+      radarcfg_send_quality: 1
+      radarcfg_send_quality_valid: 1
+      radarcfg_max_distance: 196
+      radarcfg_max_distance_valid: 1
+      radarcfg_output_type: 1
+      radarcfg_output_type_valid: 1
+      radarcfg_rcs_threshold: 0
+      radarcfg_rcs_threshold_valid: 1
+      radarcfg_sort_index: 1
+      radarcfg_sort_index_valid: 1
 
-
-        #set filter active flag on filter config index
-        active: [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]
-        filtercfg_min_nofobj: 0
-        filtercfg_max_nofobj: 10
-        filtercfg_min_distance: 0.0
-        filtercfg_max_distance: 409.0
-        filtercfg_min_azimuth: -50.0
-        filtercfg_max_azimuth: 50.0
-        filtercfg_min_vreloncome: 0.0
-        filtercfg_max_vreloncome: 128.0
-        filtercfg_min_vreldepart: 0.0
-        filtercfg_max_vreldepart: 128.0
-        filtercfg_min_rcs: -20.0
-        filtercfg_max_rcs: 30.0
-        filtercfg_min_lifetime: 0.0
-        filtercfg_max_lifetime: 409.0
-        filtercfg_min_size: 0.0
-        filtercfg_max_size: 102.0
-        filtercfg_min_probexists: 5
-        filtercfg_max_probexists: 7
-        filtercfg_min_y: -409.0
-        filtercfg_max_y: 409.0
-        filtercfg_min_x: 0.0
-        filtercfg_max_x: 0.0
-        filtercfg_min_vyrightleft: 0.0
-        filtercfg_max_vyrightleft: 128.0
-        filtercfg_min_vxoncome: 0.0
-        filtercfg_max_vxoncome: 128.0
-        filtercfg_min_vyleftright: 0.0
-        filtercfg_max_vyleftright: 128.0
-        filtercfg_min_vxdepart: 0.0
-        filtercfg_max_vxdepart: 128.0
-
-
+        # set filter active flag on filter config index
+      active: [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true]
+      filtercfg_min_nofobj: 0
+      filtercfg_max_nofobj: 10
+      filtercfg_min_distance: 0.0
+      filtercfg_max_distance: 409.0
+      filtercfg_min_azimuth: -50.0
+      filtercfg_max_azimuth: 50.0
+      filtercfg_min_vreloncome: 0.0
+      filtercfg_max_vreloncome: 128.0
+      filtercfg_min_vreldepart: 0.0
+      filtercfg_max_vreldepart: 128.0
+      filtercfg_min_rcs: -20.0
+      filtercfg_max_rcs: 30.0
+      filtercfg_min_lifetime: 0.0
+      filtercfg_max_lifetime: 409.0
+      filtercfg_min_size: 0.0
+      filtercfg_max_size: 102.0
+      filtercfg_min_probexists: 5
+      filtercfg_max_probexists: 7
+      filtercfg_min_y: -409.0
+      filtercfg_max_y: 409.0
+      filtercfg_min_x: 0.0
+      filtercfg_max_x: 0.0
+      filtercfg_min_vyrightleft: 0.0
+      filtercfg_max_vyrightleft: 128.0
+      filtercfg_min_vxoncome: 0.0
+      filtercfg_max_vxoncome: 128.0
+      filtercfg_min_vyleftright: 0.0
+      filtercfg_max_vyleftright: 128.0
+      filtercfg_min_vxdepart: 0.0
+      filtercfg_max_vxdepart: 128.0

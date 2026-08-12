@@ -1,0 +1,18 @@
+---
+# Apply Polymath Code Standard formatters and linters
+repos:
+  - repo: https://github.com/polymathrobotics/polymath_code_standard.git
+    rev: v2.2.0
+    hooks:
+      - id: polymath-general
+      - id: polymath-python
+      - id: polymath-cpp
+      - id: polymath-shell
+      - id: polymath-cmake
+      - id: polymath-markdown
+      - id: polymath-xml
+      - id: polymath-yaml
+      - id: polymath-toml
+      - id: polymath-json
+      - id: polymath-copyright
+        args: [--license, Apache-2.0, --copyright-org, 'Polymath Robotics, Inc.']
