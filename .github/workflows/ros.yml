@@ -39,7 +39,7 @@ jobs:
           target-ros2-distro: ${{ matrix.ros }}
           import-token: ${{ secrets.GITHUB_TOKEN }}
           vcs-repo-file-url: repos.yaml
-          package-name: radar_conti_ars408 radar_conti_ars408_msg
+          package-name: radar_conti_ars408 radar_conti_ars408_msgs
       - uses: actions/upload-artifact@v4
         with:
           name: colcon-logs-${{ matrix.ros }}
