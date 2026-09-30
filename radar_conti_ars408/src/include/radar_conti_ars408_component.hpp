@@ -299,6 +299,10 @@ private:
   bool setRadarConfiguration(
     const int & sensor_id, std::shared_ptr<radar_conti_ars408_msgs::srv::TriggerSetCfg::Response> & response);
 
+  /// @brief True if sensor_id has a radar_N entry with enabled set.
+  /// A disabled entry only holds its index; the node sends it nothing and publishes nothing for it.
+  bool isRadarEnabled(const int & sensor_id) const;
+
   void publishRadarState(std::shared_ptr<const polymath::socketcan::CanFrame> frame, const int & sensor_id);
   void updateFilterConfig(std::shared_ptr<const polymath::socketcan::CanFrame> frame, const int & sensor_id);
   void initializeFilterConfigs();
@@ -342,6 +346,7 @@ private:
   std::unique_ptr<bond::Bond> bond_{nullptr};
 
   std::vector<std::string> radar_link_names_;
+  std::vector<bool> radar_enabled_;
   std::string robot_base_frame_;
   std::vector<bool> filter_config_initialized_list_;
 
