@@ -26,6 +26,29 @@ If sensor 0 is to be changed to sensor 1, command would be as follows:
 cansend can0 200#8200000001800000
 ```
 
+### One Node per Radar
+
+Each `radar_[index]` entry configures the sensor whose id is `index`.
+Entries must start at `radar_0` with no gaps, and each needs a `link_name`.
+
+Set `radar_[index].enabled: false` to hold an index for a sensor this node does not own.
+A disabled entry is sent no filter or motion frames, its received frames are dropped,
+and the services reject requests for its sensor id.
+This lets several nodes share one CAN bus, each enabling only its own radar:
+
+```yaml
+front_left_radar:
+  ros__parameters:
+    can_channel: can0
+    radar_0: {link_name: noop, enabled: false}
+    radar_1: {link_name: noop, enabled: false}
+    radar_2:
+      link_name: front_left_radar_link
+```
+
+Every node serves the same absolute service names,
+so a `sensor_id` request is carried out by the one node that enables it.
+
 ### Configuring Radar Settings
 
 There are ros params for setting the radar configuration that are set declaratively by the ROS2 configuration service (`/radar_conti_ars408/set_radar_configuration`). Unlike the filter configuration, which fires off filter settings on startup of the driver, the radar configurations shouldn't be overly used. From the Continental docs:

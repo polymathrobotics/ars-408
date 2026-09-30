@@ -474,3 +474,52 @@ TEST_CASE_METHOD(ROS2Fixture, "Motion Input Signals", "[ars408]")
     }
   }
 }
+
+TEST_CASE_METHOD(ROS2Fixture, "Disabled radar", "[ars408]")
+{
+  SECTION("Disabled entry is sent nothing and its service requests are rejected")
+  {
+    try {
+      ROSTestWrapper test_wrapper;
+      test_wrapper.Setup(
+        {{"can_channel", "vcan0"},
+         {"radar_0.link_name", "noop"},
+         {"radar_0.enabled", false},
+         {"radar_1.link_name", "link_1"}});
+
+      // Wait for socketcan to publish over network
+      std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+      const canid_t sensor_1_filter_cfg_id = ID_FilterCfg | (1 << 4);
+      REQUIRE(test_wrapper.frames[ID_FilterCfg].size() == 0);
+      REQUIRE(test_wrapper.frames[sensor_1_filter_cfg_id].size() == 15);
+
+      auto client = test_wrapper.node->create_client<radar_conti_ars408_msgs::srv::TriggerSetCfg>(
+        "/radar_conti_ars408/set_radar_configuration");
+      REQUIRE(client->wait_for_service(std::chrono::seconds(1)));
+
+      auto request = std::make_shared<radar_conti_ars408_msgs::srv::TriggerSetCfg::Request>();
+      request->sensor_id = 0;
+
+      bool service_called = false;
+      auto future = client->async_send_request(
+        request, [&](rclcpp::Client<radar_conti_ars408_msgs::srv::TriggerSetCfg>::SharedFuture response) {
+          service_called = true;
+          REQUIRE(response.get()->success == false);
+        });
+
+      auto start = std::chrono::steady_clock::now();
+      while (!service_called && (std::chrono::steady_clock::now() - start) < std::chrono::seconds(5)) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+      }
+
+      REQUIRE(service_called);
+      REQUIRE(test_wrapper.frames[ID_RadarConfiguration].size() == 0);
+
+      test_wrapper.Teardown();
+    } catch (const std::exception & e) {
+      RCLCPP_ERROR(rclcpp::get_logger("Test"), "Caught exception during teardown: %s", e.what());
+      REQUIRE(false);  // Fail the test if an exception occurs
+    }
+  }
+}

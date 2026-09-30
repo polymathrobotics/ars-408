@@ -166,6 +166,9 @@ rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn radar_
 
       radar_link_names_.push_back(parameter.as_string());
 
+      node->declare_parameter(radar_name + ".enabled", rclcpp::ParameterValue(true));
+      radar_enabled_.push_back(node->get_parameter(radar_name + ".enabled").as_bool());
+
       RCLCPP_DEBUG(node->get_logger(), "radar frame is: %s", parameter.as_string().c_str());
 
       // RADAR CONFIGS
@@ -564,6 +567,9 @@ void radar_conti_ars408::initializeFilterConfigs()
   int max_value = 0;
 
   for (size_t radar_index = 0; radar_index < radar_filter_configs_.size(); radar_index++) {
+    if (!isRadarEnabled(radar_index)) {
+      continue;
+    }
     for (int filter_index = 0; filter_index < MAX_FilterState_Cfg_FilterState_Index; filter_index++) {
       int active = radar_filter_active_[radar_index][filter_index] ? FilterCfg_FilterCfg_Active_active
                                                                    : FilterCfg_FilterCfg_Active_inactive;
@@ -637,13 +643,17 @@ void radar_conti_ars408::initializeFilterConfigs()
     }
     // initialized and publish once
     filter_config_initialized_list_[radar_index] = true;
-
-    // TODO(troy): Make timer durations configurable.
-    filter_config_timer_ =
-      this->create_wall_timer(1s, std::bind(&radar_conti_ars408::publishFilterConfigMetadata, this));
-
-    fov_marker_timer_ = this->create_wall_timer(3s, std::bind(&radar_conti_ars408::publishFovMetadata, this));
   }
+
+  // TODO(troy): Make timer durations configurable.
+  filter_config_timer_ = this->create_wall_timer(1s, std::bind(&radar_conti_ars408::publishFilterConfigMetadata, this));
+
+  fov_marker_timer_ = this->create_wall_timer(3s, std::bind(&radar_conti_ars408::publishFovMetadata, this));
+}
+
+bool radar_conti_ars408::isRadarEnabled(const int & sensor_id) const
+{
+  return 0 <= sensor_id && static_cast<size_t>(sensor_id) < radar_enabled_.size() && radar_enabled_[sensor_id];
 }
 
 void radar_conti_ars408::publishRadarState(
@@ -697,8 +707,7 @@ void radar_conti_ars408::can_receive_callback(std::shared_ptr<const polymath::so
 {
   int sensor_id = Get_SensorID_From_MsgID(frame->get_id());
 
-  // If the sensor_id is greater than the size of the number of object lists, break
-  if (sensor_id > object_list_list_.size() - 1) {
+  if (!isRadarEnabled(sensor_id)) {
     return;
   }
 
@@ -983,6 +992,11 @@ void radar_conti_ars408::setFilterService(
   std::shared_ptr<radar_conti_ars408_msgs::srv::SetFilter::Response> response)
 {
   auto req = *request;
+  if (!isRadarEnabled(req.sensor_id)) {
+    RCLCPP_DEBUG(this->get_logger(), "Ignoring set_filter for sensor_id %i, not enabled on this node", req.sensor_id);
+    response->success = false;
+    return;
+  }
   // Add small delay so the CAN on Orin does not fault
   std::this_thread::sleep_for(std::chrono::milliseconds(1));
   if (!setFilter(req.sensor_id, FilterCfg_FilterCfg_Active_active, req.type, req.index, req.min_value, req.max_value)) {
@@ -1116,6 +1130,12 @@ void radar_conti_ars408::setRadarConfigurationService(
   std::shared_ptr<radar_conti_ars408_msgs::srv::TriggerSetCfg::Response> response)
 {
   auto req = *request;
+  if (!isRadarEnabled(req.sensor_id)) {
+    response->message = fmt::format("Sensor ID '{}' is not enabled on this node.", req.sensor_id);
+    RCLCPP_DEBUG(this->get_logger(), response->message.c_str());
+    response->success = false;
+    return;
+  }
   if (!setRadarConfiguration(req.sensor_id, response)) {
     response->success = false;
     return;
@@ -1368,7 +1388,7 @@ void radar_conti_ars408::odomCallback(const nav_msgs::msg::Odometry::SharedPtr m
   for (auto & motion_config : motion_configs_) {
     auto sensor_id = motion_config.first;
     auto enable = motion_config.second;
-    if (enable) {
+    if (enable && isRadarEnabled(sensor_id)) {
       auto motion_input_signal = radar_transforms::createMotionInputSignal(
         vehicle_odometry_,
         tf_buffer_,
