@@ -43,6 +43,7 @@
   <exec_depend>nav2_dynamic_msgs</exec_depend>
   <exec_depend>unique_identifier_msgs</exec_depend>
 
+  <depend>fmt</depend>
   <depend>bondcpp</depend>
   <depend>bond</depend>
   <depend>socketcan_adapter</depend>
