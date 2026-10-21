@@ -31,6 +31,7 @@ endif()
 
 find_package(ament_cmake_auto REQUIRED)
 ament_auto_find_build_dependencies()
+find_package(fmt REQUIRED)
 
 set(ars_lib ${PROJECT_NAME}_component)
 set(ars_bin ${PROJECT_NAME}_composition)
@@ -41,7 +42,7 @@ target_include_directories(${ars_lib} PUBLIC
   "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
   "$<INSTALL_INTERFACE:include"
 )
-target_link_libraries(${ars_lib} dl -lboost_system)
+target_link_libraries(${ars_lib} dl -lboost_system fmt::fmt)
 
 set_source_files_properties(include/ars_408_can_defines.h PROPERTIES COMPILE_FLAGS "-Wno-type-limits")
 
