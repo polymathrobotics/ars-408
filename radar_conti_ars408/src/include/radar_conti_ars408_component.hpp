@@ -105,6 +105,10 @@ public:
   RADAR_CONTI_ARS408_PUBLIC
   explicit radar_conti_ars408(const rclcpp::NodeOptions & options);
 
+  /// @brief Stops the CAN reception thread.
+  RADAR_CONTI_ARS408_PUBLIC
+  ~radar_conti_ars408() override;
+
   /// Transition callback for state error
   /**
          * on_error callback is being called when the lifecycle node
@@ -344,6 +348,10 @@ private:
   bool overwrite_configs_;
 
   std::unique_ptr<bond::Bond> bond_{nullptr};
+
+  /// @brief Stops CAN reception before the context shuts down, so the reception thread never publishes after it.
+  rclcpp::PreShutdownCallbackHandle pre_shutdown_callback_handle_;
+  void stopReception();
 
   std::vector<std::string> radar_link_names_;
   std::vector<bool> radar_enabled_;

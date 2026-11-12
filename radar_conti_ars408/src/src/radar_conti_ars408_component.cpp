@@ -64,7 +64,22 @@ const std::vector<FilterType> filterTypes = {
 
 radar_conti_ars408::radar_conti_ars408(const rclcpp::NodeOptions & options)
 : rclcpp_lifecycle::LifecycleNode("radar_conti_ars408", options)
+, pre_shutdown_callback_handle_(
+    get_node_base_interface()->get_context()->add_pre_shutdown_callback([this]() { stopReception(); }))
 {}
+
+radar_conti_ars408::~radar_conti_ars408()
+{
+  get_node_base_interface()->get_context()->remove_pre_shutdown_callback(pre_shutdown_callback_handle_);
+  stopReception();
+}
+
+void radar_conti_ars408::stopReception()
+{
+  if (socketcan_adapter_) {
+    socketcan_adapter_->joinReceptionThread();
+  }
+}
 
 rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn radar_conti_ars408::on_configure(
   const rclcpp_lifecycle::State &)
