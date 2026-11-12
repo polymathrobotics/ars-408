@@ -166,6 +166,7 @@ rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn radar_
         parameter.as_string() + "/" + radar_state_topic_name_, transient_local_qos));
       object_map_list_.push_back(std::map<int, radar_conti_ars408_msgs::msg::Object>());
       object_list_list_.push_back(radar_conti_ars408_msgs::msg::ObjectList());
+      object_list_progress_.emplace_back();
       radar_filter_configs_.push_back(radar_conti_ars408_msgs::msg::FilterStateCfg());
       radar_configuration_configs_.emplace(topic_ind, radar_conti_ars408_msgs::msg::RadarConfiguration());
       radar_filter_active_.push_back(std::vector<bool>());
@@ -556,6 +557,7 @@ rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn radar_
   if (bond_) {
     bond_.reset();
   }
+  object_list_progress_.clear();
   return rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn::SUCCESS;
 }
 
@@ -736,6 +738,16 @@ void radar_conti_ars408::can_receive_callback(std::shared_ptr<const polymath::so
   if (Get_MsgID0_From_MsgID(frame->get_id()) == ID_RadarState) {
     operation_mode_ =
       CALC_RadarState_RadarState_OutputTypeCfg(GET_RadarState_RadarState_OutputTypeCfg(frame->get_data()), 1.0);
+    // Each cycle sends every object's Obj_1_General frame, then its Obj_2_Quality frame if enabled,
+    // then its Obj_3_Extended frame if enabled.
+    auto & last_object_frame_id = object_list_progress_[sensor_id].last_object_frame_id;
+    if (0 != GET_RadarState_RadarState_SendExtInfoCfg(frame->get_data())) {
+      last_object_frame_id = ID_Obj_3_Extended;
+    } else if (0 != GET_RadarState_RadarState_SendQualityCfg(frame->get_data())) {
+      last_object_frame_id = ID_Obj_2_Quality;
+    } else {
+      last_object_frame_id = ID_Obj_1_General;
+    }
     publishRadarState(frame, sensor_id);
   }
 
@@ -754,11 +766,22 @@ void radar_conti_ars408::handle_object_list(std::shared_ptr<const polymath::sock
 {
   int sensor_id = Get_SensorID_From_MsgID(frame->get_id());
 
-  if (Get_MsgID0_From_MsgID(frame->get_id()) == ID_Obj_0_Status) {
-    publish_object_map(sensor_id);
-    object_list_list_[sensor_id].header.stamp = rclcpp_lifecycle::LifecycleNode::now();
+  const int msg_id = Get_MsgID0_From_MsgID(frame->get_id());
+  auto & progress = object_list_progress_[sensor_id];
+
+  if (msg_id == ID_Obj_0_Status) {
+    // The previous list is still unpublished if it lost a frame or preceded the first RadarState.
+    publishObjectListOnce(sensor_id);
+    progress.stamp = listStamp(*frame);
+    object_list_list_[sensor_id].header.stamp = progress.stamp;
     object_list_list_[sensor_id].object_count.data = GET_Obj_0_Status_Obj_NofObjects(frame->get_data());
     object_map_list_[sensor_id].clear();
+    progress.last_object_frames_received = 0;
+    progress.published = false;
+    if (0 == object_list_list_[sensor_id].object_count.data) {
+      publishObjectListOnce(sensor_id);
+    }
+    return;
   }
 
   // Object General Information
@@ -845,27 +868,39 @@ void radar_conti_ars408::handle_object_list(std::shared_ptr<const polymath::sock
 
     object_count = object_count + 1;
   };
+
+  if (
+    progress.last_object_frame_id == msg_id &&
+    ++progress.last_object_frames_received >= object_list_list_[sensor_id].object_count.data)
+  {
+    publishObjectListOnce(sensor_id);
+  }
+}
+
+void radar_conti_ars408::publishObjectListOnce(int sensor_id)
+{
+  auto & progress = object_list_progress_[sensor_id];
+  if (!progress.published) {
+    publish_object_map(sensor_id);
+    progress.published = true;
+  }
 }
 
 void radar_conti_ars408::publish_object_map(int sensor_id)
 {
   visualization_msgs::msg::MarkerArray marker_array;
-  radar_msgs::msg::RadarTracks radar_tracks;
+  auto radar_tracks = std::make_unique<radar_msgs::msg::RadarTracks>();
   nav2_dynamic_msgs::msg::ObstacleArray obstacle_array;
 
-  radar_tracks.header.stamp = rclcpp_lifecycle::LifecycleNode::now();
-  radar_tracks.header.frame_id = radar_link_names_[sensor_id];
+  radar_tracks->header.stamp = object_list_progress_[sensor_id].stamp;
+  radar_tracks->header.frame_id = radar_link_names_[sensor_id];
 
-  obstacle_array.header = radar_tracks.header;
-
-  marker_array.markers.clear();
+  obstacle_array.header = radar_tracks->header;
 
   // delete old marker
   visualization_msgs::msg::Marker ma;
   ma.action = 3;
   marker_array.markers.push_back(ma);
-  marker_array_publishers_[sensor_id]->publish(marker_array);
-  marker_array.markers.clear();
 
   tf2::Quaternion myQuaternion;
 
@@ -890,8 +925,7 @@ void radar_conti_ars408::publish_object_map(int sensor_id)
   for (itr = object_map_list_[sensor_id].begin(); itr != object_map_list_[sensor_id].end(); ++itr) {
     visualization_msgs::msg::Marker mobject;
 
-    mobject.header.stamp = rclcpp_lifecycle::LifecycleNode::now();
-    mobject.header.frame_id = radar_link_names_[sensor_id];
+    mobject.header = radar_tracks->header;
     mobject.ns = "track";
     mobject.id = itr->first;
     mobject.type = 1;  // Cube
@@ -998,13 +1032,22 @@ void radar_conti_ars408::publish_object_map(int sensor_id)
     marker_array.markers.push_back(arrow_vrelong);
     marker_array.markers.push_back(arrow_vrelat);
 
-    radar_tracks.tracks.push_back(radar_track);
+    radar_tracks->tracks.push_back(radar_track);
     obstacle_array.obstacles.push_back(obstacle);
   }
 
-  marker_array_publishers_[sensor_id]->publish(marker_array);
-  radar_tracks_publishers_[sensor_id]->publish(radar_tracks);
+  radar_tracks_publishers_[sensor_id]->publish(std::move(radar_tracks));
   obstacle_array_publishers_[sensor_id]->publish(obstacle_array);
+  marker_array_publishers_[sensor_id]->publish(marker_array);
+}
+
+builtin_interfaces::msg::Time radar_conti_ars408::listStamp(const polymath::socketcan::CanFrame & status_frame)
+{
+  const auto receive_time = status_frame.get_bus_time().time_since_epoch();
+  if (get_clock()->ros_time_is_active() || 0 == receive_time.count()) {
+    return now();
+  }
+  return rclcpp::Time(std::chrono::duration_cast<std::chrono::nanoseconds>(receive_time).count(), RCL_ROS_TIME);
 }
 
 void radar_conti_ars408::setFilterService(

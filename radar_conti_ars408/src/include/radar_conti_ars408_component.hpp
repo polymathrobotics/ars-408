@@ -20,6 +20,7 @@
 #include <map>
 #include <memory>
 #include <mutex>
+#include <optional>
 #include <random>
 #include <string>
 #include <unordered_map>
@@ -28,6 +29,7 @@
 #include "./structs.hpp"
 #include "ars_408_can_defines.h"
 #include "bondcpp/bond.hpp"
+#include "builtin_interfaces/msg/time.hpp"
 #include "can_msgs/msg/frame.hpp"
 #include "geometry_msgs/msg/transform_stamped.hpp"
 #include "lifecycle_msgs/msg/state.hpp"
@@ -313,6 +315,9 @@ private:
   void initializeFilterConfigs();
   void publishFilterConfigMetadata();
   void odomCallback(const nav_msgs::msg::Odometry::SharedPtr msg);
+  /// @brief Stamp for a list started by an Obj_0_Status frame: the frame's kernel receive time,
+  /// or the node clock under sim time or when the frame has no receive time.
+  builtin_interfaces::msg::Time listStamp(const polymath::socketcan::CanFrame & status_frame);
 
   /// @brief Guards vehicle_odometry_, written by the executor and read by the CAN reception thread.
   std::mutex vehicle_odometry_mutex_;
@@ -332,6 +337,25 @@ private:
   // create data structures for radar object list
   radar_conti_ars408_msgs::msg::ObjectList object_list_;
   std::vector<radar_conti_ars408_msgs::msg::ObjectList> object_list_list_;
+
+  /// @brief Per sensor: progress of the object list being received.
+  struct ObjectListProgress
+  {
+    /// Stamp of the list, from its Obj_0_Status frame.
+    builtin_interfaces::msg::Time stamp;
+    /// Id of the last frame the radar sends for each object, from its RadarState output config.
+    /// Unset until the first RadarState arrives.
+    std::optional<int> last_object_frame_id;
+    /// How many frames with the last object frame id the list has received.
+    int last_object_frames_received{0};
+    /// Whether the list has been published.
+    bool published{true};
+  };
+
+  std::vector<ObjectListProgress> object_list_progress_;
+
+  /// @brief Publishes sensor_id's current object list, unless it already has been.
+  void publishObjectListOnce(int sensor_id);
 
   // create data structures for radar filter config
   rclcpp::TimerBase::SharedPtr filter_config_timer_;
