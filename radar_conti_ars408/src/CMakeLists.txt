@@ -41,29 +41,30 @@ target_include_directories(${ars_lib} PUBLIC
   "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
   "$<INSTALL_INTERFACE:include"
 )
-target_link_libraries(${ars_lib} dl -lboost_system fmt::fmt)
+target_link_libraries(${ars_lib} PUBLIC
+  dl
+  -lboost_system
+  ament_index_cpp::ament_index_cpp
+  bond::bond
+  bondcpp::bondcpp
+  can_msgs::can_msgs
+  class_loader::class_loader
+  fmt::fmt
+  geometry_msgs::geometry_msgs
+  nav2_dynamic_msgs::nav2_dynamic_msgs
+  nav_msgs::nav_msgs
+  radar_conti_ars408_msgs::radar_conti_ars408_msgs
+  radar_msgs::radar_msgs
+  rclcpp::rclcpp
+  rclcpp_components::component
+  rclcpp_lifecycle::rclcpp_lifecycle
+  socketcan_adapter::socketcan_adapter
+  std_msgs::std_msgs
+  tf2_ros::tf2_ros
+  visualization_msgs::visualization_msgs
+)
 
 set_source_files_properties(include/ars_408_can_defines.h PROPERTIES COMPILE_FLAGS "-Wno-type-limits")
-
-ament_target_dependencies(${ars_lib}
-  ament_index_cpp
-  bond
-  bondcpp
-  can_msgs
-  class_loader
-  geometry_msgs
-  nav2_dynamic_msgs
-  nav_msgs
-  radar_conti_ars408_msgs
-  radar_msgs
-  rclcpp
-  rclcpp_components
-  rclcpp_lifecycle
-  socketcan_adapter
-  std_msgs
-  tf2_ros
-  visualization_msgs
-)
 
 rclcpp_components_register_nodes(${ars_lib} "FHAC::radar_conti_ars408")
 set(node_plugins "FHAC::radar_conti_ars408;$<TARGET_FILE:radar_conti_ars408_component>\n")
@@ -77,10 +78,9 @@ endif()
 
 
 add_executable(${ars_bin} src/radar_conti_ars408_composition.cpp)
-target_link_libraries(${ars_bin} ${ars_lib})
-
-ament_target_dependencies(${ars_bin}
-  "rclcpp"
+target_link_libraries(${ars_bin} PRIVATE
+  ${ars_lib}
+  rclcpp::rclcpp
 )
 
 install(
