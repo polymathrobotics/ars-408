@@ -19,6 +19,7 @@
 #include <iostream>
 #include <map>
 #include <memory>
+#include <mutex>
 #include <random>
 #include <string>
 #include <unordered_map>
@@ -312,6 +313,9 @@ private:
   void initializeFilterConfigs();
   void publishFilterConfigMetadata();
   void odomCallback(const nav_msgs::msg::Odometry::SharedPtr msg);
+
+  /// @brief Guards vehicle_odometry_, written by the executor and read by the CAN reception thread.
+  std::mutex vehicle_odometry_mutex_;
   nav_msgs::msg::Odometry vehicle_odometry_;
   std::shared_ptr<tf2_ros::Buffer> tf_buffer_;
   std::shared_ptr<tf2_ros::TransformListener> tf_listener_;

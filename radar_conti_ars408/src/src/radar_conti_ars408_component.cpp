@@ -873,8 +873,13 @@ void radar_conti_ars408::publish_object_map(int sensor_id)
 
   nav_msgs::msg::Odometry corrected_odom;
   if (!odom_topic_name_.empty()) {
+    nav_msgs::msg::Odometry vehicle_odometry;
+    {
+      std::lock_guard<std::mutex> lock(vehicle_odometry_mutex_);
+      vehicle_odometry = vehicle_odometry_;
+    }
     corrected_odom = radar_transforms::transform2DOdom(
-      vehicle_odometry_,
+      vehicle_odometry,
       tf_buffer_,
       radar_link_names_[sensor_id],
       robot_base_frame_,
@@ -1398,19 +1403,17 @@ void radar_conti_ars408::publishFovMetadata()
 
 void radar_conti_ars408::odomCallback(const nav_msgs::msg::Odometry::SharedPtr msg)
 {
-  vehicle_odometry_ = *msg;
+  {
+    std::lock_guard<std::mutex> lock(vehicle_odometry_mutex_);
+    vehicle_odometry_ = *msg;
+  }
 
   for (auto & motion_config : motion_configs_) {
     auto sensor_id = motion_config.first;
     auto enable = motion_config.second;
     if (enable && isRadarEnabled(sensor_id)) {
       auto motion_input_signal = radar_transforms::createMotionInputSignal(
-        vehicle_odometry_,
-        tf_buffer_,
-        radar_link_names_[sensor_id],
-        robot_base_frame_,
-        transform_timeout_,
-        this->get_clock());
+        *msg, tf_buffer_, radar_link_names_[sensor_id], robot_base_frame_, transform_timeout_, this->get_clock());
       sendMotionInputSignals(sensor_id, motion_input_signal);
     }
   }
