@@ -14,6 +14,8 @@
 
 #include <math.h>
 
+#include <atomic>
+#include <future>
 #include <iostream>
 #include <limits>
 #include <memory>
@@ -521,5 +523,76 @@ TEST_CASE_METHOD(ROS2Fixture, "Disabled radar", "[ars408]")
       RCLCPP_ERROR(rclcpp::get_logger("Test"), "Caught exception during teardown: %s", e.what());
       REQUIRE(false);  // Fail the test if an exception occurs
     }
+  }
+}
+
+TEST_CASE_METHOD(ROS2Fixture, "Object list publishing", "[ars408]")
+{
+  try {
+    ROSTestWrapper test_wrapper;
+    test_wrapper.Setup(
+      {{"can_channel", "vcan0"}, {"radar_tracks_topic_name", "radar_tracks"}, {"radar_0.link_name", "link_0"}});
+
+    std::promise<radar_msgs::msg::RadarTracks> tracks_promise;
+    auto tracks_future = tracks_promise.get_future();
+    std::atomic_flag received = ATOMIC_FLAG_INIT;
+    auto subscription = test_wrapper.node->create_subscription<radar_msgs::msg::RadarTracks>(
+      "link_0/radar_tracks", 5, [&](radar_msgs::msg::RadarTracks::SharedPtr msg) {
+        if (!received.test_and_set()) {
+          tracks_promise.set_value(*msg);
+        }
+      });
+
+    auto send = [&test_wrapper](canid_t id, uint8_t dlc, auto && set_signals) {
+      can_frame frame{};
+      frame.can_id = id;
+      frame.can_dlc = dlc;
+      set_signals(frame.data);
+      REQUIRE_FALSE(test_wrapper.socketcan_adapter_->send(frame));
+    };
+    auto send_status = [&send](int object_count) {
+      send(ID_Obj_0_Status, DLC_Obj_0_Status, [object_count](ubyte * buf) {
+        SET_Obj_0_Status_Obj_NofObjects(buf, object_count);
+      });
+    };
+    auto send_object = [&send](int id) {
+      send(ID_Obj_1_General, DLC_Obj_1_General, [id](ubyte * buf) { SET_Obj_1_General_Obj_ID(buf, id); });
+      send(ID_Obj_2_Quality, DLC_Obj_2_Quality, [id](ubyte * buf) { SET_Obj_2_Quality_Obj_ID(buf, id); });
+      send(ID_Obj_3_Extended, DLC_Obj_3_Extended, [id](ubyte * buf) { SET_Obj_3_Extended_Obj_ID(buf, id); });
+    };
+
+    send(ID_RadarState, DLC_RadarState, [](ubyte * buf) {
+      SET_RadarState_RadarState_OutputTypeCfg(buf, RadarState_RadarState_OutputTypeCfg_SendObjects);
+      SET_RadarState_RadarState_SendQualityCfg(buf, 1);
+      SET_RadarState_RadarState_SendExtInfoCfg(buf, 1);
+    });
+
+    SECTION("A complete object list is published without waiting for the next one")
+    {
+      send_status(1);
+      send_object(0);
+
+      REQUIRE(std::future_status::ready == tracks_future.wait_for(std::chrono::seconds(1)));
+      const auto tracks = tracks_future.get();
+      CHECK(1 == tracks.tracks.size());  // NOLINT(readability/check)
+      CHECK("link_0" == tracks.header.frame_id);  // NOLINT(readability/check)
+      CHECK(rclcpp::Time(tracks.header.stamp) <= test_wrapper.node->now());
+    }
+
+    SECTION("An object list that lost a frame is published when the next one starts")
+    {
+      send_status(2);
+      send_object(0);
+      CHECK(std::future_status::timeout == tracks_future.wait_for(std::chrono::milliseconds(300)));
+
+      send_status(0);
+      REQUIRE(std::future_status::ready == tracks_future.wait_for(std::chrono::seconds(1)));
+      CHECK(1 == tracks_future.get().tracks.size());  // NOLINT(readability/check)
+    }
+
+    test_wrapper.Teardown();
+  } catch (const std::exception & e) {
+    RCLCPP_ERROR(rclcpp::get_logger("Test"), "Caught exception during teardown: %s", e.what());
+    REQUIRE(false);  // Fail the test if an exception occurs
   }
 }

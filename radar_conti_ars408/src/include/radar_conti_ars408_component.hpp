@@ -19,6 +19,8 @@
 #include <iostream>
 #include <map>
 #include <memory>
+#include <mutex>
+#include <optional>
 #include <random>
 #include <string>
 #include <unordered_map>
@@ -27,6 +29,7 @@
 #include "./structs.hpp"
 #include "ars_408_can_defines.h"
 #include "bondcpp/bond.hpp"
+#include "builtin_interfaces/msg/time.hpp"
 #include "can_msgs/msg/frame.hpp"
 #include "geometry_msgs/msg/transform_stamped.hpp"
 #include "lifecycle_msgs/msg/state.hpp"
@@ -104,6 +107,10 @@ class radar_conti_ars408 : public rclcpp_lifecycle::LifecycleNode
 public:
   RADAR_CONTI_ARS408_PUBLIC
   explicit radar_conti_ars408(const rclcpp::NodeOptions & options);
+
+  /// @brief Stops the CAN reception thread.
+  RADAR_CONTI_ARS408_PUBLIC
+  ~radar_conti_ars408() override;
 
   /// Transition callback for state error
   /**
@@ -308,6 +315,12 @@ private:
   void initializeFilterConfigs();
   void publishFilterConfigMetadata();
   void odomCallback(const nav_msgs::msg::Odometry::SharedPtr msg);
+  /// @brief Stamp for a list started by an Obj_0_Status frame: the frame's kernel receive time,
+  /// or the node clock under sim time or when the frame has no receive time.
+  builtin_interfaces::msg::Time listStamp(const polymath::socketcan::CanFrame & status_frame);
+
+  /// @brief Guards vehicle_odometry_, written by the executor and read by the CAN reception thread.
+  std::mutex vehicle_odometry_mutex_;
   nav_msgs::msg::Odometry vehicle_odometry_;
   std::shared_ptr<tf2_ros::Buffer> tf_buffer_;
   std::shared_ptr<tf2_ros::TransformListener> tf_listener_;
@@ -324,6 +337,25 @@ private:
   // create data structures for radar object list
   radar_conti_ars408_msgs::msg::ObjectList object_list_;
   std::vector<radar_conti_ars408_msgs::msg::ObjectList> object_list_list_;
+
+  /// @brief Per sensor: progress of the object list being received.
+  struct ObjectListProgress
+  {
+    /// Stamp of the list, from its Obj_0_Status frame.
+    builtin_interfaces::msg::Time stamp;
+    /// Id of the last frame the radar sends for each object, from its RadarState output config.
+    /// Unset until the first RadarState arrives.
+    std::optional<int> last_object_frame_id;
+    /// How many frames with the last object frame id the list has received.
+    int last_object_frames_received{0};
+    /// Whether the list has been published.
+    bool published{true};
+  };
+
+  std::vector<ObjectListProgress> object_list_progress_;
+
+  /// @brief Publishes sensor_id's current object list, unless it already has been.
+  void publishObjectListOnce(int sensor_id);
 
   // create data structures for radar filter config
   rclcpp::TimerBase::SharedPtr filter_config_timer_;
@@ -344,6 +376,10 @@ private:
   bool overwrite_configs_;
 
   std::unique_ptr<bond::Bond> bond_{nullptr};
+
+  /// @brief Stops CAN reception before the context shuts down, so the reception thread never publishes after it.
+  rclcpp::PreShutdownCallbackHandle pre_shutdown_callback_handle_;
+  void stopReception();
 
   std::vector<std::string> radar_link_names_;
   std::vector<bool> radar_enabled_;
