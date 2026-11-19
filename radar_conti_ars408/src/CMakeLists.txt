@@ -117,6 +117,10 @@ if(BUILD_TESTING)
   target_link_libraries(test_radar_transforms Catch2::Catch2WithMain ${ars_lib})
   add_test(NAME test_radar_transforms COMMAND test_radar_transforms)
 
+  add_executable(test_can_defines test/test_can_defines.cpp)
+  target_link_libraries(test_can_defines Catch2::Catch2WithMain)
+  add_test(NAME test_can_defines COMMAND test_can_defines)
+
   # Until CI has VCAN support, don't run this test
   if(NOT DEFINED ENV{CI})
     add_executable(test_component test/test_radar_conti_ars408_component.cpp)
