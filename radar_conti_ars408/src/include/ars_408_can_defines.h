@@ -22776,7 +22776,7 @@
  * @return
  *	The signal value as a human readable number
  */
-#define CALC_Obj_1_General_Obj_DistLat(x, fmt) ((x) * fmt / 5 + fmt * (-1024) / 5)
+#define CALC_Obj_1_General_Obj_DistLat(x, fmt) ((x) * fmt / 5 + fmt * (-1023) / 5)
 
 /**
  * Signal Obj_DistLat raw initial value.
